@@ -1,0 +1,14 @@
+[build]
+  publish = "."
+  base = "."
+  command = ""
+  environment = { }
+
+[context.production]
+  branch = "main"
+
+[context.deploy-preview]
+  branch = "main"
+
+[context.branch-deploy]
+  branch = "main"
