@@ -105,7 +105,7 @@ h3 {
 }
 
 /* My Offerings Section Specific Styles */
-.my-offerings { /* Renamed class */
+.my-offerings {
     background-color: #ffffff; /* White background */
     padding: 80px 0;
 }
@@ -504,7 +504,6 @@ footer {
     }
 }
 
-
 /* Responsive adjustments for the main homepage buttons and general elements on very small screens */
 @media (max-width: 600px) {
     .benefit-item {
@@ -542,4 +541,19 @@ footer {
     .form-group textarea {
         width: calc(100% - 20px); /* Adjust width for smaller padding */
     }
+}
+
+/* --- Scroll-Triggered Animation Styles --- */
+
+/* Initial state: hidden and slightly moved down */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px); /* Start 20px below its final position */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+/* Final state: visible and in original position */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
