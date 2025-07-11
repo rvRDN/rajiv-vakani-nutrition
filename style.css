@@ -15,7 +15,7 @@ body {
 }
 
 section {
-    padding: 60px 0; /* Vertical padding for sections */
+    padding: 60px 20px; /* Vertical padding for sections */
     text-align: center; /* Center content within sections by default */
 }
 
@@ -318,7 +318,20 @@ footer {
     .content-grid {
         grid-template-columns: 1fr; /* Stack columns on small screens */
         padding: 0 15px; /* Adjust padding for mobile */
+
+    }   .about-me p {
+        text-align: center; /* Center the text for mobile */
+        max-width: 90%; /* Limit width to leave space on sides */
+        padding: 0 15px; /* Add internal padding */
+        box-sizing: border-box; /* Crucial for padding to work with max-width */
     }
+
+    .hero-tagline {
+        max-width: 90%; /* Limit width for hero tagline on mobile */
+        padding: 0 15px; /* Add internal padding */
+        box-sizing: border-box;
+    }
+}
 }
 
 /* Responsive adjustments for the main homepage buttons */
@@ -334,4 +347,17 @@ footer {
     .benefits-grid .button.subscribe-button {
         margin-left: auto; /* Reset left margin for stacking */
     }
+     h1 { /* This applies to your main "Rajiv Vakani" title */
+        font-size: 2.5em; /* Make main hero title smaller on very small screens */
+    }
+    .hero-tagline {
+        font-size: 1em; /* Make hero tagline smaller on very small screens */
+    }
+    .about-me p {
+        font-size: 0.95em; /* Slightly smaller text for about me on small screens */
+    }
+    h2 { /* This applies to "How I Can Help You", "About Rajiv Vakani", etc. */
+        font-size: 2em; /* Make section headings smaller on mobile */
+    }
+}
 }
