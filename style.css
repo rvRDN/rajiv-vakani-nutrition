@@ -20,13 +20,13 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #2980b9; /* Color of the scroll thumb */
+    background-color: #357ca5; /* New Primary Blue */
     border-radius: 10px;
     border: 3px solid #e0e6ed; /* Padding around the thumb */
 }
 
 body::-webkit-scrollbar-thumb:hover {
-    background-color: #1a5a8a; /* Darker color on hover */
+    background-color: #2a6a90; /* Darker New Primary Blue on hover */
 }
 
 
@@ -57,7 +57,7 @@ h2 {
     font-size: 2.5em;
     font-weight: 600;
     margin-bottom: 40px;
-    color: #2980b9; /* Default blue for h2 */
+    color: #357ca5; /* New Primary Blue for h2 */
 }
 
 h3 {
@@ -68,7 +68,7 @@ h3 {
 /* Button Styling */
 .button {
     display: inline-block;
-    background-color: #2980b9; /* Blue background */
+    background-color: #357ca5; /* New Primary Blue */
     color: #ffffff; /* White text */
     padding: 15px 30px;
     border-radius: 8px; /* Rounded corners */
@@ -81,7 +81,7 @@ h3 {
 }
 
 .button:hover {
-    background-color: #1a5a8a; /* Darker blue on hover */
+    background-color: #2a6a90; /* Darker New Primary Blue on hover */
     transform: translateY(-2px); /* Slight lift effect */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
@@ -156,7 +156,7 @@ h3 {
 }
 
 .about-me h2 {
-    color: #1a5a8a; /* Darker blue for About Me heading for better contrast */
+    color: #2a6a90; /* Darker New Primary Blue for About Me heading for better contrast */
 }
 
 /* My Offerings Section Specific Styles */
@@ -191,7 +191,7 @@ h3 {
 }
 
 .benefit-item h3 {
-    color: #2980b9; /* Blue for benefit headings */
+    color: #357ca5; /* New Primary Blue for benefit headings */
     font-size: 1.5em;
     margin-bottom: 15px;
     text-align: center; /* Center the newsletter card titles */
@@ -210,7 +210,7 @@ h3 {
 
 /* Call to Action Section */
 .call-to-action-section {
-    background-color: #2980b9; /* Use the primary blue for a strong call to action */
+    background-color: #357ca5; /* New Primary Blue for a strong call to action */
     color: #ffffff;
     padding: 80px 0;
     text-align: center; /* Center content within this section */
@@ -301,8 +301,8 @@ h3 {
 .form-group input[type="email"]:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #2980b9; /* Blue border on focus */
-    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.2); /* Soft blue glow on focus */
+    border-color: #357ca5; /* New Primary Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(53, 124, 165, 0.2); /* Soft New Primary Blue glow on focus */
 }
 
 .form-group textarea {
@@ -345,7 +345,7 @@ footer {
 }
 
 .newsletter-intro h2 {
-    color: #336699; /* A professional blue, adjust to your brand color */
+    color: #357ca5; /* New Primary Blue for newsletter intro heading */
     margin-bottom: 20px;
     font-size: 2.2em; /* Slightly larger for emphasis */
 }
@@ -364,7 +364,7 @@ footer {
 }
 
 .what-you-get h2 {
-    color: #336699; /* Matching the intro section */
+    color: #357ca5; /* New Primary Blue for what-you-get heading */
     margin-bottom: 40px;
     font-size: 2.2em;
 }
@@ -392,7 +392,7 @@ footer {
 }
 
 .content-item h3 {
-    color: #4CAF50; /* A fresh green, consider your brand accent color */
+    color: #5C8D55; /* Accent Green */
     margin-bottom: 15px;
     font-size: 1.5em;
     text-align: center; /* Centering green headings */
@@ -412,7 +412,7 @@ footer {
 }
 
 .cta-subscribe h2 {
-    color: #336699;
+    color: #357ca5; /* New Primary Blue for CTA heading */
     font-size: 2.5em;
     margin-bottom: 30px;
 }
@@ -423,7 +423,7 @@ footer {
     padding: 15px 40px;
     font-size: 1.2em;
     text-decoration: none;
-    background-color: #FF7043; /* Bright orange, matching your MailerLite button */
+    background-color: #D97047; /* Accent Orange/Terracotta */
     color: white;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -431,17 +431,17 @@ footer {
 }
 
 .cta-subscribe .button:hover {
-    background-color: #E65100; /* Darker orange on hover */
+    background-color: #BF5C36; /* Darker Accent Orange/Terracotta on hover */
 }
 
 /* Style for the 'Subscribe Now' button on index.html */
 .benefits-grid .button.subscribe-button {
-    background-color: #FF7043; /* Bright orange */
+    background-color: #D97047; /* Accent Orange/Terracotta */
     margin-left: 10px; /* Space between the two buttons */
 }
 
 .benefits-grid .button.subscribe-button:hover {
-    background-color: #E65100; /* Darker orange on hover */
+    background-color: #BF5C36; /* Darker Accent Orange/Terracotta on hover */
 }
 
 /* --- Header Navigation Menu Styles --- */
@@ -470,7 +470,7 @@ footer {
 }
 
 .site-logo:hover {
-    color: #a2d2ff; /* Lighter blue on hover */
+    color: #6bb0d8; /* Lighter version of New Primary Blue on hover */
 }
 
 .nav-links {
@@ -501,7 +501,7 @@ footer {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #a2d2ff; /* Lighter blue underline */
+    background-color: #6bb0d8; /* Lighter version of New Primary Blue underline */
     transition: width 0.3s ease-in-out;
 }
 
@@ -510,7 +510,7 @@ footer {
 }
 
 .nav-links a:hover {
-    color: #a2d2ff;
+    color: #6bb0d8; /* Lighter version of New Primary Blue on hover */
 }
 
 /* Mobile Menu Toggle (Hamburger Icon) */
