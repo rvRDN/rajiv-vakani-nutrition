@@ -85,7 +85,6 @@ h3 {
     max-width: 800px; /* Consistent with previous discussions for readability */
     margin: 0 auto 30px auto; /* More bottom margin for separation */
     line-height: 1.5;
-    /* text-align is now handled by the .hero parent */
 }
 
 /* About Me Section Specific Styles */
@@ -167,6 +166,85 @@ h3 {
 
 .call-to-action-section p {
     color: #e0e0e0;
+}
+
+/* --- Contact Form Section Styles --- */
+.contact-section {
+    background-color: #e9f0f5; /* Light background for contrast, similar to about-me */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-intro {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px auto; /* Space below intro text */
+    line-height: 1.6;
+}
+
+.contact-form {
+    max-width: 600px; /* Limit form width for better readability */
+    margin: 0 auto; /* Center the form */
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow for the form */
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 20px; /* Space between form groups */
+}
+
+.form-group {
+    text-align: left; /* Align labels and inputs to the left within their group */
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+.form-group label {
+    display: block; /* Make labels appear above inputs */
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.05em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 24px); /* Full width minus padding */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2980b9; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.2); /* Soft blue glow on focus */
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px; /* Minimum height for textarea */
+}
+
+.contact-form .button {
+    /* Override general button margin-top for form context */
+    margin-top: 0;
+    align-self: center; /* Center the button within the form */
+    width: auto; /* Allow button to size naturally based on padding */
+    padding: 15px 40px; /* Slightly larger padding for form button */
+}
+
+/* Hide Netlify honeypot field visually */
+.hidden {
+    display: none;
 }
 
 /* Footer Styles */
@@ -423,5 +501,45 @@ footer {
     }
     .menu-toggle.active .hamburger:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* Responsive adjustments for the main homepage buttons and general elements on very small screens */
+@media (max-width: 600px) {
+    .benefit-item {
+        align-items: center; /* Ensure buttons stack nicely on very small screens */
+    }
+    .benefit-item .button {
+        display: block; /* Stack buttons vertically on small screens */
+        width: 80%; /* Make buttons take up more width */
+        margin: 10px auto; /* Center stacked buttons */
+    }
+    .benefits-grid .button.subscribe-button {
+        margin-left: auto; /* Reset left margin for stacking */
+    }
+    h1 { /* This applies to your main "Rajiv Vakani" title */
+        font-size: 2.5em; /* Make main hero title smaller on very small screens */
+    }
+    .hero-tagline {
+        font-size: 1em; /* Make hero tagline smaller on very small screens */
+    }
+    .about-me p {
+        font-size: 0.95em; /* Slightly smaller text for about me on small screens */
+    }
+    h2 { /* This applies to "How I Can Help You", "About Rajiv Vakani", etc. */
+        font-size: 2em; /* Make section headings smaller on mobile */
+    }
+
+    /* Responsive adjustments for Contact Form on smaller screens */
+    .contact-form {
+        padding: 25px; /* Reduce padding on smaller screens */
+        margin: 0 15px; /* Add horizontal margin to prevent sticking to edges */
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        width: calc(100% - 20px); /* Adjust width for smaller padding */
     }
 }
