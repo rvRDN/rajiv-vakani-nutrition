@@ -175,8 +175,8 @@ h3 {
 /* New: About Content Layout */
 .about-content {
     display: flex; /* Use flexbox for image and text layout */
-    flex-direction: column; /* Default to column on small screens */
-    align-items: center; /* Center items when stacked */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    align-items: flex-start; /* Align items to the top (image and text) */
     gap: 30px; /* Space between image and text */
     max-width: 900px; /* Limit content width */
     margin: 0 auto; /* Center content */
@@ -191,11 +191,15 @@ h3 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Soft shadow */
     border: 5px solid #ffffff; /* White border */
     flex-shrink: 0; /* Prevent image from shrinking */
+    margin-right: 30px; /* Space to the right of the image when text wraps */
 }
 
+/* Fix for About Me paragraph alignment */
 .about-content p {
-    max-width: 100%; /* Allow paragraphs to take full width within flex item */
-    margin: 0; /* Reset margin from previous rule for .about-me p */
+    flex-grow: 1; /* Allow paragraphs to take up available space */
+    max-width: calc(100% - 280px); /* Adjust max-width for text when image is present (250px img + 30px gap) */
+    margin: 0; /* Reset default paragraph margin */
+    text-align: left; /* Ensure text is left-aligned */
 }
 
 .about-me h2 {
@@ -232,6 +236,16 @@ h3 {
     transform: translateY(-5px); /* Lift effect on hover */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
 }
+
+/* New: Newsletter Icon Styling */
+.newsletter-icon {
+    width: 80px; /* Size of the icon */
+    height: 80px;
+    margin-bottom: 20px; /* Space below the icon */
+    object-fit: contain; /* Ensure the whole icon is visible */
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1)); /* Subtle shadow for depth */
+}
+
 
 .benefit-item h3 {
     color: #357ca5; /* New Primary Blue for benefit headings */
@@ -670,6 +684,11 @@ footer {
     .about-headshot {
         margin-right: 0; /* Remove right margin when stacked */
         margin-bottom: 20px; /* Add bottom margin when stacked */
+    }
+
+    /* Responsive adjustment for About Me paragraph width on small screens */
+    .about-content p {
+        max-width: 100%; /* Allow paragraphs to take full width when stacked */
     }
 }
 
