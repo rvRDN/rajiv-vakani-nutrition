@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Onion, No Garlic Newsletter - Learn More</title>
+    <title>No Onion, No Garlic Newsletter</title> <!-- Removed "- Learn More" for conciseness -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="main-nav">
-    <div class="container nav-container">
-        <a href="index.html" class="site-logo">Rajiv Vakani</a>
-        <button class="menu-toggle" aria-label="Toggle navigation">
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-        </button>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="table-talk-newsletter.html">Table Talk Newsletter</a></li>
-            <li><a href="no-onion-no-garlic.html">No Onion, No Garlic Newsletter</a></li>
-            <li><a href="#about-me">About Me</a></li>
-            <li><a href="#contact-form">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+        <div class="container nav-container">
+            <a href="index.html" class="site-logo">Rajiv Vakani</a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="table-talk.html">Table Talk Newsletter</a></li> <!-- CORRECTED: Changed href to table-talk.html -->
+                <li><a href="no-onion-no-garlic.html">No Onion, No Garlic Newsletter</a></li>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#contact-form">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
     <header class="hero">
         <h1>No Onion, No Garlic Newsletter</h1>
         <p class="hero-tagline">Navigating dietary principles with ease and expertise.<br>Delicious, nourishing, and true to your values.</p>
@@ -55,7 +55,7 @@
                 <h3>Unique Nutritional Insights</h3>
                 <p>Addressing specific nutrient considerations and challenges in principle-driven plant-based eating.</p>
             </div>
-            </div>
+        </div>
     </section>
 
     <section class="cta-subscribe">
@@ -64,29 +64,31 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Rajiv Vakani. All rights reserved.</p>
+        <div class="container"> <!-- Added container for consistency -->
+            <p>&copy; 2024 Rajiv Vakani. All rights reserved.</p>
+        </div>
     </footer>
     <script>
-    // JavaScript for mobile navigation toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+        // JavaScript for mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
 
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                menuToggle.classList.toggle('active'); // Also toggle class on button for hamburger animation
-            });
-
-            // Close menu when a link is clicked (useful for single-page navigation)
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
-                    menuToggle.classList.remove('active');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    menuToggle.classList.toggle('active'); // Also toggle class on button for hamburger animation
                 });
-            });
-        }
-    });
-</script>
+
+                // Close menu when a link is clicked (useful for single-page navigation)
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

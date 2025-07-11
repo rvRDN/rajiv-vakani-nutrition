@@ -9,22 +9,22 @@
 </head>
 <body>
     <nav class="main-nav">
-    <div class="container nav-container">
-        <a href="index.html" class="site-logo">Rajiv Vakani</a>
-        <button class="menu-toggle" aria-label="Toggle navigation">
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-        </button>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="table-talk.html">Table Talk Newsletter</a></li>
-            <li><a href="no-onion-no-garlic.html">No Onion, No Garlic Newsletter</a></li>
-            <li><a href="#about-me">About Me</a></li>
-            <li><a href="#contact-form">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+        <div class="container nav-container">
+            <a href="index.html" class="site-logo">Rajiv Vakani</a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="table-talk.html">Table Talk Newsletter</a></li>
+                <li><a href="no-onion-no-garlic.html">No Onion, No Garlic Newsletter</a></li>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#contact-form">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
     <header class="hero">
         <h1>Table Talk Newsletter</h1>
         <p class="hero-tagline">Eat well. Think sharp. Live light.<br>Because good food deserves better conversation.</p>
@@ -55,7 +55,7 @@
                 <h3>Thoughtful Conversations</h3>
                 <p>Exploring the 'why' behind our food choices and fostering a healthier mindset around eating.</p>
             </div>
-            </div>
+        </div>
     </section>
 
     <section class="cta-subscribe">
@@ -64,29 +64,31 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Rajiv Vakani. All rights reserved.</p>
+        <div class="container"> <!-- Added container for consistency -->
+            <p>&copy; 2024 Rajiv Vakani. All rights reserved.</p>
+        </div>
     </footer>
     <script>
-    // JavaScript for mobile navigation toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+        // JavaScript for mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
 
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                menuToggle.classList.toggle('active'); // Also toggle class on button for hamburger animation
-            });
-
-            // Close menu when a link is clicked (useful for single-page navigation)
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
-                    menuToggle.classList.remove('active');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    menuToggle.classList.toggle('active'); // Also toggle class on button for hamburger animation
                 });
-            });
-        }
-    });
-</script>
+
+                // Close menu when a link is clicked (useful for single-page navigation)
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

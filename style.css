@@ -77,7 +77,6 @@ h3 {
     font-size: 3.8em; /* Adjusted size for Lora */
     font-weight: 700; /* Keep it bold for impact */
     margin-bottom: 15px;
-    /* text-align: center; is now handled by the general h1 rule or .hero parent */
 }
 
 .hero-tagline {
@@ -86,7 +85,7 @@ h3 {
     max-width: 800px; /* Consistent with previous discussions for readability */
     margin: 0 auto 30px auto; /* More bottom margin for separation */
     line-height: 1.5;
-    /* text-align: center; is now handled by the general h1 rule or .hero parent */
+    /* text-align is now handled by the .hero parent */
 }
 
 /* About Me Section Specific Styles */
@@ -130,7 +129,6 @@ h3 {
     flex-direction: column; /* Stack content vertically */
     justify-content: space-between; /* Pushes buttons to the bottom if content height varies */
     align-items: center; /* Centers items horizontally within benefit-item (e.g., buttons) */
-    /* Removed text-align: left; from here to allow children to be centered */
 }
 
 .benefit-item:hover {
@@ -180,7 +178,7 @@ footer {
     text-align: center;
 }
 
-/* --- Newsletter Specific Styles (for table-talk-newsletter.html and no-onion-no-garlic-newsletter.html) --- */
+/* --- Newsletter Specific Styles (for table-talk.html and no-onion-no-garlic.html) --- */
 
 .newsletter-intro {
     background-color: #f8f8f8; /* Light background for contrast */
@@ -292,77 +290,7 @@ footer {
     background-color: #E65100; /* Darker orange on hover */
 }
 
-/* Make buttons appear side-by-side in benefits-item */
-/* This rule is duplicated and should be combined or carefully managed */
-/* I've moved the common flex properties to the main .benefit-item rule above */
-/* and kept only mobile-specific overrides here if needed. */
-
-
-/* Basic responsive adjustments for informational pages */
-@media (max-width: 768px) {
-    .newsletter-intro, .what-you-get, .cta-subscribe {
-        padding: 40px 15px;
-    }
-
-    .newsletter-intro h2, .what-you-get h2, .cta-subscribe h2 {
-        font-size: 1.8em;
-    }
-
-    .content-grid {
-        grid-template-columns: 1fr; /* Stack columns on small screens */
-        padding: 0 15px; /* Adjust padding for mobile */
-    }
-
-    /* Text alignment and width for mobile */
-    .about-me p {
-        text-align: left; /* Ensure About Me text is left-aligned on mobile */
-        max-width: 90%; /* Limit width to leave space on sides */
-        padding: 0 15px; /* Add internal padding */
-        box-sizing: border-box; /* Crucial for padding to work with max-width */
-        margin-left: auto; /* Re-center the block if max-width is applied */
-        margin-right: auto;
-    }
-
-    .hero-tagline {
-        text-align: left; /* Ensure hero tagline is left-aligned on mobile */
-        max-width: 90%; /* Limit width for hero tagline on mobile */
-        padding: 0 15px; /* Add internal padding */
-        box-sizing: border-box;
-        margin-left: auto; /* Re-center the block if max-width is applied */
-        margin-right: auto;
-    }
-}
-
-
-/* Responsive adjustments for the main homepage buttons and general elements on very small screens */
-@media (max-width: 600px) {
-    .benefit-item {
-        align-items: center; /* Ensure buttons stack nicely on very small screens */
-    }
-    .benefit-item .button {
-        display: block; /* Stack buttons vertically on small screens */
-        width: 80%; /* Make buttons take up more width */
-        margin: 10px auto; /* Center stacked buttons */
-    }
-    .benefits-grid .button.subscribe-button {
-        margin-left: auto; /* Reset left margin for stacking */
-    }
-    h1 { /* This applies to your main "Rajiv Vakani" title */
-        font-size: 2.5em; /* Make main hero title smaller on very small screens */
-    }
-    .hero-tagline {
-        font-size: 1em; /* Make hero tagline smaller on very small screens */
-    }
-    .about-me p {
-        font-size: 0.95em; /* Slightly smaller text for about me on small screens */
-    }
-    h2 { /* This applies to "How I Can Help You", "About Rajiv Vakani", etc. */
-        font-size: 2em; /* Make section headings smaller on mobile */
-    }
-}
-
 /* --- Header Navigation Menu Styles --- */
-
 .main-nav {
     background-color: #34495e; /* Darker blue-grey, similar to footer */
     padding: 15px 0;
