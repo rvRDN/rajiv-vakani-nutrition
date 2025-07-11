@@ -6,7 +6,29 @@ body {
     background-color: #f0f4f8; /* A soft, light blue-grey background */
     color: #2c3e50; /* A dark bluish-grey text color */
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrollbar due to animations */
 }
+
+/* Custom Scrollbar Styling */
+body::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: #e0e6ed; /* Color of the track */
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #2980b9; /* Color of the scroll thumb */
+    border-radius: 10px;
+    border: 3px solid #e0e6ed; /* Padding around the thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #1a5a8a; /* Darker color on hover */
+}
+
 
 .container {
     max-width: 1200px; /* Max width for content */
@@ -53,7 +75,7 @@ h3 {
     text-decoration: none; /* Remove underline */
     font-weight: 600;
     font-size: 1.1em;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth hover effects */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     margin-top: 20px; /* Space above button */
 }
@@ -61,6 +83,7 @@ h3 {
 .button:hover {
     background-color: #1a5a8a; /* Darker blue on hover */
     transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 /* Hero Section Specific Styles */
@@ -69,6 +92,25 @@ h3 {
     padding: 100px 0; /* More vertical padding */
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for the section */
     text-align: center; /* Center content within the hero section */
+    position: relative; /* Needed for pseudo-elements */
+    overflow: hidden; /* Hide anything overflowing */
+}
+
+/* Subtle gradient overlay for hero */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(240,244,248,0.8) 100%); /* Light, subtle gradient */
+    z-index: 1; /* Ensure it's above any background image but below text */
+}
+
+.hero h1, .hero-tagline {
+    position: relative; /* Bring text above the overlay */
+    z-index: 2;
 }
 
 .hero h1 {
@@ -91,6 +133,26 @@ h3 {
 .about-me {
     background-color: #e9f0f5; /* A slightly darker blue-grey for contrast */
     padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle pattern for about-me section */
+.about-me::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/svg%3E"); /* Very subtle diagonal lines */
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.about-me .container {
+    position: relative; /* Bring content above pattern */
+    z-index: 1;
 }
 
 .about-me p {
@@ -123,7 +185,7 @@ h3 {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects for shadow */
     display: flex; /* Flexbox for internal layout */
     flex-direction: column; /* Stack content vertically */
     justify-content: space-between; /* Pushes buttons to the bottom if content height varies */
@@ -132,6 +194,7 @@ h3 {
 
 .benefit-item:hover {
     transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
 }
 
 .benefit-item h3 {
@@ -173,6 +236,26 @@ h3 {
     background-color: #e9f0f5; /* Light background for contrast, similar to about-me */
     padding: 80px 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle pattern for contact section */
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/svg%3E"); /* Same subtle diagonal lines */
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.contact-section .container {
+    position: relative; /* Bring content above pattern */
+    z-index: 1;
 }
 
 .contact-intro {
@@ -524,7 +607,7 @@ footer {
         font-size: 1em; /* Make hero tagline smaller on very small screens */
     }
     .about-me p {
-        font-size: 0.95em; /* Slightly smaller text for about me on small screens */
+    font-size: 0.95em; /* Slightly smaller text for about me on small screens */
     }
     h2 { /* This applies to "How I Can Help You", "About Rajiv Vakani", etc. */
         font-size: 2em; /* Make section headings smaller on mobile */
@@ -541,19 +624,4 @@ footer {
     .form-group textarea {
         width: calc(100% - 20px); /* Adjust width for smaller padding */
     }
-}
-
-/* --- Scroll-Triggered Animation Styles --- */
-
-/* Initial state: hidden and slightly moved down */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px); /* Start 20px below its final position */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
-}
-
-/* Final state: visible and in original position */
-.animate-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0);
 }
