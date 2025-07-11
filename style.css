@@ -172,11 +172,30 @@ h3 {
     z-index: 1;
 }
 
-.about-me p {
-    text-align: left; /* Align about text to the left for readability */
-    max-width: 700px; /* Narrower width for readability */
-    margin-left: auto;
-    margin-right: auto;
+/* New: About Content Layout */
+.about-content {
+    display: flex; /* Use flexbox for image and text layout */
+    flex-direction: column; /* Default to column on small screens */
+    align-items: center; /* Center items when stacked */
+    gap: 30px; /* Space between image and text */
+    max-width: 900px; /* Limit content width */
+    margin: 0 auto; /* Center content */
+    text-align: left; /* Ensure text aligns left within its own flow */
+}
+
+.about-headshot {
+    width: 250px; /* Fixed width for the image */
+    height: 250px; /* Fixed height for a square/circle crop */
+    object-fit: cover; /* Crop image to fit without distortion */
+    border-radius: 50%; /* Make it a circle */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    border: 5px solid #ffffff; /* White border */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.about-content p {
+    max-width: 100%; /* Allow paragraphs to take full width within flex item */
+    margin: 0; /* Reset margin from previous rule for .about-me p */
 }
 
 .about-me h2 {
@@ -640,6 +659,17 @@ footer {
     .form-group input[type="email"],
     .form-group textarea {
         width: calc(100% - 20px); /* Adjust width for smaller padding */
+    }
+
+    /* Responsive adjustment for About Me section on small screens */
+    .about-content {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center image when stacked */
+    }
+
+    .about-headshot {
+        margin-right: 0; /* Remove right margin when stacked */
+        margin-bottom: 20px; /* Add bottom margin when stacked */
     }
 }
 
