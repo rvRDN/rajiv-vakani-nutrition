@@ -172,15 +172,12 @@ h3 {
     z-index: 1;
 }
 
-/* New: About Content Layout */
+/* REVISED: About Content Layout using float for image */
 .about-content {
-    display: flex; /* Use flexbox for image and text layout */
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-    align-items: flex-start; /* Align items to the top (image and text) */
-    gap: 30px; /* Space between image and text */
     max-width: 900px; /* Limit content width */
     margin: 0 auto; /* Center content */
-    text-align: left; /* Ensure text aligns left within its own flow */
+    overflow: hidden; /* Clear floats within this container */
+    padding-top: 20px; /* Add some space between h2 and content */
 }
 
 .about-headshot {
@@ -190,16 +187,16 @@ h3 {
     border-radius: 50%; /* Make it a circle */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Soft shadow */
     border: 5px solid #ffffff; /* White border */
-    flex-shrink: 0; /* Prevent image from shrinking */
-    margin-right: 30px; /* Space to the right of the image when text wraps */
+    float: left; /* Float image to the left */
+    margin-right: 40px; /* Space to the right of the image */
+    margin-bottom: 20px; /* Space below image if text wraps short */
 }
 
-/* Fix for About Me paragraph alignment */
 .about-content p {
-    flex-grow: 1; /* Allow paragraphs to take up available space */
-    max-width: calc(100% - 280px); /* Adjust max-width for text when image is present (250px img + 30px gap) */
-    margin: 0; /* Reset default paragraph margin */
-    text-align: left; /* Ensure text is left-aligned */
+    /* Reset text alignment for paragraphs within about-content */
+    text-align: left;
+    margin-bottom: 1em; /* Standard paragraph spacing */
+    /* No max-width needed here, text will flow around float */
 }
 
 .about-me h2 {
@@ -230,6 +227,7 @@ h3 {
     flex-direction: column; /* Stack content vertically */
     justify-content: space-between; /* Pushes buttons to the bottom if content height varies */
     align-items: center; /* Centers items horizontally within benefit-item (e.g., buttons) */
+    text-align: center; /* Ensure text inside cards is centered */
 }
 
 .benefit-item:hover {
@@ -237,13 +235,19 @@ h3 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
 }
 
-/* New: Newsletter Icon Styling */
+/* REVISED: Newsletter Icon Styling for more impact */
 .newsletter-icon {
-    width: 80px; /* Size of the icon */
-    height: 80px;
-    margin-bottom: 20px; /* Space below the icon */
+    width: 120px; /* Increased size for more impact */
+    height: 120px;
+    margin-bottom: 25px; /* More space below the icon */
     object-fit: contain; /* Ensure the whole icon is visible */
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1)); /* Subtle shadow for depth */
+    /* Add a stronger, more defined shadow */
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.2)); /* More pronounced shadow */
+    transition: transform 0.3s ease; /* Add transition for subtle hover effect */
+}
+
+.newsletter-icon:hover {
+    transform: scale(1.05); /* Slight scale up on hover */
 }
 
 
