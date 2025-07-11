@@ -360,3 +360,140 @@ footer {
         font-size: 2em; /* Make section headings smaller on mobile */
     }
 }
+
+/* --- Header Navigation Menu Styles --- */
+
+.main-nav {
+    background-color: #34495e; /* Darker blue-grey, similar to footer */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Makes the nav stick to the top when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensures nav is above other content */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Pushes logo to left, nav links to right */
+    align-items: center; /* Vertically centers items */
+}
+
+.site-logo {
+    color: #ecf0f1; /* Light text color */
+    font-family: 'Lora', serif; /* Consistent with your main H1 */
+    font-size: 1.8em;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-logo:hover {
+    color: #a2d2ff; /* Lighter blue on hover */
+}
+
+.nav-links {
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display links horizontally */
+}
+
+.nav-links li {
+    margin-left: 30px; /* Space between links */
+}
+
+.nav-links a {
+    color: #ecf0f1; /* Light text color */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after { /* Underline effect on hover */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #a2d2ff; /* Lighter blue underline */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #a2d2ff;
+}
+
+/* Mobile Menu Toggle (Hamburger Icon) */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Ensure it's above the nav links when open */
+}
+
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ecf0f1; /* Light color for hamburger lines */
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Responsiveness for Navigation */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        background-color: #34495e; /* Same as nav background */
+        position: absolute;
+        top: 100%; /* Position below the nav bar */
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        display: none; /* Hidden by default */
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: translateY(-10px); /* Start slightly above */
+    }
+
+    .nav-links.active { /* Class added by JS when menu is open */
+        display: flex; /* Show when active */
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Vertical spacing */
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 1.1em;
+    }
+
+    /* Hamburger animation for active state */
+    .menu-toggle.active .hamburger:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active .hamburger:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .hamburger:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
