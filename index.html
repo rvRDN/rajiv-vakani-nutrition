@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
+    <!-- Favicon link -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
     <script>
@@ -37,6 +40,14 @@
         </div>
     </nav>
     <header class="hero">
+        <!-- Video Background Element -->
+        <video autoplay muted loop playsinline class="hero-video-background">
+            <source src="hero-background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Overlay for readability and blending -->
+        <div class="hero-overlay"></div>
+
         <h1>Rajiv Vakani</h1>
         <p class="hero-tagline">Unlock nutrition that truly fits your plate and your principles.<br>Actionable, evidence-based guidance for lasting well-being.</p>
     </header>
@@ -133,7 +144,7 @@
         }
     });
 </script>
-<!-- Link to the new animations.js file -->
+<!-- Link to the animations.js file -->
 <script src="animations.js"></script>
 </body>
 </html>
