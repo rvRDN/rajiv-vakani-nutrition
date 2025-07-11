@@ -235,28 +235,48 @@ h3 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
 }
 
-/* REVISED: Newsletter Icon Styling for more impact */
+/* NEW: Newsletter Icon Wrapper Styling */
+.newsletter-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Space below the entire icon/title group */
+}
+
 .newsletter-icon {
-    width: 120px; /* Increased size for more impact */
-    height: 120px;
-    margin-bottom: 25px; /* More space below the icon */
-    object-fit: contain; /* Ensure the whole icon is visible */
-    /* Add a stronger, more defined shadow */
-    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.2)); /* More pronounced shadow */
-    transition: transform 0.3s ease; /* Add transition for subtle hover effect */
+    width: 100px; /* Adjusted size for better balance */
+    height: 100px;
+    object-fit: contain;
+    padding: 15px; /* Padding inside the background shape */
+    border-radius: 50%; /* Make it a circle */
+    background-color: #e0e6ed; /* Light grey-blue background for the icon */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for subtle hover effect */
+    margin-bottom: 15px; /* Space between icon and title */
 }
 
 .newsletter-icon:hover {
-    transform: scale(1.05); /* Slight scale up on hover */
+    transform: translateY(-3px) scale(1.03); /* Slight lift and scale on hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
 }
-
 
 .benefit-item h3 {
     color: #357ca5; /* New Primary Blue for benefit headings */
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    text-align: center; /* Center the newsletter card titles */
+    font-size: 1.8em; /* Slightly larger for main title */
+    margin-bottom: 5px; /* Reduced margin to bring "Newsletter" closer */
+    line-height: 1.2;
 }
+
+.newsletter-type {
+    font-size: 1em; /* Smaller font for "Newsletter" */
+    color: #555;
+    margin-top: 0; /* Remove default paragraph margin */
+    margin-bottom: 20px; /* Space below "Newsletter" text */
+    font-weight: 500;
+    text-transform: uppercase; /* Make it uppercase for distinction */
+    letter-spacing: 1px;
+}
+
 
 .benefit-item p {
     font-size: 1em;
