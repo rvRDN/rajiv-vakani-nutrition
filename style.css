@@ -86,31 +86,23 @@ h3 {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
-/* Hero Section Specific Styles */
+/* Hero Section Specific Styles - ADJUSTED FOR PATTERN */
 .hero {
     background-color: #ffffff; /* White background for hero */
     padding: 100px 0; /* More vertical padding */
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for the section */
     text-align: center; /* Center content within the hero section */
-    position: relative; /* Needed for pseudo-elements */
+    position: relative; /* Needed for z-index */
     overflow: hidden; /* Hide anything overflowing */
-}
-
-/* Subtle gradient overlay for hero - ADJUSTED */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Adjusted colors for a slightly more noticeable gradient */
-    background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(220,228,235,0.8) 100%); /* Slightly darker end color */
-    z-index: 1; /* Ensure it's above any background image but below text */
+    /* New background pattern for hero */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f0f4f8' fill-opacity='0.5'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zm0-30V0H4v4H0v2h4v4h2V6H0V4h4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 60px 60px; /* Size of the pattern tile */
+    background-blend-mode: multiply; /* Blends the pattern with the background-color */
 }
 
 .hero h1, .hero-tagline {
-    position: relative; /* Bring text above the overlay */
+    position: relative; /* Ensure text is above the pattern */
     z-index: 2;
 }
 
@@ -146,7 +138,7 @@ h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/svg%3E"); /* Very subtle diagonal lines */
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); /* Very subtle diagonal lines */
     opacity: 0.5;
     z-index: 0;
 }
@@ -249,7 +241,7 @@ h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/svg%3E"); /* Same subtle diagonal lines */
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); /* Same subtle diagonal lines */
     opacity: 0.5;
     z-index: 0;
 }
