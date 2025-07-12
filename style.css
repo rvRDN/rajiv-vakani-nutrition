@@ -201,7 +201,7 @@ h3 {
 }
 
 .about-me .container {
-    position: relative; /* Bring content above pattern */
+    position: relative;
     z-index: 1;
 }
 
