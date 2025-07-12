@@ -875,10 +875,7 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: flex-start; /* Align content to the top */
-    /* Add initial state for scroll animation */
+    /* Initial state for animation */
     opacity: 0;
     transform: translateY(20px) scale(0.98);
 }
@@ -891,7 +888,7 @@ footer {
 
 .upcoming-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
 .upcoming-item h3 {
