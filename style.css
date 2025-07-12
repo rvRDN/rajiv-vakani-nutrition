@@ -296,14 +296,15 @@ h3 {
     border-radius: 50%;
     background-color: #ffffff;
     box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    /* Enhanced hover effect for newsletter icons */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     margin-bottom: 8px;
     border: 3px solid rgba(53, 124, 165, 0.1);
 }
 
 .newsletter-icon:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 18px 45px rgba(0,0,0,0.4);
+    transform: translateY(-5px) scale(1.1); /* More pronounced scale on hover */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45); /* Even more pronounced shadow/glow on hover */
     border-color: #357ca5;
 }
 
@@ -637,11 +638,28 @@ footer {
     font-size: 1.8em;
     font-weight: 700;
     text-decoration: none;
-    transition: color 0.3s ease;
+    /* Site logo pulse animation on load */
+    animation: pulseGlow 2s ease-out forwards;
+    transition: transform 0.2s ease-in-out; /* For hover effect */
 }
+
+/* Keyframes for subtle pulse glow */
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+    }
+    50% {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+    }
+}
+
 
 .site-logo:hover {
     color: #6bb0d8;
+    transform: scale(1.02); /* Slight scale on hover */
 }
 
 .nav-links {
@@ -858,11 +876,20 @@ footer {
     display: flex; /* Use flexbox */
     flex-direction: column; /* Stack content vertically */
     justify-content: flex-start; /* Align content to the top */
+    /* Add initial state for scroll animation */
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .topic-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
 .topic-item h3 {
