@@ -7,9 +7,39 @@
     <meta name="description" content="Subscribe to the Table Talk Newsletter for weekly science-backed nutrition insights, practical tips, and myth-busting. Eat well, think sharp, live light.">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <!-- Favicon link (consistent with homepage) -->
     <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- Grid Fix - TEMPORARY INLINE STYLES for debugging -->
+    <style>
+        .upcoming-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .upcoming-item {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .upcoming-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .topic-title { /* New class for h3 */
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333; /* Using a darker color for visibility */
+            margin-bottom: 0.5rem;
+        }
+        .topic-description { /* New class for p */
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555; /* Using a darker color for visibility */
+        }
+    </style>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
@@ -17,7 +47,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-0L41N5K2WV');
     </script>
 </head>
@@ -34,27 +63,24 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="table-talk.html">Table Talk Newsletter</a></li>
                 <li><a href="no-onion-no-garlic.html">No Onion, No Garlic Newsletter</a></li>
-                <li><a href="index.html#about-me">About Me</a></li> <!-- Link back to homepage section -->
-                <li><a href="index.html#contact-form">Contact</a></li> <!-- Link back to homepage section -->
+                <li><a href="index.html#about-me">About Me</a></li>
+                <li><a href="index.html#contact-form">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section for Newsletter Page - Enhanced with Video Background & Logo -->
     <header class="hero newsletter-hero">
-        <!-- Video Background Element (consistent with homepage) -->
         <video autoplay muted loop playsinline class="hero-video-background">
-            <source src="hero-background.mp4" type="video/mp4">
+            <source src="hero-background.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
-        <!-- Overlay for readability and blending (consistent with homepage) -->
         <div class="hero-overlay"></div>
 
         <div class="newsletter-hero-content">
-            <img src="icons/table-talk-logo.png" alt="Table Talk Newsletter Logo" class="newsletter-hero-logo">
+            <img src="icons/table-talk-logo.png" alt="Table Talk Newsletter Logo" class="newsletter-hero-logo" />
             <h1>Table Talk</h1>
             <p class="hero-tagline">
-                <span>Eat well. Think sharp. Live light.</span><br>
+                <span>Eat well. Think sharp. Live light.</span><br />
                 <span>Because good food deserves better conversation.</span>
             </p>
         </div>
@@ -63,7 +89,7 @@
     <section class="newsletter-intro animate-on-scroll">
         <div class="container">
             <h2>Unpacking Nutrition, One Conversation at a Time</h2>
-            <p>The Table Talk Newsletter is your weekly dose of <strong>nutrition without the noise</strong>. Actionable tips, myth-busting, and meaningful insights - for people who just want the truth, served straight. <strong>No gimmicks. Just clarity.</strong></p>
+            <p>The Table Talk Newsletter is your weekly dose of <strong>nutrition without the noise</strong>. Actionable tips, myth-busting, and meaningful insights — for people who just want the truth, served straight. <strong>No gimmicks. Just clarity.</strong></p>
             <p>In a world full of conflicting dietary advice, we cut through the noise to bring you information rooted in evidence, designed to fit seamlessly into your real life.</p>
         </div>
     </section>
@@ -92,36 +118,35 @@
         </div>
     </section>
 
-    <!-- New Section: What's Coming (with new topics from other AI) -->
     <section class="upcoming-topics animate-on-scroll">
         <div class="container">
             <h2>Upcoming Issues</h2>
             <div class="upcoming-grid">
-                <!-- ✅ Yellow Test Box - Added to confirm visibility -->
+                <!-- ✅ Yellow Test Box -->
                 <div style="background-color: yellow; padding: 20px; border: 1px solid #ccc; border-radius: 8px; text-align: center; font-weight: bold; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                     ✅ This yellow test box is showing — your grid is working!
                 </div>
 
-                <!-- 🟢 Your real upcoming items go below (using upcoming-item class) -->
+                <!-- 🟢 Your real upcoming items go below (using topic-title/topic-description classes) -->
                 <div class="upcoming-item">
-                    <h3>Food Label Confusion</h3>
-                    <p>What they don’t want you to know about ingredient lists, and how to read between the lines.</p>
+                    <h3 class="topic-title">Food Label Confusion</h3>
+                    <p class="topic-description">What they don’t want you to know about ingredient lists, and how to read between the lines.</p>
                 </div>
                 <div class="upcoming-item">
-                    <h3>The Case for Bitter</h3>
-                    <p>Why our diets have lost this essential taste — and what that’s doing to our bodies.</p>
+                    <h3 class="topic-title">The Case for Bitter</h3>
+                    <p class="topic-description">Why our diets have lost this essential taste — and what that’s doing to our bodies.</p>
                 </div>
                 <div class="upcoming-item">
-                    <h3>What You're Really Craving</h3>
-                    <p>Hunger, dopamine, and the illusion of control. How modern food makes it harder to stop.</p>
+                    <h3 class="topic-title">What You're Really Craving</h3>
+                    <p class="topic-description">Hunger, dopamine, and the illusion of control. How modern food makes it harder to stop.</p>
                 </div>
                 <div class="upcoming-item">
-                    <h3>Beyond Protein</h3>
-                    <p>The misunderstood nutrient — and why athletes and vegetarians are both at risk of missing key types.</p>
+                    <h3 class="topic-title">Beyond Protein</h3>
+                    <p class="topic-description">The misunderstood nutrient — and why athletes and vegetarians are both at risk of missing key types.</p>
                 </div>
                 <div class="upcoming-item">
-                    <h3>Fiber, Ferments & Forgotten Fuel</h3>
-                    <p>A gut check: How to feed your microbiome and why it could change your immune, mental, and metabolic health.</p>
+                    <h3 class="topic-title">Fiber, Ferments & Forgotten Fuel</h3>
+                    <p class="topic-description">A gut check: How to feed your microbiome and why it could change your immune, mental, and metabolic health.</p>
                 </div>
             </div>
             <p class="upcoming-note">Stay tuned for these and many more evidence-based discussions!</p>
@@ -142,18 +167,14 @@
     </footer>
 
     <script>
-        // JavaScript for mobile navigation toggle
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
-
             if (menuToggle && navLinks) {
                 menuToggle.addEventListener('click', function() {
                     navLinks.classList.toggle('active');
-                    menuToggle.classList.toggle('active'); // Also toggle class on button for hamburger animation
+                    menuToggle.classList.toggle('active');
                 });
-
-                // Close menu when a link is clicked (useful for single-page navigation)
                 navLinks.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', function() {
                         navLinks.classList.remove('active');
@@ -163,7 +184,6 @@
             }
         });
     </script>
-    <!-- Link to the animations.js file (consistent with homepage) -->
     <script src="animations.js"></script>
 </body>
 </html>
