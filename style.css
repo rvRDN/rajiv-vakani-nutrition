@@ -783,17 +783,70 @@ footer {
     }
 }
 
-/* --- Scroll-Triggered Animation Styles --- */
-
-/* Initial state: hidden and slightly moved down */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px); /* Start 20px below its final position */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+/* NEW: Upcoming Topics Section Styling */
+.upcoming-topics {
+    background-color: #e9f0f5; /* Light background for contrast */
+    padding: 80px 0;
+    /* Removed text-align: center here so individual items can align left */
 }
 
-/* Final state: visible and in original position */
-.animate-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+.upcoming-topics .container {
+    text-align: left; /* Ensure content within container is left-aligned */
+}
+
+.upcoming-topics h2 {
+    text-align: center; /* Keep the section heading centered */
+    margin-bottom: 40px; /* Space below heading */
+}
+
+.upcoming-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 25px; /* Space between items */
+    max-width: 900px;
+    margin: 40px auto; /* Center the grid */
+}
+
+.topic-item {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: left; /* Align text left within each topic item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topic-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.topic-item h3 {
+    color: #357ca5; /* Primary blue for topic headings */
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    text-align: left; /* Ensure heading is left-aligned */
+}
+
+.topic-item p {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.6;
+    text-align: left; /* Ensure paragraph is left-aligned */
+}
+
+.upcoming-note {
+    font-size: 1.2em; /* Slightly larger for emphasis */
+    color: #357ca5; /* Primary blue for distinctness */
+    margin-top: 50px; /* More space above the note */
+    font-style: normal; /* Remove italic */
+    font-weight: 700; /* Make it bolder */
+    text-align: center; /* Ensure it's centered */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 20px; /* Add padding to make it feel like a block */
+    background-color: #e0e6ed; /* Light background for the note */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow */
 }
