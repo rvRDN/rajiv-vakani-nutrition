@@ -519,8 +519,19 @@ footer {
     box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     text-align: left; /* Align text within items */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 5px solid #5C8D55; /* Accent green top border for content items */
+    /* This border will be overridden by specific classes for each newsletter type */
+    border-top: 5px solid; /* Default for content items */
 }
+
+/* Specific content-item borders for Table Talk and No Onion, No Garlic */
+.table-talk-card-content-item {
+    border-color: #357ca5; /* Primary Blue for Table Talk content items */
+}
+
+.no-onion-no-garlic-card-content-item {
+    border-color: #5C8D55; /* Accent Green for No Onion, No Garlic content items */
+}
+
 
 .content-item:hover {
     transform: translateY(-5px); /* Subtle lift on hover */
