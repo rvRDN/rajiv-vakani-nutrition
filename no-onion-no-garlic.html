@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <!-- Grid Fix - TEMPORARY INLINE STYLES for debugging -->
+    <!-- Grid Fix - TEMPORARY INLINE STYLES for debugging (removed initial opacity/transform) -->
     <style>
         .upcoming-grid {
             display: grid;
@@ -23,6 +23,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Removed initial opacity and transform for debugging */
         }
         .upcoming-item:hover {
             transform: translateY(-5px);
@@ -115,7 +116,8 @@
         </div>
     </section>
 
-    <section class="upcoming-topics animate-on-scroll">
+    <!-- Removed animate-on-scroll from this section for debugging -->
+    <section class="upcoming-topics">
         <div class="container">
             <h2>Upcoming Issues</h2>
             <div class="upcoming-grid">
