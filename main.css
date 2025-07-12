@@ -818,79 +818,79 @@ footer {
     .about-content p {
         max-width: 100%;
     }
+}
 
-    /* NEW: Upcoming Topics Section Styling */
-    .upcoming-topics {
-        background-color: #e9f0f5; /* Default background */
-        padding: 80px 0; /* Default padding */
-    }
+/* NEW: Upcoming Topics Section Styling */
+.upcoming-topics {
+    background-color: #e9f0f5 !important; /* Force background color */
+    padding: 80px 0 !important; /* Force padding */
+}
 
-    .upcoming-topics .container {
-        text-align: left;
-    }
+.upcoming-topics .container {
+    text-align: left !important;
+}
 
-    .upcoming-topics h2 {
-        text-align: center;
-        margin-bottom: 40px;
-    }
+.upcoming-topics h2 {
+    text-align: center !important;
+    margin-bottom: 40px !important;
+}
 
-    .upcoming-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-        max-width: 900px;
-        margin: 40px auto;
-    }
+.upcoming-grid {
+    display: grid !important; /* Force grid display */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; /* Force responsive columns */
+    gap: 25px !important; /* Force gap */
+    max-width: 900px !important;
+    margin: 40px auto !important; /* Force centering */
+}
 
-    .upcoming-item {
-        background-color: #ffffff;
-        padding: 25px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        text-align: left;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        opacity: 0; /* Initial state for animation */
-        transform: translateY(20px) scale(0.98);
-    }
+.upcoming-item {
+    background-color: #ffffff !important; /* Force background color */
+    padding: 25px !important; /* Force padding */
+    border-radius: 8px !important; /* Force border-radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important; /* Force shadow */
+    text-align: left !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    opacity: 0 !important; /* Initial state for animation */
+    transform: translateY(20px) scale(0.98) !important;
+}
 
-    .animate-on-scroll.show .upcoming-item {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
+.animate-on-scroll.show .upcoming-item { /* Apply to children of animated sections */
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out !important;
+}
 
-    .upcoming-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-    }
+.upcoming-item:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15) !important;
+}
 
-    .topic-title {
-        color: #357ca5; /* Primary blue for consistency */
-        font-size: 1.4em;
-        margin-bottom: 10px;
-        text-align: left;
-    }
+.topic-title { /* Styling for h3 inside upcoming-item */
+    color: #357ca5 !important; /* Using primary blue for consistency */
+    font-size: 1.4em !important; /* Adjusted for better hierarchy */
+    margin-bottom: 10px !important;
+    text-align: left !important;
+}
 
-    .topic-description {
-        font-size: 0.95em;
-        color: #666;
-        line-height: 1.6;
-        text-align: left;
-    }
+.topic-description { /* Styling for p inside upcoming-item */
+    font-size: 0.95em !important;
+    color: #666 !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+}
 
-    .upcoming-note {
-        font-size: 1.2em;
-        color: #357ca5;
-        margin-top: 50px;
-        font-style: normal;
-        font-weight: 700;
-        text-align: center;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 15px 20px;
-        background-color: #e0e6ed;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+.upcoming-note {
+    font-size: 1.2em !important;
+    color: #357ca5 !important;
+    margin-top: 50px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    max-width: 700px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 15px 20px !important;
+    background-color: #e0e6ed !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
 }
