@@ -195,7 +195,7 @@ h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); /* Very subtle diagonal lines */
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     opacity: 0.5;
     z-index: 0;
 }
@@ -838,85 +838,79 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    /* NEW: Upcoming Topics Section Styling */
+    .upcoming-topics {
+        background-color: #e9f0f5;
+        padding: 80px 0;
+    }
+
+    .upcoming-topics .container {
+        text-align: left;
+    }
+
+    .upcoming-topics h2 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .upcoming-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        max-width: 900px;
+        margin: 40px auto;
+    }
+
     /* Renamed .topic-item to .upcoming-item */
     .upcoming-item {
-        padding: 20px;
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Initial state for animation */
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
     }
-}
 
-/* NEW: Upcoming Topics Section Styling */
-.upcoming-topics {
-    background-color: #e9f0f5;
-    padding: 80px 0;
-}
+    .animate-on-scroll.show .upcoming-item { /* Apply to children of animated sections */
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
 
-.upcoming-topics .container {
-    text-align: left;
-}
+    .upcoming-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
 
-.upcoming-topics h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
+    .topic-title { /* Styling for h3 inside upcoming-item */
+        color: #357ca5; /* Using primary blue for consistency */
+        font-size: 1.4em; /* Adjusted for better hierarchy */
+        margin-bottom: 10px;
+        text-align: left;
+    }
 
-.upcoming-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 900px;
-    margin: 40px auto;
-}
+    .topic-description { /* Styling for p inside upcoming-item */
+        font-size: 0.95em;
+        color: #666;
+        line-height: 1.6;
+        text-align: left;
+    }
 
-/* Renamed .topic-item to .upcoming-item */
-.upcoming-item {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Initial state for animation */
-    opacity: 0;
-    transform: translateY(20px) scale(0.98);
-}
-
-.animate-on-scroll.show .upcoming-item { /* Apply to children of animated sections */
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.upcoming-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-}
-
-.upcoming-item h3 {
-    color: #357ca5; /* Using primary blue for consistency */
-    font-size: 1.4em; /* Adjusted for better hierarchy */
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-.upcoming-item p {
-    font-size: 0.95em;
-    color: #666;
-    line-height: 1.6;
-    text-align: left;
-}
-
-.upcoming-note {
-    font-size: 1.2em;
-    color: #357ca5;
-    margin-top: 50px;
-    font-style: normal;
-    font-weight: 700;
-    text-align: center;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px 20px;
-    background-color: #e0e6ed;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+    .upcoming-note {
+        font-size: 1.2em;
+        color: #357ca5;
+        margin-top: 50px;
+        font-style: normal;
+        font-weight: 700;
+        text-align: center;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 15px 20px;
+        background-color: #e0e6ed;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }

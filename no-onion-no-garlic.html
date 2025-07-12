@@ -9,39 +9,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <!-- Grid Fix - TEMPORARY INLINE STYLES (cleaned for debugging, opacity/transform moved to CSS) -->
-    <style>
-        .upcoming-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .upcoming-item {
-            background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            /* opacity and transform for animation initial state are now in style.css */
-        }
-        .upcoming-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-        .topic-title { /* New class for h3 */
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #333; /* Using a darker color for visibility */
-            margin-bottom: 0.5rem;
-        }
-        .topic-description { /* New class for p */
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #555; /* Using a darker color for visibility */
-        }
-    </style>
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
     <script>
@@ -116,16 +83,10 @@
         </div>
     </section>
 
-    <!-- Added animate-on-scroll back to this section -->
     <section class="upcoming-topics animate-on-scroll">
         <div class="container">
             <h2>Upcoming Issues</h2>
             <div class="upcoming-grid">
-                <!-- ✅ Yellow Test Box for debugging -->
-                <div style="background-color: yellow; padding: 20px; border: 1px solid #ccc; border-radius: 8px; text-align: center; font-weight: bold; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                    ✅ This yellow test box is showing — your grid is working!
-                </div>
-
                 <!-- 🟢 Your real upcoming items go below (using topic-title/topic-description classes) -->
                 <div class="upcoming-item">
                     <h3 class="topic-title">Gut Health and Jainism</h3>
