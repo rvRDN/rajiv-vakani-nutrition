@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Talk Newsletter | Science-Backed Nutrition Insights</title>
+    <title>Table Talk Newsletter | Rajiv Vakani | Science-Backed Nutrition Insights</title>
     <meta name="description" content="Subscribe to the Table Talk Newsletter for weekly science-backed nutrition insights, practical tips, and myth-busting. Eat well, think sharp, live light.">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon link (consistent with homepage) -->
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
@@ -31,47 +34,88 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="table-talk.html">Table Talk Newsletter</a></li>
                 <li><a href="no-onion-no-garlic.html">No Onion, No Garlic Newsletter</a></li>
-                <li><a href="#about-me">About Me</a></li>
-                <li><a href="#contact-form">Contact</a></li>
+                <li><a href="index.html#about-me">About Me</a></li> <!-- Link back to homepage section -->
+                <li><a href="index.html#contact-form">Contact</a></li> <!-- Link back to homepage section -->
             </ul>
         </div>
     </nav>
-    <header class="hero">
-        <h1>Table Talk Newsletter</h1>
-        <p class="hero-tagline">Eat well. Think sharp. Live light.<br>Because good food deserves better conversation.</p>
+
+    <!-- Hero Section for Newsletter Page - Enhanced with Video Background & Logo -->
+    <header class="hero newsletter-hero">
+        <!-- Video Background Element (consistent with homepage) -->
+        <video autoplay muted loop playsinline class="hero-video-background">
+            <source src="hero-background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Overlay for readability and blending (consistent with homepage) -->
+        <div class="hero-overlay"></div>
+
+        <div class="newsletter-hero-content">
+            <img src="icons/table-talk-logo.png" alt="Table Talk Newsletter Logo" class="newsletter-hero-logo">
+            <h1>Table Talk</h1>
+            <p class="hero-tagline">Eat well. Think sharp. Live light.<br>Because good food deserves better conversation.</p>
+        </div>
     </header>
 
-    <section class="newsletter-intro">
-        <h2>Unpacking Nutrition, One Conversation at a Time</h2>
-        <p>The Table Talk Newsletter is your weekly dose of science-backed nutrition insights, practical tips, and myth-busting to help you build a healthier relationship with food and your body.</p>
-        <p>In a world full of conflicting dietary advice, we cut through the noise to bring you actionable information rooted in evidence, designed to fit seamlessly into your real life.</p>
+    <section class="newsletter-intro animate-on-scroll">
+        <div class="container">
+            <h2>Unpacking Nutrition, One Conversation at a Time</h2>
+            <p>The Table Talk Newsletter is your weekly dose of science-backed nutrition insights, practical tips, and myth-busting to help you build a healthier relationship with food and your body.</p>
+            <p>In a world full of conflicting dietary advice, we cut through the noise to bring you actionable information rooted in evidence, designed to fit seamlessly into your real life.</p>
+        </div>
     </section>
 
-    <section class="what-you-get">
-        <h2>What You'll Get Inside:</h2>
-        <div class="content-grid">
-            <div class="content-item">
-                <h3>Science-Backed Insights</h3>
-                <p>Digestible explanations of the latest nutritional science, empowering you with knowledge.</p>
-            </div>
-            <div class="content-item">
-                <h3>Practical, Actionable Tips</h3>
-                <p>Easy-to-implement strategies for healthier eating, mindful living, and sustainable habits.</p>
-            </div>
-            <div class="content-item">
-                <h3>Myth-Busting & Clarity</h3>
-                <p>Separating fact from fiction in the world of diet trends and wellness claims.</p>
-            </div>
-            <div class="content-item">
-                <h3>Thoughtful Conversations</h3>
-                <p>Exploring the 'why' behind our food choices and fostering a healthier mindset around eating.</p>
+    <section class="what-you-get animate-on-scroll">
+        <div class="container">
+            <h2>What You'll Get Inside:</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <h3>Science-Backed Insights</h3>
+                    <p>Digestible explanations of the latest nutritional science, empowering you with knowledge.</p>
+                </div>
+                <div class="content-item">
+                    <h3>Practical, Actionable Tips</h3>
+                    <p>Easy-to-implement strategies for healthier eating, mindful living, and sustainable habits.</p>
+                </div>
+                <div class="content-item">
+                    <h3>Myth-Busting & Clarity</h3>
+                    <p>Separating fact from fiction in the world of diet trends and wellness claims.</p>
+                </div>
+                <div class="content-item">
+                    <h3>Thoughtful Conversations</h3>
+                    <p>Exploring the 'why' behind our food choices and fostering a healthier mindset around eating.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-subscribe">
-        <h2>Ready to Join the Conversation?</h2>
-        <a href="https://subscribepage.io/Q38UKi" class="button">Subscribe to Table Talk</a>
+    <!-- New Section: What's Coming (instead of past issues) -->
+    <section class="upcoming-topics animate-on-scroll">
+        <div class="container">
+            <h2>What's Coming Next in Table Talk:</h2>
+            <div class="upcoming-grid">
+                <div class="topic-item">
+                    <h3>Decoding Gut Health</h3>
+                    <p>A deep dive into the microbiome, probiotics, and foods that support a happy gut.</p>
+                </div>
+                <div class="topic-item">
+                    <h3>Mindful Eating Practices</h3>
+                    <p>Strategies to reconnect with hunger cues and find joy in every meal.</p>
+                </div>
+                <div class="topic-item">
+                    <h3>Sustainable Protein Sources</h3>
+                    <p>Exploring plant-based and ethical protein options for a balanced diet.</p>
+                </div>
+            </div>
+            <p class="upcoming-note">Stay tuned for these and many more evidence-based discussions!</p>
+        </div>
+    </section>
+
+    <section class="cta-subscribe animate-on-scroll">
+        <div class="container">
+            <h2>Ready to Join the Conversation?</h2>
+            <a href="https://subscribepage.io/Q38UKi" class="button">Subscribe to Table Talk</a>
+        </div>
     </section>
 
     <footer>
@@ -79,6 +123,7 @@
             <p>&copy; 2024 Rajiv Vakani. All rights reserved.</p>
         </div>
     </footer>
+
     <script>
         // JavaScript for mobile navigation toggle
         document.addEventListener('DOMContentLoaded', function() {
@@ -101,5 +146,7 @@
             }
         });
     </script>
+    <!-- Link to the animations.js file (consistent with homepage) -->
+    <script src="animations.js"></script>
 </body>
 </html>

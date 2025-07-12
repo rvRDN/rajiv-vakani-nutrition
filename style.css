@@ -147,6 +147,38 @@ h3 {
     line-height: 1.5;
 }
 
+/* Specific styles for newsletter hero section */
+.newsletter-hero {
+    padding: 80px 0; /* Slightly less padding than homepage hero */
+}
+
+.newsletter-hero-content {
+    position: relative; /* Ensure content is above overlay */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.newsletter-hero-logo {
+    width: 180px; /* Larger size for hero logo */
+    height: 180px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35); /* Prominent shadow */
+    border: 4px solid #357ca5; /* Primary blue border */
+    margin-bottom: 30px; /* Space below logo */
+}
+
+.newsletter-hero h1 {
+    font-size: 4.5em; /* Even larger for newsletter title */
+    color: #2c3e50; /* Darker color for strong contrast */
+    margin-bottom: 20px;
+}
+
 /* About Me Section Specific Styles */
 .about-me {
     background-color: #e9f0f5; /* A slightly darker blue-grey for contrast */
@@ -729,6 +761,25 @@ footer {
     /* Responsive adjustment for About Me paragraph width on small screens */
     .about-content p {
         max-width: 100%; /* Allow paragraphs to take full width when stacked */
+    }
+
+    /* Responsive adjustments for newsletter hero */
+    .newsletter-hero h1 {
+        font-size: 3em; /* Adjust for smaller screens */
+    }
+
+    .newsletter-hero-logo {
+        width: 120px; /* Adjust logo size for smaller screens */
+        height: 120px;
+    }
+
+    /* Responsive adjustments for content grid on smaller screens */
+    .content-grid {
+        grid-template-columns: 1fr; /* Stack content items vertically on very small screens */
+    }
+
+    .topic-item {
+        padding: 20px; /* Adjust padding for smaller screens */
     }
 }
 
