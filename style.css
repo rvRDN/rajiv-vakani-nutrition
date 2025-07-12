@@ -600,7 +600,7 @@ footer {
 
 /* --- Header Navigation Menu Styles --- */
 .main-nav {
-    background-color: #34495e; /* Darker blue-grey, similar to footer */
+    background-color: #34495e; /* Darker blue-grey for footer */
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky; /* Makes the nav stick to the top when scrolling */
