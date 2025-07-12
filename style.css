@@ -247,19 +247,18 @@ h3 {
     width: 120px; /* Increased size for more impact */
     height: 120px;
     object-fit: contain; /* Ensure the whole icon is visible */
-    /* Removed padding here, as the new logos have transparent backgrounds and consistent internal sizing */
     border-radius: 50%; /* Make it a circle */
     background-color: #ffffff; /* White background for the icon, to make it pop */
     box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for subtle hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition for subtle hover effect */
     margin-bottom: 15px; /* Space between icon and title */
-    /* Add a subtle border to the icon container for more definition */
     border: 2px solid rgba(53, 124, 165, 0.1); /* Very light primary blue border */
 }
 
 .newsletter-icon:hover {
     transform: translateY(-3px) scale(1.03); /* Slight lift and scale on hover */
     box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
+    border-color: #357ca5; /* Primary blue border on hover for more interaction */
 }
 
 .benefit-item h3 {
@@ -285,6 +284,7 @@ h3 {
     color: #555;
     text-align: center; /* Center paragraph text within benefit-item cards */
     margin: 0; /* Remove default paragraph margin */
+    line-height: 1.7; /* Slightly increased line height for readability */
 }
 
 .benefit-item .button {
