@@ -1,35 +1,31 @@
 // animations.js
 
 document.addEventListener('DOMContentLoaded', function() {
-    // --- Scroll-Triggered Animations Logic ---
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    // --- Scroll-Triggered Animations Logic (using IntersectionObserver) ---
+    // Select both sections with 'animate-on-scroll' and individual 'upcoming-item' elements
+    // The 'upcoming-item' elements will now be observed directly for animation
+    const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll, .upcoming-item');
 
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.left >= 0 &&
-            rect.bottom >= 0 &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
+    const observerOptions = {
+        root: null, // relative to the viewport
+        rootMargin: '0px',
+        threshold: 0.1 // percentage of element visible to trigger
+    };
 
-    function handleScrollAnimations() {
-        animatedElements.forEach(el => {
-            if (isElementInViewport(el)) {
-                el.classList.add('is-visible');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show'); // Use 'show' class for visibility
+                observer.unobserve(entry.target); // Stop observing once animated
             }
         });
-    }
+    }, observerOptions);
 
-    // Initial check for animations on page load
-    handleScrollAnimations();
+    animateOnScrollElements.forEach(element => {
+        observer.observe(element);
+    });
 
-    // Listen for scroll events for animations
-    window.addEventListener('scroll', handleScrollAnimations);
-
-
-    // --- Smooth Scrolling to Anchors Logic ---
+    // --- Smooth Scrolling to Anchors Logic (from your original file) ---
     // Select all anchor links that point to IDs on the same page
     // This targets links starting with '#' that are not just '#' alone
     document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
