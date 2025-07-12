@@ -74,7 +74,7 @@ h3 {
     border-radius: 8px; /* Rounded corners */
     text-decoration: none; /* Remove underline */
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 1.2em; /* Slightly increased font size for better legibility */
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth hover effects */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     margin-top: 20px; /* Space above button */
@@ -229,7 +229,7 @@ h3 {
     align-items: center; /* Centers items horizontally within benefit-item (e.g., buttons) */
     text-align: center; /* Ensure text inside cards is centered */
     /* Removed default background-color here, will apply specific ones below */
-    border-top: 5px solid; /* Placeholder for accent border */
+    border-top: 10px solid; /* Increased border thickness for more presence */
 }
 
 /* Specific Card Backgrounds and Borders */
@@ -254,7 +254,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px; /* Space below the entire icon/title group */
+    margin-bottom: 10px; /* Reduced space below the entire icon/title group */
 }
 
 .newsletter-icon {
@@ -263,15 +263,15 @@ h3 {
     object-fit: contain; /* Ensure the whole icon is visible */
     border-radius: 50%; /* Make it a circle */
     background-color: #ffffff; /* White background for the icon, to make it pop */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* More pronounced shadow for depth */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3); /* More pronounced shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition for subtle hover effect */
-    margin-bottom: 15px; /* Space between icon and title */
+    margin-bottom: 8px; /* Reduced space between icon and title */
     border: 3px solid rgba(53, 124, 165, 0.1); /* Slightly thicker, very light primary blue border */
 }
 
 .newsletter-icon:hover {
     transform: translateY(-5px) scale(1.05); /* Slightly more lift and scale on hover */
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25); /* Even more pronounced shadow on hover */
+    box-shadow: 0 18px 45px rgba(0,0,0,0.4); /* Even more pronounced shadow on hover */
     border-color: #357ca5; /* Primary blue border on hover for more interaction */
 }
 
