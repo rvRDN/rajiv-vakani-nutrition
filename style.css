@@ -292,61 +292,61 @@ h3 {
 .newsletter-icon {
     width: 140px; /* Increased size for more impact */
     height: 140px;
-    object-fit: contain; /* Ensure the whole icon is visible */
-    border-radius: 50%; /* Make it a circle */
-    background-color: #ffffff; /* White background for the icon, to make it pop */
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3); /* More pronounced shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition for subtle hover effect */
-    margin-bottom: 8px; /* Reduced space between icon and title */
-    border: 3px solid rgba(53, 124, 165, 0.1); /* Slightly thicker, very light primary blue border */
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    margin-bottom: 8px;
+    border: 3px solid rgba(53, 124, 165, 0.1);
 }
 
 .newsletter-icon:hover {
-    transform: translateY(-5px) scale(1.05); /* Slightly more lift and scale on hover */
-    box-shadow: 0 18px 45px rgba(0,0,0,0.4); /* Even more pronounced shadow on hover */
-    border-color: #357ca5; /* Primary blue border on hover for more interaction */
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.4);
+    border-color: #357ca5;
 }
 
 .benefit-item h3 {
-    color: #357ca5; /* New Primary Blue for benefit headings */
-    font-size: 1.9em; /* Slightly larger for main title */
-    margin-bottom: 5px; /* Reduced margin to bring "Newsletter" closer */
+    color: #357ca5;
+    font-size: 1.9em;
+    margin-bottom: 5px;
     line-height: 1.2;
 }
 
 .newsletter-type {
-    font-size: 1.05em; /* Slightly larger font for "Newsletter" */
-    color: #444; /* Slightly darker color for better contrast */
-    margin-top: 0; /* Remove default paragraph margin */
-    margin-bottom: 20px; /* Space below "Newsletter" text */
-    font-weight: 600; /* Make it bolder */
-    text-transform: uppercase; /* Make it uppercase for distinction */
-    letter-spacing: 1.5px; /* Increased letter spacing */
+    font-size: 1.05em;
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 
 .benefit-item p {
     font-size: 1em;
     color: #555;
-    text-align: center; /* Center paragraph text within benefit-item cards */
-    margin: 0; /* Remove default paragraph margin */
-    line-height: 1.7; /* Slightly increased line height for readability */
+    text-align: center;
+    margin: 0;
+    line-height: 1.7;
 }
 
 .benefit-item .button {
-    margin-top: 25px; /* Increase margin for buttons in offerings */
+    margin-top: 25px;
 }
 
 /* Call to Action Section */
 .call-to-action-section {
-    background-color: #357ca5; /* New Primary Blue for a strong call to action */
+    background-color: #357ca5;
     color: #ffffff;
     padding: 80px 0;
-    text-align: center; /* Center content within this section */
+    text-align: center;
 }
 
 .call-to-action-section h2 {
-    color: #ffffff; /* White heading on blue background */
+    color: #ffffff;
 }
 
 .call-to-action-section p {
@@ -355,7 +355,7 @@ h3 {
 
 /* --- Contact Form Section Styles --- */
 .contact-section {
-    background-color: #e9f0f5; /* Light background for contrast, similar to about-me */
+    background-color: #e9f0f5;
     padding: 80px 0;
     text-align: center;
     position: relative;
@@ -370,13 +370,13 @@ h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); /* Very subtle diagonal lines */
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     opacity: 0.5;
     z-index: 0;
 }
 
 .contact-section .container {
-    position: relative; /* Bring content above pattern */
+    position: relative;
     z-index: 1;
 }
 
@@ -384,29 +384,29 @@ h3 {
     font-size: 1.1em;
     color: #555;
     max-width: 700px;
-    margin: 0 auto 40px auto; /* Space below intro text */
+    margin: 0 auto 40px auto;
     line-height: 1.6;
 }
 
 .contact-form {
-    max-width: 600px; /* Limit form width for better readability */
-    margin: 0 auto; /* Center the form */
+    max-width: 600px;
+    margin: 0 auto;
     background-color: #ffffff;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow for the form */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column; /* Stack form elements vertically */
-    gap: 20px; /* Space between form groups */
+    flex-direction: column;
+    gap: 20px;
 }
 
 .form-group {
-    text-align: left; /* Align labels and inputs to the left within their group */
-    margin-bottom: 15px; /* Space between form groups */
+    text-align: left;
+    margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block; /* Make labels appear above inputs */
+    display: block;
     margin-bottom: 8px;
     font-weight: 600;
     color: #2c3e50;
@@ -416,35 +416,34 @@ h3 {
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
-    width: calc(100% - 24px); /* Full width minus padding */
+    width: calc(100% - 24px);
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1em;
     font-family: 'Inter', sans-serif;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #357ca5; /* New Primary Blue border on focus */
-    box-shadow: 0 0 0 3px rgba(53, 124, 165, 0.2); /* Soft New Primary Blue glow on focus */
+    border-color: #357ca5;
+    box-shadow: 0 0 0 3px rgba(53, 124, 165, 0.2);
 }
 
 .form-group textarea {
-    resize: vertical; /* Allow vertical resizing only */
-    min-height: 120px; /* Minimum height for textarea */
+    resize: vertical;
+    min-height: 120px;
 }
 
 .contact-form .button {
-    /* Override general button margin-top for form context */
     margin-top: 0;
-    align-self: center; /* Center the button within the form */
-    width: auto; /* Allow button to size naturally based on padding */
-    padding: 15px 40px; /* Slightly larger padding for form button */
+    align-self: center;
+    width: auto;
+    padding: 15px 40px;
 }
 
 /* Hide Netlify honeypot field visually */
@@ -452,10 +451,29 @@ h3 {
     display: none;
 }
 
+/* Skip link styling */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #357ca5;
+    color: white;
+    padding: 8px;
+    z-index: 9999;
+    text-decoration: none;
+    border-radius: 0 0 5px 5px;
+    transition: top 0.3s ease-in-out;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+
 /* Footer Styles */
 footer {
-    background-color: #34495e; /* Darker blue-grey for footer */
-    color: #ecf0f1; /* Light text */
+    background-color: #34495e;
+    color: #ecf0f1;
     padding: 30px 0;
     font-size: 0.9em;
     text-align: center;
@@ -464,7 +482,7 @@ footer {
 /* --- Newsletter Specific Styles (for table-talk.html and no-onion-no-garlic.html) --- */
 
 .newsletter-intro {
-    background-color: #f8f8f8; /* Light background for contrast */
+    background-color: #f8f8f8;
     padding: 60px 20px;
     text-align: center;
     max-width: 900px;
@@ -474,9 +492,9 @@ footer {
 }
 
 .newsletter-intro h2 {
-    color: #357ca5; /* New Primary Blue for newsletter intro heading */
+    color: #357ca5;
     margin-bottom: 20px;
-    font-size: 2.2em; /* Slightly larger for emphasis */
+    font-size: 2.2em;
 }
 
 .newsletter-intro p {
@@ -488,8 +506,8 @@ footer {
 }
 
 .newsletter-intro p strong {
-    font-weight: 700; /* Make strong text bolder */
-    color: #2c3e50; /* Darker color for emphasized text */
+    font-weight: 700;
+    color: #2c3e50;
 }
 
 .what-you-get {
@@ -498,18 +516,18 @@ footer {
 }
 
 .what-you-get h2 {
-    color: #357ca5; /* New Primary Blue for what-you-get heading */
+    color: #357ca5;
     margin-bottom: 40px;
     font-size: 2.2em;
 }
 
 .content-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Ensures 2 columns on wider screens */
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    max-width: 900px; /* Adjusted max-width to better fit 2 columns */
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 20px; /* Add some padding to the grid itself for smaller screen aesthetic */
+    padding: 0 20px;
 }
 
 .content-item {
@@ -517,9 +535,8 @@ footer {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    text-align: left; /* Align text within items */
+    text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* This border will be overridden by specific classes for each newsletter type */
     border-top: 5px solid; /* Default for content items */
 }
 
@@ -534,89 +551,89 @@ footer {
 
 
 .content-item:hover {
-    transform: translateY(-5px); /* Subtle lift on hover */
-    box-shadow: 0 8px 18px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
 .content-item h3 {
-    color: #5C8D55; /* Accent Green */
+    color: #5C8D55;
     margin-bottom: 15px;
     font-size: 1.5em;
-    text-align: left; /* Align heading left within content item */
+    text-align: left;
 }
 
 .content-item p {
     font-size: 1em;
     line-height: 1.7;
     color: #666;
-    text-align: left; /* Align paragraph left within content item */
+    text-align: left;
 }
 
 .content-item p strong {
     font-weight: 700;
-    color: #444; /* Darker color for emphasized text within content items */
+    color: #444;
 }
 
 .cta-subscribe {
-    background-color: #e6f7ff; /* Light blue background for CTA */
+    background-color: #e6f7ff;
     padding: 80px 20px;
     text-align: center;
     margin-top: 60px;
 }
 
 .cta-subscribe h2 {
-    color: #357ca5; /* New Primary Blue for CTA heading */
+    color: #357ca5;
     font-size: 2.5em;
     margin-bottom: 30px;
 }
 
 /* Styling for the two buttons side-by-side */
 .cta-subscribe .button {
-    display: inline-block; /* Allows padding and margin to be applied properly */
+    display: inline-block;
     padding: 15px 40px;
     font-size: 1.2em;
     text-decoration: none;
-    background-color: #D97047; /* Accent Orange/Terracotta */
+    background-color: #D97047;
     color: white;
     border-radius: 5px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow to transition */
-    margin: 10px; /* Add margin around buttons */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
 }
 
 .cta-subscribe .button:hover {
-    background-color: #BF5C36; /* Darker Accent Orange/Terracotta on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    background-color: #BF5C36;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Style for the 'Subscribe Now' button on index.html */
 .benefits-grid .button.subscribe-button {
-    background-color: #D97047; /* Accent Orange/Terracotta */
-    margin-left: 10px; /* Space between the two buttons */
+    background-color: #D97047;
+    margin-left: 10px;
 }
 
 .benefits-grid .button.subscribe-button:hover {
-    background-color: #BF5C36; /* Darker Accent Orange/Terracotta on hover */
+    background-color: #BF5C36;
 }
 
 /* --- Header Navigation Menu Styles --- */
 .main-nav {
-    background-color: #34495e; /* Darker blue-grey for footer */
+    background-color: #34495e;
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: sticky; /* Makes the nav stick to the top when scrolling */
+    position: sticky;
     top: 0;
-    z-index: 1000; /* Ensures nav is above other content */
+    z-index: 1000;
 }
 
 .nav-container {
     display: flex;
-    justify-content: space-between; /* Pushes logo to left, nav links to right */
-    align-items: center; /* Vertically centers items */
+    justify-content: space-between;
+    align-items: center;
 }
 
 .site-logo {
-    color: #ecf0f1; /* Light text color */
-    font-family: 'Lora', serif; /* Consistent with your main H1 */
+    color: #ecf0f1;
+    font-family: 'Lora', serif;
     font-size: 1.8em;
     font-weight: 700;
     text-decoration: none;
@@ -624,22 +641,22 @@ footer {
 }
 
 .site-logo:hover {
-    color: #6bb0d8; /* Lighter version of New Primary Blue on hover */
+    color: #6bb0d8;
 }
 
 .nav-links {
-    list-style: none; /* Remove bullet points */
+    list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Display links horizontally */
+    display: flex;
 }
 
 .nav-links li {
-    margin-left: 30px; /* Space between links */
+    margin-left: 30px;
 }
 
 .nav-links a {
-    color: #ecf0f1; /* Light text color */
+    color: #ecf0f1;
     text-decoration: none;
     font-weight: 500;
     font-size: 1em;
@@ -648,14 +665,14 @@ footer {
     transition: color 0.3s ease;
 }
 
-.nav-links a::after { /* Underline effect on hover */
+.nav-links a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #6bb0d8; /* Lighter version of New Primary Blue underline */
+    background-color: #6bb0d8;
     transition: width 0.3s ease-in-out;
 }
 
@@ -664,24 +681,24 @@ footer {
 }
 
 .nav-links a:hover {
-    color: #6bb0d8; /* Lighter version of New Primary Blue on hover */
+    color: #6bb0d8;
 }
 
 /* Mobile Menu Toggle (Hamburger Icon) */
 .menu-toggle {
-    display: none; /* Hidden by default on desktop */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
-    z-index: 1001; /* Ensure it's above the nav links when open */
+    z-index: 1001;
 }
 
 .hamburger {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #ecf0f1; /* Light color for hamburger lines */
+    background-color: #ecf0f1;
     margin: 5px 0;
     transition: all 0.3s ease;
 }
@@ -689,32 +706,32 @@ footer {
 /* Mobile Responsiveness for Navigation */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block; /* Show hamburger on mobile */
+        display: block;
     }
 
     .nav-links {
-        flex-direction: column; /* Stack links vertically */
-        background-color: #34495e; /* Same as nav background */
+        flex-direction: column;
+        background-color: #34495e;
         position: absolute;
-        top: 100%; /* Position below the nav bar */
+        top: 100%;
         left: 0;
         width: 100%;
         padding: 20px 0;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        display: none; /* Hidden by default */
+        display: none;
         opacity: 0;
         transition: opacity 0.3s ease, transform 0.3s ease;
-        transform: translateY(-10px); /* Start slightly above */
+        transform: translateY(-10px);
     }
 
-    .nav-links.active { /* Class added by JS when menu is open */
-        display: flex; /* Show when active */
+    .nav-links.active {
+        display: flex;
         opacity: 1;
         transform: translateY(0);
     }
 
     .nav-links li {
-        margin: 10px 0; /* Vertical spacing */
+        margin: 10px 0;
         text-align: center;
     }
 
@@ -737,99 +754,98 @@ footer {
 /* Responsive adjustments for the main homepage buttons and general elements on very small screens */
 @media (max-width: 600px) {
     .benefit-item {
-        align-items: center; /* Ensure buttons stack nicely on very small screens */
+        align-items: center;
     }
     .benefit-item .button {
-        display: block; /* Stack buttons vertically on small screens */
-        width: 80%; /* Make buttons take up more width */
-        margin: 10px auto; /* Center stacked buttons */
+        display: block;
+        width: 80%;
+        margin: 10px auto;
     }
     .benefits-grid .button.subscribe-button {
-        margin-left: auto; /* Reset left margin for stacking */
+        margin-left: auto;
     }
-    h1 { /* This applies to your main "Rajiv Vakani" title */
-        font-size: 2.5em; /* Make main hero title smaller on very small screens */
+    h1 {
+        font-size: 2.5em;
     }
     .hero-tagline {
-        font-size: 1em; /* Make hero tagline smaller on very small screens */
+        font-size: 1em;
     }
     .about-me p {
-    font-size: 0.95em; /* Slightly smaller text for about me on small screens */
+    font-size: 0.95em;
     }
-    h2 { /* This applies to "How I Can Help You", "About Rajiv Vakani", etc. */
-        font-size: 2em; /* Make section headings smaller on mobile */
+    h2 {
+        font-size: 2em;
     }
 
     /* Responsive adjustments for Contact Form on smaller screens */
     .contact-form {
-        padding: 25px; /* Reduce padding on smaller screens */
-        margin: 0 15px; /* Add horizontal margin to prevent sticking to edges */
+        padding: 25px;
+        margin: 0 15px;
     }
 
     .form-group input[type="text"],
     .form-group input[type="email"],
     .form-group textarea {
-        width: calc(100% - 20px); /* Adjust width for smaller padding */
+        width: calc(100% - 20px);
     }
 
     /* Responsive adjustment for About Me section on small screens */
     .about-content {
-        flex-direction: column; /* Stack image and text vertically */
-        align-items: center; /* Center image when stacked */
+        flex-direction: column;
+        align-items: center;
     }
 
     .about-headshot {
-        margin-right: 0; /* Remove right margin when stacked */
-        margin-bottom: 20px; /* Add bottom margin when stacked */
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 
     /* Responsive adjustment for About Me paragraph width on small screens */
     .about-content p {
-        max-width: 100%; /* Allow paragraphs to take full width when stacked */
+        max-width: 100%;
     }
 
     /* Responsive adjustments for newsletter hero */
     .newsletter-hero h1 {
-        font-size: 3em; /* Adjust for smaller screens */
+        font-size: 3em;
     }
 
     .newsletter-hero-logo {
-        width: 120px; /* Adjust logo size for smaller screens */
+        width: 120px;
         height: 120px;
     }
 
     /* Responsive adjustments for content grid on smaller screens */
     .content-grid {
-        grid-template-columns: 1fr; /* Stack content items vertically on very small screens */
+        grid-template-columns: 1fr;
     }
 
     .topic-item {
-        padding: 20px; /* Adjust padding for smaller screens */
+        padding: 20px;
     }
 }
 
 /* NEW: Upcoming Topics Section Styling */
 .upcoming-topics {
-    background-color: #e9f0f5; /* Light background for contrast */
+    background-color: #e9f0f5;
     padding: 80px 0;
-    /* Removed text-align: center here so individual items can align left */
 }
 
 .upcoming-topics .container {
-    text-align: left; /* Ensure content within container is left-aligned */
+    text-align: left;
 }
 
 .upcoming-topics h2 {
-    text-align: center; /* Keep the section heading centered */
-    margin-bottom: 40px; /* Space below heading */
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .upcoming-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
-    gap: 25px; /* Space between items */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
     max-width: 900px;
-    margin: 40px auto; /* Center the grid */
+    margin: 40px auto;
 }
 
 .topic-item {
@@ -837,8 +853,11 @@ footer {
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    text-align: left; /* Align text left within each topic item */
+    text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align content to the top */
 }
 
 .topic-item:hover {
@@ -847,31 +866,31 @@ footer {
 }
 
 .topic-item h3 {
-    color: #357ca5; /* Primary blue for topic headings */
+    color: #357ca5;
     font-size: 1.4em;
     margin-bottom: 10px;
-    text-align: left; /* Ensure heading is left-aligned */
+    text-align: left;
 }
 
 .topic-item p {
     font-size: 0.95em;
     color: #666;
     line-height: 1.6;
-    text-align: left; /* Ensure paragraph is left-aligned */
+    text-align: left;
 }
 
 .upcoming-note {
-    font-size: 1.2em; /* Slightly larger for emphasis */
-    color: #357ca5; /* Primary blue for distinctness */
-    margin-top: 50px; /* More space above the note */
-    font-style: normal; /* Remove italic */
-    font-weight: 700; /* Make it bolder */
-    text-align: center; /* Ensure it's centered */
+    font-size: 1.2em;
+    color: #357ca5;
+    margin-top: 50px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    padding: 15px 20px; /* Add padding to make it feel like a block */
-    background-color: #e0e6ed; /* Light background for the note */
+    padding: 15px 20px;
+    background-color: #e0e6ed;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }

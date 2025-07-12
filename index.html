@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rajiv Vakani | Nutrition Educator | Evidence-Based Guidance</title>
     <meta name="description" content="Unlock personalized nutrition with Rajiv Vakani, a certified nutrition educator offering evidence-based guidance for lasting well-being. Specializing in plant-based, religious, and holistic diets.">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Lora for headings, Inter for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Favicon link -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <!-- Google tag (gtag.js) -->
@@ -22,16 +23,19 @@
     </script>
 </head>
 <body>
-    <nav class="main-nav">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="main-nav" aria-label="Main navigation">
         <div class="container nav-container">
             <a href="index.html" class="site-logo">Rajiv Vakani</a>
-            <button class="menu-toggle" aria-label="Toggle navigation">
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-menu">
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
             </button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+            <ul class="nav-links" id="primary-menu">
+                <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="table-talk.html">Table Talk Newsletter</a></li>
                 <li><a href="no-onion-no-garlic.html">No Onion, No Garlic Newsletter</a></li>
                 <li><a href="#about-me">About Me</a></li>
@@ -39,123 +43,133 @@
             </ul>
         </div>
     </nav>
+
     <header class="hero">
-        <!-- Video Background Element -->
-        <video autoplay muted loop playsinline class="hero-video-background">
+        <video autoplay muted loop playsinline class="hero-video-background" aria-label="Background video showing nature and nutrition-related visuals for ambiance.">
             <source src="hero-background.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <!-- Overlay for readability and blending -->
         <div class="hero-overlay"></div>
-
         <h1>Rajiv Vakani</h1>
         <p class="hero-tagline">Unlock nutrition that truly fits your plate and your principles.<br>Actionable, evidence-based guidance for lasting well-being.</p>
+        <a href="#my-offerings" class="button animate-on-scroll">Explore My Offerings</a>
     </header>
 
-    <section id="about-me" class="about-me animate-on-scroll">
-        <div class="container">
-            <h2>My Approach to Nutrition</h2>
-            <div class="about-content">
-                <img src="headshot_36.jpg" alt="Rajiv Vakani professional headshot" class="about-headshot">
-                <p>Hi! I'm Rajiv Vakani. I left a career in finance to pursue something that felt more human: helping people feel at home in their own bodies through nutrition. In finance, success was always being redefined - measured in quarters, not in meaning. I wanted to build something more lasting.</p>
-                <p>I'm currently continuing my study in Nutrition, Dietetics & Food Studies at NYU, blending science, lived experience, and cultural insight into the work I do. I've trained in both food science and French culinary technique, as well as the kind of traditional Indian cooking you learn from standing beside your mom.</p>
-                <p>My goal is to make nutrition personal again. I won't hand you a one-size-fits-all plan. Instead, I'll offer real guidance that respects your lifestyle, your values, and your needs. Whether you're managing a health condition, following a plant-based or religious diet, or just trying to feel better in your own skin, I want to equip you with tools that make sense and actually feel doable.</p>
-                <p>From the garden to the gut microbiome, I'm here to translate the science into something you can actually use.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="my-offerings animate-on-scroll">
-        <div class="container">
-            <h2>How I Can Help You</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item table-talk-card">
-                    <div class="newsletter-title-group">
-                        <img src="icons/table-talk-logo.png" alt="Table Talk Newsletter Logo" class="newsletter-icon">
-                        <h3>Table Talk</h3>
-                        <p class="newsletter-type">Newsletter</p>
+    <main id="main-content">
+        <section id="my-offerings" class="my-offerings" aria-label="My Offerings">
+            <div class="container">
+                <h2>Which Table Are You Sitting At?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item table-talk-card animate-on-scroll">
+                        <div class="newsletter-title-group">
+                            <img src="icons/table-talk-logo.png" alt="Table Talk Newsletter Icon" class="newsletter-icon">
+                            <h3>Table Talk</h3>
+                            <p class="newsletter-type">Newsletter</p>
+                        </div>
+                        <p>Nutrition without the noise. Actionable tips, myth-busting, and nuanced insights for people who just want the truth, served straight. No gimmicks. Just clarity.</p>
+                        <a href="table-talk.html" class="button">Preview an Issue</a>
+                        <a href="https://subscribepage.io/Q38UKi" class="button subscribe-button">Start Reading &rarr;</a>
                     </div>
-                    <p>Join our free newsletter for science-backed insights, practical tips, and myth-busting on everyday nutrition. No fluff, just facts you can use.</p>
-                    <a href="table-talk.html" class="button">Learn More</a>
-                    <a href="https://subscribepage.io/Q38UKi" class="button subscribe-button">Subscribe Now</a>
-                </div>
-                <div class="benefit-item no-onion-no-garlic-card">
-                    <div class="newsletter-title-group">
-                        <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion No Garlic Newsletter Logo" class="newsletter-icon">
-                        <h3>No Onion, No Garlic</h3>
-                        <p class="newsletter-type">Newsletter</p>
+                    <div class="benefit-item no-onion-no-garlic-card animate-on-scroll">
+                        <div class="newsletter-title-group">
+                            <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Newsletter Icon" class="newsletter-icon">
+                            <h3>No Onion, No Garlic</h3>
+                            <p class="newsletter-type">Newsletter</p>
+                        </div>
+                        <p>Jain & Plant-Based Eating, Made Simple. Explore mindful eating, practical recipes, and culinary tips tailored to your unique dietary principles.</p>
+                        <a href="no-onion-no-garlic.html" class="button">What's Inside</a>
+                        <a href="https://subscribepage.io/wzHcM2" class="button subscribe-button">See Recipes &rarr;</a>
                     </div>
-                    <p>Exploring the unique challenges and joys of Jain, plant-based, and religious diets. Practical recipes, culinary tips, and nutritional guidance tailored to your needs.</p>
-                    <a href="no-onion-no-garlic.html" class="button">Learn More</a>
-                    <a href="https://subscribepage.io/wzHcM2" class="button subscribe-button">Subscribe Now</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="call-to-action-section animate-on-scroll">
-        <div class="container">
-            <h2>Ready to Transform Your Approach to Nutrition?</h2>
-            <p>Whether you're looking for evidence-based insights, personalized guidance, or just a fresh perspective, I'm here to help.</p>
-            <a href="#contact-form" class="button">Get in Touch</a>
-        </div>
-    </section>
+        <section id="about-me" class="about-me" aria-label="My Approach to Nutrition">
+            <div class="container">
+                <h2>My Approach to Nutrition</h2>
+                <div class="about-content animate-on-scroll">
+                    <img src="rajiv-headshot.jpg" alt="Rajiv Vakani professional headshot" class="about-headshot">
+                    <p>Hi! I'm Rajiv Vakani. I left a career in finance to pursue something that felt more human: helping people feel at home in their own bodies through nutrition. In finance, success was always being redefined, measured in quarters, not in meaning. I wanted to build something more lasting.</p>
+                    <p>I'm currently continuing my study in Nutrition, Dietetics & Food Studies at NYU, blending science, lived experience, and cultural insight into the work I do. I've trained in both food science and French culinary technique, as well as the kind of traditional Indian cooking you learn from standing beside your mom.</p>
+                    <p>My goal is to make nutrition personal again. I won't hand you a one-size-fits-all plan. Instead, I'll offer real guidance that respects your lifestyle, your values, and your needs. Whether you're managing a health condition, following a plant-based or religious diet, or just trying to feel better in your own skin, I want to equip you with tools that make sense and actually feel doable.</p>
+                    <p>From the garden to the gut microbiome, I'm here to translate the science into something you can actually use.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="contact-form" class="contact-section animate-on-scroll">
-        <div class="container">
-            <h2>Connect With Me</h2>
-            <p class="contact-intro">Have a question, a topic suggestion, or just want to say hello? Fill out the form below, and I'll get back to you as soon as possible.</p>
-            <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-form">
-                <input type="hidden" name="form-name" value="contact" />
-                <p class="hidden">
-                    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-                </p>
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-                </div>
-                <button type="submit" class="button">Send Message</button>
-            </form>
-        </div>
-    </section>
+        <section class="call-to-action-section animate-on-scroll" aria-label="Call to Action: Transform Your Approach to Nutrition">
+            <div class="container">
+                <h2>Ready to Transform Your Approach to Nutrition?</h2>
+                <p>Whether you're looking for evidence-based insights, personalized guidance, or just a fresh perspective, I'm here to help.</p>
+                <a href="#contact-form" class="button">Get in Touch</a>
+            </div>
+        </section>
+
+        <section id="contact-form" class="contact-section animate-on-scroll" aria-label="Contact Form">
+            <div class="container">
+                <h2>Connect With Me</h2>
+                <p class="contact-intro">Have a question, a topic suggestion, or just want to say hello? Fill out the form below, and I'll get back to you as soon as possible.</p>
+                <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-form">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p class="hidden">
+                        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                    </p>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Rajiv Vakani. All rights reserved.</p>
+            <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
         </div>
     </footer>
 
-<script>
-    // JavaScript for mobile navigation toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+    <script>
+        // JavaScript for mobile navigation toggle and accessibility attributes
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
 
-        if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                menuToggle.classList.toggle('active'); // Also toggle class on button for hamburger animation
-            });
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                    menuToggle.setAttribute('aria-expanded', !expanded);
+                    navLinks.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
 
-            // Close menu when a link is clicked (useful for single-page navigation)
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
-                    menuToggle.classList.remove('active');
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false'); // Reset aria-expanded on link click
+                    });
+                });
+            }
+
+            // Smooth scroll for skip link (optional, but enhances UX)
+            document.querySelector('.skip-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
-        }
-    });
-</script>
-<!-- Link to the animations.js file -->
-<script src="animations.js"></script>
+        });
+    </script>
+    <script src="animations.js"></script>
 </body>
 </html>
