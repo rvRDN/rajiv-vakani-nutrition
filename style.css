@@ -838,7 +838,6 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* NEW: Upcoming Topics Section Styling */
     /* Renamed .topic-item to .upcoming-item */
     .upcoming-item {
         padding: 20px;
@@ -896,8 +895,8 @@ footer {
 }
 
 .upcoming-item h3 {
-    color: #357ca5;
-    font-size: 1.4em;
+    color: #357ca5; /* Using primary blue for consistency */
+    font-size: 1.4em; /* Adjusted for better hierarchy */
     margin-bottom: 10px;
     text-align: left;
 }
