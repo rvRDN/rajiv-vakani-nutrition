@@ -838,7 +838,9 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .topic-item {
+    /* NEW: Upcoming Topics Section Styling */
+    /* Renamed .topic-item to .upcoming-item */
+    .upcoming-item {
         padding: 20px;
     }
 }
@@ -866,7 +868,8 @@ footer {
     margin: 40px auto;
 }
 
-.topic-item {
+/* Renamed .topic-item to .upcoming-item */
+.upcoming-item {
     background-color: #ffffff;
     padding: 25px;
     border-radius: 8px;
@@ -881,25 +884,25 @@ footer {
     transform: translateY(20px) scale(0.98);
 }
 
-.animate-on-scroll.show {
+.animate-on-scroll.show .upcoming-item { /* Apply to children of animated sections */
     opacity: 1;
     transform: translateY(0) scale(1);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.topic-item:hover {
+.upcoming-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
-.topic-item h3 {
+.upcoming-item h3 {
     color: #357ca5;
     font-size: 1.4em;
     margin-bottom: 10px;
     text-align: left;
 }
 
-.topic-item p {
+.upcoming-item p {
     font-size: 0.95em;
     color: #666;
     line-height: 1.6;
