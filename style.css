@@ -75,13 +75,14 @@ h3 {
     text-decoration: none; /* Remove underline */
     font-weight: 600;
     font-size: 1.1em;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth hover effects */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     margin-top: 20px; /* Space above button */
 }
 
 .button:hover {
-    background-color: #2a6a90; /* Darker New Primary Blue on hover */
+    background-color: #ffffff; /* Reverse: White background on hover */
+    color: #357ca5; /* Reverse: Primary Blue text on hover */
     transform: translateY(-2px); /* Slight lift effect */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
@@ -218,7 +219,6 @@ h3 {
 }
 
 .benefit-item {
-    background-color: #f8f8f8;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -228,11 +228,25 @@ h3 {
     justify-content: space-between; /* Pushes buttons to the bottom if content height varies */
     align-items: center; /* Centers items horizontally within benefit-item (e.g., buttons) */
     text-align: center; /* Ensure text inside cards is centered */
+    /* Removed default background-color here, will apply specific ones below */
+    border-top: 5px solid; /* Placeholder for accent border */
 }
 
+/* Specific Card Backgrounds and Borders */
+.table-talk-card {
+    background-color: #f0f7fa; /* Pale blue for Table Talk */
+    border-color: #357ca5; /* Primary Blue for border */
+}
+
+.no-onion-no-garlic-card {
+    background-color: #f4f8f5; /* Pale green for No Onion, No Garlic */
+    border-color: #5C8D55; /* Accent Green for border */
+}
+
+
 .benefit-item:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+    transform: translateY(-7px); /* Slightly more lift effect on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 /* NEW: Newsletter Icon Wrapper Styling */
@@ -244,38 +258,38 @@ h3 {
 }
 
 .newsletter-icon {
-    width: 120px; /* Increased size for more impact */
-    height: 120px;
+    width: 140px; /* Increased size for more impact */
+    height: 140px;
     object-fit: contain; /* Ensure the whole icon is visible */
     border-radius: 50%; /* Make it a circle */
     background-color: #ffffff; /* White background for the icon, to make it pop */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* More pronounced shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition for subtle hover effect */
     margin-bottom: 15px; /* Space between icon and title */
-    border: 2px solid rgba(53, 124, 165, 0.1); /* Very light primary blue border */
+    border: 3px solid rgba(53, 124, 165, 0.1); /* Slightly thicker, very light primary blue border */
 }
 
 .newsletter-icon:hover {
-    transform: translateY(-3px) scale(1.03); /* Slight lift and scale on hover */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
+    transform: translateY(-5px) scale(1.05); /* Slightly more lift and scale on hover */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25); /* Even more pronounced shadow on hover */
     border-color: #357ca5; /* Primary blue border on hover for more interaction */
 }
 
 .benefit-item h3 {
     color: #357ca5; /* New Primary Blue for benefit headings */
-    font-size: 1.8em; /* Slightly larger for main title */
+    font-size: 1.9em; /* Slightly larger for main title */
     margin-bottom: 5px; /* Reduced margin to bring "Newsletter" closer */
     line-height: 1.2;
 }
 
 .newsletter-type {
-    font-size: 1em; /* Smaller font for "Newsletter" */
-    color: #555;
+    font-size: 1.05em; /* Slightly larger font for "Newsletter" */
+    color: #444; /* Slightly darker color for better contrast */
     margin-top: 0; /* Remove default paragraph margin */
     margin-bottom: 20px; /* Space below "Newsletter" text */
-    font-weight: 500;
+    font-weight: 600; /* Make it bolder */
     text-transform: uppercase; /* Make it uppercase for distinction */
-    letter-spacing: 1px;
+    letter-spacing: 1.5px; /* Increased letter spacing */
 }
 
 
