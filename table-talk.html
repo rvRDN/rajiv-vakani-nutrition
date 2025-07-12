@@ -6,7 +6,11 @@
     <title>Table Talk Newsletter | Rajiv Vakani | Science-Backed Nutrition Insights</title>
     <meta name="description" content="Subscribe to the Table Talk Newsletter for weekly science-backed nutrition insights, practical tips, and myth-busting. Eat well, think sharp, live light.">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.1"> <!-- Added version parameter -->
+    <!-- Dynamic cache busting for style.css -->
+    <link rel="stylesheet" id="main-stylesheet" href="style.css">
+    <script>
+        document.getElementById('main-stylesheet').href = 'style.css?v=' + new Date().getTime();
+    </script>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <!-- Google tag (gtag.js) -->
