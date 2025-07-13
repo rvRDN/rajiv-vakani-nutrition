@@ -7,16 +7,7 @@
   <meta name="description" content="Explore the unique challenges and joys of Jain, plant-based, and religious diets with the No Onion, No Garlic Newsletter. Practical recipes, culinary tips, and nutritional guidance.">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
-  <link rel="icon" type="image/png" href="/favicon.png">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-0L41N5K2WV');
-  </script>
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
   <nav class="main-nav">
@@ -42,6 +33,7 @@
       <source src="hero-background.mp4" type="video/mp4" />
     </video>
     <div class="hero-overlay"></div>
+
     <div class="newsletter-hero-content">
       <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion No Garlic Newsletter Logo" class="newsletter-hero-logo" />
       <h1>No Onion, No Garlic</h1>
@@ -54,6 +46,7 @@
       <h2>Honoring Tradition. Eating with Awareness.</h2>
       <p>The No Onion, No Garlic Newsletter is for anyone navigating Jain, plant-based, or religious diets in today’s world. You’ll get grounded, real-world ideas that make this lifestyle easier, without losing its depth.</p>
       <p>Each issue brings you recipes, nutrition tips, and food insights rooted in <strong>ahimsa, clarity, and intention</strong>. This isn’t about restriction. It’s about choosing food that supports your values, your health, and your life.</p>
+      <a href="no-onion-no-garlic-archive.html" class="button">Supporter Access &rarr;</a>
     </div>
   </section>
 
@@ -102,7 +95,6 @@
     <div class="container">
       <h2>Ready to Embrace Mindful Eating?</h2>
       <a href="https://subscribepage.io/wzHcM2" class="button">See Recipes &rarr;</a>
-      <a href="no-onion-archive.html" class="button">Supporter Access &rarr;</a>
     </div>
   </section>
 
@@ -113,16 +105,16 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const menuToggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
       if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
           navLinks.classList.toggle('active');
           menuToggle.classList.toggle('active');
         });
         navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', function() {
+          link.addEventListener('click', function () {
             navLinks.classList.remove('active');
             menuToggle.classList.remove('active');
           });

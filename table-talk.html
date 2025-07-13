@@ -8,13 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
   <link rel="icon" type="image/png" href="favicon.png">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-0L41N5K2WV');
-  </script>
 </head>
 <body>
   <nav class="main-nav">
@@ -55,6 +48,7 @@
       <h2>Unpacking Nutrition, One Conversation at a Time</h2>
       <p>The Table Talk Newsletter is your weekly dose of <strong>nutrition without the noise</strong>. Actionable tips, myth-busting, and meaningful insights — for people who just want the truth, served straight. <strong>No gimmicks. Just clarity.</strong></p>
       <p>In a world full of conflicting dietary advice, we cut through the noise to bring you information rooted in evidence, designed to fit seamlessly into your real life.</p>
+      <a href="table-talk-archive.html" class="button">Supporter Access &rarr;</a>
     </div>
   </section>
 
@@ -115,7 +109,6 @@
     <div class="container">
       <h2>Ready to Join the Conversation?</h2>
       <a href="https://subscribepage.io/Q38UKi" class="button">Start Reading &rarr;</a>
-      <a href="table-talk-archive.html" class="button">Supporter Access</a>
     </div>
   </section>
 
@@ -126,16 +119,16 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const menuToggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
       if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
           navLinks.classList.toggle('active');
           menuToggle.classList.toggle('active');
         });
         navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', function() {
+          link.addEventListener('click', function () {
             navLinks.classList.remove('active');
             menuToggle.classList.remove('active');
           });
