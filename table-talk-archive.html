@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Table Talk Archive | Rajiv Vakani</title>
-  <meta name="description" content="A searchable archive of Table Talk Newsletter issues. For supporters only.">
+  <title>No Onion No Garlic Archive | Rajiv Vakani</title>
+  <meta name="description" content="A searchable archive of No Onion No Garlic Newsletter issues. For supporters only.">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
   <link rel="icon" type="image/png" href="favicon.png">
@@ -34,36 +34,38 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="newsletter-hero-content">
-      <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="newsletter-hero-logo">
-      <h1>Table Talk Archive</h1>
-      <p class="hero-tagline">Everything on the table. Every issue. Searchable and yours to explore.</p>
+      <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion No Garlic Logo" class="newsletter-hero-logo">
+      <h1>No Onion No Garlic Archive</h1>
+      <p class="hero-tagline">Access every issue. Search everything. Supporter-exclusive access.</p>
     </div>
   </header>
 
   <section class="newsletter-intro animate-on-scroll">
     <div class="container">
-      <h2>Supporter Archive: Every Issue in One Place</h2>
-      <p>Welcome to the full searchable archive of <strong>Table Talk</strong>. Every issue—past and present—is available here for you to revisit, reflect on, and share. Use the search bar below to dive in.</p>
-      <input type="text" id="searchBar" placeholder="Search articles..." style="width:100%; max-width:500px; padding:15px; font-size:1em; margin-top:30px; border-radius:8px; border: 1px solid #ccc;">
+      <h2>Supporter Archive Access</h2>
+      <p>This page is for newsletter supporters. Please enter the archive password below to continue.</p>
+      <input type="password" id="archivePassword" placeholder="Enter password" style="width:100%; max-width:400px; padding:15px; font-size:1em; border-radius:8px; border: 1px solid #ccc; margin-top:20px;">
+      <button class="button" id="submitPassword" style="margin-top:20px;">Unlock</button>
+      <p id="passwordError" style="color:red; display:none; margin-top:15px;">Incorrect password. Please try again.</p>
     </div>
   </section>
 
-  <section class="what-you-get animate-on-scroll">
+  <section class="what-you-get animate-on-scroll" id="archiveSection" style="display:none;">
     <div class="container">
+      <input type="text" id="searchBar" placeholder="Search articles..." style="width:100%; max-width:500px; padding:15px; font-size:1em; margin-bottom:30px; border-radius:8px; border: 1px solid #ccc;">
       <div class="content-grid" id="archive-list">
-        <div class="content-item table-talk-card-content-item" data-title="The Case for Bitter">
-          <h3>The Case for Bitter</h3>
-          <p>Why our diets have lost this essential taste—and what that’s doing to our bodies.</p>
+        <div class="content-item no-onion-no-garlic-card-content-item" data-title="Gut Health and Jainism">
+          <h3>Gut Health and Jainism</h3>
+          <p>How traditional sattvic diets support modern digestive science.</p>
         </div>
-        <div class="content-item table-talk-card-content-item" data-title="What You're Really Craving">
-          <h3>What You're Really Craving</h3>
-          <p>Hunger, dopamine, and the illusion of control. How modern food makes it harder to stop.</p>
+        <div class="content-item no-onion-no-garlic-card-content-item" data-title="Are Raw Foods Always Better?">
+          <h3>Are Raw Foods Always Better?</h3>
+          <p>Separating facts from fads in the no-onion-no-garlic lifestyle.</p>
         </div>
-        <div class="content-item table-talk-card-content-item" data-title="Fiber, Ferments & Forgotten Fuel">
-          <h3>Fiber, Ferments & Forgotten Fuel</h3>
-          <p>A gut check: How to feed your microbiome and why it could change your immune, mental, and metabolic health.</p>
+        <div class="content-item no-onion-no-garlic-card-content-item" data-title="Eating with Intention">
+          <h3>Eating with Intention</h3>
+          <p>How mindful food choices can build peace of mind and purpose.</p>
         </div>
-        <!-- Add more archived items here -->
       </div>
     </div>
   </section>
@@ -76,18 +78,30 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      const submitBtn = document.getElementById("submitPassword");
+      const passwordField = document.getElementById("archivePassword");
+      const archiveSection = document.getElementById("archiveSection");
+      const errorMessage = document.getElementById("passwordError");
       const searchBar = document.getElementById("searchBar");
-      const archiveItems = document.querySelectorAll("#archive-list .content-item");
 
-      searchBar.addEventListener("input", function (e) {
+      submitBtn.addEventListener("click", function () {
+        const enteredPassword = passwordField.value.trim();
+        if (enteredPassword === "morewithless") {
+          archiveSection.style.display = "block";
+          errorMessage.style.display = "none";
+          passwordField.style.display = "none";
+          submitBtn.style.display = "none";
+        } else {
+          errorMessage.style.display = "block";
+        }
+      });
+
+      searchBar?.addEventListener("input", function (e) {
         const query = e.target.value.toLowerCase();
+        const archiveItems = document.querySelectorAll("#archive-list .content-item");
         archiveItems.forEach(item => {
           const text = item.dataset.title.toLowerCase();
-          if (text.includes(query)) {
-            item.style.display = "block";
-          } else {
-            item.style.display = "none";
-          }
+          item.style.display = text.includes(query) ? "block" : "none";
         });
       });
     });
