@@ -1,136 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajiv Vakani | Nutrition Educator | Evidence-Based Guidance</title>
-    <meta name="description" content="Unlock personalized nutrition with Rajiv Vakani, a certified nutrition educator offering evidence-based guidance for lasting well-being. Specializing in plant-based, religious, and holistic diets.">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-0L41N5K2WV');
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rajiv Vakani | Nutrition, Culture & Clarity</title>
+  <meta name="description" content="Rajiv Vakani's official site. Explore his Table Talk and No Onion No Garlic newsletters blending science, tradition, and practical food wisdom.">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="site-logo">Rajiv Vakani</a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="table-talk.html">Table Talk Newsletter</a></li>
+        <li><a href="no-onion-no-garlic.html">No Onion, No Garlic Newsletter</a></li>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#contact-form">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <nav class="main-nav" aria-label="Main navigation">
-        <div class="container nav-container">
-            <a href="index.html" class="site-logo">Rajiv Vakani</a>
-            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-menu">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-links" id="primary-menu">
-                <li><a href="index.html" aria-current="page">Home</a></li>
-                <li><a href="table-talk.html">Table Talk Newsletter</a></li>
-                <li><a href="no-onion-no-garlic.html">No Onion, No Garlic Newsletter</a></li>
-                <li><a href="#about-me">About Me</a></li>
-                <li><a href="#contact-form">Contact</a></li>
-            </ul>
+  <header class="hero">
+    <video autoplay muted loop playsinline class="hero-video-background">
+      <source src="hero-background.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Rajiv Vakani</h1>
+      <p class="hero-tagline">Writing that nourishes. Food that means something. Ideas worth sitting with.</p>
+    </div>
+  </header>
+
+  <section class="newsletter-previews animate-on-scroll">
+    <div class="container">
+      <h2>Explore My Newsletters</h2>
+      <div class="content-grid">
+
+        <div class="content-item">
+          <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="newsletter-logo" />
+          <h3>Table Talk</h3>
+          <p>A science-forward, soul-aware newsletter about nutrition, wellness, and the modern food system. Smart, grounded, and useful for everyday eaters.</p>
+          <a href="table-talk.html" class="button">Read Table Talk →</a>
         </div>
-    </nav>
 
-    <header class="hero">
-        <video autoplay muted loop playsinline class="hero-video-background" aria-label="Background video showing nature and nutrition-related visuals for ambiance.">
-            <source src="hero-background.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-overlay"></div>
-        <h1>Rajiv Vakani</h1>
-        <p class="hero-tagline">Unlock nutrition that truly fits your plate and your principles.<br>Actionable, evidence-based guidance for lasting well-being.</p>
-        <a href="#my-offerings" class="button animate-on-scroll">Explore My Offerings</a>
-    </header>
-
-    <main id="main-content">
-        <section id="my-offerings" class="my-offerings" aria-label="My Offerings">
-            <div class="container">
-                <h2>Which Table Are You Sitting At?</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-item table-talk-card animate-on-scroll">
-                        <div class="newsletter-title-group">
-                            <img src="icons/table-talk-logo.png" alt="Table Talk Newsletter Icon" class="newsletter-icon">
-                            <h3>Table Talk</h3>
-                            <p class="newsletter-type">Newsletter</p>
-                        </div>
-                        <p>Nutrition without the noise. Actionable tips, myth-busting, and nuanced insights for people who just want the truth, served straight. No gimmicks. Just clarity.</p>
-                        <a href="table-talk.html" class="button">Discover Insights</a>
-                        <a href="https://subscribepage.io/Q38UKi" class="button subscribe-button">Start Reading &rarr;</a>
-                    </div>
-                    <div class="benefit-item no-onion-no-garlic-card animate-on-scroll">
-                        <div class="newsletter-title-group">
-                            <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Newsletter Icon" class="newsletter-icon">
-                            <h3>No Onion, No Garlic</h3>
-                            <p class="newsletter-type">Newsletter</p>
-                        </div>
-                        <p>Jain & Plant-Based Eating, Made Simple. Explore mindful eating, practical recipes, and culinary tips tailored to your unique dietary principles.</p>
-                        <a href="no-onion-no-garlic.html" class="button">Discover Guidance</a>
-                        <a href="https://subscribepage.io/wzHcM2" class="button subscribe-button">Explore Principles &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about-me" class="about-me" aria-label="My Approach to Nutrition">
-            <div class="container">
-                <h2>My Approach to Nutrition</h2>
-                <div class="about-content animate-on-scroll">
-                    <img src="headshot_36.jpg" alt="Rajiv Vakani professional headshot" class="about-headshot" onerror="this.onerror=null;this.src='https://placehold.co/250x250/cccccc/333333?text=Image+Missing'; console.error('Failed to load headshot_36.jpg');">
-                    <p>Hi! I'm Rajiv Vakani. I left a career in finance to pursue something that felt more human: helping people feel at home in their own bodies through nutrition. In finance, success was always being redefined, measured in quarters, not in meaning. I wanted to build something that would actually last.</p>
-                    <p>I'm currently studying Nutrition, Dietetics & Food Studies at NYU, blending science, lived experience, and cultural insight into everything I do. I’ve trained in both food science and French culinary technique, and also the kind of traditional Indian cooking you learn standing beside your mom.</p>
-                    <p>My goal is to make nutrition personal again. I won’t hand you a generic plan. I’ll meet you where you are, with guidance that honors your lifestyle, your values, and your health goals. Whether you're managing a condition, following a plant-based or religious diet, or just trying to feel better in your own skin, I’ll help you build habits that make sense and actually feel doable.</p>
-                    <p>From the garden to the gut microbiome, I’m here to translate the science into something you can live by.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="call-to-action-section animate-on-scroll" aria-label="Call to Action: Transform Your Approach to Nutrition">
-            <div class="container">
-                <h2>Ready to Transform Your Approach to Nutrition?</h2>
-                <p>Whether you're looking for evidence-based insights, personalized guidance, or just a fresh perspective, I'm here to help.</p>
-                <a href="#contact-form" class="button">Get in Touch</a>
-            </div>
-        </section>
-
-        <section id="contact-form" class="contact-section animate-on-scroll" aria-label="Contact Form">
-            <div class="container">
-                <h2>Connect With Me</h2>
-                <p class="contact-intro">Have a question, a topic suggestion, or just want to say hello? Fill out the form below, and I'll get back to you as soon as possible.</p>
-                <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-form">
-                    <input type="hidden" name="form-name" value="contact" />
-                    <p class="hidden">
-                        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-                    </p>
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
-                    </div>
-                    <button type="submit" class="button">Send Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
+        <div class="content-item">
+          <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion No Garlic Logo" class="newsletter-logo" />
+          <h3>No Onion, No Garlic</h3>
+          <p>For anyone practicing Jain, sattvic, or plant-based eating with intention. Simple meals, nutrition clarity, and mindful food habits—without judgment.</p>
+          <a href="no-onion-no-garlic.html" class="button">Read No Onion No Garlic →</a>
         </div>
-    </footer>
 
-    <script src="animations.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <section class="supporter-invite animate-on-scroll">
+    <div class="container">
+      <h2>Supporter Access</h2>
+      <p>Supporters get full access to exclusive back issues and extras. If you've already subscribed, use your password to enter:</p>
+      <div class="supporter-buttons">
+        <a href="table-talk-archive.html" class="button">Table Talk Archive →</a>
+        <a href="no-onion-no-garlic-archive.html" class="button">No Onion No Garlic Archive →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-me" class="about-me animate-on-scroll">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I'm Rajiv Vakani—a nutrition student, Pathshala teacher, and curious human who thinks deeply about the food we eat and the lives we lead. I believe that what we choose to eat says something. Through my writing, I help others find clarity in nutrition, make intentional food choices, and honor both science and culture at the same table.</p>
+    </div>
+  </section>
+
+  <section id="contact-form" class="contact-section animate-on-scroll">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>If you'd like to connect or collaborate, drop me a note. I always enjoy thoughtful conversations.</p>
+      <p>Email: <a href="mailto:rajiv@rajivvakani.com">rajiv@rajivvakani.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function () {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+          });
+        });
+      }
+    });
+  </script>
+  <script src="animations.js"></script>
 </body>
 </html>
