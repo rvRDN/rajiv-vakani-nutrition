@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Talk Archive | Rajiv Vakani</title>
+  <meta name="description" content="A searchable archive of Table Talk Newsletter issues. For supporters only.">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="site-logo">Rajiv Vakani</a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="table-talk.html">Table Talk</a></li>
+        <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
+        <li><a href="index.html#about-me">About</a></li>
+        <li><a href="index.html#contact-form">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero newsletter-hero">
+    <video autoplay muted loop playsinline class="hero-video-background">
+      <source src="hero-background.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="newsletter-hero-content">
+      <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="newsletter-hero-logo">
+      <h1>Table Talk Archive</h1>
+      <p class="hero-tagline">Everything on the table. Every issue. Searchable and yours to explore.</p>
+    </div>
+  </header>
+
+  <section class="newsletter-intro animate-on-scroll">
+    <div class="container">
+      <h2>Supporter Archive: Every Issue in One Place</h2>
+      <p>Welcome to the full searchable archive of <strong>Table Talk</strong>. Every issue—past and present—is available here for you to revisit, reflect on, and share. Use the search bar below to dive in.</p>
+      <input type="text" id="searchBar" placeholder="Search articles..." style="width:100%; max-width:500px; padding:15px; font-size:1em; margin-top:30px; border-radius:8px; border: 1px solid #ccc;">
+    </div>
+  </section>
+
+  <section class="what-you-get animate-on-scroll">
+    <div class="container">
+      <div class="content-grid" id="archive-list">
+        <div class="content-item table-talk-card-content-item" data-title="The Case for Bitter">
+          <h3>The Case for Bitter</h3>
+          <p>Why our diets have lost this essential taste—and what that’s doing to our bodies.</p>
+        </div>
+        <div class="content-item table-talk-card-content-item" data-title="What You're Really Craving">
+          <h3>What You're Really Craving</h3>
+          <p>Hunger, dopamine, and the illusion of control. How modern food makes it harder to stop.</p>
+        </div>
+        <div class="content-item table-talk-card-content-item" data-title="Fiber, Ferments & Forgotten Fuel">
+          <h3>Fiber, Ferments & Forgotten Fuel</h3>
+          <p>A gut check: How to feed your microbiome and why it could change your immune, mental, and metabolic health.</p>
+        </div>
+        <!-- Add more archived items here -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchBar = document.getElementById("searchBar");
+      const archiveItems = document.querySelectorAll("#archive-list .content-item");
+
+      searchBar.addEventListener("input", function (e) {
+        const query = e.target.value.toLowerCase();
+        archiveItems.forEach(item => {
+          const text = item.dataset.title.toLowerCase();
+          if (text.includes(query)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

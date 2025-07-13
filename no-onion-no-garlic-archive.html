@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No Onion No Garlic Archive | Rajiv Vakani</title>
+  <meta name="description" content="A searchable archive of No Onion No Garlic Newsletter issues. For supporters only.">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="site-logo">Rajiv Vakani</a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="table-talk.html">Table Talk</a></li>
+        <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
+        <li><a href="index.html#about-me">About</a></li>
+        <li><a href="index.html#contact-form">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero newsletter-hero">
+    <video autoplay muted loop playsinline class="hero-video-background">
+      <source src="hero-background.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="newsletter-hero-content">
+      <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion No Garlic Logo" class="newsletter-hero-logo">
+      <h1>No Onion No Garlic Archive</h1>
+      <p class="hero-tagline">Access every issue. Search everything. Supporter-exclusive access.</p>
+    </div>
+  </header>
+
+  <section class="newsletter-intro animate-on-scroll">
+    <div class="container">
+      <h2>Supporter Archive: Every Issue in One Place</h2>
+      <p>Welcome to the full searchable archive of <strong>No Onion No Garlic</strong>. Every issue—past and present—is available here for you to explore, revisit, and share. Use the search bar below to find what matters to you.</p>
+      <input type="text" id="searchBar" placeholder="Search articles..." style="width:100%; max-width:500px; padding:15px; font-size:1em; margin-top:30px; border-radius:8px; border: 1px solid #ccc;">
+    </div>
+  </section>
+
+  <section class="what-you-get animate-on-scroll">
+    <div class="container">
+      <div class="content-grid" id="archive-list">
+        <div class="content-item no-onion-no-garlic-card-content-item" data-title="Gut Health and Jainism">
+          <h3>Gut Health and Jainism</h3>
+          <p>How traditional sattvic diets support modern digestive science.</p>
+        </div>
+        <div class="content-item no-onion-no-garlic-card-content-item" data-title="Are Raw Foods Always Better?">
+          <h3>Are Raw Foods Always Better?</h3>
+          <p>Separating facts from fads in the no-onion-no-garlic lifestyle.</p>
+        </div>
+        <div class="content-item no-onion-no-garlic-card-content-item" data-title="Eating with Intention">
+          <h3>Eating with Intention</h3>
+          <p>How mindful food choices can build peace of mind and purpose.</p>
+        </div>
+        <!-- Add more archived items here -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchBar = document.getElementById("searchBar");
+      const archiveItems = document.querySelectorAll("#archive-list .content-item");
+
+      searchBar.addEventListener("input", function (e) {
+        const query = e.target.value.toLowerCase();
+        archiveItems.forEach(item => {
+          const text = item.dataset.title.toLowerCase();
+          if (text.includes(query)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
