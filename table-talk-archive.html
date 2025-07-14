@@ -28,126 +28,138 @@
     </div>
   </nav>
 
-  <section class="archive-page-hero animate-on-scroll">
+  <header class="page-hero-section table-talk-hero">
     <div class="container">
-      <h1>Table Talk Archive</h1>
-      <p>Access exclusive past issues of the Table Talk newsletter. This content is for supporters only.</p>
+      <div class="page-hero-content animate-on-scroll">
+        <h1>Table Talk Archive</h1>
+        <p class="tagline">Exclusive content for our dedicated supporters.</p>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <div class="password-gate animate-on-scroll" id="password-gate">
-    <h2>Enter Password to Access Archive</h2>
-    <p>Please enter the password provided to gain access to the full archive.</p>
-    <input type="password" id="archivePassword" placeholder="Enter password">
-    <button class="button" id="submitPassword">Unlock Archive</button>
-    <p id="passwordError" style="display: none; color: var(--color-error); margin-top: 15px;">Incorrect password. Please try again.</p>
+  <div id="password-gate" class="password-gate">
+    <h2>Access Archive</h2>
+    <p>Please enter the password to view past issues:</p>
+    <input type="password" id="archivePassword" placeholder="Enter password" autocomplete="off" />
+    <button id="submitPassword" class="button primary">Submit</button>
+    <p id="passwordError" class="error-message" style="display:none;">Incorrect password. Please try again.</p>
   </div>
 
-  <section class="archive-content" id="archive-content">
-    <div class="container">
-      <div class="archive-search">
-        <input type="text" id="searchBar" class="archive-search-bar" placeholder="Search archive issues...">
+  <div id="archive-content" style="display:none;">
+    <section class="archive-search-section animate-on-scroll">
+      <div class="container">
+        <input type="text" id="searchBar" class="archive-search-bar" placeholder="Search issues by title..." />
       </div>
+    </section>
 
-      <div class="content-grid" id="archive-list">
-        <div class="archive-content-item table-talk-archive-item animate-on-scroll" data-title="Issue 1: The Power of Whole Foods">
-          <h3>Issue 1: The Power of Whole Foods</h3>
-          <p>An introduction to the foundational principles of whole food nutrition and its impact on long-term health.</p>
-          <a href="#" class="button">Read Issue →</a>
-        </div>
-
-        <div class="archive-content-item table-talk-archive-item animate-on-scroll" data-title="Issue 2: Understanding Gut Health">
-          <h3>Issue 2: Understanding Gut Health</h3>
-          <p>Exploring the microbiome, fermented foods, and practical tips for a healthy digestive system.</p>
-          <a href="#" class="button">Read Issue →</a>
-        </div>
-
-        <div class="archive-content-item table-talk-archive-item animate-on-scroll" data-title="Issue 3: Mindful Eating Practices">
-          <h3>Issue 3: Mindful Eating Practices</h3>
-          <p>Techniques to reconnect with your hunger and fullness cues and savor your meals.</p>
-          <a href="#" class="button">Read Issue →</a>
-        </div>
-
-        <div class="archive-content-item table-talk-archive-item animate-on-scroll" data-title="Issue 4: Debunking Nutrition Myths">
-          <h3>Issue 4: Debunking Nutrition Myths</h3>
-          <p>Separating fact from fiction in popular diet trends and nutritional advice.</p>
-          <a href="#" class="button">Read Issue →</a>
-        </div>
-
-        <div class="archive-content-item table-talk-archive-item animate-on-scroll" data-title="Issue 5: Sustainable Food Choices">
-          <h3>Issue 5: Sustainable Food Choices</h3>
-          <p>How your food choices impact the planet and practical ways to eat more sustainably.</p>
-          <a href="#" class="button">Read Issue →</a>
+    <section class="archive-grid-section animate-on-scroll">
+      <div class="container">
+        <div id="archive-list" class="content-grid">
+          <div class="content-item archive-content-item animate-on-scroll" data-title="Understanding Ultra-Processed Foods">
+            <h3>Understanding Ultra-Processed Foods</h3>
+            <p>Decoding the impact of highly processed foods on our health and environment.</p>
+            <a href="#" class="button">Read Issue →</a>
+          </div>
+          <div class="content-item archive-content-item animate-on-scroll" data-title="The Role of Fiber in a Healthy Diet">
+            <h3>The Role of Fiber in a Healthy Diet</h3>
+            <p>Exploring different types of fiber and practical ways to increase intake.</p>
+            <a href="#" class="button">Read Issue →</a>
+          </div>
+          <div class="content-item archive-content-item animate-on-scroll" data-title="Navigating Dietary Fats: Good, Bad, and Confusing">
+            <h3>Navigating Dietary Fats: Good, Bad, and Confusing</h3>
+            <p>A clear guide to understanding healthy fats and those to limit.</p>
+            <a href="#" class="button">Read Issue →</a>
+          </div>
+          <div class="content-item archive-content-item animate-on-scroll" data-title="Sustainable Eating on a Budget">
+            <h3>Sustainable Eating on a Budget</h3>
+            <p>Tips and tricks for making eco-friendly food choices without breaking the bank.</p>
+            <a href="#" class="button">Read Issue →</a>
+          </div>
+          <div class="content-item archive-content-item animate-on-scroll" data-title="The Science of Mindful Eating">
+            <h3>The Science of Mindful Eating</h3>
+            <p>How paying attention to hunger cues can transform your relationship with food.</p>
+            <a href="#" class="button">Read Issue →</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
+      <p>© 2025 Rajiv Vakani. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      const passwordInput = document.getElementById("archivePassword");
       const submitBtn = document.getElementById("submitPassword");
-      const passwordField = document.getElementById("archivePassword");
-      const passwordGate = document.getElementById("password-gate"); // Changed to target the gate div
-      const archiveContent = document.getElementById("archive-content"); // Changed to target the content div
-      const errorMessage = document.getElementById("passwordError");
-      const searchBar = document.getElementById("searchBar");
+      const gate = document.getElementById("password-gate");
+      const content = document.getElementById("archive-content");
+      const error = document.getElementById("passwordError");
+      const correctPassword = "morewithless"; // Password for Table Talk archive
 
-      submitBtn.addEventListener("click", function () {
-        const enteredPassword = passwordField.value.trim();
-        const correctPassword = "morewithless"; // Define the correct password here
-
-        if (enteredPassword === correctPassword) {
-          passwordGate.style.display = "none";
-          archiveContent.style.display = "block"; // Show the content section
-          errorMessage.style.display = "none";
-          // Trigger animations for the newly visible content
-          document.querySelectorAll('.animate-on-scroll').forEach(element => {
-              if (element.getBoundingClientRect().top < window.innerHeight) {
-                  element.classList.add('show');
-              }
-          });
+      const checkPassword = () => {
+        if (passwordInput.value.trim() === correctPassword) {
+          gate.style.display = "none";
+          content.style.display = "block";
+          animateOnScrollCheck(); // Trigger animations for newly displayed content
+          window.removeEventListener('scroll', animateOnScrollCheck); // Remove listener until needed
         } else {
-          errorMessage.style.display = "block";
+          error.style.display = "block";
+          error.textContent = "Incorrect password. Please try again.";
         }
-      });
+      };
 
-      // Allow pressing Enter key to submit password
-      passwordField.addEventListener("keypress", function(e) {
+      submitBtn.addEventListener("click", checkPassword);
+      passwordInput.addEventListener("keypress", function (e) {
         if (e.key === "Enter") {
-          submitBtn.click(); // Simulate a click on the submit button
+          checkPassword();
         }
       });
 
-      // Search functionality
-      searchBar?.addEventListener("input", function (e) {
-        const query = e.target.value.toLowerCase();
-        const archiveItems = document.querySelectorAll("#archive-list .archive-content-item"); // Target archive-content-item
-        archiveItems.forEach(item => {
-          const text = item.dataset.title.toLowerCase();
-          item.style.display = text.includes(query) ? "flex" : "none"; // Changed to flex for consistent grid layout
+      const searchBar = document.getElementById("searchBar");
+      if (searchBar) {
+        const archiveItems = document.querySelectorAll("#archive-list .content-item");
+        searchBar.addEventListener("input", function (e) {
+          const query = e.target.value.toLowerCase();
+          archiveItems.forEach(item => {
+            const text = item.dataset.title.toLowerCase();
+            item.style.display = text.includes(query) ? "flex" : "none"; // Changed to flex for consistent grid layout
+          });
         });
-      });
+      }
 
-      // Optional: Re-check visibility for elements that might become visible after password unlock
-      // This is less critical if content is block-displayed but good for elements animated on scroll
+      // Add simple scroll animation for elements appearing after password unlock
       function animateOnScrollCheck() {
-        const elements = document.querySelectorAll('#archive-content .animate-on-scroll');
+        const elements = document.querySelectorAll('.animate-on-scroll');
         elements.forEach(el => {
           if (el.getBoundingClientRect().top < window.innerHeight && el.getBoundingClientRect().bottom > 0) {
-            el.classList.add('show');
+            el.classList.add('show'); // Use 'show' class for animation
           }
         });
       }
 
-      // Initial check for elements that might be in viewport on load if content is shown quickly
-      // Or set up an IntersectionObserver specifically for the content within archive-content
-      // For simplicity, we'll call it once content is displayed
+      // Initial check (in case content is already visible, e.g., for non-gated pages, though not applicable here)
+      // window.addEventListener('scroll', animateOnScrollCheck); // Re-added if content becomes visible through scroll (not password)
+      // animateOnScrollCheck(); // Initial check for any immediately visible animated elements
+
+      // For menu toggle in archive pages (copied from main site)
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function () {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+          });
+        });
+      }
     });
   </script>
 </body>
