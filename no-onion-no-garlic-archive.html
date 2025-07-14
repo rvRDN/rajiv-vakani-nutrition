@@ -22,59 +22,66 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="table-talk.html">Table Talk</a></li>
         <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
-        <li><a href="index.html#about-me">About</a></li>
+        <li><a href="index.html#about-me">About Me</a></li>
         <li><a href="index.html#contact-form">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="hero newsletter-hero">
-    <video autoplay muted loop playsinline class="hero-video-background">
-      <source src="hero-background.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="newsletter-hero-content">
-      <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion No Garlic Logo" class="newsletter-hero-logo">
-      <h1>No Onion No Garlic Archive</h1>
-      <p class="hero-tagline">Access every issue. Search everything. Supporter-exclusive access.</p>
+  <section class="archive-page-hero animate-on-scroll">
+    <div class="container">
+      <h1>No Onion, No Garlic Archive</h1>
+      <p>Access exclusive past issues of the No Onion, No Garlic newsletter. This content is for supporters only.</p>
     </div>
-  </header>
-
-  <section id="password-gate" class="password-gate animate-on-scroll">
-    <h2>Enter Archive Password</h2>
-    <input type="password" id="archivePassword" placeholder="Enter password..." class="password-input" />
-    <button class="button" id="submitPassword">Unlock</button>
-    <div id="error" class="error-message"></div>
   </section>
 
-  <div id="archive-content" class="hidden-content">
-    <section class="newsletter-intro animate-on-scroll">
-      <div class="container">
-        <h2>Supporter Archive: Every Issue in One Place</h2>
-        <p>Welcome to the full searchable archive of <strong>No Onion No Garlic</strong>. Every issue—past and present—is available here for you to explore, revisit, and share. Use the search bar below to find what matters to you.</p>
-        <input type="text" id="searchBar" placeholder="Search articles..." class="archive-search-bar">
-      </div>
-    </section>
+  <div class="password-gate animate-on-scroll" id="password-gate">
+    <h2>Enter Password to Access Archive</h2>
+    <p>Please enter the password provided to gain access to the full archive.</p>
+    <input type="password" id="archivePassword" placeholder="Enter password">
+    <button class="button" id="submitPassword">Unlock Archive</button>
+    <p id="passwordError" style="display: none; color: var(--color-error); margin-top: 15px;">Incorrect password. Please try again.</p>
+  </div>
 
-    <section class="archive-grid-section animate-on-scroll">
-      <div class="container">
-        <div class="content-grid" id="archive-list">
-          <div class="content-item archive-content-item" data-title="Gut Health and Jainism">
-            <h3>Gut Health and Jainism</h3>
-            <p>How traditional sattvic diets support modern digestive science.</p>
-          </div>
-          <div class="content-item archive-content-item" data-title="Are Raw Foods Always Better?">
-            <h3>Are Raw Foods Always Better?</h3>
-            <p>Separating facts from fads in the no-onion-no-garlic lifestyle.</p>
-          </div>
-          <div class="content-item archive-content-item" data-title="Eating with Intention">
-            <h3>Eating with Intention</h3>
-            <p>How mindful food choices can build peace of mind and purpose.</p>
-          </div>
+  <section class="archive-content" id="archive-content">
+    <div class="container">
+      <div class="archive-search">
+        <input type="text" id="searchBar" class="archive-search-bar" placeholder="Search archive issues...">
+      </div>
+
+      <div class="content-grid" id="archive-list">
+        <div class="archive-content-item no-onion-no-garlic-archive-item animate-on-scroll" data-title="Issue 1: Foundations of Sattvic Eating">
+          <h3>Issue 1: Foundations of Sattvic Eating</h3>
+          <p>An introduction to the principles of pure, wholesome eating in Jain tradition.</p>
+          <a href="#" class="button button-secondary">Read Issue →</a>
+        </div>
+
+        <div class="archive-content-item no-onion-no-garlic-archive-item animate-on-scroll" data-title="Issue 2: Plant-Based Protein Sources">
+          <h3>Issue 2: Plant-Based Protein Sources</h3>
+          <p>Exploring diverse and complete protein options for a no-onion, no-garlic diet.</p>
+          <a href="#" class="button button-secondary">Read Issue →</a>
+        </div>
+
+        <div class="archive-content-item no-onion-no-garlic-archive-item animate-on-scroll" data-title="Issue 3: Spices Beyond Onion & Garlic">
+          <h3>Issue 3: Spices Beyond Onion & Garlic</h3>
+          <p>Discovering flavorful alternatives and how to enhance dishes naturally.</p>
+          <a href="#" class="button button-secondary">Read Issue →</a>
+        </div>
+
+        <div class="archive-content-item no-onion-no-garlic-archive-item animate-on-scroll" data-title="Issue 4: Mindful Cooking Practices">
+          <h3>Issue 4: Mindful Cooking Practices</h3>
+          <p>Bringing intention and awareness to the process of preparing your meals.</p>
+          <a href="#" class="button button-secondary">Read Issue →</a>
+        </div>
+
+        <div class="archive-content-item no-onion-no-garlic-archive-item animate-on-scroll" data-title="Issue 5: Seasonal Eating for Balance">
+          <h3>Issue 5: Seasonal Eating for Balance</h3>
+          <p>Embracing seasonal produce for optimal health and connection to nature.</p>
+          <a href="#" class="button button-secondary">Read Issue →</a>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
@@ -84,66 +91,63 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const passwordInput = document.getElementById("archivePassword");
-      const submitButton = document.getElementById("submitPassword");
-      const gate = document.getElementById("password-gate");
-      const content = document.getElementById("archive-content");
-      const error = document.getElementById("error");
-      const correctPassword = "morewithless"; // Assuming this is your desired password
-
-      submitButton.addEventListener("click", function () {
-        if (passwordInput.value.trim() === correctPassword) {
-          gate.style.display = "none";
-          content.style.display = "block";
-          error.textContent = ""; // Clear any previous error
-        } else {
-          error.textContent = "Incorrect password. Please try again.";
-        }
-      });
-
-      // Optional: Allow pressing Enter to submit password
-      passwordInput.addEventListener("keypress", function(e) {
-        if (e.key === "Enter") {
-          submitButton.click();
-        }
-      });
-
+      const submitBtn = document.getElementById("submitPassword");
+      const passwordField = document.getElementById("archivePassword");
+      const passwordGate = document.getElementById("password-gate"); // Changed to target the gate div
+      const archiveContent = document.getElementById("archive-content"); // Changed to target the content div
+      const errorMessage = document.getElementById("passwordError");
       const searchBar = document.getElementById("searchBar");
-      if (searchBar) {
-        const archiveItems = document.querySelectorAll("#archive-list .content-item");
-        searchBar.addEventListener("input", function (e) {
-          const query = e.target.value.toLowerCase();
-          archiveItems.forEach(item => {
-            const text = item.dataset.title.toLowerCase();
-            item.style.display = text.includes(query) ? "flex" : "none"; // Changed to flex for consistent grid layout
+
+      submitBtn.addEventListener("click", function () {
+        const enteredPassword = passwordField.value.trim();
+        const correctPassword = "morewithless"; // Define the correct password here
+
+        if (enteredPassword === correctPassword) {
+          passwordGate.style.display = "none";
+          archiveContent.style.display = "block"; // Show the content section
+          errorMessage.style.display = "none";
+          // Trigger animations for the newly visible content
+          document.querySelectorAll('.animate-on-scroll').forEach(element => {
+              if (element.getBoundingClientRect().top < window.innerHeight) {
+                  element.classList.add('show');
+              }
           });
-        });
-      }
-
-      // Add simple scroll animation for elements appearing after password unlock
-      function animateOnScrollCheck() {
-        const elements = document.querySelectorAll('.animate-on-scroll');
-        elements.forEach(el => {
-          if (el.getBoundingClientRect().top < window.innerHeight && el.getBoundingClientRect().bottom > 0) {
-            el.classList.add('is-visible');
-          }
-        });
-      }
-
-      // Re-check visibility after content is shown
-      const observer = new MutationObserver((mutationsList, observer) => {
-        for(let mutation of mutationsList) {
-          if (mutation.type === 'attributes' && mutation.attributeName === 'style' && content.style.display === 'block') {
-            animateOnScrollCheck();
-            observer.disconnect(); // Disconnect once content is visible and animated
-          }
+        } else {
+          errorMessage.style.display = "block";
         }
       });
 
-      // Start observing the hidden content for style changes
-      observer.observe(content, { attributes: true });
-      window.addEventListener('scroll', animateOnScrollCheck);
-      animateOnScrollCheck(); // Initial check
+      // Allow pressing Enter key to submit password
+      passwordField.addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+          submitBtn.click(); // Simulate a click on the submit button
+        }
+      });
+
+      // Search functionality
+      searchBar?.addEventListener("input", function (e) {
+        const query = e.target.value.toLowerCase();
+        const archiveItems = document.querySelectorAll("#archive-list .archive-content-item"); // Target archive-content-item
+        archiveItems.forEach(item => {
+          const text = item.dataset.title.toLowerCase();
+          item.style.display = text.includes(query) ? "flex" : "none"; // Changed to flex for consistent grid layout
+        });
+      });
+
+      // Optional: Re-check visibility for elements that might become visible after password unlock
+      // This is less critical if content is block-displayed but good for elements animated on scroll
+      function animateOnScrollCheck() {
+        const elements = document.querySelectorAll('#archive-content .animate-on-scroll');
+        elements.forEach(el => {
+          if (el.getBoundingClientRect().top < window.innerHeight) {
+            el.classList.add('show');
+          }
+        });
+      }
+
+      // Initial check for elements that might be in viewport on load if content is shown quickly
+      // Or set up an IntersectionObserver specifically for the content within archive-content
+      // For simplicity, we'll call it once content is displayed
     });
   </script>
 </body>
