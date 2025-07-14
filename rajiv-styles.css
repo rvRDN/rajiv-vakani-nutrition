@@ -246,6 +246,7 @@ h3 {
     align-items: flex-start; /* Align items to the top */
     gap: 40px; /* Space between image and text */
     padding-top: 20px;
+    justify-content: center; /* Center items horizontally when wrapped */
 }
 
 .about-headshot {
@@ -259,10 +260,22 @@ h3 {
 }
 
 .about-content p {
-    flex-grow: 1; /* Allow paragraphs to take up remaining space */
+    flex: 1 1 450px; /* Flex-grow, flex-shrink, flex-basis. Allows paragraphs to grow and wrap */
     text-align: left;
     margin-bottom: 1em;
     color: var(--medium-text);
+}
+
+/* For smaller screens, adjust about-content to ensure stacking */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center content when stacked */
+    }
+    .about-content p {
+        text-align: center; /* Center text when stacked below image */
+        flex-basis: auto; /* Reset flex-basis for stacking */
+    }
 }
 
 .about-me h2 {
@@ -522,7 +535,6 @@ h3 {
     top: 0;
 }
 
-
 /* Footer Styles */
 footer {
     background-color: #34495e;
@@ -543,7 +555,6 @@ footer a:hover {
 }
 
 /* --- Newsletter Specific Styles (for table-talk.html and no-onion-no-garlic.html) --- */
-
 .newsletter-intro {
     background-color: #f8f8f8;
     padding: 60px 20px;
@@ -603,10 +614,50 @@ footer a:hover {
     border-top: 5px solid; /* Default for content items */
     display: flex; /* Flexbox for internal content alignment */
     flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden; /* For pattern on content item */
 }
 
-/* Specific content-item borders for Table Talk and No Onion, No Garlic */
+.content-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.content-item > * {
+    position: relative;
+    z-index: 1;
+}
+
+.content-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-medium);
+}
+
+.content-item h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%; /* Ensure heading takes full width within flex item */
+}
+
+.content-item p {
+    font-size: 0.95em;
+    color: var(--medium-text);
+    text-align: left;
+    line-height: 1.7;
+    margin-bottom: 0; /* Remove default paragraph bottom margin if last */
+}
+
+/* Specific border colors for newsletter content items */
 .table-talk-card-content-item {
     border-color: var(--primary-blue);
 }
@@ -615,309 +666,47 @@ footer a:hover {
     border-color: var(--accent-green);
 }
 
-.content-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px var(--shadow-medium);
-}
-
-.content-item h3 {
-    color: var(--accent-green); /* This was originally #5C8D55, kept for consistency with your code */
-    margin-bottom: 15px;
-    font-size: 1.5em;
-    text-align: left;
-}
-
-.content-item p {
-    font-size: 1em;
-    line-height: 1.7;
-    color: #666;
-    text-align: left;
-}
-
-.content-item p strong {
-    font-weight: 700;
-    color: #444;
-}
-
+/* Call to Action Subscribe Sections (used on newsletter pages) */
 .cta-subscribe {
-    background-color: #e6f7ff; /* A very light blue */
-    padding: 80px 20px;
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    padding: 80px 0;
     text-align: center;
-    margin-top: 60px;
 }
 
 .cta-subscribe h2 {
-    color: var(--primary-blue);
-    font-size: 2.5em;
+    color: #ffffff;
     margin-bottom: 30px;
 }
 
-/* Styling for the two buttons side-by-side */
+.cta-subscribe p {
+    font-size: 1.1em;
+    color: var(--light-text);
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
 .cta-subscribe .button {
-    display: inline-block;
-    padding: 15px 40px;
-    font-size: 1.2em;
-    text-decoration: none;
-    background-color: var(--button-secondary); /* New secondary button color */
-    color: white;
-    border-radius: 8px; /* Consistent border-radius */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    margin: 10px;
-    border: 2px solid transparent; /* For hover effect */
+    margin: 10px; /* Space out buttons if side-by-side */
+    border-color: #ffffff; /* White border for contrast on blue background */
 }
 
 .cta-subscribe .button:hover {
-    background-color: var(--button-secondary-hover);
-    box-shadow: 0 6px 15px var(--shadow-strong);
-    border-color: var(--button-secondary); /* Match border to original button color on hover */
+    background-color: #ffffff;
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
-/* Style for the 'Subscribe Now' button on index.html */
-.benefits-grid .button.subscribe-button {
-    background-color: var(--button-secondary);
-    margin-left: 10px;
-}
-
-.benefits-grid .button.subscribe-button:hover {
-    background-color: var(--button-secondary-hover);
-    border-color: var(--button-secondary); /* Consistent border for subscribe button */
-}
-
-/* --- Header Navigation Menu Styles --- */
-.main-nav {
-    background-color: #34495e; /* Dark slate grey */
-    padding: 15px 0;
-    box-shadow: 0 2px 10px var(--shadow-medium);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.site-logo {
-    color: var(--light-text);
-    font-family: 'Lora', serif;
-    font-size: 1.8em;
-    font-weight: 700;
-    text-decoration: none;
-    animation: pulseGlow 2s ease-out forwards;
-    transition: transform 0.2s ease-in-out, color 0.3s ease;
-}
-
-/* Keyframes for subtle pulse glow */
-@keyframes pulseGlow {
-    0% {
-        text-shadow: 0 0 0px rgba(255, 255, 255, 0);
-    }
-    50% {
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-        text-shadow: 0 0 0px rgba(255, 255, 255, 0);
-    }
-}
-
-.site-logo:hover {
-    color: #6bb0d8; /* Lighter blue on hover */
-    transform: scale(1.02);
-}
-
-.nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 30px;
-}
-
-.nav-links a {
-    color: var(--light-text);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1em;
-    padding: 5px 0;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #6bb0d8;
-    transition: width 0.3s ease-in-out;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.nav-links a:hover {
-    color: #6bb0d8;
-}
-
-/* Mobile Menu Toggle (Hamburger Icon) */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001;
-}
-
-.hamburger {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--light-text);
-    margin: 5px 0;
-    transition: all 0.3s ease;
-}
-
-/* Mobile Responsiveness for Navigation */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        background-color: #34495e;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 20px 0;
-        box-shadow: 0 5px 10px var(--shadow-medium);
-        display: none; /* Hidden by default */
-        opacity: 0;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        transform: translateY(-10px);
-    }
-
-    .nav-links.active {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .nav-links a {
-        font-size: 1.1em;
-    }
-
-    /* Hamburger animation for active state */
-    .menu-toggle.active .hamburger:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .menu-toggle.active .hamburger:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-toggle.active .hamburger:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* Adjust main content padding for smaller screens */
-    main {
-        padding-top: 0;
-    }
-}
-
-/* Responsive adjustments for the main homepage buttons and general elements on very small screens */
-@media (max-width: 600px) {
-    .benefit-item {
-        align-items: center;
-    }
-    .benefit-item .button {
-        display: block;
-        width: 80%;
-        margin: 10px auto;
-    }
-    .benefits-grid .button.subscribe-button {
-        margin-left: auto;
-        margin-right: auto; /* Center subscribe button when alone */
-    }
-    h1 {
-        font-size: 2.5em;
-    }
-    .hero-tagline {
-        font-size: 1em;
-    }
-    .about-me p {
-        font-size: 0.95em;
-    }
-    h2 {
-        font-size: 2em;
-    }
-
-    /* Responsive adjustments for Contact Form on smaller screens */
-    .contact-form {
-        padding: 25px;
-        margin: 0 15px;
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group textarea {
-        width: calc(100% - 20px);
-    }
-
-    /* Responsive adjustment for About Me section on small screens */
-    .about-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-headshot {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    /* Responsive adjustment for About Me paragraph width on small screens */
-    .about-content p {
-        max-width: 100%;
-    }
-
-    .newsletter-hero h1 {
-        font-size: 3em; /* Adjust for very small screens */
-    }
-
-    .newsletter-hero-logo {
-        width: 120px; /* Smaller logo on very small screens */
-        height: 120px;
-    }
-}
-
-/* NEW: Upcoming Topics Section Styling - Streamlined for clarity, removed excess !important where not needed */
+/* Upcoming Topics Section (for No Onion, No Garlic page) */
 .upcoming-topics {
+    padding: 60px 0;
+    text-align: center;
     background-color: var(--lighter-grey-bg);
-    padding: 80px 0;
-}
-
-.upcoming-topics .container {
-    text-align: left;
 }
 
 .upcoming-topics h2 {
-    text-align: center;
+    color: var(--accent-green);
     margin-bottom: 40px;
-    color: var(--primary-blue);
 }
 
 .upcoming-grid {
@@ -955,28 +744,169 @@ footer a:hover {
     font-size: 1.4em;
     margin-bottom: 10px;
     text-align: left;
-    font-weight: 600; /* Ensure it's bold */
+    font-weight: 600; /* Ensure this is bold */
 }
 
 .topic-description {
     font-size: 0.95em;
-    color: #666;
+    color: var(--medium-text);
     line-height: 1.6;
     text-align: left;
 }
 
 .upcoming-note {
-    font-size: 1.2em;
-    color: var(--primary-blue);
-    margin-top: 50px;
-    font-style: normal;
+    margin-top: 40px;
+    font-size: 1em;
+    color: var(--medium-text);
+    font-style: italic;
+}
+
+/* Mobile Navigation Specifics */
+.main-nav {
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-logo {
+    font-family: 'Lora', serif;
+    font-size: 1.8em;
     font-weight: 700;
-    text-align: center;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px 20px;
-    background-color: var(--border-light);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px var(--shadow-medium);
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-blue);
+}
+
+/* Hamburger menu for mobile */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; /* Ensure it's above other content when active */
+}
+
+.hamburger {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--dark-text);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animation for hamburger icon */
+.menu-toggle.active .hamburger:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.menu-toggle.active .hamburger:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .hamburger:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links by default on small screens */
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffffff;
+        position: absolute;
+        top: 60px; /* Position below the nav bar */
+        left: 0;
+        box-shadow: 0 8px 15px var(--shadow-medium);
+        padding: 20px 0;
+        align-items: center;
+        gap: 15px;
+        transition: transform 0.3s ease-out;
+        transform: translateY(-100%); /* Start off-screen */
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateY(0); /* Slide in */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show hamburger on small screens */
+    }
+
+    .hero h1 {
+        font-size: 2.5em; /* Adjust hero heading size for mobile */
+    }
+
+    .hero-tagline {
+        font-size: 1.1em; /* Adjust hero tagline size for mobile */
+    }
+
+    h2 {
+        font-size: 1.8em; /* Adjust section headings for mobile */
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    .button {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+
+    .newsletter-hero h1 {
+        font-size: 3em; /* Adjust newsletter hero heading for mobile */
+    }
+
+    .about-headshot {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+
+    .cta-subscribe .button {
+        display: block;
+        width: calc(100% - 40px); /* Adjust for padding in container */
+        max-width: 300px; /* Limit max width even when block */
+        margin: 15px auto; /* Center block buttons */
+    }
 }
