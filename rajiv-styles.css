@@ -382,6 +382,7 @@ p {
     border-color: var(--support-red);
 }
 
+/* Archives card styling - now for a standalone card */
 .archives-card {
     background-color: var(--archives-neutral-light); /* Lighter neutral for archives */
     border-color: var(--archives-neutral); /* Neutral grey border */
@@ -469,16 +470,6 @@ p {
 }
 
 
-.newsletter-type {
-    font-size: 1.05em;
-    color: #444;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
 .benefit-item p {
     font-size: 1em;
     color: var(--medium-text);
@@ -543,6 +534,45 @@ p {
     }
 }
 
+
+/* NEW: Newsletter Archives Section Styles */
+.newsletter-archives-section {
+    background-color: var(--lighter-grey-bg); /* Use a light background */
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle pattern for archives section */
+.newsletter-archives-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.newsletter-archives-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.archives-content-wrapper {
+    display: flex;
+    justify-content: center; /* Center the single card */
+    margin-top: 40px; /* Space from heading */
+}
+
+.archives-content-wrapper .archives-card {
+    max-width: 400px; /* Limit the width of the single card */
+    width: 100%; /* Take full width up to max-width */
+    box-shadow: 0 4px 15px var(--shadow-medium); /* Slightly stronger shadow for standalone card */
+}
 
 /* Call to Action Section (now just a general connect section) */
 .call-to-action-section {
@@ -832,4 +862,79 @@ footer a:hover {
 
 .cta-subscribe .button {
     margin: 10px; /* Space out buttons if side-by-side */
-    border-color: #ffffff; /* White border
+    border-color: #ffffff; /* White border for contrast on blue background */
+}
+
+.cta-subscribe .button:hover {
+    background-color: #ffffff;
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+/* Upcoming Topics Section (for No Onion, No Garlic page) */
+.upcoming-topics {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--lighter-grey-bg);
+}
+
+.upcoming-topics h2 {
+    color: var(--accent-green);
+    margin-bottom: 40px;
+}
+
+.upcoming-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.upcoming-item {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-medium);
+    text-align: left;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition for animation */
+    opacity: 0; /* Initial state for animation */
+    transform: translateY(20px) scale(0.98);
+    border-top: 5px solid var(--accent-green); /* Consistent border for upcoming topics */
+}
+
+.upcoming-item.show { /* Class added by animations.js */
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.upcoming-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px var(--shadow-strong);
+}
+
+.topic-title {
+    color: var(--primary-blue);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: 600; /* Ensure this is bold */
+}
+
+.topic-description {
+    font-size: 0.95em;
+    color: var(--medium-text);
+    line-height: 1.6;
+    text-align: left;
+}
+
+.upcoming-note {
+    margin-top: 40px;
+    font-size: 1em;
+    color: var(--medium-text);
+    font-style: italic;
+}
+
+/* Mobile Navigation Specifics */
+.main-nav {
+    background
