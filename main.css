@@ -1,34 +1,54 @@
-/* General Layout and Container Styles */
-body {
-    font-family: 'Inter', sans-serif; /* Using Inter font as per guidelines */
-    margin: 0;
-    padding: 0; /* Remove padding from body, we'll use padding on sections */
-    background-color: #f0f4f8; /* A soft, light blue-grey background */
-    color: #2c3e50; /* A dark bluish-grey text color */
-    line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scrollbar due to animations */
+/* Custom Properties (Variables) for easy color management */
+:root {
+    --primary-blue: #357ca5; /* New Primary Blue */
+    --primary-blue-dark: #2a6a90; /* Darker New Primary Blue for hover/active states */
+    --accent-green: #5C8D55; /* Accent Green for No Onion, No Garlic */
+    --accent-green-dark: #4a7546; /* Darker Accent Green */
+    --light-grey-bg: #f0f4f8; /* Soft light blue-grey background */
+    --lighter-grey-bg: #e9f0f5; /* Even lighter blue-grey background */
+    --dark-text: #2c3e50; /* Dark bluish-grey text color */
+    --medium-text: #555; /* Medium grey text color */
+    --light-text: #ecf0f1; /* Light text for dark backgrounds */
+    --border-light: #e0e6ed; /* Light border color */
+    --shadow-light: rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    --shadow-medium: rgba(0, 0, 0, 0.1); /* Medium shadow */
+    --shadow-strong: rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    --shadow-prominent: rgba(0,0,0,0.3); /* Prominent shadow for icons */
+    --button-secondary: #D97047; /* New button color (orange/brown) */
+    --button-secondary-hover: #BF5C36; /* Darker secondary button color on hover */
 }
 
-/* Custom Scrollbar Styling */
+/* General Layout and Container Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-grey-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrollbar due to animations */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+/* Custom Scrollbar Styling (Webkit only - Chrome, Safari) */
 body::-webkit-scrollbar {
     width: 12px; /* Width of the scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-    background: #e0e6ed; /* Color of the track */
+    background: var(--border-light); /* Color of the track */
     border-radius: 10px;
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #357ca5; /* New Primary Blue */
+    background-color: var(--primary-blue); /* Primary Blue */
     border-radius: 10px;
-    border: 3px solid #e0e6ed; /* Padding around the thumb */
+    border: 3px solid var(--border-light); /* Padding around the thumb */
 }
 
 body::-webkit-scrollbar-thumb:hover {
-    background-color: #2a6a90; /* Darker New Primary Blue on hover */
+    background-color: var(--primary-blue-dark); /* Darker Primary Blue on hover */
 }
-
 
 .container {
     max-width: 1200px; /* Max width for content */
@@ -57,49 +77,54 @@ h2 {
     font-size: 2.5em;
     font-weight: 600;
     margin-bottom: 40px;
-    color: #357ca5; /* New Primary Blue for h2 */
+    color: var(--primary-blue);
 }
 
 h3 {
-    color: #2c3e50; /* Darker default for h3 */
+    color: var(--dark-text);
     font-size: 1.5em;
 }
 
 /* Button Styling */
 .button {
     display: inline-block;
-    background-color: #357ca5; /* New Primary Blue */
-    color: #ffffff; /* White text */
+    background-color: var(--primary-blue);
+    color: #ffffff;
     padding: 15px 30px;
-    border-radius: 8px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
+    border-radius: 8px;
+    text-decoration: none;
     font-weight: 600;
-    font-size: 1.2em; /* Slightly increased font size for better legibility */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth hover effects */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    margin-top: 20px; /* Space above button */
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px var(--shadow-medium);
+    margin-top: 20px;
+    border: 2px solid transparent; /* Added for hover effect transition */
 }
 
 .button:hover {
-    background-color: #ffffff; /* Reverse: White background on hover */
-    color: #357ca5; /* Reverse: Primary Blue text on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    background-color: #ffffff;
+    color: var(--primary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow-strong);
+    border-color: var(--primary-blue); /* Match border to text color on hover */
 }
 
 /* Hero Section Specific Styles - ADJUSTED FOR VIDEO BACKGROUND */
 .hero {
     background-color: #ffffff; /* Fallback background color if video fails to load */
-    padding: 100px 0; /* More vertical padding */
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for the section */
-    text-align: center; /* Center content within the hero section */
-    position: relative; /* Needed for positioning video and overlay */
-    overflow: hidden; /* Hide anything overflowing */
-    /* Remove previous background pattern here */
-    background-image: none;
+    padding: 100px 0;
+    box-shadow: 0 2px 15px var(--shadow-light);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: none; /* Ensure no residual background images */
     background-repeat: initial;
     background-size: initial;
     background-blend-mode: initial;
+    min-height: 500px; /* Ensure a minimum height for the hero section */
+    display: flex; /* Use flexbox for centering content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
 }
 
 .hero-video-background {
@@ -110,9 +135,9 @@ h3 {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: 0; /* Place behind overlay and text */
-    transform: translateX(-50%) translateY(-50%); /* Center the video */
-    object-fit: cover; /* Ensure video covers the entire container */
+    z-index: 0;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
     filter: grayscale(20%) brightness(80%); /* Optional: Desaturate slightly and darken for better contrast */
 }
 
@@ -123,65 +148,72 @@ h3 {
     width: 100%;
     height: 100%;
     background-color: rgba(240, 244, 248, 0.7); /* Semi-transparent light blue-grey overlay */
-    z-index: 1; /* Place between video and text */
+    z-index: 1;
 }
 
-.hero h1, .hero-tagline {
-    position: relative; /* Ensure text is above the overlay */
+.hero-content { /* Added wrapper for hero text to ensure it's on top */
+    position: relative;
     z-index: 2;
+    padding: 20px; /* Add some padding to content to prevent it from touching edges on small screens */
+    max-width: 900px; /* Limit content width */
+    margin: 0 auto;
 }
 
 .hero h1 {
-    font-family: 'Lora', serif; /* Apply the Lora font */
-    color: #333;
-    font-size: 3.8em; /* Adjusted size for Lora */
-    font-weight: 700; /* Keep it bold for impact */
+    font-family: 'Lora', serif;
+    color: var(--dark-text); /* Changed to a dark text for better contrast on the light overlay */
+    font-size: 3.8em;
+    font-weight: 700;
     margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle text shadow for readability */
 }
 
 .hero-tagline {
     font-size: 1.3em;
-    color: #555;
-    max-width: 800px; /* Consistent with previous discussions for readability */
-    margin: 0 auto 30px auto; /* More bottom margin for separation */
+    color: var(--medium-text); /* Changed to a medium grey for better contrast */
+    max-width: 800px;
+    margin: 0 auto 30px auto;
     line-height: 1.5;
+    text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.05);
 }
 
 /* Specific styles for newsletter hero section */
 .newsletter-hero {
-    padding: 80px 0; /* Slightly less padding than homepage hero */
+    padding: 80px 0;
+    min-height: 400px; /* Adjust min-height for newsletter hero */
 }
 
 .newsletter-hero-content {
-    position: relative; /* Ensure content is above overlay */
+    position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
+    text-align: center;
 }
 
 .newsletter-hero-logo {
-    width: 180px; /* Larger size for hero logo */
+    width: 180px;
     height: 180px;
     object-fit: contain;
     border-radius: 50%;
     background-color: #ffffff;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.35); /* Prominent shadow */
-    border: 4px solid #357ca5; /* Primary blue border */
-    margin-bottom: 30px; /* Space below logo */
+    box-shadow: 0 15px 40px var(--shadow-prominent);
+    border: 4px solid var(--primary-blue);
+    margin-bottom: 30px;
 }
 
 .newsletter-hero h1 {
-    font-size: 4.5em; /* Even larger for newsletter title */
-    color: #2c3e50; /* Darker color for strong contrast */
+    font-size: 4.5em;
+    color: var(--dark-text);
     margin-bottom: 20px;
 }
 
 /* About Me Section Specific Styles */
 .about-me {
-    background-color: #e9f0f5;
+    background-color: var(--lighter-grey-bg);
     padding: 80px 0;
     position: relative;
     overflow: hidden;
@@ -205,11 +237,14 @@ h3 {
     z-index: 1;
 }
 
-/* REVISED: About Content Layout using float for image */
+/* REVISED: About Content Layout using Flexbox for image & text */
 .about-content {
     max-width: 900px;
     margin: 0 auto;
-    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    align-items: flex-start; /* Align items to the top */
+    gap: 40px; /* Space between image and text */
     padding-top: 20px;
 }
 
@@ -218,20 +253,20 @@ h3 {
     height: 250px;
     object-fit: cover;
     border-radius: 50%;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px var(--shadow-medium);
     border: 5px solid #ffffff;
-    float: left;
-    margin-right: 40px;
-    margin-bottom: 20px;
+    flex-shrink: 0; /* Prevent image from shrinking */
 }
 
 .about-content p {
+    flex-grow: 1; /* Allow paragraphs to take up remaining space */
     text-align: left;
     margin-bottom: 1em;
+    color: var(--medium-text);
 }
 
 .about-me h2 {
-    color: #2a6a90;
+    color: var(--primary-blue-dark);
 }
 
 /* My Offerings Section Specific Styles */
@@ -251,7 +286,7 @@ h3 {
 .benefit-item {
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 10px var(--shadow-medium);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -259,26 +294,45 @@ h3 {
     align-items: center;
     text-align: center;
     border-top: 10px solid;
+    position: relative; /* For the subtle pattern */
+    overflow: hidden;
+}
+
+/* Subtle pattern for benefit items */
+.benefit-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.benefit-item > * { /* Ensure content is above the pattern */
+    position: relative;
+    z-index: 1;
 }
 
 /* Specific Card Backgrounds and Borders */
 .table-talk-card {
-    background-color: #f0f7fa;
-    border-color: #357ca5;
+    background-color: #f0f7fa; /* Lighter shade of primary blue */
+    border-color: var(--primary-blue);
 }
 
 .no-onion-no-garlic-card {
-    background-color: #f4f8f5;
-    border-color: #5C8D55;
+    background-color: #f4f8f5; /* Lighter shade of accent green */
+    border-color: var(--accent-green);
 }
-
 
 .benefit-item:hover {
     transform: translateY(-7px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px var(--shadow-strong);
 }
 
-/* NEW: Newsletter Icon Wrapper Styling */
+/* Newsletter Icon Wrapper Styling */
 .newsletter-title-group {
     display: flex;
     flex-direction: column;
@@ -292,7 +346,7 @@ h3 {
     object-fit: contain;
     border-radius: 50%;
     background-color: #ffffff;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 30px var(--shadow-prominent);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     margin-bottom: 8px;
     border: 3px solid rgba(53, 124, 165, 0.1);
@@ -301,11 +355,11 @@ h3 {
 .newsletter-icon:hover {
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-    border-color: #357ca5;
+    border-color: var(--primary-blue);
 }
 
 .benefit-item h3 {
-    color: #357ca5;
+    color: var(--primary-blue);
     font-size: 1.9em;
     margin-bottom: 5px;
     line-height: 1.2;
@@ -321,10 +375,9 @@ h3 {
     letter-spacing: 1.5px;
 }
 
-
 .benefit-item p {
     font-size: 1em;
-    color: #555;
+    color: var(--medium-text);
     text-align: center;
     margin: 0;
     line-height: 1.7;
@@ -336,7 +389,7 @@ h3 {
 
 /* Call to Action Section */
 .call-to-action-section {
-    background-color: #357ca5;
+    background-color: var(--primary-blue);
     color: #ffffff;
     padding: 80px 0;
     text-align: center;
@@ -347,12 +400,15 @@ h3 {
 }
 
 .call-to-action-section p {
-    color: #e0e0e0;
+    color: var(--light-text);
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
 }
 
 /* --- Contact Form Section Styles --- */
 .contact-section {
-    background-color: #e9f0f5;
+    background-color: var(--lighter-grey-bg);
     padding: 80px 0;
     text-align: center;
     position: relative;
@@ -379,7 +435,7 @@ h3 {
 
 .contact-intro {
     font-size: 1.1em;
-    color: #555;
+    color: var(--medium-text);
     max-width: 700px;
     margin: 0 auto 40px auto;
     line-height: 1.6;
@@ -391,7 +447,7 @@ h3 {
     background-color: #ffffff;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px var(--shadow-medium);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -406,14 +462,14 @@ h3 {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--dark-text);
     font-size: 1.05em;
 }
 
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
-    width: calc(100% - 24px);
+    width: calc(100% - 24px); /* Account for padding */
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -427,7 +483,7 @@ h3 {
 .form-group input[type="email"]:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #357ca5;
+    border-color: var(--primary-blue);
     box-shadow: 0 0 0 3px rgba(53, 124, 165, 0.2);
 }
 
@@ -453,7 +509,7 @@ h3 {
     position: absolute;
     top: -40px;
     left: 0;
-    background: #357ca5;
+    background: var(--primary-blue);
     color: white;
     padding: 8px;
     z-index: 9999;
@@ -470,10 +526,20 @@ h3 {
 /* Footer Styles */
 footer {
     background-color: #34495e;
-    color: #ecf0f1;
+    color: var(--light-text);
     padding: 30px 0;
     font-size: 0.9em;
     text-align: center;
+}
+
+footer a {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-blue);
 }
 
 /* --- Newsletter Specific Styles (for table-talk.html and no-onion-no-garlic.html) --- */
@@ -485,11 +551,11 @@ footer {
     max-width: 900px;
     margin: 40px auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px var(--shadow-light);
 }
 
 .newsletter-intro h2 {
-    color: #357ca5;
+    color: var(--primary-blue);
     margin-bottom: 20px;
     font-size: 2.2em;
 }
@@ -497,14 +563,14 @@ footer {
 .newsletter-intro p {
     font-size: 1.1em;
     line-height: 1.8;
-    color: #555;
+    color: var(--medium-text);
     max-width: 700px;
     margin: 0 auto;
 }
 
 .newsletter-intro p strong {
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--dark-text);
 }
 
 .what-you-get {
@@ -513,14 +579,14 @@ footer {
 }
 
 .what-you-get h2 {
-    color: #357ca5;
+    color: var(--primary-blue);
     margin-bottom: 40px;
     font-size: 2.2em;
 }
 
 .content-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for better small screen fit */
     gap: 30px;
     max-width: 900px;
     margin: 0 auto;
@@ -531,29 +597,31 @@ footer {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 8px var(--shadow-light);
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 5px solid; /* Default for content items */
+    display: flex; /* Flexbox for internal content alignment */
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
 }
 
 /* Specific content-item borders for Table Talk and No Onion, No Garlic */
 .table-talk-card-content-item {
-    border-color: #357ca5; /* Primary Blue for Table Talk content items */
+    border-color: var(--primary-blue);
 }
 
 .no-onion-no-garlic-card-content-item {
-    border-color: #5C8D55; /* Accent Green for No Onion, No Garlic content items */
+    border-color: var(--accent-green);
 }
-
 
 .content-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 18px var(--shadow-medium);
 }
 
 .content-item h3 {
-    color: #5C8D55;
+    color: var(--accent-green); /* This was originally #5C8D55, kept for consistency with your code */
     margin-bottom: 15px;
     font-size: 1.5em;
     text-align: left;
@@ -572,14 +640,14 @@ footer {
 }
 
 .cta-subscribe {
-    background-color: #e6f7ff;
+    background-color: #e6f7ff; /* A very light blue */
     padding: 80px 20px;
     text-align: center;
     margin-top: 60px;
 }
 
 .cta-subscribe h2 {
-    color: #357ca5;
+    color: var(--primary-blue);
     font-size: 2.5em;
     margin-bottom: 30px;
 }
@@ -590,33 +658,36 @@ footer {
     padding: 15px 40px;
     font-size: 1.2em;
     text-decoration: none;
-    background-color: #D97047;
+    background-color: var(--button-secondary); /* New secondary button color */
     color: white;
-    border-radius: 5px;
+    border-radius: 8px; /* Consistent border-radius */
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     margin: 10px;
+    border: 2px solid transparent; /* For hover effect */
 }
 
 .cta-subscribe .button:hover {
-    background-color: #BF5C36;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--button-secondary-hover);
+    box-shadow: 0 6px 15px var(--shadow-strong);
+    border-color: var(--button-secondary); /* Match border to original button color on hover */
 }
 
 /* Style for the 'Subscribe Now' button on index.html */
 .benefits-grid .button.subscribe-button {
-    background-color: #D97047;
+    background-color: var(--button-secondary);
     margin-left: 10px;
 }
 
 .benefits-grid .button.subscribe-button:hover {
-    background-color: #BF5C36;
+    background-color: var(--button-secondary-hover);
+    border-color: var(--button-secondary); /* Consistent border for subscribe button */
 }
 
 /* --- Header Navigation Menu Styles --- */
 .main-nav {
-    background-color: #34495e;
+    background-color: #34495e; /* Dark slate grey */
     padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px var(--shadow-medium);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -629,14 +700,13 @@ footer {
 }
 
 .site-logo {
-    color: #ecf0f1;
+    color: var(--light-text);
     font-family: 'Lora', serif;
     font-size: 1.8em;
     font-weight: 700;
     text-decoration: none;
-    /* Site logo pulse animation on load */
     animation: pulseGlow 2s ease-out forwards;
-    transition: transform 0.2s ease-in-out; /* For hover effect */
+    transition: transform 0.2s ease-in-out, color 0.3s ease;
 }
 
 /* Keyframes for subtle pulse glow */
@@ -652,10 +722,9 @@ footer {
     }
 }
 
-
 .site-logo:hover {
-    color: #6bb0d8;
-    transform: scale(1.02); /* Slight scale on hover */
+    color: #6bb0d8; /* Lighter blue on hover */
+    transform: scale(1.02);
 }
 
 .nav-links {
@@ -670,7 +739,7 @@ footer {
 }
 
 .nav-links a {
-    color: #ecf0f1;
+    color: var(--light-text);
     text-decoration: none;
     font-weight: 500;
     font-size: 1em;
@@ -712,7 +781,7 @@ footer {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #ecf0f1;
+    background-color: var(--light-text);
     margin: 5px 0;
     transition: all 0.3s ease;
 }
@@ -731,8 +800,8 @@ footer {
         left: 0;
         width: 100%;
         padding: 20px 0;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        display: none;
+        box-shadow: 0 5px 10px var(--shadow-medium);
+        display: none; /* Hidden by default */
         opacity: 0;
         transition: opacity 0.3s ease, transform 0.3s ease;
         transform: translateY(-10px);
@@ -763,6 +832,11 @@ footer {
     .menu-toggle.active .hamburger:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    /* Adjust main content padding for smaller screens */
+    main {
+        padding-top: 0;
+    }
 }
 
 /* Responsive adjustments for the main homepage buttons and general elements on very small screens */
@@ -777,6 +851,7 @@ footer {
     }
     .benefits-grid .button.subscribe-button {
         margin-left: auto;
+        margin-right: auto; /* Center subscribe button when alone */
     }
     h1 {
         font-size: 2.5em;
@@ -785,7 +860,7 @@ footer {
         font-size: 1em;
     }
     .about-me p {
-    font-size: 0.95em;
+        font-size: 0.95em;
     }
     h2 {
         font-size: 2em;
@@ -818,79 +893,90 @@ footer {
     .about-content p {
         max-width: 100%;
     }
+
+    .newsletter-hero h1 {
+        font-size: 3em; /* Adjust for very small screens */
+    }
+
+    .newsletter-hero-logo {
+        width: 120px; /* Smaller logo on very small screens */
+        height: 120px;
+    }
 }
 
-/* NEW: Upcoming Topics Section Styling */
+/* NEW: Upcoming Topics Section Styling - Streamlined for clarity, removed excess !important where not needed */
 .upcoming-topics {
-    background-color: #e9f0f5 !important; /* Force background color */
-    padding: 80px 0 !important; /* Force padding */
+    background-color: var(--lighter-grey-bg);
+    padding: 80px 0;
 }
 
 .upcoming-topics .container {
-    text-align: left !important;
+    text-align: left;
 }
 
 .upcoming-topics h2 {
-    text-align: center !important;
-    margin-bottom: 40px !important;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-blue);
 }
 
 .upcoming-grid {
-    display: grid !important; /* Force grid display */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; /* Force responsive columns */
-    gap: 25px !important; /* Force gap */
-    max-width: 900px !important;
-    margin: 40px auto !important; /* Force centering */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 40px auto;
 }
 
 .upcoming-item {
-    background-color: #ffffff !important; /* Force background color */
-    padding: 25px !important; /* Force padding */
-    border-radius: 8px !important; /* Force border-radius */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important; /* Force shadow */
-    text-align: left !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-    opacity: 0 !important; /* Initial state for animation */
-    transform: translateY(20px) scale(0.98) !important;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-medium);
+    text-align: left;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition for animation */
+    opacity: 0; /* Initial state for animation */
+    transform: translateY(20px) scale(0.98);
+    border-top: 5px solid var(--accent-green); /* Consistent border for upcoming topics */
 }
 
-.animate-on-scroll.show .upcoming-item { /* Apply to children of animated sections */
-    opacity: 1 !important;
-    transform: translateY(0) scale(1) !important;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out !important;
+.upcoming-item.show { /* Class added by animations.js */
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .upcoming-item:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.15) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px var(--shadow-strong);
 }
 
-.topic-title { /* Styling for h3 inside upcoming-item */
-    color: #357ca5 !important; /* Using primary blue for consistency */
-    font-size: 1.4em !important; /* Adjusted for better hierarchy */
-    margin-bottom: 10px !important;
-    text-align: left !important;
+.topic-title {
+    color: var(--primary-blue);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: 600; /* Ensure it's bold */
 }
 
-.topic-description { /* Styling for p inside upcoming-item */
-    font-size: 0.95em !important;
-    color: #666 !important;
-    line-height: 1.6 !important;
-    text-align: left !important;
+.topic-description {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.6;
+    text-align: left;
 }
 
 .upcoming-note {
-    font-size: 1.2em !important;
-    color: #357ca5 !important;
-    margin-top: 50px !important;
-    font-style: normal !important;
-    font-weight: 700 !important;
-    text-align: center !important;
-    max-width: 700px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 15px 20px !important;
-    background-color: #e0e6ed !important;
-    border-radius: 8px !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    font-size: 1.2em;
+    color: var(--primary-blue);
+    margin-top: 50px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 20px;
+    background-color: var(--border-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-medium);
 }
