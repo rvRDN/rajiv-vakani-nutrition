@@ -1,112 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Talk - Your Newsletter</title>
-    <link rel="stylesheet" href="rajiv-styles.css?v=20250714">
- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <script defer src="animations.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Talk | Rajiv Vakani</title>
+  <meta name="description" content="Table Talk: A newsletter by Rajiv Vakani on mindful eating, modern nutrition, and everyday food systems." />
+  <link rel="stylesheet" href="rajiv-styles.css?v=20250714">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script defer src="animations.js"></script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="site-logo">Rajiv Vakani</a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about-me">About Me</a></li>
+        <li><a href="table-talk.html">Table Talk</a></li>
+        <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
+        <li><a href="index.html#contact-form">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <header class="main-nav">
-        <div class="container nav-container">
-            <a href="index.html" class="site-logo">Rajiv's Reads</a>
-            <button class="menu-toggle" aria-label="Open navigation menu">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html#about-me">About Me</a></li>
-                    <li><a href="index.html#my-offerings">My Offerings</a></li>
-                    <li><a href="index.html#upcoming-topics">Upcoming Topics</a></li>
-                    <li><a href="index.html#contact-form">Contact</a></li>
-                </ul>
-            </nav>
+  <header class="hero newsletter-hero">
+    <div class="hero-overlay"></div>
+    <div class="container newsletter-hero-content">
+      <img src="images/table-talk-icon-large.png" alt="Table Talk Icon" class="newsletter-hero-logo">
+      <h1>Table Talk</h1>
+      <p class="hero-tagline">Science-forward, soul-aware insights on modern food, wellness, and how we eat now.</p>
+    </div>
+  </header>
+
+  <section class="newsletter-intro animate-on-scroll">
+    <div class="container">
+      <h2>What is Table Talk?</h2>
+      <p><strong>Table Talk</strong> is where modern nutrition meets real life. We explore the culture, policy, and science behind your plate — one grounded, digestible edition at a time.</p>
+      <p>Written for everyday eaters and lifelong learners alike.</p>
+    </div>
+  </section>
+
+  <section class="what-you-get animate-on-scroll">
+    <div class="container">
+      <h2>What You’ll Find Inside</h2>
+      <div class="content-grid">
+        <div class="content-item table-talk-card-content-item">
+          <h3>🍽️ Recipes That Make Sense</h3>
+          <p>Plant-based or not, every recipe is doable, nourishing, and built for real life.</p>
         </div>
-    </header>
-
-    <main id="main-content">
-        <section class="hero newsletter-hero">
-            <div class="hero-overlay"></div>
-            <div class="container newsletter-hero-content">
-                <img src="images/table-talk-icon-large.png" alt="Table Talk Newsletter Icon" class="newsletter-hero-logo">
-                <h1>Table Talk Newsletter</h1>
-                <p class="hero-tagline">Insights on plant-based cooking, nutrition, and sustainable living, served fresh to your inbox every week.</p>
-                <a href="#subscribe-form" class="button">Subscribe Now</a>
-            </div>
-        </section>
-
-        <section class="newsletter-intro animate-on-scroll">
-            <div class="container">
-                <h2>What is Table Talk?</h2>
-                <p><strong>Table Talk</strong> is a weekly newsletter dedicated to exploring the delicious and ethical world of plant-based cuisine. Whether you're a seasoned vegan, curious about reducing your meat intake, or simply looking for healthy and inspiring recipes, Table Talk has something for you.</p>
-                <p>We delve into topics like:</p>
-            </div>
-        </section>
-
-        <section class="what-you-get animate-on-scroll">
-            <div class="container">
-                <h2>What You'll Get in Every Edition:</h2>
-                <div class="content-grid">
-                    <div class="content-item table-talk-card-content-item">
-                        <h3>🍽️ Weekly Plant-Based Recipes</h3>
-                        <p>Discover creative and easy-to-follow recipes for every meal. From quick weeknight dinners to impressive dishes for special occasions, all 100% plant-based and packed with flavor.</p>
-                    </div>
-                    <div class="content-item table-talk-card-content-item">
-                        <h3>🌱 Nutrition Nuggets</h3>
-                        <p>Break down the science behind plant-based nutrition. Learn about essential nutrients, how to balance your diet, and common myths debunked by evidence-based information.</p>
-                    </div>
-                    <div class="content-item table-talk-card-content-item">
-                        <h3>♻️ Sustainable Living Tips</h3>
-                        <p>Explore practical ways to make your kitchen and lifestyle more eco-friendly. Reduce food waste, choose sustainable ingredients, and embrace mindful consumption.</p>
-                    </div>
-                    <div class="content-item table-talk-card-content-item">
-                        <h3>📚 Product Reviews & Recommendations</h3>
-                        <p>Get honest reviews of new plant-based products, kitchen gadgets, and cookbooks. We help you navigate the ever-growing market and find the best tools for your culinary journey.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-subscribe" id="subscribe-form">
-            <div class="container">
-                <h2>Ready to Join the Conversation?</h2>
-                <p>Sign up for Table Talk and get fresh insights delivered directly to your inbox!</p>
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
-                    <p class="hidden">
-                        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-                    </p>
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <input type="hidden" name="form-name" value="contact" />
-                    <button type="submit" class="button">Subscribe to Table Talk</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Rajiv's Reads. All rights reserved.</p>
-            <p><a href="mailto:info@rajivsreads.com">info@rajivsreads.com</a></p>
+        <div class="content-item table-talk-card-content-item">
+          <h3>🌿 Nutrition You Can Use</h3>
+          <p>No gimmicks, no fear-mongering — just evidence-backed, human-centered insight.</p>
         </div>
-    </footer>
+        <div class="content-item table-talk-card-content-item">
+          <h3>♻️ Systems Thinking</h3>
+          <p>Zoom out to look at food systems, marketing, and the invisible forces shaping your choices.</p>
+        </div>
+        <div class="content-item table-talk-card-content-item">
+          <h3>📖 Worthwhile Reads</h3>
+          <p>Honest recs: books, products, and tools I actually use and believe in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-subscribe animate-on-scroll">
+    <div class="container">
+      <h2>Join the Table</h2>
+      <p>Ready for grounded insight and fresh perspective delivered straight to your inbox?</p>
+      <a href="https://subscribepage.io/tabletalk-news" class="button">Subscribe Now →</a>
+      <a href="table-talk-archive.html" class="button">View Past Issues →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Rajiv Vakani. All rights reserved. | <a href="404.html">404</a></p>
+    </div>
+  </footer>
 </body>
 </html>
