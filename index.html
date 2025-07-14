@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0\"/>
   <title>Rajiv Vakani | Nutrition, Culture & Clarity</title>
   <meta name="description" content="Rajiv Vakani's official site. Explore his Table Talk and No Onion No Garlic newsletters blending science, tradition, and practical food wisdom.">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="rajiv-styles.css?v=20250714" />
   <link rel="icon" type="image/png" href="favicon.png" />
+  <script defer src="animations.js"></script>
 </head>
 <body>
 
@@ -36,97 +37,87 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Rajiv Vakani</h1>
-      <p class="hero-tagline">Writing that nourishes, food that means something, ideas worth sitting with.</p>
+      <p class="hero-tagline">Nutrition, culture, and clarity for the modern eater.</p>
+      <a href="#explore-newsletters" class="button animate-on-scroll">Explore Newsletters ↓</a>
     </div>
   </header>
 
-  <section class="newsletter-previews animate-on-scroll">
+  <section class="about-me animate-on-scroll" id="about-me">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="image_797ce2.png" alt="Rajiv Vakani Headshot" class="about-headshot">
+        <div>
+          <p>Hi, I'm Rajiv! My journey into food and nutrition isn't just about science; it's about stories, culture, and the profound impact of what we eat on our lives and the planet.</p>
+          <p>I combine evidence-based nutritional science with a deep understanding of food systems, cultural heritage, and mindful living. Whether it's demystifying diet trends, exploring sustainable practices, or sharing plant-based insights rooted in Jain traditions, my aim is always clarity over dogma.</p>
+          <p>I believe that thoughtful eating is a cornerstone of a well-lived life, and my work is dedicated to helping you find joy, health, and purpose on your plate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="explore-newsletters animate-on-scroll" id="explore-newsletters">
     <div class="container">
       <h2>Explore My Newsletters</h2>
-      <div class="content-grid">
-        <div class="content-item">
-          <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="newsletter-logo" />
-          <h3>Table Talk</h3>
-          <p>A science-forward, soul-aware newsletter about nutrition, wellness, and the modern food system. Smart, grounded, and useful for everyday eaters.</p>
-          <a href="table-talk.html" class="button">Read Table Talk →</a>
-        </div>
-        <div class="content-item">
-          <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion No Garlic Logo" class="newsletter-logo" />
-          <h3>No Onion, No Garlic</h3>
-          <p>For anyone practicing Jain, sattvic, or plant-based eating with intention. Simple meals, nutrition clarity, and mindful food habits, without judgment.</p>
-          <a href="no-onion-no-garlic.html" class="button">Read No Onion No Garlic →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="supporter-invite animate-on-scroll">
-    <div class="container">
-      <h2>Supporter Access</h2>
-      <p>Supporters get full access to exclusive back issues and extras. If you've already subscribed, use your password to enter:</p>
-      <div class="supporter-buttons">
-        <a href="table-talk-archive.html" class="button">Table Talk Archive →</a>
-        <a href="no-onion-no-garlic-archive.html" class="button">No Onion No Garlic Archive →</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="about-me" class="about-me animate-on-scroll">
-    <div class="container">
-      <h2>My Approach to Nutrition</h2>
-      <div class="about-content animate-on-scroll">
-        <img src="headshot_36.jpg" alt="Rajiv Vakani professional headshot" class="about-headshot" />
-        <p>Hi! I'm Rajiv Vakani. I left a career in finance to pursue something that felt more human: helping people feel at home in their own bodies through nutrition. In finance, success was always being redefined, measured in quarters, not in meaning. I wanted to build something that would actually last.</p>
-        <p>I'm currently studying Nutrition, Dietetics & Food Studies at NYU, blending science, lived experience, and cultural insight into everything I do. I’ve trained in both food science and French culinary technique, and also the kind of traditional Indian cooking you experienced in your grandmother's kitchen.</p>
-        <p>This space is where I share what I'm learning, always with the goal of offering grounded, accessible knowledge. My work focuses on dispelling misinformation, simplifying complex dietary choices, and fostering a healthier, more intuitive relationship with food. I believe that thoughtful eating is a journey of self-discovery and cultural connection, not just a set of rules. I'm here to guide you with clarity and compassion.</p>
-        <p>My newsletters, Table Talk and No Onion, No Garlic, are extensions of this mission. Table Talk delves into broader topics of food systems and modern nutrition, while No Onion, No Garlic provides tailored insights and recipes for Jain and plant-based lifestyles.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="my-offerings animate-on-scroll">
-    <div class="container">
-      <h2>My Offerings</h2>
       <div class="benefits-grid">
-        <div class="benefit-item table-talk-card">
+        <div class="benefit-item table-talk-card animate-on-scroll">
           <div class="newsletter-title-group">
-            <img src="icons/table-talk-icon.png" alt="Table Talk Icon" class="newsletter-icon" />
+            <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="newsletter-icon">
             <h3>Table Talk</h3>
-            <span class="newsletter-type">Newsletter</span>
+            <span class="newsletter-type">Mindful & Modern Nutrition</span>
           </div>
-          <p>Science-forward, soul-aware insights on modern food, wellness, and how we eat now. Grounded, digestible, and useful for everyday eaters.</p>
-          <a href="table-talk.html" class="button">Explore Table Talk →</a>
+          <p>Nutrition, culture, and clarity for the modern eater. Grounded insights into food systems, and diverse recipes.</p>
+          <div class="card-buttons">
+            <a href="table-talk.html" class="button">Learn More</a>
+            <a href="https://subscribepage.io/tabletalk-news" class="button button-secondary">Subscribe</a>
+          </div>
         </div>
-        <div class="benefit-item no-onion-no-garlic-card">
+
+        <div class="benefit-item no-onion-no-garlic-card animate-on-scroll">
           <div class="newsletter-title-group">
-            <img src="icons/no-onion-no-garlic-icon.png" alt="No Onion No Garlic Icon" class="newsletter-icon" />
+            <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Logo" class="newsletter-icon">
             <h3>No Onion, No Garlic</h3>
-            <span class="newsletter-type">Newsletter</span>
+            <span class="newsletter-type">Jain & Sattvic Eating</span>
           </div>
-          <p>For anyone practicing Jain, sattvic, or plant-based eating with intention. Simple meals, nutrition clarity, and mindful food habits, without judgment.</p>
-          <a href="no-onion-no-garlic.html" class="button">Explore No Onion, No Garlic →</a>
+          <p>Mindful food, Jain values, and modern nutrition. A practical guide to intentional plant-based eating and recipes.</p>
+          <div class="card-buttons">
+            <a href="no-onion-no-garlic.html" class="button">Learn More</a>
+            <a href="https://subscribepage.io/wzHcM2" class="button button-secondary">Subscribe</a>
+          </div>
         </div>
+
+        <div class="benefit-item support-me-card animate-on-scroll">
+          <div class="newsletter-title-group">
+            <div class="newsletter-icon support-icon-placeholder">❤️</div> 
+            <h3>Support My Work</h3>
+            <span class="newsletter-type">Make a difference</span>
+          </div>
+          <p>If my content brings you value, consider becoming a supporter. Your contribution helps keep this work going and accessible to all.</p>
+          <div class="card-buttons">
+            <a href="#contact-form" class="button button-secondary">Learn How to Support</a>
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>
 
   <section class="call-to-action-section animate-on-scroll">
     <div class="container">
-      <h2>Ready to Reclaim Your Plate?</h2>
-      <p>Discover a mindful approach to eating that blends science, tradition, and personal values. Join my community for clarity, connection, and real food wisdom.</p>
-      <a href="https://subscribepage.io/rajiv-master" class="button">Subscribe Now →</a>
+      <h2>Let's Connect</h2>
+      <p>I'm always eager to engage with those passionate about food, health, and mindful living. Whether you have a question, a collaboration idea, or just want to say hello, feel free to reach out.</p>
+      <a href="#contact-form" class="button button-secondary">Get In Touch →</a>
     </div>
   </section>
 
-  <section id="contact-form" class="contact-section animate-on-scroll">
+  <section class="contact-section animate-on-scroll" id="contact-form">
     <div class="container">
-      <h2>Get in Touch</h2>
-      <p class="contact-intro">Have a question about nutrition, my newsletters, or just want to connect? Send me a message!</p>
-      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <h2>Contact Me</h2>
+      <p class="contact-intro">Have a question or just want to connect? Send me a message!</p>
+      <form name="contact" method="POST" data-netlify="true" class="contact-form">
         <p class="hidden">
           <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
         </p>
-        <input type="hidden" name="form-name" value="contact" />
         <div class="form-group">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />

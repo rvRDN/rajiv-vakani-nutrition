@@ -16,6 +16,8 @@
     --shadow-prominent: rgba(0,0,0,0.3); /* Prominent shadow for icons */
     --button-secondary: #D97047; /* New button color (orange/brown) */
     --button-secondary-hover: #BF5C36; /* Darker secondary button color on hover */
+    --support-red: #D9534F; /* Red for support card */
+    --support-red-dark: #C24440; /* Darker red for support card hover */
 }
 
 /* General Layout and Container Styles */
@@ -83,6 +85,11 @@ h2 {
 h3 {
     color: var(--dark-text);
     font-size: 1.5em;
+}
+
+/* Adjusted Paragraph Spacing */
+p {
+    margin-bottom: 1.5em; /* Standard paragraph spacing (one blank line visually) */
 }
 
 /* Button Styling */
@@ -190,13 +197,11 @@ h3 {
     text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* Specific styles for newsletter hero section */
+/* Specific styles for newsletter hero section (now also using video) */
 .newsletter-hero {
     padding: 80px 0;
     min-height: 400px; /* Adjust min-height for newsletter hero */
-    /* Removed background-image properties as video will be used */
     background-color: transparent; /* Fallback if video fails */
-    /* Ensure these are present, potentially inherited from .hero */
     position: relative;
     overflow: hidden;
     display: flex;
@@ -230,40 +235,6 @@ h3 {
     font-size: 4.5em;
     color: var(--dark-text);
     margin-bottom: 20px;
-}
-
-/* Supporter Section Specific Styles */
-.supporter-invite {
-    text-align: center; /* Ensure the entire section's content is centered */
-    background-color: var(--light-grey-bg);
-    padding: 60px 0;
-}
-
-.supporter-buttons {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically by default */
-    align-items: center; /* Center buttons horizontally when stacked */
-    gap: 20px; /* Space between buttons */
-    max-width: 600px; /* Limit the width of the button container */
-    margin: 30px auto 0 auto; /* Center the button container and add top margin */
-}
-
-.supporter-buttons .button {
-    width: 100%; /* Make buttons take full width of their container */
-    max-width: 350px; /* Max width for individual buttons to prevent overstretching */
-}
-
-/* Media query for larger screens to align buttons side-by-side */
-@media (min-width: 768px) {
-    .supporter-buttons {
-        flex-direction: row; /* Arrange buttons horizontally on larger screens */
-        justify-content: center; /* Center buttons when side-by-side */
-        gap: 30px; /* Adjust gap for wider screens */
-    }
-    .supporter-buttons .button {
-        width: auto; /* Allow buttons to size naturally */
-        min-width: 220px; /* Ensure a minimum width */
-    }
 }
 
 /* About Me Section Specific Styles */
@@ -317,9 +288,14 @@ h3 {
 .about-content p {
     flex: 1 1 450px; /* Flex-grow, flex-shrink, flex-basis. Allows paragraphs to grow and wrap */
     text-align: left;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em; /* Consistent paragraph spacing */
     color: var(--medium-text);
 }
+/* Ensure no extra margin for the very last paragraph in a section if needed */
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
 
 /* For smaller screens, adjust about-content to ensure stacking */
 @media (max-width: 768px) {
@@ -337,8 +313,8 @@ h3 {
     color: var(--primary-blue-dark);
 }
 
-/* Explore Newsletters Section Specific Styles (formerly .my-offerings) */
-.explore-newsletters { /* Renamed class */
+/* Explore Newsletters Section Specific Styles */
+.explore-newsletters {
     background-color: #ffffff;
     padding: 80px 0;
 }
@@ -395,6 +371,12 @@ h3 {
     border-color: var(--accent-green);
 }
 
+.support-me-card {
+    background-color: #fcebeb; /* Lighter shade of red for support */
+    border-color: var(--support-red);
+}
+
+
 .benefit-item:hover {
     transform: translateY(-7px);
     box-shadow: 0 10px 25px var(--shadow-strong);
@@ -417,14 +399,32 @@ h3 {
     box-shadow: 0 12px 30px var(--shadow-prominent);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     margin-bottom: 8px;
-    border: 3px solid rgba(53, 124, 165, 0.1);
+    border: 3px solid rgba(53, 124, 165, 0.1); /* Default border for icons */
 }
+
+/* Styling for the support icon placeholder (if no image is used) */
+.support-icon-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5em; /* Adjust size of the heart emoji */
+    color: var(--support-red);
+    border-color: var(--support-red); /* Border color for support icon */
+    font-weight: normal; /* Ensure text is not bolded if it's an emoji */
+}
+
 
 .newsletter-icon:hover {
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-    border-color: var(--primary-blue);
+    border-color: var(--primary-blue); /* Default hover border */
 }
+
+/* Specific icon border color on hover for support card */
+.support-me-card .newsletter-icon:hover {
+    border-color: var(--support-red);
+}
+
 
 .benefit-item h3 {
     color: var(--primary-blue);
@@ -432,6 +432,11 @@ h3 {
     margin-bottom: 5px;
     line-height: 1.2;
 }
+/* Ensure support card heading is red */
+.support-me-card h3 {
+    color: var(--support-red);
+}
+
 
 .newsletter-type {
     font-size: 1.05em;
@@ -447,7 +452,7 @@ h3 {
     font-size: 1em;
     color: var(--medium-text);
     text-align: center;
-    margin: 0;
+    margin-bottom: 20px; /* Standard paragraph spacing within card */
     line-height: 1.7;
     flex-grow: 1; /* Allow paragraph to take up available space */
 }
@@ -457,17 +462,29 @@ h3 {
     display: flex;
     flex-direction: column; /* Stack buttons by default */
     gap: 15px; /* Space between buttons */
-    margin-top: 25px; /* Space from paragraph above */
+    margin-top: auto; /* Push buttons to the bottom of the flex container */
     width: 100%; /* Take full width of parent */
     align-items: center; /* Center buttons horizontally */
 }
 
 .card-buttons .button {
     margin-top: 0; /* Override default button margin-top */
-    width: calc(100% - 20px); /* Adjust for padding of button */
+    width: calc(100% - 20px); /* Account for padding */
     max-width: 250px; /* Limit max width of buttons */
     font-size: 1em; /* Slightly smaller font for card buttons */
     padding: 12px 20px;
+}
+
+/* Specific styling for the button in the support card */
+.support-me-card .card-buttons .button {
+    background-color: var(--support-red);
+    border-color: var(--support-red);
+}
+
+.support-me-card .card-buttons .button:hover {
+    background-color: #ffffff;
+    color: var(--support-red);
+    border-color: var(--support-red);
 }
 
 @media (min-width: 480px) { /* Adjust for wider mobiles/small tablets */
@@ -483,7 +500,7 @@ h3 {
 }
 
 
-/* Call to Action Section */
+/* Call to Action Section (now just a general connect section) */
 .call-to-action-section {
     background-color: var(--primary-blue);
     color: #ffffff;
