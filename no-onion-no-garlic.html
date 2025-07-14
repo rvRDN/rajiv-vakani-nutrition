@@ -20,46 +20,48 @@
       </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about-me">About Me</a></li>
         <li><a href="table-talk.html">Table Talk</a></li>
         <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
+        <li><a href="index.html#about-me">About Me</a></li>
         <li><a href="index.html#contact-form">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="hero newsletter-hero">
+  <header class="hero newsletter-hero animate-on-scroll">
+    <video autoplay muted loop playsinline class="hero-video-background">
+      <source src="hero-background.mp4" type="video/mp4" />
+    </video>
     <div class="hero-overlay"></div>
-    <div class="container newsletter-hero-content">
-      <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion No Garlic Logo" class="newsletter-hero-logo">
+    <div class="newsletter-hero-content">
+      <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Logo" class="newsletter-hero-logo animate-on-scroll">
       <h1>No Onion, No Garlic</h1>
-      <p class="hero-tagline">Jain & Plant-Based Eating, Made Simple.<br />Nourishing traditions, modern plates.</p>
+      <p class="hero-tagline">Mindful eating with Jain values and plant-based clarity.</p>
     </div>
   </header>
 
   <section class="newsletter-intro animate-on-scroll">
     <div class="container">
-      <h2>Honoring Tradition. Eating with Awareness.</h2>
-      <p>The No Onion, No Garlic newsletter is for anyone navigating Jain, plant-based, or religious diets in today’s world. You’ll get grounded, real-world ideas that make this lifestyle easier, without losing its depth.</p>
-      <p>Each issue brings you recipes, nutrition tips, and food insights rooted in <strong>ahimsa, clarity, and intention</strong>. This isn’t about restriction. It’s about choosing food that supports your values, your health, and your life.</p>
+      <h2>Welcome to No Onion, No Garlic</h2>
+      <p>This newsletter is a dedicated space for anyone practicing or exploring Jain, sattvic, or deeply intentional plant-based eating. It offers a practical guide to mindful food habits, delicious recipes, and clear nutritional insights, all delivered without judgment.</p>
     </div>
   </section>
 
   <section class="what-you-get animate-on-scroll">
     <div class="container">
-      <h2>What to Expect in Each Issue</h2>
+      <h2>What You Get</h2>
       <div class="content-grid">
         <div class="content-item no-onion-no-garlic-card-content-item">
-          <h3>Recipes That Work</h3>
-          <p>Easy meals made without onion or garlic. <strong>No guesswork, no fluff</strong>, just food that fits your diet and still tastes great.</p>
+          <h3>Recipes for Your Lifestyle</h3>
+          <p>Simple, flavorful, and compliant meals designed for everyday ease.</p>
         </div>
         <div class="content-item no-onion-no-garlic-card-content-item">
-          <h3>Real-World Adaptations</h3>
-          <p>Simple tweaks to make your favorite meals Jain- or plant-based <strong>without losing flavor</strong>.</p>
+          <h3>Nutrition Clarity</h3>
+          <p>Demystifying plant-based nutrition with evidence-based, practical advice.</p>
         </div>
         <div class="content-item no-onion-no-garlic-card-content-item">
-          <h3>Nutrition Without the Gaps</h3>
-          <p>Guidance on how to meet your nutrient needs, even when you’re <strong>skipping common ingredients</strong>.</p>
+          <h3>Mindful Eating Practices</h3>
+          <p>Cultivate a deeper, more intentional connection with your food.</p>
         </div>
         <div class="content-item no-onion-no-garlic-card-content-item">
           <h3>Food With Meaning</h3>
@@ -99,5 +101,24 @@
       <p>&copy; 2025 Rajiv Vakani. All rights reserved. | <a href="404.html">404</a></p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function () {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>

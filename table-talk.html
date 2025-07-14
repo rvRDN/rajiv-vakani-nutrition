@@ -20,34 +20,36 @@
       </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about-me">About Me</a></li>
         <li><a href="table-talk.html">Table Talk</a></li>
         <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
+        <li><a href="index.html#about-me">About Me</a></li>
         <li><a href="index.html#contact-form">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="hero newsletter-hero">
+  <header class="hero newsletter-hero animate-on-scroll">
+    <video autoplay muted loop playsinline class="hero-video-background">
+      <source src="hero-background.mp4" type="video/mp4" />
+    </video>
     <div class="hero-overlay"></div>
-    <div class="container newsletter-hero-content">
-      <img src="icons/table-talk-icon.png" alt="Table Talk Icon" class="newsletter-hero-logo">
+    <div class="newsletter-hero-content">
+      <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="newsletter-hero-logo animate-on-scroll">
       <h1>Table Talk</h1>
-      <p class="hero-tagline">Science-forward, soul-aware insights on modern food, wellness, and how we eat now.</p>
+      <p class="hero-tagline">Nutrition, culture, and clarity for the modern eater.</p>
     </div>
   </header>
 
   <section class="newsletter-intro animate-on-scroll">
     <div class="container">
-      <h2>What is Table Talk?</h2>
-      <p><strong>Table Talk</strong> is where modern nutrition meets real life. We explore the culture, policy, and science behind your plate — one grounded, digestible edition at a time.</p>
-      <p>Written for everyday eaters and lifelong learners alike.</p>
+      <h2>Welcome to Table Talk</h2>
+      <p>This is where science meets soul in a conversation about what and how we eat. Table Talk offers grounded insights into modern nutrition, the complex food system, and the cultural nuances that shape our plates. It’s for anyone seeking clarity, not just rules, around food choices.</p>
     </div>
   </section>
 
   <section class="what-you-get animate-on-scroll">
     <div class="container">
-      <h2>What You’ll Find Inside</h2>
+      <h2>What You Get</h2>
       <div class="content-grid">
         <div class="content-item table-talk-card-content-item">
           <h3>🍽️ Recipes That Make Sense</h3>
@@ -63,7 +65,7 @@
         </div>
         <div class="content-item table-talk-card-content-item">
           <h3>📖 Worthwhile Reads</h3>
-          <p>Honest recs: books, products, and tools I actually use and believe in.</p>
+          <p>Honest recs, books, products, and tools I actually use and believe in.</p>
         </div>
       </div>
     </div>
@@ -83,5 +85,24 @@
       <p>&copy; 2025 Rajiv Vakani. All rights reserved. | <a href="404.html">404</a></p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function () {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>

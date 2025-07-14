@@ -109,6 +109,19 @@ h3 {
     border-color: var(--primary-blue); /* Match border to text color on hover */
 }
 
+/* Secondary Button Style */
+.button-secondary {
+    background-color: var(--button-secondary);
+    border-color: var(--button-secondary);
+}
+
+.button-secondary:hover {
+    background-color: #ffffff;
+    color: var(--button-secondary);
+    border-color: var(--button-secondary);
+}
+
+
 /* Hero Section Specific Styles - ADJUSTED FOR VIDEO BACKGROUND */
 .hero {
     background-color: #ffffff; /* Fallback background color if video fails to load */
@@ -181,6 +194,14 @@ h3 {
 .newsletter-hero {
     padding: 80px 0;
     min-height: 400px; /* Adjust min-height for newsletter hero */
+    /* Removed background-image properties as video will be used */
+    background-color: transparent; /* Fallback if video fails */
+    /* Ensure these are present, potentially inherited from .hero */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .newsletter-hero-content {
@@ -209,6 +230,40 @@ h3 {
     font-size: 4.5em;
     color: var(--dark-text);
     margin-bottom: 20px;
+}
+
+/* Supporter Section Specific Styles */
+.supporter-invite {
+    text-align: center; /* Ensure the entire section's content is centered */
+    background-color: var(--light-grey-bg);
+    padding: 60px 0;
+}
+
+.supporter-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically by default */
+    align-items: center; /* Center buttons horizontally when stacked */
+    gap: 20px; /* Space between buttons */
+    max-width: 600px; /* Limit the width of the button container */
+    margin: 30px auto 0 auto; /* Center the button container and add top margin */
+}
+
+.supporter-buttons .button {
+    width: 100%; /* Make buttons take full width of their container */
+    max-width: 350px; /* Max width for individual buttons to prevent overstretching */
+}
+
+/* Media query for larger screens to align buttons side-by-side */
+@media (min-width: 768px) {
+    .supporter-buttons {
+        flex-direction: row; /* Arrange buttons horizontally on larger screens */
+        justify-content: center; /* Center buttons when side-by-side */
+        gap: 30px; /* Adjust gap for wider screens */
+    }
+    .supporter-buttons .button {
+        width: auto; /* Allow buttons to size naturally */
+        min-width: 220px; /* Ensure a minimum width */
+    }
 }
 
 /* About Me Section Specific Styles */
@@ -282,8 +337,8 @@ h3 {
     color: var(--primary-blue-dark);
 }
 
-/* My Offerings Section Specific Styles */
-.my-offerings {
+/* Explore Newsletters Section Specific Styles (formerly .my-offerings) */
+.explore-newsletters { /* Renamed class */
     background-color: #ffffff;
     padding: 80px 0;
 }
@@ -394,11 +449,39 @@ h3 {
     text-align: center;
     margin: 0;
     line-height: 1.7;
+    flex-grow: 1; /* Allow paragraph to take up available space */
 }
 
-.benefit-item .button {
-    margin-top: 25px;
+/* Styles for the two buttons within the card */
+.card-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons by default */
+    gap: 15px; /* Space between buttons */
+    margin-top: 25px; /* Space from paragraph above */
+    width: 100%; /* Take full width of parent */
+    align-items: center; /* Center buttons horizontally */
 }
+
+.card-buttons .button {
+    margin-top: 0; /* Override default button margin-top */
+    width: calc(100% - 20px); /* Adjust for padding of button */
+    max-width: 250px; /* Limit max width of buttons */
+    font-size: 1em; /* Slightly smaller font for card buttons */
+    padding: 12px 20px;
+}
+
+@media (min-width: 480px) { /* Adjust for wider mobiles/small tablets */
+    .card-buttons {
+        flex-direction: row; /* Arrange side-by-side */
+        justify-content: center; /* Center buttons when side-by-side */
+        flex-wrap: wrap; /* Allow wrapping if space is tight */
+    }
+    .card-buttons .button {
+        width: auto; /* Allow buttons to size naturally */
+        min-width: 150px; /* Ensure a minimum width */
+    }
+}
+
 
 /* Call to Action Section */
 .call-to-action-section {
