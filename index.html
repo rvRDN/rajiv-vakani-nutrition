@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rajiv Vakani</title>
-  <meta name="description" content="Explore Rajiv Vakani’s newsletter offerings: Table Talk and No Onion, No Garlic. Both are rooted in clarity, culture, and practical insight." />
+  <title>Rajiv Vakani | Nutrition Newsletters</title>
+  <meta name="description" content="Explore mindful nutrition with Rajiv Vakani through two unique newsletters: Table Talk and No Onion, No Garlic. Join the table today." />
   <link rel="stylesheet" href="rajiv-styles.css?v=20250714">
   <link rel="icon" type="image/png" href="favicon.png">
   <script defer src="animations.js"></script>
@@ -19,7 +19,7 @@
         <span class="hamburger"></span>
       </button>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#about-me">About Me</a></li>
         <li><a href="table-talk.html">Table Talk</a></li>
         <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
@@ -28,79 +28,83 @@
     </div>
   </nav>
 
-  <header class="hero homepage-hero">
+  <header class="hero">
     <div class="hero-overlay"></div>
-    <div class="container homepage-hero-content">
+    <div class="container center-text">
       <h1>Two Newsletters, One Purpose</h1>
       <p class="hero-tagline">Explore mindful nutrition through two unique lenses. Choose what speaks to you — or explore both.</p>
     </div>
   </header>
 
-  <section class="newsletter-cards animate-on-scroll">
-    <div class="container card-container">
-      <div class="card">
-        <img src="icons/table-talk-icon.png" alt="Table Talk Icon" class="card-logo reduced">
-        <h2 class="card-title">Table Talk</h2>
-        <p class="card-description">A science-forward, soul-aware newsletter about nutrition, wellness, and the modern food system.</p>
-        <a href="table-talk.html" class="button">Learn More →</a>
-        <a href="https://subscribepage.io/tabletalk-news" class="button">Subscribe Now →</a>
+  <section class="newsletter-section animate-on-scroll">
+    <div class="container newsletter-grid">
+
+      <div class="newsletter-card">
+        <img src="icons/table-talk-icon.png" alt="Table Talk Icon" class="newsletter-icon">
+        <h2>Table Talk</h2>
+        <p class="newsletter-description">A science-forward, soul-aware newsletter about nutrition, wellness, and the modern food system.</p>
+        <div class="button-group">
+          <a href="table-talk.html" class="button">Learn More →</a>
+          <a href="https://subscribepage.io/tabletalk-news" class="button secondary">Subscribe Now →</a>
+        </div>
       </div>
-      <div class="card">
-        <img src="icons/no-onion-no-garlic-icon.png" alt="No Onion No Garlic Icon" class="card-logo reduced">
-        <h2 class="card-title">No Onion, No Garlic</h2>
-        <p class="card-description">Clarity-driven, plant-based ideas for Jains, sattvic eaters, and anyone seeking mindful food habits.</p>
-        <a href="no-onion-no-garlic.html" class="button">Learn More →</a>
-        <a href="https://subscribepage.io/no-onion-no-garlic-news" class="button">Subscribe Now →</a>
+
+      <div class="newsletter-card">
+        <img src="icons/no-onion-icon.png" alt="No Onion No Garlic Icon" class="newsletter-icon">
+        <h2>No Onion, No Garlic</h2>
+        <p class="newsletter-description">Clarity-driven, plant-based ideas for Jains, sattvic eaters, and anyone seeking mindful food habits.</p>
+        <div class="button-group">
+          <a href="no-onion-no-garlic.html" class="button">Learn More →</a>
+          <a href="https://subscribepage.io/no-onion-no-garlic" class="button secondary">Subscribe Now →</a>
+        </div>
       </div>
+
     </div>
   </section>
 
   <section class="supporter-access animate-on-scroll">
-    <div class="container">
+    <div class="container center-text">
       <h2>Supporter Access</h2>
       <p>Supporters get full access to exclusive back issues and extras. If you've already subscribed, use your password to enter:</p>
-      <div class="supporter-buttons">
+      <div class="button-group">
         <a href="table-talk-archive.html" class="button">Table Talk Archive →</a>
         <a href="no-onion-no-garlic-archive.html" class="button">No Onion No Garlic Archive →</a>
       </div>
     </div>
   </section>
 
-  <section class="about-me animate-on-scroll" id="about-me">
-    <div class="container about-container">
+  <section id="about-me" class="about-section animate-on-scroll">
+    <div class="container about-flex">
       <div class="about-image">
-        <img src="headshot_36.jpg" alt="Rajiv Vakani headshot" class="headshot">
+        <img src="images/rajiv-circle.png" alt="Rajiv Vakani Portrait">
       </div>
       <div class="about-text">
         <h2>My Approach to Nutrition</h2>
-        <p>Hi! I'm Rajiv Vakani. I left a career in finance to pursue something that felt more human: helping people feel feel at home in their own bodies through nutrition. In finance, success was always being redefined, measured in quarters, not in meaning. I wanted to build something that would actually last.</p>
+        <p>Hi! I'm Rajiv Vakani. I left a career in finance to pursue something that felt more human: helping people feel at home in their own bodies through nutrition. In finance, success was always being redefined, measured in quarters, not in meaning. I wanted to build something that would actually last.</p>
         <p>I'm currently studying Nutrition, Dietetics & Food Studies at NYU, blending science, lived experience, and cultural insight into everything I do. I’ve trained in both food science and French culinary technique, and also the kind of traditional Indian cooking you learn standing beside your mom.</p>
       </div>
     </div>
   </section>
 
-  <section class="contact-form-section animate-on-scroll" id="contact-form">
-    <div class="container">
+  <section id="contact-form" class="contact-section animate-on-scroll">
+    <div class="container center-text">
       <h2>Connect With Me</h2>
-      <p>Have a question, a topic suggestion, or just want to say hello? Fill out the form below, and I'll get back to you as soon as possible.</p>
-      <form name="contact" method="POST" data-netlify="true" class="contact-form">
+      <p>Have a question, a topic suggestion, or just want to say hello? Fill out the form below, and I’ll get back to you as soon as possible.</p>
+      <form action="https://formspree.io/f/mwkdbpko" method="POST" class="contact-form">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
-
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit" class="button">Send</button>
+        <button type="submit" class="button">Send Message</button>
       </form>
     </div>
   </section>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Rajiv Vakani. All rights reserved. | <a href="404.html">404</a></p>
+    <div class="container center-text">
+      <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
     </div>
   </footer>
 </body>
