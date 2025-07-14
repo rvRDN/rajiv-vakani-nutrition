@@ -74,22 +74,54 @@
 
     <section id="about-me" class="about-me animate-on-scroll">
         <div class="container">
-            <h2>About Me</h2>
-            <p>I'm Rajiv Vakani—a nutrition student, Pathshala teacher, and curious human who thinks deeply about the food we eat and the lives we lead. I believe that what we choose to eat says something. Through my writing, I help others find clarity in nutrition, make intentional food choices, and honor both science and culture at the same table.</p>
+            <h2>My Approach to Nutrition</h2>
+            <div class="about-content animate-on-scroll">
+                <img src="headshot_36.jpg" alt="Rajiv Vakani professional headshot" class="about-headshot" />
+                <p>Hi! I'm Rajiv Vakani. I left a career in finance to pursue something that felt more human: helping people feel at home in their own bodies through nutrition. In finance, success was always being redefined, measured in quarters, not in meaning. I wanted to build something that would actually last.</p>
+                <p>I'm currently studying Nutrition, Dietetics & Food Studies at NYU, blending science, lived experience, and cultural insight into everything I do. I’ve trained in both food science and French culinary technique, and also the kind of traditional Indian cooking you learn standing beside your mom.</p>
+                <p>My goal is to make nutrition personal again. I won’t hand you a generic plan. I’ll meet you where you are, with guidance that honors your lifestyle, your values, and your health goals. Whether you're managing a condition, following a plant-based or religious diet, or just trying to feel better in your own skin, I’ll help you build habits that make sense and actually feel doable.</p>
+                <p>From the garden to the gut microbiome, I’m here to translate the science into something you can live by.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="call-to-action-section animate-on-scroll">
+        <div class="container">
+            <h2>Ready to Transform Your Approach to Nutrition?</h2>
+            <p>Whether you're looking for evidence-based insights, personalized guidance, or just a fresh perspective, I'm here to help.</p>
+            <a href="#contact-form" class="button">Get in Touch &rarr;</a>
         </div>
     </section>
 
     <section id="contact-form" class="contact-section animate-on-scroll">
         <div class="container">
-            <h2>Get in Touch</h2>
-            <p>If you'd like to connect or collaborate, drop me a note. I always enjoy thoughtful conversations.</p>
-            <p>Email: <a href="mailto:rajiv@rajivvakani.com">rajiv@rajivvakani.com</a></p>
+            <h2>Connect With Me</h2>
+            <p class="contact-intro">Have a question, a topic suggestion, or just want to say hello? Fill out the form below, and I'll get back to you as soon as possible.</p>
+            <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-form">
+                <input type="hidden" name="form-name" value="contact" />
+                <p class="hidden">
+                    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                </p>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="button">Send Message</button>
+            </form>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
+            <p>&copy; 2025 Rajiv Vakani. All rights reserved. | <a href="404.html">404</a></p>
         </div>
     </footer>
 
