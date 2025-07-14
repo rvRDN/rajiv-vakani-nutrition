@@ -14,144 +14,217 @@
     --shadow-medium: rgba(0, 0, 0, 0.1); /* Medium shadow */
     --shadow-strong: rgba(0, 0, 0, 0.2); /* Stronger shadow */
     --shadow-prominent: rgba(0,0,0,0.3); /* Prominent shadow for icons */
-    --button-secondary: #D97047; /* New button color (orange/brown) */
-    --button-secondary-hover: #BF5C36; /* Darker secondary button color on hover */
-    --support-red: #D9534F; /* Red for support card */
-    --support-red-dark: #C24440; /* Darker red for support card hover */
-    --archives-neutral: #a0a8b3; /* Neutral grey for archives card */
-    --archives-neutral-light: #f7f8f9; /* Lighter background for archives card */
-    --archives-neutral-dark: #818995; /* Darker neutral for archives icon hover */
+    --button-secondary: #D97047; /* New secondary button color */
+    --button-secondary-dark: #b85e3c; /* Darker secondary button for hover */
+    --color-primary: var(--primary-blue); /* Alias for main brand color */
+    --color-secondary: var(--accent-green); /* Alias for accent color */
+    --color-text-primary: var(--dark-text);
+    --color-text-secondary: var(--medium-text);
+    --color-background-light: var(--light-grey-bg);
+    --color-surface: #ffffff; /* For cards and distinct elements */
+    --color-border: #e0e0e0; /* A standard light grey for borders */
+    --color-error: #d9534f; /* A standard red for error messages */
 }
 
-/* General Layout and Container Styles */
-*, *::before, *::after {
-    box-sizing: border-box; /* Universal box-sizing for consistent layout */
-}
-
+/* Base Styles */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lora', serif; /* Use Lora for body as main font */
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: var(--light-grey-bg);
-    color: var(--dark-text);
-    line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scrollbar due to animations */
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    color: var(--color-text-primary);
+    background-color: var(--color-background-light); /* Apply light background globally */
+    -webkit-font-smoothing: antialiased; /* Better font rendering */
+    -moz-osx-font-smoothing: grayscale; /* Better font rendering */
 }
 
-/* Custom Scrollbar Styling (Webkit only - Chrome, Safari) */
-body::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
-}
-
-body::-webkit-scrollbar-track {
-    background: var(--border-light); /* Color of the track */
-    border-radius: 10px;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: var(--primary-blue); /* Primary Blue */
-    border-radius: 10px;
-    border: 3px solid var(--border-light); /* Padding around the thumb */
-}
-
-body::-webkit-scrollbar-thumb:hover {
-    background-color: var(--primary-blue-dark); /* Darker Primary Blue on hover */
-}
-
-.container {
-    max-width: 1200px; /* Max width for content */
-    margin: 0 auto; /* Center the container */
-    padding: 0 20px; /* Horizontal padding for smaller screens */
-}
-
-section {
-    padding: 60px 0; /* Vertical padding only; horizontal padding handled by .container */
-    /* text-align is NOT set here, allowing individual elements to control their alignment */
-}
-
-h1, h2, h3 {
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 20px;
-    text-align: center; /* Default to center for headings, can be overridden */
-}
-
-h1 {
-    font-size: 3.5em; /* Larger heading for hero */
-    font-weight: 700; /* Bold */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif; /* Consistent heading font */
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 0.5em;
     line-height: 1.2;
 }
 
-h2 {
-    font-size: 2.5em;
-    font-weight: 600;
-    margin-bottom: 40px;
-    color: var(--primary-blue);
+h1 { font-size: 3.2em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 1.8em; }
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-h3 {
-    color: var(--dark-text);
-    font-size: 1.5em;
+a:hover {
+    color: var(--primary-blue-dark);
 }
 
-/* Adjusted Paragraph Spacing */
-p {
-    margin-bottom: 1.5em; /* Standard paragraph spacing (one blank line visually) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px; /* Consistent padding for content */
 }
 
-/* Button Styling */
+/* Buttons */
 .button {
     display: inline-block;
-    background-color: var(--primary-blue);
-    color: #ffffff;
-    padding: 15px 30px;
+    background-color: var(--color-primary);
+    color: var(--light-text);
+    padding: 12px 25px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px var(--shadow-medium);
-    margin-top: 20px;
-    border: 2px solid transparent; /* Added for hover effect transition */
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    text-align: center;
 }
 
 .button:hover {
-    background-color: #ffffff;
-    color: var(--primary-blue);
+    background-color: var(--primary-blue-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px var(--shadow-strong);
-    border-color: var(--primary-blue); /* Match border to text color on hover */
+    box-shadow: 0 6px 12px var(--shadow-medium);
 }
 
-/* Secondary Button Style */
 .button-secondary {
-    background-color: var(--button-secondary);
-    border-color: var(--button-secondary);
+    background-color: var(--button-secondary); /* Use the new secondary button color */
 }
 
 .button-secondary:hover {
-    background-color: #ffffff;
-    color: var(--button-secondary);
-    border-color: var(--button-secondary);
+    background-color: var(--button-secondary-dark); /* Darker shade on hover */
 }
 
+/* Navigation */
+.main-nav {
+    background-color: var(--color-surface); /* White background for nav */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-/* Hero Section Specific Styles - ADJUSTED FOR VIDEO BACKGROUND */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Default for larger screens */
+}
+
+.site-logo {
+    font-family: 'Lora', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-blue);
+}
+
+/* Hamburger menu for mobile */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    z-index: 1001; /* Ensure it's above other elements when active */
+}
+
+.hamburger {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animation for hamburger to close icon */
+.menu-toggle.active .hamburger:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+.menu-toggle.active .hamburger:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active .hamburger:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Mobile navigation overlay */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        position: absolute;
+        top: 65px; /* Below navigation bar */
+        left: 0;
+        width: 100%;
+        background-color: var(--color-surface);
+        box-shadow: 0 8px 15px var(--shadow-medium);
+        padding: 20px 0;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%); /* Start off-screen */
+        z-index: 999;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+        transform: translateY(0); /* Slide in */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.3em;
+        padding: 10px 0;
+        display: block;
+    }
+
+    .menu-toggle {
+        display: flex; /* Show hamburger */
+    }
+}
+
+/* Hero Section */
 .hero {
-    background-color: #ffffff; /* Fallback background color if video fails to load */
-    padding: 100px 0;
-    box-shadow: 0 2px 15px var(--shadow-light);
-    text-align: center;
     position: relative;
+    height: 60vh; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text);
     overflow: hidden;
-    background-image: none; /* Ensure no residual background images */
-    background-repeat: initial;
-    background-size: initial;
-    background-blend-mode: initial;
-    min-height: 500px; /* Ensure a minimum height for the hero section */
-    display: flex; /* Use flexbox for centering content */
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
 }
 
 .hero-video-background {
@@ -162,10 +235,9 @@ p {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: 0;
-    transform: translateX(-50%) translateY(-50%);
-    object-fit: cover;
-    filter: grayscale(20%) brightness(80%); /* Optional: Desaturate slightly and darken for better contrast */
+    z-index: -2;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures the video covers the area */
 }
 
 .hero-overlay {
@@ -174,159 +246,122 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(240, 244, 248, 0.7); /* Semi-transparent light blue-grey overlay */
-    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+    z-index: -1;
 }
 
-.hero-content { /* Added wrapper for hero text to ensure it's on top */
+.hero-content {
     position: relative;
-    z-index: 2;
-    padding: 20px; /* Add some padding to content to prevent it from touching edges on small screens */
-    max-width: 900px; /* Limit content width */
-    margin: 0 auto;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
 }
 
 .hero h1 {
-    font-family: 'Lora', serif;
-    color: var(--dark-text); /* Changed to a dark text for better contrast on the light overlay */
-    font-size: 3.8em;
-    font-weight: 700;
-    margin-bottom: 15px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle text shadow for readability */
+    font-size: 4.5em;
+    margin-bottom: 10px;
+    color: var(--light-text);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .hero-tagline {
-    font-size: 1.3em;
-    color: var(--medium-text); /* Changed to a medium grey for better contrast */
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    line-height: 1.5;
-    text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.05);
+    font-size: 1.8em;
+    font-weight: 300;
+    color: var(--light-text);
+    opacity: 0.9;
 }
 
-/* Specific styles for newsletter hero section (now also using video) */
-.newsletter-hero {
+/* Responsive Hero */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+    .hero h1 {
+        font-size: 3em;
+    }
+    .hero-tagline {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 40vh;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero-tagline {
+        font-size: 1em;
+    }
+}
+
+/* About Me Section */
+.about-me {
     padding: 80px 0;
-    min-height: 400px; /* Adjust min-height for newsletter hero */
-    background-color: transparent; /* Fallback if video fails */
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.newsletter-hero-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+    background-color: var(--color-surface);
     text-align: center;
 }
 
-.newsletter-hero-logo {
-    width: 180px;
-    height: 180px;
-    object-fit: contain;
-    border-radius: 50%;
-    background-color: #ffffff;
-    box-shadow: 0 15px 40px var(--shadow-prominent);
-    border: 4px solid var(--primary-blue);
-    margin-bottom: 30px;
+.about-me h2 {
+    margin-bottom: 40px;
+    color: var(--color-primary);
 }
 
-.newsletter-hero h1 {
-    font-size: 4.5em;
-    color: var(--dark-text);
-    margin-bottom: 20px;
-}
-
-/* About Me Section Specific Styles */
-.about-me {
-    background-color: var(--lighter-grey-bg);
-    padding: 80px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Subtle pattern for about-me section */
-.about-me::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.5;
-    z-index: 0;
-}
-
-.about-me .container {
-    position: relative;
-    z-index: 1;
-}
-
-/* REVISED: About Content Layout to float image left */
 .about-content {
-    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding-top: 20px;
-    overflow: hidden; /* This is crucial for containing the floated element */
-    text-align: left; /* Ensure text within this container aligns left */
+    text-align: left;
 }
 
 .about-headshot {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-primary);
     box-shadow: 0 8px 20px var(--shadow-medium);
-    border: 5px solid #ffffff;
-    float: left; /* Image floats to the left */
-    margin-right: 40px; /* Space between image and text */
-    margin-bottom: 20px; /* Space below image if text wraps around */
-    flex-shrink: 0; /* Important to keep image from shrinking on smaller flex containers if flex was used elsewhere */
+    flex-shrink: 0; /* Prevent shrinking */
+    margin: 0 auto; /* Center on small screens */
+}
+
+.about-content div {
+    flex-grow: 1; /* Allows text to take available space */
+    min-width: 300px; /* Ensures text block doesn't get too narrow */
 }
 
 .about-content p {
-    text-align: left; /* Ensure paragraphs align left */
-    margin-bottom: 1.5em; /* Consistent paragraph spacing */
-    color: var(--medium-text);
-}
-/* Ensure no extra margin for the very last paragraph in a section if needed */
-.about-content p:last-child {
-    margin-bottom: 0;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: 1em;
 }
 
-
-/* For smaller screens, adjust about-content to ensure stacking */
 @media (max-width: 768px) {
-    .about-headshot {
-        float: none; /* Remove float */
-        display: block; /* Make it a block element */
-        margin: 0 auto 30px auto; /* Center image and add bottom margin */
-    }
     .about-content {
-        text-align: center; /* Center content when stacked */
+        flex-direction: column;
+        text-align: center;
     }
-    .about-content p {
-        text-align: center; /* Center text when stacked below image */
-        flex-basis: auto; /* Reset flex-basis if it was applied */
+    .about-headshot {
+        margin-bottom: 30px;
     }
 }
 
-.about-me h2 {
-    color: var(--primary-blue-dark);
-}
 
-/* Explore Newsletters Section Specific Styles */
+/* Explore Newsletters Section (Benefits Grid) */
 .explore-newsletters {
-    background-color: #ffffff;
     padding: 80px 0;
+    background-color: var(--color-background-light);
+    text-align: center;
+}
+
+.explore-newsletters h2 {
+    margin-bottom: 40px;
+    color: var(--color-primary);
 }
 
 .benefits-grid {
@@ -334,564 +369,299 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 0 auto;
 }
 
 .benefit-item {
+    background-color: var(--color-surface);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px var(--shadow-medium);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px var(--shadow-medium);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     text-align: center;
-    border-top: 10px solid;
-    position: relative; /* For the subtle pattern */
-    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 6px solid; /* For accent colors */
 }
-
-/* Subtle pattern for benefit items */
-.benefit-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.2;
-    z-index: 0;
-}
-
-.benefit-item > * { /* Ensure content is above the pattern */
-    position: relative;
-    z-index: 1;
-}
-
-/* Specific Card Backgrounds and Borders */
-.table-talk-card {
-    background-color: #f0f7fa; /* Lighter shade of primary blue */
-    border-color: var(--primary-blue);
-}
-
-.no-onion-no-garlic-card {
-    background-color: #f4f8f5; /* Lighter shade of accent green */
-    border-color: var(--accent-green);
-}
-
-.support-me-card {
-    background-color: #fcebeb; /* Lighter shade of red for support */
-    border-color: var(--support-red);
-}
-
-/* Archives card styling - now for a standalone card */
-.archives-card {
-    background-color: var(--archives-neutral-light); /* Lighter neutral for archives */
-    border-color: var(--archives-neutral); /* Neutral grey border */
-}
-
 
 .benefit-item:hover {
-    transform: translateY(-7px);
+    transform: translateY(-8px);
     box-shadow: 0 10px 25px var(--shadow-strong);
 }
 
-/* Newsletter Icon Wrapper Styling */
 .newsletter-title-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .newsletter-icon {
-    width: 140px;
-    height: 140px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
     object-fit: contain;
-    border-radius: 50%;
-    background-color: #ffffff;
-    box-shadow: 0 12px 30px var(--shadow-prominent);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    margin-bottom: 8px;
-    border: 3px solid rgba(53, 124, 165, 0.1); /* Default border for icons */
 }
 
-/* Styling for the support icon placeholder (if no image is used) */
 .support-icon-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.5em; /* Adjust size of the heart emoji */
-    color: var(--support-red);
-    border-color: var(--support-red); /* Border color for support icon */
-    font-weight: normal; /* Ensure text is not bolded if it's an emoji */
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #ff6347; /* Tomato red for support icon */
 }
 
-/* Styling for the archives icon placeholder */
-.archives-icon-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.5em;
-    color: var(--archives-neutral); /* Neutral color for archives icon */
-    border-color: var(--archives-neutral); /* Border color for archives icon */
-    font-weight: normal;
-}
-
-
-.newsletter-icon:hover {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-    border-color: var(--primary-blue); /* Default hover border */
-}
-
-/* Specific icon border color on hover for support card */
-.support-me-card .newsletter-icon:hover {
-    border-color: var(--support-red);
-}
-
-/* Specific icon border color on hover for archives card */
-.archives-card .newsletter-icon:hover {
-    border-color: var(--archives-neutral-dark); /* Darker neutral on hover */
-}
-
-
-.benefit-item h3 {
-    color: var(--primary-blue);
-    font-size: 1.9em;
+.newsletter-title-group h3 {
     margin-bottom: 5px;
-    line-height: 1.2;
-}
-/* Ensure support card heading is red */
-.support-me-card h3 {
-    color: var(--support-red);
-}
-/* Ensure archives card heading is neutral */
-.archives-card h3 {
-    color: var(--archives-neutral-dark);
+    font-size: 1.8em;
+    color: var(--color-text-primary);
 }
 
+.newsletter-type {
+    display: block;
+    font-size: 0.9em;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
 
 .benefit-item p {
+    color: var(--color-text-secondary);
     font-size: 1em;
-    color: var(--medium-text);
-    text-align: center;
-    margin-bottom: 20px; /* Standard paragraph spacing within card */
     line-height: 1.7;
-    flex-grow: 1; /* Allow paragraph to take up available space */
+    flex-grow: 1; /* Makes sure cards with less text are same height */
+    margin-bottom: 25px; /* Space before buttons */
 }
 
-/* Styles for the two buttons within the card */
 .card-buttons {
     display: flex;
-    flex-direction: column; /* Stack buttons by default */
-    gap: 15px; /* Space between buttons */
-    margin-top: auto; /* Push buttons to the bottom of the flex container */
-    width: 100%; /* Take full width of parent */
-    align-items: center; /* Center buttons horizontally */
+    gap: 15px;
+    justify-content: center; /* Center buttons within the card */
+    margin-top: auto; /* Push buttons to the bottom */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller cards */
 }
 
-.card-buttons .button {
-    margin-top: 0; /* Override default button margin-top */
-    width: calc(100% - 20px); /* Account for padding */
-    max-width: 250px; /* Limit max width of buttons */
-    font-size: 1em; /* Slightly smaller font for card buttons */
-    padding: 12px 20px;
+/* Specific card accents */
+.table-talk-card {
+    border-color: var(--color-primary); /* Uses primary blue */
 }
 
-/* Specific styling for the button in the support card */
-.support-me-card .card-buttons .button {
-    background-color: var(--support-red);
-    border-color: var(--support-red);
+.no-onion-no-garlic-card {
+    border-color: var(--accent-green); /* Uses accent green */
 }
 
-.support-me-card .card-buttons .button:hover {
-    background-color: #ffffff;
-    color: var(--support-red);
-    border-color: var(--support-red);
+.support-me-card {
+    border-color: var(--button-secondary); /* Uses secondary button color */
 }
 
-/* Specific styling for the buttons in the archives card */
-.archives-card .card-buttons .button {
-    background-color: var(--archives-neutral);
-    border-color: var(--archives-neutral);
-}
-
-.archives-card .card-buttons .button:hover {
-    background-color: #ffffff;
-    color: var(--archives-neutral);
-    border-color: var(--archives-neutral);
-}
-
-
-@media (min-width: 480px) { /* Adjust for wider mobiles/small tablets */
-    .card-buttons {
-        flex-direction: row; /* Arrange side-by-side */
-        justify-content: center; /* Center buttons when side-by-side */
-        flex-wrap: wrap; /* Allow wrapping if space is tight */
-    }
-    .card-buttons .button {
-        width: auto; /* Allow buttons to size naturally */
-        min-width: 150px; /* Ensure a minimum width */
-    }
-}
-
-
-/* NEW: Newsletter Archives Section Styles */
+/* Newsletter Archives Section (on Index Page) */
 .newsletter-archives-section {
-    background-color: var(--lighter-grey-bg); /* Use a light background */
-    padding: 80px 0;
+    padding: 60px 0;
+    background-color: var(--color-surface); /* Use surface color for distinction */
     text-align: center;
-    position: relative;
-    overflow: hidden;
 }
 
-/* Subtle pattern for archives section */
-.newsletter-archives-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.5;
-    z-index: 0;
-}
-
-.newsletter-archives-section .container {
-    position: relative;
-    z-index: 1;
+.newsletter-archives-section h2 {
+    margin-bottom: 40px;
+    color: var(--color-primary);
 }
 
 .archives-content-wrapper {
     display: flex;
     justify-content: center; /* Center the single card */
-    margin-top: 40px; /* Space from heading */
 }
 
-.archives-content-wrapper .archives-card {
-    max-width: 400px; /* Limit the width of the single card */
-    width: 100%; /* Take full width up to max-width */
-    box-shadow: 0 4px 15px var(--shadow-medium); /* Slightly stronger shadow for standalone card */
+.archives-card {
+    max-width: 400px; /* Limit width for the archives card */
+    border-color: var(--color-primary); /* Consistent border color */
+    padding: 30px;
+    box-shadow: 0 6px 20px var(--shadow-medium);
 }
 
-/* Call to Action Section (now just a general connect section) */
+.archives-icon-placeholder {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--color-primary); /* Use primary color for archive icon */
+}
+
+
+/* Call to Action Section */
 .call-to-action-section {
-    background-color: var(--primary-blue);
-    color: #ffffff;
     padding: 80px 0;
+    background-color: var(--color-primary); /* Use primary blue background */
+    color: var(--light-text);
     text-align: center;
 }
 
 .call-to-action-section h2 {
-    color: #ffffff;
+    color: var(--light-text);
+    margin-bottom: 20px;
+    font-size: 3em;
 }
 
 .call-to-action-section p {
-    color: var(--light-text);
-    font-size: 1.1em;
+    font-size: 1.3em;
     max-width: 800px;
-    margin: 0 auto 30px auto;
-}
-
-.call-to-action-section .button {
-    margin-top: 0;
-    align-self: center;
-    width: auto;
-    padding: 15px 40px;
-}
-
-/* --- Contact Form Section Styles --- */
-.contact-section {
-    background-color: var(--lighter-grey-bg);
-    padding: 80px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Subtle pattern for contact section */
-.contact-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.5;
-    z-index: 0;
-}
-
-.contact-section .container {
-    position: relative;
-    z-index: 1;
-}
-
-.contact-intro {
-    font-size: 1.1em;
-    color: var(--medium-text);
-    max-width: 700px;
     margin: 0 auto 40px auto;
     line-height: 1.6;
 }
 
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px var(--shadow-medium);
+/* Newsletter Specific Pages (Table Talk, No Onion No Garlic) */
+.newsletter-hero {
+    height: 45vh; /* Shorter hero for sub-pages */
+}
+
+.newsletter-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.form-group {
-    text-align: left;
+.newsletter-hero-logo {
+    width: 80px;
+    height: 80px;
     margin-bottom: 15px;
+    filter: drop-shadow(0 4px 8px var(--shadow-prominent)); /* Add shadow for pop */
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--dark-text);
-    font-size: 1.05em;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-    width: calc(100% - 24px); /* Account for padding */
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1em;
-    font-family: 'Inter', sans-serif;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(53, 124, 165, 0.2);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.contact-form .button {
-    margin-top: 0;
-    align-self: center;
-    width: auto;
-    padding: 15px 40px;
-}
-
-/* Hide Netlify honeypot field visually */
-.hidden {
-    display: none;
-}
-
-/* Skip link styling */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--primary-blue);
-    color: white;
-    padding: 8px;
-    z-index: 9999;
-    text-decoration: none;
-    border-radius: 0 0 5px 5px;
-    transition: top 0.3s ease-in-out;
-}
-
-.skip-link:focus {
-    top: 0;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #34495e;
+.newsletter-hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
     color: var(--light-text);
-    padding: 30px 0;
-    font-size: 0.9em;
-    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-footer a {
+.newsletter-hero .hero-tagline {
+    font-size: 1.5em;
+    font-weight: 300;
     color: var(--light-text);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    opacity: 0.9;
 }
 
-footer a:hover {
-    color: var(--primary-blue);
+@media (max-width: 768px) {
+    .newsletter-hero {
+        height: 40vh;
+    }
+    .newsletter-hero h1 {
+        font-size: 2.5em;
+    }
+    .newsletter-hero .hero-tagline {
+        font-size: 1.1em;
+    }
 }
 
-/* --- Newsletter Specific Styles (for table-talk.html and no-onion-no-garlic.html) --- */
+@media (max-width: 480px) {
+    .newsletter-hero {
+        height: 35vh;
+    }
+    .newsletter-hero h1 {
+        font-size: 2em;
+    }
+    .newsletter-hero .hero-tagline {
+        font-size: 0.9em;
+    }
+    .newsletter-hero-logo {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+/* Newsletter Intro */
 .newsletter-intro {
-    background-color: #f8f8f8;
-    padding: 60px 20px;
+    padding: 60px 0;
+    background-color: var(--color-surface);
     text-align: center;
-    max-width: 900px;
-    margin: 40px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px var(--shadow-light);
 }
 
 .newsletter-intro h2 {
-    color: var(--primary-blue);
     margin-bottom: 20px;
-    font-size: 2.2em;
+    color: var(--color-primary);
 }
 
 .newsletter-intro p {
     font-size: 1.1em;
-    line-height: 1.8;
-    color: var(--medium-text);
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
 }
 
-.newsletter-intro p strong {
-    font-weight: 700;
-    color: var(--dark-text);
-}
-
-.what-you-get {
-    padding: 60px 20px;
+/* What You Get / Content Grid */
+.what-you-get-section {
+    padding: 60px 0;
+    background-color: var(--color-background-light);
     text-align: center;
 }
 
-.what-you-get h2 {
-    color: var(--primary-blue);
+.what-you-get-section h2 {
     margin-bottom: 40px;
-    font-size: 2.2em;
+    color: var(--color-primary);
 }
 
 .content-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for better small screen fit */
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
     max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 0px auto; /* Changed from 40px auto to reduce spacing with intro */
 }
 
 .content-item {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px var(--shadow-light);
+    background-color: var(--color-surface);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-medium);
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 5px solid; /* Default for content items */
-    display: flex; /* Flexbox for internal content alignment */
+    min-height: 180px; /* Ensures consistent height for cards */
+    display: flex; /* Use flex for internal alignment */
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    position: relative;
-    overflow: hidden; /* For pattern on content item */
-}
-
-.content-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d0d7e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 6v-1L1 0h1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.1;
-    z-index: 0;
-}
-
-.content-item > * {
-    position: relative;
-    z-index: 1;
+    justify-content: space-between; /* Space out content within the item */
 }
 
 .content-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--shadow-medium);
+    box-shadow: 0 6px 18px var(--shadow-strong);
 }
 
 .content-item h3 {
-    font-size: 1.3em;
+    color: var(--color-primary);
+    font-size: 1.4em;
     margin-bottom: 10px;
-    text-align: left;
-    width: 100%; /* Ensure heading takes full width within flex item */
+    margin-top: 0; /* Remove default top margin */
 }
 
 .content-item p {
+    color: var(--color-text-secondary);
     font-size: 0.95em;
-    color: var(--medium-text);
-    text-align: left;
-    line-height: 1.7;
-    margin-bottom: 0; /* Remove default paragraph bottom margin if last */
+    line-height: 1.6;
+    flex-grow: 1; /* Allow paragraph to take available space */
+    margin-bottom: 15px; /* Space before any potential buttons/links within item */
 }
 
-/* Specific border colors for newsletter content items */
-.table-talk-card-content-item {
-    border-color: var(--primary-blue);
+/* Specific content item accents (e.g., icons) */
+.table-talk-card-content-item h3 {
+    color: var(--primary-blue); /* Uses primary blue for Table Talk specific items */
 }
 
-.no-onion-no-garlic-card-content-item {
-    border-color: var(--accent-green);
+.no-onion-no-garlic-card-content-item h3 {
+    color: var(--accent-green); /* Uses accent green for NONG specific items */
 }
 
-/* Call to Action Subscribe Sections (used on newsletter pages) */
-.cta-subscribe {
-    background-color: var(--primary-blue);
-    color: #ffffff;
-    padding: 80px 0;
-    text-align: center;
-}
 
-.cta-subscribe h2 {
-    color: #ffffff;
-    margin-bottom: 30px;
-}
-
-.cta-subscribe p {
-    font-size: 1.1em;
-    color: var(--light-text);
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-}
-
-.cta-subscribe .button {
-    margin: 10px; /* Space out buttons if side-by-side */
-    border-color: #ffffff; /* White border for contrast on blue background */
-}
-
-.cta-subscribe .button:hover {
-    background-color: #ffffff;
-    color: var(--primary-blue);
-    border-color: var(--primary-blue);
-}
-
-/* Upcoming Topics Section (for No Onion, No Garlic page) */
+/* Upcoming Topics (on No Onion No Garlic page) */
 .upcoming-topics {
     padding: 60px 0;
+    background-color: var(--color-background-light);
     text-align: center;
-    background-color: var(--lighter-grey-bg);
 }
 
 .upcoming-topics h2 {
-    color: var(--accent-green);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    color: var(--color-primary);
 }
 
 .upcoming-grid {
@@ -925,98 +695,275 @@ footer a:hover {
 }
 
 .topic-title {
-    color: var(--primary-blue);
+    color: var(--color-primary); /* Changed to use var --color-primary for consistency */
     font-size: 1.4em;
     margin-bottom: 10px;
     text-align: left;
-    font-weight: 600; /* Ensure this is bold */
+    font-weight: 600; /* Ensure it's bold */
 }
 
 .topic-description {
+    color: var(--color-text-secondary); /* Consistent text color */
     font-size: 0.95em;
-    color: var(--medium-text);
     line-height: 1.6;
-    text-align: left;
 }
 
 .upcoming-note {
-    margin-top: 40px;
-    font-size: 1em;
-    color: var(--medium-text);
-    font-style: italic;
-}
-
-/* Mobile Navigation Specifics */
-.main-nav {
-    background-color: #ffffff;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px var(--shadow-light);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px; /* Default for larger screens */
-}
-
-.site-logo {
-    font-family: 'Lora', serif;
-    font-size: 1.8em;
-    font-weight: 700;
-    color: var(--primary-blue);
-    text-decoration: none;
-    flex-shrink: 0; /* Prevent logo from shrinking */
-}
-
-.nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: var(--dark-text);
-    font-weight: 500;
     font-size: 1.1em;
-    transition: color 0.3s ease;
+    margin-top: 40px;
+    color: var(--color-text-secondary);
 }
 
-.nav-links li a:hover {
-    color: var(--primary-blue);
+
+/* CTA Subscribe Section */
+.cta-subscribe {
+    padding: 80px 0;
+    background-color: var(--color-primary);
+    color: var(--light-text);
+    text-align: center;
 }
 
-/* Hamburger menu for mobile */
-.menu-toggle {
-    display: none; /* Hidden on desktop */
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1001; /* Ensure it's above other content when active */
-    flex-shrink: 0; /* Prevent hamburger from shrinking */
+.cta-subscribe h2 {
+    color: var(--light-text);
+    margin-bottom: 20px;
+    font-size: 3em;
 }
 
-.hamburger {
+.cta-subscribe p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+.cta-subscribe .button {
+    margin: 0 10px;
+    margin-bottom: 20px; /* Space for stacked buttons on mobile */
+}
+
+@media (max-width: 600px) {
+    .cta-subscribe .button {
+        display: block; /* Stack buttons on small screens */
+        margin: 15px auto;
+        max-width: 250px;
+    }
+}
+
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
+    background-color: var(--color-surface);
+    text-align: center;
+}
+
+.contact-section h2 {
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.contact-intro {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: var(--color-text-secondary);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--color-background-light);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px var(--shadow-medium);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
     display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--dark-text);
-    border-radius: 3px;
-    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-text-primary);
 }
 
-/* Animation for hamburger icon */
-.menu-toggle.active .hamburger:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+}
+
+.contact-form button[type="submit"] {
+    width: auto; /* Allow button to size itself */
+    padding: 12px 30px;
+    font-size: 1.1em;
+    display: block; /* Makes it take full width on small screens and center */
+    margin: 0 auto; /* Centers the button */
+}
+
+/* Netlify honeypot field */
+.hidden {
+    display: none;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--dark-text); /* Dark background for footer */
+    color: var(--light-text);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* General Archive Page Styling (New & Integrated) */
+.password-gate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--color-background-light); /* Light background for the gate */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-top: 50px; /* Adjust as needed for spacing from header */
+  margin-bottom: 50px;
+}
+
+.password-gate h2 {
+  color: var(--color-primary);
+  margin-bottom: 25px;
+  font-size: 2.2em;
+}
+
+.password-input {
+  padding: 12px 20px;
+  font-size: 1.1em;
+  margin-top: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box; /* Include padding in width */
+  transition: border-color 0.3s ease;
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+}
+
+.password-gate .button {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 1.1em;
+}
+
+.error-message {
+  color: var(--color-error); /* Define a strong red color for errors */
+  font-size: 0.95em;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.hidden-content {
+  display: none; /* Controlled by JavaScript */
+}
+
+.archive-search-bar {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  font-size: 1.1em;
+  margin-top: 30px;
+  margin-bottom: 30px; /* Added margin-bottom for spacing */
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.archive-search-bar:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+}
+
+/* Specific styling for archive content items (reusing content-item layout) */
+.archive-grid-section {
+  padding: 50px 0; /* Consistent padding for content sections */
+  background-color: var(--color-background-light); /* Or adjust as needed */
+}
+
+/* Ensure content-item styling from main CSS applies or define if missing */
+.content-grid .archive-content-item {
+  display: flex; /* Ensure flex for consistency */
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 180px; /* Ensure consistent height for cards */
+  justify-content: space-between; /* Pushes content and buttons apart */
+}
+
+.content-grid .archive-content-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.content-grid .archive-content-item h3 {
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.content-grid .archive-content-item p {
+  color: var(--color-text-secondary);
+  font-size: 0.95em;
+  line-height: 1.6;
+  flex-grow: 1; /* Allows paragraph to take available space */
+  margin-bottom: 15px;
 }

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>No Onion No Garlic Archive | Rajiv Vakani</title>
-  <meta name="description" content="A searchable archive of No Onion No Garlic Newsletter issues. For supporters only.">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css">
+  <title>Table Talk Archive | Rajiv Vakani</title>
+  <meta name="description" content="A searchable archive of Table Talk Newsletter issues. For supporters only.">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="rajiv-styles.css?v=20250715">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
@@ -34,41 +34,47 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="newsletter-hero-content">
-      <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion No Garlic Logo" class="newsletter-hero-logo">
-      <h1>No Onion No Garlic Archive</h1>
+      <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="newsletter-hero-logo">
+      <h1>Table Talk Archive</h1>
       <p class="hero-tagline">Access every issue. Search everything. Supporter-exclusive access.</p>
     </div>
   </header>
 
-  <section class="newsletter-intro animate-on-scroll">
-    <div class="container">
-      <h2>Supporter Archive Access</h2>
-      <p>This page is for newsletter supporters. Please enter the archive password below to continue.</p>
-      <input type="password" id="archivePassword" placeholder="Enter password" style="width:100%; max-width:400px; padding:15px; font-size:1em; border-radius:8px; border: 1px solid #ccc; margin-top:20px;">
-      <button class="button" id="submitPassword" style="margin-top:20px;">Unlock</button>
-      <p id="passwordError" style="color:red; display:none; margin-top:15px;">Incorrect password. Please try again.</p>
-    </div>
+  <section id="password-gate" class="password-gate animate-on-scroll">
+    <h2>Enter Archive Password</h2>
+    <input type="password" id="archivePassword" placeholder="Enter password..." class="password-input" />
+    <button class="button" id="submitPassword">Unlock</button>
+    <div id="error" class="error-message"></div>
   </section>
 
-  <section class="what-you-get animate-on-scroll" id="archiveSection" style="display:none;">
-    <div class="container">
-      <input type="text" id="searchBar" placeholder="Search articles..." style="width:100%; max-width:500px; padding:15px; font-size:1em; margin-bottom:30px; border-radius:8px; border: 1px solid #ccc;">
-      <div class="content-grid" id="archive-list">
-        <div class="content-item no-onion-no-garlic-card-content-item" data-title="Gut Health and Jainism">
-          <h3>Gut Health and Jainism</h3>
-          <p>How traditional sattvic diets support modern digestive science.</p>
-        </div>
-        <div class="content-item no-onion-no-garlic-card-content-item" data-title="Are Raw Foods Always Better?">
-          <h3>Are Raw Foods Always Better?</h3>
-          <p>Separating facts from fads in the no-onion-no-garlic lifestyle.</p>
-        </div>
-        <div class="content-item no-onion-no-garlic-card-content-item" data-title="Eating with Intention">
-          <h3>Eating with Intention</h3>
-          <p>How mindful food choices can build peace of mind and purpose.</p>
+  <div id="archive-content" class="hidden-content">
+    <section class="newsletter-intro animate-on-scroll">
+      <div class="container">
+        <h2>Supporter Archive: Every Issue in One Place</h2>
+        <p>Welcome to the full searchable archive of <strong>Table Talk</strong>. Every issue—past and present—is available here for you to explore, revisit, and share. Use the search bar below to find what matters to you.</p>
+        <input type="text" id="searchBar" placeholder="Search articles..." class="archive-search-bar">
+      </div>
+    </section>
+
+    <section class="archive-grid-section animate-on-scroll">
+      <div class="container">
+        <div class="content-grid" id="archive-list">
+          <div class="content-item archive-content-item" data-title="The Science of Spices">
+            <h3>The Science of Spices</h3>
+            <p>Exploring the health benefits and culinary uses of common spices.</p>
+          </div>
+          <div class="content-item archive-content-item" data-title="Beyond Plant-Based: Sustainable Eating">
+            <h3>Beyond Plant-Based: Sustainable Eating</h3>
+            <p>How your food choices impact the planet and practical steps for a greener diet.</p>
+          </div>
+          <div class="content-item archive-content-item" data-title="Understanding Macronutrients">
+            <h3>Understanding Macronutrients</h3>
+            <p>A simple guide to carbs, proteins, and fats for balanced nutrition.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <footer>
     <div class="container">
@@ -78,32 +84,66 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const submitBtn = document.getElementById("submitPassword");
-      const passwordField = document.getElementById("archivePassword");
-      const archiveSection = document.getElementById("archiveSection");
-      const errorMessage = document.getElementById("passwordError");
-      const searchBar = document.getElementById("searchBar");
+      const passwordInput = document.getElementById("archivePassword");
+      const submitButton = document.getElementById("submitPassword");
+      const gate = document.getElementById("password-gate");
+      const content = document.getElementById("archive-content");
+      const error = document.getElementById("error");
+      const correctPassword = "morewithless"; // Assuming this is your desired password
 
-      submitBtn.addEventListener("click", function () {
-        const enteredPassword = passwordField.value.trim();
-        if (enteredPassword === "morewithless") {
-          archiveSection.style.display = "block";
-          errorMessage.style.display = "none";
-          passwordField.style.display = "none";
-          submitBtn.style.display = "none";
+      submitButton.addEventListener("click", function () {
+        if (passwordInput.value.trim() === correctPassword) {
+          gate.style.display = "none";
+          content.style.display = "block";
+          error.textContent = ""; // Clear any previous error
         } else {
-          errorMessage.style.display = "block";
+          error.textContent = "Incorrect password. Please try again.";
         }
       });
 
-      searchBar?.addEventListener("input", function (e) {
-        const query = e.target.value.toLowerCase();
-        const archiveItems = document.querySelectorAll("#archive-list .content-item");
-        archiveItems.forEach(item => {
-          const text = item.dataset.title.toLowerCase();
-          item.style.display = text.includes(query) ? "block" : "none";
-        });
+      // Optional: Allow pressing Enter to submit password
+      passwordInput.addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+          submitButton.click();
+        }
       });
+
+      const searchBar = document.getElementById("searchBar");
+      if (searchBar) {
+        const archiveItems = document.querySelectorAll("#archive-list .content-item");
+        searchBar.addEventListener("input", function (e) {
+          const query = e.target.value.toLowerCase();
+          archiveItems.forEach(item => {
+            const text = item.dataset.title.toLowerCase();
+            item.style.display = text.includes(query) ? "flex" : "none"; // Changed to flex for consistent grid layout
+          });
+        });
+      }
+
+      // Add simple scroll animation for elements appearing after password unlock
+      function animateOnScrollCheck() {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        elements.forEach(el => {
+          if (el.getBoundingClientRect().top < window.innerHeight && el.getBoundingClientRect().bottom > 0) {
+            el.classList.add('is-visible');
+          }
+        });
+      }
+
+      // Re-check visibility after content is shown
+      const observer = new MutationObserver((mutationsList, observer) => {
+        for(let mutation of mutationsList) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'style' && content.style.display === 'block') {
+            animateOnScrollCheck();
+            observer.disconnect(); // Disconnect once content is visible and animated
+          }
+        }
+      });
+
+      // Start observing the hidden content for style changes
+      observer.observe(content, { attributes: true });
+      window.addEventListener('scroll', animateOnScrollCheck);
+      animateOnScrollCheck(); // Initial check
     });
   </script>
 </body>
