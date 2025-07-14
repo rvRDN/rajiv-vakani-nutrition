@@ -849,7 +849,8 @@ footer p {
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.animate-on-scroll.is-visible {
+/* CORRECTED: Changed .is-visible to .show to match animations.js */
+.animate-on-scroll.show {
     opacity: 1;
     transform: translateY(0);
 }
@@ -952,7 +953,6 @@ footer p {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
-
 .content-grid .archive-content-item h3 {
   color: var(--color-primary);
   margin-top: 0;
