@@ -197,18 +197,6 @@ p {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
 }
 
-.frosted-hero-panel {
-  background-color: rgba(255, 255, 255, 0.4); /* Translucent white */
-  padding: 30px 40px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px); /* Soft blur behind text */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Subtle depth */
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
 /* Allow wrap again on smaller screens */
 @media (max-width: 600px) {
   .hero h1 {
