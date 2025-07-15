@@ -1080,3 +1080,23 @@ footer a:hover {
     text-shadow: 0 0 0px rgba(0, 123, 255, 0);
   }
 }
+
+.featured-quote {
+  background-color: var(--lighter-grey-bg);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.featured-quote blockquote {
+  font-family: 'Lora', serif;
+  font-size: 1.3em;
+  font-style: italic;
+  color: var(--dark-text);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.featured-quote p {
+  margin-bottom: 1.4em;
+}
