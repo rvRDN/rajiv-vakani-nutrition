@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Table Talk | Rajiv Vakani</title>
-  <meta name="description" content="Table Talk: A newsletter by Rajiv Vakani on mindful eating, modern nutrition, and everyday food systems." />
-  <link rel="stylesheet" href="rajiv-styles.css?v=20250714">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Table Talk: A newsletter by Rajiv Vakani on mindful eating, modern nutrition, and everyday food systems.">
+  <link rel="stylesheet" href="rajiv-styles.css?v=20250714" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <script defer src="animations.js"></script>
 </head>
 <body>
+
   <nav class="main-nav">
     <div class="container nav-container">
       <a href="index.html" class="site-logo">Rajiv Vakani</a>
@@ -30,51 +31,45 @@
     </div>
   </nav>
 
-  <header class="hero-section hero-table-talk">
-    <div class="container hero-content">
-      <div class="hero-text animate-on-scroll">
-        <h1><img src="image_6cc240.png" alt="Table Talk Logo" class="newsletter-hero-logo"> Table Talk</h1>
-        <p class="tagline">Unpacking food systems, nutrition, and conscious eating for a healthier plate and planet.</p>
-        <a href="https://subscribepage.io/tabletalk-news" class="button button-primary">Subscribe Now →</a>
-      </div>
-      <div class="hero-image-container animate-on-scroll">
-        <img src="image_6ccdfa.jpg" alt="Table with food and hands" class="hero-image">
-        <img src="mint-leaves-decoration.png" alt="Mint Leaves Decoration" class="mint-leaves-decoration">
-      </div>
+  <header class="hero newsletter-hero animate-on-scroll">
+    <video autoplay muted loop playsinline class="hero-video-background">
+      <source src="hero-background.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="newsletter-hero-content">
+      <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="newsletter-hero-logo animate-on-scroll" />
+      <h1>Table Talk</h1>
+      <p class="hero-tagline">Unpacking food systems, nutrition, and conscious eating for a healthier plate and planet.</p>
     </div>
   </header>
 
-  <section class="newsletter-description-section animate-on-scroll">
+  <section class="newsletter-intro animate-on-scroll">
     <div class="container">
-      <h2>What is <span class="highlight">Table Talk</span>?</h2>
+      <h2>What is Table Talk?</h2>
       <p>Table Talk is my bi-weekly newsletter where I dive deep into the intricate world of food. We explore everything from the origins of our ingredients and the complexities of global food supply chains to the latest in nutritional science and the cultural significance of what we eat.</p>
       <p>My goal is to provide you with grounded insights, empowering you to make informed decisions that benefit your health, your community, and the planet. Expect thought-provoking articles, actionable advice, and a fresh perspective on everyday food wisdom.</p>
     </div>
   </section>
 
-  <section class="upcoming-topics-section animate-on-scroll">
+  <section class="what-you-get animate-on-scroll">
     <div class="container">
-      <h2>Upcoming <span class="highlight">Topics</span></h2>
-      <div class="upcoming-grid">
-        <div class="upcoming-item">
-          <span class="icon">📰</span>
+      <h2>Upcoming Topics</h2>
+      <div class="content-grid">
+        <div class="content-item table-talk-card-content-item">
           <h3>The Future of Sustainable Farming</h3>
-          <p class="topic-description">Exploring innovations and challenges in creating resilient food systems.</p>
+          <p>Exploring innovations and challenges in creating resilient food systems.</p>
         </div>
-        <div class="upcoming-item">
-          <span class="icon">🔬</span>
+        <div class="content-item table-talk-card-content-item">
           <h3>Beyond Macronutrients: The Power of Phytonutrients</h3>
-          <p class="topic-description">A deep dive into the hidden health benefits in our plant foods.</p>
+          <p>A deep dive into the hidden health benefits in our plant foods.</p>
         </div>
-        <div class="upcoming-item">
-          <span class="icon">🍎</span>
+        <div class="content-item table-talk-card-content-item">
           <h3>Food Waste: Solutions from Farm to Fork</h3>
-          <p class="topic-description">Practical strategies to reduce waste and optimize resource use.</p>
+          <p>Practical strategies to reduce waste and optimize resource use.</p>
         </div>
-        <div class="upcoming-item">
-          <span class="icon">🌍</span>
+        <div class="content-item table-talk-card-content-item">
           <h3>The Cultural Significance of Grains</h3>
-          <p class="topic-description">From ancient staples to modern diets, understanding our global grain heritage.</p>
+          <p>From ancient staples to modern diets, understanding our global grain heritage.</p>
         </div>
       </div>
       <p class="upcoming-note">New ideas, reflections, and analyses drop soon. Let's keep the conversation going.</p>
@@ -107,10 +102,8 @@
         });
         navLinks.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', function () {
-            if (navLinks.classList.contains('active')) {
-              navLinks.classList.remove('active');
-              menuToggle.classList.remove('active');
-            }
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
           });
         });
       }
