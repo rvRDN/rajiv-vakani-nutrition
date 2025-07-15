@@ -20,10 +20,12 @@
       </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="table-talk.html">Table Talk</a></li>
-        <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
+        <li><a href="table-talk.html">Table Talk Newsletter</a></li>
+        <li><a href="no-onion-no-garlic.html">No Onion, No Garlic Newsletter</a></li>
         <li><a href="index.html#about-me">About Me</a></li>
         <li><a href="index.html#contact-form">Contact</a></li>
+        <li><a href="table-talk-archive.html" class="button button-small">Table Talk Archives</a></li>
+        <li><a href="no-onion-no-garlic-archive.html" class="button button-small">No Onion No Garlic Archives</a></li>
       </ul>
     </div>
   </nav>
@@ -33,16 +35,16 @@
       <h1>404 – Page Not Found</h1>
       <p>Oops! That page doesn’t exist. It may have moved—or maybe it never existed at all.</p>
       <div class="not-found-buttons">
-        <a href="index.html" class="button primary">Back to Home &rarr;</a>
-        <a href="table-talk.html" class="button secondary">Table Talk &rarr;</a>
-        <a href="no-onion-no-garlic.html" class="button secondary">No Onion No Garlic &rarr;</a>
+        <a href="index.html" class="button">Back to Home &rarr;</a>
+        <a href="table-talk.html" class="button">Table Talk &rarr;</a>
+        <a href="no-onion-no-garlic.html" class="button">No Onion No Garlic &rarr;</a>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>© 2025 Rajiv Vakani. All rights reserved.</p>
+      <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
     </div>
   </footer>
 
@@ -57,8 +59,10 @@
         });
         navLinks.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', function () {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
+            if (navLinks.classList.contains('active')) {
+              navLinks.classList.remove('active');
+              menuToggle.classList.remove('active');
+            }
           });
         });
       }

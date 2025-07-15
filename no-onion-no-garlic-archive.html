@@ -24,61 +24,62 @@
         <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
         <li><a href="index.html#about-me">About Me</a></li>
         <li><a href="index.html#contact-form">Contact</a></li>
+        <li><a href="table-talk-archive.html" class="button button-small">Table Talk Archives</a></li>
+        <li><a href="no-onion-no-garlic-archive.html" class="button button-small">No Onion No Garlic Archives</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="page-hero-section no-onion-no-garlic-hero">
-    <div class="container">
-      <div class="page-hero-content animate-on-scroll">
-        <h1>No Onion, No Garlic Archive</h1>
-        <p class="tagline">Exclusive content for our dedicated supporters.</p>
+  <section class="hero-section hero-archive">
+    <div class="container hero-content">
+      <div class="hero-text animate-on-scroll">
+        <h1>No Onion, No Garlic <span class="highlight">Archive</span></h1>
+        <p class="tagline">Access past issues of the No Onion, No Garlic newsletter (for supporters).</p>
       </div>
     </div>
-  </header>
+  </section>
 
   <div id="password-gate" class="password-gate">
-    <h2>Access Archive</h2>
-    <p>Please enter the password to view past issues:</p>
-    <input type="password" id="archivePassword" placeholder="Enter password" autocomplete="off" />
-    <button id="submitPassword" class="button primary">Submit</button>
-    <p id="passwordError" class="error-message" style="display:none;">Incorrect password. Please try again.</p>
+    <h2>Enter Password to Access Archive</h2>
+    <input type="password" id="archivePassword" placeholder="Enter password here" />
+    <button id="submitPassword" class="button">Access Archive</button>
+    <p id="passwordError" style="color: red; display: none;">Incorrect password. Please try again.</p>
   </div>
 
-  <div id="archive-content" style="display:none;">
-    <section class="archive-search-section animate-on-scroll">
-      <div class="container">
-        <input type="text" id="searchBar" class="archive-search-bar" placeholder="Search issues by title..." />
-      </div>
-    </section>
-
+  <div id="archive-content" class="archive-section" style="display: none;">
     <section class="archive-grid-section animate-on-scroll">
       <div class="container">
+        <input type="text" id="searchBar" class="archive-search-bar" placeholder="Search archive by title...">
         <div id="archive-list" class="content-grid">
-          <div class="content-item archive-content-item animate-on-scroll" data-title="Understanding Root Vegetables in Jain Diet">
-            <h3>Understanding Root Vegetables in Jain Diet</h3>
-            <p>Exploring the ethical and environmental reasons behind avoiding root vegetables in Jainism.</p>
-            <a href="#" class="button">Read Issue →</a>
+          <div class="content-item archive-content-item" data-title="Mindful Eating for Inner Harmony">
+            <h3>Mindful Eating for Inner Harmony</h3>
+            <p>Issue #8 | December 2024</p>
+            <a href="#" class="button button-small">Read More</a>
           </div>
-          <div class="content-item archive-content-item animate-on-scroll" data-title="The Power of Simple Ingredients">
-            <h3>The Power of Simple Ingredients</h3>
-            <p>Focusing on the nutritional benefits and versatility of commonly used sattvic ingredients.</p>
-            <a href="#" class="button">Read Issue →</a>
+          <div class="content-item archive-content-item" data-title="Seasonal Plant-Based Recipes">
+            <h3>Seasonal Plant-Based Recipes</h3>
+            <p>Issue #7 | November 2024</p>
+            <a href="#" class="button button-small">Read More</a>
           </div>
-          <div class="content-item archive-content-item animate-on-scroll" data-title="Jain Fasting: Beyond Just Food">
-            <h3>Jain Fasting: Beyond Just Food</h3>
-            <p>Insights into the deeper spiritual and health aspects of various Jain fasting practices.</p>
-            <a href="#" class="button">Read Issue →</a>
+          <div class="content-item archive-content-item" data-title="Understanding Ayurvedic Principles">
+            <h3>Understanding Ayurvedic Principles</h3>
+            <p>Issue #6 | October 2024</p>
+            <a href="#" class="button button-small">Read More</a>
           </div>
-          <div class="content-item archive-content-item animate-on-scroll" data-title="Mindful Cooking for Peace of Mind">
-            <h3>Mindful Cooking for Peace of Mind</h3>
-            <p>Techniques to bring mindfulness and intention into your daily cooking routine.</p>
-            <a href="#" class="button">Read Issue →</a>
+          <div class="content-item archive-content-item" data-title="The Role of Ahimsa in Diet">
+            <h3>The Role of Ahimsa in Diet</h3>
+            <p>Issue #5 | September 2024</p>
+            <a href="#" class="button button-small">Read More</a>
           </div>
-          <div class="content-item archive-content-item animate-on-scroll" data-title="Exploring Veganism vs. Jain Vegetarianism">
-            <h3>Exploring Veganism vs. Jain Vegetarianism</h3>
-            <p>A comparative look at the principles and practices of these two dietary philosophies.</p>
-            <a href="#" class="button">Read Issue →</a>
+          <div class="content-item archive-content-item" data-title="Nutrient Spotlight: Legumes and Lentils">
+            <h3>Nutrient Spotlight: Legumes and Lentils</h3>
+            <p>Issue #4 | August 2024</p>
+            <a href="#" class="button button-small">Read More</a>
+          </div>
+          <div class="content-item archive-content-item" data-title="Detox Myths and Facts">
+            <h3>Detox Myths and Facts</h3>
+            <p>Issue #3 | July 2024</p>
+            <a href="#" class="button button-small">Read More</a>
           </div>
         </div>
       </div>
@@ -87,65 +88,67 @@
 
   <footer>
     <div class="container">
-      <p>© 2025 Rajiv Vakani. All rights reserved.</p>
+      <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const passwordInput = document.getElementById("archivePassword");
       const submitBtn = document.getElementById("submitPassword");
-      const gate = document.getElementById("password-gate");
-      const content = document.getElementById("archive-content");
-      const error = document.getElementById("passwordError");
-      const correctPassword = "morewithless"; // Password for No Onion No Garlic archive
+      const passwordField = document.getElementById("archivePassword");
+      const archiveContentSection = document.getElementById("archive-content");
+      const passwordGate = document.getElementById("password-gate");
+      const errorMessage = document.getElementById("passwordError");
+      const searchBar = document.getElementById("searchBar");
+      const correctPassword = "morewithless"; // Define the correct password
 
-      const checkPassword = () => {
-        if (passwordInput.value.trim() === correctPassword) {
-          gate.style.display = "none";
-          content.style.display = "block";
-          animateOnScrollCheck(); // Trigger animations for newly displayed content
-          window.removeEventListener('scroll', animateOnScrollCheck); // Remove listener until needed
+      // Function to show archive content and hide password gate
+      function showArchiveContent() {
+        passwordGate.style.display = "none";
+        archiveContentSection.style.display = "block";
+        // Optionally, trigger animations after content is shown
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            el.classList.add('show');
+        });
+      }
+
+      // Handle button click for password submission
+      submitBtn.addEventListener("click", function () {
+        const enteredPassword = passwordField.value.trim();
+        if (enteredPassword === correctPassword) {
+          showArchiveContent();
+          errorMessage.style.display = "none"; // Hide error if successful
         } else {
-          error.style.display = "block";
-          error.textContent = "Incorrect password. Please try again.";
-        }
-      };
-
-      submitBtn.addEventListener("click", checkPassword);
-      passwordInput.addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-          checkPassword();
+          errorMessage.style.display = "block"; // Show error message
+          passwordField.value = ""; // Clear password field
         }
       });
 
-      const searchBar = document.getElementById("searchBar");
-      if (searchBar) {
-        const archiveItems = document.querySelectorAll("#archive-list .content-item");
-        searchBar.addEventListener("input", function (e) {
-          const query = e.target.value.toLowerCase();
-          archiveItems.forEach(item => {
-            const text = item.dataset.title.toLowerCase();
-            item.style.display = text.includes(query) ? "flex" : "none"; // Changed to flex for consistent grid layout
-          });
-        });
-      }
-
-      // Add simple scroll animation for elements appearing after password unlock
-      function animateOnScrollCheck() {
-        const elements = document.querySelectorAll('.animate-on-scroll');
-        elements.forEach(el => {
-          if (el.getBoundingClientRect().top < window.innerHeight && el.getBoundingClientRect().bottom > 0) {
-            el.classList.add('show'); // Use 'show' class for animation
+      // Handle Enter key press in password field
+      passwordField.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          const enteredPassword = passwordField.value.trim();
+          if (enteredPassword === correctPassword) {
+            showArchiveContent();
+            errorMessage.style.display = "none";
+          } else {
+            errorMessage.style.display = "block";
+            passwordField.value = "";
           }
+        }
+      });
+
+      // Search functionality
+      searchBar?.addEventListener("input", function (e) {
+        const query = e.target.value.toLowerCase();
+        const archiveItems = document.querySelectorAll("#archive-list .content-item");
+        archiveItems.forEach(item => {
+          const text = item.dataset.title.toLowerCase();
+          item.style.display = text.includes(query) ? "flex" : "none"; // Changed to flex for consistent grid layout
         });
-      }
+      });
 
-      // Initial check (in case content is already visible, e.g., for non-gated pages, though not applicable here)
-      // window.addEventListener('scroll', animateOnScrollCheck); // Re-added if content becomes visible through scroll (not password)
-      // animateOnScrollCheck(); // Initial check for any immediately visible animated elements
-
-      // For menu toggle in archive pages (copied from main site)
+      // Navigation menu toggle for mobile (retained from other pages)
       const menuToggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
       if (menuToggle && navLinks) {
@@ -155,8 +158,10 @@
         });
         navLinks.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', function () {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
+            if (navLinks.classList.contains('active')) {
+              navLinks.classList.remove('active');
+              menuToggle.classList.remove('active');
+            }
           });
         });
       }
