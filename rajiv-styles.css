@@ -190,11 +190,12 @@ p {
 
 .hero-tagline {
   font-size: 1.3em;
-  color: var(--medium-text);
+  color: #333;
   max-width: 800px;
   margin: 0 auto 30px auto;
-  line-height: 1.5;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+  line-height: 1.6;
+  text-align: center;
+  text-shadow: none;
 }
 
 /* Allow wrap again on smaller screens */
@@ -968,14 +969,15 @@ footer a:hover {
     font-style: italic;
 }
 
-/* Mobile Navigation Specifics */
 .main-nav {
-    background-color: #ffffff;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px var(--shadow-light);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.85); /* subtle translucent white */
+  padding: 15px 0;
+  backdrop-filter: blur(10px); /* elegant blur behind nav */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* soft separator line */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-container {
@@ -1041,4 +1043,20 @@ footer a:hover {
 /* Animation for hamburger icon */
 .menu-toggle.active .hamburger:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
+}
+
+.site-logo {
+  animation: logoGlow 1.5s ease-in-out;
+}
+
+@keyframes glowOnce {
+  0% {
+    text-shadow: 0 0 0px rgba(0, 123, 255, 0);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+  }
+  100% {
+    text-shadow: 0 0 0px rgba(0, 123, 255, 0);
+  }
 }
