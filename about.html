@@ -11,7 +11,7 @@
 <body>
   <!-- Navbar -->
   <header>
-    <nav class="navbar">
+    <nav class="main-nav">
       <div class="container">
         <a href="index.html" class="logo">Rajiv Vakani</a>
         <ul class="nav-links">
@@ -19,20 +19,24 @@
           <li><a href="table-talk.html">Table Talk</a></li>
           <li><a href="no-onion-no-garlic.html">No Onion No Garlic</a></li>
           <li><a href="about.html" class="active">About</a></li>
+          <li><a href="index.html#contact-form">Contact</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <video autoplay muted loop playsinline class="background-video">
-      <source src="media/hero-video.mp4" type="video/mp4">
-    </video>
-    <div class="overlay">
-      <h1 class="hero-title">About Me</h1>
+  <header class="hero">
+  <video autoplay muted loop playsinline class="hero-video-background">
+    <source src="hero-background.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="frosted-hero-panel">
+      <h1>About Me</h1>
     </div>
-  </section>
+  </div>
+</header>
 
   <!-- Main About Section -->
   <main class="about-section container">
@@ -59,5 +63,6 @@
       <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
     </div>
   </footer>
+  <script defer src="animations.js"></script>
 </body>
 </html>
