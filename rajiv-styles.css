@@ -168,19 +168,36 @@ p {
     filter: grayscale(20%) brightness(80%); /* Optional: Desaturate slightly and darken for better contrast */
 }
 
-/* Force hero headline onto one line (unless on small screens) */
 .hero h1 {
   font-family: 'Lora', serif;
   color: var(--dark-text);
   font-size: 3.2em;
   font-weight: 700;
   margin-bottom: 15px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* Stronger shadow for contrast */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
 }
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.4em;
+    white-space: normal;
+    text-overflow: initial;
+  }
+}
+
+.hero-tagline {
+  font-size: 1.3em;
+  color: var(--medium-text);
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  line-height: 1.5;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Improves visibility on lighter overlay */
+}
+
 
 /* Allow wrap again on smaller screens */
 @media (max-width: 600px) {
@@ -209,15 +226,6 @@ p {
     padding: 20px; /* Add some padding to content to prevent it from touching edges on small screens */
     max-width: 900px; /* Limit content width */
     margin: 0 auto;
-}
-
-.hero-tagline {
-    font-size: 1.3em;
-    color: var(--medium-text); /* Changed to a medium grey for better contrast */
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    line-height: 1.5;
-    text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.05);
 }
 
 /* Specific styles for newsletter hero section (now also using video) */
