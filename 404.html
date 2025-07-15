@@ -6,7 +6,7 @@
   <title>Page Not Found | Rajiv Vakani</title>
   <meta name="description" content="Sorry, the page you're looking for isn't here. Return home or explore Table Talk and No Onion No Garlic newsletters.">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="rajiv-styles.css?v=20250715" />
+  <link rel="stylesheet" href="main.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
@@ -24,8 +24,6 @@
         <li><a href="no-onion-no-garlic.html">No Onion, No Garlic Newsletter</a></li>
         <li><a href="index.html#about-me">About Me</a></li>
         <li><a href="index.html#contact-form">Contact</a></li>
-        <li><a href="table-talk-archive.html" class="button button-small">Table Talk Archives</a></li>
-        <li><a href="no-onion-no-garlic-archive.html" class="button button-small">No Onion No Garlic Archives</a></li>
       </ul>
     </div>
   </nav>
@@ -59,14 +57,13 @@
         });
         navLinks.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', function () {
-            if (navLinks.classList.contains('active')) {
-              navLinks.classList.remove('active');
-              menuToggle.classList.remove('active');
-            }
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
           });
         });
       }
     });
   </script>
+  <script src="animations.js"></script>
 </body>
 </html>

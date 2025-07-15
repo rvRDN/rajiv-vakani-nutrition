@@ -24,56 +24,63 @@
         <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
         <li><a href="index.html#about-me">About Me</a></li>
         <li><a href="index.html#contact-form">Contact</a></li>
-        <li><a href="table-talk-archive.html" class="button button-small">Table Talk Archives</a></li>
-        <li><a href="no-onion-no-garlic-archive.html" class="button button-small">No Onion No Garlic Archives</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="hero-section hero-no-onion-no-garlic">
-    <div class="container hero-content">
-      <div class="hero-text animate-on-scroll">
-        <h1><img src="image_6d9bbd.png" alt="No Onion No Garlic Logo" class="newsletter-hero-logo"> No Onion, No Garlic</h1>
-        <p class="tagline">Mindful eating, inspired by Jain values, for modern plant-based nutrition.</p>
-        <a href="https://subscribepage.io/wzHcM2" class="button button-secondary">Subscribe Now →</a>
-      </div>
-      <div class="hero-image-container animate-on-scroll">
-        <img src="image_6cc260.jpg" alt="Fresh vegetables and spices" class="hero-image">
-        <img src="mint-leaves-decoration.png" alt="Mint Leaves Decoration" class="mint-leaves-decoration">
-      </div>
+  <header class="hero newsletter-hero animate-on-scroll">
+    <video autoplay muted loop playsinline class="hero-video-background">
+      <source src="hero-background.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="newsletter-hero-content">
+      <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Logo" class="newsletter-hero-logo animate-on-scroll">
+      <h1>No Onion, No Garlic</h1>
+      <p class="hero-tagline">Mindful eating with Jain values and plant-based clarity.</p>
     </div>
   </header>
 
-  <section class="newsletter-description-section animate-on-scroll">
+  <section class="newsletter-intro animate-on-scroll">
     <div class="container">
-      <h2>Why <span class="highlight">No Onion, No Garlic</span>?</h2>
-      <p>This newsletter explores a compassionate and mindful approach to food, drawing inspiration from the principles of Jainism while integrating contemporary nutritional science. "No Onion, No Garlic" goes beyond just ingredients; it's about fostering a deeper connection with what we eat, respecting all life, and cultivating inner peace through our dietary choices.</p>
-      <p>Discover practical insights for plant-based living, traditional recipes adapted for modern kitchens, and reflections on how our food impacts our physical and spiritual well-being. Whether you follow a specific dietary path or are simply curious about mindful eating, this space offers clarity and guidance.</p>
+      <h2>Welcome to No Onion, No Garlic</h2>
+      <p>This newsletter is a dedicated space for anyone practicing or exploring Jain, sattvic, or deeply intentional plant-based eating. It offers a practical guide to mindful food habits, delicious recipes, and clear nutritional insights, all delivered without judgment.</p>
     </div>
   </section>
 
-  <section class="upcoming-topics-section animate-on-scroll">
+  <section class="what-you-get animate-on-scroll">
     <div class="container">
-      <h2>Upcoming <span class="highlight">Topics</span></h2>
+      <h2>What You Get</h2>
+      <div class="content-grid">
+        <div class="content-item no-onion-no-garlic-card-content-item">
+          <h3>Recipes for Your Lifestyle</h3>
+          <p>Simple, flavorful, and compliant meals designed for everyday ease.</p>
+        </div>
+        <div class="content-item no-onion-no-garlic-card-content-item">
+          <h3>Nutrition Clarity</h3>
+          <p>Demystifying plant-based nutrition with evidence-based, practical advice.</p>
+        </div>
+        <div class="content-item no-onion-no-garlic-card-content-item">
+          <h3>Mindful Eating Practices</h3>
+          <p>Cultivate a deeper, more intentional connection with your food.</p>
+        </div>
+        <div class="content-item no-onion-no-garlic-card-content-item">
+          <h3>Food With Meaning</h3>
+          <p>A closer look at the connection between food, ethics, and daily choices, <strong>without preaching</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="upcoming-topics animate-on-scroll">
+    <div class="container">
+      <h2>Upcoming Issues</h2>
       <div class="upcoming-grid">
         <div class="upcoming-item">
-          <span class="icon">🌱</span>
-          <h3>Beyond the Root: Exploring Sustainable Plant Proteins</h3>
-          <p class="topic-description">Innovative sources and traditional wisdom for a complete plant-based diet.</p>
+          <h3 class="topic-title">Gut Health and Jainism</h3>
+          <p class="topic-description">How traditional sattvic diets support modern digestive science.</p>
         </div>
         <div class="upcoming-item">
-          <span class="icon">🧘‍♀️</span>
-          <h3>Mindful Eating Practices for Everyday Life</h3>
-          <p class="topic-description">Simple techniques to enhance your relationship with food and reduce stress.</p>
-        </div>
-        <div class="upcoming-item">
-          <span class="icon">🌶️</span>
-          <h3>The Science of Spices: Beyond Flavor</h3>
-          <p class="topic-description">Understanding the medicinal properties of spices in conscious cooking.</p>
-        </div>
-        <div class="upcoming-item">
-          <span class="icon">💖</span>
-          <h3>Are Organic Foods Always Better?</h3>
+          <h3 class="topic-title">Are Raw Foods Always Better?</h3>
           <p class="topic-description">Separating facts from fads in the no-onion-no-garlic lifestyle.</p>
         </div>
       </div>
@@ -106,10 +113,8 @@
         });
         navLinks.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', function () {
-            if (navLinks.classList.contains('active')) {
-              navLinks.classList.remove('active');
-              menuToggle.classList.remove('active');
-            }
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
           });
         });
       }

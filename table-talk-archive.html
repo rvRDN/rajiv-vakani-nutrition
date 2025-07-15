@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Table Talk Archive | Rajiv Vakani</title>
-  <meta name="description" content="A searchable archive of Table Talk Newsletter issues. For supporters only.">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="rajiv-styles.css?v=20250715">
+  <title>No Onion No Garlic Archive | Rajiv Vakani</title>
+  <meta name="description" content="A searchable archive of No Onion No Garlic Newsletter issues. For supporters only.">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
@@ -22,69 +22,53 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="table-talk.html">Table Talk</a></li>
         <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
-        <li><a href="index.html#about-me">About Me</a></li>
+        <li><a href="index.html#about-me">About</a></li>
         <li><a href="index.html#contact-form">Contact</a></li>
-        <li><a href="table-talk-archive.html" class="button button-small">Table Talk Archives</a></li>
-        <li><a href="no-onion-no-garlic-archive.html" class="button button-small">No Onion No Garlic Archives</a></li>
       </ul>
     </div>
   </nav>
 
-  <section class="hero-section hero-archive">
-    <div class="container hero-content">
-      <div class="hero-text animate-on-scroll">
-        <h1>Table Talk <span class="highlight">Archive</span></h1>
-        <p class="tagline">Access past issues of the Table Talk newsletter (for supporters).</p>
-      </div>
+  <header class="hero newsletter-hero">
+    <video autoplay muted loop playsinline class="hero-video-background">
+      <source src="hero-background.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="newsletter-hero-content">
+      <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion No Garlic Logo" class="newsletter-hero-logo">
+      <h1>No Onion No Garlic Archive</h1>
+      <p class="hero-tagline">Access every issue. Search everything. Supporter-exclusive access.</p>
+    </div>
+  </header>
+
+  <section class="newsletter-intro animate-on-scroll">
+    <div class="container">
+      <h2>Supporter Archive Access</h2>
+      <p>This page is for newsletter supporters. Please enter the archive password below to continue.</p>
+      <input type="password" id="archivePassword" placeholder="Enter password" style="width:100%; max-width:400px; padding:15px; font-size:1em; border-radius:8px; border: 1px solid #ccc; margin-top:20px;">
+      <button class="button" id="submitPassword" style="margin-top:20px;">Unlock</button>
+      <p id="passwordError" style="color:red; display:none; margin-top:15px;">Incorrect password. Please try again.</p>
     </div>
   </section>
 
-  <div id="password-gate" class="password-gate">
-    <h2>Enter Password to Access Archive</h2>
-    <input type="password" id="archivePassword" placeholder="Enter password here" />
-    <button id="submitPassword" class="button">Access Archive</button>
-    <p id="passwordError" style="color: red; display: none;">Incorrect password. Please try again.</p>
-  </div>
-
-  <div id="archive-content" class="archive-section" style="display: none;">
-    <section class="archive-grid-section animate-on-scroll">
-      <div class="container">
-        <input type="text" id="searchBar" class="archive-search-bar" placeholder="Search archive by title...">
-        <div id="archive-list" class="content-grid">
-          <div class="content-item archive-content-item" data-title="The Science of Fermentation">
-            <h3>The Science of Fermentation</h3>
-            <p>Issue #12 | October 2024</p>
-            <a href="#" class="button button-small">Read More</a>
-          </div>
-          <div class="content-item archive-content-item" data-title="Global Food Waste Crisis">
-            <h3>Global Food Waste Crisis</h3>
-            <p>Issue #11 | September 2024</p>
-            <a href="#" class="button button-small">Read More</a>
-          </div>
-          <div class="content-item archive-content-item" data-title="Understanding Gut Health">
-            <h3>Understanding Gut Health</h3>
-            <p>Issue #10 | August 2024</p>
-            <a href="#" class="button button-small">Read More</a>
-          </div>
-          <div class="content-item archive-content-item" data-title="Local vs. Global Food Chains">
-            <h3>Local vs. Global Food Chains</h3>
-            <p>Issue #9 | July 2024</p>
-            <a href="#" class="button button-small">Read More</a>
-          </div>
-          <div class="content-item archive-content-item" data-title="The Power of Plant-Based Diets">
-            <h3>The Power of Plant-Based Diets</h3>
-            <p>Issue #8 | June 2024</p>
-            <a href="#" class="button button-small">Read More</a>
-          </div>
-          <div class="content-item archive-content-item" data-title="Sustainable Seafood Choices">
-            <h3>Sustainable Seafood Choices</h3>
-            <p>Issue #7 | May 2024</p>
-            <a href="#" class="button button-small">Read More</a>
-          </div>
+  <section class="what-you-get animate-on-scroll" id="archiveSection" style="display:none;">
+    <div class="container">
+      <input type="text" id="searchBar" placeholder="Search articles..." style="width:100%; max-width:500px; padding:15px; font-size:1em; margin-bottom:30px; border-radius:8px; border: 1px solid #ccc;">
+      <div class="content-grid" id="archive-list">
+        <div class="content-item no-onion-no-garlic-card-content-item" data-title="Gut Health and Jainism">
+          <h3>Gut Health and Jainism</h3>
+          <p>How traditional sattvic diets support modern digestive science.</p>
+        </div>
+        <div class="content-item no-onion-no-garlic-card-content-item" data-title="Are Raw Foods Always Better?">
+          <h3>Are Raw Foods Always Better?</h3>
+          <p>Separating facts from fads in the no-onion-no-garlic lifestyle.</p>
+        </div>
+        <div class="content-item no-onion-no-garlic-card-content-item" data-title="Eating with Intention">
+          <h3>Eating with Intention</h3>
+          <p>How mindful food choices can build peace of mind and purpose.</p>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
@@ -96,75 +80,30 @@
     document.addEventListener("DOMContentLoaded", function () {
       const submitBtn = document.getElementById("submitPassword");
       const passwordField = document.getElementById("archivePassword");
-      const archiveContentSection = document.getElementById("archive-content");
-      const passwordGate = document.getElementById("password-gate");
+      const archiveSection = document.getElementById("archiveSection");
       const errorMessage = document.getElementById("passwordError");
       const searchBar = document.getElementById("searchBar");
-      const correctPassword = "morewithless"; // Define the correct password
 
-      // Function to show archive content and hide password gate
-      function showArchiveContent() {
-        passwordGate.style.display = "none";
-        archiveContentSection.style.display = "block";
-        // Optionally, trigger animations after content is shown
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            el.classList.add('show');
-        });
-      }
-
-      // Handle button click for password submission
       submitBtn.addEventListener("click", function () {
         const enteredPassword = passwordField.value.trim();
-        if (enteredPassword === correctPassword) {
-          showArchiveContent();
-          errorMessage.style.display = "none"; // Hide error if successful
+        if (enteredPassword === "morewithless") {
+          archiveSection.style.display = "block";
+          errorMessage.style.display = "none";
+          passwordField.style.display = "none";
+          submitBtn.style.display = "none";
         } else {
-          errorMessage.style.display = "block"; // Show error message
-          passwordField.value = ""; // Clear password field
+          errorMessage.style.display = "block";
         }
       });
 
-      // Handle Enter key press in password field
-      passwordField.addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-          const enteredPassword = passwordField.value.trim();
-          if (enteredPassword === correctPassword) {
-            showArchiveContent();
-            errorMessage.style.display = "none";
-          } else {
-            errorMessage.style.display = "block";
-            passwordField.value = "";
-          }
-        }
-      });
-
-      // Search functionality
       searchBar?.addEventListener("input", function (e) {
         const query = e.target.value.toLowerCase();
         const archiveItems = document.querySelectorAll("#archive-list .content-item");
         archiveItems.forEach(item => {
           const text = item.dataset.title.toLowerCase();
-          item.style.display = text.includes(query) ? "flex" : "none"; // Changed to flex for consistent grid layout
+          item.style.display = text.includes(query) ? "block" : "none";
         });
       });
-
-      // Navigation menu toggle for mobile (retained from other pages)
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function () {
-          navLinks.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-        });
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', function () {
-            if (navLinks.classList.contains('active')) {
-              navLinks.classList.remove('active');
-              menuToggle.classList.remove('active');
-            }
-          });
-        });
-      }
     });
   </script>
 </body>
