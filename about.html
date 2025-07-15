@@ -4,43 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me | Rajiv Vakani</title>
-  <link rel="stylesheet" href="rajiv-styles.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="rajiv-styles.css?v=20250715" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <script defer src="animations.js"></script>
 </head>
 <body>
+
   <!-- Navbar -->
-  <header>
-    <nav class="main-nav">
-      <div class="container">
-        <a href="index.html" class="logo">Rajiv Vakani</a>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="table-talk.html">Table Talk</a></li>
-          <li><a href="no-onion-no-garlic.html">No Onion No Garlic</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="index.html#contact-form">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="site-logo">Rajiv Vakani</a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="table-talk.html">Table Talk</a></li>
+        <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html#contact-form">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
   <header class="hero">
-  <video autoplay muted loop playsinline class="hero-video-background">
-    <source src="hero-background.mp4" type="video/mp4" />
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="frosted-hero-panel">
-      <h1>About Me</h1>
+    <video autoplay muted loop playsinline class="hero-video-background">
+      <source src="hero-background.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="frosted-hero-panel">
+        <h1>About Me</h1>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-  <!-- Main About Section -->
-  <main class="about-section container">
-    <div class="about-text">
+  <!-- About Section (Styled Container) -->
+  <section class="about-me animate-on-scroll">
+    <div class="container about-content">
       <p>I study nutrition because it’s one of the last frontiers where science, tradition, and lived experience meet, and where small choices can shape entire lifetimes.</p>
 
       <p>I’ve always been drawn to what food does beyond calories or macros. It’s information. It’s memory. It’s medicine. And for many people, it’s the one thing they’re trying to get right, but still feeling stuck.</p>
@@ -55,14 +60,13 @@
 
       <p><strong>Not to tell you what to eat, just to help you understand it better.</strong></p>
     </div>
-  </main>
+  </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer>
     <div class="container">
       <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
     </div>
   </footer>
-  <script defer src="animations.js"></script>
 </body>
 </html>
