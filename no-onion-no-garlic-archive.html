@@ -6,7 +6,7 @@
   <title>No Onion No Garlic Archive | Rajiv Vakani</title>
   <meta name="description" content="A searchable archive of No Onion No Garlic Newsletter issues. For supporters only.">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="rajiv-styles.css?v=20250714" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <style>
     .password-gate {
@@ -72,40 +72,38 @@
     </div>
   </header>
 
-  <!-- Password gate -->
-  <section id="password-gate" class="password-gate">
-    <h2>Enter Archive Password</h2>
-    <input type="password" id="archivePassword" placeholder="Enter password..." />
-    <div id="error" class="error-message"></div>
-  </section>
+  <section class="newsletter-intro animate-on-scroll">
+  <div class="container">
+    <h2>Supporter Archive Access</h2>
+    <p>This page is for newsletter supporters. Please enter the archive password below to continue.</p>
+    <input type="password" id="archivePassword" placeholder="Enter password" style="width:100%; max-width:400px; padding:15px; font-size:1em; border-radius:8px; border: 1px solid #ccc; margin-top:20px;">
+    <button class="button" id="submitPassword" style="margin-top:20px;">Unlock</button>
+    <p id="passwordError" style="color:red; display:none; margin-top:15px;">Incorrect password. Please try again.</p>
+  </div>
+</section>
+
 
   <!-- Hidden content -->
-  <div id="archive-content" class="hidden-content">
-    <section class="newsletter-intro animate-on-scroll">
-      <div class="container">
-        <h2>Supporter Archive: Every Issue in One Place</h2>
-        <p>Welcome to the full searchable archive of <strong>No Onion No Garlic</strong>. Every issue—past and present—is available here for you to explore, revisit, and share. Use the search bar below to find what matters to you.</p>
-        <input type="text" id="searchBar" placeholder="Search articles..." style="width:100%; max-width:500px; padding:15px; font-size:1em; margin-top:30px; border-radius:8px; border: 1px solid #ccc;">
-      </div>
-    </section>
+  <section class="what-you-get animate-on-scroll hidden-content" id="archiveSection">
+  <div class="container">
+    <input type="text" id="searchBar" placeholder="Search articles..." style="width:100%; max-width:500px; padding:15px; font-size:1em; margin-bottom:30px; border-radius:8px; border: 1px solid #ccc;">
+    <div class="content-grid" id="archive-list">
+      <div class="content-item no-onion-no-garlic-card-content-item" data-title="Gut Health and Jainism">
+  <h3>Gut Health and Jainism</h3>
+  <p>How traditional sattvic diets support modern digestive science.</p>
+</div>
+<div class="content-item no-onion-no-garlic-card-content-item" data-title="Are Raw Foods Always Better?">
+  <h3>Are Raw Foods Always Better?</h3>
+  <p>Separating facts from fads in the no-onion-no-garlic lifestyle.</p>
+</div>
+<div class="content-item no-onion-no-garlic-card-content-item" data-title="Eating with Intention">
+  <h3>Eating with Intention</h3>
+  <p>How mindful food choices can build peace of mind and purpose.</p>
+</div>
+    </div>
+  </div>
+</section>
 
-    <section class="what-you-get animate-on-scroll">
-      <div class="container">
-        <div class="content-grid" id="archive-list">
-          <div class="content-item no-onion-no-garlic-card-content-item" data-title="Gut Health and Jainism">
-            <h3>Gut Health and Jainism</h3>
-            <p>How traditional sattvic diets support modern digestive science.</p>
-          </div>
-          <div class="content-item no-onion-no-garlic-card-content-item" data-title="Are Raw Foods Always Better?">
-            <h3>Are Raw Foods Always Better?</h3>
-            <p>Separating facts from fads in the no-onion-no-garlic lifestyle.</p>
-          </div>
-          <div class="content-item no-onion-no-garlic-card-content-item" data-title="Eating with Intention">
-            <h3>Eating with Intention</h3>
-            <p>How mindful food choices can build peace of mind and purpose.</p>
-          </div>
-        </div>
-      </div>
     </section>
   </div>
 
@@ -116,35 +114,36 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const passwordInput = document.getElementById("archivePassword");
-      const gate = document.getElementById("password-gate");
-      const content = document.getElementById("archive-content");
-      const error = document.getElementById("error");
-      const correctPassword = "morewithless";
+  document.addEventListener("DOMContentLoaded", function () {
+    const submitBtn = document.getElementById("submitPassword");
+    const passwordField = document.getElementById("archivePassword");
+    const archiveSection = document.getElementById("archiveSection");
+    const errorMessage = document.getElementById("passwordError");
+    const searchBar = document.getElementById("searchBar");
 
-      passwordInput.addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-          if (passwordInput.value.trim() === correctPassword) {
-            gate.style.display = "none";
-            content.style.display = "block";
-          } else {
-            error.textContent = "Incorrect password. Please try again.";
-          }
-        }
-      });
-
-      const searchBar = document.getElementById("searchBar");
-      if (searchBar) {
-        const archiveItems = document.querySelectorAll("#archive-list .content-item");
-        searchBar.addEventListener("input", function (e) {
-          const query = e.target.value.toLowerCase();
-          archiveItems.forEach(item => {
-            const text = item.dataset.title.toLowerCase();
-            item.style.display = text.includes(query) ? "block" : "none";
-          });
-        });
+    submitBtn.addEventListener("click", function () {
+      const enteredPassword = passwordField.value.trim();
+      if (enteredPassword === "morewithless") {
+        archiveSection.style.display = "block";
+        errorMessage.style.display = "none";
+        passwordField.style.display = "none";
+        submitBtn.style.display = "none";
+      } else {
+        errorMessage.style.display = "block";
       }
+    });
+
+    searchBar?.addEventListener("input", function (e) {
+      const query = e.target.value.toLowerCase();
+      const archiveItems = document.querySelectorAll("#archive-list .content-item");
+      archiveItems.forEach(item => {
+        const text = item.dataset.title.toLowerCase();
+        item.style.display = text.includes(query) ? "block" : "none";
+      });
+    });
+  });
+</script>
+
     });
   </script>
 </body>
