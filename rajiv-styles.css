@@ -206,8 +206,9 @@ p {
 .hero-text p {
   font-size: 1.25rem;
   margin-bottom: 2.5rem;
-  max-width: 520px;
+  max-width: 580px;
   letter-spacing: -0.15px;
+  line-height: 1.65;
 }
 
 @media (max-width: 600px) {
