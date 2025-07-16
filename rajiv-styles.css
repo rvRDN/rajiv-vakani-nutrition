@@ -209,6 +209,7 @@ p {
   max-width: 580px;
   letter-spacing: -0.15px;
   line-height: 1.65;
+  white-space: pre-line;
 }
 
 @media (max-width: 600px) {
