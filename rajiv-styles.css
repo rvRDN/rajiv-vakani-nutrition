@@ -221,6 +221,15 @@ p {
   text-align: center;
 }
 
+.hero-text .tagline-line {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  letter-spacing: -0.15px;
+  max-width: 580px;
+  margin: 0 auto 0.5rem auto;
+  text-align: center;
+}
+
 @media (max-width: 600px) {
   .hero-text p {
     max-width: none;
