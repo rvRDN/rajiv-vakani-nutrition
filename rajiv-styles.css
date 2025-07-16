@@ -231,14 +231,19 @@ p {
 }
 
 .hero-text a.btn-primary {
-  margin-top: 1.8rem;
-  padding: 0.85rem 1.75rem;
+  display: inline-block;
+  margin-top: 2rem; /* Increase spacing from tagline */
+  padding: 0.9rem 1.75rem;
   font-size: 1rem;
-  transition: transform 0.2s ease;
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .hero-text a.btn-primary:hover {
-  transform: scale(1.04);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 600px) {
