@@ -1167,3 +1167,127 @@ footer a:hover {
 .featured-quote p {
   margin-bottom: 1.4em;
 }
+
+/* ===== Explore Newsletters Section (Revamped) ===== */
+
+.newsletter-section {
+  padding: 5rem 1rem;
+  background-color: #f8f9fa;
+}
+
+.newsletter-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1c5d88;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.newsletter-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.newsletter-card:hover {
+  transform: translateY(-6px);
+}
+
+.newsletter-logo {
+  height: 80px;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1c5d88;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-card .subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.newsletter-card .description {
+  font-size: 1rem;
+  color: #343a40;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.newsletter-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter-buttons .btn-primary,
+.newsletter-buttons .btn-secondary {
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+}
+
+.newsletter-buttons .btn-primary {
+  background-color: #1c5d88;
+  color: white;
+}
+
+.newsletter-buttons .btn-primary:hover {
+  background-color: #14466b;
+}
+
+.newsletter-buttons .btn-secondary {
+  background-color: #f1f1f1;
+  color: #1c5d88;
+}
+
+.newsletter-buttons .btn-secondary:hover {
+  background-color: #e2e6ea;
+}
+
+/* Special styling for the support card */
+.support-card {
+  background: #fff6f6;
+  border: 1px solid #f3d1d1;
+}
+
+.support-card h3 {
+  color: #c0392b;
+}
+
+.support-card .btn-primary {
+  background-color: #c0392b;
+  color: white;
+}
+
+.support-card .btn-primary:hover {
+  background-color: #992d22;
+}
+
+.support-icon {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
