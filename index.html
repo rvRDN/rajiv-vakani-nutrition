@@ -30,25 +30,24 @@
     </div>
   </nav>
 
- <section class="hero-section">
+ <section class="hero-v2">
   <div class="hero-video-wrapper">
-    <video autoplay muted loop playsinline class="hero-video" poster="poster.jpg"> aria-hidden="true"
-
-      <source src="peeling-orange.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline class="hero-video" poster="poster.jpg">
+      <source src="peeling-orange.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
     <div class="video-overlay"></div>
   </div>
 
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1>What you eat knows more than you think</h1>
-<p class="tagline-line">Gut, glucose, mood. It’s all connected.</p>
-<p class="tagline-line">I bring clarity to food science so you can thrive on facts, not fads.</p>
-<a href="about.html" class="btn-primary">Meet Rajiv</a>
+  <div class="hero-content-v2">
+    <h1 class="hero-headline">What you eat knows who you are.</h1>
+    <div class="hero-subline">
+      <span id="typed-word"></span>
     </div>
+    <a href="#explore-newsletters" class="btn-primary">Explore My Work</a>
   </div>
 </section>
+
 
 
   <section class="about-me animate-on-scroll" id="meet-rajiv">
@@ -64,41 +63,48 @@
     </div>
   </section>
 
-<section class="split-newsletters animate-on-scroll" id="explore-newsletters">
-  <div class="container">
-    <h2 class="section-title">Two Newsletters, One Purpose</h2>
-    <p class="section-subtitle">Choose your lens. The goal is the same: empower mindful eaters with truth, science, and culture.</p>
-    
-    <div class="newsletter-panels">
-      <div class="newsletter-left">
-        <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="newsletter-logo" />
-        <h3>Table Talk</h3>
-        <p class="newsletter-type">Mindful & Modern Nutrition</p>
-        <p>Nutrition, culture, and clarity for the modern eater. Grounded insights into food systems and diverse recipes.</p>
-        <div class="card-buttons">
-          <a href="table-talk.html" class="btn-primary">Learn More</a>
-          <a href="https://subscribepage.io/tabletalk-news" class="btn-secondary">Subscribe</a>
-        </div>
-      </div>
-      
-      <div class="newsletter-right">
-        <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Logo" class="newsletter-logo" />
-        <h3>No Onion, No Garlic</h3>
-        <p class="newsletter-type">Jain & Sattvic Eating</p>
-        <p>Mindful food, Jain values, and modern nutrition. A practical guide to intentional plant-based eating and recipes.</p>
-        <div class="card-buttons">
-          <a href="no-onion-no-garlic.html" class="btn-primary">Learn More</a>
-          <a href="https://subscribepage.io/wzHcM2" class="btn-secondary">Subscribe</a>
-        </div>
+
+
+<section class="split-newsletter-section">
+  <div class="container split-newsletter-container">
+    <div class="newsletter-panel left-panel">
+      <img src="table-talk-logo.png" alt="Table Talk Logo" class="newsletter-logo" />
+      <h3>Table Talk</h3>
+      <p class="descriptor">Mindful & Modern Nutrition</p>
+      <p class="newsletter-description">
+        Food clarity without compromise. Table Talk breaks down nutrition science and culture in real language —
+        no trends, no fluff.
+      </p>
+      <div class="button-row">
+        <a href="table-talk.html" class="button-primary">Learn More</a>
+        <a href="https://subscribepage.io/tabletalk-news" class="button-secondary">Subscribe</a>
       </div>
     </div>
 
-    <div class="support-note">
-      <p>If my content brings you value, consider becoming a supporter. Your contribution helps keep this work going and accessible to all.</p>
-      <a href="#support" class="support-link">Learn How to Support</a>
+    <div class="newsletter-divider">
+      <p class="divider-text">Two Lenses. One Voice.</p>
+    </div>
+
+    <div class="newsletter-panel right-panel">
+      <img src="no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Logo" class="newsletter-logo" />
+      <h3>No Onion, No Garlic</h3>
+      <p class="descriptor">Jain & Sattvic Eating</p>
+      <p class="newsletter-description">
+        A practical guide to intentional, plant-based eating grounded in Jain values and modern wellness science.
+      </p>
+      <div class="button-row">
+        <a href="no-onion-no-garlic.html" class="button-primary">Learn More</a>
+        <a href="https://subscribepage.io/wzHcM2" class="button-secondary">Subscribe</a>
+      </div>
     </div>
   </div>
-</section>
+
+
+  <p class="support-line">
+    Want access to every issue and bonus content?
+    <a href="support.html" class="support-link">Support the newsletter →</a>
+  </p>
+
 
 
 
@@ -159,5 +165,60 @@
       }
     });
   </script>
+
+  <script>
+  const words = [
+    "Nutritionist",
+    "Writer",
+    "Educator",
+    "Evidence Seeker",
+    "Plant-Based Advocate",
+    "Food Realist"
+  ];
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let typingForward = true;
+  const typedElement = document.getElementById("typed-word");
+
+  function type() {
+    const word = words[wordIndex];
+    if (typingForward) {
+      charIndex++;
+      if (charIndex === word.length + 1) {
+        typingForward = false;
+        setTimeout(type, 1200);
+        return;
+      }
+    } else {
+      charIndex--;
+      if (charIndex === 0) {
+        typingForward = true;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+    }
+    typedElement.textContent = word.slice(0, charIndex);
+    setTimeout(type, typingForward ? 100 : 50);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    type();
+  });
+</script>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.newsletter-panel').forEach(el => {
+    observer.observe(el);
+  });
+</script>
 </body>
 </html>
