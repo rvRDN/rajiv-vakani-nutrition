@@ -1291,3 +1291,90 @@ footer a:hover {
   font-size: 2rem;
   margin-bottom: 1.25rem;
 }
+
+/* === Split-Screen Newsletter Layout === */
+#explore-newsletters {
+  background: #f0f6fa;
+  padding: 6rem 1rem;
+}
+
+.split-newsletters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.split-newsletter-block {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  border-radius: 1.25rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.split-newsletter-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.split-newsletter-block img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.5rem;
+}
+
+.split-newsletter-block h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: #1d5c84;
+}
+
+.split-newsletter-block p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.split-newsletter-block .button-group {
+  margin-top: auto;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.split-newsletter-block .button {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.split-newsletter-block .button-primary {
+  background-color: #1d5c84;
+  color: white;
+}
+
+.split-newsletter-block .button-primary:hover {
+  background-color: #154865;
+}
+
+.split-newsletter-block .button-secondary {
+  background-color: #e9eef2;
+  color: #1d5c84;
+}
+
+.split-newsletter-block .button-secondary:hover {
+  background-color: #d6e2ea;
+}
