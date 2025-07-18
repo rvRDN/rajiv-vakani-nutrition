@@ -42,8 +42,12 @@
   <div class="hero-content-v2">
     <h1 class="hero-headline">What you eat knows who you are.</h1>
     <div class="hero-subline">
-      <span id="typed-word"></span>
-    </div>
+  <span class="cursor-prefix">Rajiv Vakani:</span>
+  <span id="typed-word">
+    <span id="typed-text"></span>
+    <span id="cursor"></span>
+  </span>
+</div>
     <a href="#explore-newsletters" class="btn-primary">Explore My Work</a>
   </div>
 </section>
@@ -65,45 +69,206 @@
 
 
 
-<section class="split-newsletter-section">
-  <div class="container split-newsletter-container">
-    <div class="newsletter-panel left-panel">
-      <img src="table-talk-logo.png" alt="Table Talk Logo" class="newsletter-logo" />
-      <h3>Table Talk</h3>
-      <p class="descriptor">Mindful & Modern Nutrition</p>
-      <p class="newsletter-description">
-        Food clarity without compromise. Table Talk breaks down nutrition science and culture in real language —
-        no trends, no fluff.
-      </p>
-      <div class="button-row">
-        <a href="table-talk.html" class="button-primary">Learn More</a>
-        <a href="https://subscribepage.io/tabletalk-news" class="button-secondary">Subscribe</a>
-      </div>
-    </div>
+<!-- 🔥 Premium Newsletter Section Start -->
+<!-- 🔥 VISIONARY NEWSLETTER SECTION -->
+<section class="newsletter-reimagined">
 
-    <div class="newsletter-divider">
-      <p class="divider-text">Two Lenses. One Voice.</p>
-    </div>
-
-    <div class="newsletter-panel right-panel">
-      <img src="no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Logo" class="newsletter-logo" />
-      <h3>No Onion, No Garlic</h3>
-      <p class="descriptor">Jain & Sattvic Eating</p>
-      <p class="newsletter-description">
-        A practical guide to intentional, plant-based eating grounded in Jain values and modern wellness science.
-      </p>
-      <div class="button-row">
-        <a href="no-onion-no-garlic.html" class="button-primary">Learn More</a>
-        <a href="https://subscribepage.io/wzHcM2" class="button-secondary">Subscribe</a>
+  <!-- Table Talk Feature -->
+  <div class="newsletter-slide table-talk-slide">
+    <div class="newsletter-content align-left">
+      <div class="newsletter-meta">
+        <img src="table-talk-logo.png" alt="Table Talk Logo" class="newsletter-icon" />
+        <h2>Table Talk</h2>
+        <p class="animated-tagline" id="tagline-tt"></p>
+        <p class="newsletter-description">
+          Food clarity without compromise. Table Talk breaks down nutrition science and culture in real language — no trends, no fluff.
+        </p>
+        <div class="button-row">
+          <a href="table-talk.html" class="cta-primary">Learn More</a>
+          <a href="https://subscribepage.io/tabletalk-news" class="cta-secondary">Subscribe</a>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- Divider -->
+  <div class="newsletter-divider-text">Two Newsletters. One Purpose.</div>
 
-  <p class="support-line">
-    Want access to every issue and bonus content?
-    <a href="support.html" class="support-link">Support the newsletter →</a>
-  </p>
+  <!-- No Onion, No Garlic Feature -->
+  <div class="newsletter-slide no-onion-slide">
+    <div class="newsletter-content align-right">
+      <div class="newsletter-meta">
+        <img src="no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Logo" class="newsletter-icon" />
+        <h2>No Onion, No Garlic</h2>
+        <p class="animated-tagline" id="tagline-nong"></p>
+        <p class="newsletter-description">
+          A practical guide to intentional, plant-based eating grounded in Jain values and modern wellness science.
+        </p>
+        <div class="button-row">
+          <a href="no-onion-no-garlic.html" class="cta-primary">Learn More</a>
+          <a href="https://subscribepage.io/wzHcM2" class="cta-secondary">Subscribe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✨ Typewriter Animation Script -->
+<script>
+  function typeText(id, words) {
+    const element = document.getElementById(id);
+    let wordIndex = 0, charIndex = 0, typing = true;
+    function type() {
+      const word = words[wordIndex];
+      if (typing) {
+        charIndex++;
+        if (charIndex > word.length) {
+          typing = false;
+          setTimeout(type, 1400);
+          return;
+        }
+      } else {
+        charIndex--;
+        if (charIndex === 0) {
+          typing = true;
+          wordIndex = (wordIndex + 1) % words.length;
+        }
+      }
+      element.textContent = word.slice(0, charIndex);
+      setTimeout(type, typing ? 100 : 50);
+    }
+    type();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    typeText("tagline-tt", ["Mindful & Modern Nutrition", "Built on Clarity", "Science in Plain English"]);
+    typeText("tagline-nong", ["Jain & Sattvic Eating", "Clarity Without Compromise", "Tradition Meets Wellness"]);
+  });
+</script>
+
+
+<!-- Paste the following CSS at the very bottom of your rajiv-styles.css file -->
+<style>
+.newsletter-featured-section {
+  width: 100%;
+  padding: 6rem 1rem;
+  background: linear-gradient(to right, #f5f8fa, #fdfdfd);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 1300px;
+  width: 100%;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.newsletter-feature {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 30px 40px -10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-feature:hover {
+  transform: translateY(-10px);
+}
+
+.newsletter-badge img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-meta h2 {
+  font-size: 2rem;
+  color: #194D6C;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-meta .subhead {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.newsletter-meta .description {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.newsletter-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-primary, .cta-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.cta-primary {
+  background: #194D6C;
+  color: white;
+}
+
+.cta-primary:hover {
+  background: #153e58;
+}
+
+.cta-secondary {
+  background: #e6f1f7;
+  color: #194D6C;
+}
+
+.cta-secondary:hover {
+  background: #d3e8f4;
+}
+
+.newsletter-divider-text {
+  text-align: center;
+  font-size: 1rem;
+  font-style: italic;
+  color: #555;
+  padding: 3rem 0 1rem 0;
+}
+</style>
+<!-- 🔥 Premium Newsletter Section End -->
+
+
+<p class="support-line">
+  Want access to every issue and bonus content?
+  <a href="support.html" class="support-link">Support the newsletter →</a>
+</p>
+
+</section> <!-- ← CLOSE split-newsletter-section PROPERLY -->
+
+<section class="call-to-action-section animate-on-scroll">
+
 
 
 

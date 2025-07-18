@@ -21,12 +21,18 @@
     --archives-neutral: #a0a8b3; /* Neutral grey for archives card */
     --archives-neutral-light: #f7f8f9; /* Lighter background for archives card */
     --archives-neutral-dark: #818995; /* Darker neutral for archives icon hover */
+    --header-height: 70px;
 }
 
 /* General Layout and Container Styles */
 *, *::before, *::after {
     box-sizing: border-box; /* Universal box-sizing for consistent layout */
 }
+
+.hero-v2 {
+  height: 100vh;
+}
+
 
 body {
     font-family: 'Inter', sans-serif;
@@ -136,114 +142,132 @@ p {
 }
 
 
-.hero-section {
-  display: flex;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  background-color: #000;
+/* Hero Section (New v2) */
+.hero-v2 {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text);
+    text-align: center;
+    overflow: hidden; /* Hide overflow from video */
+    padding-top: var(--header-height); /* Offset for fixed header */
 }
 
 .hero-video-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2; /* Below content and overlay */
 }
 
 .hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.65) contrast(1.1);
-  transform: scale(1.03);
-  opacity: 0;
-  animation: videoFadeIn 1.2s ease forwards;
-  animation-delay: 0.3s;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures video covers the area without distortion */
+    /* If you had specific video fade-in or filter effects you liked, you might need to re-add them here,
+       but for the basic fix, these are the essential properties. */
+    /* Example for original video fade-in:
+    opacity: 0;
+    animation: videoFadeIn 1.2s ease forwards;
+    animation-delay: 0.3s;
+    */
+    /* Example for original video filter:
+    filter: brightness(0.65) contrast(1.1);
+    */
 }
 
+/* If you are keeping the videoFadeIn animation, you would also keep this @keyframes block:
 @keyframes videoFadeIn {
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
+*/
 
 .video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+    z-index: -1; /* Below content, above video */
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  margin: auto;
-  padding: 4rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 720px;
-  color: #fff;
-  animation: fadeIn 1.5s ease-out both;
+.hero-content-v2 { /* This class name matches your about.html */
+    position: relative;
+    z-index: 1; /* Above video and overlay */
+    max-width: 800px;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background for content block */
+    border-radius: 10px;
+    box-shadow: var(--shadow-strong);
+    /* If you had an animation for content fade-in (like 'animation: fadeIn 1.5s ease-out both;'),
+       you can add it back here. */
 }
 
-.hero-text h1 {
-  font-size: 3.25rem;
-  letter-spacing: -0.5px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+.hero-headline { /* This class name matches your about.html */
+    font-size: 3.5rem; /* Adjusted for v2 design */
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    color: var(--light-text);
+    text-shadow: var(--shadow-medium);
 }
 
-.hero-text p {
-  font-size: 1.25rem;
-  margin-bottom: 2.5rem;
-  max-width: 580px;
-  letter-spacing: -0.15px;
-  line-height: 1.5;
-  white-space: pre-line;
+/* Typing effect styles */
+.hero-subline { /* This class name matches your about.html */
+    font-size: 1.8rem; /* Adjust as needed */
+    font-weight: 300;
+    color: var(--light-text);
+    min-height: 2.2rem; /* Ensure consistent height for different words */
+    display: flex; /* Use flexbox to keep elements aligned */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center horizontally if single line */
+    white-space: nowrap; /* Prevent content from wrapping */
+    overflow: hidden; /* Hide overflow of content, if any */
+    padding: 0 5px; /* Adjust padding if needed */
 }
 
-.tagline-line {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  max-width: 580px;
-  letter-spacing: -0.15px;
-  line-height: 1.45;
-  text-align: center;
+.cursor-prefix {
+    white-space: nowrap; /* Ensures "Rajiv Vakani:" stays on one line */
+    padding-right: 5px; /* Small space between fixed text and animated text */
 }
 
-.hero-text .tagline-line {
-  font-size: 1.25rem;
-  line-height: 1.4;
-  letter-spacing: -0.15px;
-  max-width: 580px;
-  margin: 0 auto 0.5rem auto;
-  text-align: center;
+#typed-word {
+    white-space: nowrap; /* Prevents the typed word from wrapping */
+    display: inline-block; /* Helps with layout */
+    /* IMPORTANT: Set a min-width based on your longest word to prevent content shifts */
+    /* The longest word in your list is "Plant-Based Advocate".
+       A min-width of 250px-300px should work well for a font-size of 1.8rem.
+       Adjust this value if you see any remaining "jumps" on your screen. */
+    min-width: 280px; /* Adjusted based on 'Plant-Based Advocate' at 1.8rem */
 }
 
-.hero-text a.btn-primary {
-  display: inline-block;
-  margin-top: 2rem; /* Increase spacing from tagline */
-  padding: 0.9rem 1.75rem;
-  font-size: 1rem;
-  border-radius: 2rem;
-  font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+#cursor {
+    display: inline-block; /* Make cursor a block element for precise sizing */
+    width: 8px; /* Width of the cursor */
+    height: 1.2em; /* Height relative to font size of parent */
+    background-color: var(--light-text); /* Color of the cursor */
+    vertical-align: middle; /* Align with text */
+    margin-left: 2px; /* Small space after the word */
+    animation: blink-animation 0.8s steps(1) infinite; /* Apply blink animation */
 }
 
-.hero-text a.btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+@keyframes blink-animation {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 @media (max-width: 600px) {
@@ -1701,14 +1725,6 @@ footer a:hover {
   letter-spacing: -0.5px;
 }
 
-.hero-subline {
-  font-size: 1.3rem;
-  font-weight: 400;
-  letter-spacing: 0.3px;
-  height: 2rem;
-  margin-bottom: 2rem;
-  font-family: 'Inter', sans-serif;
-}
 
 .hero-subline #typed-word {
   display: inline-block;
@@ -1835,3 +1851,224 @@ footer a:hover {
     margin: 3rem 0 2rem;
   }
 }
+
+/* ------------------ */
+/* FEATURED NEWSLETTER SECTION */
+/* ------------------ */
+
+.newsletter-featured-section {
+  width: 100%;
+  padding: 6rem 1rem;
+  background: linear-gradient(to right, #f5f8fa, #fdfdfd);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 1300px;
+  width: 100%;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.newsletter-feature {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 30px 40px -10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-feature:hover {
+  transform: translateY(-10px);
+}
+
+.newsletter-badge img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-meta h2 {
+  font-size: 2rem;
+  color: #194D6C;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-meta .subhead {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.newsletter-meta .description {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.newsletter-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-primary, .cta-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.cta-primary {
+  background: #194D6C;
+  color: white;
+}
+
+.cta-primary:hover {
+  background: #153e58;
+}
+
+.cta-secondary {
+  background: #e6f1f7;
+  color: #194D6C;
+}
+
+.cta-secondary:hover {
+  background: #d3e8f4;
+}
+
+.newsletter-divider-text {
+  text-align: center;
+  font-size: 1rem;
+  font-style: italic;
+  color: #555;
+  padding: 3rem 0 1rem 0;
+}
+
+
+.newsletter-reimagined {
+  width: 100%;
+  background: #f5f8fa;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 6rem 1.5rem;
+}
+
+.newsletter-slide {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+  background: white;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.03);
+  border-radius: 2rem;
+}
+
+.align-left {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.align-right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.newsletter-content {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+.newsletter-meta h2 {
+  font-size: 2.5rem;
+  color: #143c5c;
+  margin-bottom: 0.5rem;
+}
+
+.animated-tagline {
+  font-size: 1rem;
+  font-style: italic;
+  color: #607080;
+  height: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.newsletter-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.newsletter-divider-text {
+  text-align: center;
+  font-size: 1rem;
+  font-style: italic;
+  color: #555;
+}
+
+
+
+
+.hero-subline {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  font-size: 1.25rem;
+  font-weight: 500;
+  gap: 0.3rem;
+}
+
+.cursor-prefix {
+  white-space: nowrap;
+}
+
+#typed-word {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#cursor {
+  display: inline;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+
+

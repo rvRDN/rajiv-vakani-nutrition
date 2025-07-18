@@ -3,84 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me | Rajiv Vakani</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="rajiv-styles.css?v=20250715" />
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <script defer src="animations.js"></script>
+  <title>About Rajiv Vakani</title>
+  <link rel="stylesheet" href="rajiv-styles.css" />
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav class="main-nav">
-    <div class="container nav-container">
-      <a href="index.html" class="site-logo">Rajiv Vakani</a>
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="table-talk.html">Table Talk</a></li>
-        <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="index.html#contact-form">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <video autoplay muted loop playsinline class="hero-video-background">
-      <source src="hero-background.mp4" type="video/mp4" />
+  
+ <section class="hero-v2">
+  <div class="hero-video-wrapper">
+    <video autoplay muted loop playsinline class="hero-video" poster="poster.jpg">
+      <source src="peeling-orange.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
     </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="frosted-hero-panel">
-        <h1>About Me</h1>
+    <div class="video-overlay"></div>
+  </div>
+
+  <div class="hero-content-v2">
+    <h1 class="hero-headline">What you eat knows who you are.</h1>
+    <div class="hero-subline">
+  <span class="cursor-prefix">Rajiv Vakani:</span>
+  <span id="typed-word">
+    <span id="typed-text"></span>
+    <span id="cursor"></span>
+  </span>
+</div>
+    <a href="#explore-newsletters" class="btn-primary">Explore My Work</a>
+  </div>
+</section>
+
+
+<section class="about-me animate-on-scroll" id="about-me">
+  <div class="container">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="headshot_36.jpg" alt="Rajiv Vakani Headshot" class="about-headshot">
+      <div>
+        <p>Hi, I'm Rajiv! My journey into food and nutrition isn't just about science; it's about stories, culture, and the profound impact of what we eat on our lives and the planet.</p>
+        <p>I combine evidence-based nutritional science with a deep understanding of food systems, cultural heritage, and mindful living. Whether it's demystifying diet trends, exploring sustainable practices, or sharing plant-based insights rooted in Jain traditions, my aim is always clarity over dogma.</p>
+        <p>I believe that thoughtful eating is a cornerstone of a well-lived life, and my work is dedicated to helping you find joy, health, and purpose on your plate.</p>
       </div>
     </div>
-  </header>
-
-  <!-- Featured Quote -->
-  <section class="featured-quote animate-on-scroll">
-    <div class="container">
-      <blockquote>
-        <p>Health is shaped by many things: medicine, sleep, relationships, luck.</p>
-        <p>But food is the one form of care most people practice, imperfectly, every single day.</p>
-        <p>Food doesn’t act in extremes. It builds, restores, and remembers.</p>
-        <p>It doesn’t need to be solved. It needs to be understood.</p>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- About Section with Structure -->
-  <section class="about-me animate-on-scroll">
-    <div class="container about-content">
-
-      <h2>My Approach</h2>
-      <p>I study nutrition because it’s one of the last frontiers where science, tradition, and lived experience meet, and where small choices can shape entire lifetimes.</p>
-
-      <p>I’ve always been drawn to what food does beyond calories or macros. It’s information. It’s memory. It’s medicine. And for many people, it’s the one thing they’re trying to get right, but still feeling stuck.</p>
-
-      <p>At NYU, focused on food science, public health, and personalized nutrition, I explore the gray areas that get missed in most advice. Why does one person thrive on a diet that fails another? What if your cultural background or biology makes you the exception? What if you’re already trying, but not seeing change?</p>
-
-      <h2>Who I Work With</h2>
-      <p>I’ve worked with parents, students, pantry volunteers, seniors, and preschoolers. I’ve taught in classrooms and spiritual settings. I’ve seen how food affects energy, emotion, recovery, and identity, regardless of age or stage of life.</p>
-
-      <h2>Why I Built This Space</h2>
-      <p>If you’re looking for nutrition insights that are personalized, principled, and practical, this space was built with you in mind.</p>
-
-      <p><strong>Not to tell you what to eat, just to help you understand it better.</strong></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
-    </div>
-  </footer>
+  </div>
+</section>
+<script src="js/typing-effect.js"></script>
 </body>
+
 </html>
