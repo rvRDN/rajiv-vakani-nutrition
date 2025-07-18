@@ -2,49 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Rajiv Vakani</title>
-  <link rel="stylesheet" href="rajiv-styles.css" />
+  <meta name="description" content="Learn more about Rajiv Vakani — blending nutrition, culture, and practical clarity.">
+  <link rel="stylesheet" href="rajiv-styles.css?v=20250715" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script defer src="animations.js"></script>
+  <script defer src="js/typing-effect.js"></script>
 </head>
 <body>
-  
- <section class="hero-v2">
-  <div class="hero-video-wrapper">
-    <video autoplay muted loop playsinline class="hero-video" poster="poster.jpg">
-      <source src="peeling-orange.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div class="video-overlay"></div>
-  </div>
 
-  <div class="hero-content-v2">
-    <h1 class="hero-headline">What you eat knows who you are.</h1>
-    <div class="hero-subline">
-  <span class="cursor-prefix">Rajiv Vakani:</span>
-  <span id="typed-word">
-    <span id="typed-text"></span>
-    <span id="cursor"></span>
-  </span>
-</div>
-    <a href="#explore-newsletters" class="btn-primary">Explore My Work</a>
-  </div>
-</section>
+  <!-- Header -->
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="site-logo">Rajiv Vakani</a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+<li><a href="table-talk.html">Table Talk</a></li>
+<li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
+<li><a href="about.html" class="active">About Me</a></li>
+<li><a href="index.html#contact-form">Contact</a></li>
 
+      </ul>
+    </div>
+  </nav>
 
-<section class="about-me animate-on-scroll" id="about-me">
-  <div class="container">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <img src="headshot_36.jpg" alt="Rajiv Vakani Headshot" class="about-headshot">
-      <div>
-        <p>Hi, I'm Rajiv! My journey into food and nutrition isn't just about science; it's about stories, culture, and the profound impact of what we eat on our lives and the planet.</p>
-        <p>I combine evidence-based nutritional science with a deep understanding of food systems, cultural heritage, and mindful living. Whether it's demystifying diet trends, exploring sustainable practices, or sharing plant-based insights rooted in Jain traditions, my aim is always clarity over dogma.</p>
-        <p>I believe that thoughtful eating is a cornerstone of a well-lived life, and my work is dedicated to helping you find joy, health, and purpose on your plate.</p>
+  <!-- Hero Section -->
+  <header class="hero">
+    <video autoplay muted loop playsinline class="hero-video-background" poster="poster.jpg">
+  <source src="peeling-orange.mp4" type="video/mp4" />
+</video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="frosted-hero-panel">
+        <h1>About Me</h1>
+        <p class="hero-tagline">
+          <span class="cursor-prefix">Rajiv Vakani:</span>
+          <span id="typed-word">
+            <span id="typed-text">Future Dietitian</span>
+            <span id="cursor">|</span>
+          </span>
+        </p>
       </div>
     </div>
-  </div>
-</section>
-<script src="js/typing-effect.js"></script>
-</body>
+  </header>
 
+  <!-- About Section -->
+  <section class="about-me animate-on-scroll">
+    <div class="container">
+      <h2>More About Me</h2>
+      <div class="about-content">
+        <img src="headshot_36.jpg" alt="Rajiv Vakani Headshot" class="about-headshot">
+        <div>
+          <p>Hi, I'm Rajiv! My journey into food and nutrition isn't just about science; it's about stories, culture, and the profound impact of what we eat on our lives and the planet.</p>
+          <p>I combine evidence-based nutritional science with a deep understanding of food systems, cultural heritage, and mindful living. Whether it's demystifying diet trends, exploring sustainable practices, or sharing plant-based insights rooted in Jain traditions, my aim is always clarity over dogma.</p>
+          <p>I believe that thoughtful eating is a cornerstone of a well-lived life, and my work is dedicated to helping you find joy, health, and purpose on your plate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
 </html>
