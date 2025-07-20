@@ -1,48 +1,49 @@
-// js/typing-effect.js
+document.addEventListener("DOMContentLoaded", function () {
+  const typedText = document.getElementById("typed-text");
 
-document.addEventListener("DOMContentLoaded", () => {
   const words = [
-    "Educator",
-    "Writer",
     "Future Dietitian",
+    "Educator",
     "Evidence Seeker",
-    "Plant-Based Advocate"
+    "Plant-Based Thinker",
+    "Mindful Eater",
+    "Writer"
   ];
+
+  const TYPING_DELAY = 100;
+  const ERASING_DELAY = 50;
+  const WORD_PAUSE = 1500;
 
   let wordIndex = 0;
   let charIndex = 0;
-  let typingForward = true;
-  const typedElement = document.getElementById("typed-word");
-
-  // Only proceed if the typedElement exists on the page
-  if (!typedElement) {
-    console.warn("Element with ID 'typed-word' not found. Typing effect will not run.");
-    return;
-  }
+  let isDeleting = false;
 
   function type() {
-    const word = words[wordIndex];
-    typedElement.textContent = word.substring(0, charIndex); // Update text content
+    const currentWord = words[wordIndex];
 
-    if (typingForward) {
-      charIndex++;
-      if (charIndex > word.length) { // Use > to allow for the word to be fully typed before pausing
-        typingForward = false;
-        setTimeout(type, 1200); // Pause before deleting
-        return;
-      }
-    } else {
+    if (isDeleting) {
+      typedText.textContent = currentWord.substring(0, charIndex - 1);
       charIndex--;
-      if (charIndex < 0) { // Use < to ensure it fully deletes before moving to next word
-        typingForward = true;
-        wordIndex = (wordIndex + 1) % words.length;
-        charIndex = 0; // Reset charIndex for the new word
-      }
+    } else {
+      typedText.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
     }
-    
-    // Set timeout for next character, faster when deleting, slower when typing
-    setTimeout(type, typingForward ? 100 : 50); 
+
+    if (!isDeleting && charIndex === currentWord.length) {
+  setTimeout(() => {
+    isDeleting = true;
+    type();
+  }, 1000); // Pause after typing before deleting (1 second)
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(type, TYPING_DELAY);
+    } else {
+      setTimeout(type, isDeleting ? ERASING_DELAY : TYPING_DELAY);
+    }
   }
 
-  setTimeout(type, 500); // Start typing after a short delay
+  if (typedText) {
+    type();
+  }
 });

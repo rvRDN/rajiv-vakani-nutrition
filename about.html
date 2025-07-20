@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Rajiv Vakani</title>
   <meta name="description" content="Learn more about Rajiv Vakani — blending nutrition, culture, and practical clarity.">
-  <link rel="stylesheet" href="rajiv-styles.css?v=20250715" />
+  <link rel="stylesheet" href="rajiv-styles.css?v=20250719" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <script defer src="animations.js"></script>
-  <script defer src="js/typing-effect.js"></script>
 </head>
 <body>
 
@@ -23,11 +25,10 @@
       </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-<li><a href="table-talk.html">Table Talk</a></li>
-<li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
-<li><a href="about.html" class="active">About Me</a></li>
-<li><a href="index.html#contact-form">Contact</a></li>
-
+        <li><a href="table-talk.html">Table Talk</a></li>
+        <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
+        <li><a href="about.html" class="active">About Me</a></li>
+        <li><a href="index.html#contact-form">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -35,19 +36,18 @@
   <!-- Hero Section -->
   <header class="hero">
     <video autoplay muted loop playsinline class="hero-video-background" poster="poster.jpg">
-  <source src="peeling-orange.mp4" type="video/mp4" />
-</video>
+      <source src="peeling-orange.mp4" type="video/mp4" />
+    </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="frosted-hero-panel">
-        <h1>About Me</h1>
-        <p class="hero-tagline">
-          <span class="cursor-prefix">Rajiv Vakani:</span>
-          <span id="typed-word">
-            <span id="typed-text">Future Dietitian</span>
-            <span id="cursor">|</span>
-          </span>
-        </p>
+        <h1 class="hero-heading">About Me</h1>
+<div class="hero-variable-line">
+  <span id="typed-text"></span><span id="cursor" aria-hidden="true">|</span>
+</div>
+<div class="scroll-cue" aria-hidden="true">
+  <span>&#8595;</span>
+</div>
       </div>
     </div>
   </header>
@@ -73,6 +73,8 @@
       <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="js/typing-effect.js"></script>
 
 </body>
 </html>
