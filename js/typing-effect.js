@@ -1,13 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", () => {
   const typedText = document.getElementById("typed-text");
 
+  if (!typedText) return;
+
   const words = [
-    "Future Dietitian",
-    "Educator",
-    "Evidence Seeker",
-    "Plant-Based Thinker",
-    "Mindful Eater",
-    "Writer"
+    "Future Dietitian.",
+    "Educator.",
+    "Evidence Seeker.",
+    "Plant-Based Thinker.",
+    "Mindful Eater.",
+    "Writer."
   ];
 
   const TYPING_DELAY = 100;
@@ -30,10 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (!isDeleting && charIndex === currentWord.length) {
-  setTimeout(() => {
-    isDeleting = true;
-    type();
-  }, 1000); // Pause after typing before deleting (1 second)
+      setTimeout(() => {
+        isDeleting = true;
+        type();
+      }, WORD_PAUSE);
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       wordIndex = (wordIndex + 1) % words.length;
@@ -43,7 +45,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  if (typedText) {
-    type();
-  }
+  type();
 });

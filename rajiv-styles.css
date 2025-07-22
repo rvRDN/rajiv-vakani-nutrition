@@ -138,20 +138,15 @@ p {
 
 /* Hero Section Specific Styles - ADJUSTED FOR VIDEO BACKGROUND */
 .hero {
-    background-color: #ffffff; /* Fallback background color if video fails to load */
-    padding: 100px 0;
-    box-shadow: 0 2px 15px var(--shadow-light);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    background-image: none; /* Ensure no residual background images */
-    background-repeat: initial;
-    background-size: initial;
-    background-blend-mode: initial;
-    height: 100vh;
-    display: flex; /* Use flexbox for centering content */
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end; /* align text to bottom */
+  justify-content: flex-start; /* align text to left */
+  padding: 0 5vw 14vh 5vw; /* left/right and bottom padding */
+  text-align: left;
+  background-color: #ffffff;
+  overflow: hidden;
 }
 
 .hero-video-background {
@@ -354,17 +349,18 @@ p {
 }
 
 .about-headshot {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 8px 20px var(--shadow-medium);
-    border: 5px solid #ffffff;
-    float: left; /* Image floats to the left */
-    margin-right: 40px; /* Space between image and text */
-    margin-bottom: 20px; /* Space below image if text wraps around */
-    flex-shrink: 0; /* Important to keep image from shrinking on smaller flex containers if flex was used elsewhere */
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* More consistent */
+  border: 4px solid #fff;
+  float: left;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
 }
+
 
 .about-content p {
     text-align: left; /* Ensure paragraphs align left */
@@ -1140,11 +1136,9 @@ footer a:hover {
   font-style: italic;
   font-weight: 300;
   text-align: center;
-  white-space: nowrap;
-  color: #1ac9c9;
-  text-shadow: 0 0 4px rgba(26, 201, 201, 0.3);
+  color: #547e92; /* Studio-forward cyan-gray */
+  text-shadow: 0 0 6px rgba(84, 126, 146, 0.3);
   letter-spacing: 0.3px;
-  opacity: 0;
   transform: translateY(10px);
   animation: fadeUp 0.6s ease-out forwards;
   animation-delay: 0.3s;
@@ -1159,29 +1153,23 @@ footer a:hover {
   display: inline-block;
   font-weight: bold;
   margin-left: 2px;
-  color: #00ffe0;
-  text-shadow: 0 0 6px #00ffe0;
+  color: #547e92;
+  text-shadow: 0 0 4px rgba(84, 126, 146, 0.4);
   animation: cursorGlow 1.2s ease-in-out infinite;
-  will-change: opacity, text-shadow;
 }
 
 @keyframes cursorGlow {
   0%, 100% {
     opacity: 1;
-    text-shadow: 0 0 6px #00ffe0;
+    text-shadow: 0 0 4px rgba(84, 126, 146, 0.4);
   }
   50% {
     opacity: 0;
-    text-shadow: 0 0 3px #00ffe0;
+    text-shadow: 0 0 2px rgba(84, 126, 146, 0.2);
   }
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 
 
 .scroll-cue {
@@ -1206,4 +1194,829 @@ footer a:hover {
     transform: translateY(6px);
     opacity: 0.8;
   }
+}
+
+/* --- Featured Quote Block --- */
+.featured-quote {
+  background-color: var(--lighter-grey-bg);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.featured-quote blockquote {
+  font-family: 'Lora', serif;
+  font-size: 1.4em;
+  font-style: italic;
+  color: #2c3e50;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  background-color: #ffffff;
+  border-left: 4px solid var(--primary-blue);
+  padding: 40px 30px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.3px;
+}
+
+.featured-quote p {
+  margin-bottom: 1.4em;
+}
+
+.quote-divider {
+  width: 60px;
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+  margin: 30px auto 0;
+  opacity: 0.5;
+}
+
+
+/* --- Signature Quote Block --- */
+.signature-quote {
+  background-color: var(--lighter-grey-bg);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.signature-quote .quote-wrapper {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 40px;
+}
+
+.signature-quote .quote-accent {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 5rem;
+  line-height: 1;
+  color: rgba(44, 62, 80, 0.15);
+  font-family: 'Lora', serif;
+}
+
+.signature-quote .quote-text {
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  color: #2c3e50;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+}
+
+.signature-quote .quote-text p {
+  margin-bottom: 1.2em;
+}
+
+
+/* --- Narrative Lightspace Quote Block --- */
+.narrative-lightspace {
+  position: relative;
+  padding: 140px 0;
+  background-color: var(--lighter-grey-bg);
+  overflow: hidden;
+}
+
+.quote-canvas {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: left;
+}
+
+.quote-background-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  font-size: 8rem;
+  font-family: 'Lora', serif;
+  text-align: center;
+  color: rgba(44, 62, 80, 0.035);
+  transform: translateY(-50%);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.quote-lines {
+  position: relative;
+  z-index: 2;
+}
+
+.quote-line {
+  font-family: 'Caveat', cursive;
+  font-weight: 500;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  line-height: 1.65;
+  color: #2c3e50;
+  margin-bottom: 1.2em;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s ease-out var(--delay), transform 0.7s ease-out var(--delay);
+  display: block;
+  white-space: normal;
+}
+
+.quote-line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quote-line:first-of-type::before,
+.quote-line:last-of-type::after {
+  font-family: 'Lora', serif;
+  font-size: 3.5rem;
+  color: #2c3e50;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0;
+  position: relative;
+}
+
+.quote-line:first-of-type::before {
+  content: '“';
+  margin-right: 4px;
+  top: -0.25em;
+}
+
+.quote-line:last-of-type::after {
+  content: '”';
+  margin-left: 4px;
+  top: -0.1em;
+}
+
+
+
+/* --- Immersive Quote Sequence --- */
+.immersive-quote {
+  background-color: var(--lighter-grey-bg);
+  position: relative;
+  padding: 160px 0;
+  overflow: hidden;
+}
+
+.quote-viewport {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+
+
+.quote-backdrop-word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  font-family: 'Lora', serif;
+  color: rgba(44, 62, 80, 0.15);
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.quote-backdrop-word {
+  transition: opacity 0.6s ease-in-out;
+  opacity: 0.18; /* Boost to make it more visible when animated */
+}
+
+.background-text {
+  opacity: 0.12;
+  filter: blur(2px);
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+.background-text.fade-in {
+  opacity: 0.18;
+  filter: blur(1.5px);
+  transition: opacity 0.8s ease, filter 0.8s ease;
+}
+
+
+.quote-lines {
+  position: relative;
+  z-index: 2;
+}
+
+
+  /* Remove max-width */
+
+.quote-line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+/* Custom Properties (Variables) for easy color management */
+:root {
+    --primary-blue: #357ca5; /* New Primary Blue */
+    --primary-blue-dark: #2a6a90; /* Darker New Primary Blue for hover/active states */
+    --accent-green: #5C8D55; /* Accent Green for No Onion, No Garlic */
+    --accent-green-dark: #4a7546; /* Darker Accent Green */
+    --light-grey-bg: #f0f4f8; /* Soft light blue-grey background */
+    --lighter-grey-bg: #e9f0f5; /* Even lighter blue-grey background */
+    --dark-text: #2c3e50; /* Dark bluish-grey text color */
+    --medium-text: #555; /* Medium grey text color */
+    --light-text: #ecf0f1; /* Light text for dark backgrounds */
+    --border-light: #e0e6ed; /* Light border color */
+    --shadow-light: rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    --shadow-medium: rgba(0, 0, 0, 0.1); /* Medium shadow */
+    --shadow-strong: rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    --shadow-prominent: rgba(0,0,0,0.3); /* Prominent shadow for icons */
+    --button-secondary: #D97047; /* New Secondary Button Color */
+    --button-secondary-dark: #b85f38; /* Darker Secondary Button for hover */
+    --success-green: #4CAF50; /* Standard green for success messages */
+    --error-red: #F44336; /* Standard red for error messages */
+    --warning-orange: #FF9800; /* Standard orange for warnings */
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--dark-text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-grey-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif;
+  color: var(--primary-blue-dark);
+  margin-top: 0;
+  margin-bottom: 0.8em;
+  line-height: 1.2;
+}
+
+h1 { font-size: 3.2rem; font-weight: 700; }
+h2 { font-size: 2.5rem; font-weight: 700; }
+h3 { font-size: 2rem; font-weight: 600; }
+h4 { font-size: 1.8rem; font-weight: 600; }
+h5 { font-size: 1.5rem; font-weight: 600; }
+h6 { font-size: 1.2rem; font-weight: 600; }
+
+p {
+  margin-bottom: 1em;
+}
+
+.lead-paragraph {
+  font-size: 1.3rem;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: var(--medium-text);
+  margin-bottom: 2em;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--light-text);
+  box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-blue-dark);
+  box-shadow: 0 6px 12px var(--shadow-strong);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--button-secondary);
+  color: var(--light-text);
+  box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+.btn-secondary:hover {
+  background-color: var(--button-secondary-dark);
+  box-shadow: 0 6px 12px var(--shadow-strong);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-blue);
+  color: var(--light-text);
+  box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* Navbar */
+.main-nav {
+  background-color: var(--light-grey-bg);
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 2px 4px var(--shadow-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem;
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.site-logo:hover {
+  color: var(--primary-blue-dark);
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--dark-text);
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-blue);
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: var(--primary-blue-dark);
+}
+
+.menu-toggle {
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--dark-text);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Nav Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: -100%; /* Start off-screen */
+    width: 70%;
+    height: 100vh;
+    background-color: var(--lighter-grey-bg);
+    padding: 80px 20px 20px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    transition: right 0.4s ease-in-out;
+    z-index: 999;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .nav-links.open {
+    right: 0; /* Slide in */
+  }
+
+  .nav-links li a {
+    font-size: 1.2rem;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block; /* Show on mobile */
+  }
+
+  /* Hamburger animation */
+  .menu-toggle.open .hamburger:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.open .hamburger:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open .hamburger:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+
+/* About Me Content Section */
+.about-header {
+  background-color: #054b56;
+  padding: 80px 20px; /* Keep horizontal padding for smaller screens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  width: 100%; /* Full screen width */
+}
+
+
+.about-header img.about-headshot {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 20px var(--shadow-medium);
+  border: 6px solid #ffffff; /* ensure the border stands out on dark bg */
+  flex-shrink: 0;
+}
+
+.about-header .lead-paragraph {
+  font-size: 1.45rem;
+  font-style: italic;
+  color: #ffffff; /* quote text is now white */
+  line-height: 1.6;
+  max-width: 500px;
+  flex: 1;
+}
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  .about-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-header img.about-headshot {
+    margin-bottom: 20px;
+  }
+
+  .about-header .lead-paragraph {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+
+/* Footer */
+footer {
+  background-color: var(--dark-text);
+  color: var(--light-text);
+  text-align: center;
+  padding: 30px 0;
+  font-size: 0.9rem;
+}
+
+/* --- Immersive Quote Sequence --- */
+.immersive-quote {
+  background-color: var(--lighter-grey-bg);
+  position: relative; /* For absolute positioning of children */
+  padding: 160px 0; /* Generous padding top/bottom */
+  overflow: hidden;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 70vh; /* Ensure enough height for visual balance */
+}
+
+.quote-section-inner-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Control overall width of the section content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* Add some padding inside the container */
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.007);
+  }
+}
+
+.background-text {
+    font-family: 'Lora', serif;
+    font-size: 10vw;
+    font-weight: 700;
+    color: var(--medium-text); /* Smarter shade than #ccc */
+    opacity: 0.15;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    line-height: 1;
+    text-align: center;
+    width: 100%;
+    animation: subtlePulse 12s ease-in-out infinite;
+    transition: opacity 0.6s ease-in-out;
+}
+
+
+.quote-block {
+    position: relative; /* For z-index and absolute positioning of quote marks */
+    z-index: 1; /* Ensure it's above the background text */
+    text-align: center;
+    width: 100%;
+    max-width: clamp(300px, 75vw, 800px); /* Responsive max-width: min 300px, ideal 75vw, max 800px */
+    margin-top: -2rem; /* Pull up to balance with background text */
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(20px); /* Start slightly below for animation */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.quote-block.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Staggered animation delays for individual lines */
+.quote-line:nth-child(1) { transition-delay: 0.2s; }
+.quote-line:nth-child(2) { transition-delay: 0.4s; }
+.quote-line:nth-child(3) { transition-delay: 0.6s; }
+.quote-line:nth-child(4) { transition-delay: 0.8s; }
+
+.quote-line.line-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Quote marks styling */
+.quote-line:first-of-type::before,
+.quote-line:last-of-type::after {
+    font-family: 'Lora', serif; /* Use an elegant serif for marks */
+    font-size: 8rem; /* Large size for impact */
+    color: var(--medium-text); /* Slightly darker than text for contrast */
+    position: absolute; /* Position absolutely relative to .quote-block */
+    line-height: 1; /* Crucial for vertical alignment */
+    z-index: -1; /* Place behind text but above background */
+    opacity: 0.2; /* Subtle presence */
+}
+
+.quote-line:first-of-type::before,
+.quote-line:last-of-type::after {
+  background: linear-gradient(to bottom, var(--primary-blue), var(--medium-text));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  opacity: 0.3; /* Keep it subtle */
+}
+
+.quote-line:first-of-type::before {
+    content: "“";
+    top: -2.8rem; /* Adjusted for new font and line-height */
+    left: -3rem; /* Adjust horizontally */
+    transform: translateX(-50%); /* Fine-tune horizontal centering */
+}
+
+.quote-line:last-of-type::after {
+    content: "”";
+    bottom: -3.8rem; /* Adjusted for new font and line-height */
+    right: -3rem; /* Adjust horizontally */
+    transform: translateX(50%); /* Fine-tune horizontal centering */
+}
+
+/* Responsive adjustments for quote section */
+@media (max-width: 768px) {
+    .background-text {
+        font-size: 15vw; /* Make background text larger on smaller screens */
+    }
+    .quote-line {
+        font-size: 1.5rem; /* Adjust quote font size for mobile */
+    }
+    .quote-line:first-of-type::before,
+    .quote-line:last-of-type::after {
+        font-size: 6rem; /* Adjust quote marks for mobile */
+        top: -1.5rem;
+        bottom: -2.5rem;
+        left: -2rem;
+        right: -2rem;
+    }
+    .quote-block {
+        max-width: 90%; /* Allow quote block to take more width on smaller screens */
+        margin-top: -1rem; /* Adjust vertical balance */
+    }
+    @media (max-width: 768px) {
+  .about-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-header img.about-headshot {
+    margin-bottom: 20px;
+  }
+
+  .about-header .lead-paragraph {
+    font-size: 1.15rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+    .background-text {
+        font-size: 20vw;
+    }
+    .quote-line {
+        font-size: 1.3rem;
+    }
+    .quote-line:first-of-type::before,
+    .quote-line:last-of-type::after {
+        font-size: 5rem;
+        top: -1rem;
+        bottom: -2rem;
+        left: -1rem;
+        right: -1rem;
+    }
+    .immersive-quote {
+        padding: 80px 0; /* Reduce padding on very small screens */
+        min-height: 50vh;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-header {
+    gap: 32px;
+    padding: 32px 24px;
+  }
+
+  .about-header img.about-headshot {
+    width: 260px;
+    height: 260px;
+  }
+
+  .about-header .lead-paragraph {
+    font-size: 1.3rem;
+    text-align: left;
+  }
+}
+
+
+h1,
+.hero-subline {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65);
+}
+
+/* Bold orange accent inside headlines */
+.highlight-orange {
+  color: #ff7433; /* Use your existing accent orange */
+}
+
+/* Entrance animation for hero headline */
+.hero-headline-animated {
+  opacity: 1 !important;           /* Force visibility */
+  transform: none !important;      /* Remove any transform */
+  animation: none !important;      /* Disable animation */
+}
+
+/* Fade+rise animation keyframes */
+@keyframes riseIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === HOMEPAGE HERO FIX === */
+header.hero.homepage-hero {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+/* Disable animation for the typing effect subline */
+.typed-content {
+  opacity: 1 !important;           /* Force visibility */
+  transform: none !important;      /* Remove any transform */
+  animation: none !important;      /* Disable any animation on this element */
+}
+
+.homepage-hero .hero-content {
+  max-width: 800px;
+  padding: 20px;
+}
+
+.homepage-hero .frosted-hero-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* === HOMEPAGE HERO PADDING FIX === */
+header.hero.homepage-hero {
+  padding: 0 5vw !important; /* override the 14vh bottom padding */
+}
+
+/* --- Homepage Hero Specific Centering Fix --- */
+header.hero.homepage-hero {
+  display: flex !important;           /* Ensures flexbox is active for this specific hero */
+  flex-direction: column;             /* Stacks hero content vertically */
+  align-items: center !important;     /* Centers content horizontally within the flex column */
+  justify-content: center !important; /* Centers content vertically within the hero */
+  text-align: center !important;      /* Centers text within the hero panel */
+  padding: 0 5vw !important;          /* Overrides the large bottom padding from .hero */
+  min-height: 100vh;                  /* Optional: Ensures the hero takes full viewport height */
+}
+
+/* Optional: If you want to make your content panel narrower on the homepage */
+/* If you like your content width as it is, you don't need this block */
+/*
+.homepage-hero .hero-content {
+  max-width: 700px; /* Example: Adjust this as needed for your design */
+/*
+  width: 100%;
+  margin: 0 auto;
+}
+*/
+
+/* Adjust alignment of content WITHIN the homepage hero panel */
+.homepage-hero .hero-content {
+  align-items: center !important;     /* Force centering items horizontally within this content wrapper */
+  justify-content: center !important; /* Force centering items vertically within this content wrapper */
+  text-align: center !important;      /* Force centering text lines within this content wrapper */
+  display: flex !important;           /* CRITICAL: Make this a flex container */
+  flex-direction: column !important;  /* CRITICAL: Stack children vertically within this flex container */
 }

@@ -1,80 +1,145 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Rajiv Vakani</title>
-  <meta name="description" content="Learn more about Rajiv Vakani — blending nutrition, culture, and practical clarity.">
-  <link rel="stylesheet" href="rajiv-styles.css?v=20250719" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <script defer src="animations.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Me | Rajiv Vakani</title>
+<link href="rajiv-styles.css?v=20250715" rel="stylesheet"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&amp;display=swap" rel="stylesheet"/>
 </head>
 <body>
-
-  <!-- Header -->
-  <nav class="main-nav">
-    <div class="container nav-container">
-      <a href="index.html" class="site-logo">Rajiv Vakani</a>
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="table-talk.html">Table Talk</a></li>
-        <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
-        <li><a href="about.html" class="active">About Me</a></li>
-        <li><a href="index.html#contact-form">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <video autoplay muted loop playsinline class="hero-video-background" poster="poster.jpg">
-      <source src="peeling-orange.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="frosted-hero-panel">
-        <h1 class="hero-heading">About Me</h1>
-<div class="hero-variable-line">
-  <span id="typed-text"></span><span id="cursor" aria-hidden="true">|</span>
+<!-- Navbar -->
+<nav class="main-nav">
+<div class="container nav-container">
+<a class="site-logo" href="index.html">Rajiv Vakani</a>
+<button aria-label="Toggle navigation" class="menu-toggle">
+<span class="hamburger"></span>
+<span class="hamburger"></span>
+<span class="hamburger"></span>
+</button>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="tabletalk.html">Table Talk</a></li>
+<li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
+<li><a class="active" href="about.html">About Me</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
 </div>
-<div class="scroll-cue" aria-hidden="true">
-  <span>&#8595;</span>
+</nav>
+<!-- Hero Section -->
+<header class="hero">
+<video autoplay="" class="hero-video-background" loop="" muted="" playsinline="" poster="poster.jpg">
+<source src="peeling-orange.mp4" type="video/mp4"/>
+</video>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<h1 class="hero-heading">About Me</h1>
+<p class="hero-variable-line">
+<span id="typed-wrapper">
+<span id="typed-text"></span>
+<span id="cursor">|</span>
+</span>
+</p>
+<p class="hero-tagline">Food, identity, and the science that shapes both.</p>
 </div>
-      </div>
-    </div>
-  </header>
+</header>
+<!-- Quote Interlude -->
+<section class="immersive-quote">
+<div class="quote-section-inner-container">
+<!-- Background text -->
+<div class="background-text"></div>
+<!-- Quote block -->
+<div class="quote-block" id="quoteBlock">
+<p class="quote-line">Health is shaped by many things: medicine, sleep, relationships, luck.</p>
+<p class="quote-line">But food is the one form of care most people practice, imperfectly, every single day.</p>
+<p class="quote-line">Food doesn’t act in extremes. It builds, restores, and remembers.</p>
+<p class="quote-line">It doesn’t need to be solved. It needs to be understood.</p>
+</div>
+</div>
+</section>
+<!-- About Me Content Section -->
+<section class="about-me-content py-16">
+<!-- Headshot and intro quote -->
+<div class="about-header">
+<img alt="Rajiv" class="about-headshot" src="headshot_36.jpg"/>
+<p class="lead-paragraph">I’m Rajiv, a nutritionist dedicated to helping you understand food beyond the labels.</p>
+</div>
+<!-- Act-break quote -->
 
-  <!-- About Section -->
-  <section class="about-me animate-on-scroll">
-    <div class="container">
-      <h2>More About Me</h2>
-      <div class="about-content">
-        <img src="headshot_36.jpg" alt="Rajiv Vakani Headshot" class="about-headshot">
-        <div>
-          <p>Hi, I'm Rajiv! My journey into food and nutrition isn't just about science; it's about stories, culture, and the profound impact of what we eat on our lives and the planet.</p>
-          <p>I combine evidence-based nutritional science with a deep understanding of food systems, cultural heritage, and mindful living. Whether it's demystifying diet trends, exploring sustainable practices, or sharing plant-based insights rooted in Jain traditions, my aim is always clarity over dogma.</p>
-          <p>I believe that thoughtful eating is a cornerstone of a well-lived life, and my work is dedicated to helping you find joy, health, and purpose on your plate.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Approach content -->
+<div class="container max-w-3xl mx-auto px-4">
+<div style="display: flex; flex-direction: row; align-items: flex-start; gap: 30px; flex-wrap: wrap;">
+<div style="flex: 1 1 300px;">
+<h2>My Approach</h2>
+<p>I study nutrition because it’s one of the last frontiers where science, tradition, and lived experience meet, and where small choices can shape entire lifetimes.</p>
+<p>I’ve always been drawn to what food does beyond calories or macros. It’s information. It’s memory. It’s medicine. And for many people, it’s the one thing they’re trying to get right, but still feeling stuck.</p>
+<p>At NYU, focused on food science, public health, and personalized nutrition, I explore the gray areas that get missed in most advice. Why does one person thrive on a diet that fails another? What if your cultural background or biology makes you the exception? What if you’re already trying, but not seeing change?</p>
+<h2>Who I Work With</h2>
+<p>I’ve worked with parents, students, pantry volunteers, seniors, and preschoolers. I’ve taught in classrooms and spiritual settings. I’ve seen how food affects energy, emotion, recovery, and identity, regardless of age or stage of life.</p>
+<h2>Why I Built This Space</h2>
+<p>If you’re looking for nutrition insights that are personalized, principled, and practical, this space was built with you in mind.</p>
+<p><strong>Not to tell you what to eat, just to help you understand it better.</strong></p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="container">
+<p>© 2025 Rajiv Vakani. All rights reserved.</p>
+</div>
+</footer>
+<!-- Quote Fade-in JS -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const quoteBlock = document.getElementById('quoteBlock');
+      const quoteLines = quoteBlock.querySelectorAll('.quote-line');
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
-    </div>
-  </footer>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            quoteBlock.classList.add('fade-in');
+            quoteLines.forEach((line, index) => {
+              setTimeout(() => {
+                line.classList.add('line-fade-in');
+              }, 200 + (index * 150));
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
 
-  <script src="js/typing-effect.js"></script>
+      observer.observe(quoteBlock);
+    });
+  </script>
+<script defer="" src="js/typing-effect.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const backdrop = document.querySelector('.background-text');
+    if (!backdrop) return;
 
+    const words = [
+      "healing",
+      "memory",
+      "ritual",
+      "resistance",
+      "identity",
+    ];
+
+    let index = 0;
+
+    setInterval(() => {
+      backdrop.classList.remove('fade-in');
+      
+      setTimeout(() => {
+        backdrop.textContent = words[index];
+        backdrop.classList.add('fade-in');
+        index = (index + 1) % words.length;
+      }, 300); // Wait for fade-out
+    }, 4000); // Change every 4 seconds
+  });
+</script>
 </body>
 </html>
