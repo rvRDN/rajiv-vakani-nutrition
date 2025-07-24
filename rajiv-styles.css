@@ -123,6 +123,24 @@ p {
     border-color: var(--primary-blue); /* Match border to text color on hover */
 }
 
+.button.hero-cta {
+  background-color: #ff7433;
+  color: white;
+  font-weight: 600;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.button.hero-cta:hover {
+  background-color: #e66028;
+  transform: translateY(-2px);
+}
+
 /* Secondary Button Style */
 .button-secondary {
     background-color: var(--button-secondary);
@@ -139,22 +157,33 @@ p {
 /* Hero Section Specific Styles - ADJUSTED FOR VIDEO BACKGROUND */
 .hero {
   position: relative;
-  height: 100vh;
   display: flex;
-  align-items: flex-end; /* align text to bottom */
-  justify-content: flex-start; /* align text to left */
-  padding: 0 5vw 14vh 5vw; /* left/right and bottom padding */
-  text-align: left;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 5vw 14vh 5vw;
+  text-align: center;
   background-color: #ffffff;
   overflow: hidden;
 }
+
+header.hero.homepage-hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 10vh 5vw; /* override the bottom-heavy padding */
+  display: flex;
+  flex-direction: column;
+}
+
 
 .hero-video-background {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw; /* Force full viewport width */
+    height: 100vh; /* Full viewport height */
     object-fit: cover;
     z-index: 0;
     filter: grayscale(20%) brightness(80%);
@@ -171,6 +200,7 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -200,6 +230,14 @@ p {
   font-weight: 600;
   white-space: nowrap;
 }
+
+
+/* General fadeIn */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 /* Allow wrap again on smaller screens */
 @media (max-width: 600px) {
@@ -271,6 +309,7 @@ p {
     padding: 20px; /* Add some padding to content to prevent it from touching edges on small screens */
     max-width: 900px; /* Limit content width */
     margin: 0 auto;
+    text-align: center;
 }
 
 /* Specific styles for newsletter hero section (now also using video) */
@@ -1016,16 +1055,6 @@ footer a:hover {
     font-style: italic;
 }
 
-.main-nav {
-  background-color: rgba(255, 255, 255, 0.85); /* subtle translucent white */
-  padding: 15px 0;
-  backdrop-filter: blur(10px); /* elegant blur behind nav */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* soft separator line */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
 
 .nav-container {
     display: flex;
@@ -1061,6 +1090,28 @@ footer a:hover {
 
 .nav-links li a:hover {
     color: var(--primary-blue);
+}
+
+.nav-cta-tag {
+  border: 2px solid #ff7433;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ff7433;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-left: 40px; /* more space from nav links */
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.nav-cta-tag:hover {
+  background-color: #ff7433;
+  color: white;
+  transform: translateY(-2px);
 }
 
 /* Hamburger menu for mobile */
@@ -1548,10 +1599,12 @@ p {
 
 /* Navbar */
 .main-nav {
-  background-color: var(--light-grey-bg);
+  background-color: rgba(255, 248, 242, 0.86);  /* warm tint */
+  backdrop-filter: blur(10px);                 /* frosted effect */
+  -webkit-backdrop-filter: blur(10px);         /* Safari support */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* soft line */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);    /* optional soft shadow */
   padding: 15px 0;
-  border-bottom: 1px solid var(--border-light);
-  box-shadow: 0 2px 4px var(--shadow-light);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -1564,24 +1617,26 @@ p {
 }
 
 .site-logo {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.2rem;
-  color: var(--primary-blue);
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: 0.01em;
+  color: var(--dark-text);
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 .site-logo:hover {
   color: var(--primary-blue-dark);
 }
 
+/* Base Nav Links Styles (Mobile-First Default) */
 .nav-links {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 30px;
+  /* By default, for mobile, these will be hidden and controlled by JS toggle */
+  /* No 'display: flex' here, as that will be added specifically for desktop */
+  /* No 'gap' here, as that's for desktop flex */
 }
 
 .nav-links li a {
@@ -1597,17 +1652,18 @@ p {
 .nav-links li a::after {
   content: '';
   position: absolute;
-  left: 0;
-  bottom: 0;
+  bottom: -6px;
+  left: 50%;
   width: 0;
   height: 2px;
-  background-color: var(--primary-blue);
-  transition: width 0.3s ease;
+  background-color: #ff7433; /* brand orange */
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
 }
 
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
-  width: 100%;
+  width: 80%;
 }
 
 .nav-links li a:hover,
@@ -1633,7 +1689,7 @@ p {
   transition: all 0.3s ease;
 }
 
-/* Mobile Nav Styles */
+/* Mobile Nav Styles (All Consolidated Here) */
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
@@ -1651,10 +1707,6 @@ p {
     gap: 20px;
   }
 
-  .nav-links.open {
-    right: 0; /* Slide in */
-  }
-
   .nav-links li a {
     font-size: 1.2rem;
     padding: 10px 0;
@@ -1665,7 +1717,7 @@ p {
     display: block; /* Show on mobile */
   }
 
-  /* Hamburger animation */
+  /* Hamburger animation - NOW CORRECTLY NESTED HERE */
   .menu-toggle.open .hamburger:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
@@ -1676,7 +1728,6 @@ p {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
-
 
 
 /* About Me Content Section */
@@ -1717,16 +1768,6 @@ p {
     flex-direction: column;
     text-align: center;
   }
-
-  .about-header img.about-headshot {
-    margin-bottom: 20px;
-  }
-
-  .about-header .lead-paragraph {
-    text-align: center;
-    font-size: 1.2rem;
-  }
-}
 
 
 /* Footer */
@@ -1914,23 +1955,6 @@ footer {
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .about-header {
-    gap: 32px;
-    padding: 32px 24px;
-  }
-
-  .about-header img.about-headshot {
-    width: 260px;
-    height: 260px;
-  }
-
-  .about-header .lead-paragraph {
-    font-size: 1.3rem;
-    text-align: left;
-  }
-}
-
 
 h1,
 .hero-subline {
@@ -1957,13 +1981,59 @@ h1,
   }
 }
 
-/* === HOMEPAGE HERO FIX === */
-header.hero.homepage-hero {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-}
+/* ========================================= */
+/* Media Queries for Desktop (769px and wider) */
+/* ========================================= */
+@media (min-width: 769px) {
+ /* NEW: Push all content down below the sticky navigation on desktop */
+   body {
+     padding-top: 64px; /* This creates space for the sticky nav */
+   }
+  
+
+  /* Desktop Nav Links */
+  .nav-links {
+    display: flex;         /* Show nav links */
+    position: static;      /* Remove mobile absolute positioning */
+    width: auto;           /* Auto width */
+    height: auto;          /* Auto height */
+    background-color: transparent; /* No background for desktop nav */
+    flex-direction: row;   /* Arrange links horizontally */
+    align-items: center;   /* Align items vertically centered */
+    justify-content: flex-end; /* Push links to the right */
+    gap: 20px;             /* Space between nav items */
+    transition: none;      /* No transition on desktop */
+    transform: none;       /* Remove any mobile transform */
+  }
+
+  /* Ensure nav-links.active doesn't interfere */
+  .nav-links.active {
+    transform: none; /* No transformation when active on desktop */
+  }
+
+  /* Hide Hamburger Menu Toggle on Desktop */
+  .menu-toggle {
+    display: none;
+  }
+
+/* NEW: Add padding to the body to push content below the sticky nav */
+  body {
+    padding-top: 64px;
+  }
+
+  /* Site Logo Adjustments (if needed - current base size is often fine) */
+  /* If you want the site logo to be a different size on desktop, uncomment and adjust */
+  /*
+  .site-logo {
+    font-size: 2em; /* Example: adjust as needed */
+  /*
+  }
+  */
+
+  /* You can add any other desktop-specific styles here */
+
+} /* End of @media (min-width: 769px) */
+
 
 /* Disable animation for the typing effect subline */
 .typed-content {
@@ -1985,20 +2055,17 @@ header.hero.homepage-hero {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* === HOMEPAGE HERO PADDING FIX === */
+/* Homepage Hero Specific Centering & Base Styles (Mobile-first default) */
 header.hero.homepage-hero {
-  padding: 0 5vw !important; /* override the 14vh bottom padding */
-}
-
-/* --- Homepage Hero Specific Centering Fix --- */
-header.hero.homepage-hero {
-  display: flex !important;           /* Ensures flexbox is active for this specific hero */
-  flex-direction: column;             /* Stacks hero content vertically */
-  align-items: center !important;     /* Centers content horizontally within the flex column */
-  justify-content: center !important; /* Centers content vertically within the hero */
-  text-align: center !important;      /* Centers text within the hero panel */
-  padding: 0 5vw !important;          /* Overrides the large bottom padding from .hero */
-  min-height: 100vh;                  /* Optional: Ensures the hero takes full viewport height */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  position: relative;
+  min-height: 100vh;
+  padding: 10vh 5vw !important;
+  overflow: hidden;
 }
 
 /* Optional: If you want to make your content panel narrower on the homepage */
