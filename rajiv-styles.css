@@ -739,14 +739,15 @@ h1 {
 }
 
 .logo-row.offset {
-    margin-left: 60px; /* Half the gap for staggered effect */
+    margin-left: 60px; /* Half the gap for proper staggered effect */
+    transform: translateX(60px); /* Additional offset for better diagonal alignment */
 }
 
 .pattern-logo {
     width: 60px;
     height: 60px;
-    opacity: 0.25;
-    filter: brightness(1.4) contrast(1.0);
+    opacity: 0.4;
+    filter: brightness(1.2) contrast(1.1);
     pointer-events: none;
     user-select: none;
     display: block;
@@ -796,7 +797,7 @@ h1 {
     .pattern-logo {
         width: 50px;
         height: 50px;
-        opacity: 0.28;
+        opacity: 0.45;
     }
 }
 
@@ -813,7 +814,7 @@ h1 {
     .pattern-logo {
         width: 40px;
         height: 40px;
-        opacity: 0.3;
+        opacity: 0.5;
     }
 }
 
@@ -1809,18 +1810,47 @@ p {
   width: 0;
   height: 2px;
   background-color: #ff7433; /* brand orange */
-  transition: width 0.3s ease, left 0.3s ease;
+  transition: width 0.3s ease, left 0.3s ease, background-color 0.3s ease;
   transform: translateX(-50%);
 }
 
-.nav-links li a:hover::after,
-.nav-links li a.active::after {
-  width: 80%;
+/* Hover state - subtle background highlight */
+.nav-links li a:hover::after {
+  width: 0; /* Remove the line on hover */
+  background-color: transparent;
 }
 
-.nav-links li a:hover,
+.nav-links li a:hover {
+  color: var(--primary-blue-dark);
+  background-color: rgba(255, 108, 55, 0.1); /* Light orange background */
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: -8px -12px; /* Compensate for padding */
+}
+
+/* Active state - prominent orange background with white text */
+.nav-links li a.active::after {
+  width: 0; /* Remove the line */
+  background-color: transparent;
+}
+
+.nav-links li a.active {
+  color: white !important;
+  background-color: #ff7433; /* Solid orange background */
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: -8px -12px; /* Compensate for padding */
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(255, 108, 55, 0.3);
+}
+
+.nav-links li a:hover {
+  color: var(--primary-blue-dark);
+}
+
 .nav-links li a.active {
   color: var(--primary-blue-dark);
+  font-weight: 600; /* Make active link slightly bolder */
 }
 
 .menu-toggle {
@@ -2659,17 +2689,20 @@ h1.hero-heading {
   text-align: center;
 }
 
-/* Subtle underline for About Me heading */
+/* Modern underline for About Me heading - more dramatic */
 .about-page .frosted-hero-panel h1.hero-heading::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, #1a1a1a 0%, rgba(26, 26, 26, 0.3) 100%);
-  border-radius: 1px;
+  width: 180px; /* Slightly shorter to match "ABOUT ME" text better */
+  height: 4px;
+  background: #FF6C37;
+  border-radius: 2px;
+  box-shadow: 
+    0 2px 8px rgba(255, 108, 55, 0.3),
+    0 0 0 2px rgba(255, 108, 55, 0.1);
 }
 
 /* Scrolling Identity - Make it perform */
