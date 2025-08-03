@@ -8,6 +8,22 @@
 <link href="rajiv-styles.css?v=20250727b" rel="stylesheet"/>
 <link href="favicon.png" rel="icon" type="image/png"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+@keyframes float {
+  0%, 100% {
+    transform: translate(-50%, -50%) translate(0px, 0px);
+  }
+  25% {
+    transform: translate(-50%, -50%) translate(15px, -10px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(-10px, 15px);
+  }
+  75% {
+    transform: translate(-50%, -50%) translate(-15px, -5px);
+  }
+}
+</style>
 </head>
 <body class="about-page">
 <!-- Navbar -->
@@ -56,14 +72,17 @@
 </header>
 
 <!-- Immersive Quote Section -->
-<section class="immersive-quote">
-  <div class="quote-section-inner-container">
-    <div class="background-text fade-in">healing</div>
-    <div class="quote-block fade-in" id="quoteBlock">
-      <p class="quote-line">Health is shaped by many things: medicine, sleep, relationships, luck.</p>
-      <p class="quote-line">But food is the one form of care most people practice, imperfectly, every single day.</p>
-      <p class="quote-line">Food doesn't act in extremes. It builds, restores, and remembers.</p>
-      <p class="quote-line">It doesn't need to be solved. It needs to be understood.</p>
+<section style="background-color: var(--lighter-grey-bg); min-height: 70vh; padding: 160px 0; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+  <div style="position: relative; width: 100%; max-width: 900px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem;">
+         <!-- Background Text -->
+     <div id="backgroundText" style="font-family: 'Lora', serif; font-size: 10vw; font-weight: 700; color: #ccc; opacity: 0.25; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; pointer-events: none; user-select: none; z-index: 0; line-height: 1; text-align: center; width: 100%; filter: blur(2px); transition: all 0.3s ease-in-out; animation: float 8s ease-in-out infinite;">healing</div>
+    
+    <!-- Quote Block -->
+    <div id="quoteBlock" style="position: relative; z-index: 1; text-align: center; width: 100%; max-width: clamp(300px, 75vw, 800px); margin-top: -2rem; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+      <p class="quote-line" style="font-family: 'Georgia', serif; font-weight: 400; font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.7; color: #1a1a1a; margin-bottom: 1.5em; opacity: 0.3; transform: translateY(30px); text-align: center; max-width: 100%; filter: blur(3px); transition: opacity 0.8s ease-out, transform 0.8s ease-out, filter 0.8s ease-out;">Health is shaped by many things: medicine, sleep, relationships, luck.</p>
+      <p class="quote-line" style="font-family: 'Georgia', serif; font-weight: 400; font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.7; color: #1a1a1a; margin-bottom: 1.5em; opacity: 0.3; transform: translateY(30px); text-align: center; max-width: 100%; filter: blur(3px); transition: opacity 0.8s ease-out, transform 0.8s ease-out, filter 0.8s ease-out;">But food is the one form of care most people practice, imperfectly, every single day.</p>
+      <p class="quote-line" style="font-family: 'Georgia', serif; font-weight: 400; font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.7; color: #1a1a1a; margin-bottom: 1.5em; opacity: 0.3; transform: translateY(30px); text-align: center; max-width: 100%; filter: blur(3px); transition: opacity 0.8s ease-out, transform 0.8s ease-out, filter 0.8s ease-out;">Food doesn't act in extremes. It builds, restores, and remembers.</p>
+      <p class="quote-line" style="font-family: 'Georgia', serif; font-weight: 400; font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.7; color: #1a1a1a; margin-bottom: 1.5em; opacity: 0.3; transform: translateY(30px); text-align: center; max-width: 100%; filter: blur(3px); transition: opacity 0.8s ease-out, transform 0.8s ease-out, filter 0.8s ease-out;">It doesn't need to be solved. It needs to be understood.</p>
     </div>
   </div>
 </section>
@@ -101,34 +120,73 @@
 <!-- Quote Fade-in JS -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+      console.log('Quote fade-in script loaded');
       const quoteBlock = document.getElementById('quoteBlock');
+      console.log('Quote block element:', quoteBlock);
+      
+      if (!quoteBlock) {
+        console.error('Quote block element not found!');
+        return;
+      }
+      
       const quoteLines = quoteBlock.querySelectorAll('.quote-line');
+      console.log('Quote lines found:', quoteLines.length);
 
       if (quoteBlock && quoteLines.length > 0) {
+        console.log('Setting up intersection observer');
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
+            console.log('Quote block intersection:', entry.isIntersecting);
             if (entry.isIntersecting) {
-              quoteBlock.classList.add('fade-in');
-                             quoteLines.forEach((line, index) => {
-                 setTimeout(() => {
-                   line.classList.add('line-fade-in');
-                 }, 1000 + (index * 1000));
-               });
+              console.log('Quote block is intersecting, adding fade-in');
+              // Animate quote block
+              quoteBlock.style.opacity = '1';
+              quoteBlock.style.transform = 'translateY(0)';
+              
+              // Animate quote lines with staggered timing
+              quoteLines.forEach((line, index) => {
+                setTimeout(() => {
+                  line.style.opacity = '1';
+                  line.style.transform = 'translateY(0)';
+                  line.style.filter = 'blur(0)';
+                  console.log('Animated line', index);
+                }, 1000 + (index * 1000));
+              });
               observer.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.1 });
 
         observer.observe(quoteBlock);
+        console.log('Observer attached to quote block');
+        
+        // Force trigger on desktop after a delay if not triggered by intersection
+        setTimeout(() => {
+          if (quoteBlock.style.opacity !== '1') {
+            console.log('Forcing animation on desktop');
+            quoteBlock.style.opacity = '1';
+            quoteBlock.style.transform = 'translateY(0)';
+            
+            quoteLines.forEach((line, index) => {
+              setTimeout(() => {
+                line.style.opacity = '1';
+                line.style.transform = 'translateY(0)';
+                line.style.filter = 'blur(0)';
+                console.log('Forced animation for line', index);
+              }, 1000 + (index * 1000));
+            });
+          }
+        }, 2000);
       }
     });
   </script>
 <script defer="" src="js/typing-effect.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const backdrop = document.querySelector('.background-text');
-    if (!backdrop) return;
-
+    console.log('Background text script loaded');
+    const backdrop = document.getElementById('backgroundText');
+    console.log('Background text element:', backdrop);
+    
     const words = [
       "healing",
       "memory",
@@ -138,16 +196,27 @@
     ];
 
     let index = 0;
+    console.log('Starting background word rotation');
 
     // Start the rotation immediately
     setInterval(() => {
-      backdrop.classList.remove('fade-in');
+      if (backdrop) {
+        backdrop.style.opacity = '0';
+        backdrop.style.transition = 'opacity 0.3s ease-out';
+      }
       
-      setTimeout(() => {
-        backdrop.textContent = words[index];
-        backdrop.classList.add('fade-in');
-        index = (index + 1) % words.length;
-      }, 300); // Wait for fade-out
+             setTimeout(() => {
+         if (backdrop) {
+           backdrop.textContent = words[index];
+           backdrop.style.opacity = '0.25';
+           backdrop.style.transition = 'opacity 0.3s ease-in';
+           
+           // Let the CSS animation handle the floating movement
+           // The word will continue floating with the keyframe animation
+         }
+         console.log('Changed background word to:', words[index]);
+         index = (index + 1) % words.length;
+       }, 300); // Wait for fade-out
     }, 4000); // Change every 4 seconds
   });
 </script>

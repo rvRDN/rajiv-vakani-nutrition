@@ -394,10 +394,41 @@ h1 {
 .about-content {
     max-width: 900px;
     margin: 0 auto;
-    padding-top: 20px;
+    padding: 20px 30px 0 30px;
     overflow: hidden; /* This is crucial for containing the floated element */
     text-align: left; /* Ensure text within this container aligns left */
 }
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 30px 0 30px;
+    overflow: hidden; /* This is crucial for containing the floated element */
+    text-align: left; /* Ensure text within this container aligns left */
+}
+
+.about-content > div {
+    /* Remove the margin-left approach */
+}
+
+/* Simple fix: just clear the last paragraph to prevent wrapping */
+.about-content p:last-child {
+    clear: left; /* Force the last paragraph to start below the floated image */
+}
+
+/* Alternative approach: use margin to push text away from image */
+.about-content > div {
+    margin-left: 280px; /* Push text container to the right of the floated image */
+}
+
+/* Remove the margin on mobile where the image stacks above text */
+@media (max-width: 768px) {
+    .about-content > div {
+        margin-left: 0; /* Remove margin on mobile since image is above text */
+    }
+}
+
+
 
 .about-headshot {
   width: 220px;
@@ -2005,6 +2036,10 @@ footer {
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   min-height: 70vh; /* Ensure enough height for visual balance */
+  z-index: 1;
+  opacity: 1 !important;
+  visibility: visible !important;
+  border: 2px solid red; /* Debug border to see the section */
 }
 
 .quote-section-inner-container {
@@ -2086,11 +2121,11 @@ footer {
     line-height: 1.7;
     color: var(--dark-text);
     margin-bottom: 1.5em;
-    opacity: 0.3;
-    transform: translateY(30px);
+    opacity: 0.3; /* Start partially visible */
+    transform: translateY(30px); /* Start below final position */
     text-align: center;
     max-width: 100%;
-    filter: blur(3px);
+    filter: blur(3px); /* Start blurred */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out, filter 0.8s ease-out;
 }
 
@@ -2232,6 +2267,32 @@ h1,
    
    .mobile-only-break {
      display: none;
+   }
+   
+   /* Force immersive quote section to be visible on desktop */
+   .immersive-quote {
+     display: flex !important;
+     visibility: visible !important;
+     opacity: 1 !important;
+     position: relative !important;
+     z-index: 1 !important;
+     min-height: 70vh !important;
+     background-color: var(--lighter-grey-bg) !important;
+     border: 2px solid red !important; /* Debug border */
+   }
+   
+   .immersive-quote .quote-block {
+     opacity: 1 !important;
+     visibility: visible !important;
+     display: block !important;
+   }
+   
+   .immersive-quote .quote-line {
+     opacity: 1 !important;
+     visibility: visible !important;
+     display: block !important;
+     transform: translateY(0) !important;
+     filter: blur(0) !important;
    }
  }
 }
@@ -2524,23 +2585,26 @@ h1.hero-heading {
 
 /* About page specific hero layout */
 .about-page .homepage-hero {
-  min-height: 80vh;
-  padding: 15vh 5vw;
+  min-height: 100vh;
+  padding: 10vh 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* About page hero content - left-aligned and bottom-positioned */
+/* About page hero content - centered */
 .about-page .homepage-hero .hero-content {
-  align-items: flex-start;
-  justify-content: flex-end;
-  text-align: left;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px 20px 120px 20px;
+  padding: 20px;
 }
 
 /* Ensure about page hero heading doesn't override index page */
 .about-page .homepage-hero .hero-content h1.hero-heading {
-  text-align: left;
+  text-align: center;
 }
 
 /* About page specific frosted panel styling - GLASSMORPHISM */
@@ -2576,7 +2640,7 @@ h1.hero-heading {
 /* About page frosted panel text alignment */
 .about-page .frosted-hero-panel h1,
 .about-page .frosted-hero-panel p {
-  text-align: left;
+  text-align: center;
   position: relative;
   z-index: 1;
 }
@@ -2592,6 +2656,7 @@ h1.hero-heading {
   margin: 0 0 30px 0;
   position: relative;
   padding-bottom: 15px;
+  text-align: center;
 }
 
 /* Subtle underline for About Me heading */
@@ -2599,7 +2664,8 @@ h1.hero-heading {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
   height: 2px;
   background: linear-gradient(90deg, #1a1a1a 0%, rgba(26, 26, 26, 0.3) 100%);
@@ -2618,6 +2684,8 @@ h1.hero-heading {
   min-height: 4rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Typing effect styling */
@@ -2626,6 +2694,7 @@ h1.hero-heading {
   display: inline-block;
   white-space: nowrap;
   min-width: 100%;
+  text-align: center;
 }
 
 .about-page .frosted-hero-panel #typed-text {
@@ -2661,6 +2730,7 @@ h1.hero-heading {
   position: relative;
   padding-top: 20px;
   border-top: 1px solid rgba(107, 114, 128, 0.2);
+  text-align: center;
 }
 
 /* Responsive adjustments for about page hero */
