@@ -5,11 +5,11 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>About Me | Rajiv Vakani</title>
-<link href="rajiv-styles.css?v=20250715" rel="stylesheet"/>
+<link href="rajiv-styles.css?v=20250727b" rel="stylesheet"/>
 <link href="favicon.png" rel="icon" type="image/png"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="about-page">
 <!-- Navbar -->
 <nav class="main-nav">
 <div class="container nav-container">
@@ -21,70 +21,77 @@
 </button>
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
-<li><a href="tabletalk.html">Table Talk</a></li>
+<li><a href="table-talk.html">Table Talk</a></li>
 <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
 <li><a class="active" href="about.html">About Me</a></li>
 <li><a href="index.html#contact-form">Contact</a></li>
 </ul>
 </div>
 </nav>
-<!-- Hero Section -->
-<header class="hero">
-<video autoplay="" class="hero-video-background" loop="" muted="" playsinline="" poster="poster.jpg">
-<source src="peeling-orange.mp4" type="video/mp4"/>
-</video>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<h1 class="hero-heading">About Me</h1>
-<p class="hero-variable-line">
-<span id="typed-wrapper">
-<span id="typed-text"></span>
-<span id="cursor">|</span>
-</span>
-</p>
-<p class="hero-tagline">Food, identity, and the science that shapes both.</p>
-</div>
-</header>
-<!-- Quote Interlude -->
-<section class="immersive-quote">
-<div class="quote-section-inner-container">
-<!-- Background text -->
-<div class="background-text"></div>
-<!-- Quote block -->
-<div class="quote-block" id="quoteBlock">
-<p class="quote-line">Health is shaped by many things: medicine, sleep, relationships, luck.</p>
-<p class="quote-line">But food is the one form of care most people practice, imperfectly, every single day.</p>
-<p class="quote-line">Food doesn’t act in extremes. It builds, restores, and remembers.</p>
-<p class="quote-line">It doesn’t need to be solved. It needs to be understood.</p>
-</div>
-</div>
-</section>
-<!-- About Me Content Section -->
-<section class="about-me-content py-16">
-<!-- Headshot and intro quote -->
-<div class="about-header">
-<img alt="Rajiv" class="about-headshot" src="headshot_36.jpg"/>
-<p class="lead-paragraph">I’m Rajiv, a nutritionist dedicated to helping you understand food beyond the labels.</p>
-</div>
-<!-- Act-break quote -->
 
-<!-- Approach content -->
-<div class="container max-w-3xl mx-auto px-4">
-<div style="display: flex; flex-direction: row; align-items: flex-start; gap: 30px; flex-wrap: wrap;">
-<div style="flex: 1 1 300px;">
-<h2>My Approach</h2>
-<p>I study nutrition because it’s one of the last frontiers where science, tradition, and lived experience meet, and where small choices can shape entire lifetimes.</p>
-<p>I’ve always been drawn to what food does beyond calories or macros. It’s information. It’s memory. It’s medicine. And for many people, it’s the one thing they’re trying to get right, but still feeling stuck.</p>
-<p>At NYU, focused on food science, public health, and personalized nutrition, I explore the gray areas that get missed in most advice. Why does one person thrive on a diet that fails another? What if your cultural background or biology makes you the exception? What if you’re already trying, but not seeing change?</p>
-<h2>Who I Work With</h2>
-<p>I’ve worked with parents, students, pantry volunteers, seniors, and preschoolers. I’ve taught in classrooms and spiritual settings. I’ve seen how food affects energy, emotion, recovery, and identity, regardless of age or stage of life.</p>
-<h2>Why I Built This Space</h2>
-<p>If you’re looking for nutrition insights that are personalized, principled, and practical, this space was built with you in mind.</p>
-<p><strong>Not to tell you what to eat, just to help you understand it better.</strong></p>
-</div>
-</div>
-</div>
+<!-- Mobile menu overlay -->
+<div class="mobile-menu-overlay"></div>
+<!-- Hero Section -->
+<header class="hero homepage-hero">
+  <video autoplay muted loop playsinline class="hero-video-background" poster="poster.jpg">
+    <source src="peeling-orange.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="frosted-hero-panel">
+      <h1 class="hero-heading">About Me</h1>
+<p class="hero-variable-line">
+  <span id="typed-wrapper">
+    <span id="typed-text"></span>
+    <span id="cursor">|</span>
+  </span>
+</p>
+
+<p class="hero-tagline">
+  Food, identity, and the science that shapes both.
+</p>
+    </div>
+
+  </div>
+</header>
+
+<!-- Immersive Quote Section -->
+<section class="immersive-quote">
+  <div class="quote-section-inner-container">
+    <div class="background-text fade-in">healing</div>
+    <div class="quote-block fade-in" id="quoteBlock">
+      <p class="quote-line">Health is shaped by many things: medicine, sleep, relationships, luck.</p>
+      <p class="quote-line">But food is the one form of care most people practice, imperfectly, every single day.</p>
+      <p class="quote-line">Food doesn't act in extremes. It builds, restores, and remembers.</p>
+      <p class="quote-line">It doesn't need to be solved. It needs to be understood.</p>
+    </div>
+  </div>
 </section>
+
+<div class="about-hero-panel">
+  <img src="headshot_36.jpg" alt="Rajiv Vakani headshot" class="about-headshot" />
+  <p class="about-intro-quote">
+    Hi, I'm Rajiv. I'm a nutrition student, educator, and future dietitian. I help people make sense of food without shame, extremes, or losing their cultural identity.
+  </p>
+</div>
+
+<section class="about-me-content">
+  <div class="about-section-content">
+    <h2>My Approach</h2>
+    <p>I study nutrition because it's one of the last frontiers where science, tradition, and lived experience meet, and where small choices can shape entire lifetimes.</p>
+    <p>I've always been drawn to what food does beyond calories or macros. It's information. It's memory. It's medicine. And for many people, it's the one thing they're trying to get right, but still feeling stuck.</p>
+    <p>At NYU, focused on food science, public health, and personalized nutrition, I explore the gray areas that get missed in most advice.</p>
+
+    <h2>Who I Work With</h2>
+    <p>I've worked with parents, students, pantry volunteers, seniors, and preschoolers. I've taught in classrooms and spiritual settings. I've seen how food affects energy, emotion, recovery, and identity, regardless of age or stage of life.</p>
+
+    <h2>Why I Built This Space</h2>
+    <p>If you're looking for nutrition insights that are personalized, principled, and practical, this space was built with you in mind.</p>
+    <p><strong>Not to tell you what to eat — just to help you understand it better.</strong></p>
+  </div>
+</section>
+
+
 <!-- Footer -->
 <footer>
 <div class="container">
@@ -97,21 +104,23 @@
       const quoteBlock = document.getElementById('quoteBlock');
       const quoteLines = quoteBlock.querySelectorAll('.quote-line');
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            quoteBlock.classList.add('fade-in');
-            quoteLines.forEach((line, index) => {
-              setTimeout(() => {
-                line.classList.add('line-fade-in');
-              }, 200 + (index * 150));
-            });
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
+      if (quoteBlock && quoteLines.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              quoteBlock.classList.add('fade-in');
+                             quoteLines.forEach((line, index) => {
+                 setTimeout(() => {
+                   line.classList.add('line-fade-in');
+                 }, 1000 + (index * 1000));
+               });
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
 
-      observer.observe(quoteBlock);
+        observer.observe(quoteBlock);
+      }
     });
   </script>
 <script defer="" src="js/typing-effect.js"></script>
@@ -130,6 +139,7 @@
 
     let index = 0;
 
+    // Start the rotation immediately
     setInterval(() => {
       backdrop.classList.remove('fade-in');
       
@@ -139,6 +149,48 @@
         index = (index + 1) % words.length;
       }, 300); // Wait for fade-out
     }, 4000); // Change every 4 seconds
+  });
+</script>
+
+<!-- Mobile Navigation JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+        overlay.classList.toggle('active');
+      });
+      
+      // Close menu when clicking overlay
+      overlay.addEventListener('click', function () {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+        overlay.classList.remove('active');
+      });
+      
+      // Close menu when clicking nav links
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function () {
+          navLinks.classList.remove('active');
+          menuToggle.classList.remove('active');
+          overlay.classList.remove('active');
+        });
+      });
+      
+      // Close menu on escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
+          menuToggle.classList.remove('active');
+          overlay.classList.remove('active');
+        }
+      });
+    }
   });
 </script>
 </body>

@@ -4,12 +4,11 @@ window.addEventListener("load", () => {
   if (!typedText) return;
 
   const words = [
-    "Future Dietitian.",
-    "Educator.",
+    "Plant-First.",
     "Evidence Seeker.",
-    "Plant-Based Thinker.",
+    "RD in Progress.",
     "Mindful Eater.",
-    "Writer."
+    "Food Educator."
   ];
 
   const TYPING_DELAY = 100;

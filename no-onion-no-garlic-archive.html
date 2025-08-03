@@ -59,6 +59,9 @@
       </ul>
     </div>
   </nav>
+  
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu-overlay"></div>
 
   <header class="hero newsletter-hero">
     <video autoplay muted loop playsinline class="hero-video-background">
@@ -144,6 +147,45 @@
   });
 </script>
 
+  <!-- Mobile Navigation JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const overlay = document.querySelector('.mobile-menu-overlay');
+      
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function () {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          overlay.classList.toggle('active');
+        });
+        
+        // Close menu when clicking overlay
+        overlay.addEventListener('click', function () {
+          navLinks.classList.remove('active');
+          menuToggle.classList.remove('active');
+          overlay.classList.remove('active');
+        });
+        
+        // Close menu when clicking nav links
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            overlay.classList.remove('active');
+          });
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            overlay.classList.remove('active');
+          }
+        });
+      }
     });
   </script>
 </body>

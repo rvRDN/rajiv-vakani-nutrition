@@ -6,7 +6,7 @@
   <title>Rajiv Vakani | Nutrition, Culture & Clarity</title>
   <meta name="description" content="Rajiv Vakani's official site. Explore his Table Talk and No Onion No Garlic newsletters blending science, tradition, and practical food wisdom.">
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="rajiv-styles.css?v=20250715" />
+  <link rel="stylesheet" href="rajiv-styles.css">
   <link rel="icon" type="image/png" href="favicon.png" />
   <script defer src="animations.js"></script>
 </head>
@@ -29,6 +29,9 @@
       </ul>
     </div>
   </nav>
+  
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu-overlay"></div>
 
   <header class="hero homepage-hero">
   <video autoplay muted loop playsinline class="hero-video-background" poster="poster.jpg">
@@ -37,9 +40,9 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="frosted-hero-panel">
-      <h1 class="hero-headline-animated">
-  Two Newsletters, <span class="highlight-orange">One Purpose</span>
-</h1>
+      <h1 class="hero-heading">
+        Two Newsletters, <span class="mobile-break"><span class="highlight-orange">One Purpose</span></span>
+      </h1>
       <p class="hero-tagline">
         Explore mindful nutrition through two unique lenses.<br>
         Choose what speaks to you, or explore both.
@@ -111,6 +114,58 @@
   </section>
 
   <section class="newsletter-archives-section animate-on-scroll" id="newsletter-archives">
+    <div class="background-pattern-layer">
+      <div class="logo-row">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+      </div>
+      <div class="logo-row offset">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+      </div>
+      <div class="logo-row">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+      </div>
+      <div class="logo-row offset">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+      </div>
+      <div class="logo-row">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+        <img src="icons/table-talk-logo.png" alt="" class="pattern-logo">
+        <img src="icons/no-onion-no-garlic-logo.png" alt="" class="pattern-logo">
+      </div>
+    </div>
     <div class="container">
       <h2>Newsletter Archives</h2>
       <div class="archives-content-wrapper">
@@ -173,17 +228,57 @@
     document.addEventListener('DOMContentLoaded', function () {
       const menuToggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
+      const overlay = document.querySelector('.mobile-menu-overlay');
+      
+      console.log('Menu elements found:', { menuToggle, navLinks, overlay });
+      console.log('Current window width:', window.innerWidth);
+      console.log('Nav links display style:', window.getComputedStyle(navLinks).display);
+      console.log('Nav links visibility:', window.getComputedStyle(navLinks).visibility);
+      
       if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function () {
+          console.log('Hamburger clicked!');
           navLinks.classList.toggle('active');
           menuToggle.classList.toggle('active');
+          overlay.classList.toggle('active');
+          console.log('Classes after toggle:', {
+            navLinksActive: navLinks.classList.contains('active'),
+            menuToggleActive: menuToggle.classList.contains('active'),
+            overlayActive: overlay.classList.contains('active')
+          });
+          console.log('Hamburger transform style:', window.getComputedStyle(menuToggle.querySelector('.hamburger')).transform);
+          console.log('Menu toggle classes:', menuToggle.className);
+          console.log('First hamburger line transform:', window.getComputedStyle(menuToggle.querySelector('.hamburger:nth-child(1)')).transform);
+          console.log('Second hamburger line opacity:', window.getComputedStyle(menuToggle.querySelector('.hamburger:nth-child(2)')).opacity);
+          console.log('Third hamburger line transform:', window.getComputedStyle(menuToggle.querySelector('.hamburger:nth-child(3)')).transform);
         });
+        
+        // Close menu when clicking overlay
+        overlay.addEventListener('click', function () {
+          navLinks.classList.remove('active');
+          menuToggle.classList.remove('active');
+          overlay.classList.remove('active');
+        });
+        
+        // Close menu when clicking nav links
         navLinks.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', function () {
             navLinks.classList.remove('active');
             menuToggle.classList.remove('active');
+            overlay.classList.remove('active');
           });
         });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            overlay.classList.remove('active');
+          }
+        });
+      } else {
+        console.error('Menu elements not found!');
       }
     });
   </script>
