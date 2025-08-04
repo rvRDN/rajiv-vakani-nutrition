@@ -153,6 +153,25 @@
       const menuToggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
       const overlay = document.querySelector('.mobile-menu-overlay');
+      const mainNav = document.querySelector('.main-nav');
+      const heroSection = document.querySelector('.newsletter-hero');
+      
+      // Navigation background transition on scroll
+      function handleNavScroll() {
+        if (heroSection && mainNav) {
+          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+          const scrollPosition = window.pageYOffset + 100; // Add 100px buffer
+          
+          if (scrollPosition > heroBottom) {
+            mainNav.classList.add('scrolled');
+          } else {
+            mainNav.classList.remove('scrolled');
+          }
+        }
+      }
+      
+      // Add scroll event listener
+      window.addEventListener('scroll', handleNavScroll);
       
       if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function () {
