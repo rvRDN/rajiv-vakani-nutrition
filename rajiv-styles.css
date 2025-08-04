@@ -1178,15 +1178,7 @@ h1 {
     font-weight: 400;
 }
 
-.supporter-subtitle::after {
-    content: "For those who want more—and make more possible.";
-    display: block;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: #64748b;
-    margin-top: 12px;
-    font-weight: 300;
-}
+
 
 .supporter-content-grid {
     display: grid;
