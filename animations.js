@@ -16,6 +16,35 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show'); // Use 'show' class for visibility
+                
+                // Add reveal animations for specific sections
+                if (entry.target.classList.contains('about-me')) {
+                    const elements = entry.target.querySelectorAll('h2, p, img');
+                    elements.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add('reveal');
+                        }, index * 100);
+                    });
+                }
+                
+                if (entry.target.classList.contains('call-to-action-section')) {
+                    const elements = entry.target.querySelectorAll('h2, p, .button');
+                    elements.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add('reveal');
+                        }, index * 100);
+                    });
+                }
+                
+                if (entry.target.classList.contains('contact-section')) {
+                    const elements = entry.target.querySelectorAll('h2, .contact-intro, .contact-form');
+                    elements.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add('reveal');
+                        }, index * 100);
+                    });
+                }
+                
                 observer.unobserve(entry.target); // Stop observing once animated
             }
         });
