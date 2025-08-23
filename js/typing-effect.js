@@ -4,11 +4,11 @@ window.addEventListener("load", () => {
   if (!typedText) return;
 
   const words = [
-    "Plant-First.",
     "Evidence Seeker.",
-    "RD in Progress.",
+    "Nutritionist.",
     "Mindful Eater.",
-    "Food Educator."
+    "Food Educator.",
+    "Plant-Forward."
   ];
 
   const TYPING_DELAY = 100;

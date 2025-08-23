@@ -4,8 +4,28 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="About Rajiv Vakani - Nutrition student, educator, and future dietitian helping people understand food through science, tradition, and practical wisdom."/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://rajivvakani.com/about.html" />
+<meta property="og:title" content="About Me | Rajiv Vakani" />
+<meta property="og:description" content="About Rajiv Vakani - Nutrition student, educator, and future dietitian helping people understand food through science, tradition, and practical wisdom." />
+<meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
+  <meta property="og:site_name" content="Rajiv Vakani" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://rajivvakani.com/about.html" />
+  
+  <!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://rajivvakani.com/about.html" />
+<meta property="twitter:title" content="About Me | Rajiv Vakani" />
+<meta property="twitter:description" content="About Rajiv Vakani - Nutrition student, educator, and future dietitian helping people understand food through science, tradition, and practical wisdom." />
+<meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
+
 <title>About Me | Rajiv Vakani</title>
-<link href="rajiv-styles.css?v=20250727b" rel="stylesheet"/>
+    <link href="rajiv-styles.css?v=20250727g" rel="stylesheet"/>
 <link href="favicon.png" rel="icon" type="image/png"/>
 
 <!-- Google Analytics -->
@@ -105,18 +125,33 @@
 </div>
 
 <section class="about-me-content">
+  <div class="floating-element-1"></div>
+  <div class="floating-element-2"></div>
+  <div class="floating-element-3"></div>
+  <div class="floating-element-4"></div>
+  <div class="about-visual-element"></div>
+  
   <div class="about-section-content">
-    <h2>My Approach</h2>
-    <p>I study nutrition because it's one of the last frontiers where science, tradition, and lived experience meet, and where small choices can shape entire lifetimes.</p>
-    <p>I've always been drawn to what food does beyond calories or macros. It's information. It's memory. It's medicine. And for many people, it's the one thing they're trying to get right, but still feeling stuck.</p>
-    <p>At NYU, focused on food science, public health, and personalized nutrition, I explore the gray areas that get missed in most advice.</p>
+    <h2 class="animate-on-scroll">My Approach</h2>
+    
+    <div class="about-content-block animate-on-scroll">
+      <p>I study nutrition because it's one of the last frontiers where <span class="highlight-text">science, tradition, and lived experience</span> meet, and where small choices can shape entire lifetimes.</p>
+      <p>I've always been drawn to what food does beyond calories or macros. It's <span class="highlight-text">information</span>. It's <span class="highlight-text">memory</span>. It's <span class="highlight-text">medicine</span>. And for many people, it's the one thing they're trying to get right, but still feeling stuck.</p>
+      <p>At NYU, focused on food science, public health, and personalized nutrition, I explore the <span class="highlight-text">gray areas</span> that get missed in most advice.</p>
+    </div>
 
-    <h2>Who I Work With</h2>
-    <p>I've worked with parents, students, pantry volunteers, seniors, and preschoolers. I've taught in classrooms and spiritual settings. I've seen how food affects energy, emotion, recovery, and identity, regardless of age or stage of life.</p>
+    <h2 class="animate-on-scroll">Who I Work With</h2>
+    
+    <div class="about-content-block animate-on-scroll">
+      <p>I've worked with <span class="highlight-text">parents, students, pantry volunteers, seniors, and preschoolers</span>. I've taught in classrooms and spiritual settings. I've seen how food affects <span class="highlight-text">energy, emotion, recovery, and identity</span>, regardless of age or stage of life.</p>
+    </div>
 
-    <h2>Why I Built This Space</h2>
-    <p>If you're looking for nutrition insights that are personalized, principled, and practical, this space was built with you in mind.</p>
-    <p><strong>Not to tell you what to eat — just to help you understand it better.</strong></p>
+    <h2 class="animate-on-scroll">Why I Built This Space</h2>
+    
+    <div class="about-content-block animate-on-scroll">
+      <p>If you're looking for nutrition insights that are <span class="highlight-text">personalized, principled, and practical</span>, this space was built with you in mind.</p>
+      <p><strong>Not to tell you what to eat — just to help you understand it better.</strong></p>
+    </div>
   </div>
 </section>
 
@@ -228,6 +263,30 @@
          index = (index + 1) % words.length;
        }, 300); // Wait for fade-out
     }, 4000); // Change every 4 seconds
+  });
+</script>
+
+<!-- About Page Animations -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Scroll-triggered animations for About page
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animate-on-scroll elements
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
   });
 </script>
 

@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rajivvakani.com/sitemap.xml
+
+# Disallow admin or private areas (if any exist in the future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all content
+Allow: /index.html
+Allow: /about.html
+Allow: /table-talk.html
+Allow: /no-onion-no-garlic.html
+Allow: /table-talk-archive.html
+Allow: /no-onion-no-garlic-archive.html
+
+# Crawl delay (optional)
+Crawl-delay: 1 
