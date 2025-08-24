@@ -2744,6 +2744,13 @@ footer a:hover {
     display: none; /* Hidden by default, shown only on mobile */
 }
 
+/* Ensure mobile styles override base styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex !important;
+    }
+}
+
 /* Mobile menu overlay */
 .mobile-menu-overlay {
     display: none;
@@ -3268,9 +3275,9 @@ p {
   list-style: none;
   margin: 0;
   padding: 0;
-  /* By default, for mobile, these will be hidden and controlled by JS toggle */
-  /* No 'display: flex' here, as that will be added specifically for desktop */
-  /* No 'gap' here, as that's for desktop flex */
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
 .nav-links li a {
@@ -3411,7 +3418,23 @@ p {
 
 /* Mobile styles - hide navigation links, show hamburger */
 @media (max-width: 768px) {
-  /* Hide desktop navigation */
+  /* Ensure proper navigation container layout */
+  .nav-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 20px !important;
+    min-height: 70px !important;
+  }
+  
+  /* Mobile font size for newsletter title */
+  .explore-newsletters h2 {
+    font-size: 2rem !important;
+    padding: 0 20px !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Mobile navigation - hidden by default on mobile */
   .nav-links {
     display: none !important;
     visibility: hidden !important;
@@ -3419,8 +3442,8 @@ p {
     position: static;
     transform: none;
   }
-
-  /* Show hamburger menu */
+  
+  /* Show hamburger menu on mobile */
   .menu-toggle {
     display: flex !important;
     flex-direction: column;
@@ -3436,8 +3459,13 @@ p {
     z-index: 1001;
     box-shadow: 0 4px 12px rgba(255, 108, 55, 0.3);
     position: relative;
+    margin: 0;
+    top: 0;
+    transform: none;
+    align-self: center;
+    flex-shrink: 0;
   }
-
+  
   /* Hamburger lines */
   .hamburger {
     width: 28px;
@@ -3448,7 +3476,7 @@ p {
     transition: all 0.3s ease;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
-
+  
   /* Mobile menu when active */
   .nav-links.active {
     display: flex !important;
@@ -3490,6 +3518,35 @@ p {
     padding-top: 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
+  
+  /* Mobile social icons hover effects */
+  .nav-links.active .mobile-social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .nav-links.active .mobile-social-icons a:hover {
+    background: #FF6C37;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(255, 108, 55, 0.3);
+  }
+  
+  .nav-links.active .mobile-social-icons a:hover i {
+    color: white;
+  }
+  
+  .nav-links.active .mobile-social-icons i {
+    font-size: 18px;
+    color: #6c757d;
+    transition: color 0.3s ease;
+  }
 
   /* Mobile menu links */
   .nav-links.active li {
@@ -3508,11 +3565,14 @@ p {
     border-bottom: none;
     transition: all 0.3s ease;
     position: relative;
+    transform: translateX(0);
   }
 
   .nav-links.active li a:hover {
     color: #ff5e1a;
     font-weight: 600;
+    transform: translateX(8px);
+    transition: all 0.3s ease;
   }
 
   .nav-links.active li a::after {
@@ -3540,8 +3600,6 @@ p {
     border-left: none !important;
     padding-left: 0 !important;
   }
-
-
 
   /* Hamburger animation - transforms to X when active */
   .menu-toggle.active .hamburger:nth-child(1) {
@@ -3572,6 +3630,29 @@ p {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+}
+
+/* Desktop font size for newsletter title */
+@media (min-width: 769px) {
+  .explore-newsletters h2 {
+    font-size: 3rem !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Desktop navigation - visible on desktop */
+  .nav-links {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static;
+    transform: none;
+  }
+  
+  /* Hide hamburger menu on desktop */
+  .menu-toggle {
+    display: none !important;
   }
 }
 
@@ -3614,7 +3695,7 @@ p {
     flex-direction: column;
     text-align: center;
   }
-
+}
 
 /* Footer */
 footer {
@@ -3638,7 +3719,7 @@ footer {
   z-index: 1;
   opacity: 1 !important;
   visibility: visible !important;
-  border: 2px solid red; /* Debug border to see the section */
+
 }
 
 .quote-section-inner-container {
@@ -3877,7 +3958,7 @@ h1,
      z-index: 1 !important;
      min-height: 70vh !important;
      background-color: var(--lighter-grey-bg) !important;
-     border: 2px solid red !important; /* Debug border */
+   
    }
    
    .immersive-quote .quote-block {
@@ -3959,6 +4040,39 @@ h1,
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* Newsletter hero frosted panel styles */
+.newsletter-hero .frosted-hero-panel {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-hero .frosted-hero-panel h1 {
+  color: var(--dark-text);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.newsletter-hero .frosted-hero-panel .hero-tagline {
+  color: var(--dark-text);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.newsletter-hero .frosted-hero-panel .newsletter-hero-logo {
+  margin-bottom: 20px;
+  max-width: 120px;
+  height: auto;
+}
+
 /* Homepage Hero Specific Centering & Base Styles (Mobile-first default) */
 header.hero.homepage-hero {
   display: flex;
@@ -3977,7 +4091,6 @@ header.hero.homepage-hero {
 /*
 .homepage-hero .hero-content {
   max-width: 700px; /* Example: Adjust this as needed for your design */
-/*
   width: 100%;
   margin: 0 auto;
 }
@@ -7339,7 +7452,7 @@ h1.hero-heading {
   /* Debug: Add border to see if elements exist */
   .newsletter-card,
   .supporter-card {
-    border: 2px solid red !important;
+  
   }
   
   .newsletter-icon,
