@@ -25,7 +25,8 @@
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
   
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="rajiv-styles.css?v=20250727g">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="rajiv-styles.css?v=20250116">
   <link rel="icon" type="image/png" href="favicon.png" />
   
   <!-- Google Analytics -->
@@ -43,111 +44,138 @@
 
   <nav class="main-nav">
     <div class="container nav-container">
+      <!-- Left Zone: Site Logo -->
       <a href="index.html" class="site-logo">Rajiv Vakani</a>
+      
+      <!-- Middle Zone: Navigation Links (Right-leaning) -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="table-talk.html">Table Talk</a></li>
+        <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="index.html#contact-form">Contact</a></li>
+      </ul>
+      
+      <!-- Right Zone: Social Icons -->
+      <div class="social-icons" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
       <button class="menu-toggle" aria-label="Toggle navigation">
         <span class="hamburger"></span>
         <span class="hamburger"></span>
         <span class="hamburger"></span>
       </button>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-<li><a href="table-talk.html">Table Talk</a></li>
-<li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
-<li><a href="about.html">About Me</a></li>
-<li><a href="index.html#contact-form">Contact</a></li>
-      </ul>
     </div>
   </nav>
   
   <!-- Mobile menu overlay -->
   <div class="mobile-menu-overlay"></div>
+  
+  <!-- Mobile Social Icons (hidden by default, shown in mobile menu) -->
+  <div class="mobile-social-icons" style="display: none;">
+    <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram">
+      <i class="fab fa-instagram" aria-hidden="true"></i>
+    </a>
+    <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook">
+      <i class="fab fa-facebook-f" aria-hidden="true"></i>
+    </a>
+  </div>
 
   <header class="hero homepage-hero">
-  <video autoplay muted loop playsinline class="hero-video-background" poster="poster.jpg">
-  <source src="peeling-orange.mp4" type="video/mp4" />
-</video>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="frosted-hero-panel">
-      <h1 class="hero-heading">
-        Two Newsletters, <span class="mobile-break"><span class="highlight-orange">One Purpose</span></span>
-      </h1>
-      <p class="hero-tagline">
-        Explore mindful nutrition through two unique lenses.<br>
-        Choose what speaks to you, or explore both.
-      </p>
-      <a href="#explore-newsletters" class="button hero-cta">Find Your Fit →</a>
+    <video autoplay muted loop playsinline class="hero-video-background" poster="poster.jpg">
+      <source src="peeling-orange.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="frosted-hero-panel">
+        <h1 class="hero-heading">
+          Two Newsletters, <span class="mobile-break"><span class="highlight-orange">One Purpose</span></span>
+        </h1>
+        <p class="hero-tagline">
+          Explore mindful nutrition through two unique lenses.<br>
+          Choose what speaks to you, or explore both.
+        </p>
+        <a href="#explore-newsletters" class="button hero-cta">Find Your Fit →</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-
-
-      <section class="about-me animate-on-scroll" id="about-me">
-      <div class="floating-element-1"></div>
-      <div class="floating-element-2"></div>
-      <div class="container">
-        <h2>Why I Do This</h2>
-        <div class="about-content">
-          <img src="headshot_36.jpg" alt="Rajiv Vakani Headshot" class="about-headshot">
-          <div>
-            <p>Hi, I'm Rajiv! My journey into food and nutrition isn't just about science; it's about <strong>stories, culture</strong>, and the profound impact of what we eat on our lives and the planet.</p>
-            <p>I combine evidence-based nutritional science with a deep understanding of food systems, cultural heritage, and mindful living. Whether it's demystifying diet trends, exploring sustainable practices, or sharing <strong>plant-based insights</strong> rooted in Jain traditions, my aim is always clarity over dogma.</p>
-            <p>I believe that thoughtful eating is a cornerstone of a well-lived life, and my work is dedicated to helping you find joy, health, and purpose on your plate.</p>
+  <section class="about-me animate-on-scroll" id="about-me">
+    <div class="floating-element-1"></div>
+    <div class="floating-element-2"></div>
+    <div class="container">
+      <h2>Why I Do This</h2>
+      <div class="about-content">
+        <img src="headshot_36.jpg" alt="Rajiv Vakani Headshot" class="about-headshot">
+        <div>
+          <p>Hi, I'm Rajiv! My journey into food and nutrition isn't just about science; it's about <strong>stories, culture</strong>, and the profound impact of what we eat on our lives and the planet.</p>
+          <p>I combine evidence-based nutritional science with a deep understanding of food systems, cultural heritage, and mindful living. Whether it's demystifying diet trends, exploring sustainable practices, or sharing <strong>plant-based insights</strong> rooted in Jain traditions, my aim is always clarity over dogma.</p>
+          <p>I believe that thoughtful eating is a cornerstone of a well-lived life, and my work is dedicated to helping you find joy, health, and purpose on your plate.</p>
+          <div class="about-cta">
+            <a href="about.html" class="button about-story-button">See the Full Story</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
   <section class="explore-newsletters animate-on-scroll" id="explore-newsletters">
     <div class="floating-element-1"></div>
     <div class="floating-element-2"></div>
     <div class="container">
       <h2>Explore My Newsletters</h2>
-              <p>One's for everyday readers. One's for Jains. Both skip the fluff.</p>
+      <p>One's for everyday readers. One's for Jains. Both skip the fluff.</p>
       <div class="benefits-grid">
-                 <div class="benefit-item table-talk-card animate-on-scroll">
-                      <div class="card-overlay"></div>
-                      <div class="newsletter-title-group">
-              <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="newsletter-icon">
-              <h3>Table Talk</h3>
-              <p class="newsletter-tagline">For curious minds who want the truth behind nutrition trends</p>
-                             <div class="badge-stack">
-                 <div class="free-badge">FREE</div>
-                 <span class="newsletter-type">Evidence-Based</span>
-               </div>
+        <div class="benefit-item table-talk-card animate-on-scroll">
+          <div class="card-overlay"></div>
+          <div class="launch-banner">Launch Sept 1</div>
+          <div class="newsletter-title-group">
+            <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="newsletter-icon">
+            <h3>Table Talk</h3>
+            <p class="newsletter-tagline">For curious minds who want the truth behind nutrition trends</p>
+            <div class="badge-stack">
+              <div class="free-badge">FREE</div>
+              <span class="newsletter-type">Evidence-Based</span>
             </div>
-                            <p class="newsletter-audience"><em>For independent thinkers and everyday eaters who ask better questions</em></p>
-                            <p style="min-height: 80px; display: flex; align-items: center; justify-content: center;">Cut through the hype with science-backed insights, practical food advice, and honest questions about what we eat and why. Explore food systems, performance nutrition, and health across the lifespan, all without the fluff.</p>
-                      <div class="card-buttons" style="justify-content: center !important;">
-              <a href="table-talk.html" class="button">Learn More</a>
-                                                                                                                                                                           <a href="https://subscribepage.io/tabletalk-news" class="button button-secondary" style="background: rgba(59, 130, 246, 0.2) !important; border-color: #f59e0b !important; border-width: 2px !important; color: white !important;">
-                             Subscribe
-                           </a>
-            </div>
-         </div>
+          </div>
+          <p class="newsletter-audience"><em>For independent thinkers and everyday eaters who ask better questions</em></p>
+          <p style="min-height: 80px; display: flex; align-items: center; justify-content: center;">Cut through the hype with science-backed insights, practical food advice, and honest questions about what we eat and why. Explore food systems, performance nutrition, and health across the lifespan, all without the fluff.</p>
+          <div class="card-buttons" style="justify-content: center !important;">
+            <a href="table-talk.html" class="button">Learn More</a>
+            <a href="https://subscribepage.io/tabletalk-news" class="button button-secondary" style="background: rgba(59, 130, 246, 0.2) !important; border-color: #f59e0b !important; border-width: 2px !important; color: white !important;">
+              Subscribe
+            </a>
+          </div>
+        </div>
 
-                 <div class="benefit-item no-onion-no-garlic-card animate-on-scroll">
-                      <div class="card-overlay"></div>
-                      <div class="newsletter-title-group">
-              <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Logo" class="newsletter-icon">
-              <h3>No Onion, No Garlic</h3>
-              <p class="newsletter-tagline">Jain wisdom meets modern nutrition science</p>
-                             <div class="badge-stack">
-                 <div class="free-badge">FREE</div>
-                 <span class="newsletter-type">Tradition & Evidence</span>
-               </div>
+        <div class="benefit-item no-onion-no-garlic-card animate-on-scroll">
+          <div class="card-overlay"></div>
+          <div class="launch-banner">Launch Sept 1</div>
+          <div class="newsletter-title-group">
+            <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Logo" class="newsletter-icon">
+            <h3>No Onion, No Garlic</h3>
+            <p class="newsletter-tagline">Jain wisdom meets modern nutrition science</p>
+            <div class="badge-stack">
+              <div class="free-badge">FREE</div>
+              <span class="newsletter-type">Tradition & Evidence</span>
             </div>
-                            <p class="newsletter-audience"><em>For those who eat with intention and purpose</em></p>
-                            <p style="min-height: 80px; display: flex; align-items: center; justify-content: center;">A science-backed guide for Jains and mindful eaters navigating a changing world. Honor tradition while staying informed, empowered, and connected to something deeper.</p>
-                      <div class="card-buttons" style="justify-content: center !important;">
-              <a href="no-onion-no-garlic.html" class="button">Learn More</a>
-                                                                                                                                                                           <a href="https://subscribepage.io/wzHcM2" class="button button-secondary" style="background: rgba(16, 185, 129, 0.2) !important; border-color: #f59e0b !important; border-width: 2px !important; color: white !important;">
-                             Subscribe
-                           </a>
-            </div>
-         </div>
-
+          </div>
+          <p class="newsletter-audience"><em>For those who eat with intention and purpose</em></p>
+          <p style="min-height: 80px; display: flex; align-items: center; justify-content: center;">A science-backed guide for Jains and mindful eaters navigating a changing world. Honor tradition while staying informed, empowered, and connected to something deeper.</p>
+          <div class="card-buttons" style="justify-content: center !important;">
+            <a href="no-onion-no-garlic.html" class="button">Learn More</a>
+            <a href="https://subscribepage.io/wzHcM2" class="button button-secondary" style="background: rgba(16, 185, 129, 0.2) !important; border-color: #f59e0b !important; border-width: 2px !important; color: white !important;">
+              Subscribe
+            </a>
+          </div>
+        </div>
       </div>
       
       <div class="support-mission-card animate-on-scroll">
@@ -155,15 +183,15 @@
         <div class="scent-trail"></div>
         <div class="mission-content">
           <div class="mission-text">
-            <h3>Keep It Cooking</h3>
+            <h3>If It's Worth Reading, It's Worth Backing</h3>
             <p>Thoughtful nutrition doesn't come from algorithms.<br>
             Behind every post is care, restraint, and respect for your time.<br>
             That's what your support protects.</p>
           </div>
           <div class="mission-cta">
             <a href="#contact-form" class="stir-the-pot-button">
-              <span class="button-text">Stir the Pot</span>
-              <span class="ladle-animation">🥄</span>
+              <span class="button-text">Count Me In</span>
+              <span class="bouncing-arrow">→</span>
             </a>
           </div>
           <div class="mission-features">
@@ -185,78 +213,138 @@
     </div>
   </section>
 
-           <section class="supporter-content-section animate-on-scroll" id="supporter-content">
-      <div class="container">
-        <div class="supporter-header">
-          <h2>Supporter Content</h2>
-                     <p class="supporter-subtitle">Exclusive access to past newsletters, deep dives, and premium content</p>
+  <section class="supporter-content-section animate-on-scroll" id="supporter-content">
+    <div class="container">
+      <div class="supporter-header">
+        <h2>Supporter Content</h2>
+        <p class="supporter-subtitle">Exclusive access to past newsletters, deep dives, and premium content</p>
+      </div>
+      
+      <div class="supporter-content-grid">
+        <div class="supporter-card table-talk-supporter">
+          <div class="card-icon">
+            <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="supporter-logo">
+          </div>
+          <h3>Table Talk</h3>
+          <p>Access to all past Table Talk newsletters plus exclusive premium content and deep dives</p>
+          <div class="card-stats">
+            <span class="stat">Coming Soon</span>
+            <span class="stat">Premium Content</span>
+          </div>
+          <a href="table-talk-archive.html" class="supporter-cta">Supporter Content</a>
         </div>
         
-        <div class="supporter-content-grid">
-          <div class="supporter-card table-talk-supporter">
-            <div class="card-icon">
-              <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="supporter-logo">
-            </div>
-            <h3>Table Talk</h3>
-            <p>Access to all past Table Talk newsletters plus exclusive premium content and deep dives</p>
-                         <div class="card-stats">
-               <span class="stat">Coming Soon</span>
-               <span class="stat">Premium Content</span>
-             </div>
-                         <a href="table-talk-archive.html" class="supporter-cta">Supporter Content</a>
+        <div class="supporter-card no-onion-no-garlic-supporter">
+          <div class="card-icon">
+            <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Logo" class="supporter-logo">
           </div>
-          
-          <div class="supporter-card no-onion-supporter">
-            <div class="card-icon">
-              <img src="icons/no-onion-no-garlic-logo.png" alt="No Onion, No Garlic Logo" class="supporter-logo">
-            </div>
-            <h3>No Onion, No Garlic</h3>
-            <p>Access to all past No Onion, No Garlic newsletters plus exclusive premium content and deep dives</p>
-                         <div class="card-stats">
-               <span class="stat">Coming Soon</span>
-               <span class="stat">Premium Content</span>
-             </div>
-                         <a href="no-onion-no-garlic-archive.html" class="supporter-cta">Supporter Content</a>
+          <h3>No Onion, No Garlic</h3>
+          <p>Access to all past No Onion, No Garlic newsletters plus exclusive premium content and deep dives</p>
+          <div class="card-stats">
+            <span class="stat">Coming Soon</span>
+            <span class="stat">Premium Content</span>
           </div>
+          <a href="no-onion-no-garlic-archive.html" class="supporter-cta">Supporter Content</a>
         </div>
       </div>
-    </section>
-
-  <section class="call-to-action-section animate-on-scroll">
-    <div class="container">
-      <h2>Let's Connect</h2>
-      <p>I'm always eager to engage with those passionate about food, health, and mindful living. Whether you have a question, a collaboration idea, or just want to say hello, feel free to reach out.</p>
-      <a href="#contact-form" class="button button-secondary">Get In Touch →</a>
     </div>
   </section>
 
   <section class="contact-section animate-on-scroll" id="contact-form">
+    <!-- Premium Floating Elements -->
+    <div class="floating-premium-1"></div>
+    <div class="floating-premium-2"></div>
+    <div class="floating-premium-3"></div>
+    
     <div class="container">
-      <h2>Contact Me</h2>
-      <p class="contact-intro">Have a question or just want to connect? Send me a message!</p>
-      <form name="contact" method="POST" data-netlify="true" class="contact-form">
-        <p class="hidden">
-          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-        </p>
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+      <h1>Contact Me</h1>
+      <p class="contact-intro">I'm always eager to engage with those passionate about food, health, and mindful living. Whether you have a question, a collaboration idea, or just want to say hello, feel free to reach out.</p>
+
+      <div class="contact-grid">
+        <!-- Left: Contact Form -->
+        <div class="contact-form-card">
+          <!-- Confirmation Message (hidden by default) -->
+          <div class="contact-confirmation" id="contact-confirmation" style="display: none;">
+            <div class="confirmation-content">
+              <i class="fas fa-check-circle confirmation-icon" aria-hidden="true"></i>
+              <h3>Thanks for reaching out!</h3>
+              <p>I will get back to you soon.</p>
+            </div>
+          </div>
+
+          <form name="contact" method="POST" data-netlify="true" class="contact-form" id="contact-form-element">
+            <p class="hidden">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+            
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+              <div class="validation-message" id="name-validation"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+              <div class="validation-message" id="email-validation"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="6" placeholder="Type your message here" required></textarea>
+              <div class="validation-message" id="message-validation"></div>
+            </div>
+            
+            <button type="submit" class="button contact-submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loading" style="display: none;">
+                <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+              </span>
+            </button>
+            
+            <p class="privacy-note">Your information is kept private and will never be shared.</p>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+
+        <!-- Right: Social Panel -->
+        <div class="contact-social-panel">
+          <h2>Connect on Social</h2>
+          <div class="social-rows">
+            <a class="social-row" href="https://instagram.com/rajivvakani" target="_blank" rel="noopener">
+              <div class="social-icon-chip">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </div>
+              <div class="social-content">
+                <span class="social-network-name">Instagram</span>
+                <span class="social-subtext">Follow for updates and behind the scenes</span>
+              </div>
+            </a>
+            
+            <a class="social-row" href="https://facebook.com/rajivvakani" target="_blank" rel="noopener">
+              <div class="social-icon-chip">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              </div>
+              <div class="social-content">
+                <span class="social-network-name">Facebook</span>
+                <span class="social-subtext">Join the community and share your thoughts</span>
+              </div>
+            </a>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
-        </div>
-        <button type="submit" class="button">Send Message</button>
-      </form>
+      </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
+      <div class="footer-social" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+      </div>
       <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
     </div>
   </footer>
@@ -316,14 +404,36 @@
           overlay.classList.remove('active');
         });
         
-        // Close menu when clicking nav links
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', function () {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
-            overlay.classList.remove('active');
-          });
-        });
+                 // Close menu when clicking nav links
+         navLinks.querySelectorAll('a').forEach(link => {
+           link.addEventListener('click', function () {
+             navLinks.classList.remove('active');
+             menuToggle.classList.remove('active');
+             overlay.classList.remove('active');
+           });
+         });
+         
+         // Handle mobile social icons
+         const mobileSocialIcons = document.querySelector('.mobile-social-icons');
+         if (mobileSocialIcons) {
+           // Clone social icons into mobile menu when it opens
+           menuToggle.addEventListener('click', function() {
+             if (navLinks.classList.contains('active')) {
+               // Menu is opening, add social icons
+               const socialClone = mobileSocialIcons.cloneNode(true);
+               socialClone.style.display = 'flex';
+               socialClone.classList.add('mobile-social-icons');
+               
+               // Remove existing mobile social icons if any
+               const existingMobileSocial = navLinks.querySelector('.mobile-social-icons');
+               if (existingMobileSocial) {
+                 existingMobileSocial.remove();
+               }
+               
+               navLinks.appendChild(socialClone);
+             }
+           });
+         }
         
         // Close menu on escape key
         document.addEventListener('keydown', function (e) {
@@ -333,10 +443,102 @@
             overlay.classList.remove('active');
           }
         });
-      } else {
-        console.error('Menu elements not found!');
-      }
-    });
-  </script>
+             } else {
+         console.error('Menu elements not found!');
+       }
+     });
+   </script>
+
+   <!-- Enhanced Contact Form JavaScript -->
+   <script>
+     document.addEventListener('DOMContentLoaded', function() {
+       const contactForm = document.getElementById('contact-form-element');
+       const confirmationDiv = document.getElementById('contact-confirmation');
+       const submitBtn = contactForm.querySelector('.contact-submit-btn');
+       const btnText = submitBtn.querySelector('.btn-text');
+       const btnLoading = submitBtn.querySelector('.btn-loading');
+       
+       // Form validation and submission handling
+       if (contactForm) {
+         contactForm.addEventListener('submit', function(e) {
+           e.preventDefault();
+           
+           // Show loading state
+           btnText.style.display = 'none';
+           btnLoading.style.display = 'inline-block';
+           submitBtn.disabled = true;
+           
+           // Simulate form processing (remove this when backend is ready)
+           setTimeout(() => {
+             // Hide form, show confirmation
+             contactForm.style.display = 'none';
+             confirmationDiv.style.display = 'block';
+             
+             // Reset form for future use
+             contactForm.reset();
+             
+             // Reset button state
+             btnText.style.display = 'inline-block';
+             btnLoading.style.display = 'none';
+             submitBtn.disabled = false;
+           }, 1500);
+         });
+         
+         // Real-time validation
+         const inputs = contactForm.querySelectorAll('input, textarea');
+         inputs.forEach(input => {
+           const validationDiv = document.getElementById(input.id + '-validation');
+           
+           input.addEventListener('blur', function() {
+             validateField(input, validationDiv);
+           });
+           
+           input.addEventListener('input', function() {
+             // Clear validation message when user starts typing
+             if (validationDiv.textContent) {
+               validationDiv.textContent = '';
+               validationDiv.className = 'validation-message';
+             }
+             
+             // Hide confirmation if user starts typing again
+             if (confirmationDiv.style.display === 'block') {
+               confirmationDiv.style.display = 'none';
+               contactForm.style.display = 'block';
+             }
+           });
+         });
+       }
+       
+       // Field validation function
+       function validateField(field, validationDiv) {
+         const value = field.value.trim();
+         let isValid = true;
+         let message = '';
+         
+         if (field.hasAttribute('required') && !value) {
+           isValid = false;
+           message = 'This field is required.';
+         } else if (field.type === 'email' && value) {
+           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+           if (!emailRegex.test(value)) {
+             isValid = false;
+             message = 'Please enter a valid email.';
+           }
+         }
+         
+         if (!isValid) {
+           validationDiv.textContent = message;
+           validationDiv.className = 'validation-message error';
+           field.classList.add('invalid');
+         } else {
+           validationDiv.textContent = '';
+           validationDiv.className = 'validation-message';
+           field.classList.remove('invalid');
+         }
+         
+         return isValid;
+       }
+     });
+   </script>
 </body>
 </html>
