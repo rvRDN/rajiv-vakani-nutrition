@@ -3974,8 +3974,6 @@ h1,
      transform: translateY(0) !important;
      filter: blur(0) !important;
    }
- }
-}
 
 
 
@@ -4011,7 +4009,6 @@ h1,
   /*
   .site-logo {
     font-size: 2em; /* Example: adjust as needed */
-  /*
   }
   */
 
@@ -4038,6 +4035,11 @@ h1,
   border-radius: 12px;
   padding: 40px 30px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Newsletter hero frosted panel styles */
@@ -4088,9 +4090,9 @@ header.hero.homepage-hero {
 
 /* Optional: If you want to make your content panel narrower on the homepage */
 /* If you like your content width as it is, you don't need this block */
-/*
+/* 
 .homepage-hero .hero-content {
-  max-width: 700px; /* Example: Adjust this as needed for your design */
+  max-width: 700px; 
   width: 100%;
   margin: 0 auto;
 }
@@ -7452,7 +7454,7 @@ h1.hero-heading {
   /* Debug: Add border to see if elements exist */
   .newsletter-card,
   .supporter-card {
-  
+    /* Empty rule - can be removed if not needed */
   }
   
   .newsletter-icon,
