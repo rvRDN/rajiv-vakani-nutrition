@@ -3975,9 +3975,7 @@ h1,
      filter: blur(0) !important;
    }
 
-
-
-  /* Desktop Nav Links */
+   /* Desktop Nav Links */
   .nav-links {
     display: flex;         /* Show nav links */
     position: static;      /* Remove mobile absolute positioning */
@@ -4054,6 +4052,125 @@ h1,
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* Table Talk Page Glass Cards */
+.what-you-get .glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.what-you-get .glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+  border-color: rgba(53, 124, 165, 0.5);
+}
+
+.what-you-get .glass-card .card-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #357ca5, #2a6a90);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 4px 16px rgba(53, 124, 165, 0.3);
+}
+
+.what-you-get .glass-card h3 {
+  color: var(--dark-text);
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.what-you-get .glass-card p {
+  color: var(--medium-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Table Talk CTA Section */
+.cta-subscribe .frosted-cta-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 50px 40px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-subscribe .frosted-cta-panel h2 {
+  color: #1a252f;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cta-subscribe .frosted-cta-panel p {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.cta-subscribe .cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-subscribe .primary-cta {
+  background: linear-gradient(135deg, #357ca5, #2a6a90);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 3px solid rgba(53, 124, 165, 0.6);
+  box-shadow: 0 8px 24px rgba(53, 124, 165, 0.4);
+  transition: all 0.3s ease;
+}
+
+.cta-subscribe .primary-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(53, 124, 165, 0.5);
+  border-color: rgba(53, 124, 165, 0.8);
+}
+
+.cta-subscribe .secondary-cta {
+  background: rgba(53, 124, 165, 0.1);
+  color: var(--dark-text);
+  padding: 16px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 3px solid rgba(53, 124, 165, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cta-subscribe .secondary-cta:hover {
+  background: rgba(53, 124, 165, 0.2);
+  border-color: rgba(53, 124, 165, 0.5);
+  transform: translateY(-2px);
 }
 
 .newsletter-hero .frosted-hero-panel h1 {
