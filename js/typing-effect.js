@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
 
   const words = [
     "Evidence Seeker.",
-    "Nutritionist.",
+    "Nutrition Guide.",
     "Mindful Eater.",
     "Food Educator.",
     "Plant-Forward."

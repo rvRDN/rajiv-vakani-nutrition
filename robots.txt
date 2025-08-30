@@ -13,8 +13,8 @@ Allow: /index.html
 Allow: /about.html
 Allow: /table-talk.html
 Allow: /no-onion-no-garlic.html
-Allow: /table-talk-archive.html
-Allow: /no-onion-no-garlic-archive.html
+Allow: /supporters.html
+Allow: /members.html
 
 # Crawl delay (optional)
 Crawl-delay: 1 
