@@ -250,7 +250,8 @@
             </div>
           </div>
 
-          <form name="contact" method="POST" data-netlify="true" class="contact-form" id="contact-form-element">
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/" class="contact-form" id="contact-form-element">
+            <input type="hidden" name="form-name" value="contact">
             <p class="hidden">
               <label>Don't fill this out if you're human: <input name="bot-field" /></label>
             </p>
@@ -281,6 +282,12 @@
             </button>
             
             <p class="privacy-note">Your information is kept private and will never be shared.</p>
+            
+            <!-- Success Message -->
+            <div id="contact-success" class="success-message" style="display: none; background: #10b981; color: white; padding: 15px; border-radius: 8px; margin-top: 20px; text-align: center; font-weight: 500;">
+              <i class="fas fa-check-circle" aria-hidden="true" style="margin-right: 8px;"></i>
+              Thank you! Your message has been sent successfully.
+            </div>
           </form>
         </div>
 
@@ -434,7 +441,6 @@
    <script>
      document.addEventListener('DOMContentLoaded', function() {
        const contactForm = document.getElementById('contact-form-element');
-       const confirmationDiv = document.getElementById('contact-confirmation');
        const submitBtn = contactForm.querySelector('.contact-submit-btn');
        const btnText = submitBtn.querySelector('.btn-text');
        const btnLoading = submitBtn.querySelector('.btn-loading');
@@ -451,9 +457,9 @@
            
            // Simulate form processing (remove this when backend is ready)
            setTimeout(() => {
-             // Hide form, show confirmation
-             contactForm.style.display = 'none';
-             confirmationDiv.style.display = 'block';
+             // Show success message inline
+             const successDiv = document.getElementById('contact-success');
+             successDiv.style.display = 'block';
              
              // Reset form for future use
              contactForm.reset();
@@ -462,6 +468,11 @@
              btnText.style.display = 'inline-block';
              btnLoading.style.display = 'none';
              submitBtn.disabled = false;
+             
+             // Hide success message after 5 seconds
+             setTimeout(() => {
+               successDiv.style.display = 'none';
+             }, 5000);
            }, 1500);
          });
          
@@ -481,10 +492,10 @@
                validationDiv.className = 'validation-message';
              }
              
-             // Hide confirmation if user starts typing again
-             if (confirmationDiv.style.display === 'block') {
-               confirmationDiv.style.display = 'none';
-               contactForm.style.display = 'block';
+             // Hide success message if user starts typing again
+             const successDiv = document.getElementById('contact-success');
+             if (successDiv.style.display === 'block') {
+               successDiv.style.display = 'none';
              }
            });
          });
