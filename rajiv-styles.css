@@ -4655,7 +4655,6 @@ h1,
   .site-logo {
     font-size: 2em; /* Example: adjust as needed */
   }
-  */
 
   /* You can add any other desktop-specific styles here */
 
@@ -8421,7 +8420,7 @@ h1.hero-heading {
 
 /* FAQ Section */
 .faq-section {
-  background: white;
+  background: var(--primary-blue);
   padding: 80px 0;
 }
 
@@ -8984,4 +8983,24 @@ h1.hero-heading {
   font-size: 1.05em;
   line-height: 1.7;
   color: #374151;
+}
+
+/* Override benefit item styling with colored glows */
+.benefit-item:nth-child(1) {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(245, 158, 11, 0.15) !important;
+}
+
+.benefit-item:nth-child(2) {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(59, 130, 246, 0.15) !important;
+}
+
+.benefit-item:nth-child(3) {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(16, 185, 129, 0.15) !important;
+}
+
+/* Additional overrides to fix white space and ensure background fills completely */
+.benefit-item {
+  background: #f9fafb !important;
+  border: 3px solid white !important;
+  border-radius: 16px !important;
 }

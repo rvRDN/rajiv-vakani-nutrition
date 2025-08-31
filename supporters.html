@@ -98,6 +98,108 @@
                                    /* Typography */
                   #supporter-signin h2 {
                     margin: 16px 0 8px 0 !important;
+                 
+                 /* Responsive styles for Supporting Is Simple section */
+                 @media (max-width: 1024px) {
+                   /* Tablet: two cards on first row, one on second */
+                   .supporting-simple-grid {
+                     grid-template-columns: repeat(2, 1fr) !important;
+                   }
+                   
+                   .supporting-simple-grid .supporting-simple-item:last-child {
+                     grid-column: 1 / -1;
+                     max-width: 400px;
+                     margin: 0 auto;
+                   }
+                 }
+                 
+                 @media (max-width: 768px) {
+                   /* Mobile: single column */
+                   .supporting-simple-section {
+                     padding: 60px 0 !important;
+                   }
+                   
+                   .supporting-simple-section h2 {
+                     font-size: 2.5em !important;
+                   }
+                   
+                   .supporting-simple-section .container > div:first-child p {
+                     font-size: 1em !important;
+                     margin: 30px auto 0 !important;
+                   }
+                   
+                   .supporting-simple-grid {
+                     grid-template-columns: 1fr !important;
+                     gap: 28px !important;
+                   }
+                   
+                   .supporting-simple-item {
+                     padding: 40px 28px !important;
+                   }
+                   
+                   .supporting-simple-item h3 {
+                     font-size: 1.3em !important;
+                   }
+                   
+                   .supporting-simple-item p {
+                     line-height: 1.7 !important;
+                   }
+                   
+                   .supporting-simple-seal {
+                     width: 52px !important;
+                     height: 52px !important;
+                     font-size: 1.2em !important;
+                   }
+                 }
+                 
+                 @media (max-width: 480px) {
+                   .supporting-simple-section {
+                     padding: 50px 0 !important;
+                   }
+                   
+                   .supporting-simple-section h2 {
+                     font-size: 2.2em !important;
+                   }
+                   
+                   .supporting-simple-item {
+                     padding: 36px 24px !important;
+                   }
+                   
+                   .supporting-simple-seal {
+                     width: 52px !important;
+                     height: 52px !important;
+                     font-size: 1.1em !important;
+                   }
+                 }
+                  
+                 /* Benefit Card Hover Effects */
+                 .benefit-item {
+                   transition: all 0.3s ease !important;
+                 }
+                 
+                 .benefit-item:hover {
+                   transform: translateY(-4px) !important;
+                   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+                 }
+                 
+                 /* TESTING TOOL - Colored Glow Effects with White Borders */
+                 html body .container .benefits-section .benefits-grid .benefit-item:nth-child(1) {
+                   border: 1px solid #e5e7eb !important;
+                   border-radius: 16px !important;
+                   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(245, 158, 11, 0.15) !important;
+                 }
+                 
+                 html body .container .benefits-section .benefits-grid .benefit-item:nth-child(2) {
+                   border: 1px solid #e5e7eb !important;
+                   border-radius: 16px !important;
+                   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(59, 130, 246, 0.15) !important;
+                 }
+                 
+                 html body .container .benefits-section .benefits-grid .benefit-item:nth-child(3) {
+                   border: 1px solid #e5e7eb !important;
+                   border-radius: 16px !important;
+                   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(16, 185, 129, 0.15) !important;
+                 }
                     color: #1f2937 !important;
                     font-size: 2.5em !important;
                     font-weight: 700 !important;
@@ -495,80 +597,100 @@
    <!-- Benefits Section (Merged) -->
   <section class="benefits-section animate-on-scroll">
     <div class="container">
-      <div class="section-intro" style="text-align: center; margin-bottom: 50px;">
-        <p style="font-size: 1.2em; color: #666; line-height: 1.6; max-width: 700px; margin: 0 auto;">
-          Supporters unlock premium content, a direct line to me, and help keep thoughtful nutrition writing alive.
-        </p>
-      </div>
+      <!-- Subtle Divider for Cohesion -->
+      <div style="height: 3px; background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.6), rgba(245, 158, 11, 0.8), rgba(245, 158, 11, 0.6), transparent); margin: 0 auto 60px auto; width: 80%; border-radius: 2px;"></div>
+                  <div style="text-align: center; margin-bottom: 50px;">
+              <h2 style="color: #1f2937; font-size: 2.8em; font-weight: 700; margin-bottom: 20px; line-height: 1.2; position: relative;">
+                What Supporters Get
+                <div style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(90deg, #f59e0b, #f97316); border-radius: 2px;"></div>
+              </h2>
+              <p style="color: #6b7280; font-size: 1.1em; font-weight: 400; line-height: 1.6; max-width: 800px; margin: 0 auto;">More than content: a direct line, every past issue, and deep dives you won't find anywhere else.</p>
+            </div>
+    
       
       <!-- 3 Core Benefits -->
       <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px;">
-        <div class="benefit-item" style="background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 35px 25px; text-align: center; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <div class="benefit-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 1.8em;">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <div class="benefit-item" style="padding: 40px 30px; text-align: center; transition: all 0.3s ease; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(245, 158, 11, 0.15);">
+          <div>
+            <div class="benefit-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.5em;">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </div>
+            <h3 style="color: #1f2937; margin-bottom: 16px; font-size: 1.3em; font-weight: 600; line-height: 1.2;">Direct Access</h3>
+            <p style="color: #6b7280; line-height: 1.8; font-size: 1em; margin-bottom: 0; max-width: 280px; margin-left: auto; margin-right: auto;">A direct line to me. Ask questions, share feedback, or request topics you want covered. Supporters land at the top of my inbox.</p>
           </div>
-          <h3 style="color: #1f2937; margin-bottom: 20px; font-size: 1.4em; font-weight: 600;">Direct Access</h3>
-          <p style="color: #6b7280; line-height: 1.7; font-size: 1em; margin-bottom: 20px;">A supporter-only email where you can contact me with your questions.</p>
-          <div style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; font-weight: 500; display: inline-block;">No Ads</div>
+                      <div style="background: white; color: #f59e0b; padding: 6px 14px; border-radius: 20px; font-size: 0.8em; font-weight: 500; display: inline-block; margin-top: 20px; border: 2px solid #f59e0b;">Ask Me Anything</div>
         </div>
         
-        <div class="benefit-item" style="background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 35px 25px; text-align: center; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <div class="benefit-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 1.8em;">
-            <i class="fas fa-book" aria-hidden="true"></i>
+        <div class="benefit-item" style="padding: 40px 30px; text-align: center; transition: all 0.3s ease; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(59, 130, 246, 0.15);">
+          <div>
+            <div class="benefit-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.5em;">
+              <i class="fas fa-book" aria-hidden="true"></i>
+            </div>
+            <h3 style="color: #1f2937; margin-bottom: 16px; font-size: 1.3em; font-weight: 600; line-height: 1.2;">Full Archives</h3>
+            <p style="color: #6b7280; line-height: 1.8; font-size: 1em; margin-bottom: 0; max-width: 280px; margin-left: auto; margin-right: auto;">Every past issue unlocked. No paywalls, no locked insights. Everything I have written in one place.</p>
           </div>
-          <h3 style="color: #1f2937; margin-bottom: 20px; font-size: 1.4em; font-weight: 600;">Full Archives</h3>
-          <p style="color: #6b7280; line-height: 1.7; font-size: 1em; margin-bottom: 20px;">Explore past issues of both Table Talk and No Onion, No Garlic.</p>
-          <div style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; font-weight: 500; display: inline-block;">No Fluff</div>
+                      <div style="background: white; color: #3b82f6; padding: 6px 14px; border-radius: 20px; font-size: 0.8em; font-weight: 500; display: inline-block; margin-top: 20px; border: 2px solid #3b82f6;">All Issues Unlocked</div>
         </div>
         
-        <div class="benefit-item" style="background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 35px 25px; text-align: center; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <div class="benefit-icon" style="background: linear-gradient(135deg, #10b981, #059669); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 1.8em;">
-            <i class="fas fa-file-alt" aria-hidden="true"></i>
+        <div class="benefit-item" style="padding: 40px 30px; text-align: center; transition: all 0.3s ease; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(16, 185, 129, 0.15);">
+          <div>
+            <div class="benefit-icon" style="background: linear-gradient(135deg, #10b981, #059669); color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.5em;">
+              <i class="fas fa-file-alt" aria-hidden="true"></i>
+            </div>
+            <h3 style="color: #1f2937; margin-bottom: 16px; font-size: 1.3em; font-weight: 600; line-height: 1.2;">Deep Dives</h3>
+            <p style="color: #6b7280; line-height: 1.8; font-size: 1em; margin-bottom: 0; max-width: 280px; margin-left: auto; margin-right: auto;">Subscriber-only deep dives with more science, more context, and practical steps you can use.</p>
           </div>
-          <h3 style="color: #1f2937; margin-bottom: 20px; font-size: 1.4em; font-weight: 600;">Premium Guides + Deep Dives</h3>
-          <p style="color: #6b7280; line-height: 1.7; font-size: 1em; margin-bottom: 20px;">Detailed resources on nutrition, culture, and wellness you won't find anywhere else.</p>
-          <div style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; font-weight: 500; display: inline-block;">Science + Context</div>
+                      <div style="background: white; color: #10b981; padding: 6px 14px; border-radius: 20px; font-size: 0.8em; font-weight: 500; display: inline-block; margin-top: 20px; border: 2px solid #10b981;">Science + Context</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section class="how-it-works-section animate-on-scroll">
+  <!-- Subtle Divider for Cohesion -->
+  <div style="height: 3px; background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.6), rgba(245, 158, 11, 0.8), rgba(245, 158, 11, 0.6), transparent); margin: 0 auto 15px auto !important; width: 80%; border-radius: 2px;"></div>
+
+  <!-- Supporting Is Simple -->
+            <section class="supporting-simple-section animate-on-scroll" style="background: #f0f4f8; padding: 90px 0 60px 0;">
     <div class="container">
-      <h2 style="text-align: center; margin-bottom: 50px; color: #1f2937; font-size: 2.5em; font-weight: 700;">How It Works</h2>
-      <div class="how-it-works-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
-        <div class="how-it-works-item" style="text-align: center; background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 40px 30px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);">
-          <div class="how-it-works-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 2em;">
+      <div style="text-align: center; margin-bottom: 80px;">
+        <h2 style="color: #1f2937; font-size: 3.2em; font-weight: 700; margin-bottom: 0; line-height: 1.2;">Supporting Is Simple</h2>
+        <p style="color: #6b7280; font-size: 1.2em; font-weight: 400; line-height: 1.8; max-width: 800px; margin: 25px auto 0; opacity: 1;">Three quick steps, no barriers, no surprises.</p>
+      </div>
+      
+      <div class="supporting-simple-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+        <div class="supporting-simple-item" style="text-align: center; background: #FFE8C9; border: 1px solid rgba(246, 165, 58, 0.25); border-radius: 20px; padding: 48px 32px; box-shadow: 0 12px 40px rgba(246, 165, 58, 0.08); position: relative;">
+          <div class="supporting-simple-seal" style="background: rgba(246, 165, 58, 0.25); color: #f59e0b; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.3em;">
             <i class="fas fa-key" aria-hidden="true"></i>
           </div>
-          <h3 style="color: #1f2937; margin-bottom: 20px; font-size: 1.5em; font-weight: 600;">Join Once</h3>
-          <p style="color: #6b7280; line-height: 1.6; font-size: 1.1em;">One supporter membership unlocks everything.</p>
+          <h3 style="color: #1f2937; margin-bottom: 18px; font-size: 1.4em; font-weight: 600;">One Membership</h3>
+          <p style="color: #6b7280; line-height: 1.7; font-size: 1em; margin: 0;">One plan unlocks every benefit.</p>
         </div>
         
-        <div class="how-it-works-item" style="text-align: center; background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 40px 30px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);">
-          <div class="how-it-works-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 2em;">
-            <i class="fas fa-envelope-open" aria-hidden="true"></i>
+                  <div class="supporting-simple-item" style="text-align: center; background: #D4E2FF; border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 20px; padding: 48px 32px; box-shadow: 0 12px 40px rgba(59, 130, 246, 0.08); position: relative;">
+          <div class="supporting-simple-seal" style="background: rgba(59, 130, 246, 0.25); color: #3b82f6; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.3em;">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
           </div>
-          <h3 style="color: #1f2937; margin-bottom: 20px; font-size: 1.5em; font-weight: 600;">Free Access Continues</h3>
-          <p style="color: #6b7280; line-height: 1.6; font-size: 1.1em;">Newsletter signups are still free - support doesn't change that.</p>
+          <h3 style="color: #1f2937; margin-bottom: 18px; font-size: 1.4em; font-weight: 600;">No Paywall Pressure</h3>
+          <p style="color: #6b7280; line-height: 1.7; font-size: 1em; margin: 0;">Free stays free. Supporting only adds perks.</p>
         </div>
         
-        <div class="how-it-works-item" style="text-align: center; background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 40px 30px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);">
-          <div class="how-it-works-icon" style="background: linear-gradient(135deg, #10b981, #059669); color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 2em;">
-            <i class="fas fa-lock-open" aria-hidden="true"></i>
+        <div class="supporting-simple-item" style="text-align: center; background: #D8F2E3; border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 20px; padding: 48px 32px; box-shadow: 0 12px 40px rgba(16, 185, 129, 0.08); position: relative;">
+          <div class="supporting-simple-seal" style="background: rgba(16, 185, 129, 0.25); color: #10b981; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.3em;">
+            <i class="fas fa-bolt" aria-hidden="true"></i>
           </div>
-          <h3 style="color: #1f2937; margin-bottom: 20px; font-size: 1.5em; font-weight: 600;">Get Member Access</h3>
-          <p style="color: #6b7280; line-height: 1.6; font-size: 1.1em;">After checkout, you'll receive a link to the /members area.</p>
+          <h3 style="color: #1f2937; margin-bottom: 18px; font-size: 1.4em; font-weight: 600;">Instant Access</h3>
+          <p style="color: #6b7280; line-height: 1.7; font-size: 1em; margin: 0;">Get your member link right after checkout.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ Section (Expanded to 6 items) -->
-  <section class="faq-section animate-on-scroll">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 50px; color: #1f2937; font-size: 2.5em; font-weight: 700;">Frequently Asked Questions</h2>
+            <section class="faq-section animate-on-scroll" style="padding-top: 0; position: relative; background: #f0f4f8;">
+    <!-- Orange Divider Overlay -->
+                 <div style="position: absolute; top: 30px; left: 50%; transform: translateX(-50%); height: 3px; background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.6), rgba(245, 158, 11, 0.8), rgba(245, 158, 11, 0.6), transparent); width: 80%; border-radius: 2px; z-index: 1;"></div>
+          <div class="container" style="padding-top: 40px;">
+        <h2 style="text-align: center; margin-bottom: 50px; color: #1f2937; font-size: 2.5em; font-weight: 700; margin-top: 80px;">Frequently Asked Questions</h2>
       <div class="faq-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;">
         <div class="faq-item" style="background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);">
           <h3 style="color: #1f2937; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">How do I access the content?</h3>
