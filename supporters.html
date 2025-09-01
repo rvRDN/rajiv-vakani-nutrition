@@ -98,6 +98,547 @@
                                    /* Typography */
                   #supporter-signin h2 {
                     margin: 16px 0 8px 0 !important;
+                  }
+                  
+                  /* Premium FAQ Section Styling */
+                  .faq-section {
+                    background: var(--light-grey-bg);
+                    padding: 0;
+                    position: relative;
+                  }
+                  
+                  .faq-divider {
+                    position: absolute;
+                    top: -30px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 3px;
+                    background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.6), rgba(245, 158, 11, 0.8), rgba(245, 158, 11, 0.6), transparent);
+                    width: 80%;
+                    border-radius: 2px;
+                    z-index: 1;
+                  }
+                  
+                  .faq-header {
+                    text-align: center;
+                    margin-bottom: 60px;
+                    margin-top: 80px;
+                    padding-top: 40px;
+                  }
+                  
+                  .faq-header h2 {
+                    display: inline-block;
+                    color: var(--dark-text);
+                    font-size: 2.5em;
+                    font-weight: 700;
+                    font-family: 'Inter', sans-serif;
+                    margin: 0;
+                    vertical-align: middle;
+                  }
+                  
+                  /* Premium FAQ Accordion Styles */
+                  .faq-accordion {
+                    max-width: 80ch;
+                    margin: 0 auto;
+                    padding: 0 32px;
+                    scroll-margin-top: 80px;
+                  }
+                  
+                  .faq-item {
+                    scroll-margin-top: 80px;
+                    border-bottom: 1px solid var(--border-light);
+                    background: transparent;
+                    border-radius: 0;
+                    box-shadow: none;
+                    margin-bottom: 0;
+                    padding: 0;
+                    position: relative;
+                  }
+                  
+
+                  
+                  .faq-item:last-child {
+                    border-bottom: none;
+                  }
+                  
+                  .faq-question {
+                    padding: 40px 0;
+                    cursor: pointer;
+                    list-style: none;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    min-height: 44px;
+                    background: transparent;
+                    border: none;
+                    border-radius: 0;
+                    overflow: hidden;
+                  }
+                  
+                  .faq-question::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, transparent, rgba(53, 124, 165, 0.04), transparent);
+                    transition: left 0.4s ease;
+                    z-index: 0;
+                  }
+                  
+                  .faq-question:hover::before {
+                    left: 100%;
+                  }
+                  
+                  .faq-question:hover {
+                    background: rgba(53, 124, 165, 0.02);
+                    transform: translateX(2px);
+                  }
+                  
+
+                  
+                  /* Custom focus-visible for keyboard users only */
+                  .faq-question:focus-visible {
+                    outline: none;
+                    background: rgba(53, 124, 165, 0.03);
+                    transform: translateX(2px);
+                  }
+                  
+
+                  
+                  /* Remove default focus outline */
+                  .faq-question:focus {
+                    outline: none;
+                  }
+                  
+                  .faq-question h3 {
+                    color: var(--dark-text);
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    font-family: 'Inter', sans-serif;
+                    margin: 0;
+                    flex: 1;
+                    padding-right: 48px;
+                    line-height: 1.3;
+                    letter-spacing: -0.3px;
+                  }
+                  
+                  /* Enhanced typography for open state */
+                  .faq-item[open] .faq-question h3 {
+                    font-weight: 700;
+                    letter-spacing: -0.2px;
+                  }
+                  
+                  .faq-toggle {
+                    width: 28px;
+                    height: 28px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--medium-text);
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    flex-shrink: 0;
+                    min-height: 44px;
+                    min-width: 44px;
+                    position: relative;
+                  }
+                  
+                  .faq-toggle::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    background: rgba(53, 124, 165, 0.1);
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: all 0.3s ease;
+                  }
+                  
+                  .faq-question:hover .faq-toggle::after {
+                    width: 32px;
+                    height: 32px;
+                  }
+                  
+                  .faq-item[open] .faq-toggle {
+                    transform: rotate(90deg);
+                    color: var(--primary-blue);
+                  }
+                  
+                  .faq-item[open] .faq-toggle::after {
+                    width: 32px;
+                    height: 32px;
+                    background: rgba(53, 124, 165, 0.15);
+                  }
+                  
+                  /* Enhanced toggle states */
+                  .faq-question:hover .faq-toggle {
+                    color: var(--primary-blue);
+                  }
+                  
+                  .faq-question:focus-visible .faq-toggle {
+                    color: var(--primary-blue);
+                  }
+                  
+                  /* Ensure open state is clear */
+                  .faq-item[open] .faq-question {
+                    background: rgba(53, 124, 165, 0.02);
+                  }
+                  
+
+                  
+                  .faq-answer {
+                    padding: 12px 0 24px 0;
+                    padding-left: 3em !important;
+                    color: var(--medium-text);
+                    line-height: 1.9;
+                    font-size: 1.1rem;
+                    font-family: 'Inter', sans-serif;
+                    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                    max-width: 70ch;
+                    position: relative;
+                    border: none;
+                    background: transparent;
+                  }
+                  
+                  .faq-item[open] .faq-answer {
+                    height: auto;
+                    padding-left: 2em !important;
+                    transform: translateY(0);
+                    opacity: 1;
+                  }
+                  
+
+                  
+                  /* Ensure proper display */
+                  .faq-item {
+                    display: block;
+                    width: 100%;
+                  }
+                  
+                  .faq-question {
+                    display: flex;
+                    width: 100%;
+                  }
+                  
+                  /* Override any conflicting styles - make these extremely specific */
+                  .faq-section .faq-accordion .faq-item,
+                  .faq-section .faq-accordion .faq-question,
+                  section.faq-section .faq-accordion .faq-item,
+                  section.faq-section .faq-accordion .faq-question {
+                    background: transparent !important;
+                    border: none !important;
+                    border-radius: 0 !important;
+                    box-shadow: none !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                  }
+                  
+                  /* Don't override padding for answers - we need the indentation */
+                  .faq-section .faq-accordion .faq-answer,
+                  section.faq-section .faq-accordion .faq-answer {
+                    background: transparent !important;
+                    border: none !important;
+                    border-radius: 0 !important;
+                    box-shadow: none !important;
+                    margin: 0 !important;
+                  }
+                  
+                  /* Force remove any existing card styling */
+                  .faq-section .faq-accordion .faq-item {
+                    background: transparent !important;
+                    border: none !important;
+                    border-radius: 0 !important;
+                    box-shadow: none !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    display: block !important;
+                    width: 100% !important;
+                  }
+                  
+                  /* Ensure the light bulb is visible */
+                  .faq-section .faq-header .faq-bulb {
+                    display: inline-block !important;
+                    visibility: visible !important;
+                    opacity: 0.8 !important;
+                    color: #f59e0b !important;
+                    font-size: 1.8em !important;
+                    margin-right: 20px !important;
+                    filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.3)) !important;
+                  }
+                  
+                  /* Force the accordion to display as rows, not cards */
+                  .faq-section .faq-accordion {
+                    display: block !important;
+                    width: 100% !important;
+                  }
+                  
+                  .faq-section .faq-accordion .faq-item {
+                    display: block !important;
+                    width: 100% !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                  }
+                  
+                  /* Ensure proper spacing and layout */
+                  .faq-section .faq-accordion .faq-question {
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: space-between !important;
+                    width: 100% !important;
+                    padding: 12px 0 !important;
+                    margin: 0 !important;
+                  }
+                  
+                  .faq-section .faq-accordion .faq-answer {
+                    display: block !important;
+                    width: 100% !important;
+                    padding: 4px 0 12px 0 !important;
+                    padding-left: 2em !important;
+                    margin: 0 !important;
+                  }
+                  
+                  /* Nuclear option - override everything that might be causing card styling */
+                  .faq-section .faq-accordion * {
+                    background: transparent !important;
+                    border: none !important;
+                    border-radius: 0 !important;
+                    box-shadow: none !important;
+                  }
+                  
+                  /* Force the specific accordion styling */
+
+                  
+                  /* Ensure the light bulb shows up with fallback colors */
+                  .faq-section .faq-header .faq-bulb {
+                    color: #357ca5 !important;
+                  }
+                  
+                  .faq-section .faq-header h2 {
+                    color: var(--dark-text) !important;
+                    color: #2c3e50 !important; /* Fallback */
+                  }
+                  
+                  /* Ensure smooth transitions */
+                  .faq-answer {
+                    transition: height 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+                    height: 0;
+                    overflow: hidden;
+                    transform: translateY(-8px);
+                    opacity: 0;
+                  }
+                  
+                  /* Remove any default browser styling */
+                  summary::-webkit-details-marker {
+                    display: none;
+                  }
+                  
+                  summary::marker {
+                    display: none;
+                  }
+                  
+                  .faq-bulb {
+                    display: inline-block;
+                    margin-right: 20px;
+                    opacity: 0.8;
+                    color: #f59e0b;
+                    font-size: 1.8em;
+                    vertical-align: middle;
+                    transition: all 0.5s ease;
+                    filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.3));
+                  }
+                  
+                  .faq-bulb.glow {
+                    animation: bulbGlow 1s ease;
+                  }
+                  
+                  @keyframes underlineExpand {
+                    to {
+                      transform: scaleX(1);
+                    }
+                  }
+                  
+                  @keyframes bulbGlow {
+                    0%, 100% {
+                      opacity: 0.8;
+                      filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.3));
+                      transform: scale(1);
+                    }
+                    50% {
+                      opacity: 1;
+                      filter: drop-shadow(0 4px 20px rgba(245, 158, 11, 0.6));
+                      transform: scale(1.1);
+                    }
+                  }
+                  
+                  @media (max-width: 1024px) {
+                    .faq-accordion {
+                      max-width: 80ch;
+                    }
+                  }
+                  
+                  @media (max-width: 768px) {
+                    .faq-accordion {
+                      padding: 0 20px;
+                      max-width: 100%;
+                    }
+                    
+                    .faq-question {
+                      padding: 32px 0;
+                      min-height: 48px;
+                    }
+                    
+                    .faq-question h3 {
+                      font-size: 1.25rem;
+                      padding-right: 40px;
+                    }
+                    
+                    .faq-toggle {
+                      width: 28px;
+                      height: 28px;
+                      min-height: 44px;
+                      min-width: 44px;
+                    }
+                    
+                    .faq-answer {
+                      max-width: 100%;
+                      padding: 20px 0 32px 0;
+                      padding-left: 1.5em;
+                      font-size: 1rem;
+                    }
+                  }
+                  
+                  @media (max-width: 480px) {
+                    .faq-accordion {
+                      padding: 0 16px;
+                      max-width: 100%;
+                    }
+                    
+                    .faq-question {
+                      padding: 28px 0;
+                    }
+                    
+                    .faq-question h3 {
+                      font-size: 1.2rem;
+                    }
+                    
+                    .faq-answer {
+                      padding: 18px 0 28px 0;
+                      padding-left: 1.2em;
+                      font-size: 0.95rem;
+                    }
+                  }
+                  
+                  @media (prefers-reduced-motion: reduce) {
+                    .faq-question,
+                    .faq-toggle,
+                    .faq-answer,
+                    .faq-bulb {
+                      transition: none;
+                      animation: none;
+                    }
+                    
+                    .faq-question:hover::after,
+                    .faq-question:focus-visible::after {
+                      animation: none;
+                    }
+                    
+                    .faq-item[open] .faq-question::after {
+                      animation: none;
+                    }
+                  }
+                  
+                  /* Complete the FAQ styles with proper structure */
+                  .faq-section .faq-accordion .faq-item {
+                    border-bottom: 1px solid rgba(44, 62, 80, 0.12);
+                    margin: 0;
+                    padding: 0;
+                  }
+                  
+                  .faq-section .faq-accordion .faq-item:last-child {
+                    border-bottom: none;
+                  }
+                  
+                  .faq-section .faq-accordion .faq-question {
+                    padding: 12px 0;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    margin: 0;
+                    background: transparent;
+                    border: none;
+                    border-radius: 0;
+                  }
+                  
+                  .faq-section .faq-accordion .faq-question:hover {
+                    background: rgba(53, 124, 165, 0.03);
+                  }
+                  
+                  .faq-section .faq-accordion .faq-question h3 {
+                    color: #2c3e50;
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    margin: 0;
+                    flex: 1;
+                    padding-right: 48px;
+                    line-height: 1.4;
+                  }
+                  
+                  .faq-section .faq-accordion .faq-toggle {
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #6b7280;
+                    transition: transform 0.2s ease;
+                    flex-shrink: 0;
+                    min-height: 44px;
+                    min-width: 44px;
+                  }
+                  
+                  .faq-section .faq-accordion .faq-item[open] .faq-toggle {
+                    transform: rotate(90deg);
+                    color: #357ca5;
+                  }
+                  
+                  .faq-section .faq-accordion .faq-answer {
+                    padding: 4px 0 12px 0;
+                    padding-left: 2em !important;
+                    color: #6b7280;
+                    line-height: 1.6;
+                    font-size: 1rem;
+                    max-width: 65ch;
+                    margin: 0;
+                    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+                    transform: translateY(-8px);
+                  }
+                  
+                  /* Ensure the light bulb is visible */
+                  .faq-section .faq-header .faq-bulb {
+                    display: inline-block !important;
+                    visibility: visible !important;
+                    opacity: 0.8 !important;
+                    color: #f59e0b !important;
+                    font-size: 1.8em !important;
+                    margin-right: 20px !important;
+                    filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.3)) !important;
+                  }
+                  
+                  /* Remove default summary styling */
+                  summary::-webkit-details-marker {
+                    display: none;
+                  }
+                  
+                  summary::marker {
+                    display: none;
+                  }
                  
                  /* Responsive styles for Supporting Is Simple section */
                  @media (max-width: 1024px) {
@@ -200,11 +741,6 @@
                    border-radius: 16px !important;
                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(16, 185, 129, 0.15) !important;
                  }
-                    color: #1f2937 !important;
-                    font-size: 2.5em !important;
-                    font-weight: 700 !important;
-                    line-height: 1.15 !important;
-                  }
                  
                  #supporter-signin p {
                    margin: 0 0 16px 0 !important;
@@ -376,6 +912,202 @@
                    #supporter-signin .supporter-panel > div {
                      background: rgba(255,255,255,0.92) !important;
                    }
+                 }
+                 
+                 /* Donation Section Styles - NEW SECTION */
+                 .donation-section-new {
+                   /* This section is now built with inline styles for maximum compatibility */
+                 }
+                 
+                 /* Content styles are now handled inline */
+                 
+                 .donation-content h2 {
+                   font-size: 2.8em;
+                   font-weight: 700;
+                   color: #2c3e50;
+                   margin-bottom: 25px;
+                 }
+                 
+                 .donation-content p {
+                   margin-bottom: 40px;
+                   color: #4a5568;
+                   font-size: 1.2em;
+                   line-height: 1.7;
+                   font-weight: 500;
+                 }
+                 
+                 .donation-cta-button {
+                   background: #2e7d32;
+                   color: white;
+                   padding: 18px 36px;
+                   border: none;
+                   border-radius: 12px;
+                   font-size: 1.1em;
+                   font-weight: 600;
+                   cursor: pointer;
+                   transition: all 0.3s ease;
+                   text-decoration: none;
+                   display: inline-block;
+                   box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+                 }
+                 
+                 .donation-cta-button:hover {
+                   background: #388e3c;
+                   transform: translateY(-2px);
+                   box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+                 }
+                 
+                 .donation-content p:last-child {
+                   font-size: 0.9em;
+                   color: #718096;
+                   margin-top: 20px;
+                   font-style: italic;
+                   font-weight: 500;
+                 }
+                 
+                 /* Mobile Responsiveness */
+                 @media (max-width: 900px) {
+                   html body .donation-section,
+                   html body section.donation-section,
+                   body .donation-section,
+                   body section.donation-section {
+                     background-image: linear-gradient(180deg, rgba(244,162,97,1) 0%, rgba(244,162,97,0.85) 22%, rgba(244,162,97,0) 48%), url('footprint.jpg') !important;
+                     background-position: center 12px, center 12px !important;
+                     background-size: 100% 100%, auto 48% !important;
+                     padding: 28px 0 36px 0 !important;
+                   }
+                   
+                   html body .donation-section .donation-content,
+                   html body section.donation-section .donation-content,
+                   body .donation-section .donation-content,
+                   body section.donation-section .donation-content {
+                     margin: 0 auto !important;
+                     padding: 0 24px !important;
+                     max-width: 100% !important;
+                     text-align: center !important;
+                   }
+                   
+                   html body .donation-section .donation-content h2,
+                   html body section.donation-section .donation-content h2,
+                   body .donation-section .donation-content h2,
+                   body section.donation-section .donation-content h2 {
+                     font-size: 2.2em !important;
+                     text-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
+                   }
+                   
+                   html body .donation-section .donation-content p,
+                   html body section.donation-section .donation-content p,
+                   body .donation-section .donation-content p,
+                   body section.donation-section .donation-content p {
+                     font-size: 1.1em !important;
+                     margin-bottom: 30px !important;
+                     text-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
+                   }
+                   
+                   html body .donation-section .donation-cta-button,
+                   html body section.donation-section .donation-cta-button,
+                   body .donation-section .donation-cta-button,
+                   body section.donation-section .donation-cta-button {
+                     padding: 16px 32px !important;
+                     font-size: 1em !important;
+                   }
+                 }
+                 
+                 @media (max-width: 480px) {
+                   html body .donation-section,
+                   html body section.donation-section,
+                   body .donation-section,
+                   body section.donation-section {
+                     background-size: 100% 100%, auto 44% !important;
+                   }
+                   
+                   html body .donation-section .donation-content,
+                   html body section.donation-section .donation-content,
+                   body .donation-section .donation-content,
+                   body section.donation-section .donation-content {
+                     padding: 0 20px !important;
+                   }
+                   
+                   html body .donation-section .donation-content h2,
+                   html body section.donation-section .donation-content h2,
+                   body .donation-section .donation-content h2,
+                   body section.donation-section .donation-content h2 {
+                     font-size: 2em !important;
+                   }
+                   
+                   html body .donation-section .donation-content p,
+                   html body section.donation-section .donation-content p,
+                   body .donation-section .donation-content p,
+                   body section.donation-section .donation-content p {
+                     font-size: 1em !important;
+                     margin-bottom: 25px !important;
+                   }
+                   
+                   html body .donation-section .donation-cta-button,
+                   html body section.donation-section .donation-cta-button,
+                   body .donation-section .donation-cta-button,
+                   body section.donation-section .donation-cta-button {
+                     padding: 14px 28px !important;
+                     font-size: 0.95em !important;
+                   }
+                 }
+                 
+                 /* New Donation Section Responsive Styles */
+                 @media (max-width: 920px) {
+                   .donation-section > .container > div {
+                     flex-direction: column !important;
+                     gap: 24px !important;
+                     text-align: center !important;
+                   }
+                   
+                   .donation-section > .container > div > div:first-child {
+                     max-width: 70% !important;
+                     order: 1 !important;
+                   }
+                   
+                   .donation-section > .container > div > div:last-child {
+                     max-width: 100% !important;
+                     order: 2 !important;
+                     margin-left: 0 !important;
+                   }
+                   
+                   .donation-section {
+                     padding: 20px 0 !important;
+                   }
+                 }
+                 
+                 @media (max-width: 600px) {
+                   .donation-section {
+                     padding: 16px 0 !important;
+                   }
+                   
+                   .donation-section > .container {
+                     padding: 0 20px !important;
+                   }
+                   
+                   .donation-section > .container > div > div:first-child {
+                     max-width: 60% !important;
+                   }
+                   
+                   .donation-section > .container > div > div:last-child h2 {
+                     font-size: clamp(24px, 4.5vw, 32px) !important;
+                   }
+                   
+                   .donation-section > .container > div > div:last-child p {
+                     font-size: 15px !important;
+                     line-height: 1.5 !important;
+                   }
+                 }
+                 
+                 /* Button hover effects */
+                 .donation-section a[href*="donate.stripe.com"]:hover {
+                   transform: translateY(-2px) !important;
+                   box-shadow: 0 10px 24px rgba(0,0,0,0.16) !important;
+                 }
+                 
+                 .donation-section a[href*="donate.stripe.com"]:focus-visible {
+                   outline: 3px solid rgba(255,255,255,0.7) !important;
+                   outline-offset: 2px !important;
                  }
                  </style>
   
@@ -685,54 +1417,194 @@
     </div>
   </section>
 
-  <!-- FAQ Section (Expanded to 6 items) -->
-            <section class="faq-section animate-on-scroll" style="padding-top: 0; position: relative; background: #f0f4f8;">
+  <!-- FAQ Section - Premium Accordion -->
+  <section class="faq-section animate-on-scroll">
     <!-- Orange Divider Overlay -->
-                 <div style="position: absolute; top: 30px; left: 50%; transform: translateX(-50%); height: 3px; background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.6), rgba(245, 158, 11, 0.8), rgba(245, 158, 11, 0.6), transparent); width: 80%; border-radius: 2px; z-index: 1;"></div>
-          <div class="container" style="padding-top: 40px;">
-        <h2 style="text-align: center; margin-bottom: 50px; color: #1f2937; font-size: 2.5em; font-weight: 700; margin-top: 80px;">Frequently Asked Questions</h2>
-      <div class="faq-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;">
-        <div class="faq-item" style="background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);">
-          <h3 style="color: #1f2937; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">How do I access the content?</h3>
-          <p style="color: #6b7280; line-height: 1.6;">After becoming a supporter, you'll get a link to the /members area.</p>
+    <div class="faq-divider"></div>
+    
+    <div class="container">
+      <div class="faq-header">
+        <div class="faq-bulb">
+          <i class="fas fa-lightbulb" aria-hidden="true"></i>
         </div>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      
+      <div class="faq-accordion">
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>How do I access the content?</h3>
+            <div class="faq-toggle">
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </div>
+          </summary>
+          <div class="faq-answer">
+            <p>After becoming a supporter, you'll get a link to the /members area.</p>
+          </div>
+        </details>
         
-        <div class="faq-item" style="background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);">
-          <h3 style="color: #1f2937; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">Can I cancel?</h3>
-          <p style="color: #6b7280; line-height: 1.6;">Yes, anytime. Access continues until the end of your billing period.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>Can I cancel?</h3>
+            <div class="faq-toggle">
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </div>
+          </summary>
+          <div class="faq-answer">
+            <p>Yes, anytime. Access continues until the end of your billing period.</p>
+          </div>
+        </details>
         
-        <div class="faq-item" style="background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);">
-          <h3 style="color: #1f2937; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">Can I gift a membership?</h3>
-          <p style="color: #6b7280; line-height: 1.6;">Coming soon. We're working on gift memberships for friends and family.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>Can I gift a membership?</h3>
+            <div class="faq-toggle">
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </div>
+          </summary>
+          <div class="faq-answer">
+            <p>Coming soon. We're working on gift memberships for friends and family.</p>
+          </div>
+        </details>
         
-        <div class="faq-item" style="background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);">
-          <h3 style="color: #1f2937; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">What's included in supporter access?</h3>
-          <p style="color: #6b7280; line-height: 1.6;">Full archives of both newsletters, premium guides, deep dives, and direct email access to me.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>What's included in supporter access?</h3>
+            <div class="faq-toggle">
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </div>
+          </summary>
+          <div class="faq-answer">
+            <p>Full archives of both newsletters, deep dives, and direct email access to me.</p>
+          </div>
+        </details>
         
-        <div class="faq-item" style="background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);">
-          <h3 style="color: #1f2937; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">Do I lose access to free newsletters?</h3>
-          <p style="color: #6b7280; line-height: 1.6;">No! Free newsletter signups continue exactly as before. Support is additional access.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>Do I lose access to free newsletters?</h3>
+            <div class="faq-toggle">
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </div>
+          </summary>
+          <div class="faq-answer">
+            <p>No! Free newsletter signups continue exactly as before. Support is additional access.</p>
+          </div>
+        </details>
         
-        <div class="faq-item" style="background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);">
-          <h3 style="color: #1f2937; margin-bottom: 15px; font-size: 1.3em; font-weight: 600;">How often is new content added?</h3>
-          <p style="color: #6b7280; line-height: 1.6;">New supporter content is added regularly, typically 2-3 times per month alongside regular newsletters.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>How often is new content added?</h3>
+            <div class="faq-toggle">
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </div>
+          </summary>
+          <div class="faq-answer">
+            <p>New supporter content is added regularly, typically 2-3 times per month alongside regular newsletters.</p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
 
-  <!-- Donation Section -->
-  <section class="donation-section animate-on-scroll">
-    <div class="container">
-      <div class="donation-content" style="text-align: center; max-width: 600px; margin: 0 auto; padding: 60px 20px;">
-        <h2>Want to go further?</h2>
-        <p style="margin-bottom: 30px; color: #666; font-size: 1.1em; line-height: 1.6;">Your subscription already makes a difference. If you'd like to go beyond, you can make a one-time gift at $75, $150, $250, or $500. Every donation fuels thoughtful nutrition writing and keeps this work strong.</p>
-        <a href="https://donate.stripe.com/5kQ4gs1kwe2V2AL2P883C00" class="button" style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 1em; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Give More</a>
-        <p style="font-size: 0.8em; color: #9ca3af; margin-top: 15px; font-style: italic;">Donations are extra gifts and do not affect supporter access.</p>
+  <!-- Donation Section - Restyled with Muted Coral Background -->
+  <section class="donation-section" style="
+    background: #F2B8A2;
+    padding: 20px 0;
+    margin: 80px 0 0 0;
+    position: relative;
+    overflow: hidden;
+  ">
+    <div class="container" style="
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    ">
+      <div style="
+        display: flex;
+        align-items: center;
+        gap: 0px;
+        max-width: 900px;
+        margin: 0 auto;
+      ">
+        <!-- Footprint Image Column - Left Side -->
+        <div style="
+          flex: 1;
+          max-width: 45%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          padding-right: 0px;
+          margin-left: 0px;
+        ">
+          <img src="footprint.png" alt="Footprint" style="
+            max-width: 340px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.15));
+          ">
+        </div>
+        
+        <!-- Text Column - Right Side -->
+        <div style="
+          flex: 1;
+          max-width: 55%;
+          display: flex;
+          justify-content: flex-start;
+          margin-left: -60px;
+        ">
+          <div style="
+            text-align: center;
+            max-width: 400px;
+          ">
+            <h2 style="
+              font-family: 'Inter', sans-serif;
+              color: #1F3B57;
+              font-size: clamp(26px, 3.8vw, 34px);
+              font-weight: 700;
+              line-height: 1.2;
+              letter-spacing: -0.3px;
+              margin-bottom: 12px;
+              margin-top: 0;
+            ">Want to go further?</h2>
+            
+            <p style="
+              color: #2B2B2B;
+              font-size: 15px;
+              line-height: 1.6;
+              margin-bottom: 16px;
+              max-width: 52ch;
+              font-family: 'Inter', sans-serif;
+              margin-top: 0;
+              font-weight: 500;
+            ">Your subscription already makes a difference. A one-time gift, in any amount, helps this work grow and remain accessible to those who believe better questions lead to better answers in nutrition.</p>
+            
+            <a href="https://donate.stripe.com/5kQ4gs1kwe2V2AL2P883C00" style="
+              background: #2e7d32;
+              color: white;
+              padding: 12px 24px;
+              border: 2px solid #FFFFFF;
+              border-radius: 8px;
+              font-size: 0.95em;
+              font-weight: 600;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              text-decoration: none;
+              display: inline-block;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.3);
+              font-family: 'Inter', sans-serif;
+            ">Give More</a>
+            
+            <p style="
+              font-size: 12px;
+              color: #4A4A4A;
+              margin-top: 10px;
+              font-family: 'Inter', sans-serif;
+              margin-bottom: 0;
+              font-weight: 400;
+            ">Donations are extra gifts and do not affect supporter access.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -759,14 +1631,107 @@
       console.log('🔍 DIAGNOSTIC: JavaScript is running!');
       console.log('🔍 DIAGNOSTIC: Looking for supporter-signin section...');
       
-             // Check if user is already authenticated
-       const isAuthorized = localStorage.getItem('rv_all_access') === 'true';
-       const signinSection = document.getElementById('supporter-signin');
+      // Check if user is already authenticated
+      const isAuthorized = localStorage.getItem('rv_all_access') === 'true';
+      const signinSection = document.getElementById('supporter-signin');
       
       console.log('🔍 DIAGNOSTIC: Found section:', signinSection);
       console.log('🔍 DIAGNOSTIC: isAuthorized:', isAuthorized);
       
       // Show sign-in section only if user is not authenticated
+      
+      // FAQ Accordion Functionality
+      const faqItems = document.querySelectorAll('.faq-item');
+      const faqBulb = document.querySelector('.faq-bulb');
+      let hasGlowed = false;
+      
+      faqItems.forEach(item => {
+        const summary = item.querySelector('summary');
+        const answer = item.querySelector('.faq-answer');
+        
+        // Handle click events
+        summary.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          const isOpen = item.hasAttribute('open');
+          
+          if (!isOpen) {
+            // Close all other items
+            faqItems.forEach(otherItem => {
+              if (otherItem !== item) {
+                otherItem.removeAttribute('open');
+              }
+            });
+            
+            // Open this item
+            item.setAttribute('open', '');
+            
+            // Smooth height animation
+            const answer = item.querySelector('.faq-answer');
+            const answerContent = answer.querySelector('p');
+            const contentHeight = answerContent.offsetHeight;
+            
+            // Set initial height
+            answer.style.height = '0px';
+            answer.style.opacity = '0';
+            answer.style.transform = 'translateY(-8px)';
+            
+            // Animate to full height
+            requestAnimationFrame(() => {
+              answer.style.transition = 'height 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+              answer.style.height = contentHeight + 'px';
+              answer.style.opacity = '1';
+              answer.style.transform = 'translateY(0)';
+            });
+            
+            // Trigger light bulb glow on first expand
+            if (!hasGlowed && faqBulb) {
+              faqBulb.classList.add('glow');
+              hasGlowed = true;
+              
+              // Remove glow class after animation
+              setTimeout(() => {
+                faqBulb.classList.remove('glow');
+              }, 500);
+            }
+            
+            // Scroll into view on mobile
+            if (window.innerWidth < 768) {
+              setTimeout(() => {
+                item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }, 100);
+            }
+          } else {
+            // Smooth close animation
+            const answer = item.querySelector('.faq-answer');
+            const contentHeight = answer.offsetHeight;
+            
+            answer.style.transition = 'height 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            answer.style.height = '0px';
+            answer.style.opacity = '0';
+            answer.style.transform = 'translateY(-8px)';
+            
+            // Remove open attribute after animation
+            setTimeout(() => {
+              item.removeAttribute('open');
+            }, 1200);
+          }
+        });
+        
+        // Handle keyboard navigation
+        summary.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            summary.click();
+          }
+        });
+      });
+      
+      // Remove default marker from summary elements
+      faqItems.forEach(item => {
+        const summary = item.querySelector('summary');
+        summary.style.listStyle = 'none';
+      });
       if (signinSection) {
         if (isAuthorized) {
           signinSection.style.display = 'none';
@@ -1067,7 +2032,66 @@
           }
         });
       }
+      
+      // FAQ Accordion Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        const faqBulb = document.querySelector('.faq-bulb');
+        let hasGlowed = false;
+        
+        faqItems.forEach(item => {
+          const summary = item.querySelector('summary');
+          
+          // Handle click events
+          summary.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Toggle open state
+            if (item.hasAttribute('open')) {
+              item.removeAttribute('open');
+            } else {
+              item.setAttribute('open', '');
+              
+              // Light bulb glow on first expand
+              if (!hasGlowed && faqBulb) {
+                faqBulb.classList.add('glow');
+                setTimeout(() => {
+                  faqBulb.classList.remove('glow');
+                }, 500);
+                hasGlowed = true;
+              }
+              
+              // Smooth scroll into view
+              if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                setTimeout(() => {
+                  item.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                  });
+                }, 150);
+              } else {
+                item.scrollIntoView({ 
+                  block: 'start' 
+                });
+              }
+            }
+          });
+          
+          // Keyboard navigation
+          summary.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              summary.click();
+            }
+          });
+          
+          // Remove default marker styling
+          summary.style.listStyle = 'none';
+        });
+      });
     });
   </script>
+  
+    <!-- Donation section now uses inline styles - no JavaScript needed -->
 </body>
 </html>
