@@ -1109,6 +1109,383 @@
                    outline: 3px solid rgba(255,255,255,0.7) !important;
                    outline-offset: 2px !important;
                  }
+                 
+                 /* Mobile Performance Optimization for Parallax */
+                 @media (max-width: 768px) {
+                   .benefits-section,
+                   .supporting-simple-section {
+                     background-attachment: scroll !important;
+                   }
+                   
+                   .benefits-section > div,
+                   .supporting-simple-section > div {
+                     background-attachment: scroll !important;
+                   }
+                 }
+                 
+                 /* Disable parallax for devices that prefer reduced motion */
+                 @media (prefers-reduced-motion: reduce) {
+                   .benefits-section,
+                   .supporting-simple-section {
+                     background-attachment: scroll !important;
+                   }
+                   
+                   .benefits-section > div,
+                   .supporting-simple-section > div {
+                     background-attachment: scroll !important;
+                   }
+                 }
+                 
+                 /* Drift Icon Animations */
+                 .benefits-section .parallax-bg .drift-icon {
+                   animation: driftDown 14s linear infinite;
+                   transform-origin: center;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(3) {
+                   animation: driftDownLeft 20s linear infinite;
+                   animation-delay: 2s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(4) {
+                   animation: driftDownRight 17s linear infinite;
+                   animation-delay: 4s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(5) {
+                   animation: driftDownLeft 23s linear infinite;
+                   animation-delay: 1s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(6) {
+                   animation: driftDownRight 13s linear infinite;
+                   animation-delay: 3s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(7) {
+                   animation: driftDownLeft 18s linear infinite;
+                   animation-delay: 5s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(8) {
+                   animation: driftDownRight 15s linear infinite;
+                   animation-delay: 0s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(9) {
+                   animation: driftDownLeft 21s linear infinite;
+                   animation-delay: 6s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(10) {
+                   animation: driftDownRight 18s linear infinite;
+                   animation-delay: 3.5s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(11) {
+                   animation: driftDownLeft 25s linear infinite;
+                   animation-delay: 1.5s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(12) {
+                   animation: driftDownRight 16s linear infinite;
+                   animation-delay: 4.5s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(13) {
+                   animation: driftDownLeft 22s linear infinite;
+                   animation-delay: 2.5s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(14) {
+                   animation: driftDownRight 19s linear infinite;
+                   animation-delay: 1.8s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(15) {
+                   animation: driftDownLeft 24s linear infinite;
+                   animation-delay: 3.2s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(16) {
+                   animation: driftDownRight 20s linear infinite;
+                   animation-delay: 0.8s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(17) {
+                   animation: driftDownLeft 18s linear infinite;
+                   animation-delay: 3.7s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(18) {
+                   animation: driftDownRight 25s linear infinite;
+                   animation-delay: 1.2s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(19) {
+                   animation: driftDownLeft 22s linear infinite;
+                   animation-delay: 4.8s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(20) {
+                   animation: driftDownRight 20s linear infinite;
+                   animation-delay: 2.1s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(21) {
+                   animation: driftDownLeft 26s linear infinite;
+                   animation-delay: 0.5s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(22) {
+                   animation: driftDownRight 18s linear infinite;
+                   animation-delay: 3.3s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(23) {
+                   animation: driftDownLeft 23s linear infinite;
+                   animation-delay: 1.9s;
+                 }
+                 
+                 .benefits-section .parallax-bg .drift-icon:nth-child(24) {
+                   animation: driftDownRight 21s linear infinite;
+                   animation-delay: 4.2s;
+                 }
+                 
+                 @keyframes driftDown {
+                   0% {
+                     transform: translateY(-10%) translateX(0) rotate(0deg);
+                   }
+                   25% {
+                     transform: translateY(25%) translateX(2%) rotate(15deg);
+                   }
+                   50% {
+                     transform: translateY(60%) translateX(-1%) rotate(-8deg);
+                   }
+                   75% {
+                     transform: translateY(95%) translateX(3%) rotate(12deg);
+                   }
+                   100% {
+                     transform: translateY(110%) translateX(0) rotate(0deg);
+                   }
+                 }
+                 
+                 @keyframes driftDownLeft {
+                   0% {
+                     transform: translateY(-10%) translateX(0) rotate(0deg);
+                   }
+                   25% {
+                     transform: translateY(25%) translateX(-3%) rotate(-18deg);
+                   }
+                   50% {
+                     transform: translateY(60%) translateX(-2%) rotate(10deg);
+                   }
+                   75% {
+                     transform: translateY(95%) translateX(-4%) rotate(-14deg);
+                   }
+                   100% {
+                     transform: translateY(110%) translateX(-1%) rotate(0deg);
+                   }
+                 }
+                 
+                 @keyframes driftDownRight {
+                   0% {
+                     transform: translateY(-10%) translateX(0) rotate(0deg);
+                   }
+                   25% {
+                     transform: translateY(25%) translateX(4%) rotate(20deg);
+                   }
+                   50% {
+                     transform: translateY(60%) translateX(2%) rotate(-12deg);
+                   }
+                   75% {
+                     transform: translateY(95%) translateX(5%) rotate(16deg);
+                   }
+                   100% {
+                     transform: translateY(110%) translateX(1%) rotate(0deg);
+                   }
+                 }
+                 
+                 /* Mobile optimizations for drift icons */
+                 @media (max-width: 768px) {
+                   .benefits-section .parallax-bg .drift-icon:nth-child(n+13) {
+                     display: none; /* Hide icons 13+ on mobile */
+                   }
+                   
+                   .supporting-simple-section .parallax-bg .drift-icon:nth-child(n+13) {
+                     display: none; /* Hide icons 13+ on mobile */
+                   }
+                   
+                   .benefits-section .parallax-bg .drift-icon,
+                   .supporting-simple-section .parallax-bg .drift-icon {
+                     animation-duration: 18s; /* Faster on mobile */
+                   }
+                 }
+                 
+                 /* Pause animations for reduced motion preference */
+                 @media (prefers-reduced-motion: reduce) {
+                   .benefits-section .parallax-bg .drift-icon {
+                     animation-play-state: paused;
+                   }
+                 }
+                 
+                 /* Supporting Simple Section Drift Icon Animations */
+                 .supporting-simple-section .parallax-bg .drift-icon {
+                   animation: driftDown 14s linear infinite;
+                   transform-origin: center;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(3) {
+                   animation: driftDownRight 20s linear infinite;
+                   animation-delay: 2s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(4) {
+                   animation: driftDownLeft 17s linear infinite;
+                   animation-delay: 4s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(5) {
+                   animation: driftDownRight 23s linear infinite;
+                   animation-delay: 1s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(6) {
+                   animation: driftDownLeft 13s linear infinite;
+                   animation-delay: 3s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(7) {
+                   animation: driftDownRight 18s linear infinite;
+                   animation-delay: 5s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(8) {
+                   animation: driftDownLeft 15s linear infinite;
+                   animation-delay: 0s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(9) {
+                   animation: driftDownRight 21s linear infinite;
+                   animation-delay: 6s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(10) {
+                   animation: driftDownLeft 18s linear infinite;
+                   animation-delay: 3.5s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(11) {
+                   animation: driftDownRight 25s linear infinite;
+                   animation-delay: 1.5s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(12) {
+                   animation: driftDownLeft 16s linear infinite;
+                   animation-delay: 4.5s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(13) {
+                   animation: driftDownRight 22s linear infinite;
+                   animation-delay: 2.5s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(14) {
+                   animation: driftDownLeft 19s linear infinite;
+                   animation-delay: 1.8s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(15) {
+                   animation: driftDownRight 24s linear infinite;
+                   animation-delay: 3.2s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(16) {
+                   animation: driftDownLeft 20s linear infinite;
+                   animation-delay: 0.8s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(17) {
+                   animation: driftDownRight 18s linear infinite;
+                   animation-delay: 3.7s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(18) {
+                   animation: driftDownLeft 25s linear infinite;
+                   animation-delay: 1.2s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(19) {
+                   animation: driftDownRight 22s linear infinite;
+                   animation-delay: 4.8s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(20) {
+                   animation: driftDownLeft 20s linear infinite;
+                   animation-delay: 2.1s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(21) {
+                   animation: driftDownRight 26s linear infinite;
+                   animation-delay: 0.5s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(22) {
+                   animation: driftDownLeft 18s linear infinite;
+                   animation-delay: 3.3s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(23) {
+                   animation: driftDownRight 23s linear infinite;
+                   animation-delay: 1.9s;
+                 }
+                 
+                 .supporting-simple-section .parallax-bg .drift-icon:nth-child(24) {
+                   animation: driftDownLeft 21s linear infinite;
+                   animation-delay: 4.2s;
+                 }
+                 
+                 /* Mobile optimizations for supporting-simple drift icons */
+                 @media (max-width: 768px) {
+                   .supporting-simple-section .parallax-bg .drift-icon:nth-child(n+8) {
+                     display: none; /* Hide icons 8+ on mobile */
+                   }
+                   
+                   .supporting-simple-section .parallax-bg .drift-icon {
+                     animation-duration: 18s; /* Faster on mobile */
+                   }
+                 }
+                 
+                 /* Pause animations for reduced motion preference */
+                 @media (prefers-reduced-motion: reduce) {
+                   .supporting-simple-section .parallax-bg .drift-icon {
+                     animation-play-state: paused;
+                   }
+                 }
+                 
+                 /* Override default section padding to remove white spacers */
+                 .benefits-section,
+                 .supporting-simple-section,
+                 .faq-section {
+                   padding: 0 !important;
+                 }
+                 
+                 /* Add padding back to the content inside sections */
+                 .benefits-section .container,
+                 .supporting-simple-section .container,
+                 .faq-section .container {
+                   padding: 60px 0 !important;
+                 }
+                 
+                 /* Nuclear option - override ALL sections */
+                 section {
+                   padding: 0 !important;
+                 }
+                 
+                 /* Add padding back to containers */
+                 section .container {
+                   padding: 60px 0 !important;
+                 }
                  </style>
   
   <!-- Google Analytics -->
@@ -1254,8 +1631,8 @@
             <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 16px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2); padding: 12px clamp(32px, 5vw, 48px) clamp(32px, 5vw, 48px) clamp(32px, 5vw, 48px); text-align: center; position: relative; z-index: 1; max-width: 400px; width: 100%;">
             
                          <!-- Animated Crown Icon -->
-             <div style="text-align: center; margin: 0 0 8px 0;">
-               <img src="icons/crown.gif" alt="Premium Supporter Crown" style="width: 100px; height: 100px; display: inline-block; vertical-align: middle;">
+             <div style="text-align: center; margin: 0 0 8px 0; display: flex; justify-content: center; align-items: center;">
+               <img src="icons/crown.gif" alt="Premium Supporter Crown" style="width: 100px; height: 100px; display: block; margin: 0 auto;">
              </div>
             
             <h2>Already a Supporter?</h2>
@@ -1326,11 +1703,279 @@
    <!-- Toast Notifications -->
    <div id="toastContainer" style="position: fixed; top: 20px; right: 20px; z-index: 1001; max-width: 400px;"></div>
  
-   <!-- Benefits Section (Merged) -->
-  <section class="benefits-section animate-on-scroll">
-    <div class="container">
-      <!-- Subtle Divider for Cohesion -->
-      <div style="height: 3px; background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.6), rgba(245, 158, 11, 0.8), rgba(245, 158, 11, 0.6), transparent); margin: 0 auto 60px auto; width: 80%; border-radius: 2px;"></div>
+   <!-- Supporter sections wrapper with continuous background -->
+  <div style="
+    position: relative;
+    background: linear-gradient(180deg, #F8FAFD 0%, #EEF4FF 100%);
+    overflow: hidden;
+  ">
+    <!-- Global background elements for both sections -->
+    <div style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    ">
+      <!-- Fixed concentric rings -->
+      <div style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        height: 800px;
+        border: 1px solid rgba(0,0,0,0.03);
+        border-radius: 50%;
+      "></div>
+      <div style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        border: 1px solid rgba(0,0,0,0.02);
+        border-radius: 50%;
+      "></div>
+      <div style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        border: 1px solid rgba(0,0,0,0.015);
+        border-radius: 50%;
+      "></div>
+      
+      <!-- Fixed color glows -->
+      <div style="
+        position: absolute;
+        top: 15%;
+        left: 20%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(255, 186, 120, 0.28) 0%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(40px);
+      "></div>
+      <div style="
+        position: absolute;
+        bottom: 10%;
+        right: 15%;
+        width: 450px;
+        height: 450px;
+        background: radial-gradient(circle, rgba(120, 180, 255, 0.24) 0%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(35px);
+      "></div>
+    </div>
+    
+    <!-- Global diagonal lines overlay for supporter sections only -->
+    <div style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(20, 20, 20, 0.06) 0px,
+        rgba(20, 20, 20, 0.06) 2px,
+        transparent 2px,
+        transparent 6px
+      );
+      pointer-events: none;
+      z-index: 0;
+    "></div>
+
+    <!-- Benefits Section (Merged) -->
+    <section class="benefits-section animate-on-scroll" style="
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+      padding: 0 !important;
+    ">
+    <!-- Parallax Background -->
+    <div class="parallax-bg" style="
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    ">
+      
+      <!-- Drift Icons -->
+      <img src="/icons/drop1.png" class="drift-icon drop" style="
+        position: absolute;
+        top: 10%;
+        left: 15%;
+        width: 32px;
+        height: 32px;
+        opacity: 0.18;
+        z-index: 0;
+      ">
+      <img src="/icons/drop2.png" class="drift-icon drop" style="
+        position: absolute;
+        top: 25%;
+        right: 25%;
+        width: 28px;
+        height: 28px;
+        opacity: 0.15;
+        z-index: 0;
+      ">
+      <img src="/icons/leaf1.png" class="drift-icon leaf" style="
+        position: absolute;
+        top: 8%;
+        left: 25%;
+        width: 36px;
+        height: 36px;
+        opacity: 0.20;
+        z-index: 0;
+      ">
+      <img src="/icons/leaf2.png" class="drift-icon leaf" style="
+        position: absolute;
+        top: 12%;
+        left: 75%;
+        width: 24px;
+        height: 24px;
+        opacity: 0.12;
+        z-index: 0;
+      ">
+      <img src="/icons/sprout1.png" class="drift-icon sprout" style="
+        position: absolute;
+        top: 18%;
+        right: 15%;
+        width: 40px;
+        height: 40px;
+        opacity: 0.16;
+        z-index: 0;
+      ">
+      <img src="/icons/leaf1.png" class="drift-icon leaf" style="
+        position: absolute;
+        top: 22%;
+        left: 45%;
+        width: 30px;
+        height: 30px;
+        opacity: 0.14;
+        z-index: 0;
+      ">
+      <img src="/icons/drop1.png" class="drift-icon drop" style="
+        position: absolute;
+        top: 28%;
+        left: 85%;
+        width: 26px;
+        height: 26px;
+        opacity: 0.19;
+        z-index: 0;
+      ">
+      <img src="/icons/leaf2.png" class="drift-icon leaf" style="
+        position: absolute;
+        top: 32%;
+        right: 35%;
+        width: 34px;
+        height: 34px;
+        opacity: 0.17;
+        z-index: 0;
+      ">
+      <img src="/icons/drop2.png" class="drift-icon drop" style="
+        position: absolute;
+        top: 38%;
+        left: 15%;
+        width: 29px;
+        height: 29px;
+        opacity: 0.13;
+        z-index: 0;
+      ">
+      <img src="/icons/sprout1.png" class="drift-icon sprout" style="
+        position: absolute;
+        top: 42%;
+        right: 55%;
+        width: 38px;
+        height: 38px;
+        opacity: 0.21;
+        z-index: 0;
+      ">
+      
+      <!-- Additional drift icons for first section -->
+      <img src="/icons/leaf1.png" class="drift-icon leaf" style="
+        position: absolute;
+        top: 48%;
+        left: 65%;
+        width: 28px;
+        height: 28px;
+        opacity: 0.18;
+        z-index: 0;
+      ">
+      <img src="/icons/drop2.png" class="drift-icon drop" style="
+        position: absolute;
+        top: 52%;
+        right: 25%;
+        width: 32px;
+        height: 32px;
+        opacity: 0.13;
+        z-index: 0;
+      ">
+      <img src="/icons/leaf2.png" class="drift-icon leaf" style="
+        position: absolute;
+        top: 58%;
+        left: 35%;
+        width: 25px;
+        height: 25px;
+        opacity: 0.16;
+        z-index: 0;
+      ">
+      <img src="/icons/sprout1.png" class="drift-icon sprout" style="
+        position: absolute;
+        top: 62%;
+        right: 65%;
+        width: 37px;
+        height: 37px;
+        opacity: 0.20;
+        z-index: 0;
+      ">
+      <img src="/icons/drop1.png" class="drift-icon drop" style="
+        position: absolute;
+        top: 68%;
+        left: 55%;
+        width: 30px;
+        height: 30px;
+        opacity: 0.14;
+        z-index: 0;
+      ">
+      <img src="/icons/leaf1.png" class="drift-icon leaf" style="
+        position: absolute;
+        top: 72%;
+        right: 45%;
+        width: 26px;
+        height: 26px;
+        opacity: 0.17;
+        z-index: 0;
+      ">
+      <img src="/icons/drop2.png" class="drift-icon drop" style="
+        position: absolute;
+        top: 78%;
+        left: 25%;
+        width: 34px;
+        height: 34px;
+        opacity: 0.12;
+        z-index: 0;
+      ">
+      <img src="/icons/sprout1.png" class="drift-icon sprout" style="
+        position: absolute;
+        top: 82%;
+        right: 35%;
+        width: 35px;
+        height: 35px;
+        opacity: 0.19;
+        z-index: 0;
+      ">
+
+    </div>
+    <div class="container" style="padding: 60px 0; position: relative; z-index: 50;">
+
                   <div style="text-align: center; margin-bottom: 50px;">
               <h2 style="color: #1f2937; font-size: 2.8em; font-weight: 700; margin-bottom: 20px; line-height: 1.2; position: relative;">
                 What Supporters Get
@@ -1342,7 +1987,7 @@
       
       <!-- 3 Core Benefits -->
       <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px;">
-                        <div class="benefit-item" style="padding: 40px 30px; text-align: center; transition: all 0.3s ease; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(245, 158, 11, 0.15);">
+                        <div class="benefit-item" style="padding: 40px 30px; text-align: center; transition: all 0.3s ease; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(245, 158, 11, 0.15); background: white !important; border-radius: 12px; position: relative; z-index: 100; backdrop-filter: none;">
           <div>
             <div class="benefit-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.5em;">
               <i class="fas fa-envelope" aria-hidden="true"></i>
@@ -1353,7 +1998,7 @@
                       <div style="background: white; color: #f59e0b; padding: 6px 14px; border-radius: 20px; font-size: 0.8em; font-weight: 500; display: inline-block; margin-top: 20px; border: 2px solid #f59e0b;">Ask Me Anything</div>
         </div>
         
-        <div class="benefit-item" style="padding: 40px 30px; text-align: center; transition: all 0.3s ease; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(59, 130, 246, 0.15);">
+        <div class="benefit-item" style="padding: 40px 30px; text-align: center; transition: all 0.3s ease; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(59, 130, 246, 0.15); background: white !important; border-radius: 12px; position: relative; z-index: 100; backdrop-filter: none;">
           <div>
             <div class="benefit-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.5em;">
               <i class="fas fa-book" aria-hidden="true"></i>
@@ -1364,7 +2009,7 @@
                       <div style="background: white; color: #3b82f6; padding: 6px 14px; border-radius: 20px; font-size: 0.8em; font-weight: 500; display: inline-block; margin-top: 20px; border: 2px solid #3b82f6;">All Issues Unlocked</div>
         </div>
         
-        <div class="benefit-item" style="padding: 40px 30px; text-align: center; transition: all 0.3s ease; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(16, 185, 129, 0.15);">
+        <div class="benefit-item" style="padding: 40px 30px; text-align: center; transition: all 0.3s ease; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 15px rgba(16, 185, 129, 0.15); background: white !important; border-radius: 12px; position: relative; z-index: 100; backdrop-filter: none;">
           <div>
             <div class="benefit-icon" style="background: linear-gradient(135deg, #10b981, #059669); color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.5em;">
               <i class="fas fa-file-alt" aria-hidden="true"></i>
@@ -1378,19 +2023,231 @@
     </div>
   </section>
 
-  <!-- Subtle Divider for Cohesion -->
-  <div style="height: 3px; background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.6), rgba(245, 158, 11, 0.8), rgba(245, 158, 11, 0.6), transparent); margin: 0 auto 15px auto !important; width: 80%; border-radius: 2px;"></div>
-
   <!-- Supporting Is Simple -->
-            <section class="supporting-simple-section animate-on-scroll" style="background: #f0f4f8; padding: 90px 0 60px 0;">
-    <div class="container">
+            <section class="supporting-simple-section animate-on-scroll" style="
+              position: relative;
+              overflow: hidden;
+              z-index: 0;
+              padding: 0 !important;
+            ">
+              <!-- Parallax Background -->
+                  <div class="parallax-bg" style="
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    ">
+                
+
+                
+                <!-- Drift Icons -->
+                <img src="/icons/drop1.png" class="drift-icon drop" style="
+                  position: absolute;
+                  top: 10%;
+                  left: 15%;
+                  width: 32px;
+                  height: 32px;
+                  opacity: 0.18;
+                  z-index: 2;
+                ">
+                <img src="/icons/drop2.png" class="drift-icon drop" style="
+                  position: absolute;
+                  top: 25%;
+                  right: 25%;
+                  width: 28px;
+                  height: 28px;
+                  opacity: 0.15;
+                  z-index: 2;
+                ">
+                <img src="/icons/leaf1.png" class="drift-icon leaf" style="
+                  position: absolute;
+                  top: 40%;
+                  left: 30%;
+                  width: 36px;
+                  height: 36px;
+                  opacity: 0.20;
+                  z-index: 2;
+                ">
+                <img src="/icons/leaf2.png" class="drift-icon leaf" style="
+                  position: absolute;
+                  top: 15%;
+                  left: 60%;
+                  width: 24px;
+                  height: 24px;
+                  opacity: 0.12;
+                  z-index: 2;
+                ">
+                <img src="/icons/sprout1.png" class="drift-icon sprout" style="
+                  position: absolute;
+                  top: 35%;
+                  right: 40%;
+                  width: 40px;
+                  height: 40px;
+                  opacity: 0.16;
+                  z-index: 2;
+                ">
+                <img src="/icons/leaf1.png" class="drift-icon leaf" style="
+                  position: absolute;
+                  top: 50%;
+                  left: 45%;
+                  width: 30px;
+                  height: 30px;
+                  opacity: 0.14;
+                  z-index: 2;
+                ">
+                <img src="/icons/drop1.png" class="drift-icon drop" style="
+                  position: absolute;
+                  top: 20%;
+                  left: 75%;
+                  width: 26px;
+                  height: 26px;
+                  opacity: 0.19;
+                  z-index: 2;
+                ">
+                <img src="/icons/leaf2.png" class="drift-icon leaf" style="
+                  position: absolute;
+                  top: 30%;
+                  right: 20%;
+                  width: 34px;
+                  height: 34px;
+                  opacity: 0.17;
+                  z-index: 2;
+                ">
+                <img src="/icons/drop2.png" class="drift-icon drop" style="
+                  position: absolute;
+                  top: 45%;
+                  left: 70%;
+                  width: 29px;
+                  height: 29px;
+                  opacity: 0.13;
+                  z-index: 2;
+                ">
+                      <img src="/icons/sprout1.png" class="drift-icon sprout" style="
+        position: absolute;
+        top: 55%;
+        right: 35%;
+        width: 38px;
+        height: 38px;
+        opacity: 0.21;
+        z-index: 0;
+      ">
+      <img src="/icons/drop1.png" class="drift-icon drop" style="
+        position: absolute;
+        top: 65%;
+        left: 25%;
+        width: 31px;
+        height: 31px;
+        opacity: 0.16;
+        z-index: 0;
+      ">
+      <img src="/icons/leaf2.png" class="drift-icon leaf" style="
+        position: absolute;
+        top: 70%;
+        right: 30%;
+        width: 27px;
+        height: 27px;
+        opacity: 0.14;
+        z-index: 0;
+      ">
+      <img src="/icons/leaf1.png" class="drift-icon leaf" style="
+        position: absolute;
+        top: 75%;
+        left: 55%;
+        width: 33px;
+        height: 33px;
+        opacity: 0.19;
+        z-index: 0;
+      ">
+      <img src="/icons/drop2.png" class="drift-icon drop" style="
+        position: absolute;
+        top: 80%;
+        right: 45%;
+        width: 29px;
+        height: 29px;
+        opacity: 0.17;
+        z-index: 0;
+      ">
+      <img src="/icons/sprout1.png" class="drift-icon sprout" style="
+        position: absolute;
+        top: 85%;
+        left: 40%;
+        width: 35px;
+        height: 35px;
+        opacity: 0.15;
+        z-index: 0;
+      ">
+      <img src="/icons/leaf1.png" class="drift-icon leaf" style="
+        position: absolute;
+        top: 5%;
+        left: 35%;
+        width: 28px;
+        height: 28px;
+        opacity: 0.18;
+        z-index: 0;
+      ">
+      <img src="/icons/drop2.png" class="drift-icon drop" style="
+        position: absolute;
+        top: 12%;
+        right: 35%;
+        width: 32px;
+        height: 32px;
+        opacity: 0.13;
+        z-index: 0;
+      ">
+      <img src="/icons/leaf2.png" class="drift-icon leaf" style="
+        position: absolute;
+        top: 18%;
+        left: 65%;
+        width: 25px;
+        height: 25px;
+        opacity: 0.16;
+        z-index: 0;
+      ">
+      <img src="/icons/sprout1.png" class="drift-icon sprout" style="
+        position: absolute;
+        top: 22%;
+        right: 15%;
+        width: 37px;
+        height: 37px;
+        opacity: 0.20;
+        z-index: 0;
+      ">
+      <img src="/icons/drop1.png" class="drift-icon drop" style="
+        position: absolute;
+        top: 28%;
+        left: 45%;
+        width: 30px;
+        height: 30px;
+        opacity: 0.14;
+        z-index: 0;
+      ">
+      <img src="/icons/leaf1.png" class="drift-icon leaf" style="
+        position: absolute;
+        top: 33%;
+        right: 50%;
+        width: 26px;
+        height: 26px;
+        opacity: 0.17;
+        z-index: 2;
+      ">
+      <img src="/icons/drop2.png" class="drift-icon drop" style="
+        position: absolute;
+        top: 38%;
+        left: 20%;
+        width: 34px;
+        height: 34px;
+        opacity: 0.12;
+        z-index: 2;
+      ">
+    </div>
+    <div class="container" style="padding: 60px 0; position: relative; z-index: 4;">
       <div style="text-align: center; margin-bottom: 80px;">
         <h2 style="color: #1f2937; font-size: 3.2em; font-weight: 700; margin-bottom: 0; line-height: 1.2;">Supporting Is Simple</h2>
         <p style="color: #6b7280; font-size: 1.2em; font-weight: 400; line-height: 1.8; max-width: 800px; margin: 25px auto 0; opacity: 1;">Three quick steps, no barriers, no surprises.</p>
       </div>
       
       <div class="supporting-simple-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
-        <div class="supporting-simple-item" style="text-align: center; background: #FFE8C9; border: 1px solid rgba(246, 165, 58, 0.25); border-radius: 20px; padding: 48px 32px; box-shadow: 0 12px 40px rgba(246, 165, 58, 0.08); position: relative;">
+        <div class="supporting-simple-item" style="text-align: center; background: #FFE8C9 !important; border: 1px solid rgba(246, 165, 58, 0.25); border-radius: 20px; padding: 48px 32px; box-shadow: 0 12px 40px rgba(246, 165, 58, 0.08); position: relative; z-index: 20; backdrop-filter: none;">
           <div class="supporting-simple-seal" style="background: rgba(246, 165, 58, 0.25); color: #f59e0b; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.3em;">
             <i class="fas fa-key" aria-hidden="true"></i>
           </div>
@@ -1398,7 +2255,7 @@
           <p style="color: #6b7280; line-height: 1.7; font-size: 1em; margin: 0;">One plan unlocks every benefit.</p>
         </div>
         
-                  <div class="supporting-simple-item" style="text-align: center; background: #D4E2FF; border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 20px; padding: 48px 32px; box-shadow: 0 12px 40px rgba(59, 130, 246, 0.08); position: relative;">
+                  <div class="supporting-simple-item" style="text-align: center; background: #D4E2FF !important; border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 20px; padding: 48px 32px; box-shadow: 0 12px 40px rgba(59, 130, 246, 0.08); position: relative; z-index: 20; backdrop-filter: none;">
           <div class="supporting-simple-seal" style="background: rgba(59, 130, 246, 0.25); color: #3b82f6; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.3em;">
             <i class="fas fa-shield-alt" aria-hidden="true"></i>
           </div>
@@ -1406,7 +2263,7 @@
           <p style="color: #6b7280; line-height: 1.7; font-size: 1em; margin: 0;">Free stays free. Supporting only adds perks.</p>
         </div>
         
-        <div class="supporting-simple-item" style="text-align: center; background: #D8F2E3; border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 20px; padding: 48px 32px; box-shadow: 0 12px 40px rgba(16, 185, 129, 0.08); position: relative;">
+        <div class="supporting-simple-item" style="text-align: center; background: #D8F2E3 !important; border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 20px; padding: 48px 32px; box-shadow: 0 12px 40px rgba(16, 185, 129, 0.08); position: relative; z-index: 20; backdrop-filter: none;">
           <div class="supporting-simple-seal" style="background: rgba(16, 185, 129, 0.25); color: #10b981; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.3em;">
             <i class="fas fa-bolt" aria-hidden="true"></i>
           </div>
@@ -1416,11 +2273,10 @@
       </div>
     </div>
   </section>
+  </div>
 
   <!-- FAQ Section - Premium Accordion -->
   <section class="faq-section animate-on-scroll">
-    <!-- Orange Divider Overlay -->
-    <div class="faq-divider"></div>
     
     <div class="container">
       <div class="faq-header">
@@ -1509,8 +2365,8 @@
   <!-- Donation Section - Restyled with Muted Coral Background -->
   <section class="donation-section" style="
     background: #F2B8A2;
-    padding: 20px 0;
-    margin: 80px 0 0 0;
+    padding: 8px 0;
+    margin: 40px 0 0 0;
     position: relative;
     overflow: hidden;
   ">
@@ -1537,7 +2393,7 @@
           margin-left: 0px;
         ">
           <img src="footprint.png" alt="Footprint" style="
-            max-width: 340px;
+            max-width: 220px;
             width: 100%;
             height: auto;
             object-fit: contain;
@@ -1564,7 +2420,7 @@
               font-weight: 700;
               line-height: 1.2;
               letter-spacing: -0.3px;
-              margin-bottom: 12px;
+              margin-bottom: 8px;
               margin-top: 0;
             ">Want to go further?</h2>
             
@@ -1572,7 +2428,7 @@
               color: #2B2B2B;
               font-size: 15px;
               line-height: 1.6;
-              margin-bottom: 16px;
+              margin-bottom: 12px;
               max-width: 52ch;
               font-family: 'Inter', sans-serif;
               margin-top: 0;
@@ -1598,7 +2454,7 @@
             <p style="
               font-size: 12px;
               color: #4A4A4A;
-              margin-top: 10px;
+              margin-top: 8px;
               font-family: 'Inter', sans-serif;
               margin-bottom: 0;
               font-weight: 400;
