@@ -7460,6 +7460,38 @@ h1.hero-heading {
     max-width: 500px;
 }
 
+/* Mobile styles for better text readability */
+@media (max-width: 768px) {
+    .simple-newsletter-banner .banner-content {
+        justify-content: center !important;
+        padding-right: 0 !important;
+        padding: 0 20px !important;
+    }
+    
+    .simple-newsletter-banner .banner-text {
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 20px !important;
+        padding: 30px 25px !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        max-width: 90% !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+    
+    .simple-newsletter-banner .banner-text h2 {
+        color: #1e293b !important;
+        text-shadow: none !important;
+    }
+    
+    .simple-newsletter-banner .banner-text p {
+        color: #334155 !important;
+        text-shadow: none !important;
+    }
+}
+
 .banner-text h2 {
     color: #1e293b;
     font-size: 2.5rem;
