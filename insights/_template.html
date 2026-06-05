@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!--
+    ============================================================
+    REUSABLE POST TEMPLATE  ::  insights/_template.html
+    ============================================================
+    This file is NOT a real post. It is a starting point for new
+    Insights posts. To create a real post:
+
+      1. Copy this file to insights/your-post-slug.html
+      2. Update the <title>, <meta name="description">, og: and
+         twitter: tags, and the canonical URL.
+      3. Remove or set <meta name="robots" content="noindex"> as
+         appropriate.
+      4. Replace every [PLACEHOLDER] in the body.
+      5. Pick the right Category Pill (research / thought /
+         lessons / guides) and matching icon color.
+      6. Remove the yellow "Template preview" banner near the
+         top of the body.
+      7. Add a card for this post to insights.html so it shows
+         up in the index.
+
+    Paths are relative to /insights/, so parent-level assets are
+    referenced with ../ (e.g. ../rajiv-styles.css).
+    ============================================================
+  -->
+
+  <title>[Template] Post Title | Rajiv Vakani</title>
+  <meta name="description" content="[Template post &mdash; replace with a 1-2 sentence summary of the real post.]">
+
+  <!-- Template phase: keep out of search results -->
+  <meta name="robots" content="noindex">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rajivvakani.com/insights/_template.html" />
+  <meta property="og:title" content="[Template] Post Title | Rajiv Vakani" />
+  <meta property="og:description" content="[Template post &mdash; replace with a 1-2 sentence summary of the real post.]" />
+  <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
+  <meta property="og:site_name" content="Rajiv Vakani" />
+
+  <link rel="canonical" href="https://rajivvakani.com/insights/_template.html" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://rajivvakani.com/insights/_template.html" />
+  <meta property="twitter:title" content="[Template] Post Title | Rajiv Vakani" />
+  <meta property="twitter:description" content="[Template post &mdash; replace with a 1-2 sentence summary of the real post.]" />
+  <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../rajiv-styles.css?v=20250116k">
+  <link rel="icon" type="image/png" href="../favicon.png" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0L41N5K2WV');
+  </script>
+
+  <script defer src="../animations.js"></script>
+
+  <style>
+    /* Post-page reading styles. Page-local so rajiv-styles.css stays untouched. */
+    .post-page .post-hero {
+      background: linear-gradient(135deg, #1e293b 0%, #475569 60%, #64748b 100%);
+      min-height: 50vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+    .post-page .post-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.05));
+    }
+    .post-page .post-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .post-page .post-category-pill {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 14px;
+      font-size: 0.85em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .post-page .post-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 16px 0;
+      color: #ffffff;
+    }
+    .post-page .post-meta {
+      font-size: 0.95em;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 0;
+    }
+    .post-page .post-meta span + span::before {
+      content: ' \00b7 ';
+      margin: 0 6px;
+      opacity: 0.7;
+    }
+
+    .post-page .post-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+      font-family: 'Lora', 'Georgia', serif;
+      color: #1f2937;
+      line-height: 1.75;
+      font-size: 1.08em;
+    }
+    .post-page .post-body h2 {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.6em;
+      font-weight: 700;
+      margin-top: 2em;
+      margin-bottom: 0.6em;
+      color: #1f2937;
+      line-height: 1.3;
+    }
+    .post-page .post-body h3 {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.25em;
+      font-weight: 600;
+      margin-top: 1.8em;
+      margin-bottom: 0.5em;
+      color: #1f2937;
+    }
+    .post-page .post-body p { margin: 0 0 1.2em 0; }
+    .post-page .post-body a {
+      color: #1d4ed8;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-page .post-body a:hover { color: #1e40af; }
+    .post-page .post-body blockquote {
+      border-left: 4px solid #f59e0b;
+      background: #fffbeb;
+      padding: 16px 24px;
+      margin: 1.5em 0;
+      font-style: italic;
+      color: #4b5563;
+      border-radius: 0 8px 8px 0;
+    }
+    .post-page .post-body ul, .post-page .post-body ol {
+      margin: 0 0 1.2em 1.2em;
+      padding-left: 0.5em;
+    }
+    .post-page .post-body li { margin-bottom: 0.5em; }
+    .post-page .post-body code {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.95em;
+    }
+    .post-page .post-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 1.5em 0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .post-page .post-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #4b5563;
+      text-decoration: none;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 0.95em;
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+    .post-page .post-back-link:hover { color: #1f2937; }
+
+    .post-page .post-footer-cta {
+      max-width: 720px;
+      margin: 0 auto 80px;
+      padding: 32px 24px;
+      background: #fef3c7;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #fde68a;
+    }
+    .post-page .post-footer-cta p { margin: 0 0 16px 0; color: #92400e; font-family: 'Inter Tight', sans-serif; }
+    .post-page .post-footer-cta .button { display: inline-block; }
+  </style>
+</head>
+<body class="post-page">
+
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a href="../index.html" class="site-logo">Rajiv Vakani</a>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../journey.html">Journey</a></li>
+        <li><a href="../insights.html" class="active">Insights</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+
+      <div class="social-icons" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu-overlay"></div>
+
+  <!-- Template preview banner (REMOVE when this file is copied to become a real post) -->
+  <div class="draft-preview-banner" style="background: linear-gradient(135deg, #fef3c7, #fde68a); border-bottom: 2px solid #f59e0b; padding: 12px 0; text-align: center; color: #92400e; font-size: 0.95em; font-weight: 600;">
+    <div class="container">
+      Template preview &mdash; this is a reusable post template, not a real post. Copy this file to create a new post and delete this banner.
+    </div>
+  </div>
+
+  <!-- Post Hero -->
+  <header class="hero post-hero">
+    <div class="post-hero-overlay"></div>
+    <div class="post-hero-inner">
+      <span class="post-category-pill">[Category &mdash; pick: Research Summary / Thought Piece / Lesson Learned / Practical Guide]</span>
+      <h1 class="post-title">[Post Title Goes Here]</h1>
+      <p class="post-meta">
+        <span>[Month DD, YYYY]</span>
+        <span>~[X] min read</span>
+        <span>By Rajiv Vakani</span>
+      </p>
+    </div>
+  </header>
+
+  <!-- Post Body -->
+  <article class="post-body animate-on-scroll">
+    <a href="../insights.html" class="post-back-link">
+      <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Insights
+    </a>
+
+    <p><strong>[Opening hook &mdash; one or two sentences that pull the reader in.]</strong> Lead with the question, the surprise, or the practical promise. Avoid generic intros.</p>
+
+    <p>[Build the case, share the context, or set up the framing in the next paragraph or two. Plain paragraphs use the body font (Lora) for comfortable long-form reading.]</p>
+
+    <h2>[Section heading]</h2>
+
+    <p>[Body paragraph. Use <strong>bold</strong> for emphasis and <em>italic</em> when introducing a term. <a href="#">Linked text</a> stands out clearly.]</p>
+
+    <h3>[Sub-section heading]</h3>
+
+    <p>[More body. Sub-sections are good for breaking down complex ideas into bite-sized pieces.]</p>
+
+    <ul>
+      <li>[List item one]</li>
+      <li>[List item two]</li>
+      <li>[List item three]</li>
+    </ul>
+
+    <blockquote>
+      [A pull-quote, a memorable line, or a quote from a source. The styled blockquote draws the eye.]
+    </blockquote>
+
+    <h2>[Another section heading]</h2>
+
+    <p>[Continue the post. Aim for clarity over completeness. Cut anything that doesn't earn its place.]</p>
+
+    <ol>
+      <li>[Numbered step or argument one]</li>
+      <li>[Numbered step or argument two]</li>
+      <li>[Numbered step or argument three]</li>
+    </ol>
+
+    <h2>What to take away</h2>
+
+    <p>[End with the one thing you want the reader to remember. If it's a Practical Guide, this is the one action. If it's a Research Summary, this is the one finding. If it's a Thought Piece, this is the one idea worth sitting with.]</p>
+
+    <p><em>[Optional: a soft footer line &mdash; sources, related posts, or a personal note.]</em></p>
+  </article>
+
+  <!-- Closing CTA -->
+  <div class="post-footer-cta">
+    <p>Have a thought on this post? I'd love to hear it.</p>
+    <a href="../contact.html" class="button">Send Me a Note &rarr;</a>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-social" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important; justify-content: center !important; width: 100% !important; margin-bottom: 20px !important;">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+      </div>
+      <p>&copy; 2025-2026 Rajiv Vakani. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const overlay = document.querySelector('.mobile-menu-overlay');
+      const mainNav = document.querySelector('.main-nav');
+      const heroSection = document.querySelector('.post-hero');
+
+      function handleNavScroll() {
+        if (heroSection && mainNav) {
+          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+          const scrollPosition = window.pageYOffset + 100;
+          if (scrollPosition > heroBottom) {
+            mainNav.classList.add('scrolled');
+          } else {
+            mainNav.classList.remove('scrolled');
+          }
+        }
+      }
+      window.addEventListener('scroll', handleNavScroll);
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function () {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          if (overlay) overlay.classList.toggle('active');
+        });
+        if (overlay) {
+          overlay.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            overlay.classList.remove('active');
+          });
+        }
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+          });
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

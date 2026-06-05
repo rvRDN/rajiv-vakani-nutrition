@@ -3957,27 +3957,27 @@ p {
 }
 
 .nav-links li a:hover {
-  color: var(--primary-blue-dark);
-  background-color: rgba(255, 108, 55, 0.1); /* Light orange background */
+  color: #b8602e; /* burnt orange — editorial accent */
+  background-color: rgba(184, 96, 46, 0.08);
   padding: 8px 12px;
   border-radius: 6px;
-  margin: -8px -12px; /* Compensate for padding */
+  margin: -8px -12px;
 }
 
-/* Active state - prominent orange background with white text */
+/* Active state - editorial burnt-orange pill */
 .nav-links li a.active::after {
-  width: 0; /* Remove the line */
+  width: 0;
   background-color: transparent;
 }
 
 .nav-links li a.active {
   color: white !important;
-  background-color: #ff7433; /* Solid orange background */
+  background-color: #b8602e; /* burnt orange — editorial accent */
   padding: 8px 12px;
   border-radius: 6px;
-  margin: -8px -12px; /* Compensate for padding */
+  margin: -8px -12px;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(255, 108, 55, 0.3);
+  box-shadow: 0 2px 10px rgba(184, 96, 46, 0.22);
 }
 
 .nav-links li a:hover {
@@ -8070,11 +8070,13 @@ h1.hero-heading {
 
 
 
-/* === Social Icons (nav menu + footer) === */
+/* === Social Icons (nav menu + footer) ===
+   Monochrome glyphs, no circles. Site-wide editorial treatment. */
 .social-icons,
 .footer-social {
   display: inline-flex;
-  gap: 8px;
+  gap: 18px;
+  align-items: center;
 }
 
 .social-icons a,
@@ -8082,22 +8084,34 @@ h1.hero-heading {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: var(--primary-blue);
-  color: #fff;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border-radius: 0;
+  color: #5a5a5a;
   text-decoration: none;
-  font-size: 16px;
-  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
-  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  font-size: 1.05rem;
+  line-height: 1;
+  padding: 0;
+  transition: color .2s ease, transform .2s ease;
+  box-shadow: none;
+}
+
+/* Footer sits on a dark ground site-wide; lighten the icons there. */
+.footer-social a {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .social-icons a:hover,
 .footer-social a:hover {
-  background-color: var(--button-secondary);
+  background-color: transparent;
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  box-shadow: none;
+  color: #b8602e; /* burnt orange — accent */
+}
+
+.footer-social a:hover {
+  color: #ffffff;
 }
 
 /* Navigation alignment helpers */
@@ -8123,13 +8137,11 @@ h1.hero-heading {
 
 /* Remove conflicting margin rules - handled above */
 
-/* Mobile behavior: keep icons visible but not oversized */
+/* Mobile behavior: keep icons proportional */
 @media (max-width: 768px) {
   .social-icons a,
   .footer-social a {
-    width: 32px;
-    height: 32px;
-    font-size: 15px;
+    font-size: 1rem;
   }
 }
 

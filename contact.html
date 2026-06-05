@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Rajiv Vakani</title>
+  <meta name="description" content="Get in touch with Rajiv Vakani. Questions, ideas, and collaborations on nutrition, food, and education welcome.">
+
+  <!-- Draft phase: keep out of search results until launch -->
+  <meta name="robots" content="noindex">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rajivvakani.com/contact.html" />
+  <meta property="og:title" content="Contact | Rajiv Vakani" />
+  <meta property="og:description" content="Get in touch with Rajiv Vakani. Questions, ideas, and collaborations on nutrition, food, and education welcome." />
+  <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
+  <meta property="og:site_name" content="Rajiv Vakani" />
+
+  <link rel="canonical" href="https://rajivvakani.com/contact.html" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://rajivvakani.com/contact.html" />
+  <meta property="twitter:title" content="Contact | Rajiv Vakani" />
+  <meta property="twitter:description" content="Get in touch with Rajiv Vakani. Questions, ideas, and collaborations on nutrition, food, and education welcome." />
+  <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="rajiv-styles.css?v=20250116k">
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0L41N5K2WV');
+  </script>
+
+  <script defer src="animations.js"></script>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="site-logo">Rajiv Vakani</a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="journey.html">Journey</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+
+      <div class="social-icons" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu-overlay"></div>
+
+  <!-- Draft preview banner (remove when the page goes live in Phase 2/3) -->
+  <div class="draft-preview-banner" style="background: linear-gradient(135deg, #fef3c7, #fde68a); border-bottom: 2px solid #f59e0b; padding: 12px 0; text-align: center; color: #92400e; font-size: 0.95em; font-weight: 600; position: relative; z-index: 50;">
+    <div class="container">
+      Draft preview &mdash; this page is being built and is not yet linked from the live navigation. The form below is wired to Netlify Forms; live submissions will land in your Netlify dashboard.
+    </div>
+  </div>
+
+  <!-- Static frosted hero with a warm gradient (no video, to keep focus on the form) -->
+  <header class="hero homepage-hero" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 35%, #fbbf24 80%, #f59e0b 100%); min-height: 50vh;">
+    <div class="hero-content">
+      <div class="frosted-hero-panel" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1 class="hero-heading" style="text-align: center; margin: 0 auto;">Contact</h1>
+        <p class="hero-tagline" style="text-align: center; margin: 0 auto; margin-bottom: 0;">
+          Have a question, an idea, or a collaboration in mind? Let's talk.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Section (form + social panel) -->
+  <section class="contact-section animate-on-scroll" id="contact-form">
+    <div class="floating-premium-1"></div>
+    <div class="floating-premium-2"></div>
+    <div class="floating-premium-3"></div>
+
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p class="contact-intro">I'm always eager to engage with thoughtful conversations on food, health, education, and ideas. Reach out below or find me on social.</p>
+
+      <div class="contact-grid">
+        <!-- Left: Contact Form (wired to Netlify Forms) -->
+        <div class="contact-form-card">
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/" class="contact-form" id="contact-form-element">
+            <!-- Required hidden input so Netlify identifies the form by name -->
+            <input type="hidden" name="form-name" value="contact">
+
+            <!-- Honeypot field: visually hidden, used to catch bots -->
+            <p class="hidden" style="position: absolute; left: -9999px;">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+              <div class="validation-message" id="name-validation"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+              <div class="validation-message" id="email-validation"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="6" placeholder="Type your message here" required></textarea>
+              <div class="validation-message" id="message-validation"></div>
+            </div>
+
+            <button type="submit" class="button contact-submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loading" style="display: none;">
+                <i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Sending...
+              </span>
+            </button>
+
+            <p class="privacy-note">Your information is kept private and will never be shared.</p>
+
+            <!-- Inline success message (shown after a successful Netlify submission) -->
+            <div id="contact-success" class="success-message" style="display: none; background: #10b981; color: white; padding: 15px; border-radius: 8px; margin-top: 20px; text-align: center; font-weight: 500;">
+              <i class="fas fa-check-circle" aria-hidden="true" style="margin-right: 8px;"></i>
+              Thank you! Your message has been sent. I'll get back to you soon.
+            </div>
+
+            <!-- Inline error message (shown if the submission fails) -->
+            <div id="contact-error" class="error-message" style="display: none; background: #ef4444; color: white; padding: 15px; border-radius: 8px; margin-top: 20px; text-align: center; font-weight: 500;">
+              <i class="fas fa-exclamation-circle" aria-hidden="true" style="margin-right: 8px;"></i>
+              Something went wrong. Please try again, or reach out on social.
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Social Panel -->
+        <div class="contact-social-panel">
+          <h2>Connect on Social</h2>
+          <div class="social-rows">
+            <a class="social-row" href="https://instagram.com/rajivvakani" target="_blank" rel="noopener">
+              <div class="social-icon-chip">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </div>
+              <div class="social-content">
+                <span class="social-network-name">Instagram</span>
+                <span class="social-subtext">Follow for updates and behind the scenes</span>
+              </div>
+            </a>
+
+            <a class="social-row" href="https://facebook.com/rajivvakani" target="_blank" rel="noopener">
+              <div class="social-icon-chip">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              </div>
+              <div class="social-content">
+                <span class="social-network-name">Facebook</span>
+                <span class="social-subtext">Join the conversation</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-social" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important; justify-content: center !important; width: 100% !important; margin-bottom: 20px !important;">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+      </div>
+      <p>&copy; 2025-2026 Rajiv Vakani. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // ---------- Standard nav + mobile menu (matches other pages) ----------
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const overlay = document.querySelector('.mobile-menu-overlay');
+      const mainNav = document.querySelector('.main-nav');
+      const heroSection = document.querySelector('.hero');
+
+      function handleNavScroll() {
+        if (heroSection && mainNav) {
+          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+          const scrollPosition = window.pageYOffset + 100;
+          if (scrollPosition > heroBottom) {
+            mainNav.classList.add('scrolled');
+          } else {
+            mainNav.classList.remove('scrolled');
+          }
+        }
+      }
+      window.addEventListener('scroll', handleNavScroll);
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function () {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          if (overlay) overlay.classList.toggle('active');
+        });
+        if (overlay) {
+          overlay.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            overlay.classList.remove('active');
+          });
+        }
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+          });
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+          }
+        });
+      }
+
+      // ---------- Contact form: real Netlify Forms submission via AJAX ----------
+      const contactForm = document.getElementById('contact-form-element');
+      if (!contactForm) return;
+
+      const submitBtn = contactForm.querySelector('.contact-submit-btn');
+      const btnText = submitBtn.querySelector('.btn-text');
+      const btnLoading = submitBtn.querySelector('.btn-loading');
+      const successDiv = document.getElementById('contact-success');
+      const errorDiv = document.getElementById('contact-error');
+
+      function validateField(field, validationDiv) {
+        if (!validationDiv) return true;
+        const value = field.value.trim();
+        let isValid = true;
+        let message = '';
+
+        if (field.hasAttribute('required') && !value) {
+          isValid = false;
+          message = 'This field is required.';
+        } else if (field.type === 'email' && value) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(value)) {
+            isValid = false;
+            message = 'Please enter a valid email.';
+          }
+        }
+
+        if (!isValid) {
+          validationDiv.textContent = message;
+          validationDiv.className = 'validation-message error';
+          field.classList.add('invalid');
+        } else {
+          validationDiv.textContent = '';
+          validationDiv.className = 'validation-message';
+          field.classList.remove('invalid');
+        }
+        return isValid;
+      }
+
+      // Real-time validation
+      const inputs = contactForm.querySelectorAll('input[required], textarea[required]');
+      inputs.forEach(input => {
+        const validationDiv = document.getElementById(input.id + '-validation');
+        if (!validationDiv) return;
+
+        input.addEventListener('blur', function () { validateField(input, validationDiv); });
+        input.addEventListener('input', function () {
+          if (validationDiv.textContent) {
+            validationDiv.textContent = '';
+            validationDiv.className = 'validation-message';
+          }
+          if (successDiv && successDiv.style.display === 'block') successDiv.style.display = 'none';
+          if (errorDiv && errorDiv.style.display === 'block') errorDiv.style.display = 'none';
+        });
+      });
+
+      // Submission handler: AJAX POST to Netlify so we can show inline success
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Validate all required fields first
+        let allValid = true;
+        inputs.forEach(input => {
+          const validationDiv = document.getElementById(input.id + '-validation');
+          if (!validateField(input, validationDiv)) allValid = false;
+        });
+        if (!allValid) return;
+
+        // Hide previous messages, enter loading state
+        if (successDiv) successDiv.style.display = 'none';
+        if (errorDiv) errorDiv.style.display = 'none';
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline-block';
+        submitBtn.disabled = true;
+
+        // Build URL-encoded body (Netlify Forms expects form-encoded POST to '/')
+        const formData = new FormData(contactForm);
+        const body = new URLSearchParams(formData).toString();
+
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body
+        })
+        .then(function (response) {
+          if (response.ok) {
+            if (successDiv) successDiv.style.display = 'block';
+            contactForm.reset();
+          } else {
+            throw new Error('Network response was not ok: ' + response.status);
+          }
+        })
+        .catch(function (err) {
+          console.error('Contact form submission error:', err);
+          if (errorDiv) errorDiv.style.display = 'block';
+        })
+        .finally(function () {
+          btnText.style.display = 'inline-block';
+          btnLoading.style.display = 'none';
+          submitBtn.disabled = false;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

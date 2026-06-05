@@ -3,32 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rajiv Vakani | Nutrition, Culture & Clarity</title>
-  <meta name="description" content="Rajiv Vakani's official site. Explore his Table Talk and No Onion No Garlic newsletters blending science, tradition, and practical food wisdom.">
-  
+  <title>Rajiv Vakani</title>
+  <meta name="description" content="Nutrition, food, evidence, and the gap between what we know and what we repeat.">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rajivvakani.com/" />
-  <meta property="og:title" content="Rajiv Vakani | Nutrition, Culture & Clarity" />
-  <meta property="og:description" content="Rajiv Vakani's official site. Explore his Table Talk and No Onion No Garlic newsletters blending science, tradition, and practical food wisdom." />
+  <meta property="og:title" content="Rajiv Vakani" />
+  <meta property="og:description" content="Nutrition, food, evidence, and the gap between what we know and what we repeat." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
-  
-  <!-- Canonical URL -->
+
   <link rel="canonical" href="https://rajivvakani.com/" />
-  
+
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://rajivvakani.com/" />
-  <meta property="twitter:title" content="Rajiv Vakani | Nutrition, Culture & Clarity" />
-  <meta property="twitter:description" content="Rajiv Vakani's official site. Explore his Table Talk and No Onion No Garlic newsletters blending science, tradition, and practical food wisdom." />
+  <meta property="twitter:title" content="Rajiv Vakani" />
+  <meta property="twitter:description" content="Nutrition, food, evidence, and the gap between what we know and what we repeat." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="rajiv-styles.css?v=20250116k">
   <link rel="icon" type="image/png" href="favicon.png" />
-  
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
   <script>
@@ -37,37 +36,601 @@
     gtag('js', new Date());
     gtag('config', 'G-0L41N5K2WV');
   </script>
-  
+
   <script defer src="animations.js"></script>
+
+  <style>
+    /* ============================================================
+       Homepage — editorial treatment.
+       Architecture: Welcome → Topics → Paths → Close.
+       Two-voice typography (Lora serif + Inter Tight sans),
+       warm cream paper palette, single burnt-orange accent,
+       drifting ambient gradient in Welcome/Close, scroll-triggered
+       reveals, hover motion in the Paths blocks.
+       All styles are scoped to .home-page to keep them isolated
+       from the rest of the site's CSS.
+       ============================================================ */
+
+    :root {
+      --base: #faf5ea;          /* warm cream */
+      --paper: #f5ede0;         /* slightly deeper cream for variation */
+      --ink: #1a1a1a;
+      --muted: #5a5a5a;
+      --muted-soft: #8a7d68;    /* warm muted (meta labels) */
+      --accent: #b8602e;        /* burnt orange — warm clay, leans orange not red */
+      --accent-soft: #d6855a;   /* lighter accent (hovers) */
+      --rule: rgba(26, 26, 26, 0.10);
+    }
+
+    html.home-page, body.home-page {
+      background: var(--base);
+    }
+
+    body.home-page {
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Defeat any inherited section styling from rajiv-styles.css */
+    .home-page main,
+    .home-page main > section,
+    .home-page main > header {
+      background: transparent;
+    }
+
+    /* --------- Shared section layout (left-anchored asymmetric column) --------- */
+
+    .home-page .section {
+      position: relative;
+      padding-left: clamp(28px, 10vw, 160px);
+      padding-right: clamp(24px, 6vw, 120px);
+    }
+    .home-page .section__inner {
+      max-width: 980px;
+      width: 100%;
+    }
+
+    /* --------- 1. WELCOME — animated warm gradient field --------- */
+
+    .home-page .welcome {
+      padding-top: clamp(100px, 13vh, 152px);
+      padding-bottom: clamp(96px, 13vh, 156px);
+      background: linear-gradient(180deg, #faf5ea 0%, #f7eddc 100%);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    /* Two drifting "orbs" provide the ambient gradient. They sit
+       behind the content and move slowly. This is the page's
+       signature visual gesture. */
+    .home-page .welcome::before,
+    .home-page .welcome::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      z-index: -1;
+      pointer-events: none;
+      will-change: transform;
+    }
+    .home-page .welcome::before {
+      width: 720px; height: 720px;
+      top: -240px; right: -180px;
+      background: radial-gradient(circle, rgba(232, 200, 158, 0.85) 0%, rgba(232, 200, 158, 0) 70%);
+      animation: orbDrift1 32s ease-in-out infinite alternate;
+    }
+    .home-page .welcome::after {
+      width: 820px; height: 820px;
+      bottom: -280px; left: -240px;
+      background: radial-gradient(circle, rgba(217, 168, 122, 0.55) 0%, rgba(217, 168, 122, 0) 70%);
+      animation: orbDrift2 38s ease-in-out infinite alternate;
+    }
+    @keyframes orbDrift1 {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(-90px, 60px) scale(1.18); }
+    }
+    @keyframes orbDrift2 {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(70px, -90px) scale(1.12); }
+    }
+
+    .home-page .welcome__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* "Currently reading" meta strip — present-tense signal */
+    .home-page .meta {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 14px;
+      margin: 0 0 36px 0;
+      padding: 0;
+    }
+    .home-page .meta__dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateY(-2px);
+      animation: pulse 2.6s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: translateY(-2px) scale(1); }
+      50%      { opacity: 0.55; transform: translateY(-2px) scale(0.85); }
+    }
+    .home-page .meta__label {
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted-soft);
+    }
+    .home-page .meta__value {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+      color: var(--ink);
+    }
+    .home-page .meta__value strong {
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    .home-page .name {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(1.85rem, 2.6vw, 2.3rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin: 0 0 32px 0;
+    }
+
+    /* The LEDE at display scale. Trimmed slightly from the previous
+       version so the sections below have room to contribute. */
+    .home-page .lede-primary {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.05rem, 4.4vw, 3.55rem);
+      line-height: 1.14;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin: 0 0 26px 0;
+      max-width: 840px;
+    }
+    .home-page .lede-primary .emph {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .home-page .lede-secondary {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+      line-height: 1.45;
+      color: var(--muted);
+      margin: 0;
+      max-width: 620px;
+    }
+
+    /* --------- 2. TOPICS — "What I think about" ---------
+       The middle anchor. A single display-scale italic sentence that
+       conveys breadth and intellectual territory. Static content. */
+
+    .home-page .topics {
+      padding-top: clamp(100px, 14vh, 160px);
+      padding-bottom: clamp(110px, 14vh, 160px);
+      background: var(--paper);
+      border-top: 1px solid var(--rule);
+    }
+    .home-page .topics__label {
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted-soft);
+      margin: 0 0 48px 0;
+    }
+    .home-page .topics__body {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 3.3vw, 2.65rem);
+      line-height: 1.3;
+      letter-spacing: -0.005em;
+      color: var(--ink);
+      max-width: 1040px;
+      margin: 0;
+    }
+    .home-page .topics__body .emph {
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    /* --------- 3. PATHS — three real editorial blocks ---------
+       Each path is a substantial editorial moment with its own
+       kicker, body paragraph, and CTA — not a one-line label. */
+
+    .home-page .paths {
+      padding-top: clamp(80px, 10vh, 120px);
+      padding-bottom: clamp(100px, 14vh, 160px);
+      background: var(--paper);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .home-page .paths__label {
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted-soft);
+      margin: 0 0 12px 0;
+    }
+    .home-page .paths__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .home-page .path {
+      border-top: 1px solid var(--rule);
+    }
+    .home-page .path:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+    .home-page .path__link {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 32px;
+      align-items: start;
+      padding: clamp(44px, 6vh, 64px) 0;
+      text-decoration: none;
+      color: inherit;
+      transition: padding 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .home-page .path__number {
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      padding-top: 10px;
+    }
+    .home-page .path__content {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      max-width: 720px;
+    }
+    .home-page .path__title {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(1.85rem, 3.4vw, 2.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin: 0;
+      transition: color 0.22s ease;
+    }
+    .home-page .path__kicker {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.02rem, 1.3vw, 1.2rem);
+      color: var(--accent);
+      margin: -10px 0 0 0;
+      letter-spacing: 0;
+    }
+    .home-page .path__body {
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: clamp(1.02rem, 1.2vw, 1.12rem);
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0;
+    }
+    .home-page .path__cta {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      margin-top: 6px;
+      transition: color 0.22s ease;
+    }
+    .home-page .path__cta::after {
+      content: '→';
+      display: inline-block;
+      transform: translateX(0);
+      transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    /* Hover: title gains accent, CTA arrow advances, whole block nudges */
+    .home-page .path__link:hover .path__title,
+    .home-page .path__link:focus-visible .path__title {
+      color: var(--accent);
+    }
+    .home-page .path__link:hover .path__cta,
+    .home-page .path__link:focus-visible .path__cta {
+      color: var(--accent);
+    }
+    .home-page .path__link:hover .path__cta::after,
+    .home-page .path__link:focus-visible .path__cta::after {
+      transform: translateX(10px);
+    }
+    .home-page .path__link:hover {
+      padding-left: 12px;
+    }
+    .home-page .path__link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 8px;
+      border-radius: 2px;
+    }
+
+    /* --------- 4. CLOSE — returns to warm welcome atmosphere --------- */
+
+    .home-page .close {
+      padding-top: clamp(120px, 16vh, 180px);
+      padding-bottom: 96px;
+      background: linear-gradient(180deg, #faf5ea 0%, #f7eddc 100%);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .home-page .close::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      bottom: -250px; right: -180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 200, 158, 0.5) 0%, rgba(232, 200, 158, 0) 70%);
+      filter: blur(90px);
+      z-index: -1;
+      animation: orbDrift1 38s ease-in-out infinite alternate;
+    }
+    .home-page .close__text {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.4rem, 2.4vw, 2rem);
+      line-height: 1.4;
+      letter-spacing: -0.005em;
+      color: var(--ink);
+      margin: 0 0 56px 0;
+      max-width: 760px;
+    }
+    .home-page .signature {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 12px;
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted-soft);
+    }
+    .home-page .signature__mark {
+      width: 28px; height: 1px;
+      background: var(--muted-soft);
+      display: inline-block;
+      transform: translateY(-3px);
+    }
+
+    /* --------- Scroll-triggered reveals --------- */
+
+    .home-page [data-reveal] {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .home-page [data-reveal].is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Stagger children that opt in */
+    .home-page [data-reveal][data-reveal-delay="1"] { transition-delay: 0.10s; }
+    .home-page [data-reveal][data-reveal-delay="2"] { transition-delay: 0.20s; }
+    .home-page [data-reveal][data-reveal-delay="3"] { transition-delay: 0.30s; }
+    .home-page [data-reveal][data-reveal-delay="4"] { transition-delay: 0.40s; }
+    .home-page [data-reveal][data-reveal-delay="5"] { transition-delay: 0.50s; }
+
+    /* --------- Mobile --------- */
+
+    @media (max-width: 720px) {
+      .home-page .section {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .home-page .meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 32px;
+      }
+      .home-page .name {
+        margin-bottom: 28px;
+      }
+      .home-page .path__link {
+        grid-template-columns: 44px 1fr;
+        gap: 18px;
+        padding: 36px 0;
+      }
+      .home-page .path__link:hover {
+        padding-left: 0;
+      }
+      .home-page .path__content {
+        gap: 14px;
+      }
+      .home-page .topics__body {
+        font-size: clamp(1.4rem, 5.2vw, 1.85rem);
+      }
+      .home-page .close {
+        padding-top: 80px;
+        padding-bottom: 72px;
+      }
+    }
+
+    /* --------- Nav overrides (home-page only) ---------
+       The site-wide nav inherits some legacy styling. The overrides
+       below align it with the homepage's editorial accent. Note:
+       these are also already set globally in rajiv-styles.css; the
+       duplicates here are defensive so the homepage stays correct
+       even if the global styles are revised later. */
+
+    .home-page .nav-links li a.active {
+      background-color: var(--accent) !important;
+      color: #fff !important;
+      box-shadow: 0 2px 10px rgba(184, 96, 46, 0.22) !important;
+    }
+    .home-page .nav-links li a:hover {
+      background-color: rgba(184, 96, 46, 0.08) !important;
+      color: var(--accent) !important;
+    }
+    .home-page .nav-links li a.active:hover {
+      background-color: var(--accent) !important;
+      color: #fff !important;
+    }
+
+    /* Social as tiny monochrome icons — no circles, no fills, just glyphs */
+    .home-page .social-icons,
+    .home-page .footer-social {
+      gap: 18px !important;
+      align-items: center;
+    }
+    .home-page .social-icons a,
+    .home-page .footer-social a {
+      width: auto !important;
+      height: auto !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      color: var(--muted) !important;
+      font-size: 1.05rem !important;
+      line-height: 1 !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: color 0.2s ease, transform 0.2s ease !important;
+    }
+    .home-page .social-icons a:hover,
+    .home-page .footer-social a:hover {
+      background: transparent !important;
+      transform: translateY(-1px) !important;
+      box-shadow: none !important;
+      color: var(--accent) !important;
+    }
+    .home-page .social-icons a i,
+    .home-page .footer-social a i {
+      display: inline-block !important;
+    }
+
+    /* --------- Footer — quiet editorial sign-off ---------
+       The site-wide footer renders as a heavy navy block. On the
+       homepage we replace it with a warm cream, left-anchored row
+       to match the section rhythm. Copyright on the left, social
+       icons on the right, both small and quiet. */
+
+    .home-page footer {
+      background: var(--base) !important;
+      color: var(--muted-soft) !important;
+      border-top: 1px solid var(--rule) !important;
+      padding: 32px clamp(28px, 10vw, 160px) 40px clamp(28px, 10vw, 160px) !important;
+      text-align: left !important;
+      font-size: 0.78rem;
+    }
+    .home-page footer .container {
+      max-width: 980px;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .home-page footer p {
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: var(--muted-soft);
+      margin: 0;
+      order: 1;
+    }
+    .home-page footer .footer-social {
+      order: 2;
+      margin: 0 !important;
+      width: auto !important;
+      justify-content: flex-end !important;
+    }
+    .home-page footer .footer-social a {
+      color: var(--muted-soft) !important;
+    }
+    .home-page footer .footer-social a:hover {
+      color: var(--accent) !important;
+    }
+    @media (max-width: 720px) {
+      .home-page footer {
+        padding: 28px 24px 32px 24px !important;
+      }
+      .home-page footer .container {
+        flex-direction: row;
+        gap: 16px;
+      }
+    }
+
+    /* --------- Reduced motion --------- */
+
+    @media (prefers-reduced-motion: reduce) {
+      .home-page .welcome::before,
+      .home-page .welcome::after,
+      .home-page .close::before {
+        animation: none;
+      }
+      .home-page .meta__dot {
+        animation: none;
+      }
+      .home-page [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .home-page .path__link,
+      .home-page .path__title {
+        transition: none;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="home-page">
 
   <nav class="main-nav">
     <div class="container nav-container">
-      <!-- Left Zone: Site Logo -->
       <a href="index.html" class="site-logo">Rajiv Vakani</a>
-      
-      <!-- Middle Zone: Navigation Links (Right-leaning) -->
+
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="table-talk.html">Table Talk</a></li>
-        <li><a href="no-onion-no-garlic.html">No Onion, No Garlic</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="supporters.html">Supporters</a></li>
-        <li><a href="index.html#contact-form">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="journey.html">Journey</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-      
-      <!-- Right Zone: Social Icons -->
-      <div class="social-icons" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <i class="fab fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <i class="fab fa-facebook-f" aria-hidden="true"></i>
-        </a>
+
+      <div class="social-icons" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
       </div>
-      
-      <!-- Mobile Menu Toggle -->
+
       <button class="menu-toggle" aria-label="Toggle navigation">
         <span class="hamburger"></span>
         <span class="hamburger"></span>
@@ -75,287 +638,150 @@
       </button>
     </div>
   </nav>
-  
-  <!-- Mobile menu overlay -->
+
   <div class="mobile-menu-overlay"></div>
-  
-  <!-- Mobile Social Icons (hidden by default, shown in mobile menu) -->
-  <div class="mobile-social-icons" style="display: none;">
-    <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram">
-      <i class="fab fa-instagram" aria-hidden="true"></i>
-    </a>
-    <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook">
-      <i class="fab fa-facebook-f" aria-hidden="true"></i>
-    </a>
-  </div>
 
-  <header class="hero homepage-hero">
-    <video autoplay muted loop playsinline class="hero-video-background" poster="poster.jpg">
-      <source src="peeling-orange.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="frosted-hero-panel" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-        <h1 class="hero-heading" style="text-align: center; margin: 0 auto;">
-          Two Newsletters, <span class="mobile-break"><span class="highlight-orange">One Purpose</span></span>
-        </h1>
-                     <p class="hero-tagline" style="text-align: center; margin: 0 auto; margin-bottom: 30px;">
-               Explore mindful nutrition through two unique lenses.<br>
-               Choose what speaks to you, or explore both.
-             </p>
-             <a href="#explore-newsletters" class="button hero-cta" style="text-align: center; margin: 0 auto;">Find Your Fit →</a>
-      </div>
-    </div>
-  </header>
+  <main>
 
-  <section class="about-me animate-on-scroll" id="about-me">
-    <div class="floating-element-1"></div>
-    <div class="floating-element-2"></div>
-    <div class="container">
-      <h2>Why I Do This</h2>
-      <div class="about-content">
-        <img src="headshot_36.jpg" alt="Rajiv Vakani Headshot" class="about-headshot">
-        <div>
-          <p>Hi, I'm Rajiv! My journey into food and nutrition isn't just about science; it's about <strong>stories, culture</strong>, and the profound impact of what we eat on our lives and the planet.</p>
-          <p>I combine evidence-based nutritional science with a deep understanding of food systems, cultural heritage, and mindful living. Whether it's demystifying diet trends, exploring sustainable practices, or sharing <strong>plant-based insights</strong> rooted in Jain traditions, my aim is always clarity over dogma.</p>
-          <p>I believe that thoughtful eating is a cornerstone of a well-lived life, and my work is dedicated to helping you find joy, health, and purpose on your plate.</p>
-          <div class="about-cta" style="margin-top: 30px !important; text-align: center !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
-            <a href="about.html" class="button about-story-button" style="display: inline-block !important; visibility: visible !important; opacity: 1 !important; background: linear-gradient(135deg, #f59e0b, #d97706) !important; color: white !important; padding: 16px 32px !important; border-radius: 50px !important; text-decoration: none !important; font-weight: 700 !important; font-size: 1.1rem !important; border: 3px solid rgba(245, 158, 11, 0.6) !important; box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4) !important; position: relative !important; z-index: 10 !important;">See the Full Story</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- 1. WELCOME -->
+    <header class="section welcome">
+      <div class="section__inner welcome__content">
 
-  <section class="explore-newsletters animate-on-scroll" id="explore-newsletters">
-    <div class="floating-element-1"></div>
-    <div class="floating-element-2"></div>
-    <div class="container">
-              <h2 style="font-size: clamp(2rem, 4vw, 3rem) !important; padding: 0 20px !important; line-height: 1.2 !important;">Explore My Newsletters</h2>
-      <p>One's for everyday readers. One's for Jains. Both skip the fluff.</p>
-      <div class="benefits-grid">
-        <div class="benefit-item table-talk-card animate-on-scroll">
-          <div class="card-overlay"></div>
-          <div class="launch-banner">Launching Soon</div>
-          <div class="newsletter-title-group">
-            <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="newsletter-icon" style="display: block !important; visibility: visible !important; opacity: 1 !important; width: 100px !important; height: 100px !important;">
-            <h3>Table Talk</h3>
-            <p class="newsletter-tagline">For curious minds who want the truth behind nutrition trends</p>
-            <div class="badge-stack">
-              <div class="free-badge">FREE</div>
-              <span class="newsletter-type">Evidence-Based</span>
-            </div>
-          </div>
-          <p class="newsletter-audience"><em>For independent thinkers and everyday eaters who ask better questions</em></p>
-          <p style="min-height: 80px; display: flex; align-items: center; justify-content: center;">Cut through the hype with science-backed insights, practical food advice, and honest questions about what we eat and why. Explore food systems, performance nutrition, and health across the lifespan, all without the fluff.</p>
-          <div class="card-buttons" style="justify-content: center !important;">
-            <a href="table-talk.html" class="button">Learn More</a>
-            <a href="https://subscribepage.io/Q38UKi" class="button button-secondary" style="background: rgba(59, 130, 246, 0.2) !important; border-color: #f59e0b !important; border-width: 2px !important; color: white !important;">
-              Subscribe
-            </a>
-          </div>
+        <div class="meta" data-reveal>
+          <span class="meta__dot" aria-hidden="true"></span>
+          <span class="meta__label">Currently reading</span>
+          <span class="meta__value"><strong>What to Eat Now</strong>, by Marion Nestle</span>
         </div>
 
-        <div class="benefit-item no-onion-no-garlic-card animate-on-scroll">
-          <div class="card-overlay"></div>
-          <div class="launch-banner">Launching Soon</div>
-          <div class="newsletter-title-group">
-            <img src="icons/no-onion-no-garlic-logo-test.png" alt="No Onion, No Garlic Logo" class="newsletter-icon" style="display: block !important; visibility: visible !important; opacity: 1 !important; width: 100px !important; height: 100px !important;">
-            <h3>No Onion, No Garlic</h3>
-            <p class="newsletter-tagline">Jain wisdom meets modern nutrition science</p>
-            <div class="badge-stack">
-              <div class="free-badge">FREE</div>
-              <span class="newsletter-type">Tradition & Evidence</span>
-            </div>
-          </div>
-          <p class="newsletter-audience"><em>For those who eat with intention and purpose</em></p>
-          <p style="min-height: 80px; display: flex; align-items: center; justify-content: center;">A science-backed guide for Jains and mindful eaters navigating a changing world. Honor tradition while staying informed, empowered, and connected to something deeper.</p>
-          <div class="card-buttons" style="justify-content: center !important;">
-            <a href="no-onion-no-garlic.html" class="button">Learn More</a>
-            <a href="https://subscribepage.io/wzHcM2" class="button button-secondary" style="background: rgba(16, 185, 129, 0.2) !important; border-width: 2px !important; color: white !important;">
-              Subscribe
-            </a>
-          </div>
-        </div>
+        <h1 class="name" data-reveal data-reveal-delay="1">Rajiv Vakani</h1>
+
+        <p class="lede-primary" data-reveal data-reveal-delay="2">
+          Nutrition, food, evidence, and the gap between <em class="emph">what we know and what we repeat</em>.
+        </p>
+
+        <p class="lede-secondary" data-reveal data-reveal-delay="3">
+          Read, written, and thought through with care and patience.
+        </p>
+
       </div>
-      
-      <div class="support-mission-card animate-on-scroll">
-        <div class="stove-glow"></div>
-        <div class="scent-trail"></div>
-        <div class="mission-content">
-          <div class="mission-text">
-            <h3 style="text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important; font-weight: 800 !important; letter-spacing: 0.5px !important;">If It's Worth Reading, It's Worth Backing</h3>
-            <p>Thoughtful nutrition doesn't come from algorithms.<br>
-            Behind every post is care, restraint, and respect for your time.<br>
-            That's what your support protects.</p>
-          </div>
-                     <div class="mission-cta">
-             <a href="supporters.html" class="stir-the-pot-button">
-               <span class="button-text">Unlock Everything</span>
-               <span class="bouncing-arrow">→</span>
-             </a>
-           </div>
+    </header>
 
-        </div>
+    <!-- 2. TOPICS — what this work is about (display-scale running sentence) -->
+    <section class="section topics" aria-label="What I think about">
+      <div class="section__inner">
+
+        <p class="topics__label" data-reveal>What I think about</p>
+
+        <p class="topics__body" data-reveal data-reveal-delay="1">
+          The gap between <em class="emph">what we know and what we repeat</em>. Why nutrition advice keeps changing. Dietary patterns more than isolated nutrients. Behavior change as the harder problem. Traditional wisdom alongside modern evidence. What &ldquo;natural&rdquo; actually means. Food culture and family meals. Ultraprocessed food. Marion Nestle. Where the experts disagree, and why.
+        </p>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="supporter-content-section animate-on-scroll" id="supporter-content">
-    <div class="container">
-      <div class="supporter-header">
-        <h2>Supporter Content</h2>
-        <p class="supporter-subtitle">Exclusive access to past newsletters, deep dives, and premium content</p>
-      </div>
-      
-      <div class="supporter-content-grid">
-        <div class="supporter-card all-access-supporter">
-          <div class="card-icons">
-            <img src="icons/table-talk-logo.png" alt="Table Talk Logo" class="supporter-logo">
-            <img src="icons/no-onion-no-garlic-logo-test.png" alt="No Onion, No Garlic Logo" class="supporter-logo">
-          </div>
-          <h3>All-Access Supporter</h3>
-          <p>One pass. Two newsletters. Full archives and premium content.</p>
-          <div class="card-stats">
-            <span class="stat">Premium Access</span>
-            <span class="stat">Exclusive Content</span>
-          </div>
-                     <div class="card-buttons">
-             <a href="members.html" class="button">Access Everything →</a>
-           </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- 3. PATHS — three real editorial blocks -->
+    <section class="section paths" aria-label="Where to go next">
+      <div class="section__inner">
 
-  <section class="contact-section animate-on-scroll" id="contact-form">
-    <!-- Premium Floating Elements -->
-    <div class="floating-premium-1"></div>
-    <div class="floating-premium-2"></div>
-    <div class="floating-premium-3"></div>
-    
-    <div class="container">
-      <h1>Contact Me</h1>
-      <p class="contact-intro">I'm always eager to engage with those passionate about food, health, and mindful living. Have a question, collaboration idea, or just want to say hello? Feel free to reach out.</p>
+        <p class="paths__label" data-reveal>Where to go next</p>
 
-      <div class="contact-grid">
-        <!-- Left: Contact Form -->
-        <div class="contact-form-card">
-          <!-- Confirmation Message (hidden by default) -->
-          <div class="contact-confirmation" id="contact-confirmation" style="display: none;">
-            <div class="confirmation-content">
-              <i class="fas fa-check-circle confirmation-icon" aria-hidden="true"></i>
-              <h3>Thanks for reaching out!</h3>
-              <p>I will get back to you soon.</p>
-            </div>
-          </div>
-
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/" class="contact-form" id="contact-form-element">
-            <input type="hidden" name="form-name" value="contact">
-            <p class="hidden">
-              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-            </p>
-            
-            <div class="form-group">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" placeholder="Enter your full name" required />
-              <div class="validation-message" id="name-validation"></div>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email address" required />
-              <div class="validation-message" id="email-validation"></div>
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Message:</label>
-              <textarea id="message" name="message" rows="6" placeholder="Type your message here" required></textarea>
-              <div class="validation-message" id="message-validation"></div>
-            </div>
-            
-            <button type="submit" class="button contact-submit-btn">
-              <span class="btn-text">Send Message</span>
-              <span class="btn-loading" style="display: none;">
-                <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+        <ul class="paths__list">
+          <li class="path" data-reveal data-reveal-delay="1">
+            <a class="path__link" href="journey.html">
+              <span class="path__number">01</span>
+              <span class="path__content">
+                <span class="path__title">Journey</span>
+                <span class="path__kicker">How this began.</span>
+                <span class="path__body">The questions came before the credentials. I started nutrition school in 2023. This is the longer road that brought me here, told the way it actually happened.</span>
+                <span class="path__cta">Read the journey</span>
               </span>
-            </button>
-            
-            <p class="privacy-note">Your information is kept private and will never be shared.</p>
-            
-            <!-- Success Message -->
-            <div id="contact-success" class="success-message" style="display: none; background: #10b981; color: white; padding: 15px; border-radius: 8px; margin-top: 20px; text-align: center; font-weight: 500;">
-              <i class="fas fa-check-circle" aria-hidden="true" style="margin-right: 8px;"></i>
-              Thank you! Your message has been sent successfully.
-            </div>
-          </form>
-        </div>
+            </a>
+          </li>
+          <li class="path" data-reveal data-reveal-delay="2">
+            <a class="path__link" href="insights.html">
+              <span class="path__number">02</span>
+              <span class="path__content">
+                <span class="path__title">Insights</span>
+                <span class="path__kicker">The work itself.</span>
+                <span class="path__body">Essays, research notes, and observations about food, evidence, and the gap between what science says and what people repeat. New pieces appear when something feels worth writing down.</span>
+                <span class="path__cta">Read the work</span>
+              </span>
+            </a>
+          </li>
+          <li class="path" data-reveal data-reveal-delay="3">
+            <a class="path__link" href="about.html">
+              <span class="path__number">03</span>
+              <span class="path__content">
+                <span class="path__title">About</span>
+                <span class="path__kicker">The shorter version.</span>
+                <span class="path__body">Education, current focus, and how to reach me. Brief and direct, in case that&rsquo;s what you came for.</span>
+                <span class="path__cta">Continue</span>
+              </span>
+            </a>
+          </li>
+        </ul>
 
-        <!-- Right: Social Panel -->
-        <div class="contact-social-panel">
-          <h2>Connect on Social</h2>
-          <div class="social-rows">
-            <a class="social-row" href="https://instagram.com/rajivvakani" target="_blank" rel="noopener">
-              <div class="social-icon-chip">
-                <i class="fab fa-instagram" aria-hidden="true"></i>
-              </div>
-              <div class="social-content">
-                <span class="social-network-name">Instagram</span>
-                <span class="social-subtext">Follow for updates and behind the scenes</span>
-              </div>
-            </a>
-            
-            <a class="social-row" href="https://facebook.com/rajivvakani" target="_blank" rel="noopener">
-              <div class="social-icon-chip">
-                <i class="fab fa-facebook-f" aria-hidden="true"></i>
-              </div>
-              <div class="social-content">
-                <span class="social-network-name">Facebook</span>
-                <span class="social-subtext">Join the community and share your thoughts</span>
-              </div>
-            </a>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- 4. CLOSE -->
+    <section class="section close" aria-label="A note from Rajiv">
+      <div class="section__inner">
+        <p class="close__text" data-reveal>
+          There's a lot still to figure out. If something here is worth thinking about, or worth pushing back on, I'd like to hear from you.
+        </p>
+        <p class="signature" data-reveal data-reveal-delay="1">
+          <span class="signature__mark" aria-hidden="true"></span>
+          Rajiv Vakani &nbsp;·&nbsp; Kept since 2023
+        </p>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
     <div class="container">
-      <div class="footer-social" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important; justify-content: center !important; width: 100% !important; margin-bottom: 20px !important;">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <i class="fab fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <i class="fab fa-facebook-f" aria-hidden="true"></i>
-        </a>
+      <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
+      <div class="footer-social" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
       </div>
-      <div class="footer-links" style="text-align: center; margin-bottom: 20px;">
-        <a href="supporters.html" style="color: #f59e0b; text-decoration: none; font-weight: 600; padding: 10px 20px; border: 2px solid #f59e0b; border-radius: 25px; transition: all 0.3s ease;">Support</a>
-      </div>
-      <p>&copy; 2025 Rajiv Vakani. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+
+      /* Scroll-triggered reveal — IntersectionObserver. */
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealTargets = document.querySelectorAll('[data-reveal]');
+
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        revealTargets.forEach(el => el.classList.add('is-revealed'));
+      } else {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        revealTargets.forEach(el => io.observe(el));
+      }
+
+      /* Nav + mobile menu — same behavior as every other modern page. */
       const menuToggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
       const overlay = document.querySelector('.mobile-menu-overlay');
       const mainNav = document.querySelector('.main-nav');
-      const heroSection = document.querySelector('.homepage-hero');
-      
-      console.log('Menu elements found:', { menuToggle, navLinks, overlay });
-      console.log('Current window width:', window.innerWidth);
-      console.log('Nav links display style:', window.getComputedStyle(navLinks).display);
-      console.log('Nav links visibility:', window.getComputedStyle(navLinks).visibility);
-      
-      // Navigation background transition on scroll
+      const heroSection = document.querySelector('.welcome');
+
       function handleNavScroll() {
         if (heroSection && mainNav) {
           const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-          const scrollPosition = window.pageYOffset + 100; // Add 100px buffer
-          
+          const scrollPosition = window.pageYOffset + 100;
           if (scrollPosition > heroBottom) {
             mainNav.classList.add('scrolled');
           } else {
@@ -363,174 +789,37 @@
           }
         }
       }
-      
-      // Add scroll event listener
       window.addEventListener('scroll', handleNavScroll);
-      
+
       if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function () {
-          console.log('Hamburger clicked!');
           navLinks.classList.toggle('active');
           menuToggle.classList.toggle('active');
-          overlay.classList.toggle('active');
-          console.log('Classes after toggle:', {
-            navLinksActive: navLinks.classList.contains('active'),
-            menuToggleActive: menuToggle.classList.contains('active'),
-            overlayActive: overlay.classList.contains('active')
+          if (overlay) overlay.classList.toggle('active');
+        });
+        if (overlay) {
+          overlay.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            overlay.classList.remove('active');
           });
-          console.log('Hamburger transform style:', window.getComputedStyle(menuToggle.querySelector('.hamburger')).transform);
-          console.log('Menu toggle classes:', menuToggle.className);
-          console.log('First hamburger line transform:', window.getComputedStyle(menuToggle.querySelector('.hamburger:nth-child(1)')).transform);
-          console.log('Second hamburger line opacity:', window.getComputedStyle(menuToggle.querySelector('.hamburger:nth-child(2)')).opacity);
-          console.log('Third hamburger line transform:', window.getComputedStyle(menuToggle.querySelector('.hamburger:nth-child(3)')).transform);
+        }
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+          });
         });
-        
-        // Close menu when clicking overlay
-        overlay.addEventListener('click', function () {
-          navLinks.classList.remove('active');
-          menuToggle.classList.remove('active');
-          overlay.classList.remove('active');
-        });
-        
-                 // Close menu when clicking nav links
-         navLinks.querySelectorAll('a').forEach(link => {
-           link.addEventListener('click', function () {
-             navLinks.classList.remove('active');
-             menuToggle.classList.remove('active');
-             overlay.classList.remove('active');
-           });
-         });
-         
-         // Handle mobile social icons
-         const mobileSocialIcons = document.querySelector('.mobile-social-icons');
-         if (mobileSocialIcons) {
-           // Clone social icons into mobile menu when it opens
-           menuToggle.addEventListener('click', function() {
-             if (navLinks.classList.contains('active')) {
-               // Menu is opening, add social icons
-               const socialClone = mobileSocialIcons.cloneNode(true);
-               socialClone.style.display = 'flex';
-               socialClone.classList.add('mobile-social-icons');
-               
-               // Remove existing mobile social icons if any
-               const existingMobileSocial = navLinks.querySelector('.mobile-social-icons');
-               if (existingMobileSocial) {
-                 existingMobileSocial.remove();
-               }
-               
-               navLinks.appendChild(socialClone);
-             }
-           });
-         }
-        
-        // Close menu on escape key
         document.addEventListener('keydown', function (e) {
           if (e.key === 'Escape' && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             menuToggle.classList.remove('active');
-            overlay.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
           }
         });
-             } else {
-         console.error('Menu elements not found!');
-       }
-     });
-   </script>
-
-   <!-- Enhanced Contact Form JavaScript -->
-   <script>
-     document.addEventListener('DOMContentLoaded', function() {
-       const contactForm = document.getElementById('contact-form-element');
-       const submitBtn = contactForm.querySelector('.contact-submit-btn');
-       const btnText = submitBtn.querySelector('.btn-text');
-       const btnLoading = submitBtn.querySelector('.btn-loading');
-       
-       // Form validation and submission handling
-       if (contactForm) {
-         contactForm.addEventListener('submit', function(e) {
-           e.preventDefault();
-           
-           // Show loading state
-           btnText.style.display = 'none';
-           btnLoading.style.display = 'inline-block';
-           submitBtn.disabled = true;
-           
-           // Simulate form processing (remove this when backend is ready)
-           setTimeout(() => {
-             // Show success message inline
-             const successDiv = document.getElementById('contact-success');
-             successDiv.style.display = 'block';
-             
-             // Reset form for future use
-             contactForm.reset();
-             
-             // Reset button state
-             btnText.style.display = 'inline-block';
-             btnLoading.style.display = 'none';
-             submitBtn.disabled = false;
-             
-             // Hide success message after 5 seconds
-             setTimeout(() => {
-               successDiv.style.display = 'none';
-             }, 5000);
-           }, 1500);
-         });
-         
-         // Real-time validation
-         const inputs = contactForm.querySelectorAll('input, textarea');
-         inputs.forEach(input => {
-           const validationDiv = document.getElementById(input.id + '-validation');
-           
-           input.addEventListener('blur', function() {
-             validateField(input, validationDiv);
-           });
-           
-           input.addEventListener('input', function() {
-             // Clear validation message when user starts typing
-             if (validationDiv.textContent) {
-               validationDiv.textContent = '';
-               validationDiv.className = 'validation-message';
-             }
-             
-             // Hide success message if user starts typing again
-             const successDiv = document.getElementById('contact-success');
-             if (successDiv.style.display === 'block') {
-               successDiv.style.display = 'none';
-             }
-           });
-         });
-       }
-       
-       // Field validation function
-       function validateField(field, validationDiv) {
-         const value = field.value.trim();
-         let isValid = true;
-         let message = '';
-         
-         if (field.hasAttribute('required') && !value) {
-           isValid = false;
-           message = 'This field is required.';
-         } else if (field.type === 'email' && value) {
-           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-           if (!emailRegex.test(value)) {
-             isValid = false;
-             message = 'Please enter a valid email.';
-           }
-         }
-         
-         if (!isValid) {
-           validationDiv.textContent = message;
-           validationDiv.className = 'validation-message error';
-           field.classList.add('invalid');
-         } else {
-           validationDiv.textContent = '';
-           validationDiv.className = 'validation-message';
-           field.classList.remove('invalid');
-         }
-         
-         return isValid;
-       }
-     });
-   </script>
+      }
+    });
+  </script>
 </body>
 </html>

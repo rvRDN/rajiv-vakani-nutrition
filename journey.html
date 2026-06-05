@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Journey | Rajiv Vakani</title>
+  <meta name="description" content="How curiosity led Rajiv Vakani toward nutrition, education, and evidence-based health &mdash; a thoughtful narrative about the path so far and the work still ahead.">
+
+  <!-- Draft phase: keep out of search results until launch -->
+  <meta name="robots" content="noindex">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rajivvakani.com/journey.html" />
+  <meta property="og:title" content="Journey | Rajiv Vakani" />
+  <meta property="og:description" content="How curiosity led Rajiv Vakani toward nutrition, education, and evidence-based health &mdash; a thoughtful narrative about the path so far and the work still ahead." />
+  <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
+  <meta property="og:site_name" content="Rajiv Vakani" />
+
+  <link rel="canonical" href="https://rajivvakani.com/journey.html" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://rajivvakani.com/journey.html" />
+  <meta property="twitter:title" content="Journey | Rajiv Vakani" />
+  <meta property="twitter:description" content="How curiosity led Rajiv Vakani toward nutrition, education, and evidence-based health &mdash; a thoughtful narrative about the path so far and the work still ahead." />
+  <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="rajiv-styles.css?v=20250116k">
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0L41N5K2WV');
+  </script>
+
+  <script defer src="animations.js"></script>
+
+  <!--
+    Gate the reveal animations behind JS. If JS fails for any reason, the
+    page renders fully visible instead of blank. This class is set before
+    any styles or content render.
+  -->
+  <script>document.documentElement.classList.add('js-ready');</script>
+
+  <!--
+    Journey page experience styles. Scoped to .journey-page so nothing
+    here leaks to other pages on the site. The page is structured as
+    six chapters with distinct spatial identities, plus a Chapter 4
+    peak moment that lives in its own visual environment. A single
+    background gradient on the essay wrapper carries the reader from
+    deep navy at the top to pre-dawn warmth at the CTA.
+  -->
+  <style>
+    /* ============================================================
+       PAGE CHASSIS
+       ============================================================ */
+
+    .journey-page footer {
+      background: #322a3a;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ============================================================
+       LIVING CURIOSITY
+       Sits between the hero and the essay. Signals that the
+       writer is actively thinking and that the site is alive.
+       Visually continuous with the top of the journey-essay
+       gradient so the page reads as one environment.
+       ============================================================ */
+
+    .journey-currently {
+      background: #1a1830;
+      position: relative;
+      z-index: 1;
+      padding: 7vh 24px 6vh;
+    }
+    .journey-currently-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .journey-currently-label {
+      display: block;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(241, 245, 249, 0.55);
+      margin: 0 0 1.5rem;
+    }
+    .journey-currently-heading {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      margin: 0 0 1.4rem;
+    }
+    .journey-currently-body {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      letter-spacing: 0.1px;
+    }
+    .journey-currently-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: #ff6c37;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      border-bottom: 1px solid rgba(255, 108, 55, 0.3);
+      padding-bottom: 4px;
+      transition: color 220ms ease-out, border-color 220ms ease-out;
+    }
+    .journey-currently-link:hover,
+    .journey-currently-link:focus-visible {
+      color: #ff8757;
+      border-bottom-color: #ff6c37;
+      outline: none;
+    }
+    .journey-currently-link .currently-arrow {
+      display: inline-block;
+      transition: transform 220ms ease-out;
+    }
+    .journey-currently-link:hover .currently-arrow,
+    .journey-currently-link:focus-visible .currently-arrow {
+      transform: translateX(4px);
+    }
+
+    /* The essay wrapper. One long gradient runs the length of the
+       reading experience; individual chapters do not have their own
+       backgrounds, so the eye senses one continuous environment that
+       evolves rather than a series of stacked panels. */
+    .journey-essay {
+      position: relative;
+      z-index: 1;
+      color: #e2e8f0;
+      background: linear-gradient(
+        180deg,
+        #1a1830 0%,
+        #0f172a 6%,
+        #0f172a 22%,
+        #1a1f2e 34%,
+        #1a1f2e 48%,
+        #2a2538 66%,
+        #322a3a 84%,
+        #322a3a 100%
+      );
+      overflow: hidden;
+    }
+
+    /* Descent zone: held silence between hero and first words */
+    .journey-descent {
+      height: 50vh;
+    }
+
+    /* ============================================================
+       CHAPTER BASE
+       ============================================================ */
+
+    .chapter {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 10vh 24px;
+    }
+
+    .chapter-heading {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      color: #ffffff;
+      text-align: center;
+      margin: 0 0 2.5rem;
+    }
+
+    .chapter-body p {
+      font-size: 1.18rem;
+      line-height: 1.85;
+      color: #e2e8f0;
+      margin: 0 0 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+    .chapter-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ============================================================
+       REVEAL STATE (JS-gated, gracefully degrades)
+       ============================================================ */
+
+    html.js-ready .journey-currently-inner,
+    html.js-ready .chapter-thread,
+    html.js-ready .chapter-heading,
+    html.js-ready .chapter-opening-line,
+    html.js-ready .question-stanza .question,
+    html.js-ready .peak-sentence,
+    html.js-ready .chapter--exhale .chapter-thought p,
+    html.js-ready .milestones-marks,
+    html.js-ready .chapter-closing-line,
+    html.js-ready .cta-invitation {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* The .is-revealed selectors must carry the same html.js-ready prefix
+       as the hidden state above, otherwise the hidden state wins on
+       specificity and the elements never appear. */
+    html.js-ready .journey-currently-inner.is-revealed,
+    html.js-ready .chapter-thread.is-revealed,
+    html.js-ready .chapter-heading.is-revealed,
+    html.js-ready .chapter-opening-line.is-revealed,
+    html.js-ready .question-stanza .question.is-revealed,
+    html.js-ready .peak-sentence.is-revealed,
+    html.js-ready .chapter--exhale .chapter-thought p.is-revealed,
+    html.js-ready .milestones-marks.is-revealed,
+    html.js-ready .chapter-closing-line.is-revealed,
+    html.js-ready .cta-invitation.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* The opening line lags the heading slightly, so the chapter
+       feels like it opens — heading first, then the line lands. */
+    html.js-ready .chapter-opening-line {
+      transition-delay: 200ms;
+    }
+
+    /* The peak sentence gets the calmest, slowest reveal on the page. */
+    html.js-ready .peak-sentence {
+      transition: opacity 1500ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  transform 1500ms cubic-bezier(0.25, 0.1, 0.25, 1);
+      transition-delay: 300ms;
+    }
+
+    /* The closing line mirrors the peak's slower register, slightly faster. */
+    html.js-ready .chapter-closing-line {
+      transition: opacity 1200ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  transform 1200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    /* ============================================================
+       CHAPTER 1 — INVITATION
+       Narrow intimate column. Ceremonial opening line. Question
+       stanza. The page's gentlest entry.
+       ============================================================ */
+
+    .chapter--invitation {
+      max-width: 600px;
+      padding-top: 14vh;
+      padding-bottom: 6vh;
+    }
+
+    .chapter-opening-line {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      line-height: 1.45;
+      color: #ffffff;
+      text-align: center;
+      margin: 0 0 3.5rem;
+      letter-spacing: -0.005em;
+    }
+
+    .question-stanza {
+      margin: 0 0 0.5rem;
+      padding: 0.75rem 0 0.75rem 24px;
+      border-left: 1px solid rgba(255, 255, 255, 0.09);
+    }
+    .question-stanza .question {
+      font-size: 1.26rem;
+      line-height: 1.55;
+      font-style: italic;
+      font-weight: 400;
+      color: #f1f5f9;
+      margin: 0 0 1.3rem;
+    }
+    .question-stanza .question:last-child {
+      margin-bottom: 0;
+    }
+
+    .chapter--invitation .chapter-body {
+      margin-top: 2.5rem;
+    }
+
+    /* ============================================================
+       CHAPTER 2 — GATHERING
+       Asymmetric. The text anchors left of center on wide screens;
+       the right of the screen is intentionally empty. First time
+       the page breaks its centered convention.
+       ============================================================ */
+
+    .chapter--gathering {
+      max-width: 680px;
+      margin-left: max(24px, calc(50% - 460px));
+      margin-right: 24px;
+    }
+    .chapter--gathering .chapter-heading {
+      text-align: left;
+    }
+
+    /* ============================================================
+       CHAPTER THREAD
+       A quiet doorway embedded inside the narrative. Set apart
+       by a thin hairline rule above it; sits inside the chapter
+       column, not as a card. Reads as the writer pausing to
+       point sideways, not as a CTA.
+       ============================================================ */
+
+    .chapter-thread {
+      margin: 2.6rem 0 0.6rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+    }
+    .chapter-thread-aside {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      font-style: italic;
+      color: rgba(226, 232, 240, 0.85);
+      margin: 0 0 1.1rem;
+      letter-spacing: 0.15px;
+    }
+    .chapter-thread-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: #ff6c37;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      padding-bottom: 3px;
+      border-bottom: 1px solid rgba(255, 108, 55, 0.3);
+      transition: color 220ms ease-out, border-color 220ms ease-out;
+    }
+    .chapter-thread-link:hover,
+    .chapter-thread-link:focus-visible {
+      color: #ff8757;
+      border-bottom-color: #ff6c37;
+      outline: none;
+    }
+    .chapter-thread-link .thread-arrow {
+      display: inline-block;
+      transition: transform 220ms ease-out;
+    }
+    .chapter-thread-link:hover .thread-arrow,
+    .chapter-thread-link:focus-visible .thread-arrow {
+      transform: translateX(4px);
+    }
+
+    /* ============================================================
+       CHAPTER 3 — LIBRARY
+       Widest column on the page. Slightly tighter line spacing.
+       Sustained reading — the chapter feels like work because the
+       chapter is about work. Readability is preserved.
+       ============================================================ */
+
+    .chapter--library {
+      max-width: 800px;
+    }
+    .chapter--library .chapter-body p {
+      line-height: 1.78;
+      margin-bottom: 1.4rem;
+    }
+    .chapter--library .chapter-body p:last-child {
+      margin-top: 2.6rem;
+    }
+
+    /* The "back to the classroom" pivot. Same body type — extra
+       breath above and below so the chapter's decision-moment lands
+       as a beat rather than as another paragraph. */
+    .chapter--library .chapter-body p.chapter-pivot {
+      margin-top: 3.6rem;
+      margin-bottom: 3.6rem;
+    }
+
+    /* ============================================================
+       CHAPTER 4 — THE PEAK
+       Three phases: compressed build (narrow column, larger
+       heading), then the peak moment in its own black room, then
+       the release in a slightly wider column.
+       ============================================================ */
+
+    /* Phase 1: pre-peak compression */
+    .chapter--peak-build {
+      max-width: 560px;
+      padding-top: 14vh;
+      padding-bottom: 0;
+    }
+    .chapter--peak-build .chapter-heading {
+      font-size: 3.4rem;
+      margin-bottom: 4rem;
+    }
+
+    /* Phase 2: the peak moment owns its own background.
+       Gradient overlays at top and bottom blend the black into the
+       surrounding warm slate so the boundary is invisible. */
+    .peak-moment {
+      position: relative;
+      background: #080808;
+      padding: 30vh 24px;
+      text-align: center;
+      margin: 0;
+    }
+    .peak-moment::before,
+    .peak-moment::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 14vh;
+      pointer-events: none;
+    }
+    .peak-moment::before {
+      top: 0;
+      background: linear-gradient(180deg, #1a1f2e 0%, transparent 100%);
+    }
+    .peak-moment::after {
+      bottom: 0;
+      background: linear-gradient(0deg, #2a2538 0%, transparent 100%);
+    }
+    .peak-sentence {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 500;
+      line-height: 1.32;
+      color: #ffffff;
+      text-align: center;
+      letter-spacing: -0.01em;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Phase 3: post-peak release */
+    .chapter--peak-release {
+      max-width: 640px;
+      padding-top: 8vh;
+    }
+
+    /* ============================================================
+       CHAPTER 5 — EXHALE
+       Three thoughts, each isolated in its own breath of space.
+       Narrowest column. Smallest heading. The deliberate quiet
+       after the peak.
+       ============================================================ */
+
+    .chapter--exhale {
+      max-width: 100%;
+      padding: 4vh 0 6vh;
+    }
+    .chapter--exhale .chapter-heading {
+      font-size: 2.4rem;
+      margin: 6vh 24px 0;
+    }
+    .chapter--exhale .chapter-thought {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 6vh 24px;
+      text-align: center;
+    }
+    .chapter--exhale .chapter-thought p {
+      font-size: 1.18rem;
+      line-height: 1.85;
+      color: #e2e8f0;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+
+    /* Recognition strip. Editorial label register — tracked, small,
+       low-opacity uppercase phrases pulled from the prose. Reads as
+       a credits line rather than a list of awards. No icons, no
+       borders, no backgrounds. */
+    .milestones-marks {
+      max-width: 640px;
+      margin: 1vh auto 4vh;
+      padding: 0 28px;
+      text-align: center;
+      line-height: 2;
+    }
+    .milestone-mark {
+      display: inline-block;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(241, 245, 249, 0.5);
+      white-space: nowrap;
+    }
+    .milestone-mark:not(:last-child)::after {
+      content: '\00b7';
+      display: inline-block;
+      margin: 0 0.9rem 0 1.2rem;
+      color: rgba(241, 245, 249, 0.25);
+      letter-spacing: 0;
+    }
+
+    /* The chapter's thesis sentence — pulled out of the closing
+       paragraph and given a quieter cousin of the peak treatment.
+       Italic, larger than body but well below peak/closing scale,
+       white, centered. Reads as a held statement, not a slogan. */
+    .chapter--exhale .chapter-thought p.milestone-thesis {
+      font-size: 1.42rem;
+      line-height: 1.5;
+      font-weight: 500;
+      font-style: italic;
+      color: #ffffff;
+      letter-spacing: -0.003em;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .chapter--exhale .chapter-thought--thesis {
+      padding: 8vh 24px;
+    }
+
+    /* ============================================================
+       CHAPTER 6 — FORWARD
+       Begins at body width and expands. Paragraph spacing grows
+       progressively. The closing line breaks wider and rises to
+       ceremonial scale — mirror to Chapter 1's opening line.
+       ============================================================ */
+
+    .chapter--forward {
+      max-width: 640px;
+      padding-top: 10vh;
+      padding-bottom: 4vh;
+    }
+    .chapter-body--expanding p:nth-of-type(1) { margin-bottom: 1.7rem; }
+    .chapter-body--expanding p:nth-of-type(2) { margin-bottom: 2.0rem; }
+    .chapter-body--expanding p:nth-of-type(3) { margin-bottom: 2.4rem; }
+    .chapter-body--expanding p:nth-of-type(4) { margin-bottom: 2.9rem; }
+    .chapter-body--expanding p:nth-of-type(5) { margin-bottom: 3.4rem; }
+
+    .chapter-closing-line {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 500;
+      line-height: 1.45;
+      color: #ffffff;
+      text-align: center;
+      max-width: 900px;
+      margin: 6vh auto 0;
+      padding: 0 24px;
+      letter-spacing: -0.005em;
+    }
+
+    /* ============================================================
+       CTA — held inside the ending. Functions as a destination:
+       the invitation rises to ceremonial scale, then two equal
+       paths sit beneath it in a quiet table-of-contents register.
+       Chai-orange appears here only — nowhere else on the page —
+       so the page's single color signal lives at the threshold.
+       ============================================================ */
+
+    .journey-cta {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 10vh 24px 14vh;
+      text-align: center;
+    }
+    .cta-invitation {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #ffffff;
+      letter-spacing: -0.005em;
+      max-width: 620px;
+      margin: 0 auto 3.5rem;
+    }
+    .cta-invitation .cta-invitation-sub {
+      display: block;
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: rgba(226, 232, 240, 0.7);
+      letter-spacing: 0.01em;
+    }
+    .cta-paths {
+      max-width: 560px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .cta-path {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding: 1.5rem 0.25rem;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.18rem;
+      font-weight: 500;
+      line-height: 1.45;
+      color: #e2e8f0;
+      text-decoration: none;
+      text-align: left;
+      letter-spacing: 0.005em;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transition: color 260ms ease-out, border-top-color 260ms ease-out;
+    }
+    .cta-paths .cta-path:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: color 260ms ease-out,
+                  border-top-color 260ms ease-out,
+                  border-bottom-color 260ms ease-out;
+    }
+    .cta-path-text {
+      flex: 1;
+    }
+    .cta-path .cta-arrow {
+      display: inline-block;
+      flex-shrink: 0;
+      color: rgba(255, 108, 55, 0.75);
+      transition: transform 260ms ease-out, color 260ms ease-out;
+    }
+    .cta-path:hover,
+    .cta-path:focus-visible {
+      color: #ff6c37;
+      border-top-color: rgba(255, 108, 55, 0.45);
+      outline: none;
+    }
+    .cta-paths .cta-path:last-child:hover,
+    .cta-paths .cta-path:last-child:focus-visible {
+      border-bottom-color: rgba(255, 108, 55, 0.45);
+    }
+    .cta-path:hover .cta-arrow,
+    .cta-path:focus-visible .cta-arrow {
+      color: #ff6c37;
+      transform: translateX(8px);
+    }
+
+    /* ============================================================
+       NAVIGATION — visible during hero, hidden during reading,
+       returns at CTA and footer.
+       ============================================================ */
+
+    .main-nav {
+      transition: opacity 400ms ease-in;
+    }
+    .main-nav.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 400ms ease-out;
+    }
+
+    /* ============================================================
+       MOBILE
+       ============================================================ */
+
+    @media (max-width: 768px) {
+      .journey-descent {
+        height: 32vh;
+      }
+
+      .journey-currently {
+        padding: 5vh 24px 5vh;
+      }
+      .journey-currently-heading {
+        font-size: 1.55rem;
+      }
+      .journey-currently-body {
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .chapter-thread {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+      }
+      .chapter-thread-aside {
+        font-size: 1rem;
+      }
+
+      .chapter {
+        padding: 8vh 24px;
+      }
+      .chapter-heading {
+        font-size: 2.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .chapter--invitation {
+        padding-top: 10vh;
+      }
+      .chapter-opening-line {
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .question-stanza {
+        padding: 0.5rem 0 0.5rem 16px;
+      }
+      .question-stanza .question {
+        font-size: 1.13rem;
+        margin-bottom: 1.1rem;
+      }
+
+      .chapter--gathering {
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .chapter--gathering .chapter-heading {
+        text-align: center;
+      }
+
+      .chapter--library .chapter-body p {
+        line-height: 1.8;
+      }
+
+      .chapter--peak-build {
+        padding-top: 10vh;
+      }
+      .chapter--peak-build .chapter-heading {
+        font-size: 2.4rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .peak-moment {
+        padding: 22vh 28px;
+      }
+      .peak-sentence {
+        font-size: 1.55rem;
+        line-height: 1.4;
+      }
+
+      .chapter--exhale .chapter-heading {
+        font-size: 1.8rem;
+      }
+      .chapter--exhale .chapter-thought {
+        padding: 4vh 28px;
+      }
+      .chapter--exhale .chapter-thought--thesis {
+        padding: 6vh 28px;
+      }
+      .chapter--exhale .chapter-thought p.milestone-thesis {
+        font-size: 1.2rem;
+      }
+      .milestones-marks {
+        margin: 1vh auto 3vh;
+        line-height: 2.2;
+      }
+      .milestone-mark {
+        font-size: 0.65rem;
+        letter-spacing: 0.28em;
+      }
+      .milestone-mark:not(:last-child)::after {
+        margin: 0 0.6rem 0 0.85rem;
+      }
+
+      .chapter-closing-line {
+        font-size: 1.3rem;
+      }
+
+      .chapter-body p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+      }
+
+      .chapter-body--expanding p:nth-of-type(1) { margin-bottom: 1.4rem; }
+      .chapter-body--expanding p:nth-of-type(2) { margin-bottom: 1.7rem; }
+      .chapter-body--expanding p:nth-of-type(3) { margin-bottom: 2.0rem; }
+      .chapter-body--expanding p:nth-of-type(4) { margin-bottom: 2.3rem; }
+      .chapter-body--expanding p:nth-of-type(5) { margin-bottom: 2.6rem; }
+
+      .cta-invitation {
+        font-size: 1.15rem;
+        margin-bottom: 2.5rem;
+      }
+      .cta-invitation .cta-invitation-sub {
+        font-size: 0.88rem;
+      }
+      .cta-path {
+        font-size: 1.05rem;
+        padding: 1.25rem 0.25rem;
+      }
+    }
+
+    /* ============================================================
+       REDUCED MOTION
+       ============================================================ */
+
+    @media (prefers-reduced-motion: reduce) {
+      html.js-ready .journey-currently-inner,
+      html.js-ready .chapter-thread,
+      html.js-ready .chapter-heading,
+      html.js-ready .chapter-opening-line,
+      html.js-ready .question-stanza .question,
+      html.js-ready .peak-sentence,
+      html.js-ready .chapter--exhale .chapter-thought p,
+      html.js-ready .milestones-marks,
+      html.js-ready .chapter-closing-line,
+      html.js-ready .cta-invitation {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .main-nav,
+      .main-nav.is-hidden {
+        transition: none !important;
+      }
+      .cta-path,
+      .cta-path .cta-arrow,
+      .journey-currently-link,
+      .journey-currently-link .currently-arrow,
+      .chapter-thread-link,
+      .chapter-thread-link .thread-arrow {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="journey-page">
+
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="site-logo">Rajiv Vakani</a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="journey.html" class="active">Journey</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="social-icons" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu-overlay"></div>
+
+  <!-- Hero — visual treatment matched to supporters.html: slowed video, dark overlay, matched glass panel. -->
+  <header class="hero homepage-hero">
+    <video autoplay muted loop playsinline class="hero-video-background" poster="poster.jpg">
+      <source src="pouring-chai.mp4" type="video/mp4" />
+    </video>
+    <script>
+      // Slow the hero video to 60% playback to match the calmer feel of the supporters hero.
+      document.addEventListener('DOMContentLoaded', function () {
+        var heroVideo = document.querySelector('header.homepage-hero .hero-video-background');
+        if (heroVideo) {
+          heroVideo.playbackRate = 0.6;
+        }
+      });
+    </script>
+    <div class="hero-overlay" style="background-color: rgba(0, 0, 0, 0.10);"></div>
+    <div class="hero-content">
+      <div class="frosted-hero-panel" style="background: rgba(255, 255, 255, 0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 16px; padding: 60px 40px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1 class="hero-heading" style="text-align: center; margin: 0 auto;">Journey</h1>
+        <p class="hero-tagline" style="text-align: center; margin: 0 auto; margin-bottom: 30px;">
+          How I found my way into nutrition, education, and evidence-based health.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!--
+    Living Curiosity. The visitor's first stop after the hero — a
+    short window into what the writer is currently sitting with.
+    Sits above the journey-essay wrapper so the essay's gradient
+    chassis is unchanged. Anchor id="currently-thinking" is the
+    target for the CTA's internal-loop link at the bottom of the
+    page.
+  -->
+  <section id="currently-thinking" class="journey-currently" aria-labelledby="currently-thinking-heading">
+    <div class="journey-currently-inner">
+      <span class="journey-currently-label">Currently Thinking About</span>
+      <h2 id="currently-thinking-heading" class="journey-currently-heading">What actually changes someone&rsquo;s mind?</h2>
+      <p class="journey-currently-body">The more I study nutrition, the less convinced I am that facts alone drive change. I&rsquo;ve watched evidence persuade some people and bounce harmlessly off others. I&rsquo;ve watched stories succeed where data failed. The question I&rsquo;m currently wrestling with isn&rsquo;t what people should believe. It&rsquo;s how people arrive there in the first place.</p>
+      <a href="insights/why-i-stopped-trusting-simple-answers.html" class="journey-currently-link">
+        <span>Explore: Why I Stopped Trusting Simple Answers</span>
+        <span class="currently-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!--
+    The Journey essay. Six chapters, each with its own spatial
+    identity, plus a Chapter 4 peak that owns its own visual
+    environment. The CTA flows directly out of Chapter 6 on the
+    same background, with no panel break.
+  -->
+  <main class="journey-essay">
+
+    <!-- Descent zone: held silence between hero and first words -->
+    <div class="journey-descent" aria-hidden="true"></div>
+
+    <!-- ===== CHAPTER 1 — THE INVITATION ===== -->
+    <section class="chapter chapter--invitation" aria-labelledby="ch-curiosity">
+      <h2 class="chapter-heading" id="ch-curiosity">Curiosity Came First</h2>
+
+      <p class="chapter-opening-line">Long before I studied nutrition, I was interested in questions that resisted simple answers.</p>
+
+      <div class="question-stanza" role="group" aria-label="Three questions">
+        <p class="question">Why do intelligent people look at the same information and reach different conclusions?</p>
+        <p class="question">Why do traditions that have existed for generations sometimes align with modern science, while other times they seem to conflict with it?</p>
+        <p class="question">Why does nutrition advice change so often, yet certain patterns appear again and again?</p>
+      </div>
+
+      <div class="chapter-body">
+        <p>I was rarely satisfied with quick answers. If anything, the answer usually led to another question. The more I learned, the more I realized that most worthwhile topics are not black and white. They live somewhere in the gray areas between culture and science, experience and evidence, certainty and uncertainty.</p>
+        <p>That curiosity followed me through different stages of life and eventually led me to nutrition. Not because nutrition offered simple answers, but because it brought together many of the questions I was already asking.</p>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER 2 — THE GATHERING ===== -->
+    <section class="chapter chapter--gathering" aria-labelledby="ch-questions">
+      <h2 class="chapter-heading" id="ch-questions">Where the Questions Led</h2>
+      <div class="chapter-body">
+        <p>That curiosity eventually led me to nutrition.</p>
+        <p>The more questions I asked, the more I found myself returning to food. Not because food is simple, but because it isn't. Food sits at the intersection of biology, culture, behavior, identity, economics, tradition, and health. Few subjects touch so many aspects of daily life, yet few are discussed with as much certainty.</p>
+        <p>What interested me wasn't finding the perfect diet or the latest trend. It was understanding why people eat the way they do, how beliefs are formed, where evidence fits into the conversation, and how seemingly contradictory ideas can sometimes contain pieces of the truth.</p>
+        <p>Over time, I noticed that many of the questions that held my attention shared a common thread. Whether the topic was cultural food traditions, public health recommendations, emerging research, or everyday nutrition advice, I kept coming back to the same challenge: how do we make informed decisions when the answers are rarely as simple as we would like them to be?</p>
+
+        <!-- Curiosity thread. A quiet doorway from the narrative
+             into the article that picks this question up in depth. -->
+        <div class="chapter-thread" role="complementary" aria-label="Related thinking">
+          <p class="chapter-thread-aside">I keep coming back to this problem in nutrition and beyond: simple answers are easy to share, but they often miss the context that actually matters.</p>
+          <a href="insights/why-i-stopped-trusting-simple-answers.html" class="chapter-thread-link">
+            <span>Why I Stopped Trusting Simple Answers</span>
+            <span class="thread-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+
+        <p>Eventually, the questions I was asking became the questions I wanted to study more seriously.</p>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER 3 — THE LIBRARY ===== -->
+    <section class="chapter chapter--library" aria-labelledby="ch-learning">
+      <h2 class="chapter-heading" id="ch-learning">Learning With Intention</h2>
+      <div class="chapter-body">
+        <p>For a long time, I was content to learn on my own. I read widely, followed research, listened to different perspectives, and tried to make sense of the questions that interested me.</p>
+        <p>Eventually, though, I realized that curiosity and information are not the same thing as understanding. The deeper I looked, the more I appreciated the value of structure, mentorship, and a rigorous foundation. I wanted better tools. I wanted to understand not only what the evidence said, but how it was produced, how it should be interpreted, and where its limitations were.</p>
+        <p class="chapter-pivot">That realization brought me back to the classroom.</p>
+        <p>I began at Nassau Community College, where I earned an Associate of Science degree in Food &amp; Nutrition. What started as a return to school quickly became something more. I found myself fully engaged in the work, often pursuing questions well beyond the requirements of a course and exploring topics long after assignments had been submitted. I graduated with a 4.0 GPA, but more importantly, with a deeper appreciation for how much there was still to learn.</p>
+        <p>From there, I transferred to New York University to continue my studies in Nutrition &amp; Dietetics. NYU has challenged me to think more critically, ask better questions, and engage with nutrition at a deeper level. The further I go, the less interested I become in simple answers and the more interested I become in understanding context. People do not eat in laboratories. They eat within families, cultures, traditions, budgets, communities, and circumstances. Good nutrition advice has to account for that reality.</p>
+        <p>What excites me most about studying nutrition is not the feeling of finding answers. It is the process of learning how to ask better questions.</p>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER 4 — THE PEAK ===== -->
+
+    <!-- Phase 1: compressed pre-peak build -->
+    <section class="chapter chapter--peak-build" aria-labelledby="ch-understanding">
+      <h2 class="chapter-heading" id="ch-understanding">Understanding Is Only Half the Job</h2>
+      <div class="chapter-body">
+        <p>The more I learned, the more I realized that knowledge alone is not enough.</p>
+        <p>A concept can be scientifically accurate and still fail to help someone if it is poorly communicated. Facts matter, but so do context, trust, culture, and the ability to meet people where they are.</p>
+      </div>
+    </section>
+
+    <!-- Phase 2: the peak moment in its own environment -->
+    <section class="peak-moment" aria-label="Thesis">
+      <p class="peak-sentence">Understanding something yourself and helping someone else understand it are two very different skills.</p>
+    </section>
+
+    <!-- Phase 3: release -->
+    <section class="chapter chapter--peak-release" aria-label="Chapter 4 continuation">
+      <div class="chapter-body">
+        <p>Many of the experiences that taught me this lesson had little to do with nutrition on the surface.</p>
+        <p>As a Pathshala teacher, I learned quickly that young people can tell when an explanation is incomplete. Teaching complex ideas requires patience, clarity, and the willingness to see a topic from someone else's perspective. The goal is not simply to provide answers, but to help others think more deeply about the questions themselves.</p>
+        <p>The same lesson appeared in different forms through leadership and service. As Secretary of the Student Government Association, I saw how decisions affect people with different priorities, backgrounds, and expectations. As President of the Nutrition Club, I had opportunities to share ideas, organize events, and help connect nutrition concepts to everyday life. Through committee work and campus leadership, I learned that meaningful progress often comes less from having the right answer and more from listening carefully, communicating clearly, and working through complexity together.</p>
+        <p>Looking back, these experiences all taught variations of the same lesson. Information is important, but it is only the beginning. Whether the subject is nutrition, education, or community leadership, understanding is only half the job. The other half is helping people make sense of it in a way that is useful, honest, and relevant to their lives.</p>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER 5 — THE EXHALE =====
+         Two memorable moments live here. (1) A quiet typographic
+         strip pulls four phrases already named in the prose into
+         label register, giving the chapter a visible acknowledgment
+         of recognition without a card, badge, or graphic. (2) The
+         chapter's thesis sentence is extracted from its closing
+         paragraph and given a held-italic moment of its own. Every
+         word of the approved text is preserved. -->
+    <section class="chapter chapter--exhale" aria-labelledby="ch-milestones">
+      <h2 class="chapter-heading" id="ch-milestones">A Few Milestones</h2>
+
+      <div class="chapter-thought">
+        <p>Along the way, there have been encouraging signs that I am moving in the right direction.</p>
+      </div>
+
+      <div class="milestones-marks" aria-hidden="true">
+        <span class="milestone-mark">academic honors</span><!--
+     --><span class="milestone-mark">scholarships</span><!--
+     --><span class="milestone-mark">leadership awards</span><!--
+     --><span class="milestone-mark">Phi Theta Kappa</span>
+      </div>
+
+      <div class="chapter-thought">
+        <p>I have been fortunate to receive recognition through academic honors, scholarships, leadership awards, and organizations such as Phi Theta Kappa. I am grateful for each of them, not because they define the work, but because they serve as reminders that the effort has been worthwhile.</p>
+      </div>
+
+      <div class="chapter-thought chapter-thought--thesis">
+        <p class="milestone-thesis">The milestones matter, but they are not the destination.</p>
+      </div>
+
+      <div class="chapter-thought">
+        <p>If anything, they have reinforced a lesson that has appeared throughout this journey: there is always more to learn.</p>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER 6 — THE OPENING FORWARD ===== -->
+    <section class="chapter chapter--forward" aria-labelledby="ch-headed">
+      <h2 class="chapter-heading" id="ch-headed">Where I'm Headed</h2>
+      <div class="chapter-body chapter-body--expanding">
+        <p>Today, I am continuing my studies in Nutrition &amp; Dietetics while working toward becoming a Registered Dietitian.</p>
+        <p>The field of nutrition is constantly evolving, and that is part of what attracts me to it. New research raises new questions. Cultural traditions offer perspectives that science is still learning how to evaluate. Individual experiences rarely fit neatly into broad recommendations. The work is challenging precisely because it resists simple conclusions.</p>
+        <p>My goal is to help people navigate nutrition with clarity, honesty, and perspective. That means searching for answers, following the evidence wherever it leads, and remaining open to the possibility that there is still more to learn.</p>
+        <p>Some questions have strong answers. Others live in the gray areas. Understanding the difference is just as important as understanding the science itself.</p>
+        <p>This website is an extension of that process. It is a place to share what I am learning, explore ideas that interest me, and continue asking better questions.</p>
+      </div>
+      <p class="chapter-closing-line">The story is still unfolding, and in many ways, I am just getting started.</p>
+    </section>
+
+    <!-- ===== CTA — the launchpad =====
+         Not a closing sign-off. A small map into the rest of
+         the site. Three destinations: Insights (primary, where
+         current writing lives), Current Curiosity (a quiet
+         internal loop back to the top of this page), and
+         Contact (available, not dominant). -->
+    <section class="journey-cta" aria-label="Where to next">
+      <p class="cta-invitation">
+        The story keeps going elsewhere on this site.
+        <span class="cta-invitation-sub">Pick where to head next.</span>
+      </p>
+      <nav class="cta-paths" aria-label="Where to next">
+        <a href="insights.html" class="cta-path">
+          <span class="cta-path-text">Read what I&rsquo;m currently working through.</span>
+          <span class="cta-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a href="#currently-thinking" class="cta-path">
+          <span class="cta-path-text">Return to the question I&rsquo;m sitting with right now.</span>
+          <span class="cta-arrow" aria-hidden="true">&uarr;</span>
+        </a>
+        <a href="contact.html" class="cta-path">
+          <span class="cta-path-text">Start a conversation.</span>
+          <span class="cta-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </nav>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-social" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important; justify-content: center !important; width: 100% !important; margin-bottom: 20px !important;">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+      </div>
+      <p>&copy; 2025-2026 Rajiv Vakani. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // ============================================================
+      // Mobile nav menu (unchanged behavior)
+      // ============================================================
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const overlay = document.querySelector('.mobile-menu-overlay');
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function () {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          if (overlay) overlay.classList.toggle('active');
+        });
+        if (overlay) {
+          overlay.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            overlay.classList.remove('active');
+          });
+        }
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+          });
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+          }
+        });
+      }
+
+      // ============================================================
+      // Nav style on scroll — keeps existing site behavior so the
+      // bar has its scrolled background when it returns at the CTA.
+      // ============================================================
+      const mainNav = document.querySelector('.main-nav');
+      const heroSection = document.querySelector('.hero');
+
+      if (mainNav && heroSection) {
+        function handleNavScroll() {
+          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+          if (window.pageYOffset + 100 > heroBottom) {
+            mainNav.classList.add('scrolled');
+          } else {
+            mainNav.classList.remove('scrolled');
+          }
+        }
+        window.addEventListener('scroll', handleNavScroll, { passive: true });
+        handleNavScroll();
+      }
+
+      // ============================================================
+      // Reveal-on-scroll: chapter headings, opening line, peak
+      // sentence, closing line, and exhale paragraphs.
+      // Each element animates exactly once.
+      // ============================================================
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3, rootMargin: '0px 0px -8% 0px' });
+
+      document.querySelectorAll(
+        '.journey-currently-inner, ' +
+        '.chapter-thread, ' +
+        '.chapter-heading, ' +
+        '.chapter-opening-line, ' +
+        '.peak-sentence, ' +
+        '.chapter-closing-line, ' +
+        '.chapter--exhale .chapter-thought p, ' +
+        '.milestones-marks, ' +
+        '.cta-invitation'
+      ).forEach(el => revealObserver.observe(el));
+
+      // ============================================================
+      // Chapter 1 question stanza: sequential reveal.
+      // 400 ms between each question — the reader feels the
+      // questions being asked one at a time.
+      // ============================================================
+      const stanzaObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const questions = entry.target.querySelectorAll('.question');
+            questions.forEach((q, i) => {
+              setTimeout(() => q.classList.add('is-revealed'), i * 400);
+            });
+            stanzaObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+
+      document.querySelectorAll('.question-stanza').forEach(el => {
+        stanzaObserver.observe(el);
+      });
+
+      // ============================================================
+      // Navigation visibility.
+      //
+      // Rules:
+      //   - Nav is always visible while hero, CTA, or footer is in view.
+      //   - Outside those regions, nav hides while scrolling DOWN and
+      //     reappears the instant the reader scrolls UP. This matches
+      //     the pattern most long-form readers expect: scroll up to
+      //     re-read or to access nav, scroll down to keep reading.
+      // ============================================================
+      const ctaEl = document.querySelector('.journey-cta');
+      const footerEl = document.querySelector('footer');
+
+      if (mainNav && heroSection && ctaEl) {
+        let heroVisible = true;
+        let ctaVisible = false;
+        let footerVisible = false;
+        let lastScrollY = window.pageYOffset;
+        let scrollTicking = false;
+
+        function applyNavState() {
+          if (heroVisible || ctaVisible || footerVisible) {
+            mainNav.classList.remove('is-hidden');
+          }
+          // Outside those regions, visibility is controlled by
+          // scroll direction in handleDirectionalScroll.
+        }
+
+        function handleDirectionalScroll() {
+          const currentY = window.pageYOffset;
+          const delta = currentY - lastScrollY;
+
+          // Ignore microscopic deltas to avoid jitter near rest.
+          if (Math.abs(delta) < 4) {
+            scrollTicking = false;
+            return;
+          }
+
+          const inAlwaysVisibleRegion = heroVisible || ctaVisible || footerVisible;
+
+          if (inAlwaysVisibleRegion) {
+            mainNav.classList.remove('is-hidden');
+          } else if (delta > 0) {
+            // Scrolling down through the reading region.
+            mainNav.classList.add('is-hidden');
+          } else {
+            // Scrolling up through the reading region — bring it back.
+            mainNav.classList.remove('is-hidden');
+          }
+
+          lastScrollY = currentY;
+          scrollTicking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+          if (!scrollTicking) {
+            requestAnimationFrame(handleDirectionalScroll);
+            scrollTicking = true;
+          }
+        }, { passive: true });
+
+        new IntersectionObserver((entries) => {
+          heroVisible = entries[0].isIntersecting;
+          applyNavState();
+        }, { threshold: 0, rootMargin: '-60px 0px 0px 0px' }).observe(heroSection);
+
+        new IntersectionObserver((entries) => {
+          ctaVisible = entries[0].isIntersecting;
+          applyNavState();
+        }, { threshold: 0.25 }).observe(ctaEl);
+
+        if (footerEl) {
+          new IntersectionObserver((entries) => {
+            footerVisible = entries[0].isIntersecting;
+            applyNavState();
+          }, { threshold: 0 }).observe(footerEl);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

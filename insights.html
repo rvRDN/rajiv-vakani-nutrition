@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Insights | Rajiv Vakani</title>
+  <meta name="description" content="A collection of ideas, questions, studies, and observations by Rajiv Vakani on nutrition, health, and how we make sense of both.">
+
+  <!-- Draft phase: keep out of search results until launch -->
+  <meta name="robots" content="noindex">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rajivvakani.com/insights.html" />
+  <meta property="og:title" content="Insights | Rajiv Vakani" />
+  <meta property="og:description" content="A collection of ideas, questions, studies, and observations by Rajiv Vakani on nutrition, health, and how we make sense of both." />
+  <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
+  <meta property="og:site_name" content="Rajiv Vakani" />
+
+  <link rel="canonical" href="https://rajivvakani.com/insights.html" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://rajivvakani.com/insights.html" />
+  <meta property="twitter:title" content="Insights | Rajiv Vakani" />
+  <meta property="twitter:description" content="A collection of ideas, questions, studies, and observations by Rajiv Vakani on nutrition, health, and how we make sense of both." />
+  <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="rajiv-styles.css?v=20250116k">
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0L41N5K2WV');
+  </script>
+
+  <script defer src="animations.js"></script>
+
+  <style>
+    /* Page-local styling for the Insights landing.
+       Approach: Curated Stream + Framing, Index Page visual treatment.
+       Typography + whitespace only. No cards, shadows, borders, or dividers between entries. */
+
+    .insights-page .insights-hero {
+      background: linear-gradient(135deg, #1e293b 0%, #475569 60%, #64748b 100%);
+      min-height: 50vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 20px;
+    }
+    .insights-page .insights-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.05));
+      pointer-events: none;
+    }
+    .insights-page .insights-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .insights-page .insights-hero-title {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(2.4rem, 5.5vw, 3.2rem);
+      line-height: 1.15;
+      margin: 0 0 18px 0;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+    .insights-page .insights-hero-framing {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.92);
+      margin: 0;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .insights-page .insights-stream {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 88px 24px 112px;
+      text-align: left;
+    }
+    .insights-page .insights-stream__entry {
+      margin: 0 0 54px 0;
+      text-align: left;
+    }
+    .insights-page .insights-stream__entry:last-child {
+      margin-bottom: 0;
+    }
+    .insights-page .insights-stream__title {
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 1.9rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin: 0 0 14px 0;
+      color: #1f2937;
+      letter-spacing: -0.005em;
+      text-align: left;
+    }
+    .insights-page .insights-stream__title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.18s ease;
+    }
+    .insights-page .insights-stream__title a:hover,
+    .insights-page .insights-stream__title a:focus-visible {
+      color: #1d4ed8;
+    }
+    .insights-page .insights-stream__lede {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #4b5563;
+      margin: 0;
+      text-align: left;
+    }
+
+    .insights-page .insights-stream__loading,
+    .insights-page .insights-stream__error,
+    .insights-page .insights-stream__empty {
+      font-family: 'Inter', sans-serif;
+      color: #6b7280;
+      text-align: center;
+      font-size: 0.95em;
+      margin: 0;
+    }
+
+    /* Future Topic Discovery placeholder lives here, just below the stream.
+       Intentionally renders nothing in v1. See docs/project-continuity-v4.md §8.9. */
+
+    @media (max-width: 640px) {
+      .insights-page .insights-hero {
+        min-height: 44vh;
+        padding: 56px 20px;
+      }
+      .insights-page .insights-stream {
+        padding: 64px 20px 88px;
+      }
+      .insights-page .insights-stream__entry {
+        margin-bottom: 42px;
+      }
+      .insights-page .insights-stream__title {
+        font-size: 1.5rem;
+      }
+      .insights-page .insights-stream__lede {
+        font-size: 1.05em;
+      }
+    }
+  </style>
+</head>
+<body class="insights-page">
+
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="site-logo">Rajiv Vakani</a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="journey.html">Journey</a></li>
+        <li><a href="insights.html" class="active">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="social-icons" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu-overlay"></div>
+
+  <!-- Hero + framing. The hero IS the framing section. -->
+  <header class="insights-hero">
+    <div class="insights-hero-inner">
+      <h1 class="insights-hero-title">Insights</h1>
+      <p class="insights-hero-framing">
+        A collection of ideas, questions, studies, and observations about nutrition, health, and how we make sense of both.
+      </p>
+    </div>
+  </header>
+
+  <!-- Curated Stream. Rendered at runtime from insights/articles.json.
+       Approach B (Index Page): Title + Lede units separated by whitespace only.
+       No cards, no dividers between entries, no badges, no dates, no read times. -->
+  <main class="insights-stream" data-insights-stream aria-label="Insights">
+    <p class="insights-stream__loading">Loading&hellip;</p>
+  </main>
+
+  <!--
+    Future Topic Discovery affordance — DO NOT RENDER IN V1.
+    When the library grows past ~10 pieces, a single quiet line will be added
+    just below the stream pointing to /insights/topics.html. Example wording:
+      <a href="insights/topics.html">Looking for something specific? Browse by topic.</a>
+    Architecture is documented in docs/project-continuity-v4.md §8.9.
+    Until then, this comment is the only trace of the planned layer.
+  -->
+
+  <footer>
+    <div class="container">
+      <div class="footer-social" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important; justify-content: center !important; width: 100% !important; margin-bottom: 20px !important;">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+      </div>
+      <p>&copy; 2025-2026 Rajiv Vakani. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      /* Standard nav + mobile menu behavior — matches every other page on the site. */
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const overlay = document.querySelector('.mobile-menu-overlay');
+      const mainNav = document.querySelector('.main-nav');
+      const heroSection = document.querySelector('.insights-hero');
+
+      function handleNavScroll() {
+        if (heroSection && mainNav) {
+          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+          const scrollPosition = window.pageYOffset + 100;
+          if (scrollPosition > heroBottom) {
+            mainNav.classList.add('scrolled');
+          } else {
+            mainNav.classList.remove('scrolled');
+          }
+        }
+      }
+      window.addEventListener('scroll', handleNavScroll);
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function () {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          if (overlay) overlay.classList.toggle('active');
+        });
+        if (overlay) {
+          overlay.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            overlay.classList.remove('active');
+          });
+        }
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+          });
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+          }
+        });
+      }
+    });
+
+    /* ============================================================
+       INLINE FALLBACK for local file:// preview.
+       ============================================================
+
+       The page reads from insights/articles.json at runtime. When the site is
+       served over HTTP (Netlify in production, or a local server like
+       `python -m http.server` during development), this constant is never
+       used — the JSON file on disk is the source of truth.
+
+       When the page is opened directly via file:// in a browser, fetch() of
+       the local JSON file is blocked by browser security policy. This inline
+       constant exists so the page still renders identically in that case,
+       which is essential for previewing the layout without setting up a
+       local web server.
+
+       KEEP THIS IN SYNC WITH insights/articles.json IF PREVIEWING VIA file://.
+       If you preview via a local HTTP server, you can ignore this constant
+       entirely — the live JSON will always win.
+
+       Quick ways to preview over HTTP locally (so you can edit articles.json
+       directly and skip the inline-fallback maintenance burden):
+         - Python:  python -m http.server 8000   →  http://localhost:8000/insights.html
+         - Node:    npx serve                    →  http://localhost:3000/insights.html
+         - VS Code: install the "Live Server" extension, right-click → Open with Live Server
+       ============================================================ */
+    const INLINE_ARTICLES_FALLBACK = [
+      {
+        "slug": "why-i-stopped-trusting-simple-answers",
+        "url": "insights/why-i-stopped-trusting-simple-answers.html",
+        "title": "Why I Stopped Trusting Simple Answers",
+        "lede": "Why simple nutrition rules often fall apart in real life, and what I started doing instead of looking for clearer ones.",
+        "topics": ["nutrition advice", "simple answers", "elimination diets", "seed oils", "evidence quality", "changing your mind"],
+        "scale": "lasting",
+        "status": "published"
+      },
+      {
+        "slug": "what-dr-gundry-taught-me",
+        "url": "insights/what-dr-gundry-taught-me.html",
+        "title": "What Dr. Gundry Taught Me Even Though I Don't Follow His Advice",
+        "lede": "Five months on a lectin-restricted diet, what improved, what didn't, and what stayed with me after I stopped.",
+        "topics": ["Dr. Steven Gundry", "lectins", "elimination diets", "nutrition authority", "self-experimentation", "changing your mind"],
+        "scale": "currently",
+        "status": "published"
+      },
+      {
+        "slug": "how-i-evaluate-nutrition-claims",
+        "url": "insights/how-i-evaluate-nutrition-claims.html",
+        "title": "How I Evaluate Nutrition Claims",
+        "lede": "The questions I return to when a confident nutrition claim catches my attention.",
+        "topics": ["nutrition claims", "evidence quality", "nutrition research", "seed oils", "study design", "changing your mind"],
+        "scale": "lasting",
+        "status": "published"
+      }
+    ];
+
+    /* Render the curated stream from insights/articles.json (or inline fallback on file://).
+       Filters: status === 'published'.
+       (A future Gravitational Stream visibility filter — e.g. excluding scale === 'quiet' —
+       can be added on the line marked below when the library grows past ~10 pieces.) */
+    (async function renderInsightsStream() {
+      const container = document.querySelector('[data-insights-stream]');
+      if (!container) return;
+
+      function escapeHTML(str) {
+        const div = document.createElement('div');
+        div.textContent = String(str == null ? '' : str);
+        return div.innerHTML;
+      }
+
+      let articles = null;
+      let source = 'unknown';
+
+      if (location.protocol === 'file:') {
+        /* Local file:// preview — skip fetch and use the inline copy. */
+        articles = INLINE_ARTICLES_FALLBACK;
+        source = 'inline fallback (file:// preview)';
+      } else {
+        try {
+          const response = await fetch('insights/articles.json', { cache: 'no-cache' });
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          articles = await response.json();
+          source = 'articles.json (live)';
+        } catch (err) {
+          console.warn('Could not load insights/articles.json; falling back to inline copy.', err);
+          articles = INLINE_ARTICLES_FALLBACK;
+          source = 'inline fallback (fetch error)';
+        }
+      }
+
+      if (source.indexOf('inline') === 0) {
+        console.info('[Insights] Rendered from ' + source + '. The source of truth is insights/articles.json — keep the inline INLINE_ARTICLES_FALLBACK in insights.html in sync if you preview via file://, or serve the site over HTTP to skip that step.');
+      }
+
+      const visible = articles.filter(a => a && a.status === 'published');
+      /* Future: && a.scale !== 'quiet'  ← enable when the library grows. */
+
+      if (visible.length === 0) {
+        container.innerHTML = '<p class="insights-stream__empty">No pieces published yet.</p>';
+        return;
+      }
+
+      const html = visible.map(article => {
+        const safeTitle = escapeHTML(article.title);
+        const safeLede = escapeHTML(article.lede);
+        const safeUrl = escapeHTML(article.url);
+        return [
+          '<article class="insights-stream__entry">',
+            '<h2 class="insights-stream__title">',
+              '<a href="' + safeUrl + '">' + safeTitle + '</a>',
+            '</h2>',
+            '<p class="insights-stream__lede">' + safeLede + '</p>',
+          '</article>'
+        ].join('');
+      }).join('');
+
+      container.innerHTML = html;
+    })();
+  </script>
+</body>
+</html>
