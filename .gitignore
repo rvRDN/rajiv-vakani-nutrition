@@ -1,0 +1,9 @@
+# Internal project documentation — kept local only.
+# Contains strategy, design philosophy, content roadmap, rejected ideas,
+# and continuity reports not intended for the public repo.
+docs/
+
+# Editor / OS noise
+.vscode/
+.DS_Store
+Thumbs.db
