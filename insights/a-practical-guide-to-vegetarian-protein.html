@@ -4,53 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!--
-    ============================================================
-    ARTICLE TEMPLATE  ::  insights/_template.html
-    ============================================================
-    This file is the starting point for a new article. To create
-    one:
-
-      1. Copy this file to insights/<slug>.html.
-      2. Add the matching entry to insights/data.js (window.RVData
-         .articles) with slug, url, title, lede, type, date, topic,
-         cluster, summary, status, and next[]. The data.js header
-         documents the schema.
-      3. In the copied file:
-           - Update <title>, <meta name="description">, the og:
-             and twitter: tags, and the canonical URL.
-           - Set body[data-article-slug] to the same slug.
-           - Set body[data-topic-id] to the article's topic id.
-           - Set the post-anchor link to the topic page.
-           - Replace the title, type label, date, and body.
-           - If the article has citations, fill the post-sources
-             block. Otherwise remove it.
-      4. The post-next block auto-populates from data.js via
-         library.js. Pinned recommendations go in the article's
-         next[]; the engine fills remaining slots automatically.
-
-    Paths are relative to /insights/. Parent assets use ../.
-    ============================================================
-  -->
-
-  <title>[Article title] | Rajiv Vakani</title>
-  <meta name="description" content="[One- or two-sentence summary of the article.]">
+  <title>A Practical Guide to Vegetarian Protein | Rajiv Vakani</title>
+  <meta name="description" content="How to actually get enough protein on a vegetarian diet without overthinking it. Targets, sources, and how I think about combining them.">
 
   <meta name="robots" content="noindex">
 
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://rajivvakani.com/insights/SLUG.html" />
-  <meta property="og:title" content="[Article title] | Rajiv Vakani" />
-  <meta property="og:description" content="[One- or two-sentence summary.]" />
+  <meta property="og:url" content="https://rajivvakani.com/insights/a-practical-guide-to-vegetarian-protein.html" />
+  <meta property="og:title" content="A Practical Guide to Vegetarian Protein | Rajiv Vakani" />
+  <meta property="og:description" content="How to actually get enough protein on a vegetarian diet without overthinking it." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
-  <link rel="canonical" href="https://rajivvakani.com/insights/SLUG.html" />
+  <link rel="canonical" href="https://rajivvakani.com/insights/a-practical-guide-to-vegetarian-protein.html" />
 
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://rajivvakani.com/insights/SLUG.html" />
-  <meta property="twitter:title" content="[Article title] | Rajiv Vakani" />
-  <meta property="twitter:description" content="[One- or two-sentence summary.]" />
+  <meta property="twitter:url" content="https://rajivvakani.com/insights/a-practical-guide-to-vegetarian-protein.html" />
+  <meta property="twitter:title" content="A Practical Guide to Vegetarian Protein | Rajiv Vakani" />
+  <meta property="twitter:description" content="How to actually get enough protein on a vegetarian diet without overthinking it." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -70,7 +41,7 @@
   <script defer src="data.js?v=2026060805"></script>
   <script defer src="library.js?v=2026060805"></script>
 </head>
-<body class="post-page" data-article-slug="SLUG" data-topic-id="TOPIC_ID">
+<body class="post-page" data-article-slug="a-practical-guide-to-vegetarian-protein" data-topic-id="practical-nutrition">
 
   <nav class="main-nav">
     <div class="container nav-container">
@@ -97,65 +68,77 @@
 
   <main>
 
-    <!-- HEADER: cluster anchor, title, type + date. Set the anchor
-         href to the article's topic page. -->
     <header class="post-header">
       <div class="post-wrap">
         <p class="post-anchor">
-          in <a href="topics/TOPIC_ID.html">[Topic Name]</a>
+          in <a href="topics/practical-nutrition.html">Practical nutrition</a>
         </p>
-        <h1 class="post-title">[Article title]</h1>
+        <h1 class="post-title">A Practical Guide to Vegetarian Protein</h1>
         <p class="post-meta">
-          <span>[Type]</span>
-          <span>[Month DD, YYYY]</span>
+          <span>Guide</span>
+          <span>June 8, 2026</span>
+          <span>Draft</span>
         </p>
       </div>
     </header>
 
-    <!-- BODY: the writing. Lora at body size. Headings use h2/h3
-         in the same serif. Inline links carry the warm accent.
-         For a Research Review, use superscript numbered links to
-         the post-sources block below. -->
     <article class="post-body">
       <div class="post-wrap">
 
-        <p>
-          [First paragraph. The opening should pull the reader in
-          without performing. State the question or encounter that
-          the piece is responding to.]
+        <p class="stub-notice">
+          A draft in progress. This page exists so the guide has a home in
+          the Library while the piece is being written.
         </p>
 
-        <p>[Continue the writing.]</p>
+        <p>
+          Most vegetarians are not protein deficient. Most also do not know
+          where their protein actually comes from. This guide is for people
+          who want a working answer rather than another internet thread.
+          Daily targets, the sources that carry the real load, and how to
+          compose meals without turning every plate into a calculation.
+        </p>
+
+        <h2>How much protein, actually</h2>
+
+        <p>
+          A working target range. Why the RDA is a floor, not a goal. How
+          age, training, and recovery shift the number. How to translate the
+          target into something you can think about at the kitchen rather
+          than in grams.
+        </p>
+
+        <h2>The sources that actually carry the load</h2>
+
+        <p>
+          Dal, paneer, yogurt, eggs (if you eat them), tofu, tempeh, seitan,
+          beans and chickpeas, lentils, milk, peas, soy milk. The
+          approximate protein per serving, the practical caveats, and what
+          to keep on hand.
+        </p>
+
+        <h2>How to compose a meal</h2>
+
+        <p>
+          A simple working pattern: one protein anchor, one grain or starch,
+          one or two vegetables. Why this works without arithmetic. What to
+          do at breakfast specifically, where vegetarian protein most often
+          slips.
+        </p>
+
+        <h2>What I actually do</h2>
+
+        <p>
+          The handful of dishes and habits that quietly handle most of the
+          target across a week. Not a meal plan. A working pattern.
+        </p>
 
       </div>
     </article>
 
-    <!-- SOURCES: only for articles with citations (Research Reviews
-         and any other article with a citation apparatus). For
-         Essays and Observations, remove this section.
-
-         Each <li> should include the citation, ideally with an
-         author list, year, journal, title, and a stable link (DOI
-         or PubMed). -->
-    <section class="post-sources" aria-label="Sources">
-      <div class="post-wrap">
-        <p class="post-sources__label">Sources</p>
-        <ol>
-          <li>[Citation 1.]</li>
-          <li>[Citation 2.]</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- NEXT: auto-populated by library.js from data.js. The
-         article's next[] field holds pinned recommendation slugs
-         (0..3); the engine auto-fills remaining slots from same
-         cluster, then same topic, then cross-topic. -->
     <section class="post-next" aria-label="Next">
       <div class="post-wrap" data-post-next></div>
     </section>
 
-    <!-- COLOPHON. -->
     <section class="post-colophon" aria-label="Signature">
       <div class="post-wrap">
         <p>

@@ -1,9 +1,11 @@
 /* /index.html 200
 
-# Newsletter support page redirects
-/table-talk/support /supporters.html 301
-/no-onion-no-garlic/support /supporters.html 301
-
-# Archive page redirects
-/table-talk-archive.html /members.html 301
-/no-onion-no-garlic-archive.html /members.html 301
+# Retired newsletter URLs — redirect to homepage.
+/table-talk.html / 301
+/table-talk-archive.html / 301
+/no-onion-no-garlic.html / 301
+/no-onion-no-garlic-archive.html / 301
+/supporters.html / 301
+/members.html / 301
+/table-talk/support / 301
+/no-onion-no-garlic/support / 301

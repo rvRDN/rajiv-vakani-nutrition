@@ -4,53 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!--
-    ============================================================
-    ARTICLE TEMPLATE  ::  insights/_template.html
-    ============================================================
-    This file is the starting point for a new article. To create
-    one:
-
-      1. Copy this file to insights/<slug>.html.
-      2. Add the matching entry to insights/data.js (window.RVData
-         .articles) with slug, url, title, lede, type, date, topic,
-         cluster, summary, status, and next[]. The data.js header
-         documents the schema.
-      3. In the copied file:
-           - Update <title>, <meta name="description">, the og:
-             and twitter: tags, and the canonical URL.
-           - Set body[data-article-slug] to the same slug.
-           - Set body[data-topic-id] to the article's topic id.
-           - Set the post-anchor link to the topic page.
-           - Replace the title, type label, date, and body.
-           - If the article has citations, fill the post-sources
-             block. Otherwise remove it.
-      4. The post-next block auto-populates from data.js via
-         library.js. Pinned recommendations go in the article's
-         next[]; the engine fills remaining slots automatically.
-
-    Paths are relative to /insights/. Parent assets use ../.
-    ============================================================
-  -->
-
-  <title>[Article title] | Rajiv Vakani</title>
-  <meta name="description" content="[One- or two-sentence summary of the article.]">
+  <title>Why Nutrition Advice Keeps Changing | Rajiv Vakani</title>
+  <meta name="description" content="Why nutrition advice updates more than other kinds of health advice, and what that means for how to read any single recommendation.">
 
   <meta name="robots" content="noindex">
 
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://rajivvakani.com/insights/SLUG.html" />
-  <meta property="og:title" content="[Article title] | Rajiv Vakani" />
-  <meta property="og:description" content="[One- or two-sentence summary.]" />
+  <meta property="og:url" content="https://rajivvakani.com/insights/why-nutrition-advice-keeps-changing.html" />
+  <meta property="og:title" content="Why Nutrition Advice Keeps Changing | Rajiv Vakani" />
+  <meta property="og:description" content="Why nutrition advice updates more than other kinds of health advice." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
-  <link rel="canonical" href="https://rajivvakani.com/insights/SLUG.html" />
+  <link rel="canonical" href="https://rajivvakani.com/insights/why-nutrition-advice-keeps-changing.html" />
 
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://rajivvakani.com/insights/SLUG.html" />
-  <meta property="twitter:title" content="[Article title] | Rajiv Vakani" />
-  <meta property="twitter:description" content="[One- or two-sentence summary.]" />
+  <meta property="twitter:url" content="https://rajivvakani.com/insights/why-nutrition-advice-keeps-changing.html" />
+  <meta property="twitter:title" content="Why Nutrition Advice Keeps Changing | Rajiv Vakani" />
+  <meta property="twitter:description" content="Why nutrition advice updates more than other kinds of health advice." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -70,7 +41,7 @@
   <script defer src="data.js?v=2026060805"></script>
   <script defer src="library.js?v=2026060805"></script>
 </head>
-<body class="post-page" data-article-slug="SLUG" data-topic-id="TOPIC_ID">
+<body class="post-page" data-article-slug="why-nutrition-advice-keeps-changing" data-topic-id="reading-the-evidence">
 
   <nav class="main-nav">
     <div class="container nav-container">
@@ -97,65 +68,89 @@
 
   <main>
 
-    <!-- HEADER: cluster anchor, title, type + date. Set the anchor
-         href to the article's topic page. -->
     <header class="post-header">
       <div class="post-wrap">
         <p class="post-anchor">
-          in <a href="topics/TOPIC_ID.html">[Topic Name]</a>
+          in <a href="topics/reading-the-evidence.html">Reading the evidence</a>
         </p>
-        <h1 class="post-title">[Article title]</h1>
+        <h1 class="post-title">Why Nutrition Advice Keeps Changing</h1>
         <p class="post-meta">
-          <span>[Type]</span>
-          <span>[Month DD, YYYY]</span>
+          <span>Essay</span>
+          <span>June 8, 2026</span>
+          <span>Draft</span>
         </p>
       </div>
     </header>
 
-    <!-- BODY: the writing. Lora at body size. Headings use h2/h3
-         in the same serif. Inline links carry the warm accent.
-         For a Research Review, use superscript numbered links to
-         the post-sources block below. -->
     <article class="post-body">
       <div class="post-wrap">
 
-        <p>
-          [First paragraph. The opening should pull the reader in
-          without performing. State the question or encounter that
-          the piece is responding to.]
+        <p class="stub-notice">
+          A draft in progress. This page exists so the article has a home in
+          the Library while the piece is being written.
         </p>
 
-        <p>[Continue the writing.]</p>
+        <p>
+          Eggs are bad. Eggs are fine. Fat is bad. Saturated fat is bad. Some
+          saturated fat is fine. Coconut oil is healthy. Coconut oil is not.
+          Salt is the main risk. Salt was overstated. The advice changes
+          often enough that any single recommendation can feel arbitrary,
+          which is part of why people stop listening.
+        </p>
+
+        <p>
+          But the churn is not arbitrary. Some of it is real progress: new
+          studies, better instruments, better analysis. Some of it is
+          translation noise: a single paper makes news, the news flattens it
+          into a recommendation, the recommendation gets contradicted by the
+          next paper that did not flatten the same way. This essay is about
+          telling those apart.
+        </p>
+
+        <h2>Why nutrition is harder than other health questions</h2>
+
+        <p>
+          You cannot blind a diet. You cannot randomize people to twenty
+          years of eating something. Observational studies have to ask people
+          what they eat, which is a notoriously bad measurement. The signal
+          to noise ratio in nutrition is structurally lower than in other
+          health fields, and most of the field knows it.
+        </p>
+
+        <h2>What real progress looks like</h2>
+
+        <p>
+          Examples of advice that has genuinely shifted because the evidence
+          shifted. Trans fats. Dietary cholesterol. Sodium restriction.
+          Where the field caught up.
+        </p>
+
+        <h2>What translation noise looks like</h2>
+
+        <p>
+          Examples of advice that has shifted in the press without the
+          underlying science shifting. The coconut oil cycle. The saturated
+          fat cycle. The intermittent fasting cycle. Why the headlines change
+          even when the evidence does not.
+        </p>
+
+        <h2>How to read any single recommendation</h2>
+
+        <p>
+          A working posture. Treat current advice as a snapshot. Ask whether
+          the recommendation is supported by mechanism, observational data,
+          and trial data, or only one of those. Ask whether the source has a
+          track record of updating when the evidence does. Trust slow,
+          carefully-hedged advice more than confident summaries.
+        </p>
 
       </div>
     </article>
 
-    <!-- SOURCES: only for articles with citations (Research Reviews
-         and any other article with a citation apparatus). For
-         Essays and Observations, remove this section.
-
-         Each <li> should include the citation, ideally with an
-         author list, year, journal, title, and a stable link (DOI
-         or PubMed). -->
-    <section class="post-sources" aria-label="Sources">
-      <div class="post-wrap">
-        <p class="post-sources__label">Sources</p>
-        <ol>
-          <li>[Citation 1.]</li>
-          <li>[Citation 2.]</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- NEXT: auto-populated by library.js from data.js. The
-         article's next[] field holds pinned recommendation slugs
-         (0..3); the engine auto-fills remaining slots from same
-         cluster, then same topic, then cross-topic. -->
     <section class="post-next" aria-label="Next">
       <div class="post-wrap" data-post-next></div>
     </section>
 
-    <!-- COLOPHON. -->
     <section class="post-colophon" aria-label="Signature">
       <div class="post-wrap">
         <p>

@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="post-page">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>How I Evaluate Nutrition Claims | Rajiv Vakani</title>
-  <meta name="description" content="The questions I return to when a nutrition claim catches my attention &mdash; how I separate what is merely plausible from what is genuinely persuasive.">
+  <meta name="description" content="The questions I return to when a nutrition claim catches my attention. How I separate what is merely plausible from what is genuinely persuasive.">
 
-  <!-- Draft phase: keep out of search results until launch -->
   <meta name="robots" content="noindex">
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://rajivvakani.com/insights/how-i-evaluate-nutrition-claims.html" />
   <meta property="og:title" content="How I Evaluate Nutrition Claims | Rajiv Vakani" />
-  <meta property="og:description" content="The questions I return to when a nutrition claim catches my attention &mdash; how I separate what is merely plausible from what is genuinely persuasive." />
+  <meta property="og:description" content="The questions I return to when a nutrition claim catches my attention. How I separate what is merely plausible from what is genuinely persuasive." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
   <link rel="canonical" href="https://rajivvakani.com/insights/how-i-evaluate-nutrition-claims.html" />
 
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://rajivvakani.com/insights/how-i-evaluate-nutrition-claims.html" />
   <meta property="twitter:title" content="How I Evaluate Nutrition Claims | Rajiv Vakani" />
-  <meta property="twitter:description" content="The questions I return to when a nutrition claim catches my attention &mdash; how I separate what is merely plausible from what is genuinely persuasive." />
+  <meta property="twitter:description" content="The questions I return to when a nutrition claim catches my attention. How I separate what is merely plausible from what is genuinely persuasive." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../rajiv-styles.css?v=20250116k">
+  <link rel="stylesheet" href="library.css?v=2026060805">
   <link rel="icon" type="image/png" href="../favicon.png" />
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -41,131 +38,10 @@
     gtag('config', 'G-0L41N5K2WV');
   </script>
 
-  <script defer src="../animations.js"></script>
-
-  <style>
-    /* Post-page reading styles. Page-local so rajiv-styles.css stays untouched. */
-    .post-page .post-hero {
-      background: linear-gradient(135deg, #1e293b 0%, #475569 60%, #64748b 100%);
-      min-height: 50vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 20px;
-    }
-    .post-page .post-hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.05));
-    }
-    .post-page .post-hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      text-align: center;
-      color: #ffffff;
-    }
-    .post-page .post-category-pill {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.15);
-      color: #ffffff;
-      padding: 6px 14px;
-      border-radius: 14px;
-      font-size: 0.85em;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      margin-bottom: 18px;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-    .post-page .post-title {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin: 0 0 16px 0;
-      color: #ffffff;
-    }
-    .post-page .post-meta {
-      font-size: 0.95em;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 0;
-    }
-    .post-page .post-meta span + span::before {
-      content: ' \00b7 ';
-      margin: 0 6px;
-      opacity: 0.7;
-    }
-
-    .post-page .post-body {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 60px 24px 80px;
-      font-family: 'Lora', 'Georgia', serif;
-      color: #1f2937;
-      line-height: 1.75;
-      font-size: 1.08em;
-    }
-    .post-page .post-body h2 {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 1.6em;
-      font-weight: 700;
-      margin-top: 2em;
-      margin-bottom: 0.6em;
-      color: #1f2937;
-      line-height: 1.3;
-    }
-    .post-page .post-body h3 {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 1.25em;
-      font-weight: 600;
-      margin-top: 1.8em;
-      margin-bottom: 0.5em;
-      color: #1f2937;
-    }
-    .post-page .post-body p { margin: 0 0 1.2em 0; }
-    .post-page .post-body a {
-      color: #1d4ed8;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .post-page .post-body a:hover { color: #1e40af; }
-    .post-page .post-body blockquote {
-      border-left: 4px solid #f59e0b;
-      background: #fffbeb;
-      padding: 16px 24px;
-      margin: 1.5em 0;
-      font-style: italic;
-      color: #4b5563;
-      border-radius: 0 8px 8px 0;
-    }
-
-    .post-page .post-back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #4b5563;
-      text-decoration: none;
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 0.95em;
-      font-weight: 500;
-      margin-bottom: 32px;
-    }
-    .post-page .post-back-link:hover { color: #1f2937; }
-
-    .post-page .post-footer-cta {
-      max-width: 720px;
-      margin: 0 auto 80px;
-      padding: 32px 24px;
-      background: #fef3c7;
-      border-radius: 12px;
-      text-align: center;
-      border: 1px solid #fde68a;
-    }
-    .post-page .post-footer-cta p { margin: 0 0 16px 0; color: #92400e; font-family: 'Inter Tight', sans-serif; }
-    .post-page .post-footer-cta .button { display: inline-block; }
-  </style>
+  <script defer src="data.js?v=2026060805"></script>
+  <script defer src="library.js?v=2026060805"></script>
 </head>
-<body class="post-page">
+<body class="post-page" data-article-slug="how-i-evaluate-nutrition-claims" data-topic-id="reading-the-evidence">
 
   <nav class="main-nav">
     <div class="container nav-container">
@@ -176,16 +52,13 @@
         <li><a href="../about.html">About</a></li>
         <li><a href="../journey.html">Journey</a></li>
         <li><a href="../insights.html" class="active">Insights</a></li>
+        <li><a href="../library.html">Library</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
 
-      <div class="social-icons" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <i class="fab fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <i class="fab fa-facebook-f" aria-hidden="true"></i>
-        </a>
+      <div class="social-icons" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
       </div>
 
       <button class="menu-toggle" aria-label="Toggle navigation">
@@ -196,309 +69,281 @@
     </div>
   </nav>
 
-  <!-- Mobile menu overlay -->
   <div class="mobile-menu-overlay"></div>
 
-  <!-- Post Hero -->
-  <header class="hero post-hero">
-    <div class="post-hero-overlay"></div>
-    <div class="post-hero-inner">
-      <span class="post-category-pill">Practical Guide</span>
-      <h1 class="post-title">How I Evaluate Nutrition Claims</h1>
-      <p class="post-meta">
-        <span>June 2026</span>
-        <span>~8 min read</span>
-        <span>By Rajiv Vakani</span>
-      </p>
-    </div>
-  </header>
-
-  <!-- Post Body -->
-  <article class="post-body animate-on-scroll">
-    <a href="../insights.html" class="post-back-link">
-      <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Insights
-    </a>
-
-    <p>When I first became interested in nutrition, Google was my best friend.</p>
-
-    <p>If a topic caught my attention, I would start searching. I&rsquo;d read articles, watch videos, listen to podcasts, and often rely on other people to interpret the research for me. Credentials carried a lot of weight. A physician sounded more convincing than a blogger. A bestselling author sounded more convincing than an unknown researcher. New discoveries and cutting-edge ideas were especially exciting.</p>
-
-    <p>Like many people, I was drawn to explanations that seemed to make sense.</p>
-
-    <p>Looking back, I don&rsquo;t think I was careless.</p>
-
-    <p>I think I was doing what most curious people do.</p>
-
-    <p>I was trying to find the truth.</p>
-
-    <p>The problem was that I underestimated how difficult that can be.</p>
-
-    <p>The more nutrition I studied, the more I noticed a pattern. Two intelligent people could look at the same body of evidence and reach different conclusions. Experts disagreed. Headlines exaggerated findings. Animal studies were reported as though they applied directly to humans. A plausible mechanism was often treated as proof. Research that looked convincing at first glance became far less convincing when I dug into the details.</p>
-
-    <p>At first, this was frustrating.</p>
-
-    <p>I wanted answers.</p>
-
-    <p>What eventually changed was not my desire to find them. If anything, that desire became stronger. What changed was my appreciation for how much evidence is required before a claim deserves my confidence.</p>
-
-    <p>Today, when a nutrition claim catches my attention, I find myself returning to the same questions.</p>
-
-    <p>Not because they guarantee the right answer.</p>
-
-    <p>They don&rsquo;t.</p>
-
-    <p>But they help me separate what is merely plausible from what is genuinely persuasive.</p>
-
-    <h2>What Is The Claim?</h2>
-
-    <p>Before I evaluate a claim, I want to understand exactly what is being claimed.</p>
-
-    <p>This sounds obvious, but many nutrition discussions never get past the headline.</p>
-
-    <p>&ldquo;Seed oils are toxic.&rdquo;</p>
-
-    <p>&ldquo;Carbohydrates cause diabetes.&rdquo;</p>
-
-    <p>&ldquo;This supplement boosts immunity.&rdquo;</p>
-
-    <p>The moment you begin asking follow-up questions, the certainty often starts to fade. What population? What outcome? Compared to what? Under what circumstances?</p>
-
-    <p>Many claims become much less persuasive once they are stated precisely.</p>
-
-    <h2>What Evidence Supports It?</h2>
-
-    <p>Not all evidence deserves the same level of confidence.</p>
-
-    <p>A personal story can be valuable.</p>
-
-    <p>A mechanistic explanation can be interesting.</p>
-
-    <p>An animal study can generate a hypothesis.</p>
-
-    <p>But those forms of evidence answer different questions than controlled human trials, systematic reviews, and meta-analyses.</p>
-
-    <p><a href="what-dr-gundry-taught-me.html">One of the biggest changes in my thinking</a> has been learning to distinguish between evidence that is intriguing and evidence that is persuasive.</p>
-
-    <h2>What Does The Totality Of Evidence Suggest?</h2>
-
-    <p>One study rarely changes my mind anymore.</p>
-
-    <p>I want to know whether a finding has been replicated. Have different researchers reached similar conclusions? Have similar results been observed across different populations? Does the broader body of evidence generally point in the same direction?</p>
-
-    <p>Almost any position can find a study that appears supportive.</p>
-
-    <p>What matters more is whether the finding survives repeated attempts to test it.</p>
-
-    <p>This is one reason I changed my mind about seed oils. Years ago, I was much more sympathetic to the idea that they should be avoided whenever possible. The arguments sounded compelling, and some of the mechanisms seemed plausible. The more I learned about polyunsaturated fats and the broader body of evidence, the less confident I became in that position. I didn&rsquo;t abandon the question. I simply became less convinced by the certainty.</p>
-
-    <h2>How Was The Study Conducted?</h2>
-
-    <p>This is where details matter.</p>
-
-    <p>How many participants were included?</p>
-
-    <p>How long did the intervention last?</p>
-
-    <p>What was the comparison group?</p>
-
-    <p>Was there a placebo?</p>
-
-    <p>Were participants blinded?</p>
-
-    <p>How was adherence measured?</p>
-
-    <p>How many people dropped out?</p>
-
-    <p>A strong conclusion built on a weak study deserves a different level of confidence than the same conclusion supported by rigorous research.</p>
-
-    <h2>Who Was Studied?</h2>
-
-    <p>One of the most important questions in nutrition is also one of the most overlooked:</p>
-
-    <p>Who does this actually apply to?</p>
-
-    <p>A finding observed in healthy young adults may not apply to older adults.</p>
-
-    <p>A result seen in athletes may not apply to sedentary individuals.</p>
-
-    <p>Research conducted in one population may not fully translate to another.</p>
-
-    <p>This is one reason I have become increasingly interested in studies that focus on specific populations rather than assuming everyone responds identically. Context matters.</p>
-
-    <h2>Does The Mechanism Match The Outcome?</h2>
-
-    <p>Nutrition is filled with compelling biological explanations.</p>
-
-    <p>Sometimes they turn out to be correct.</p>
-
-    <p>Sometimes they don&rsquo;t.</p>
-
-    <p>A mechanism can sound logical, appear scientifically grounded, and still fail to produce meaningful real-world results when tested in humans.</p>
-
-    <p>I&rsquo;ve learned to appreciate biological plausibility while remembering that human outcomes ultimately matter more than elegant theories.</p>
-
-    <h2>What Do Thoughtful Critics Say?</h2>
-
-    <p>Whenever I find myself agreeing strongly with a claim, I actively look for intelligent people who disagree with it.</p>
-
-    <p>Not because I want to dismiss the idea.</p>
-
-    <p>Because I want to stress-test it.</p>
-
-    <p>Weak ideas often collapse when challenged.</p>
-
-    <p>Strong ideas usually become stronger.</p>
-
-    <p>The internet makes it remarkably easy to surround yourself with people who already agree with you. I&rsquo;ve done it before. Most of us have. Seeking out disagreement is one of the best ways I know to avoid confusing consensus within a community with consensus within the evidence.</p>
-
-    <h2>What Incentives Exist?</h2>
-
-    <p>I pay attention to incentives.</p>
-
-    <p>Books.</p>
-
-    <p>Supplements.</p>
-
-    <p>Courses.</p>
-
-    <p>Product partnerships.</p>
-
-    <p>Affiliate relationships.</p>
-
-    <p>Attention itself.</p>
-
-    <p>An incentive does not automatically invalidate a claim.</p>
-
-    <p>But it does remind me to look carefully.</p>
-
-    <p>People can be sincere and still be wrong. They can also be knowledgeable and still have incentives that influence how they communicate uncertainty.</p>
-
-    <h2>What Would Change My Mind?</h2>
-
-    <p>This is one of the hardest questions I ask myself.</p>
-
-    <p>Before deciding where I stand, I try to identify what evidence would convince me that I am wrong.</p>
-
-    <p>If no evidence could change my position, then I am no longer evaluating information objectively.</p>
-
-    <p>I am defending a belief.</p>
-
-    <p>This question has become more important to me over time because changing your mind is not a sign of weakness. In science, it is often a sign that the process is working.</p>
-
-    <h2>How Confident Should I Be?</h2>
-
-    <p>This is often where I end up.</p>
-
-    <p>Not with certainty.</p>
-
-    <p>Not with complete skepticism.</p>
-
-    <p>But with a level of confidence that matches the quality of the evidence.</p>
-
-    <p>Some questions deserve high confidence.</p>
-
-    <p>Others deserve cautious optimism.</p>
-
-    <p>Many deserve humility.</p>
-
-    <p>Learning the difference is one of the most valuable lessons nutrition has taught me.</p>
-
-    <h2>The Goal</h2>
-
-    <p>I still care deeply about finding the right answers.</p>
-
-    <p>I care about the science.</p>
-
-    <p>I care about understanding what actually improves health and what does not.</p>
-
-    <p>What has changed is my appreciation for how difficult that work can be.</p>
-
-    <p>The more I study nutrition, the less interested I become in strong claims and the more interested I become in strong evidence.</p>
-
-    <p>Nutrition education did not make me cynical.</p>
-
-    <p>It made me more demanding.</p>
-
-    <p>My goal is not to become impossible to persuade.</p>
-
-    <p>My goal is to make sure that when I change my mind, it is because the evidence earned it.</p>
-
-    <p>The strongest opinions I hold today are not the ones I am most attached to. They are the ones that have survived the most scrutiny.</p>
-
-    <p>Finding the truth is still the goal.</p>
-
-    <p>I&rsquo;ve simply learned that getting there requires a better process than I once thought.</p>
-
-    <p>And if nutrition has taught me anything, it is that <a href="why-i-stopped-trusting-simple-answers.html">good questions are often more valuable than quick answers</a>.</p>
-  </article>
-
-  <!-- Closing CTA -->
-  <div class="post-footer-cta">
-    <p>Have a thought on this piece? I&rsquo;d like to hear it.</p>
-    <a href="../contact.html" class="button">Send Me a Note &rarr;</a>
-  </div>
-
-  <footer>
-    <div class="container">
-      <div class="footer-social" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important; justify-content: center !important; width: 100% !important; margin-bottom: 20px !important;">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <i class="fab fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <i class="fab fa-facebook-f" aria-hidden="true"></i>
-        </a>
+  <main>
+
+    <!-- 1. HEADER -->
+    <header class="post-header">
+      <div class="post-wrap">
+        <p class="post-anchor">
+          in <a href="topics/reading-the-evidence.html">Reading the evidence</a>
+        </p>
+
+        <h1 class="post-title">How I Evaluate Nutrition Claims</h1>
+
+        <p class="post-meta">
+          <span>Guide</span>
+          <span>June 1, 2026</span>
+        </p>
       </div>
-      <p>&copy; 2025-2026 Rajiv Vakani. All rights reserved.</p>
-    </div>
-  </footer>
+    </header>
+
+    <!-- 2. BODY -->
+    <article class="post-body">
+      <div class="post-wrap">
+
+        <p>When I first became interested in nutrition, Google was my best friend.</p>
+
+        <p>If a topic caught my attention, I would start searching. I&rsquo;d read articles, watch videos, listen to podcasts, and often rely on other people to interpret the research for me. Credentials carried a lot of weight. A physician sounded more convincing than a blogger. A bestselling author sounded more convincing than an unknown researcher. New discoveries and cutting-edge ideas were especially exciting.</p>
+
+        <p>Like many people, I was drawn to explanations that seemed to make sense.</p>
+
+        <p>Looking back, I don&rsquo;t think I was careless.</p>
+
+        <p>I think I was doing what most curious people do.</p>
+
+        <p>I was trying to find the truth.</p>
+
+        <p>The problem was that I underestimated how difficult that can be.</p>
+
+        <p>The more nutrition I studied, the more I noticed a pattern. Two intelligent people could look at the same body of evidence and reach different conclusions. Experts disagreed. Headlines exaggerated findings. Animal studies were reported as though they applied directly to humans. A plausible mechanism was often treated as proof. Research that looked convincing at first glance became far less convincing when I dug into the details.</p>
+
+        <p>At first, this was frustrating.</p>
+
+        <p>I wanted answers.</p>
+
+        <p>What eventually changed was not my desire to find them. If anything, that desire became stronger. What changed was my appreciation for how much evidence is required before a claim deserves my confidence.</p>
+
+        <p>Today, when a nutrition claim catches my attention, I find myself returning to the same questions.</p>
+
+        <p>Not because they guarantee the right answer.</p>
+
+        <p>They don&rsquo;t.</p>
+
+        <p>But they help me separate what is merely plausible from what is genuinely persuasive.</p>
+
+        <h2>What is the claim?</h2>
+
+        <p>Before I evaluate a claim, I want to understand exactly what is being claimed.</p>
+
+        <p>This sounds obvious, but many nutrition discussions never get past the headline.</p>
+
+        <p>&ldquo;Seed oils are toxic.&rdquo;</p>
+
+        <p>&ldquo;Carbohydrates cause diabetes.&rdquo;</p>
+
+        <p>&ldquo;This supplement boosts immunity.&rdquo;</p>
+
+        <p>The moment you begin asking follow-up questions, the certainty often starts to fade. What population? What outcome? Compared to what? Under what circumstances?</p>
+
+        <p>Many claims become much less persuasive once they are stated precisely.</p>
+
+        <h2>What evidence supports it?</h2>
+
+        <p>Not all evidence deserves the same level of confidence.</p>
+
+        <p>A personal story can be valuable.</p>
+
+        <p>A mechanistic explanation can be interesting.</p>
+
+        <p>An animal study can generate a hypothesis.</p>
+
+        <p>But those forms of evidence answer different questions than controlled human trials, systematic reviews, and meta-analyses.</p>
+
+        <p><a href="what-dr-gundry-taught-me.html">One of the biggest changes in my thinking</a> has been learning to distinguish between evidence that is intriguing and evidence that is persuasive.</p>
+
+        <h2>What does the totality of evidence suggest?</h2>
+
+        <p>One study rarely changes my mind anymore.</p>
+
+        <p>I want to know whether a finding has been replicated. Have different researchers reached similar conclusions? Have similar results been observed across different populations? Does the broader body of evidence generally point in the same direction?</p>
+
+        <p>Almost any position can find a study that appears supportive.</p>
+
+        <p>What matters more is whether the finding survives repeated attempts to test it.</p>
+
+        <p>This is one reason I changed my mind about seed oils. Years ago, I was much more sympathetic to the idea that they should be avoided whenever possible. The arguments sounded compelling, and some of the mechanisms seemed plausible. The more I learned about polyunsaturated fats and the broader body of evidence, the less confident I became in that position. I didn&rsquo;t abandon the question. I simply became less convinced by the certainty.</p>
+
+        <h2>How was the study conducted?</h2>
+
+        <p>This is where details matter.</p>
+
+        <p>How many participants were included?</p>
+
+        <p>How long did the intervention last?</p>
+
+        <p>What was the comparison group?</p>
+
+        <p>Was there a placebo?</p>
+
+        <p>Were participants blinded?</p>
+
+        <p>How was adherence measured?</p>
+
+        <p>How many people dropped out?</p>
+
+        <p>A strong conclusion built on a weak study deserves a different level of confidence than the same conclusion supported by rigorous research.</p>
+
+        <h2>Who was studied?</h2>
+
+        <p>One of the most important questions in nutrition is also one of the most overlooked:</p>
+
+        <p>Who does this actually apply to?</p>
+
+        <p>A finding observed in healthy young adults may not apply to older adults.</p>
+
+        <p>A result seen in athletes may not apply to sedentary individuals.</p>
+
+        <p>Research conducted in one population may not fully translate to another.</p>
+
+        <p>This is one reason I have become increasingly interested in studies that focus on specific populations rather than assuming everyone responds identically. Context matters.</p>
+
+        <h2>Does the mechanism match the outcome?</h2>
+
+        <p>Nutrition is filled with compelling biological explanations.</p>
+
+        <p>Sometimes they turn out to be correct.</p>
+
+        <p>Sometimes they don&rsquo;t.</p>
+
+        <p>A mechanism can sound logical, appear scientifically grounded, and still fail to produce meaningful real-world results when tested in humans.</p>
+
+        <p>I&rsquo;ve learned to appreciate biological plausibility while remembering that human outcomes ultimately matter more than elegant theories.</p>
+
+        <h2>What do thoughtful critics say?</h2>
+
+        <p>Whenever I find myself agreeing strongly with a claim, I actively look for intelligent people who disagree with it.</p>
+
+        <p>Not because I want to dismiss the idea.</p>
+
+        <p>Because I want to stress-test it.</p>
+
+        <p>Weak ideas often collapse when challenged.</p>
+
+        <p>Strong ideas usually become stronger.</p>
+
+        <p>The internet makes it remarkably easy to surround yourself with people who already agree with you. I&rsquo;ve done it before. Most of us have. Seeking out disagreement is one of the best ways I know to avoid confusing consensus within a community with consensus within the evidence.</p>
+
+        <h2>What incentives exist?</h2>
+
+        <p>I pay attention to incentives.</p>
+
+        <p>Books.</p>
+
+        <p>Supplements.</p>
+
+        <p>Courses.</p>
+
+        <p>Product partnerships.</p>
+
+        <p>Affiliate relationships.</p>
+
+        <p>Attention itself.</p>
+
+        <p>An incentive does not automatically invalidate a claim.</p>
+
+        <p>But it does remind me to look carefully.</p>
+
+        <p>People can be sincere and still be wrong. They can also be knowledgeable and still have incentives that influence how they communicate uncertainty.</p>
+
+        <h2>What would change my mind?</h2>
+
+        <p>This is one of the hardest questions I ask myself.</p>
+
+        <p>Before deciding where I stand, I try to identify what evidence would convince me that I am wrong.</p>
+
+        <p>If no evidence could change my position, then I am no longer evaluating information objectively.</p>
+
+        <p>I am defending a belief.</p>
+
+        <p>This question has become more important to me over time because changing your mind is not a sign of weakness. In science, it is often a sign that the process is working.</p>
+
+        <h2>How confident should I be?</h2>
+
+        <p>This is often where I end up.</p>
+
+        <p>Not with certainty.</p>
+
+        <p>Not with complete skepticism.</p>
+
+        <p>But with a level of confidence that matches the quality of the evidence.</p>
+
+        <p>Some questions deserve high confidence.</p>
+
+        <p>Others deserve cautious optimism.</p>
+
+        <p>Many deserve humility.</p>
+
+        <p>Learning the difference is one of the most valuable lessons nutrition has taught me.</p>
+
+        <h2>The goal</h2>
+
+        <p>I still care deeply about finding the right answers.</p>
+
+        <p>I care about the science.</p>
+
+        <p>I care about understanding what actually improves health and what does not.</p>
+
+        <p>What has changed is my appreciation for how difficult that work can be.</p>
+
+        <p>The more I study nutrition, the less interested I become in strong claims and the more interested I become in strong evidence.</p>
+
+        <p>Nutrition education did not make me cynical.</p>
+
+        <p>It made me more demanding.</p>
+
+        <p>My goal is not to become impossible to persuade.</p>
+
+        <p>My goal is to make sure that when I change my mind, it is because the evidence earned it.</p>
+
+        <p>The strongest opinions I hold today are not the ones I am most attached to. They are the ones that have survived the most scrutiny.</p>
+
+        <p>Finding the truth is still the goal.</p>
+
+        <p>I&rsquo;ve simply learned that getting there requires a better process than I once thought.</p>
+
+        <p>And if nutrition has taught me anything, it is that <a href="why-i-stopped-trusting-simple-answers.html">good questions are often more valuable than quick answers</a>.</p>
+
+      </div>
+    </article>
+
+    <!-- 3. NEXT  --  auto-populated from data.js by library.js -->
+    <section class="post-next" aria-label="Next">
+      <div class="post-wrap" data-post-next></div>
+    </section>
+
+    <!-- 4. COLOPHON -->
+    <section class="post-colophon" aria-label="Signature">
+      <div class="post-wrap">
+        <p>
+          <a href="../about.html">Rajiv Vakani</a>. Writing on nutrition from
+          New York. Since 2023. <a href="../contact.html">Email</a>.
+        </p>
+      </div>
+    </section>
+
+  </main>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      const overlay = document.querySelector('.mobile-menu-overlay');
-      const mainNav = document.querySelector('.main-nav');
-      const heroSection = document.querySelector('.post-hero');
-
-      function handleNavScroll() {
-        if (heroSection && mainNav) {
-          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-          const scrollPosition = window.pageYOffset + 100;
-          if (scrollPosition > heroBottom) {
-            mainNav.classList.add('scrolled');
-          } else {
-            mainNav.classList.remove('scrolled');
-          }
-        }
-      }
-      window.addEventListener('scroll', handleNavScroll);
-
+      var menuToggle = document.querySelector('.menu-toggle');
+      var navLinks = document.querySelector('.nav-links');
+      var overlay = document.querySelector('.mobile-menu-overlay');
       if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function () {
           navLinks.classList.toggle('active');
           menuToggle.classList.toggle('active');
           if (overlay) overlay.classList.toggle('active');
+          document.body.classList.toggle('menu-open');
         });
-        if (overlay) {
-          overlay.addEventListener('click', function () {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
-            overlay.classList.remove('active');
-          });
-        }
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', function () {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
-            if (overlay) overlay.classList.remove('active');
-          });
-        });
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
-            if (overlay) overlay.classList.remove('active');
-          }
+      }
+      if (overlay) {
+        overlay.addEventListener('click', function () {
+          navLinks.classList.remove('active');
+          menuToggle.classList.remove('active');
+          overlay.classList.remove('active');
+          document.body.classList.remove('menu-open');
         });
       }
     });

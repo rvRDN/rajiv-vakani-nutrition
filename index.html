@@ -748,175 +748,203 @@
       animation-delay: var(--enter-delay, 0s);
     }
 
-    /* --------- 3. PATHS — three real editorial blocks ---------
-       Each path is a substantial editorial moment with its own
-       kicker, body paragraph, and CTA — not a one-line label. */
+    /* --------- 3. COMPOSITION — four landed beats bound by one refrain ---------
+       The architecture is preserved as four distinct beats (Journey, Current
+       Attention, Library doorway, Signature). Cohesion is built on top of
+       the architecture, not in place of it, through a single repeated
+       opening gesture: a small horizontal mark + a voiced kicker phrase.
+       Every beat opens that way. The marks vertically align at the left
+       of the column, forming a four-rung spine. The kickers form a
+       narrative arc: where it came from, what's open right now, where
+       the work lives, who. The body of each beat keeps its own form. */
 
-    .home-page .paths {
-      padding-top: clamp(80px, 10vh, 120px);
-      padding-bottom: clamp(100px, 14vh, 160px);
-      background: var(--paper);
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
+    .home-page .composition {
+      padding-top: clamp(180px, 24vh, 280px);
+      padding-bottom: clamp(120px, 16vh, 200px);
+      background: linear-gradient(180deg, #f7eddc 0%, var(--paper) 22%, var(--paper) 100%);
     }
-    .home-page .paths__label {
-      font-family: 'Inter Tight', 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted-soft);
-      margin: 0 0 12px 0;
+    .home-page .composition__inner {
+      max-width: 760px;
+      width: 100%;
     }
-    .home-page .paths__list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .home-page .path {
-      border-top: 1px solid var(--rule);
-    }
-    .home-page .path:last-child {
-      border-bottom: 1px solid var(--rule);
-    }
-    .home-page .path__link {
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 32px;
-      align-items: start;
-      padding: clamp(44px, 6vh, 64px) 0;
-      text-decoration: none;
-      color: inherit;
-      transition: padding 0.32s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .home-page .path__number {
-      font-family: 'Inter Tight', 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: clamp(1.05rem, 1.2vw, 1.2rem);
-      color: var(--accent);
-      letter-spacing: 0.04em;
-      padding-top: 10px;
-    }
-    .home-page .path__content {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+
+    /* The beats are stacked with deliberate breathing room between them.
+       Each beat is its own typographic unit; the gap between beats is
+       what makes the refrain readable (mark → mark → mark → mark down
+       the page) rather than a continuous block. */
+    .home-page .beat {
+      margin: 0 0 clamp(80px, 11vh, 130px) 0;
       max-width: 720px;
     }
-    .home-page .path__title {
+    .home-page .beat:last-child {
+      margin-bottom: 0;
+    }
+
+    /* (a) The refrain — repeats four times across the composition.
+       A small horizontal hairline sits at the start of the kicker line.
+       The kicker text is in voiced italic Lora. Same color, same size,
+       same mark across all four beats. This is the binding gesture. */
+    .home-page .beat__kicker {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.05rem, 1.32vw, 1.22rem);
+      line-height: 1.45;
+      color: var(--muted);
+      margin: 0 0 22px 0;
+    }
+    .home-page .beat__mark {
+      flex-shrink: 0;
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--muted-soft);
+      opacity: 0.7;
+      transform: translateY(-0.45em);
+    }
+
+    /* (b) Beat 1 body — Journey paragraph. Body register Lora. The
+       paragraph reads as a personal note, not as display copy. */
+    .home-page .beat__paragraph {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.12rem, 1.45vw, 1.28rem);
+      line-height: 1.6;
+      letter-spacing: -0.003em;
+      color: var(--ink);
+      margin: 0;
+      padding-left: 52px;
+    }
+
+    /* (c) Beat 2 body — Current Attention items. Each item is one line
+       of a writer's working list: a voiced verb-kind in italic accent
+       followed by the thing currently in mind. The list IS visible
+       attention — three discrete things held simultaneously. Hairline
+       rules between items mark each entry as distinct. */
+    .home-page .beat__items {
+      list-style: none;
+      padding: 0 0 0 52px;
+      margin: 0;
+    }
+    .home-page .beat__items li {
+      display: grid;
+      grid-template-columns: minmax(140px, max-content) 1fr;
+      gap: 20px;
+      align-items: baseline;
+      padding: 18px 0;
+      border-top: 1px solid var(--rule);
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.05rem, 1.32vw, 1.18rem);
+      line-height: 1.5;
+      color: var(--ink);
+    }
+    .home-page .beat__items li:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+    .home-page .beat__kind {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent);
+    }
+    .home-page .beat__what {
+      color: var(--ink);
+    }
+
+    /* (d) Beat 3 body — Library cluster list. Each cluster: name as a
+       link (live one is real, the five future ones are styled the same
+       but non-interactive) followed by a one-sentence description.
+       Hairline rules between clusters mirror the Current Attention list
+       to bind the two beats visually as siblings. */
+    .home-page .beat__clusters {
+      list-style: none;
+      padding: 0 0 0 52px;
+      margin: 0;
+    }
+    .home-page .beat__clusters li {
+      padding: 16px 0;
+      border-top: 1px solid var(--rule);
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.98rem, 1.12vw, 1.05rem);
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .home-page .beat__clusters li:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+    .home-page .beat__clusters a {
       font-family: 'Lora', Georgia, serif;
       font-weight: 600;
-      font-size: clamp(1.85rem, 3.4vw, 2.6rem);
-      line-height: 1.05;
-      letter-spacing: -0.015em;
+      font-size: clamp(1.05rem, 1.25vw, 1.16rem);
       color: var(--ink);
-      margin: 0;
-      transition: color 0.22s ease;
+      text-decoration: none;
+      margin-right: 6px;
+      transition: color 0.2s ease;
     }
-    .home-page .path__kicker {
-      font-family: 'Lora', Georgia, serif;
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(1.02rem, 1.3vw, 1.2rem);
-      color: var(--accent);
-      margin: -10px 0 0 0;
-      letter-spacing: 0;
-    }
-    .home-page .path__body {
-      font-family: 'Inter Tight', 'Inter', sans-serif;
-      font-weight: 400;
-      font-size: clamp(1.02rem, 1.2vw, 1.12rem);
-      line-height: 1.6;
-      color: var(--muted);
-      margin: 0;
-    }
-    .home-page .path__cta {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 10px;
-      font-family: 'Inter Tight', 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
-      color: var(--ink);
-      margin-top: 6px;
-      transition: color 0.22s ease;
-    }
-    .home-page .path__cta::after {
-      content: '→';
-      display: inline-block;
-      transform: translateX(0);
-      transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    /* Hover: title gains accent, CTA arrow advances, whole block nudges */
-    .home-page .path__link:hover .path__title,
-    .home-page .path__link:focus-visible .path__title {
+    .home-page .beat__clusters a:hover,
+    .home-page .beat__clusters a:focus-visible {
       color: var(--accent);
     }
-    .home-page .path__link:hover .path__cta,
-    .home-page .path__link:focus-visible .path__cta {
-      color: var(--accent);
-    }
-    .home-page .path__link:hover .path__cta::after,
-    .home-page .path__link:focus-visible .path__cta::after {
-      transform: translateX(10px);
-    }
-    .home-page .path__link:hover {
-      padding-left: 12px;
-    }
-    .home-page .path__link:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 8px;
-      border-radius: 2px;
-    }
-
-    /* --------- 4. CLOSE — returns to warm welcome atmosphere --------- */
-
-    .home-page .close {
-      padding-top: clamp(120px, 16vh, 180px);
-      padding-bottom: 96px;
-      background: linear-gradient(180deg, #faf5ea 0%, #f7eddc 100%);
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-    }
-    .home-page .close::before {
-      content: '';
-      position: absolute;
-      width: 600px; height: 600px;
-      bottom: -250px; right: -180px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(232, 200, 158, 0.5) 0%, rgba(232, 200, 158, 0) 70%);
-      filter: blur(90px);
-      z-index: -1;
-      animation: orbDrift1 38s ease-in-out infinite alternate;
-    }
-    .home-page .close__text {
-      font-family: 'Lora', Georgia, serif;
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(1.4rem, 2.4vw, 2rem);
-      line-height: 1.4;
-      letter-spacing: -0.005em;
-      color: var(--ink);
-      margin: 0 0 56px 0;
-      max-width: 760px;
-    }
-    .home-page .signature {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 12px;
-      font-family: 'Inter Tight', 'Inter', sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .home-page .beat__clusters a[aria-disabled="true"] {
       color: var(--muted-soft);
+      cursor: default;
+      pointer-events: none;
     }
-    .home-page .signature__mark {
-      width: 28px; height: 1px;
-      background: var(--muted-soft);
-      display: inline-block;
-      transform: translateY(-3px);
+
+    /* (e) Exit lines — voiced italic sentences at the close of beats 1
+       and 2. Same treatment across both: italic Lora, small, muted, with
+       a single accented link. Mirrors the kicker register so the beat
+       feels enclosed at top and bottom. */
+    .home-page .beat__exit {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1rem, 1.2vw, 1.1rem);
+      color: var(--muted);
+      margin: 28px 0 0 0;
+      padding-left: 52px;
+    }
+
+    /* (f) Beat 4 — Signature. The mark + kicker still appear, but the
+       kicker carries the signature line itself rather than a separate
+       phrase. No body, no exit. The mark is the closing tick on the
+       refrain; the signature is the closing voice. */
+    .home-page .beat--signature .beat__kicker {
+      font-style: normal;
+      color: var(--muted-soft);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* All inline links in the composition share one treatment: burnt
+       orange, thin underline, hover lifts the underline color. The
+       library cluster names are an exception (handled above) — they
+       use ink color until hover for the quieter Library register. */
+    .home-page .composition a:not(.beat__clusters a) {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(184, 96, 46, 0.35);
+      padding-bottom: 1px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .home-page .composition a:not(.beat__clusters a):hover,
+    .home-page .composition a:not(.beat__clusters a):focus-visible {
+      color: var(--accent-soft);
+      border-bottom-color: var(--accent-soft);
+    }
+    /* Signature's links are slightly quieter — ink color, thin underline. */
+    .home-page .beat--signature a {
+      color: var(--ink) !important;
+      border-bottom-color: var(--rule) !important;
+    }
+    .home-page .beat--signature a:hover,
+    .home-page .beat--signature a:focus-visible {
+      color: var(--accent) !important;
+      border-bottom-color: var(--accent) !important;
     }
 
     /* --------- Scroll-triggered reveals --------- */
@@ -954,16 +982,52 @@
       .home-page .name {
         margin-bottom: 28px;
       }
-      .home-page .path__link {
-        grid-template-columns: 44px 1fr;
-        gap: 18px;
-        padding: 36px 0;
+      .home-page .composition {
+        padding-top: 96px;
+        padding-bottom: 80px;
       }
-      .home-page .path__link:hover {
-        padding-left: 0;
+      .home-page .beat {
+        margin-bottom: 64px;
       }
-      .home-page .path__content {
+      .home-page .beat__kicker {
         gap: 14px;
+        font-size: 1.02rem;
+        margin-bottom: 18px;
+      }
+      .home-page .beat__mark {
+        width: 24px;
+      }
+      .home-page .beat__paragraph {
+        font-size: 1.04rem;
+        line-height: 1.6;
+        padding-left: 38px;
+      }
+      /* On narrow screens, the Current Attention items shed their
+         two-column grid (kind | what) and stack vertically — the
+         kind label sits above the what text, both still inside the
+         shared 38px indent. */
+      .home-page .beat__items {
+        padding-left: 38px;
+      }
+      .home-page .beat__items li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 14px 0;
+        font-size: 1.02rem;
+      }
+      .home-page .beat__clusters {
+        padding-left: 38px;
+      }
+      .home-page .beat__clusters li {
+        padding: 14px 0;
+      }
+      .home-page .beat__exit {
+        font-size: 0.98rem;
+        margin-top: 22px;
+        padding-left: 38px;
+      }
+      .home-page .beat--signature .beat__kicker {
+        font-size: 0.88rem;
       }
       /* Mobile: the Night Sky carries through — same dark space, same
          luminous text, same star-breath. The desktop full-bleed
@@ -1091,10 +1155,6 @@
       .home-page .field.is-active .field__item {
         opacity: 1;
       }
-      .home-page .close {
-        padding-top: 80px;
-        padding-bottom: 72px;
-      }
     }
 
     /* --------- Nav overrides (home-page only) ---------
@@ -1212,8 +1272,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       .home-page .welcome::before,
-      .home-page .welcome::after,
-      .home-page .close::before {
+      .home-page .welcome::after {
         animation: none;
       }
       .home-page .meta__dot {
@@ -1222,10 +1281,6 @@
       .home-page [data-reveal] {
         opacity: 1;
         transform: none;
-        transition: none;
-      }
-      .home-page .path__link,
-      .home-page .path__title {
         transition: none;
       }
       .home-page .field__item,
@@ -1248,6 +1303,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="journey.html">Journey</a></li>
         <li><a href="insights.html">Insights</a></li>
+        <li><a href="library.html">Library</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
@@ -1394,61 +1450,117 @@
       </div>
     </section>
 
-    <!-- 3. PATHS — three real editorial blocks -->
-    <section class="section paths" aria-label="Where to go next">
-      <div class="section__inner">
+    <!-- 3. COMPOSITION — four landed beats bound by one compositional refrain.
+         Architecture restored: Journey, Current Attention, Library doorway,
+         and Signature are each present as distinct typographic units with
+         their own internal forms. Cohesion comes from the refrain — a small
+         horizontal mark + a voiced kicker phrase + the beat's native body —
+         that opens every beat the same way. The marks vertically align at
+         the left of the column, forming a four-rung spine down the page.
+         The kickers form a narrative arc: where it came from, what's open
+         right now, where the work lives, and finally the writer. -->
+    <section class="section composition" aria-label="Below the field">
+      <div class="composition__inner">
 
-        <p class="paths__label" data-reveal>Where to go next</p>
+        <!-- Beat 1 · Journey -->
+        <article class="beat" data-reveal>
+          <p class="beat__kicker">
+            <span class="beat__mark" aria-hidden="true"></span>
+            Where this came from.
+          </p>
+          <p class="beat__paragraph">
+            The questions came later. The first problem was practical:
+            I came home from a year abroad underweight and wanted the
+            weight back. I read what I could find. The weight came back
+            within a year. The reading didn&rsquo;t stop. At some point
+            I realized I&rsquo;d stopped reading about how to gain weight.
+            I was reading about ingredients, evidence, gardening, how
+            people eat in different places, behavior, food systems.
+            The original question had turned into a much bigger one.
+            That&rsquo;s what I write about now.
+          </p>
+          <p class="beat__exit">
+            The rest is on <a href="journey.html">Journey</a>.
+          </p>
+        </article>
 
-        <ul class="paths__list">
-          <li class="path" data-reveal data-reveal-delay="1">
-            <a class="path__link" href="journey.html">
-              <span class="path__number">01</span>
-              <span class="path__content">
-                <span class="path__title">Journey</span>
-                <span class="path__kicker">How this began.</span>
-                <span class="path__body">The questions came before the credentials. I started nutrition school in 2023. This is the longer road that brought me here, told the way it actually happened.</span>
-                <span class="path__cta">Read the journey</span>
-              </span>
-            </a>
-          </li>
-          <li class="path" data-reveal data-reveal-delay="2">
-            <a class="path__link" href="insights.html">
-              <span class="path__number">02</span>
-              <span class="path__content">
-                <span class="path__title">Insights</span>
-                <span class="path__kicker">The work itself.</span>
-                <span class="path__body">Essays, research notes, and observations about food, evidence, and the gap between what science says and what people repeat. New pieces appear when something feels worth writing down.</span>
-                <span class="path__cta">Read the work</span>
-              </span>
-            </a>
-          </li>
-          <li class="path" data-reveal data-reveal-delay="3">
-            <a class="path__link" href="about.html">
-              <span class="path__number">03</span>
-              <span class="path__content">
-                <span class="path__title">About</span>
-                <span class="path__kicker">The shorter version.</span>
-                <span class="path__body">Education, current focus, and how to reach me. Brief and direct, in case that&rsquo;s what you came for.</span>
-                <span class="path__cta">Continue</span>
-              </span>
-            </a>
-          </li>
-        </ul>
+        <!-- Beat 2 · Current Attention -->
+        <article class="beat" data-reveal>
+          <p class="beat__kicker">
+            <span class="beat__mark" aria-hidden="true"></span>
+            What&rsquo;s open right now.
+          </p>
+          <ul class="beat__items">
+            <li>
+              <span class="beat__kind">Reading.</span>
+              <span class="beat__what">A long paper on legumes, fiber,
+                and what fermentable carbohydrates actually do in the gut.</span>
+            </li>
+            <li>
+              <span class="beat__kind">Drafting.</span>
+              <span class="beat__what">A piece on dal, read as nutrition
+                rather than tradition.</span>
+            </li>
+            <li>
+              <span class="beat__kind">Reconsidering.</span>
+              <span class="beat__what">Whether &ldquo;inflammatory foods&rdquo;
+                lists hold up once you read past the headlines.</span>
+            </li>
+          </ul>
+          <p class="beat__exit">
+            More of what&rsquo;s open is on <a href="insights.html">Insights</a>.
+          </p>
+        </article>
 
-      </div>
-    </section>
+        <!-- Beat 3 · Library doorway -->
+        <article class="beat" data-reveal>
+          <p class="beat__kicker">
+            <span class="beat__mark" aria-hidden="true"></span>
+            Where the work lives.
+          </p>
+          <ul class="beat__clusters">
+            <li>
+              <a href="insights/topics/reading-the-evidence.html">Reading the evidence.</a>
+              How nutrition studies, labels, and claims actually work; what they
+              really say versus what they appear to say.
+            </li>
+            <li>
+              <a href="#" aria-disabled="true">South Asian food and nutrition.</a>
+              Dal, ghee, masalas, the meals my parents and grandparents made,
+              and how their nutrition has been read or misread.
+            </li>
+            <li>
+              <a href="#" aria-disabled="true">Food, growing, and systems.</a>
+              Where food comes from before it is food. Gardens, agriculture,
+              sustainability, the longer chain behind a meal.
+            </li>
+            <li>
+              <a href="#" aria-disabled="true">Practical nutrition.</a>
+              What to actually eat. Questions that come up every day at the
+              grocery store, in the kitchen, at the table.
+            </li>
+            <li>
+              <a href="#" aria-disabled="true">Health and the body.</a>
+              What food does in the body. Mechanism, outcomes, the specific
+              health questions nutrition gets asked to answer.
+            </li>
+            <li>
+              <a href="#" aria-disabled="true">Food culture and behavior.</a>
+              How people actually eat. Patterns, rituals, gaps between what
+              we say and what we do.
+            </li>
+          </ul>
+        </article>
 
-    <!-- 4. CLOSE -->
-    <section class="section close" aria-label="A note from Rajiv">
-      <div class="section__inner">
-        <p class="close__text" data-reveal>
-          There's a lot still to figure out. If something here is worth thinking about, or worth pushing back on, I'd like to hear from you.
-        </p>
-        <p class="signature" data-reveal data-reveal-delay="1">
-          <span class="signature__mark" aria-hidden="true"></span>
-          Rajiv Vakani &nbsp;·&nbsp; Kept since 2023
-        </p>
+        <!-- Beat 4 · Signature -->
+        <article class="beat beat--signature" data-reveal>
+          <p class="beat__kicker">
+            <span class="beat__mark" aria-hidden="true"></span>
+            <a href="about.html">Rajiv Vakani</a>. Writing on nutrition from
+            New York. Since 2023. <a href="contact.html">Email</a>.
+          </p>
+        </article>
+
       </div>
     </section>
 

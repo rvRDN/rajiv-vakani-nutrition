@@ -1,30 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" class="library-page">
+<html lang="en" class="library-index">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Insights | Rajiv Vakani</title>
-  <meta name="description" content="What currently has my attention, and the larger body of writing on nutrition, evidence, food, and the body.">
+  <title>Library | Rajiv Vakani</title>
+  <meta name="description" content="The complete map of the work. Every piece, grouped by topic.">
 
-  <!-- Draft phase: keep out of search results until launch -->
   <meta name="robots" content="noindex">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rajivvakani.com/insights.html" />
-  <meta property="og:title" content="Insights | Rajiv Vakani" />
-  <meta property="og:description" content="What currently has my attention, and the larger body of writing on nutrition, evidence, food, and the body." />
+  <meta property="og:url" content="https://rajivvakani.com/library.html" />
+  <meta property="og:title" content="Library | Rajiv Vakani" />
+  <meta property="og:description" content="The complete map of the work. Every piece, grouped by topic." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
-  <link rel="canonical" href="https://rajivvakani.com/insights.html" />
+  <link rel="canonical" href="https://rajivvakani.com/library.html" />
 
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://rajivvakani.com/insights.html" />
-  <meta property="twitter:title" content="Insights | Rajiv Vakani" />
-  <meta property="twitter:description" content="What currently has my attention, and the larger body of writing on nutrition, evidence, food, and the body." />
+  <meta property="twitter:url" content="https://rajivvakani.com/library.html" />
+  <meta property="twitter:title" content="Library | Rajiv Vakani" />
+  <meta property="twitter:description" content="The complete map of the work. Every piece, grouped by topic." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -33,7 +30,6 @@
   <link rel="stylesheet" href="insights/library.css?v=2026060805">
   <link rel="icon" type="image/png" href="favicon.png" />
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -45,7 +41,7 @@
   <script defer src="insights/data.js?v=2026060805"></script>
   <script defer src="insights/library.js?v=2026060805"></script>
 </head>
-<body class="library-page">
+<body class="library-index">
 
   <nav class="main-nav">
     <div class="container nav-container">
@@ -55,8 +51,8 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="journey.html">Journey</a></li>
-        <li><a href="insights.html" class="active">Insights</a></li>
-        <li><a href="library.html">Library</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="library.html" class="active">Library</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
@@ -77,47 +73,47 @@
 
   <main>
 
-    <!-- 1. HEAD: anchor + title + framing.
-         Quiet head; sets that Insights has two layers underneath. -->
+    <!-- HEADER  --  minimal. Anchor, title, one line of framing. The
+         heavy lifting of orientation is on the topic pages; the
+         Library opens onto the whole work, not into any one area. -->
     <header class="library-head">
       <div class="wrap">
-        <p class="library-anchor">in <a href="index.html">Home</a></p>
-        <h1 class="library-title">Insights</h1>
+        <p class="library-anchor">in <a href="insights.html">Insights</a></p>
+        <h1 class="library-title">Library</h1>
         <p class="library-framing">
-          Two layers. Above, what currently has my attention. Below, the
-          larger body of writing organized by subject.
+          The complete map of the work. Every piece is here, grouped by
+          the area it belongs to.
         </p>
       </div>
     </header>
 
-    <!-- 2. CURRENT ATTENTION: the living surface.
-         Three voiced items pulled from data.js. Verb-kind on the
-         left (Reading / Drafting / Reconsidering), what's in mind
-         on the right. Not a feed. Not a dashboard. -->
-    <section class="attention" aria-label="Current attention">
+    <!-- LAYER 1  --  THE MAP.
+         Six topics, one row each. Title (linked to topic page) on the
+         left; total piece count on the right. No descriptions; topic
+         pages already do that work. -->
+    <section class="library-map" aria-label="The map">
       <div class="wrap">
-        <p class="attention__label">Currently in mind</p>
-        <ul class="attention__list" data-library-attention></ul>
+        <p class="library-map__label">The map</p>
+        <ul class="library-map__list" data-library-map></ul>
       </div>
     </section>
 
-    <!-- 3. KNOWLEDGE LIBRARY: the durable body of work.
-         Six topic doorways with name + description + piece count.
-         Topics with no published pieces yet render with a quiet
-         "opening soon" or "opening, drafts in progress" note. -->
-    <section class="library" aria-label="Knowledge Library">
+    <!-- LAYER 2  --  EVERYTHING.
+         Every article in the library, grouped by topic. Title only.
+         No ledes, no dates, no clusters, no types. Drafts appear
+         inline next to their published siblings, marked with a small
+         muted tag. Alphabetical within each topic so it reads like a
+         reference shelf, not a feed. Topics with no articles yet are
+         omitted; the map above already declares the full inventory. -->
+    <section class="library-archive" aria-label="Everything">
       <div class="wrap">
-        <p class="library__label">By subject</p>
-        <p class="library__framing">
-          The larger body of work, organized by subject. Each topic is a
-          neighborhood of related pieces with a Start Here recommendation.
-        </p>
-        <ul class="topics" data-library-topics></ul>
+        <p class="library-archive__label">Everything</p>
+        <div data-library-archive></div>
       </div>
     </section>
 
-    <!-- 4. COLOPHON: the same signature line that closes the homepage. -->
-    <section class="colophon" aria-label="Signature">
+    <!-- COLOPHON.  Same signature line that closes every library page. -->
+    <section class="library-colophon" aria-label="Signature">
       <div class="wrap">
         <p>
           <a href="about.html">Rajiv Vakani</a>. Writing on nutrition from

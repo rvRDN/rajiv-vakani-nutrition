@@ -11,10 +11,9 @@ Sitemap: https://rajivvakani.com/sitemap.xml
 # Allow all content
 Allow: /index.html
 Allow: /about.html
-Allow: /table-talk.html
-Allow: /no-onion-no-garlic.html
-Allow: /supporters.html
-Allow: /members.html
+Allow: /journey.html
+Allow: /insights.html
+Allow: /contact.html
 
 # Crawl delay (optional)
 Crawl-delay: 1 
