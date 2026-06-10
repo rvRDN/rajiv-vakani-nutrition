@@ -44,7 +44,7 @@ window.RVData = {
     version: 2,
     description: 'Single source of truth for the Knowledge Library. Replaces the previous library.json + articles.json + inline duplicates in library.js. Loaded by every Library-system page via <script defer src="insights/data.js">.',
     schemaVersion: '2.0.0',
-    lastUpdated: '2026-06-08'
+    lastUpdated: '2026-06-09'
   },
 
   /* ----------------------------------------------------------
@@ -384,6 +384,34 @@ window.RVData = {
       summary: 'How nutrition science gets translated into lifestyle messaging, what the David bar story says about influencer credibility, and what the protein boom reveals about the culture buying it.',
       status: 'draft',
       next: ['how-i-evaluate-nutrition-claims', 'why-nutrition-advice-keeps-changing', 'a-practical-guide-to-vegetarian-protein']
+    },
+
+    {
+      slug: 'the-translation-problem',
+      url: 'insights/the-translation-problem.html',
+      title: 'The Problem Isn\u2019t the Message. It\u2019s the Translation.',
+      lede: 'Why a simple question \u2014 \u201Ccan I eat mangoes\u201D \u2014 keeps getting incompatible answers, and what translation has to do with it.',
+      type: 'Essay',
+      date: '2026-06-09',
+      topic: 'reading-the-evidence',
+      cluster: 'claims-headlines-and-translation',
+      summary: 'A worked example of how nutrition information gets translated as it moves from research to dinner table, told through the question of whether someone with diabetes can eat mangoes. The disagreement, it turns out, usually isn\u2019t between informed and uninformed people.',
+      status: 'draft',
+      next: ['protein-marketing-and-trust', 'how-i-evaluate-nutrition-claims']
+    },
+
+    {
+      slug: 'the-glycemic-index-question',
+      url: 'insights/the-glycemic-index-question.html',
+      title: 'The Glycemic Index Isn\u2019t Wrong. We\u2019re Just Asking It the Wrong Question.',
+      lede: 'Why so many \u201Chealthy\u201D foods score high on the glycemic index, and what the metric is, and isn\u2019t, actually measuring.',
+      type: 'Essay',
+      date: '2026-06-09',
+      topic: 'reading-the-evidence',
+      cluster: 'claims-headlines-and-translation',
+      summary: 'A worked example of how a useful nutrition metric becomes misleading once it gets asked to answer questions it was never designed to answer, told through the puzzle of why watermelon and other healthy foods score so high on the glycemic index.',
+      status: 'draft',
+      next: ['the-translation-problem', 'how-i-evaluate-nutrition-claims']
     }
 
   ]
