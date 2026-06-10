@@ -25,7 +25,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="rajiv-styles.css?v=20250116k">
+  <link rel="stylesheet" href="rajiv-styles.css?v=20260609211937">
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <!-- Google Analytics -->
@@ -1162,20 +1162,38 @@
        below align it with the homepage's editorial accent. Note:
        these are also already set globally in rajiv-styles.css; the
        duplicates here are defensive so the homepage stays correct
-       even if the global styles are revised later. */
+       even if the global styles are revised later.
+
+       Active state: burnt-orange text + underline, NO background.
+       Hover state: faint neutral gray wash. */
 
     .home-page .nav-links li a.active {
+      background: none !important;
+      background-color: transparent !important;
+      color: var(--accent) !important;
+      box-shadow: none !important;
+      font-weight: 600 !important;
+    }
+    .home-page .nav-links li a.active::after {
+      content: '' !important;
+      position: absolute !important;
+      bottom: -4px !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: auto !important;
+      height: 2px !important;
       background-color: var(--accent) !important;
-      color: #fff !important;
-      box-shadow: 0 2px 10px rgba(184, 96, 46, 0.22) !important;
+      transform: none !important;
+      transition: none !important;
     }
     .home-page .nav-links li a:hover {
-      background-color: rgba(184, 96, 46, 0.08) !important;
+      background-color: rgba(26, 26, 26, 0.05) !important;
       color: var(--accent) !important;
     }
     .home-page .nav-links li a.active:hover {
-      background-color: var(--accent) !important;
-      color: #fff !important;
+      background: none !important;
+      background-color: transparent !important;
+      color: var(--accent) !important;
     }
 
     /* Social as tiny monochrome icons — no circles, no fills, just glyphs */
@@ -1214,29 +1232,29 @@
     }
 
     /* --------- Footer — quiet editorial sign-off ---------
-       The site-wide footer renders as a heavy navy block. On the
-       homepage we replace it with a warm cream, left-anchored row
-       to match the section rhythm. Copyright on the left, social
-       icons on the right, both small and quiet. */
+       Cream paper to match the page, centered sign-off so it lines
+       up with the centered colophon on the library/article pages.
+       Copyright on top, social icons centered below, both small
+       and quiet. */
 
     .home-page footer {
       background: var(--base) !important;
       color: var(--muted-soft) !important;
       border-top: 1px solid var(--rule) !important;
-      padding: 32px clamp(28px, 10vw, 160px) 40px clamp(28px, 10vw, 160px) !important;
-      text-align: left !important;
+      padding: 36px clamp(24px, 6vw, 80px) 44px clamp(24px, 6vw, 80px) !important;
+      text-align: center !important;
       font-size: 0.78rem;
     }
     .home-page footer .container {
-      max-width: 980px;
+      max-width: 720px;
       width: 100%;
-      margin: 0;
+      margin: 0 auto;
       padding: 0;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
     }
     .home-page footer p {
       font-family: 'Inter Tight', 'Inter', sans-serif;
@@ -1244,13 +1262,11 @@
       letter-spacing: 0.04em;
       color: var(--muted-soft);
       margin: 0;
-      order: 1;
     }
     .home-page footer .footer-social {
-      order: 2;
       margin: 0 !important;
       width: auto !important;
-      justify-content: flex-end !important;
+      justify-content: center !important;
     }
     .home-page footer .footer-social a {
       color: var(--muted-soft) !important;
@@ -1260,11 +1276,7 @@
     }
     @media (max-width: 720px) {
       .home-page footer {
-        padding: 28px 24px 32px 24px !important;
-      }
-      .home-page footer .container {
-        flex-direction: row;
-        gap: 16px;
+        padding: 30px 24px 36px 24px !important;
       }
     }
 
@@ -1309,7 +1321,7 @@
 
       <div class="social-icons" aria-label="Social links">
         <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
       </div>
 
       <button class="menu-toggle" aria-label="Toggle navigation">
@@ -1571,7 +1583,7 @@
       <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
       <div class="footer-social" aria-label="Social links">
         <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
       </div>
     </div>
   </footer>

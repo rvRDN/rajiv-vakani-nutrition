@@ -3882,7 +3882,7 @@ p {
   -webkit-backdrop-filter: blur(10px);         /* Safari support */
   border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* soft line */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);    /* optional soft shadow */
-  padding: 15px 0;
+  padding: 10px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -3950,43 +3950,45 @@ p {
   transform: translateX(-50%);
 }
 
-/* Hover state - subtle background highlight */
+/* Hover state - faint neutral gray wash (signals "interactive")
+   plus the burnt-orange accent color on the text itself. The
+   underline doesn't appear on hover so the active state stays
+   distinguishable. */
 .nav-links li a:hover::after {
-  width: 0; /* Remove the line on hover */
+  width: 0;
   background-color: transparent;
 }
 
 .nav-links li a:hover {
   color: #b8602e; /* burnt orange — editorial accent */
-  background-color: rgba(184, 96, 46, 0.08);
+  background-color: rgba(26, 26, 26, 0.05); /* faint neutral wash */
   padding: 8px 12px;
   border-radius: 6px;
   margin: -8px -12px;
 }
 
-/* Active state - editorial burnt-orange pill */
-.nav-links li a.active::after {
-  width: 0;
-  background-color: transparent;
-}
-
+/* Active state - burnt-orange text + thin burnt-orange underline.
+   No background; the color and the underline together signal "you
+   are on this section." The wash is reserved for hover so the two
+   states are visually distinct. */
 .nav-links li a.active {
-  color: white !important;
-  background-color: #b8602e; /* burnt orange — editorial accent */
-  padding: 8px 12px;
-  border-radius: 6px;
-  margin: -8px -12px;
+  color: #b8602e !important;
   font-weight: 600;
-  box-shadow: 0 2px 10px rgba(184, 96, 46, 0.22);
+  background: none;
+  box-shadow: none;
 }
 
-.nav-links li a:hover {
-  color: var(--primary-blue-dark);
-}
-
-.nav-links li a.active {
-  color: var(--primary-blue-dark);
-  font-weight: 600; /* Make active link slightly bolder */
+.nav-links li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 2px;
+  background-color: #b8602e;
+  transform: none;
+  transition: none;
 }
 
 .menu-toggle {
@@ -4066,13 +4068,13 @@ p {
 
 /* Mobile styles - hide navigation links, show hamburger */
 @media (max-width: 768px) {
-  /* Ensure proper navigation container layout */
+  /* Slimmer mobile nav header. Logo on the left, social icons +
+     hamburger grouped on the right (see social-icons rule below). */
   .nav-container {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    padding: 15px 20px !important;
-    min-height: 70px !important;
+    padding: 8px 20px !important;
   }
   
   /* Mobile font size for newsletter title */
@@ -4091,41 +4093,63 @@ p {
     transform: none;
   }
   
-  /* Show hamburger menu on mobile */
+  /* Hamburger as a glyph, not a button. Same visual weight as the
+     IG / FB icons next to it: monochrome dark-gray lines, no
+     fill, no shadow, no border. Tap target stays 40x40 so the
+     control is still comfortable, but the visible icon is just
+     three thin lines. Burnt orange on hover/active to match the
+     social-icon hover treatment.
+
+     Margin uses !important because earlier non-!important edits
+     weren't taking effect in the browser. Once we confirm this
+     value is applied, we'll dial back if too generous. */
   .menu-toggle {
     display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
-    background: #FF6C37;
+    width: 40px !important;
+    height: 40px !important;
+    background: transparent !important;
     border: none;
-    border-radius: 8px;
+    border-radius: 0 !important;
     cursor: pointer;
-    padding: 10px;
+    padding: 8px !important;
     z-index: 1001;
-    box-shadow: 0 4px 12px rgba(255, 108, 55, 0.3);
-    position: relative;
-    margin: 0;
-    top: 0;
-    transform: none;
+    box-shadow: none !important;
+    position: relative !important;
+    margin: 0 0 0 24px !important;
+    top: 0 !important;
+    right: auto !important;
+    transform: none !important;
     align-self: center;
     flex-shrink: 0;
   }
   
-  /* Hamburger lines */
   .hamburger {
-    width: 28px;
-    height: 4px;
-    background: #ffffff;
-    margin: 3px 0;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    width: 20px;
+    height: 2px;
+    background: #5a5a5a; /* matches .social-icons default color */
+    margin: 2px 0;
+    border-radius: 1px;
+    transition: background 0.2s ease;
+    box-shadow: none;
+  }
+
+  .menu-toggle:hover .hamburger,
+  .menu-toggle:focus-visible .hamburger,
+  .menu-toggle.active .hamburger {
+    background: #b8602e; /* burnt orange — matches social-icon hover */
+  }
+
+  /* Push social icons to the right so they sit next to the
+     hamburger instead of floating in the middle of the bar. */
+  .social-icons {
+    margin-left: auto !important;
   }
   
-  /* Mobile menu when active */
+  /* Mobile menu when active - narrower side sheet, tighter
+     padding, height sized to content (no forced min-height). */
   .nav-links.active {
     display: flex !important;
     visibility: visible !important;
@@ -4134,18 +4158,17 @@ p {
     position: fixed;
     top: 0;
     right: 0;
-    width: 280px;
+    width: 220px;
     height: auto;
-    min-height: 300px;
     max-height: 80vh;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 248, 242, 0.97);
     backdrop-filter: blur(12px);
-    padding: 60px 30px 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px 22px 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     z-index: 1001;
     gap: 0;
     border-radius: 12px 0 0 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     animation: dropdownEntrance 0.3s ease-out;
   }
   
@@ -4217,7 +4240,7 @@ p {
   }
 
   .nav-links.active li a:hover {
-    color: #ff5e1a;
+    color: #b8602e;
     font-weight: 600;
     transform: translateX(8px);
     transition: all 0.3s ease;
@@ -4230,7 +4253,7 @@ p {
     left: 50%;
     width: 40px;
     height: 2px;
-    background: linear-gradient(90deg, #f59e0b, #ff5e1a);
+    background: #b8602e;
     transform: translateX(-50%) scaleX(0);
     transition: transform 0.3s ease;
     border-radius: 1px;
@@ -4242,16 +4265,18 @@ p {
   }
 
   .nav-links.active li a.active {
-    color: #ff5e1a !important;
+    color: #b8602e !important;
     font-weight: 600 !important;
     background: none !important;
     border-left: none !important;
     padding-left: 0 !important;
   }
 
-  /* Hamburger animation - transforms to X when active */
+  /* Hamburger animation - transforms to X when active.
+     Translate values match the new line spacing (line center to
+     line center is ~8px with 2px lines and 3px margins). */
   .menu-toggle.active .hamburger:nth-child(1) {
-    transform: translateY(12px) rotate(45deg) !important;
+    transform: translateY(8px) rotate(45deg) !important;
   }
 
   .menu-toggle.active .hamburger:nth-child(2) {
@@ -4260,12 +4285,13 @@ p {
   }
 
   .menu-toggle.active .hamburger:nth-child(3) {
-    transform: translateY(-12px) rotate(-45deg) !important;
+    transform: translateY(-8px) rotate(-45deg) !important;
   }
 
-  /* Add a subtle glow effect to the X when active */
+  /* No glow on the X — the burnt-orange lines on cream are
+     legible without help. */
   .menu-toggle.active .hamburger {
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6) !important;
+    box-shadow: none !important;
   }
 
   /* Dropdown entrance animation */
@@ -4590,7 +4616,7 @@ h1,
 /* ========================================= */
 @media (min-width: 769px) {
    body {
-     padding-top: 64px; /* ✅ Only for desktop, to clear sticky nav */
+     padding-top: 52px; /* ✅ Only for desktop, to clear sticky nav */
    }
    
    .mobile-only-break {
@@ -7603,74 +7629,90 @@ h1.hero-heading {
     z-index: 0 !important;
 }
 
-/* MOBILE MENU IMPROVEMENTS - CLEAN & SIMPLE */
+/* MOBILE MENU IMPROVEMENTS - editorial burnt-orange palette */
 @media (max-width: 768px) {
-  /* Simple mobile menu overlay */
+  /* Lighter, less aggressive scrim behind the open drawer. */
   .mobile-menu-overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.35);
     transition: opacity 0.3s ease;
   }
 
-  /* Clean mobile menu container */
+  /* Compact drawer that drops down from the nav bar at the right
+     edge. Sized to content so there's no extra whitespace; the
+     nav header (logo + social + X) stays visible above it. */
   .nav-links.active {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    border-radius: 8px 0 0 8px;
-    padding: 20px 30px 30px;
-    width: 280px;
-    min-height: 350px;
-    max-height: 80vh;
+    background: rgba(255, 248, 242, 0.97);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+    border-radius: 0 0 0 12px;
+    padding: 14px 22px 18px;
+    width: 180px;
+    min-height: 0;
+    max-height: calc(100vh - 56px);
+    top: 52px;
   }
 
-  /* Clean mobile menu links */
+  /* Editorial menu links: serif-adjacent weight, ink color, no
+     per-link borders (the FINAL block below adds centered
+     divider rules between items). */
   .nav-links.active li a {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 500;
-    color: #374151;
-    padding: 16px 0;
-    border-bottom: 1px solid #f3f4f6;
+    color: #1a1a1a;
+    padding: 10px 0;
+    border-bottom: none;
     transition: color 0.2s ease;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
   }
 
   .nav-links.active li a:hover {
-    color: #FF6C37;
+    color: #b8602e;
   }
 
-  /* Clean active state - just left border, no background */
+  /* Active state: burnt-orange text + underline (added by the
+     FINAL block). No left border, no background. */
   .nav-links.active li a.active {
-    border-left: 3px solid #FF6C37 !important;
-    color: #FF6C37 !important;
+    border-left: none !important;
+    color: #b8602e !important;
     font-weight: 600 !important;
-    padding-left: 12px !important;
+    padding-left: 0 !important;
     background: none !important;
   }
 
-  /* Simple hamburger button */
+  /* Hamburger as a glyph (matches the base mobile rule above).
+     Transparent button, dark-gray lines that turn burnt orange
+     on hover/active. No fill, no shadow. */
   .menu-toggle {
-    background: #FF6C37;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(255, 108, 55, 0.3);
-    transition: box-shadow 0.2s ease;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    transition: none;
   }
 
   .menu-toggle:hover {
-    box-shadow: 0 4px 12px rgba(255, 108, 55, 0.4);
+    box-shadow: none;
   }
 
-  /* Clean hamburger lines */
   .hamburger {
-    background: #ffffff;
+    background: #5a5a5a;
+  }
+
+  .menu-toggle:hover .hamburger,
+  .menu-toggle:focus-visible .hamburger,
+  .menu-toggle.active .hamburger {
+    background: #b8602e;
   }
 }
 
 /* ========================================
-   FINAL MOBILE MENU FIX - OVERRIDE EVERYTHING
+   FINAL MOBILE MENU FIX — burnt-orange editorial palette.
+   Keeps the per-item divider lines (look nice in the compact
+   drawer) and gives the active item a burnt-orange underline.
    ======================================== */
 
 @media (max-width: 768px) {
-  /* Force remove any background on mobile menu active items */
+  /* Reset any background, border, or padding noise on items so
+     the divider rule below has a clean canvas. */
   .nav-links.active li a.active,
   .nav-links.active li a:hover,
   .nav-links.active li a {
@@ -7679,76 +7721,71 @@ h1.hero-heading {
     border: none !important;
     border-left: none !important;
     border-radius: 0 !important;
-    padding: 16px 0 !important;
+    padding: 10px 0 !important;
     margin: 0 !important;
     box-shadow: none !important;
-    color: #333333 !important;
+    color: #1a1a1a !important;
     font-weight: 500 !important;
     position: relative !important;
   }
 
-  /* Elegant divider lines between nav items - force consistency */
+  /* Thin centered divider between menu items. */
   .nav-links.active li::after {
     content: '' !important;
     display: block !important;
     height: 1px !important;
-    width: 80% !important;
-    background: rgba(0, 0, 0, 0.15) !important;
-    margin: 12px auto !important;
+    width: 70% !important;
+    background: rgba(26, 26, 26, 0.12) !important;
+    margin: 6px auto !important;
     border-radius: 0 !important;
   }
 
-  /* Remove divider from last item */
   .nav-links.active li:last-child::after {
     display: none !important;
   }
 
-  /* Add the thin centered underline for active/hover */
+  /* Underline appears only on hover and on the active link.
+     Solid burnt orange, centered, fixed width so it reads as a
+     deliberate marker rather than a full underline. */
   .nav-links.active li a.active::after,
   .nav-links.active li a:hover::after {
     content: '' !important;
     position: absolute !important;
-    bottom: 8px !important;
+    bottom: 4px !important;
     left: 50% !important;
-    width: 40px !important;
+    width: 36px !important;
     height: 2px !important;
-    background: linear-gradient(90deg, #f59e0b, #ff5e1a) !important;
+    background: #b8602e !important;
     transform: translateX(-50%) scaleX(1) !important;
     border-radius: 1px !important;
     z-index: 10 !important;
   }
 
-  /* Default state - no underline */
+  /* Hidden by default — only the rule above turns it on. */
   .nav-links.active li a::after {
     content: '' !important;
     position: absolute !important;
-    bottom: 8px !important;
+    bottom: 4px !important;
     left: 50% !important;
-    width: 40px !important;
+    width: 36px !important;
     height: 2px !important;
-    background: linear-gradient(90deg, #f59e0b, #ff5e1a) !important;
+    background: #b8602e !important;
     transform: translateX(-50%) scaleX(0) !important;
     transition: transform 0.3s ease !important;
     border-radius: 1px !important;
     z-index: 10 !important;
   }
 
-  /* Hover state - lighter orange text */
+  /* Hover state — burnt orange text + underline. */
   .nav-links.active li a:hover {
-    color: #ff8c42 !important;
+    color: #b8602e !important;
     font-weight: 600 !important;
   }
 
-  /* Active/selected state - darker orange text and thicker underline */
+  /* Active state — same accent color, slightly bolder. */
   .nav-links.active li a.active {
-    color: #e55a00 !important;
-    font-weight: 700 !important;
-  }
-
-  /* Active/selected underline - thicker and darker */
-  .nav-links.active li a.active::after {
-    height: 3px !important;
-    background: linear-gradient(90deg, #e55a00, #ff5e1a) !important;
+    color: #b8602e !important;
+    font-weight: 600 !important;
   }
 }
 
@@ -8139,6 +8176,10 @@ h1.hero-heading {
 
 /* Mobile behavior: keep icons proportional */
 @media (max-width: 768px) {
+  .social-icons,
+  .footer-social {
+    gap: 14px; /* tighter cluster next to the hamburger */
+  }
   .social-icons a,
   .footer-social a {
     font-size: 1rem;

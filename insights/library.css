@@ -130,7 +130,9 @@ body.library-index {
 .post-page main .post-wrap,
 .post-page .post-wrap { max-width: 720px !important; }
 
-/* Shared colophon at the bottom of each page. */
+/* Shared colophon at the bottom of each page.
+   Centered sign-off line so the closing beat sits in the middle
+   of the page rather than echoing the left-anchored body. */
 .library-page  .colophon,
 .topic-page    .topic-colophon,
 .post-page     .post-colophon,
@@ -138,6 +140,15 @@ body.library-index {
   padding-top: clamp(64px, 9vh, 110px);
   padding-bottom: clamp(80px, 11vh, 130px);
   border-top: 1px solid var(--rule);
+  text-align: center;
+}
+.library-page  .colophon .wrap,
+.topic-page    .topic-colophon .topic-wrap,
+.post-page     .post-colophon .post-wrap,
+.library-index .library-colophon .wrap {
+  max-width: 720px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .library-page  .colophon p,
 .topic-page    .topic-colophon p,
@@ -172,20 +183,39 @@ body.library-index {
 
 /* Nav overrides shared across the three library pages, matching
    the homepage palette so the library feels continuous with the
-   rest of the site rather than the older blue-themed pages. */
+   rest of the site rather than the older blue-themed pages.
+   Active state: burnt-orange text + thin burnt-orange underline,
+   no background. Hover state: faint neutral gray wash. The two
+   states stay visually distinct without either feeling like a
+   button. */
 .library-page  .nav-links li a.active,
 .topic-page    .nav-links li a.active,
 .post-page     .nav-links li a.active,
 .library-index .nav-links li a.active {
+  background: none !important;
+  color: var(--accent) !important;
+  box-shadow: none !important;
+}
+.library-page  .nav-links li a.active::after,
+.topic-page    .nav-links li a.active::after,
+.post-page     .nav-links li a.active::after,
+.library-index .nav-links li a.active::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -4px !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: auto !important;
+  height: 2px !important;
   background-color: var(--accent) !important;
-  color: #fff !important;
-  box-shadow: 0 2px 10px rgba(184, 96, 46, 0.22) !important;
+  transform: none !important;
+  transition: none !important;
 }
 .library-page  .nav-links li a:hover,
 .topic-page    .nav-links li a:hover,
 .post-page     .nav-links li a:hover,
 .library-index .nav-links li a:hover {
-  background-color: rgba(184, 96, 46, 0.08) !important;
+  background-color: rgba(26, 26, 26, 0.05) !important;
   color: var(--accent) !important;
 }
 .library-page  .social-icons a, .library-page  .footer-social a,
@@ -260,6 +290,9 @@ body.library-index {
   letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0 0 32px 0;
+  /* Cancel the site-wide h1 drop shadow (rajiv-styles.css) so
+     the title sits flat on the cream paper. */
+  text-shadow: none;
 }
 .library-page .library-framing {
   font-family: 'Lora', Georgia, serif;
@@ -421,6 +454,9 @@ body.library-index {
   letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0 0 32px 0;
+  /* Cancel the site-wide h1 drop shadow (rajiv-styles.css) so
+     the title sits flat on the cream paper. */
+  text-shadow: none;
 }
 .topic-page .topic-framing {
   font-family: 'Lora', Georgia, serif;
@@ -664,6 +700,9 @@ body.library-index {
   letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0 0 22px 0;
+  /* Cancel the site-wide h1 drop shadow (rajiv-styles.css) so
+     the title sits flat on the cream paper. */
+  text-shadow: none;
 }
 .library-index .library-framing {
   font-family: 'Lora', Georgia, serif;
@@ -861,6 +900,9 @@ body.library-index {
   letter-spacing: -0.018em;
   color: var(--ink);
   margin: 0 0 22px 0;
+  /* Cancel the site-wide h1 drop shadow (rajiv-styles.css) so
+     the title sits flat on the cream paper. */
+  text-shadow: none;
 }
 .post-page .post-meta {
   font-family: 'Inter Tight', sans-serif;
