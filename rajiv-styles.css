@@ -3095,28 +3095,28 @@ h1 {
 
 /* Other CSS rules... */
 
-/* Footer Styling */
-footer {
-  background-color: var(--dark-text);
-  color: var(--light-text);
-  padding: 20px;
+/* Legacy footer reset — use .site-footer everywhere. */
+footer:not(.site-footer) {
+  background-color: #faf5ea;
+  color: #8a7d68;
+  padding: 36px clamp(24px, 6vw, 80px) 44px;
   text-align: center;
-  border-top: 5px solid var(--primary-blue);
-  font-size: 0.9em;
+  border-top: 1px solid rgba(26, 26, 26, 0.10);
+  font-size: 0.78rem;
 }
 
-footer p {
+footer:not(.site-footer) p {
   margin: 0;
 }
 
-footer a {
-  color: var(--primary-blue);
+footer:not(.site-footer) a {
+  color: #8a7d68;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-footer a:hover {
-  color: var(--light-text);
+footer:not(.site-footer) a:hover {
+  color: #b8602e;
 }
 
 
@@ -3877,7 +3877,7 @@ p {
 
 /* Navbar */
 .main-nav {
-  background-color: rgba(255, 248, 242, 0.86);  /* warm tint for hero section */
+  background-color: rgba(250, 245, 234, 0.86);  /* --base cream, warm editorial */
   backdrop-filter: blur(10px);                 /* frosted effect */
   -webkit-backdrop-filter: blur(10px);         /* Safari support */
   border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* soft line */
@@ -3891,7 +3891,7 @@ p {
 
 /* Navigation background transition after hero section */
 .main-nav.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);  /* clean white with slight transparency */
+  background-color: rgba(250, 245, 234, 0.95);  /* stay on cream paper, not white */
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -3910,12 +3910,12 @@ p {
   font-weight: 600;
   font-size: 1.8rem;
   letter-spacing: 0.01em;
-  color: var(--dark-text);
+  color: #1a1a1a; /* warm ink — matches editorial pages */
   text-decoration: none;
 }
 
 .site-logo:hover {
-  color: var(--primary-blue-dark);
+  color: #b8602e; /* burnt orange — matches nav accent */
 }
 
 /* Base Nav Links Styles (Mobile-First Default) */
@@ -3930,8 +3930,8 @@ p {
 
 .nav-links li a {
   text-decoration: none;
-  color: var(--dark-text);
-  font-weight: 600;
+  color: #5a5a5a; /* muted warm gray for inactive links */
+  font-weight: 500;
   font-size: 1.05rem;
   padding: 5px 0;
   position: relative;
@@ -3945,7 +3945,7 @@ p {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #ff7433; /* brand orange */
+  background-color: #b8602e;
   transition: width 0.3s ease, left 0.3s ease, background-color 0.3s ease;
   transform: translateX(-50%);
 }
@@ -4161,7 +4161,7 @@ p {
     width: 220px;
     height: auto;
     max-height: 80vh;
-    background: rgba(255, 248, 242, 0.97);
+    background: rgba(250, 245, 234, 0.97);
     backdrop-filter: blur(12px);
     padding: 40px 22px 22px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
@@ -4230,7 +4230,7 @@ p {
     padding: 16px 0;
     font-size: 17px;
     font-weight: 500;
-    color: #333333;
+    color: #5a5a5a;
     text-decoration: none;
     letter-spacing: 0.4px;
     border-bottom: none;
@@ -4371,13 +4371,70 @@ p {
   }
 }
 
-/* Footer */
-footer {
-  background-color: var(--dark-text);
-  color: var(--light-text);
+/* Site footer — editorial sign-off (cream default). */
+.site-footer {
+  background: #faf5ea;
+  color: #8a7d68;
+  border-top: 1px solid rgba(26, 26, 26, 0.10);
+  padding: 36px clamp(24px, 6vw, 80px) 44px;
   text-align: center;
-  padding: 30px 0;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
+}
+.site-footer .container {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.site-footer p {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: #8a7d68;
+  margin: 0;
+}
+.site-footer .footer-social {
+  margin: 0;
+  width: auto;
+  justify-content: center;
+}
+.site-footer .footer-social a {
+  color: #8a7d68;
+}
+.site-footer .footer-social a:hover {
+  color: #b8602e;
+  transform: translateY(-1px);
+}
+
+/* Dark variant — Journey and other cinematic dark endings. */
+.site-footer--dark,
+.journey-page .site-footer {
+  background: #322a3a;
+  color: rgba(248, 238, 226, 0.62);
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+.site-footer--dark p,
+.journey-page .site-footer p {
+  color: rgba(248, 238, 226, 0.62);
+}
+.site-footer--dark .footer-social a,
+.journey-page .site-footer .footer-social a {
+  color: rgba(248, 238, 226, 0.62);
+}
+.site-footer--dark .footer-social a:hover,
+.journey-page .site-footer .footer-social a:hover {
+  color: #d6855a;
+}
+
+@media (max-width: 720px) {
+  .site-footer {
+    padding: 30px 24px 36px;
+  }
 }
 
 /* --- Immersive Quote Sequence --- */
@@ -7641,7 +7698,7 @@ h1.hero-heading {
      edge. Sized to content so there's no extra whitespace; the
      nav header (logo + social + X) stays visible above it. */
   .nav-links.active {
-    background: rgba(255, 248, 242, 0.97);
+    background: rgba(250, 245, 234, 0.97);
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
     border-radius: 0 0 0 12px;
@@ -7658,7 +7715,7 @@ h1.hero-heading {
   .nav-links.active li a {
     font-size: 1.05rem;
     font-weight: 500;
-    color: #1a1a1a;
+    color: #5a5a5a;
     padding: 10px 0;
     border-bottom: none;
     transition: color 0.2s ease;
@@ -8134,9 +8191,17 @@ h1.hero-heading {
   box-shadow: none;
 }
 
-/* Footer sits on a dark ground site-wide; lighten the icons there. */
-.footer-social a {
-  color: rgba(255, 255, 255, 0.78);
+.social-icons a {
+  color: #5a5a5a;
+}
+
+.site-footer .footer-social a {
+  color: #8a7d68;
+}
+
+.site-footer--dark .footer-social a,
+.journey-page .site-footer .footer-social a {
+  color: rgba(248, 238, 226, 0.62);
 }
 
 .social-icons a:hover,
@@ -8144,11 +8209,12 @@ h1.hero-heading {
   background-color: transparent;
   transform: translateY(-1px);
   box-shadow: none;
-  color: #b8602e; /* burnt orange — accent */
+  color: #b8602e;
 }
 
-.footer-social a:hover {
-  color: #ffffff;
+.site-footer--dark .footer-social a:hover,
+.journey-page .site-footer .footer-social a:hover {
+  color: #d6855a;
 }
 
 /* Navigation alignment helpers */

@@ -25,7 +25,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="rajiv-styles.css?v=20260609211937">
+  <link rel="stylesheet" href="rajiv-styles.css?v=20260617140000">
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <!-- Google Analytics -->
@@ -437,51 +437,6 @@
       color: var(--accent) !important;
     }
 
-    /* --------- Footer — same quiet editorial sign-off as Home. --------- */
-
-    .portrait-page footer {
-      background: var(--base) !important;
-      color: var(--muted-soft) !important;
-      border-top: 1px solid var(--rule) !important;
-      padding: 36px clamp(24px, 6vw, 80px) 44px clamp(24px, 6vw, 80px) !important;
-      text-align: center !important;
-      font-size: 0.78rem;
-    }
-    .portrait-page footer .container {
-      max-width: 720px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-    }
-    .portrait-page footer p {
-      font-family: 'Inter Tight', 'Inter', sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      color: var(--muted-soft);
-      margin: 0;
-    }
-    .portrait-page footer .footer-social {
-      margin: 0 !important;
-      width: auto !important;
-      justify-content: center !important;
-    }
-    .portrait-page footer .footer-social a {
-      color: var(--muted-soft) !important;
-    }
-    .portrait-page footer .footer-social a:hover {
-      color: var(--accent) !important;
-    }
-    @media (max-width: 720px) {
-      .portrait-page footer {
-        padding: 30px 24px 36px 24px !important;
-      }
-    }
-
     /* --------- Reduced motion --------- */
 
     @media (prefers-reduced-motion: reduce) {
@@ -646,7 +601,7 @@
 
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
       <div class="footer-social" aria-label="Social links">

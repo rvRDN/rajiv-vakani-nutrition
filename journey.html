@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Journey | Rajiv Vakani</title>
-  <meta name="description" content="How curiosity led Rajiv Vakani toward nutrition, education, and evidence-based health &mdash; a thoughtful narrative about the path so far and the work still ahead.">
+  <meta name="description" content="How Rajiv Vakani arrived at this work, and what made him take it seriously: a thoughtful narrative about pattern, purpose, and the discipline of helping people understand difficult things.">
 
   <!-- Draft phase: keep out of search results until launch -->
   <meta name="robots" content="noindex">
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rajivvakani.com/journey.html" />
   <meta property="og:title" content="Journey | Rajiv Vakani" />
-  <meta property="og:description" content="How curiosity led Rajiv Vakani toward nutrition, education, and evidence-based health &mdash; a thoughtful narrative about the path so far and the work still ahead." />
+  <meta property="og:description" content="How Rajiv Vakani arrived at this work, and what made him take it seriously: a thoughtful narrative about pattern, purpose, and the discipline of helping people understand difficult things." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
@@ -23,12 +23,12 @@
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://rajivvakani.com/journey.html" />
   <meta property="twitter:title" content="Journey | Rajiv Vakani" />
-  <meta property="twitter:description" content="How curiosity led Rajiv Vakani toward nutrition, education, and evidence-based health &mdash; a thoughtful narrative about the path so far and the work still ahead." />
+  <meta property="twitter:description" content="How Rajiv Vakani arrived at this work, and what made him take it seriously: a thoughtful narrative about pattern, purpose, and the discipline of helping people understand difficult things." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="rajiv-styles.css?v=20260609211937">
+  <link rel="stylesheet" href="rajiv-styles.css?v=20260617140000">
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <!-- Google Analytics -->
@@ -51,11 +51,20 @@
 
   <!--
     Journey page experience styles. Scoped to .journey-page so nothing
-    here leaks to other pages on the site. The page is structured as
-    six chapters with distinct spatial identities, plus a Chapter 4
-    peak moment that lives in its own visual environment. A single
-    background gradient on the essay wrapper carries the reader from
-    deep navy at the top to pre-dawn warmth at the CTA.
+    here leaks to other pages on the site.
+
+    Architecture (post-compression):
+      Prelude              one framing line + three questions; no chapter chrome
+      Recognizing the Pattern
+      Why Nutrition        long chapter with a felt-breath transition
+      The Work             standard chapter, interrupted by the peak
+      Peak                 single ceremonial moment in its own black room
+      The Work (release)   continuation after the peak, ending on an aphoristic hold
+      Coda                 quieter register, no heading, flows out of The Work
+      CTA                  two destinations only; chai-orange accent
+
+    A single background gradient on the essay wrapper carries the reader
+    from deep navy at the top to pre-dawn warmth at the CTA.
   -->
   <style>
     /* ============================================================
@@ -63,85 +72,69 @@
        ============================================================ */
 
     .journey-page footer {
-      background: #322a3a;
       position: relative;
       z-index: 1;
     }
 
-    /* ============================================================
-       LIVING CURIOSITY
-       Sits between the hero and the essay. Signals that the
-       writer is actively thinking and that the site is alive.
-       Visually continuous with the top of the journey-essay
-       gradient so the page reads as one environment.
-       ============================================================ */
-
-    .journey-currently {
-      background: #1a1830;
-      position: relative;
-      z-index: 1;
-      padding: 7vh 24px 6vh;
+    /* Hero: ~15% shorter than full viewport, full width unchanged.
+       Video is bottom-anchored so the pour and cups stay in frame
+       (top trims instead of bottom). Typography matches editorial pages. */
+    .journey-page header.hero.homepage-hero {
+      min-height: 85vh;
+      padding: 8.5vh 5vw;
     }
-    .journey-currently-inner {
-      max-width: 680px;
+
+    .journey-page .hero-video-background {
+      width: 100% !important;
+      height: 100vh !important;
+      top: auto !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      object-fit: cover;
+      object-position: center bottom;
+    }
+
+    .journey-page .homepage-hero .frosted-hero-panel {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 54px 48px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      width: min(92vw, 560px);
+      max-width: 560px;
+    }
+
+    .journey-page .homepage-hero .hero-heading {
+      margin-bottom: 0.85rem;
+      font-size: clamp(2.75rem, 4.5vw + 0.5rem, 3.85rem);
+    }
+
+    .journey-page .homepage-hero .hero-tagline {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.12rem, 1.45vw, 1.32rem);
+      line-height: 1.6;
+      color: #5a5a5a;
+      max-width: 48ch;
       margin: 0 auto;
       text-align: center;
     }
-    .journey-currently-label {
-      display: block;
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: rgba(241, 245, 249, 0.55);
-      margin: 0 0 1.5rem;
-    }
-    .journey-currently-heading {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 2rem;
-      font-weight: 600;
-      line-height: 1.25;
-      letter-spacing: -0.01em;
-      color: #ffffff;
-      margin: 0 0 1.4rem;
-    }
-    .journey-currently-body {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: #cbd5e1;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      letter-spacing: 0.1px;
-    }
-    .journey-currently-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 0.98rem;
-      font-weight: 500;
-      color: #ff6c37;
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      border-bottom: 1px solid rgba(255, 108, 55, 0.3);
-      padding-bottom: 4px;
-      transition: color 220ms ease-out, border-color 220ms ease-out;
-    }
-    .journey-currently-link:hover,
-    .journey-currently-link:focus-visible {
-      color: #ff8757;
-      border-bottom-color: #ff6c37;
-      outline: none;
-    }
-    .journey-currently-link .currently-arrow {
-      display: inline-block;
-      transition: transform 220ms ease-out;
-    }
-    .journey-currently-link:hover .currently-arrow,
-    .journey-currently-link:focus-visible .currently-arrow {
-      transform: translateX(4px);
+
+    @media (max-width: 768px) {
+      .journey-page header.hero.homepage-hero {
+        min-height: 82vh;
+        padding: 8vh 5vw;
+      }
+
+      .journey-page .homepage-hero .frosted-hero-panel {
+        padding: 40px 32px;
+        width: min(94vw, 560px);
+      }
+
+      .journey-page .homepage-hero .hero-heading {
+        font-size: clamp(2.15rem, 6.5vw, 3.1rem);
+      }
     }
 
     /* The essay wrapper. One long gradient runs the length of the
@@ -166,114 +159,28 @@
       overflow: hidden;
     }
 
-    /* Descent zone: held silence between hero and first words */
+    /* Descent zone: held silence between hero and first words.
+       Trimmed so the essay begins sooner without cropping the hero
+       video (which needs its full height to show the pour). */
     .journey-descent {
-      height: 50vh;
+      height: 22vh;
     }
 
     /* ============================================================
-       CHAPTER BASE
+       PRELUDE
+       Not a chapter. No heading. One framing line followed by the
+       question stanza. The page begins to think aloud before any
+       chapter starts.
        ============================================================ */
 
-    .chapter {
+    .prelude {
       position: relative;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 10vh 24px;
-    }
-
-    .chapter-heading {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 3rem;
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.015em;
-      color: #ffffff;
-      text-align: center;
-      margin: 0 0 2.5rem;
-    }
-
-    .chapter-body p {
-      font-size: 1.18rem;
-      line-height: 1.85;
-      color: #e2e8f0;
-      margin: 0 0 1.6rem;
-      font-weight: 400;
-      letter-spacing: 0.2px;
-    }
-    .chapter-body p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* ============================================================
-       REVEAL STATE (JS-gated, gracefully degrades)
-       ============================================================ */
-
-    html.js-ready .journey-currently-inner,
-    html.js-ready .chapter-thread,
-    html.js-ready .chapter-heading,
-    html.js-ready .chapter-opening-line,
-    html.js-ready .question-stanza .question,
-    html.js-ready .peak-sentence,
-    html.js-ready .chapter--exhale .chapter-thought p,
-    html.js-ready .milestones-marks,
-    html.js-ready .chapter-closing-line,
-    html.js-ready .cta-invitation {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1),
-                  transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* The .is-revealed selectors must carry the same html.js-ready prefix
-       as the hidden state above, otherwise the hidden state wins on
-       specificity and the elements never appear. */
-    html.js-ready .journey-currently-inner.is-revealed,
-    html.js-ready .chapter-thread.is-revealed,
-    html.js-ready .chapter-heading.is-revealed,
-    html.js-ready .chapter-opening-line.is-revealed,
-    html.js-ready .question-stanza .question.is-revealed,
-    html.js-ready .peak-sentence.is-revealed,
-    html.js-ready .chapter--exhale .chapter-thought p.is-revealed,
-    html.js-ready .milestones-marks.is-revealed,
-    html.js-ready .chapter-closing-line.is-revealed,
-    html.js-ready .cta-invitation.is-revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* The opening line lags the heading slightly, so the chapter
-       feels like it opens — heading first, then the line lands. */
-    html.js-ready .chapter-opening-line {
-      transition-delay: 200ms;
-    }
-
-    /* The peak sentence gets the calmest, slowest reveal on the page. */
-    html.js-ready .peak-sentence {
-      transition: opacity 1500ms cubic-bezier(0.25, 0.1, 0.25, 1),
-                  transform 1500ms cubic-bezier(0.25, 0.1, 0.25, 1);
-      transition-delay: 300ms;
-    }
-
-    /* The closing line mirrors the peak's slower register, slightly faster. */
-    html.js-ready .chapter-closing-line {
-      transition: opacity 1200ms cubic-bezier(0.25, 0.1, 0.25, 1),
-                  transform 1200ms cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-
-    /* ============================================================
-       CHAPTER 1 — INVITATION
-       Narrow intimate column. Ceremonial opening line. Question
-       stanza. The page's gentlest entry.
-       ============================================================ */
-
-    .chapter--invitation {
       max-width: 600px;
-      padding-top: 14vh;
-      padding-bottom: 6vh;
+      margin: 0 auto;
+      padding: 10vh 24px 4vh;
     }
 
-    .chapter-opening-line {
+    .prelude-line {
       font-family: 'Inter Tight', sans-serif;
       font-size: 1.55rem;
       font-weight: 500;
@@ -285,7 +192,7 @@
     }
 
     .question-stanza {
-      margin: 0 0 0.5rem;
+      margin: 0;
       padding: 0.75rem 0 0.75rem 24px;
       border-left: 1px solid rgba(255, 255, 255, 0.09);
     }
@@ -301,128 +208,107 @@
       margin-bottom: 0;
     }
 
-    .chapter--invitation .chapter-body {
-      margin-top: 2.5rem;
-    }
-
     /* ============================================================
-       CHAPTER 2 — GATHERING
-       Asymmetric. The text anchors left of center on wide screens;
-       the right of the screen is intentionally empty. First time
-       the page breaks its centered convention.
+       CHAPTER BASE
+       The three narrative chapters share one column, one rhythm,
+       one chapter treatment. They are meant to feel like three
+       movements of a single essay, not three independently
+       designed sections.
        ============================================================ */
 
-    .chapter--gathering {
+    .chapter {
+      position: relative;
       max-width: 680px;
-      margin-left: max(24px, calc(50% - 460px));
-      margin-right: 24px;
-    }
-    .chapter--gathering .chapter-heading {
-      text-align: left;
+      margin: 0 auto;
+      padding: 12vh 24px;
     }
 
-    /* ============================================================
-       CHAPTER THREAD
-       A quiet doorway embedded inside the narrative. Set apart
-       by a thin hairline rule above it; sits inside the chapter
-       column, not as a card. Reads as the writer pausing to
-       point sideways, not as a CTA.
-       ============================================================ */
-
-    .chapter-thread {
-      margin: 2.6rem 0 0.6rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.09);
-    }
-    .chapter-thread-aside {
+    .chapter-heading {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      font-style: italic;
-      color: rgba(226, 232, 240, 0.85);
-      margin: 0 0 1.1rem;
-      letter-spacing: 0.15px;
-    }
-    .chapter-thread-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 0.98rem;
-      font-weight: 500;
-      color: #ff6c37;
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      padding-bottom: 3px;
-      border-bottom: 1px solid rgba(255, 108, 55, 0.3);
-      transition: color 220ms ease-out, border-color 220ms ease-out;
-    }
-    .chapter-thread-link:hover,
-    .chapter-thread-link:focus-visible {
-      color: #ff8757;
-      border-bottom-color: #ff6c37;
-      outline: none;
-    }
-    .chapter-thread-link .thread-arrow {
-      display: inline-block;
-      transition: transform 220ms ease-out;
-    }
-    .chapter-thread-link:hover .thread-arrow,
-    .chapter-thread-link:focus-visible .thread-arrow {
-      transform: translateX(4px);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      color: #ffffff;
+      text-align: center;
+      margin: 0 0 2.8rem;
     }
 
-    /* ============================================================
-       CHAPTER 3 — LIBRARY
-       Widest column on the page. Slightly tighter line spacing.
-       Sustained reading — the chapter feels like work because the
-       chapter is about work. Readability is preserved.
-       ============================================================ */
-
-    .chapter--library {
-      max-width: 800px;
+    .chapter-body p {
+      font-size: 1.18rem;
+      line-height: 1.85;
+      color: #e2e8f0;
+      margin: 0 0 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.2px;
     }
-    .chapter--library .chapter-body p {
-      line-height: 1.78;
-      margin-bottom: 1.4rem;
-    }
-    .chapter--library .chapter-body p:last-child {
-      margin-top: 2.6rem;
+    .chapter-body p:last-child {
+      margin-bottom: 0;
     }
 
-    /* The "back to the classroom" pivot. Same body type — extra
-       breath above and below so the chapter's decision-moment lands
-       as a beat rather than as another paragraph. */
-    .chapter--library .chapter-body p.chapter-pivot {
+    /* Felt breath inside Why Nutrition. Marks the pivot from the
+       field-stakes movement into the choice-of-path movement.
+       Whitespace only; no visual element. */
+    .chapter-body p.chapter-pivot {
       margin-top: 3.6rem;
-      margin-bottom: 3.6rem;
     }
 
     /* ============================================================
-       CHAPTER 4 — THE PEAK
-       Three phases: compressed build (narrow column, larger
-       heading), then the peak moment in its own black room, then
-       the release in a slightly wider column.
+       APHORISTIC HOLD
+       Three places in the essay end on a balanced two-sentence
+       landing. Each gets the same quiet treatment: same body
+       family, slightly larger and slightly heavier, centered,
+       brighter, with generous space above. Not a pull quote.
+       Not a display moment. Just held.
        ============================================================ */
 
-    /* Phase 1: pre-peak compression */
-    .chapter--peak-build {
-      max-width: 560px;
-      padding-top: 14vh;
-      padding-bottom: 0;
+    .aphoristic-hold {
+      margin: 4rem auto 0;
+      max-width: 620px;
+      text-align: center;
     }
-    .chapter--peak-build .chapter-heading {
-      font-size: 3.4rem;
-      margin-bottom: 4rem;
+    .aphoristic-hold p {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 1.35rem;
+      line-height: 1.5;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: -0.003em;
+      margin: 0 0 0.65rem;
+    }
+    .aphoristic-hold p:last-child {
+      margin-bottom: 0;
     }
 
-    /* Phase 2: the peak moment owns its own background.
-       Gradient overlays at top and bottom blend the black into the
-       surrounding warm slate so the boundary is invisible. */
+    /* ============================================================
+       THE WORK
+       One chapter, interrupted by the peak. The pre-peak section
+       carries the chapter heading. The post-peak section continues
+       the chapter at the same column width so the reader feels the
+       interruption as a single chapter resuming.
+       ============================================================ */
+
+    .chapter--work-build {
+      padding-bottom: 10vh;
+    }
+    .chapter--work-release {
+      padding-top: 8vh;
+    }
+
+    /* ============================================================
+       PEAK MOMENT
+       The page's singular ceremonial moment. Owns its own black
+       background; gradient overlays at top and bottom blend the
+       black into the surrounding warm slate so the boundary is
+       invisible. Internal padding is slightly reduced from the
+       long-essay version (30vh -> 24vh) because the page is
+       shorter overall and the peak still reads as ceremonial.
+       ============================================================ */
+
     .peak-moment {
       position: relative;
       background: #080808;
-      padding: 30vh 24px;
+      padding: 24vh 24px;
       text-align: center;
       margin: 0;
     }
@@ -457,150 +343,80 @@
       z-index: 1;
     }
 
-    /* Phase 3: post-peak release */
-    .chapter--peak-release {
-      max-width: 640px;
-      padding-top: 8vh;
-    }
-
     /* ============================================================
-       CHAPTER 5 — EXHALE
-       Three thoughts, each isolated in its own breath of space.
-       Narrowest column. Smallest heading. The deliberate quiet
-       after the peak.
+       CODA
+       No chapter heading. Flows directly out of The Work's closing
+       aphorism. Quieter register than chapter body. Reuses the
+       visual language of the previous Currently Thinking module,
+       but at smaller scale and without the large display heading.
+       The coda is a doorway, not a summary.
        ============================================================ */
 
-    .chapter--exhale {
-      max-width: 100%;
-      padding: 4vh 0 6vh;
-    }
-    .chapter--exhale .chapter-heading {
-      font-size: 2.4rem;
-      margin: 6vh 24px 0;
-    }
-    .chapter--exhale .chapter-thought {
-      max-width: 480px;
+    .coda {
+      max-width: 600px;
       margin: 0 auto;
-      padding: 6vh 24px;
+      padding: 8vh 24px 4vh;
       text-align: center;
     }
-    .chapter--exhale .chapter-thought p {
-      font-size: 1.18rem;
-      line-height: 1.85;
-      color: #e2e8f0;
-      margin: 0;
-      letter-spacing: 0.2px;
-    }
-
-    /* Recognition strip. Editorial label register — tracked, small,
-       low-opacity uppercase phrases pulled from the prose. Reads as
-       a credits line rather than a list of awards. No icons, no
-       borders, no backgrounds. */
-    .milestones-marks {
-      max-width: 640px;
-      margin: 1vh auto 4vh;
-      padding: 0 28px;
-      text-align: center;
-      line-height: 2;
-    }
-    .milestone-mark {
-      display: inline-block;
+    .coda-label {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: rgba(241, 245, 249, 0.5);
-      white-space: nowrap;
-    }
-    .milestone-mark:not(:last-child)::after {
-      content: '\00b7';
-      display: inline-block;
-      margin: 0 0.9rem 0 1.2rem;
-      color: rgba(241, 245, 249, 0.25);
-      letter-spacing: 0;
-    }
-
-    /* The chapter's thesis sentence — pulled out of the closing
-       paragraph and given a quieter cousin of the peak treatment.
-       Italic, larger than body but well below peak/closing scale,
-       white, centered. Reads as a held statement, not a slogan. */
-    .chapter--exhale .chapter-thought p.milestone-thesis {
-      font-size: 1.42rem;
-      line-height: 1.5;
+      font-size: 0.95rem;
       font-weight: 500;
       font-style: italic;
-      color: #ffffff;
-      letter-spacing: -0.003em;
-      max-width: 620px;
-      margin: 0 auto;
+      line-height: 1.5;
+      color: rgba(241, 245, 249, 0.65);
+      letter-spacing: 0.01em;
+      margin: 0 0 1.6rem;
     }
-    .chapter--exhale .chapter-thought--thesis {
-      padding: 8vh 24px;
-    }
-
-    /* ============================================================
-       CHAPTER 6 — FORWARD
-       Begins at body width and expands. Paragraph spacing grows
-       progressively. The closing line breaks wider and rises to
-       ceremonial scale — mirror to Chapter 1's opening line.
-       ============================================================ */
-
-    .chapter--forward {
-      max-width: 640px;
-      padding-top: 10vh;
-      padding-bottom: 4vh;
-    }
-    .chapter-body--expanding p:nth-of-type(1) { margin-bottom: 1.7rem; }
-    .chapter-body--expanding p:nth-of-type(2) { margin-bottom: 2.0rem; }
-    .chapter-body--expanding p:nth-of-type(3) { margin-bottom: 2.4rem; }
-    .chapter-body--expanding p:nth-of-type(4) { margin-bottom: 2.9rem; }
-    .chapter-body--expanding p:nth-of-type(5) { margin-bottom: 3.4rem; }
-
-    .chapter-closing-line {
+    .coda-question {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 1.65rem;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #cbd5e1;
+      margin: 0 0 2rem;
+      letter-spacing: 0.1px;
+    }
+    .coda-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 0.98rem;
       font-weight: 500;
-      line-height: 1.45;
+      color: #cbd5e1;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      border-bottom: 1px solid rgba(203, 213, 225, 0.3);
+      padding-bottom: 4px;
+      transition: color 220ms ease-out, border-color 220ms ease-out;
+    }
+    .coda-link:hover,
+    .coda-link:focus-visible {
       color: #ffffff;
-      text-align: center;
-      max-width: 900px;
-      margin: 6vh auto 0;
-      padding: 0 24px;
-      letter-spacing: -0.005em;
+      border-bottom-color: rgba(255, 255, 255, 0.6);
+      outline: none;
+    }
+    .coda-link .coda-arrow {
+      display: inline-block;
+      transition: transform 220ms ease-out;
+    }
+    .coda-link:hover .coda-arrow,
+    .coda-link:focus-visible .coda-arrow {
+      transform: translateX(4px);
     }
 
     /* ============================================================
-       CTA — held inside the ending. Functions as a destination:
-       the invitation rises to ceremonial scale, then two equal
-       paths sit beneath it in a quiet table-of-contents register.
-       Chai-orange appears here only — nowhere else on the page —
-       so the page's single color signal lives at the threshold.
+       CTA
+       Two destinations. Chai-orange accent appears here only --
+       nowhere else on the page -- so the page's single color
+       signal lives at the threshold.
        ============================================================ */
 
     .journey-cta {
       max-width: 720px;
       margin: 0 auto;
-      padding: 10vh 24px 14vh;
+      padding: 6vh 24px 14vh;
       text-align: center;
-    }
-    .cta-invitation {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 500;
-      line-height: 1.5;
-      color: #ffffff;
-      letter-spacing: -0.005em;
-      max-width: 620px;
-      margin: 0 auto 3.5rem;
-    }
-    .cta-invitation .cta-invitation-sub {
-      display: block;
-      margin-top: 0.6rem;
-      font-size: 0.95rem;
-      font-weight: 400;
-      color: rgba(226, 232, 240, 0.7);
-      letter-spacing: 0.01em;
     }
     .cta-paths {
       max-width: 560px;
@@ -657,8 +473,68 @@
     }
 
     /* ============================================================
-       NAVIGATION — visible during hero, hidden during reading,
-       returns at CTA and footer.
+       REVEAL STATE (JS-gated, gracefully degrades)
+       Reveals are limited to elements that should land as moments:
+       the prelude line, chapter headings, individual questions in
+       the stanza, the peak, the three aphoristic holds, the coda
+       elements, and the CTA. Body paragraphs do not reveal --
+       they are read through, not held.
+       ============================================================ */
+
+    html.js-ready .prelude-line,
+    html.js-ready .chapter-heading,
+    html.js-ready .question-stanza .question,
+    html.js-ready .peak-sentence,
+    html.js-ready .aphoristic-hold,
+    html.js-ready .coda-label,
+    html.js-ready .coda-question,
+    html.js-ready .coda-link,
+    html.js-ready .cta-paths {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html.js-ready .prelude-line.is-revealed,
+    html.js-ready .chapter-heading.is-revealed,
+    html.js-ready .question-stanza .question.is-revealed,
+    html.js-ready .peak-sentence.is-revealed,
+    html.js-ready .aphoristic-hold.is-revealed,
+    html.js-ready .coda-label.is-revealed,
+    html.js-ready .coda-question.is-revealed,
+    html.js-ready .coda-link.is-revealed,
+    html.js-ready .cta-paths.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* The peak gets the calmest, slowest reveal on the page. */
+    html.js-ready .peak-sentence {
+      transition: opacity 1500ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  transform 1500ms cubic-bezier(0.25, 0.1, 0.25, 1);
+      transition-delay: 300ms;
+    }
+
+    /* Aphoristic holds get a slower, gentler reveal -- a quieter
+       cousin of the peak. */
+    html.js-ready .aphoristic-hold {
+      transition: opacity 1200ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                  transform 1200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    /* Coda elements unfold in sequence when they enter together. */
+    html.js-ready .coda-question {
+      transition-delay: 150ms;
+    }
+    html.js-ready .coda-link {
+      transition-delay: 300ms;
+    }
+
+    /* ============================================================
+       NAVIGATION
+       Visible during hero, hidden during reading, returns at CTA
+       and footer.
        ============================================================ */
 
     .main-nav {
@@ -676,40 +552,14 @@
 
     @media (max-width: 768px) {
       .journey-descent {
-        height: 32vh;
+        height: 24vh;
       }
 
-      .journey-currently {
-        padding: 5vh 24px 5vh;
+      .prelude {
+        padding: 8vh 24px 4vh;
+        max-width: 100%;
       }
-      .journey-currently-heading {
-        font-size: 1.55rem;
-      }
-      .journey-currently-body {
-        font-size: 1rem;
-        line-height: 1.7;
-      }
-
-      .chapter-thread {
-        margin-top: 2rem;
-        padding-top: 1.5rem;
-      }
-      .chapter-thread-aside {
-        font-size: 1rem;
-      }
-
-      .chapter {
-        padding: 8vh 24px;
-      }
-      .chapter-heading {
-        font-size: 2.1rem;
-        margin-bottom: 2rem;
-      }
-
-      .chapter--invitation {
-        padding-top: 10vh;
-      }
-      .chapter-opening-line {
+      .prelude-line {
         font-size: 1.3rem;
         margin-bottom: 2.5rem;
       }
@@ -722,81 +572,57 @@
         margin-bottom: 1.1rem;
       }
 
-      .chapter--gathering {
-        max-width: none;
-        margin-left: 0;
-        margin-right: 0;
+      .chapter {
+        padding: 9vh 24px;
       }
-      .chapter--gathering .chapter-heading {
-        text-align: center;
+      .chapter-heading {
+        font-size: 2.1rem;
+        margin-bottom: 2rem;
       }
-
-      .chapter--library .chapter-body p {
+      .chapter-body p {
+        font-size: 1.05rem;
         line-height: 1.8;
       }
-
-      .chapter--peak-build {
-        padding-top: 10vh;
+      .chapter-body p.chapter-pivot {
+        margin-top: 2.6rem;
       }
-      .chapter--peak-build .chapter-heading {
-        font-size: 2.4rem;
-        margin-bottom: 2.5rem;
+
+      .aphoristic-hold {
+        margin-top: 3rem;
+      }
+      .aphoristic-hold p {
+        font-size: 1.18rem;
+        line-height: 1.5;
+      }
+
+      .chapter--work-build {
+        padding-bottom: 6vh;
+      }
+
+      .chapter--work-release {
+        padding-top: 6vh;
       }
 
       .peak-moment {
-        padding: 22vh 28px;
+        padding: 18vh 28px;
       }
       .peak-sentence {
         font-size: 1.55rem;
         line-height: 1.4;
       }
 
-      .chapter--exhale .chapter-heading {
-        font-size: 1.8rem;
+      .coda {
+        padding: 6vh 24px 4vh;
+        max-width: 100%;
       }
-      .chapter--exhale .chapter-thought {
-        padding: 4vh 28px;
+      .coda-label {
+        font-size: 0.92rem;
       }
-      .chapter--exhale .chapter-thought--thesis {
-        padding: 6vh 28px;
-      }
-      .chapter--exhale .chapter-thought p.milestone-thesis {
-        font-size: 1.2rem;
-      }
-      .milestones-marks {
-        margin: 1vh auto 3vh;
-        line-height: 2.2;
-      }
-      .milestone-mark {
-        font-size: 0.65rem;
-        letter-spacing: 0.28em;
-      }
-      .milestone-mark:not(:last-child)::after {
-        margin: 0 0.6rem 0 0.85rem;
+      .coda-question {
+        font-size: 1rem;
+        line-height: 1.7;
       }
 
-      .chapter-closing-line {
-        font-size: 1.3rem;
-      }
-
-      .chapter-body p {
-        font-size: 1.05rem;
-        line-height: 1.8;
-      }
-
-      .chapter-body--expanding p:nth-of-type(1) { margin-bottom: 1.4rem; }
-      .chapter-body--expanding p:nth-of-type(2) { margin-bottom: 1.7rem; }
-      .chapter-body--expanding p:nth-of-type(3) { margin-bottom: 2.0rem; }
-      .chapter-body--expanding p:nth-of-type(4) { margin-bottom: 2.3rem; }
-      .chapter-body--expanding p:nth-of-type(5) { margin-bottom: 2.6rem; }
-
-      .cta-invitation {
-        font-size: 1.15rem;
-        margin-bottom: 2.5rem;
-      }
-      .cta-invitation .cta-invitation-sub {
-        font-size: 0.88rem;
-      }
       .cta-path {
         font-size: 1.05rem;
         padding: 1.25rem 0.25rem;
@@ -808,16 +634,15 @@
        ============================================================ */
 
     @media (prefers-reduced-motion: reduce) {
-      html.js-ready .journey-currently-inner,
-      html.js-ready .chapter-thread,
+      html.js-ready .prelude-line,
       html.js-ready .chapter-heading,
-      html.js-ready .chapter-opening-line,
       html.js-ready .question-stanza .question,
       html.js-ready .peak-sentence,
-      html.js-ready .chapter--exhale .chapter-thought p,
-      html.js-ready .milestones-marks,
-      html.js-ready .chapter-closing-line,
-      html.js-ready .cta-invitation {
+      html.js-ready .aphoristic-hold,
+      html.js-ready .coda-label,
+      html.js-ready .coda-question,
+      html.js-ready .coda-link,
+      html.js-ready .cta-paths {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
@@ -828,10 +653,8 @@
       }
       .cta-path,
       .cta-path .cta-arrow,
-      .journey-currently-link,
-      .journey-currently-link .currently-arrow,
-      .chapter-thread-link,
-      .chapter-thread-link .thread-arrow {
+      .coda-link,
+      .coda-link .coda-arrow {
         transition: none !important;
       }
     }
@@ -872,209 +695,174 @@
   <!-- Mobile menu overlay -->
   <div class="mobile-menu-overlay"></div>
 
-  <!-- Hero — visual treatment matched to supporters.html: slowed video, dark overlay, matched glass panel. -->
+  <!-- Hero -- visual treatment unchanged: slowed video, dark overlay, frosted glass panel. -->
   <header class="hero homepage-hero">
     <video autoplay muted loop playsinline class="hero-video-background" poster="poster.jpg">
       <source src="pouring-chai.mp4" type="video/mp4" />
     </video>
     <script>
-      // Slow the hero video to 60% playback to match the calmer feel of the supporters hero.
+      // Calm hero pacing: slightly slowed playback, with a short trim
+      // before the kettle enters frame. No artificial wait — the felt
+      // delay comes from the source clip + playback rate.
       document.addEventListener('DOMContentLoaded', function () {
         var heroVideo = document.querySelector('header.homepage-hero .hero-video-background');
-        if (heroVideo) {
-          heroVideo.playbackRate = 0.6;
+        if (!heroVideo) return;
+
+        var HERO_VIDEO_START = 1.25; // seconds into clip before kettle enters
+        var HERO_VIDEO_RATE = 0.68;  // was 0.6 — still calm, arrives a bit sooner
+
+        function primeHeroVideo() {
+          heroVideo.playbackRate = HERO_VIDEO_RATE;
+          if (heroVideo.currentTime < HERO_VIDEO_START) {
+            heroVideo.currentTime = HERO_VIDEO_START;
+          }
+        }
+
+        heroVideo.addEventListener('timeupdate', function () {
+          if (heroVideo.currentTime < HERO_VIDEO_START - 0.05) {
+            heroVideo.currentTime = HERO_VIDEO_START;
+          }
+        });
+
+        if (heroVideo.readyState >= 1) {
+          primeHeroVideo();
+        } else {
+          heroVideo.addEventListener('loadedmetadata', primeHeroVideo, { once: true });
         }
       });
     </script>
     <div class="hero-overlay" style="background-color: rgba(0, 0, 0, 0.10);"></div>
     <div class="hero-content">
-      <div class="frosted-hero-panel" style="background: rgba(255, 255, 255, 0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 16px; padding: 60px 40px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-        <h1 class="hero-heading" style="text-align: center; margin: 0 auto;">Journey</h1>
-        <p class="hero-tagline" style="text-align: center; margin: 0 auto; margin-bottom: 30px;">
-          How I found my way into nutrition, education, and evidence-based health.
+      <div class="frosted-hero-panel">
+        <h1 class="hero-heading">Journey</h1>
+        <p class="hero-tagline">
+          How I arrived at this work,<br>
+          and what made me take it seriously.
         </p>
       </div>
     </div>
   </header>
 
   <!--
-    Living Curiosity. The visitor's first stop after the hero — a
-    short window into what the writer is currently sitting with.
-    Sits above the journey-essay wrapper so the essay's gradient
-    chassis is unchanged. Anchor id="currently-thinking" is the
-    target for the CTA's internal-loop link at the bottom of the
-    page.
-  -->
-  <section id="currently-thinking" class="journey-currently" aria-labelledby="currently-thinking-heading">
-    <div class="journey-currently-inner">
-      <span class="journey-currently-label">Currently Thinking About</span>
-      <h2 id="currently-thinking-heading" class="journey-currently-heading">What actually changes someone&rsquo;s mind?</h2>
-      <p class="journey-currently-body">The more I study nutrition, the less convinced I am that facts alone drive change. I&rsquo;ve watched evidence persuade some people and bounce harmlessly off others. I&rsquo;ve watched stories succeed where data failed. The question I&rsquo;m currently wrestling with isn&rsquo;t what people should believe. It&rsquo;s how people arrive there in the first place.</p>
-      <a href="insights/why-i-stopped-trusting-simple-answers.html" class="journey-currently-link">
-        <span>Explore: Why I Stopped Trusting Simple Answers</span>
-        <span class="currently-arrow" aria-hidden="true">&rarr;</span>
-      </a>
-    </div>
-  </section>
-
-  <!--
-    The Journey essay. Six chapters, each with its own spatial
-    identity, plus a Chapter 4 peak that owns its own visual
-    environment. The CTA flows directly out of Chapter 6 on the
-    same background, with no panel break.
+    The Journey essay. Prelude, three narrative chapters interrupted
+    by the peak inside The Work, and a coda. The CTA flows out of
+    the coda on the same gradient with no panel break.
   -->
   <main class="journey-essay">
 
     <!-- Descent zone: held silence between hero and first words -->
     <div class="journey-descent" aria-hidden="true"></div>
 
-    <!-- ===== CHAPTER 1 — THE INVITATION ===== -->
-    <section class="chapter chapter--invitation" aria-labelledby="ch-curiosity">
-      <h2 class="chapter-heading" id="ch-curiosity">Curiosity Came First</h2>
-
-      <p class="chapter-opening-line">Long before I studied nutrition, I was interested in questions that resisted simple answers.</p>
+    <!-- ===== PRELUDE =====
+         No heading. No chapter scaffolding. One framing line, then
+         the question stanza. The page begins to think aloud before
+         any chapter starts. -->
+    <section class="prelude" aria-label="Opening">
+      <p class="prelude-line">Long before I studied nutrition formally, I was drawn to the kinds of questions that resist simple answers.</p>
 
       <div class="question-stanza" role="group" aria-label="Three questions">
         <p class="question">Why do intelligent people look at the same information and reach different conclusions?</p>
-        <p class="question">Why do traditions that have existed for generations sometimes align with modern science, while other times they seem to conflict with it?</p>
-        <p class="question">Why does nutrition advice change so often, yet certain patterns appear again and again?</p>
+        <p class="question">Why do traditions that have existed for generations sometimes align with modern science and sometimes seem to contradict it?</p>
+        <p class="question">Why does advice in a field like nutrition shift so often, yet certain patterns appear again and again?</p>
       </div>
+    </section>
 
+    <!-- ===== RECOGNIZING THE PATTERN ===== -->
+    <section class="chapter" aria-labelledby="ch-pattern">
+      <h2 class="chapter-heading" id="ch-pattern">Recognizing the Pattern</h2>
       <div class="chapter-body">
-        <p>I was rarely satisfied with quick answers. If anything, the answer usually led to another question. The more I learned, the more I realized that most worthwhile topics are not black and white. They live somewhere in the gray areas between culture and science, experience and evidence, certainty and uncertainty.</p>
-        <p>That curiosity followed me through different stages of life and eventually led me to nutrition. Not because nutrition offered simple answers, but because it brought together many of the questions I was already asking.</p>
+        <p>For years, there were small moments that didn&rsquo;t seem connected at the time. Teaching Pathshala. Helping friends understand nutrition and watching them make meaningful changes to their lives. Visiting my brother and seeing patients stop him just to say thank you. Conversations I kept returning to long after they had ended.</p>
+        <p>Individually, none of these experiences pointed toward a different life. Together, they revealed a pattern I was slow to recognize.</p>
+        <p>I kept being drawn to situations where understanding something clearly could help someone else make a better decision.</p>
+        <p>At the same time, I was beginning to question whether the work I was doing was the work I most wanted to spend my life doing. Helping people navigate important financial decisions matters. But I increasingly found myself asking whether helping people accumulate more was the most meaningful way I could spend my days. Particularly when many already had what they needed for what came next.</p>
+      </div>
+      <div class="aphoristic-hold">
+        <p>Nutrition wasn&rsquo;t the destination from the beginning.</p>
+        <p>It was where the pattern eventually led.</p>
       </div>
     </section>
 
-    <!-- ===== CHAPTER 2 — THE GATHERING ===== -->
-    <section class="chapter chapter--gathering" aria-labelledby="ch-questions">
-      <h2 class="chapter-heading" id="ch-questions">Where the Questions Led</h2>
+    <!-- ===== WHY NUTRITION =====
+         The chapter has two movements: the field-stakes argument
+         (what nutrition is and why it matters) and the choice-of-path
+         movement (why the longer Registered Dietitian path). The
+         transition between them is a felt breath -- whitespace only,
+         carried by the .chapter-pivot class on the first paragraph
+         of the second movement. -->
+    <section class="chapter" aria-labelledby="ch-why">
+      <h2 class="chapter-heading" id="ch-why">Why Nutrition</h2>
       <div class="chapter-body">
-        <p>That curiosity eventually led me to nutrition.</p>
-        <p>The more questions I asked, the more I found myself returning to food. Not because food is simple, but because it isn't. Food sits at the intersection of biology, culture, behavior, identity, economics, tradition, and health. Few subjects touch so many aspects of daily life, yet few are discussed with as much certainty.</p>
-        <p>What interested me wasn't finding the perfect diet or the latest trend. It was understanding why people eat the way they do, how beliefs are formed, where evidence fits into the conversation, and how seemingly contradictory ideas can sometimes contain pieces of the truth.</p>
-        <p>Over time, I noticed that many of the questions that held my attention shared a common thread. Whether the topic was cultural food traditions, public health recommendations, emerging research, or everyday nutrition advice, I kept coming back to the same challenge: how do we make informed decisions when the answers are rarely as simple as we would like them to be?</p>
-
-        <!-- Curiosity thread. A quiet doorway from the narrative
-             into the article that picks this question up in depth. -->
-        <div class="chapter-thread" role="complementary" aria-label="Related thinking">
-          <p class="chapter-thread-aside">I keep coming back to this problem in nutrition and beyond: simple answers are easy to share, but they often miss the context that actually matters.</p>
-          <a href="insights/why-i-stopped-trusting-simple-answers.html" class="chapter-thread-link">
-            <span>Why I Stopped Trusting Simple Answers</span>
-            <span class="thread-arrow" aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
-
-        <p>Eventually, the questions I was asking became the questions I wanted to study more seriously.</p>
+        <p>Of all the places the pattern could have led, why nutrition?</p>
+        <p>Part of the answer is that nutrition had already been part of my life for years before I decided to study it formally. I had been reading the research, applying what I learned, and answering questions friends brought to me, long before there was any plan to study it formally.</p>
+        <p>What kept pulling me back is something specific about food itself.</p>
+        <p>Almost nothing else in a person&rsquo;s life shows up as often, or matters in as many ways, as what they eat. Food is daily. It is lifelong. It is bound up in health, family, culture, identity, routine, celebration, stress, memory, and the basic question of how a person spends their day.</p>
+        <p>It&rsquo;s also one of the most confused subjects in public conversation. People are surrounded by conflicting advice, oversimplified rules, aggressive marketing, and confident claims that turn out to be less certain than they sound. The result, for many people, is a slow loss of confidence in their own judgment about something that should feel ordinary.</p>
+        <p>Better understanding doesn&rsquo;t fix that by itself. But it can give a person a more honest sense of what is known, what is uncertain, what is marketing, and what is actually worth changing. It can return a small amount of agency to someone who has been told, in a hundred small ways, that they don&rsquo;t know what they&rsquo;re doing in their own kitchen.</p>
+        <p>That&rsquo;s what made nutrition feel worth taking seriously, and worth taking time on. Not because it offered clean answers, but because the people it most affects are everyone, and the help they most need is rarely a list of rules.</p>
+        <p class="chapter-pivot">In New York, you can work as a nutritionist without pursuing the longer Registered Dietitian pathway. I chose the longer path. Not for the letters, and not because credentials alone would make me more credible. I chose it because I wanted to be better at the work: to understand mechanism rather than repeat recommendation, to evaluate evidence rather than relay it, and to eventually be able to work with people who rely on insurance to access care.</p>
+      </div>
+      <div class="aphoristic-hold">
+        <p>The point wasn&rsquo;t the degree.</p>
+        <p>It was to understand the field well enough that the advice I give holds up under questioning, including my own.</p>
       </div>
     </section>
 
-    <!-- ===== CHAPTER 3 — THE LIBRARY ===== -->
-    <section class="chapter chapter--library" aria-labelledby="ch-learning">
-      <h2 class="chapter-heading" id="ch-learning">Learning With Intention</h2>
+    <!-- ===== THE WORK =====
+         One chapter, interrupted by the peak. The pre-peak section
+         carries the chapter heading and ends on the category-level
+         hinge. The peak articulates the worker-side commitment.
+         The post-peak section translates the commitment into the
+         daily texture of practice and lands on the aphoristic hold. -->
+
+    <!-- Build (pre-peak): opening, Pathshala observation, hinge -->
+    <section class="chapter chapter--work-build" aria-labelledby="ch-work">
+      <h2 class="chapter-heading" id="ch-work">The Work</h2>
       <div class="chapter-body">
-        <p>For a long time, I was content to learn on my own. I read widely, followed research, listened to different perspectives, and tried to make sense of the questions that interested me.</p>
-        <p>Eventually, though, I realized that curiosity and information are not the same thing as understanding. The deeper I looked, the more I appreciated the value of structure, mentorship, and a rigorous foundation. I wanted better tools. I wanted to understand not only what the evidence said, but how it was produced, how it should be interpreted, and where its limitations were.</p>
-        <p class="chapter-pivot">That realization brought me back to the classroom.</p>
-        <p>I began at Nassau Community College, where I earned an Associate of Science degree in Food &amp; Nutrition. What started as a return to school quickly became something more. I found myself fully engaged in the work, often pursuing questions well beyond the requirements of a course and exploring topics long after assignments had been submitted. I graduated with a 4.0 GPA, but more importantly, with a deeper appreciation for how much there was still to learn.</p>
-        <p>From there, I transferred to New York University to continue my studies in Nutrition &amp; Dietetics. NYU has challenged me to think more critically, ask better questions, and engage with nutrition at a deeper level. The further I go, the less interested I become in simple answers and the more interested I become in understanding context. People do not eat in laboratories. They eat within families, cultures, traditions, budgets, communities, and circumstances. Good nutrition advice has to account for that reality.</p>
-        <p>What excites me most about studying nutrition is not the feeling of finding answers. It is the process of learning how to ask better questions.</p>
+        <p>Most of what I&rsquo;ve learned about helping people understand difficult ideas, I didn&rsquo;t learn in a classroom.</p>
+        <p>I&rsquo;ve been teaching Pathshala for years. The students are young, the material is old, and the work is to make ideas that have existed for generations matter to a teenager sitting in front of you on Friday evenings. You can prepare carefully and still watch a lesson land in the wrong place, and you learn quickly that the gap is rarely about the material. It&rsquo;s about the translation.</p>
+        <p>Understanding something yourself and helping someone else understand it are two very different skills.</p>
       </div>
     </section>
 
-    <!-- ===== CHAPTER 4 — THE PEAK ===== -->
+    <!-- Peak: the worker-side commitment -->
+    <section class="peak-moment" aria-label="Commitment">
+      <p class="peak-sentence">The work asks me to bring to my own thinking the same scrutiny I would bring to anyone else&rsquo;s.</p>
+    </section>
 
-    <!-- Phase 1: compressed pre-peak build -->
-    <section class="chapter chapter--peak-build" aria-labelledby="ch-understanding">
-      <h2 class="chapter-heading" id="ch-understanding">Understanding Is Only Half the Job</h2>
+    <!-- Release (post-peak continuation of The Work) -->
+    <section class="chapter chapter--work-release" aria-label="The Work continued">
       <div class="chapter-body">
-        <p>The more I learned, the more I realized that knowledge alone is not enough.</p>
-        <p>A concept can be scientifically accurate and still fail to help someone if it is poorly communicated. Facts matter, but so do context, trust, culture, and the ability to meet people where they are.</p>
+        <p>It rewards patience, plain language, and the willingness to be wrong in front of someone.</p>
+      </div>
+      <div class="aphoristic-hold">
+        <p>Information is the beginning.</p>
+        <p>Helping a person use it well is the rest.</p>
       </div>
     </section>
 
-    <!-- Phase 2: the peak moment in its own environment -->
-    <section class="peak-moment" aria-label="Thesis">
-      <p class="peak-sentence">Understanding something yourself and helping someone else understand it are two very different skills.</p>
+    <!-- ===== CODA =====
+         No heading. Flows out of The Work's closing aphorism in a
+         quieter register. The label, paragraph, and link reuse the
+         visual language of the previous Currently Thinking module
+         in compressed form -- a doorway, not a summary. -->
+    <section class="coda" aria-label="Still thinking">
+      <p class="coda-label">What I&rsquo;m currently sitting with:</p>
+      <p class="coda-question">The more I study nutrition, the less convinced I am that facts alone change minds. I&rsquo;ve watched evidence persuade some people and bounce harmlessly off others. I&rsquo;ve watched stories succeed where data failed. What I&rsquo;m working through isn&rsquo;t what people should believe. It is how people arrive at what they believe in the first place.</p>
+      <a href="insights/why-i-stopped-trusting-simple-answers.html" class="coda-link">
+        <span>Why I Stopped Trusting Simple Answers</span>
+        <span class="coda-arrow" aria-hidden="true">&rarr;</span>
+      </a>
     </section>
 
-    <!-- Phase 3: release -->
-    <section class="chapter chapter--peak-release" aria-label="Chapter 4 continuation">
-      <div class="chapter-body">
-        <p>Many of the experiences that taught me this lesson had little to do with nutrition on the surface.</p>
-        <p>As a Pathshala teacher, I learned quickly that young people can tell when an explanation is incomplete. Teaching complex ideas requires patience, clarity, and the willingness to see a topic from someone else's perspective. The goal is not simply to provide answers, but to help others think more deeply about the questions themselves.</p>
-        <p>The same lesson appeared in different forms through leadership and service. As Secretary of the Student Government Association, I saw how decisions affect people with different priorities, backgrounds, and expectations. As President of the Nutrition Club, I had opportunities to share ideas, organize events, and help connect nutrition concepts to everyday life. Through committee work and campus leadership, I learned that meaningful progress often comes less from having the right answer and more from listening carefully, communicating clearly, and working through complexity together.</p>
-        <p>Looking back, these experiences all taught variations of the same lesson. Information is important, but it is only the beginning. Whether the subject is nutrition, education, or community leadership, understanding is only half the job. The other half is helping people make sense of it in a way that is useful, honest, and relevant to their lives.</p>
-      </div>
-    </section>
-
-    <!-- ===== CHAPTER 5 — THE EXHALE =====
-         Two memorable moments live here. (1) A quiet typographic
-         strip pulls four phrases already named in the prose into
-         label register, giving the chapter a visible acknowledgment
-         of recognition without a card, badge, or graphic. (2) The
-         chapter's thesis sentence is extracted from its closing
-         paragraph and given a held-italic moment of its own. Every
-         word of the approved text is preserved. -->
-    <section class="chapter chapter--exhale" aria-labelledby="ch-milestones">
-      <h2 class="chapter-heading" id="ch-milestones">A Few Milestones</h2>
-
-      <div class="chapter-thought">
-        <p>Along the way, there have been encouraging signs that I am moving in the right direction.</p>
-      </div>
-
-      <div class="milestones-marks" aria-hidden="true">
-        <span class="milestone-mark">academic honors</span><!--
-     --><span class="milestone-mark">scholarships</span><!--
-     --><span class="milestone-mark">leadership awards</span><!--
-     --><span class="milestone-mark">Phi Theta Kappa</span>
-      </div>
-
-      <div class="chapter-thought">
-        <p>I have been fortunate to receive recognition through academic honors, scholarships, leadership awards, and organizations such as Phi Theta Kappa. I am grateful for each of them, not because they define the work, but because they serve as reminders that the effort has been worthwhile.</p>
-      </div>
-
-      <div class="chapter-thought chapter-thought--thesis">
-        <p class="milestone-thesis">The milestones matter, but they are not the destination.</p>
-      </div>
-
-      <div class="chapter-thought">
-        <p>If anything, they have reinforced a lesson that has appeared throughout this journey: there is always more to learn.</p>
-      </div>
-    </section>
-
-    <!-- ===== CHAPTER 6 — THE OPENING FORWARD ===== -->
-    <section class="chapter chapter--forward" aria-labelledby="ch-headed">
-      <h2 class="chapter-heading" id="ch-headed">Where I'm Headed</h2>
-      <div class="chapter-body chapter-body--expanding">
-        <p>Today, I am continuing my studies in Nutrition &amp; Dietetics while working toward becoming a Registered Dietitian.</p>
-        <p>The field of nutrition is constantly evolving, and that is part of what attracts me to it. New research raises new questions. Cultural traditions offer perspectives that science is still learning how to evaluate. Individual experiences rarely fit neatly into broad recommendations. The work is challenging precisely because it resists simple conclusions.</p>
-        <p>My goal is to help people navigate nutrition with clarity, honesty, and perspective. That means searching for answers, following the evidence wherever it leads, and remaining open to the possibility that there is still more to learn.</p>
-        <p>Some questions have strong answers. Others live in the gray areas. Understanding the difference is just as important as understanding the science itself.</p>
-        <p>This website is an extension of that process. It is a place to share what I am learning, explore ideas that interest me, and continue asking better questions.</p>
-      </div>
-      <p class="chapter-closing-line">The story is still unfolding, and in many ways, I am just getting started.</p>
-    </section>
-
-    <!-- ===== CTA — the launchpad =====
-         Not a closing sign-off. A small map into the rest of
-         the site. Three destinations: Insights (primary, where
-         current writing lives), Current Curiosity (a quiet
-         internal loop back to the top of this page), and
-         Contact (available, not dominant). -->
+    <!-- ===== CTA =====
+         Two destinations. Chai-orange accent restricted to this
+         region. No invitation framing -- the coda has already
+         oriented the reader. -->
     <section class="journey-cta" aria-label="Where to next">
-      <p class="cta-invitation">
-        The story keeps going elsewhere on this site.
-        <span class="cta-invitation-sub">Pick where to head next.</span>
-      </p>
       <nav class="cta-paths" aria-label="Where to next">
         <a href="insights.html" class="cta-path">
           <span class="cta-path-text">Read what I&rsquo;m currently working through.</span>
           <span class="cta-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a href="#currently-thinking" class="cta-path">
-          <span class="cta-path-text">Return to the question I&rsquo;m sitting with right now.</span>
-          <span class="cta-arrow" aria-hidden="true">&uarr;</span>
         </a>
         <a href="contact.html" class="cta-path">
           <span class="cta-path-text">Start a conversation.</span>
@@ -1085,17 +873,13 @@
 
   </main>
 
-  <footer>
+  <footer class="site-footer site-footer--dark">
     <div class="container">
-      <div class="footer-social" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important; justify-content: center !important; width: 100% !important; margin-bottom: 20px !important;">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <i class="fab fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <i class="fab fa-facebook" aria-hidden="true"></i>
-        </a>
+      <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
+      <div class="footer-social" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
       </div>
-      <p>&copy; 2025-2026 Rajiv Vakani. All rights reserved.</p>
     </div>
   </footer>
 
@@ -1139,7 +923,7 @@
       }
 
       // ============================================================
-      // Nav style on scroll — keeps existing site behavior so the
+      // Nav style on scroll -- keeps existing site behavior so the
       // bar has its scrolled background when it returns at the CTA.
       // ============================================================
       const mainNav = document.querySelector('.main-nav');
@@ -1159,8 +943,9 @@
       }
 
       // ============================================================
-      // Reveal-on-scroll: chapter headings, opening line, peak
-      // sentence, closing line, and exhale paragraphs.
+      // Reveal-on-scroll: prelude line, chapter headings, peak,
+      // aphoristic holds, coda elements, CTA. Body paragraphs are
+      // not revealed -- they are read through, not held.
       // Each element animates exactly once.
       // ============================================================
       const revealObserver = new IntersectionObserver((entries) => {
@@ -1173,20 +958,19 @@
       }, { threshold: 0.3, rootMargin: '0px 0px -8% 0px' });
 
       document.querySelectorAll(
-        '.journey-currently-inner, ' +
-        '.chapter-thread, ' +
+        '.prelude-line, ' +
         '.chapter-heading, ' +
-        '.chapter-opening-line, ' +
         '.peak-sentence, ' +
-        '.chapter-closing-line, ' +
-        '.chapter--exhale .chapter-thought p, ' +
-        '.milestones-marks, ' +
-        '.cta-invitation'
+        '.aphoristic-hold, ' +
+        '.coda-label, ' +
+        '.coda-question, ' +
+        '.coda-link, ' +
+        '.cta-paths'
       ).forEach(el => revealObserver.observe(el));
 
       // ============================================================
-      // Chapter 1 question stanza: sequential reveal.
-      // 400 ms between each question — the reader feels the
+      // Prelude question stanza: sequential reveal.
+      // 400 ms between each question -- the reader feels the
       // questions being asked one at a time.
       // ============================================================
       const stanzaObserver = new IntersectionObserver((entries) => {
@@ -1251,7 +1035,7 @@
             // Scrolling down through the reading region.
             mainNav.classList.add('is-hidden');
           } else {
-            // Scrolling up through the reading region — bring it back.
+            // Scrolling up through the reading region -- bring it back.
             mainNav.classList.remove('is-hidden');
           }
 

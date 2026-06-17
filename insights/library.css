@@ -138,7 +138,7 @@ body.library-index {
 .post-page     .post-colophon,
 .library-index .library-colophon {
   padding-top: clamp(64px, 9vh, 110px);
-  padding-bottom: clamp(80px, 11vh, 130px);
+  padding-bottom: clamp(48px, 6vh, 72px);
   border-top: 1px solid var(--rule);
   text-align: center;
 }
@@ -240,12 +240,7 @@ body.library-index {
   transform: translateY(-1px) !important;
 }
 
-/* The global dark footer is hidden on library pages; the
-   on-page colophon does the closing work. */
-.library-page  > footer,
-.topic-page    > footer,
-.post-page     > footer,
-.library-index > footer { display: none; }
+/* Colophon + .site-footer share the closing beat on library pages. */
 
 
 /* ============================================================
