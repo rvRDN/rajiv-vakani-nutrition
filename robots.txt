@@ -1,19 +1,7 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+Disallow: /_archive/
+Disallow: /insights/_template.html
+
 Sitemap: https://rajivvakani.com/sitemap.xml
-
-# Disallow admin or private areas (if any exist in the future)
-# Disallow: /admin/
-# Disallow: /private/
-
-# Allow all content
-Allow: /index.html
-Allow: /about.html
-Allow: /journey.html
-Allow: /insights.html
-Allow: /contact.html
-
-# Crawl delay (optional)
-Crawl-delay: 1 
