@@ -40,14 +40,16 @@ html.library-page, body.library-page,
 html.topic-page,   body.topic-page,
 html.post-page,    body.post-page,
 html.library-index, body.library-index,
-html.contact-page, body.contact-page {
+html.contact-page, body.contact-page,
+html.error-page,   body.error-page {
   background: var(--base);
 }
 body.library-page,
 body.topic-page,
 body.post-page,
 body.library-index,
-body.contact-page {
+body.contact-page,
+body.error-page {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -60,7 +62,8 @@ body.contact-page {
 .post-page main,    .post-page main > section,    .post-page main > header,
 .post-page main > article,
 .library-index main, .library-index main > section, .library-index main > header,
-.contact-page main, .contact-page main > section, .contact-page main > header {
+.contact-page main, .contact-page main > section, .contact-page main > header,
+.error-page main,   .error-page main > section,   .error-page main > header {
   background: transparent;
 }
 
@@ -89,7 +92,9 @@ body.contact-page {
 .library-index h1, .library-index h2, .library-index h3,
 .library-index h4, .library-index h5, .library-index h6,
 .contact-page h1, .contact-page h2, .contact-page h3,
-.contact-page h4, .contact-page h5, .contact-page h6 {
+.contact-page h4, .contact-page h5, .contact-page h6,
+.error-page h1, .error-page h2, .error-page h3,
+.error-page h4, .error-page h5, .error-page h6 {
   font-family: 'Lora', Georgia, serif;
   font-weight: 600;
   font-size: inherit;
@@ -102,14 +107,16 @@ body.contact-page {
 .topic-page   p,
 .post-page    p,
 .library-index p,
-.contact-page p {
+.contact-page p,
+.error-page p {
   margin: 0;
 }
 .library-page section,
 .topic-page   section,
 .post-page    section,
 .library-index section,
-.contact-page section {
+.contact-page section,
+.error-page section {
   padding: 0;
 }
 
@@ -199,7 +206,8 @@ body.contact-page {
 .topic-page    .nav-links li a.active,
 .post-page     .nav-links li a.active,
 .library-index .nav-links li a.active,
-.contact-page  .nav-links li a.active {
+.contact-page  .nav-links li a.active,
+.error-page    .nav-links li a.active {
   background: none !important;
   color: var(--accent) !important;
   box-shadow: none !important;
@@ -208,7 +216,8 @@ body.contact-page {
 .topic-page    .nav-links li a.active::after,
 .post-page     .nav-links li a.active::after,
 .library-index .nav-links li a.active::after,
-.contact-page  .nav-links li a.active::after {
+.contact-page  .nav-links li a.active::after,
+.error-page    .nav-links li a.active::after {
   content: '' !important;
   position: absolute !important;
   bottom: -4px !important;
@@ -224,7 +233,8 @@ body.contact-page {
 .topic-page    .nav-links li a:hover,
 .post-page     .nav-links li a:hover,
 .library-index .nav-links li a:hover,
-.contact-page  .nav-links li a:hover {
+.contact-page  .nav-links li a:hover,
+.error-page    .nav-links li a:hover {
   background-color: rgba(26, 26, 26, 0.05) !important;
   color: var(--accent) !important;
 }
@@ -232,7 +242,8 @@ body.contact-page {
 .topic-page    .social-icons a, .topic-page    .footer-social a,
 .post-page     .social-icons a, .post-page     .footer-social a,
 .library-index .social-icons a, .library-index .footer-social a,
-.contact-page  .social-icons a, .contact-page  .footer-social a {
+.contact-page  .social-icons a, .contact-page  .footer-social a,
+.error-page    .social-icons a, .error-page    .footer-social a {
   width: auto !important;
   height: auto !important;
   background: transparent !important;
@@ -246,7 +257,8 @@ body.contact-page {
 .topic-page    .social-icons a:hover, .topic-page    .footer-social a:hover,
 .post-page     .social-icons a:hover, .post-page     .footer-social a:hover,
 .library-index .social-icons a:hover, .library-index .footer-social a:hover,
-.contact-page  .social-icons a:hover, .contact-page  .footer-social a:hover {
+.contact-page  .social-icons a:hover, .contact-page  .footer-social a:hover,
+.error-page    .social-icons a:hover, .error-page    .footer-social a:hover {
   color: var(--accent) !important;
   background: transparent !important;
   transform: translateY(-1px) !important;
@@ -1413,13 +1425,133 @@ body.contact-page {
 
 
 /* ============================================================
+   Error page (404)
+   ============================================================ */
+
+.error-page h1,
+.error-page h2,
+.error-page h3 {
+  font-family: 'Lora', Georgia, serif;
+  text-align: left;
+  text-shadow: none;
+  margin-bottom: 0;
+}
+
+.error-page .wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: clamp(24px, 6vw, 80px);
+  padding-right: clamp(24px, 6vw, 80px);
+}
+
+.error-page .error-head {
+  padding-top: clamp(96px, 14vh, 160px);
+  padding-bottom: clamp(72px, 12vh, 120px);
+  min-height: calc(100vh - 220px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error-page .error-label {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+  margin: 0 0 28px 0;
+}
+
+.error-page .error-title {
+  font-weight: 600;
+  font-size: clamp(2.1rem, 4.8vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 32px 0;
+}
+
+.error-page .error-framing {
+  font-weight: 400;
+  font-size: clamp(1.12rem, 1.5vw, 1.32rem);
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+  max-width: 580px;
+}
+
+.error-page .error-nav {
+  margin-top: clamp(48px, 8vh, 72px);
+  padding-top: clamp(40px, 6vh, 56px);
+  border-top: 1px solid var(--rule);
+  max-width: 580px;
+}
+
+.error-page .error-nav__label {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+  margin: 0 0 20px 0;
+}
+
+.error-page .error-nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.error-page .error-nav__list li {
+  border-top: 1px solid var(--rule);
+}
+
+.error-page .error-nav__list li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.error-page .error-nav__link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+  text-decoration: none;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+
+.error-page .error-nav__link:hover,
+.error-page .error-nav__link:focus-visible {
+  color: var(--accent);
+}
+
+.error-page .error-nav__name {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.05rem, 1.25vw, 1.16rem);
+}
+
+.error-page .error-nav__hint {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.82rem;
+  color: var(--muted-soft);
+  text-align: right;
+}
+
+
+/* ============================================================
    Mobile overrides
    ============================================================ */
 @media (max-width: 640px) {
   .library-page .library-head,
   .topic-page   .topic-head,
   .post-page    .post-header,
-  .contact-page .contact-head {
+  .contact-page .contact-head,
+  .error-page .error-head {
     padding-top: 72px;
   }
 
@@ -1432,5 +1564,14 @@ body.contact-page {
   .post-page .post-body {
     font-size: 1.05rem;
     line-height: 1.65;
+  }
+
+  .error-page .error-nav__link {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .error-page .error-nav__hint {
+    text-align: left;
   }
 }
