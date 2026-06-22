@@ -1,5 +1,3 @@
-/* /index.html 200
-
 # Retired newsletter URLs — redirect to homepage.
 /table-talk.html / 301
 /table-talk-archive.html / 301
@@ -9,3 +7,6 @@
 /members.html / 301
 /table-talk/support / 301
 /no-onion-no-garlic/support / 301
+
+# Archived old-site pages — redirect to homepage.
+/_archive/* / 301
