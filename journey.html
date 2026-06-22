@@ -338,6 +338,21 @@
       margin: 0 auto;
       position: relative;
       z-index: 1;
+      text-wrap: balance;
+    }
+
+    /* Two-line peak: responsibility (lead) then commitment (climax).
+       Lead is softer and smaller; the gap between them creates a
+       beat so four display lines don't read as one dense block. */
+    .peak-sentence--lead {
+      font-size: 2.15rem;
+      line-height: 1.38;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+    .peak-sentence--commitment {
+      max-width: 820px;
     }
 
     /* ============================================================
@@ -512,6 +527,9 @@
                   transform 1500ms cubic-bezier(0.25, 0.1, 0.25, 1);
       transition-delay: 300ms;
     }
+    html.js-ready .peak-sentence--commitment {
+      transition-delay: 550ms;
+    }
 
     /* Aphoristic holds get a slower, gentler reveal -- a quieter
        cousin of the peak. */
@@ -606,6 +624,14 @@
       .peak-sentence {
         font-size: 1.55rem;
         line-height: 1.4;
+      }
+      .peak-sentence--lead {
+        font-size: 1.28rem;
+        line-height: 1.42;
+        margin-bottom: 1.5rem;
+      }
+      .peak-sentence--commitment {
+        max-width: 100%;
       }
 
       .coda {
@@ -771,7 +797,7 @@
         <p>For years, there were small moments that didn&rsquo;t seem connected at the time. Teaching Pathshala. Helping friends understand nutrition and watching them make meaningful changes to their lives. Visiting my brother and seeing patients stop him just to say thank you. Conversations I kept returning to long after they had ended.</p>
         <p>Individually, none of these experiences pointed toward a different life. Together, they revealed a pattern I was slow to recognize.</p>
         <p>I kept being drawn to situations where understanding something clearly could help someone else make a better decision.</p>
-        <p>At the same time, I was beginning to question whether the work I was doing was the work I most wanted to spend my life doing. Helping people navigate important financial decisions matters. But I increasingly found myself asking whether helping people accumulate more was the most meaningful way I could spend my days. Particularly when many already had what they needed for what came next.</p>
+        <p>At the same time, I was beginning to question whether the work I was doing was the work I most wanted to spend my life doing. The work mattered, and many people genuinely benefited from it. But over time I found myself becoming less interested in questions of accumulation and more interested in questions of health, behavior, and what actually contributes to a good life. The questions that held my attention were changing, and eventually it became difficult to ignore where they were leading.</p>
       </div>
       <div class="aphoristic-hold">
         <p>Nutrition wasn&rsquo;t the destination from the beginning.</p>
@@ -790,7 +816,7 @@
       <h2 class="chapter-heading" id="ch-why">Why Nutrition</h2>
       <div class="chapter-body">
         <p>Of all the places the pattern could have led, why nutrition?</p>
-        <p>Part of the answer is that nutrition had already been part of my life for years before I decided to study it formally. I had been reading the research, applying what I learned, and answering questions friends brought to me, long before there was any plan to study it formally.</p>
+        <p>By the time I decided to study nutrition formally, the decision felt less like a beginning and more like a recognition. I had been reading the research, applying what I learned, and answering questions friends brought to me for years. The interest was already there. The formal study came later.</p>
         <p>What kept pulling me back is something specific about food itself.</p>
         <p>Almost nothing else in a person&rsquo;s life shows up as often, or matters in as many ways, as what they eat. Food is daily. It is lifelong. It is bound up in health, family, culture, identity, routine, celebration, stress, memory, and the basic question of how a person spends their day.</p>
         <p>It&rsquo;s also one of the most confused subjects in public conversation. People are surrounded by conflicting advice, oversimplified rules, aggressive marketing, and confident claims that turn out to be less certain than they sound. The result, for many people, is a slow loss of confidence in their own judgment about something that should feel ordinary.</p>
@@ -823,14 +849,12 @@
 
     <!-- Peak: the worker-side commitment -->
     <section class="peak-moment" aria-label="Commitment">
-      <p class="peak-sentence">The work asks me to bring to my own thinking the same scrutiny I would bring to anyone else&rsquo;s.</p>
+      <p class="peak-sentence peak-sentence--lead">Helping someone else understand something carries a responsibility.</p>
+      <p class="peak-sentence peak-sentence--commitment">The standard has to apply to my own thinking first.</p>
     </section>
 
     <!-- Release (post-peak continuation of The Work) -->
     <section class="chapter chapter--work-release" aria-label="The Work continued">
-      <div class="chapter-body">
-        <p>It rewards patience, plain language, and the willingness to be wrong in front of someone.</p>
-      </div>
       <div class="aphoristic-hold">
         <p>Information is the beginning.</p>
         <p>Helping a person use it well is the rest.</p>
