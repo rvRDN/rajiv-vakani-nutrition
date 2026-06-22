@@ -137,7 +137,7 @@ window.RVData = {
         url: 'insights/topics/practical-nutrition.html',
         shortDescription: 'What to actually eat. Questions that come up every day at the grocery store, in the kitchen, at the table.',
         framing: 'Eventually the question becomes what to actually eat. Practical nutrition is where the reading meets the kitchen. The pieces here are about composing meals, reading what you are buying, getting specific about protein and fiber and the rest, and eating well across the contexts of an actual life. Useful, voiced, not generic.',
-        startHere: 'a-practical-guide-to-vegetarian-protein',
+        startHere: 'should-you-buy-lentil-pasta',
         clusters: [
           {
             id: 'building-meals-and-plates',
@@ -412,6 +412,20 @@ window.RVData = {
       summary: 'A worked example of how a useful nutrition metric becomes misleading once it gets asked to answer questions it was never designed to answer, told through the puzzle of why watermelon and other healthy foods score so high on the glycemic index.',
       status: 'draft',
       next: ['the-translation-problem', 'how-i-evaluate-nutrition-claims']
+    },
+
+    {
+      slug: 'should-you-buy-lentil-pasta',
+      url: 'insights/should-you-buy-lentil-pasta.html',
+      title: 'What You\'re Really Paying For in Lentil Pasta',
+      lede: 'Why does lentil pasta feel healthier before you read the label? And when is it actually worth the extra money?',
+      type: 'Guide',
+      date: '2026-06-20',
+      topic: 'practical-nutrition',
+      cluster: 'reading-what-youre-buying',
+      summary: 'An aisle investigation into what healthier means on a premium pasta box. One train of thought from blood sugar to fiber to legumes to protein, then a cart decision: lentil, whole-grain, or regular durum.',
+      status: 'published',
+      next: ['a-practical-guide-to-vegetarian-protein', 'how-i-evaluate-nutrition-claims', 'the-glycemic-index-question']
     }
 
   ]
