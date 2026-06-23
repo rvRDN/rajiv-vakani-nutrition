@@ -44,7 +44,7 @@ window.RVData = {
     version: 2,
     description: 'Single source of truth for the Knowledge Library. Replaces the previous library.json + articles.json + inline duplicates in library.js. Loaded by every Library-system page via <script defer src="insights/data.js">.',
     schemaVersion: '2.0.0',
-    lastUpdated: '2026-06-09'
+    lastUpdated: '2026-06-22'
   },
 
   /* ----------------------------------------------------------
@@ -61,10 +61,6 @@ window.RVData = {
         kind: 'Drafting',
         what: 'A piece on dal, read as nutrition rather than tradition.'
       },
-      {
-        kind: 'Reconsidering',
-        what: 'Whether \u201Cinflammatory foods\u201D lists hold up once you read past the headlines.'
-      }
     ],
 
     topics: [
@@ -90,7 +86,7 @@ window.RVData = {
           {
             id: 'claims-headlines-and-translation',
             name: 'Claims, headlines, and translation',
-            framing: 'How nutrition science becomes media, regulation, marketing, and dinner-table advice. The gap between the study and the headline.'
+            framing: 'How nutrition science becomes media, regulation, marketing, and dinner-table advice. The gap between the study and the headline. Includes drift traces that follow a single claim from first impression to source and name where the story changed shape.'
           },
           {
             id: 'living-with-uncertainty',
@@ -426,6 +422,34 @@ window.RVData = {
       summary: 'An aisle investigation into what healthier means on a premium pasta box. One train of thought from blood sugar to fiber to legumes to protein, then a cart decision: lentil, whole-grain, or regular durum.',
       status: 'published',
       next: ['a-practical-guide-to-vegetarian-protein', 'how-i-evaluate-nutrition-claims', 'the-glycemic-index-question']
+    },
+
+    {
+      slug: 'where-the-egg-alzheimers-story-drifted',
+      url: 'insights/where-the-egg-alzheimers-story-drifted.html',
+      title: 'Where the Egg\u2013Alzheimer\u2019s Story Drifted',
+      lede: 'A reel cited the Adventist Health Study and landed on a breakthrough. Two studies, one narrative, and a conclusion neither source fully supports.',
+      type: 'Essay',
+      date: '2026-06-22',
+      topic: 'reading-the-evidence',
+      cluster: 'claims-headlines-and-translation',
+      summary: 'A drift trace of how egg and Alzheimer\u2019s findings traveled from two observational studies into one confident reel, and where merge, context drop, and confidence upgrade changed the story.',
+      status: 'published',
+      next: ['how-i-evaluate-nutrition-claims', 'the-translation-problem', 'the-glycemic-index-question']
+    },
+
+    {
+      slug: 'when-nutrition-advice-looks-like-precision-medicine',
+      url: 'insights/when-nutrition-advice-looks-like-precision-medicine.html',
+      title: 'When Nutrition Advice Starts Looking Like Precision Medicine',
+      lede: 'Eight \u201Chealthy\u201D foods, eight conditions, eight avoid rules, all presented with the same clinical confidence. I opened a few rows. The evidence behind them looked nothing alike.',
+      type: 'Essay',
+      date: '2026-06-22',
+      topic: 'reading-the-evidence',
+      cluster: 'claims-headlines-and-translation',
+      summary: 'A case study in why food-and-condition lists feel trustworthy: what real personalization requires, and what happens when the format outruns the evidence.',
+      status: 'published',
+      next: ['where-the-egg-alzheimers-story-drifted', 'how-i-evaluate-nutrition-claims', 'the-translation-problem']
     }
 
   ]

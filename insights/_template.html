@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="post-page">
 <head>
   <meta charset="UTF-8" />
@@ -56,7 +56,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../rajiv-styles.css?v=20260617140000">
-  <link rel="stylesheet" href="library.css?v=20260617140000">
+  <link rel="stylesheet" href="library.css?v=20260622190000">
   <link rel="icon" type="image/png" href="../favicon.png" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
@@ -67,7 +67,7 @@
     gtag('config', 'G-0L41N5K2WV');
   </script>
 
-  <script defer src="data.js?v=2026060902"></script>
+  <script defer src="data.js?v=20260622200000"></script>
   <script defer src="library.js?v=2026060902"></script>
 </head>
 <body class="post-page" data-article-slug="SLUG" data-topic-id="TOPIC_ID">
@@ -112,11 +112,40 @@
       </div>
     </header>
 
+    <!-- AT A GLANCE (optional): Layer 1 of the layered-reading system.
+         Required for Drift Trace pieces. See docs/project-continuity-v7.md.
+         Remove this section for short Observations or when the full piece
+         is already a quick read. -->
+    <section class="post-glance" aria-label="At a glance">
+      <div class="post-wrap">
+        <p class="post-glance__label">At a glance</p>
+        <!-- four beats: claim, what I found, why it matters, where I am now -->
+        <p class="post-glance__continue">
+          <a href="#what-started-this">Continue below</a> to see the claim this article traces.
+        </p>
+      </div>
+    </section>
+
+    <!-- CLAIM CARD (Drift Trace only): after At a Glance, before post-body.
+         See docs/project-continuity-v7.md § Claim card. -->
+    <!--
+    <section class="post-claim-card" id="what-started-this" aria-labelledby="claim-card-title">
+      <div class="post-wrap">
+        <p class="post-claim-card__kicker">Claim source</p>
+        <h2 class="post-claim-card__title" id="claim-card-title">What started this</h2>
+        <p class="post-claim-card__intro">[Media type + claim.]</p>
+        <div class="post-claim-card__embed" aria-label="[Platform] embed">…</div>
+        <p class="post-claim-card__meta">Accessed [Month YYYY]. This article analyzes the claim, not the creator.</p>
+      </div>
+    </section>
+    -->
+
     <!-- BODY: the writing. Lora at body size. Headings use h2/h3
          in the same serif. Inline links carry the warm accent.
+         Set id="journey" when At a Glance is present.
          For a Research Review, use superscript numbered links to
          the post-sources block below. -->
-    <article class="post-body">
+    <article class="post-body" id="journey">
       <div class="post-wrap">
 
         <p>
@@ -130,20 +159,29 @@
       </div>
     </article>
 
-    <!-- SOURCES: only for articles with citations (Research Reviews
-         and any other article with a citation apparatus). For
-         Essays and Observations, remove this section.
-
-         Each <li> should include the citation, ideally with an
-         author list, year, journal, title, and a stable link (DOI
-         or PubMed). -->
+    <!-- SOURCES: Research Reviews and evidence-heavy pieces.
+         Drift Trace pieces use two groups: Claim source + Research sources.
+         See docs/project-continuity-v7.md §7. Essays without citations: remove. -->
     <section class="post-sources" aria-label="Sources">
       <div class="post-wrap">
-        <p class="post-sources__label">Sources</p>
-        <ol>
-          <li>[Citation 1.]</li>
-          <li>[Citation 2.]</li>
-        </ol>
+        <!-- Drift Trace only: claim source documentation -->
+        <!--
+        <div class="post-sources__group">
+          <p class="post-sources__label">Claim source</p>
+          <div class="post-sources__claim">
+            <p class="post-sources__claim-title">[Platform] by [Public display name]</p>
+            <p class="post-sources__claim-url"><a href="[URL]" target="_blank" rel="noopener noreferrer">[URL]</a></p>
+            <p class="post-sources__claim-accessed">Accessed [Month YYYY].</p>
+          </div>
+        </div>
+        -->
+        <div class="post-sources__group">
+          <p class="post-sources__label">Sources</p>
+          <ol>
+            <li>[Citation 1.]</li>
+            <li>[Citation 2.]</li>
+          </ol>
+        </div>
       </div>
     </section>
 
