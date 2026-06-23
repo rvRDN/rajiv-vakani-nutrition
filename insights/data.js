@@ -71,7 +71,7 @@ window.RVData = {
         url: 'insights/topics/reading-the-evidence.html',
         shortDescription: 'How nutrition studies, labels, and claims actually work; what they really say versus what they appear to say.',
         framing: 'Most of what passes for nutrition advice begins with a study, a label, a headline, or a claim. The interesting work is figuring out what any of those actually say. Not what they appear to say. Not what someone summarizing them says. What they say once you read them carefully, in the context of everything else that has been said on the same question. The pieces here are about that work.',
-        startHere: 'how-i-evaluate-nutrition-claims',
+        startHere: 'the-mango-question',
         clusters: [
           {
             id: 'how-nutrition-science-actually-works',
@@ -383,17 +383,17 @@ window.RVData = {
     },
 
     {
-      slug: 'the-translation-problem',
-      url: 'insights/the-translation-problem.html',
-      title: 'The Problem Isn\u2019t the Message. It\u2019s the Translation.',
-      lede: 'Why a simple question \u2014 \u201Ccan I eat mangoes\u201D \u2014 keeps getting incompatible answers, and what translation has to do with it.',
+      slug: 'the-mango-question',
+      url: 'insights/the-mango-question.html',
+      title: 'The Mango Question',
+      lede: 'A family question kept getting incompatible answers from people who all seemed to have evidence. Often they were answering different questions.',
       type: 'Essay',
       date: '2026-06-09',
       topic: 'reading-the-evidence',
       cluster: 'claims-headlines-and-translation',
-      summary: 'A worked example of how nutrition information gets translated as it moves from research to dinner table, told through the question of whether someone with diabetes can eat mangoes. The disagreement, it turns out, usually isn\u2019t between informed and uninformed people.',
-      status: 'draft',
-      next: ['protein-marketing-and-trust', 'how-i-evaluate-nutrition-claims']
+      summary: 'When prediabetes and diabetes entered my family, one question kept surfacing: can I still eat mangoes? The answers collided until I noticed the fight was often about different questions compressed into one argument.',
+      status: 'published',
+      next: ['how-i-evaluate-nutrition-claims', 'the-glycemic-index-question']
     },
 
     {
@@ -407,7 +407,7 @@ window.RVData = {
       cluster: 'claims-headlines-and-translation',
       summary: 'A worked example of how a useful nutrition metric becomes misleading once it gets asked to answer questions it was never designed to answer, told through the puzzle of why watermelon and other healthy foods score so high on the glycemic index.',
       status: 'draft',
-      next: ['the-translation-problem', 'how-i-evaluate-nutrition-claims']
+      next: ['the-mango-question', 'how-i-evaluate-nutrition-claims']
     },
 
     {
@@ -435,7 +435,7 @@ window.RVData = {
       cluster: 'claims-headlines-and-translation',
       summary: 'A drift trace of how egg and Alzheimer\u2019s findings traveled from two observational studies into one confident reel, and where merge, context drop, and confidence upgrade changed the story.',
       status: 'published',
-      next: ['how-i-evaluate-nutrition-claims', 'the-translation-problem', 'the-glycemic-index-question']
+      next: ['how-i-evaluate-nutrition-claims', 'the-mango-question', 'the-glycemic-index-question']
     },
 
     {
@@ -449,7 +449,7 @@ window.RVData = {
       cluster: 'claims-headlines-and-translation',
       summary: 'A case study in why food-and-condition lists feel trustworthy: what real personalization requires, and what happens when the format outruns the evidence.',
       status: 'published',
-      next: ['where-the-egg-alzheimers-story-drifted', 'how-i-evaluate-nutrition-claims', 'the-translation-problem']
+      next: ['where-the-egg-alzheimers-story-drifted', 'how-i-evaluate-nutrition-claims', 'the-mango-question']
     }
 
   ]

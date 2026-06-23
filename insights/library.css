@@ -923,6 +923,14 @@ body.error-page {
      the title sits flat on the cream paper. */
   text-shadow: none;
 }
+.post-page .post-dek {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+  line-height: 1.45;
+  color: var(--muted);
+  margin: -6px 0 22px 0;
+  max-width: 38em;
+}
 .post-page .post-meta {
   font-family: 'Inter Tight', sans-serif;
   font-size: 0.85rem;
@@ -1829,6 +1837,17 @@ body.error-page {
   .post-page .post-body {
     font-size: 1.05rem;
     line-height: 1.65;
+  }
+
+  .post-page .post-dek {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .post-page .post-glance__beat {
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .error-page .error-nav__link {
