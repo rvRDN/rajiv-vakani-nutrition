@@ -44,7 +44,7 @@ window.RVData = {
     version: 2,
     description: 'Single source of truth for the Knowledge Library. Replaces the previous library.json + articles.json + inline duplicates in library.js. Loaded by every Library-system page via <script defer src="insights/data.js">.',
     schemaVersion: '2.0.0',
-    lastUpdated: '2026-06-22'
+    lastUpdated: '2026-06-24'
   },
 
   /* ----------------------------------------------------------
@@ -123,6 +123,11 @@ window.RVData = {
             id: 'vegetarian-and-jain-traditions',
             name: 'Vegetarian and Jain traditions',
             framing: 'The practices and restrictions of vegetarian and Jain eating, and how they look nutritionally.'
+          },
+          {
+            id: 'ayurvedic-metabolic-claims',
+            name: 'Ayurvedic therapies and metabolic claims',
+            framing: 'What traditional prescribing patterns suggest, what ingredient trials show, and what proprietary products can actually claim, traced through real prescriptions, not system verdicts.'
           }
         ]
       },
@@ -450,6 +455,20 @@ window.RVData = {
       summary: 'A case study in why food-and-condition lists feel trustworthy: what real personalization requires, and what happens when the format outruns the evidence.',
       status: 'published',
       next: ['where-the-egg-alzheimers-story-drifted', 'how-i-evaluate-nutrition-claims', 'the-mango-question']
+    },
+
+    {
+      slug: 'i-followed-a-real-ayurvedic-prescription',
+      url: 'insights/i-followed-a-real-ayurvedic-prescription.html',
+      title: 'I Followed a Real Ayurvedic Prescription Into the Research',
+      lede: 'A relative\u2019s Ayurvedic prescription for blood sugar and triglycerides looked institutionally coherent. Tracing four products into the literature revealed a gap between familiar herbs and tested bottles.',
+      type: 'Research Review',
+      date: '2026-06-24',
+      topic: 'south-asian-food-and-nutrition',
+      cluster: 'ayurvedic-metabolic-claims',
+      summary: 'A real Ayurvedic metabolic prescription traced through government guidelines, herb trials, and product gaps, without a verdict on whether Ayurveda works.',
+      status: 'published',
+      next: ['how-i-evaluate-nutrition-claims', 'the-mango-question', 'dal-read-as-nutrition']
     }
 
   ]
