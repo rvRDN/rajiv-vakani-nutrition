@@ -14,8 +14,7 @@
      [data-library-map]        -- Library page: the Map (Layer 1)
      [data-library-archive]    -- Library page: Everything (Layer 3)
      [data-topic-page]         -- topic page (anchor + framing +
-                                  Start here + threads + continue
-                                  elsewhere)
+                                  inquiries + article listings)
      [data-post-next]          -- article page Next block
 
    To add a topic:
@@ -294,8 +293,8 @@
     }).join('');
   }
 
-  /* E3. Topic page  --  anchor, title, framing, Start here, threads,
-     and a Continue Elsewhere block linking to the other topics. */
+  /* E3. Topic page  --  anchor, title, framing, and inquiries
+     (clusters with published articles only). */
   function renderTopicPage(root, topic, articles, library, options) {
     if (!root) return;
     var includeDrafts = options && options.includeDrafts;
@@ -316,87 +315,37 @@
       document.title = topic.name + ' | Rajiv Vakani';
     }
 
-    /* Start here. */
-    var startBlock = root.querySelector('[data-topic-start]');
-    if (startBlock) {
-      var startArticle = topic.startHere
-        ? getArticleBySlug(articles, topic.startHere)
-        : null;
-      var startIsVisible = startArticle && (startArticle.status === 'published' || includeDrafts);
-      if (startIsVisible) {
-        var startHref = resolveSiteUrl(startArticle.url);
-        var startDraftMarker = startArticle.status === 'draft'
-          ? ' <span class="start__draft">Draft</span>'
-          : '';
-        startBlock.innerHTML = [
-          '<p class="start__label">Start here.</p>',
-          '<h2 class="start__title">',
-            '<a href="', escapeHTML(startHref), '">',
-              escapeHTML(startArticle.title),
-            '</a>',
-            startDraftMarker,
-          '</h2>',
-          '<p class="start__why">', escapeHTML(startArticle.summary || startArticle.lede || ''), '</p>'
-        ].join('');
-        startBlock.hidden = false;
-      } else {
-        startBlock.hidden = true;
-      }
-    }
-
-    /* Threads  --  one per cluster, with articles. Empty clusters
-       still render so the topic shape stays visible. */
+    /* Inquiries  --  one per cluster with articles. Empty clusters
+       are omitted on the public topic page. */
     var threadsHost = root.querySelector('[data-topic-threads]');
     if (threadsHost) {
       var clusters = topic.clusters || [];
-      threadsHost.innerHTML = '<p class="threads__label">Threads</p>' +
-        clusters.map(function (cluster) {
-          var pieces = getArticlesInCluster(articles, topic.id, cluster.id, { includeDrafts: includeDrafts });
-          var listHtml;
-          if (pieces.length === 0) {
-            listHtml = '<p class="thread__empty">More pieces in this thread are opening.</p>';
-          } else {
-            listHtml = '<ul class="thread__list">' + pieces.map(function (a) {
-              var href = resolveSiteUrl(a.url);
-              var draftFlag = a.status === 'draft' ? '<span>Draft</span>' : '';
-              return [
-                '<li>',
-                  '<a class="thread__article" href="', escapeHTML(href), '">',
-                    '<p class="thread__article-title">', escapeHTML(a.title), '</p>',
-                    '<p class="thread__article-lede">', escapeHTML(a.lede || ''), '</p>',
-                    '<p class="thread__article-meta">',
-                      '<span>', escapeHTML(a.type || ''), '</span>',
-                      '<span>', escapeHTML(formatDate(a.date)), '</span>',
-                      draftFlag,
-                    '</p>',
-                  '</a>',
-                '</li>'
-              ].join('');
-            }).join('') + '</ul>';
-          }
+      threadsHost.innerHTML = clusters.map(function (cluster) {
+        var pieces = getArticlesInCluster(articles, topic.id, cluster.id, { includeDrafts: includeDrafts });
+        if (pieces.length === 0) {
+          return '';
+        }
+        var listHtml = '<ul class="thread__list">' + pieces.map(function (a) {
+          var href = resolveSiteUrl(a.url);
           return [
-            '<article class="thread">',
+            '<li>',
+              '<a class="thread__article" href="', escapeHTML(href), '">',
+                '<p class="thread__article-title">', escapeHTML(a.title), '</p>',
+                '<p class="thread__article-lede">', escapeHTML(a.lede || ''), '</p>',
+              '</a>',
+            '</li>'
+          ].join('');
+        }).join('') + '</ul>';
+        return [
+          '<article class="thread">',
+            '<div class="thread__opening">',
               '<h3 class="thread__title">', escapeHTML(cluster.name), '.</h3>',
               '<p class="thread__framing">', escapeHTML(cluster.framing || ''), '</p>',
-              listHtml,
-            '</article>'
-          ].join('');
-        }).join('');
-    }
-
-    /* Continue elsewhere  --  the other topics. Each always links;
-       its topic page exists regardless of article count. */
-    var continueHost = root.querySelector('[data-topic-continue]');
-    if (continueHost) {
-      var others = (library.topics || []).filter(function (t) { return t.id !== topic.id; });
-      continueHost.innerHTML = '<p class="continue__label">Continue elsewhere</p>' +
-        '<ul class="continue__list">' +
-        others.map(function (t) {
-          var href = resolveSiteUrl(t.url);
-          var nameLink = '<a href="' + escapeHTML(href) + '">' + escapeHTML(t.name) + '.</a>';
-          return '<li>' + nameLink + ' ' + escapeHTML(t.shortDescription || '') + '</li>';
-        }).join('') +
-        '</ul>';
+            '</div>',
+            listHtml,
+          '</article>'
+        ].join('');
+      }).join('');
     }
   }
 

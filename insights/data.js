@@ -14,8 +14,8 @@
      Edit RVData.library.topics in place.
 
    Renaming a topic, cluster, or article:
-     Update the entry here; check that any links (Start Here,
-     pinned recommendations in `next`, topic URLs) still resolve.
+     Update the entry here; check that pinned recommendations in `next`
+     and topic URLs still resolve.
 
    ------------------------------------------------------------
    ARTICLE SCHEMA

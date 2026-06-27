@@ -436,10 +436,8 @@ body.error-page {
 /* ============================================================
    .topic-page  --  Topic pages
    ============================================================
-   Sequence: anchor -> title + framing -> Start here -> Threads
-   (one per cluster, with article listings) -> Continue elsewhere
-   -> Colophon. The topic page is the bridge between the library
-   and the article. */
+   Sequence: anchor -> title + framing -> inquiries
+   (one per cluster with published articles) -> Colophon. */
 
 .topic-page .topic-head {
   padding-top: clamp(80px, 12vh, 140px);
@@ -486,96 +484,36 @@ body.error-page {
   margin: 0;
 }
 
-.topic-page .start {
-  padding-top: clamp(56px, 8vh, 96px);
-  padding-bottom: clamp(48px, 7vh, 80px);
-  border-top: 1px solid var(--rule);
-}
-.topic-page .start__label {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 500;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted-soft);
-  margin: 0 0 20px 0;
-}
-.topic-page .start__title {
-  font-family: 'Lora', Georgia, serif;
-  font-weight: 600;
-  font-size: clamp(1.5rem, 2.4vw, 1.95rem);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin: 0 0 14px 0;
-}
-.topic-page .start__title a {
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--rule);
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-.topic-page .start__title a:hover,
-.topic-page .start__title a:focus-visible {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-.topic-page .start__draft {
-  display: inline-block;
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 500;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted-soft);
-  margin-left: 12px;
-  vertical-align: 0.18em;
-}
-.topic-page .start__why {
-  font-family: 'Lora', Georgia, serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: clamp(1.02rem, 1.2vw, 1.14rem);
-  line-height: 1.55;
-  color: var(--muted);
-  margin: 0;
-}
-
 .topic-page .threads {
   padding-top: clamp(40px, 6vh, 72px);
   padding-bottom: clamp(56px, 8vh, 96px);
   border-top: 1px solid var(--rule);
 }
-.topic-page .threads__label {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 500;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted-soft);
-  margin: 0 0 36px 0;
-}
 .topic-page .thread {
-  margin: 0 0 56px 0;
+  margin: 0;
 }
-.topic-page .thread:last-child {
-  margin-bottom: 0;
+.topic-page .thread + .thread {
+  margin-top: 68px;
 }
-.topic-page .thread__title {
+.topic-page .thread__opening .thread__title {
   font-family: 'Lora', Georgia, serif;
   font-weight: 600;
   font-size: clamp(1.3rem, 1.8vw, 1.55rem);
   letter-spacing: -0.005em;
   color: var(--ink);
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
 }
-.topic-page .thread__framing {
+.topic-page .thread__opening .thread__framing {
   font-family: 'Lora', Georgia, serif;
   font-style: italic;
   font-weight: 400;
   font-size: clamp(1rem, 1.15vw, 1.1rem);
   line-height: 1.55;
   color: var(--muted);
-  margin: 0 0 24px 0;
+  margin: 0;
+}
+.topic-page .thread__opening {
+  margin-bottom: 38px;
 }
 .topic-page .thread__list {
   list-style: none;
@@ -583,7 +521,7 @@ body.error-page {
   margin: 0;
 }
 .topic-page .thread__list li {
-  padding: 16px 0;
+  padding: 15px 0;
   border-top: 1px solid var(--rule);
 }
 .topic-page .thread__list li:last-child {
@@ -596,11 +534,11 @@ body.error-page {
 }
 .topic-page .thread__article-title {
   font-family: 'Lora', Georgia, serif;
-  font-weight: 600;
-  font-size: clamp(1.08rem, 1.3vw, 1.2rem);
+  font-weight: 500;
+  font-size: clamp(1.05rem, 1.2vw, 1.12rem);
   line-height: 1.3;
   color: var(--ink);
-  margin: 0 0 8px 0;
+  margin: 0 0 4px 0;
   transition: color 0.2s ease;
 }
 .topic-page .thread__article:hover .thread__article-title,
@@ -610,70 +548,10 @@ body.error-page {
 .topic-page .thread__article-lede {
   font-family: 'Lora', Georgia, serif;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: clamp(0.92rem, 1vw, 0.95rem);
+  line-height: 1.45;
   color: var(--muted);
-  margin: 0 0 8px 0;
-}
-.topic-page .thread__article-meta {
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  color: var(--muted-soft);
-}
-.topic-page .thread__article-meta span + span::before {
-  content: '\00B7';
-  margin: 0 8px;
-  opacity: 0.5;
-}
-.topic-page .thread__empty {
-  font-family: 'Lora', Georgia, serif;
-  font-style: italic;
-  font-size: 0.98rem;
-  color: var(--muted-soft);
   margin: 0;
-  padding: 4px 0;
-}
-
-.topic-page .continue {
-  padding-top: clamp(56px, 8vh, 96px);
-  padding-bottom: clamp(56px, 8vh, 96px);
-  border-top: 1px solid var(--rule);
-}
-.topic-page .continue__label {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 500;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted-soft);
-  margin: 0 0 24px 0;
-}
-.topic-page .continue__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.topic-page .continue__list li {
-  font-family: 'Lora', Georgia, serif;
-  font-weight: 400;
-  font-size: clamp(1.02rem, 1.2vw, 1.14rem);
-  line-height: 1.55;
-  color: var(--muted);
-  padding: 14px 0;
-}
-.topic-page .continue__list a {
-  font-weight: 600;
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--rule);
-  margin-right: 4px;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-.topic-page .continue__list a:hover,
-.topic-page .continue__list a:focus-visible {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
 }
 
 
