@@ -58,22 +58,45 @@ $g.DrawImage($cropped, [int](($size - $w) / 2), [int](($size - $h) / 2))
 $g.Dispose()
 $cropped.Dispose()
 
-function Save-OnBackground($source, $outPath, $dim, $bg) {
-  $bmp = New-Object System.Drawing.Bitmap($dim, $dim)
+function New-RoundedRectPath([int]$x, [int]$y, [int]$width, [int]$height, [int]$radius) {
+  $path = New-Object System.Drawing.Drawing2D.GraphicsPath
+  $d = [Math]::Min($radius * 2, [Math]::Min($width, $height))
+  $path.AddArc($x, $y, $d, $d, 180, 90)
+  $path.AddArc($x + $width - $d, $y, $d, $d, 270, 90)
+  $path.AddArc($x + $width - $d, $y + $height - $d, $d, $d, 0, 90)
+  $path.AddArc($x, $y + $height - $d, $d, $d, 90, 90)
+  $path.CloseFigure()
+  return $path
+}
+
+function Save-RoundedFavicon($source, $outPath, $dim, $bg) {
+  $bmp = New-Object System.Drawing.Bitmap($dim, $dim, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
   $gfx = [System.Drawing.Graphics]::FromImage($bmp)
+  $gfx.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
   $gfx.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
-  $gfx.Clear($bg)
-  $gfx.DrawImage($source, 0, 0, $dim, $dim)
+  $gfx.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
+  $gfx.Clear($clear)
+  $radius = [Math]::Max(2, [int]([Math]::Round($dim * 0.20)))
+  $path = New-RoundedRectPath 0 0 ($dim - 1) ($dim - 1) $radius
+  $brush = New-Object System.Drawing.SolidBrush($bg)
+  $gfx.FillPath($brush, $path)
+  $brush.Dispose()
+  # Scale mark inward so serifs stay inside the curved corners.
+  $markScale = if ($dim -le 16) { 0.68 } elseif ($dim -le 32) { 0.72 } else { 0.76 }
+  $markSize = [int]([Math]::Round($dim * $markScale))
+  $offset = [int](($dim - $markSize) / 2)
+  $gfx.DrawImage($source, $offset, $offset, $markSize, $markSize)
   $gfx.Dispose()
+  $path.Dispose()
   $bmp.Save($outPath, [System.Drawing.Imaging.ImageFormat]::Png)
   $bmp.Dispose()
 }
 
-Save-OnBackground $square $out512 $size $cream
+Save-RoundedFavicon $square $out512 $size $cream
 $square.Save($outMark, [System.Drawing.Imaging.ImageFormat]::Png)
 foreach ($dim in @(32, 16)) {
   $out = if ($dim -eq 32) { $out32 } else { $out16 }
-  Save-OnBackground $square $out $dim $cream
+  Save-RoundedFavicon $square $out $dim $cream
 }
 $square.Dispose()
 Write-Host "Exported: logo-mark.png (nav), favicon-512.png, favicon.png, favicon-16.png"
