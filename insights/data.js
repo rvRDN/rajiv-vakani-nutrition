@@ -44,7 +44,7 @@ window.RVData = {
     version: 2,
     description: 'Single source of truth for the Knowledge Library. Replaces the previous library.json + articles.json + inline duplicates in library.js. Loaded by every Library-system page via <script defer src="insights/data.js">.',
     schemaVersion: '2.0.0',
-    lastUpdated: '2026-06-27'
+    lastUpdated: '2026-06-28'
   },
 
   /* ----------------------------------------------------------
@@ -488,7 +488,7 @@ window.RVData = {
     {
       slug: 'collagen-compared-to-what',
       url: 'insights/collagen-compared-to-what.html',
-      title: 'Collagen: Compared to What?',
+      title: 'Collagen, Compared to What?',
       lede: 'A mostly vegetarian friend takes bovine collagen every morning. I followed the trials and the biology to ask what decision she is actually making.',
       type: 'Research Review',
       date: '2026-06-27',
