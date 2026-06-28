@@ -44,7 +44,7 @@ window.RVData = {
     version: 2,
     description: 'Single source of truth for the Knowledge Library. Replaces the previous library.json + articles.json + inline duplicates in library.js. Loaded by every Library-system page via <script defer src="insights/data.js">.',
     schemaVersion: '2.0.0',
-    lastUpdated: '2026-06-24'
+    lastUpdated: '2026-06-27'
   },
 
   /* ----------------------------------------------------------
@@ -469,6 +469,20 @@ window.RVData = {
       summary: 'A real Ayurvedic metabolic prescription traced through government guidelines, herb trials, and product gaps, without a verdict on whether Ayurveda works.',
       status: 'published',
       next: ['how-i-evaluate-nutrition-claims', 'the-mango-question', 'dal-read-as-nutrition']
+    },
+
+    {
+      slug: 'creatine-used-to-live-in-the-gym',
+      url: 'insights/creatine-used-to-live-in-the-gym.html',
+      title: 'Creatine Used to Live in the Gym',
+      lede: 'I already trusted creatine for training. Then the conversation expanded to brain health, aging, and focus. I followed the newer claims into the research.',
+      type: 'Research Review',
+      date: '2026-06-27',
+      topic: 'reading-the-evidence',
+      cluster: 'case-by-case',
+      summary: 'A personal investigation into creatine beyond the gym: where the muscle evidence is strong, where the newer brain and aging claims hold up, and where they do not.',
+      status: 'published',
+      next: ['how-i-evaluate-nutrition-claims', 'the-mango-question', 'carrageenan']
     }
 
   ]

@@ -44,6 +44,9 @@ html.contact-page, body.contact-page,
 html.error-page,   body.error-page {
   background: var(--base);
 }
+html.post-page {
+  scroll-padding-top: 4.75rem; /* sticky nav clearance for in-page anchors (Continue below, sources) */
+}
 body.library-page,
 body.topic-page,
 body.post-page,
@@ -1014,6 +1017,80 @@ body.error-page {
   letter-spacing: -0.005em;
   color: var(--ink);
   margin: 2.4em 0 0.6em 0;
+}
+
+/* Private editorial review bar (draft structure comparisons) */
+.post-review-bar {
+  background: rgba(184, 96, 46, 0.06);
+  border-bottom: 1px solid var(--rule);
+  padding: 12px 0;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.post-review-bar p {
+  margin: 0;
+}
+.post-review-bar a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(184, 96, 46, 0.25);
+}
+.post-review-bar a:hover,
+.post-review-bar a:focus-visible {
+  color: var(--accent-soft);
+  border-bottom-color: var(--accent-soft);
+}
+.post-review-bar a.is-active {
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom: none;
+  pointer-events: none;
+}
+
+/* Movement titles — canonical (long-form inquiry essays) */
+.post-page.post-layout--inquiry .post-body .post-inquiry-signpost,
+.post-page.post-layout--questions .post-body .post-question-heading {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.176rem, 1.421vw, 1.303rem);
+  line-height: 1.28;
+  letter-spacing: -0.004em;
+  color: var(--muted);
+  margin: clamp(3.25em, 5.5vh, 4.25em) 0 0 0;
+}
+/* Below-title pause: larger than body paragraph gap (1.4em), smaller than above-title pause (3.25em+) */
+.post-page.post-layout--inquiry .post-body .post-inquiry-signpost + p,
+.post-page.post-layout--questions .post-body .post-question-heading + p {
+  margin-top: 1.7em;
+}
+
+/* Version C — inquiry hairlines between movements */
+.post-page.post-layout--movements .post-inquiry-break {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 20px);
+  margin: 2.65em 0 0.35em 0;
+}
+.post-page.post-layout--movements .post-inquiry-break::before,
+.post-page.post-layout--movements .post-inquiry-break::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+  opacity: 0.65;
+}
+.post-page.post-layout--movements .post-inquiry-break__text {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.72rem, 0.9vw, 0.78rem);
+  letter-spacing: 0.04em;
+  color: var(--muted-soft);
+  flex-shrink: 0;
+  max-width: min(88%, 28em);
+  text-align: center;
+  line-height: 1.4;
 }
 .post-page .post-body h3 {
   font-family: 'Lora', Georgia, serif;
