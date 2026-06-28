@@ -482,7 +482,21 @@ window.RVData = {
       cluster: 'case-by-case',
       summary: 'A personal investigation into creatine beyond the gym: where the muscle evidence is strong, where the newer brain and aging claims hold up, and where they do not.',
       status: 'published',
-      next: ['how-i-evaluate-nutrition-claims', 'the-mango-question', 'carrageenan']
+      next: ['collagen-compared-to-what', 'how-i-evaluate-nutrition-claims', 'the-mango-question']
+    },
+
+    {
+      slug: 'collagen-compared-to-what',
+      url: 'insights/collagen-compared-to-what.html',
+      title: 'Collagen: Compared to What?',
+      lede: 'A mostly vegetarian friend takes bovine collagen every morning. I followed the trials and the biology to ask what decision she is actually making.',
+      type: 'Research Review',
+      date: '2026-06-27',
+      topic: 'reading-the-evidence',
+      cluster: 'case-by-case',
+      summary: 'An investigation into oral collagen: absorption, contested skin trials, placebo comparators, and whether daily prevention matches where the evidence actually clusters.',
+      status: 'published',
+      next: ['creatine-used-to-live-in-the-gym', 'a-practical-guide-to-vegetarian-protein', 'how-i-evaluate-nutrition-claims']
     }
 
   ]
