@@ -76,13 +76,13 @@ function Save-RoundedFavicon($source, $outPath, $dim, $bg) {
   $gfx.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
   $gfx.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
   $gfx.Clear($clear)
-  $radius = [Math]::Max(2, [int]([Math]::Round($dim * 0.20)))
+  $radius = [Math]::Max(2, [int]([Math]::Round($dim * 0.18)))
   $path = New-RoundedRectPath 0 0 ($dim - 1) ($dim - 1) $radius
   $brush = New-Object System.Drawing.SolidBrush($bg)
   $gfx.FillPath($brush, $path)
   $brush.Dispose()
-  # Scale mark inward so serifs stay inside the curved corners.
-  $markScale = if ($dim -le 16) { 0.68 } elseif ($dim -le 32) { 0.72 } else { 0.76 }
+  # Keep initials large; only modest inset so serifs clear the curved corners.
+  $markScale = if ($dim -le 16) { 0.84 } elseif ($dim -le 32) { 0.88 } else { 0.92 }
   $markSize = [int]([Math]::Round($dim * $markScale))
   $offset = [int](($dim - $markSize) / 2)
   $gfx.DrawImage($source, $offset, $offset, $markSize, $markSize)
