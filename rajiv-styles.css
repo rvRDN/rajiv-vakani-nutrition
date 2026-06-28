@@ -3912,6 +3912,16 @@ p {
   letter-spacing: -0.02em;
   color: #1a1a1a; /* warm ink — matches editorial pages */
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.site-logo__mark {
+  width: 19px;
+  height: 19px;
+  display: block;
+  flex-shrink: 0;
 }
 
 .site-logo:hover {
