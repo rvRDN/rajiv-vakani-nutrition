@@ -44,7 +44,7 @@ window.RVData = {
     version: 2,
     description: 'Single source of truth for the Knowledge Library. Replaces the previous library.json + articles.json + inline duplicates in library.js. Loaded by every Library-system page via <script defer src="insights/data.js">.',
     schemaVersion: '2.0.0',
-    lastUpdated: '2026-06-28'
+    lastUpdated: '2026-06-29'
   },
 
   /* ----------------------------------------------------------
@@ -496,7 +496,21 @@ window.RVData = {
       cluster: 'case-by-case',
       summary: 'An investigation into oral collagen: absorption, contested skin trials, placebo comparators, and whether daily prevention matches where the evidence actually clusters.',
       status: 'published',
-      next: ['creatine-used-to-live-in-the-gym', 'a-practical-guide-to-vegetarian-protein', 'how-i-evaluate-nutrition-claims']
+      next: ['invisible-maintenance', 'creatine-used-to-live-in-the-gym', 'how-i-evaluate-nutrition-claims']
+    },
+
+    {
+      slug: 'invisible-maintenance',
+      url: 'insights/invisible-maintenance.html',
+      title: 'Invisible Maintenance',
+      lede: 'Collagen was only the beginning.',
+      type: 'Essay',
+      date: '2026-06-29',
+      topic: 'reading-the-evidence',
+      cluster: 'case-by-case',
+      summary: 'Most of what holds you together runs invisibly. Collagen was the entry point; this investigation asks what the body is sustaining, and what has to go wrong for structure to fail.',
+      status: 'published',
+      next: ['collagen-compared-to-what', 'how-i-evaluate-nutrition-claims', 'creatine-used-to-live-in-the-gym']
     }
 
   ]
