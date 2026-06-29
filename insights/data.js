@@ -61,6 +61,10 @@ window.RVData = {
         kind: 'Drafting',
         what: 'A piece on dal, read as nutrition rather than tradition.'
       },
+      {
+        kind: 'Reconsidering',
+        what: 'Whether \u201Cinflammatory foods\u201D lists hold up once you read past the headlines.'
+      },
     ],
 
     topics: [

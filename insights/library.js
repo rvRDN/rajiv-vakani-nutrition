@@ -246,6 +246,39 @@
     }).join('');
   }
 
+  /* E1b. Homepage composition beat  --  Current Attention list. */
+  function renderHomeAttention(container, library) {
+    if (!container || !library || !library.currentAttention) return;
+    var items = library.currentAttention;
+    if (!items.length) return;
+    container.innerHTML = items.map(function (item) {
+      var kind = item.kind || '';
+      if (kind && kind.charAt(kind.length - 1) !== '.') kind += '.';
+      return [
+        '<li>',
+          '<span class="beat__kind">', escapeHTML(kind), '</span>',
+          '<span class="beat__what">', escapeHTML(item.what || ''), '</span>',
+        '</li>'
+      ].join('');
+    }).join('');
+  }
+
+  /* E1c. Homepage composition beat  --  topic doorway links. */
+  function renderHomeTopics(container, library) {
+    if (!container || !library || !library.topics) return;
+    container.innerHTML = library.topics.map(function (topic) {
+      var url = resolveSiteUrl(topic.url);
+      var name = topic.name || '';
+      if (name && name.charAt(name.length - 1) !== '.') name += '.';
+      return [
+        '<li>',
+          '<a href="', escapeHTML(url), '">', escapeHTML(name), '</a>',
+          ' ', escapeHTML(topic.shortDescription || ''),
+        '</li>'
+      ].join('');
+    }).join('');
+  }
+
   /* E2. Library landing (Insights)  --  Topic doorways.
 
      The topic name always links. Even if a topic has no articles
@@ -480,7 +513,9 @@
 
   function autoRender() {
     var attentionEl      = document.querySelector('[data-library-attention]');
+    var homeAttentionEl  = document.querySelector('[data-home-attention]');
     var topicsEl         = document.querySelector('[data-library-topics]');
+    var homeTopicsEl     = document.querySelector('[data-home-topics]');
     var libraryMapEl     = document.querySelector('[data-library-map]');
     var libraryArchiveEl = document.querySelector('[data-library-archive]');
     var topicBody        = document.body && document.body.hasAttribute('data-topic-page')
@@ -489,7 +524,7 @@
     var articleSlug      = document.body && document.body.getAttribute('data-article-slug');
     var nextEl           = document.querySelector('[data-post-next]');
 
-    var anyTarget = attentionEl || topicsEl || libraryMapEl || libraryArchiveEl ||
+    var anyTarget = attentionEl || homeAttentionEl || topicsEl || homeTopicsEl || libraryMapEl || libraryArchiveEl ||
                     topicBody || (articleSlug && nextEl);
     if (!anyTarget) return;
 
@@ -516,7 +551,9 @@
     var includeDrafts = !(document.body && document.body.hasAttribute('data-hide-drafts'));
 
     if (attentionEl)      renderAttention(attentionEl, library);
+    if (homeAttentionEl)  renderHomeAttention(homeAttentionEl, library);
     if (topicsEl)         renderTopics(topicsEl, library, articles, { includeDrafts: includeDrafts });
+    if (homeTopicsEl)     renderHomeTopics(homeTopicsEl, library);
     if (libraryMapEl)     renderLibraryMap(libraryMapEl, library, articles, { includeDrafts: includeDrafts });
     if (libraryArchiveEl) renderLibraryArchive(libraryArchiveEl, library, articles, { includeDrafts: includeDrafts });
 

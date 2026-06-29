@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="post-page">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,7 +7,6 @@
   <title>Why I Stopped Trusting Simple Answers | Rajiv Vakani</title>
   <meta name="description" content="Why simple answers in nutrition are so appealing, why they so often miss the context that actually matters, and what changed how I think about evidence, complexity, and changing minds.">
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://rajivvakani.com/insights/why-i-stopped-trusting-simple-answers.html" />
   <meta property="og:title" content="Why I Stopped Trusting Simple Answers | Rajiv Vakani" />
@@ -15,21 +14,21 @@
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
-  <link rel="canonical" href="https://rajivvakani.com/insights/why-i-stopped-trusting-simple-answers.html" />
-
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://rajivvakani.com/insights/why-i-stopped-trusting-simple-answers.html" />
   <meta property="twitter:title" content="Why I Stopped Trusting Simple Answers | Rajiv Vakani" />
   <meta property="twitter:description" content="Why simple answers in nutrition are so appealing, why they so often miss the context that actually matters, and what changed how I think about evidence, complexity, and changing minds." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://rajivvakani.com/insights/why-i-stopped-trusting-simple-answers.html" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../rajiv-styles.css?v=20260620130000">
-  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="stylesheet" href="library.css?v=20260622190000">
+  <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
+  <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -38,136 +37,14 @@
     gtag('config', 'G-0L41N5K2WV');
   </script>
 
-  <script defer src="../animations.js"></script>
-
-  <style>
-    /* Post-page reading styles. Page-local so rajiv-styles.css stays untouched. */
-    .post-page .post-hero {
-      background: linear-gradient(135deg, #1e293b 0%, #475569 60%, #64748b 100%);
-      min-height: 50vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 20px;
-    }
-    .post-page .post-hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.05));
-    }
-    .post-page .post-hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      text-align: center;
-      color: #ffffff;
-    }
-    .post-page .post-category-pill {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.15);
-      color: #ffffff;
-      padding: 6px 14px;
-      border-radius: 14px;
-      font-size: 0.85em;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      margin-bottom: 18px;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-    .post-page .post-title {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin: 0 0 16px 0;
-      color: #ffffff;
-    }
-    .post-page .post-meta {
-      font-size: 0.95em;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 0;
-    }
-    .post-page .post-meta span + span::before {
-      content: ' \00b7 ';
-      margin: 0 6px;
-      opacity: 0.7;
-    }
-
-    .post-page .post-body {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 60px 24px 80px;
-      font-family: 'Lora', 'Georgia', serif;
-      color: #1f2937;
-      line-height: 1.75;
-      font-size: 1.08em;
-    }
-    .post-page .post-body h2 {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 1.6em;
-      font-weight: 700;
-      margin-top: 2em;
-      margin-bottom: 0.6em;
-      color: #1f2937;
-      line-height: 1.3;
-    }
-    .post-page .post-body h3 {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 1.25em;
-      font-weight: 600;
-      margin-top: 1.8em;
-      margin-bottom: 0.5em;
-      color: #1f2937;
-    }
-    .post-page .post-body p { margin: 0 0 1.2em 0; }
-    .post-page .post-body a {
-      color: #1d4ed8;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .post-page .post-body a:hover { color: #1e40af; }
-    .post-page .post-body blockquote {
-      border-left: 4px solid #f59e0b;
-      background: #fffbeb;
-      padding: 16px 24px;
-      margin: 1.5em 0;
-      font-style: italic;
-      color: #4b5563;
-      border-radius: 0 8px 8px 0;
-    }
-
-    .post-page .post-back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #4b5563;
-      text-decoration: none;
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 0.95em;
-      font-weight: 500;
-      margin-bottom: 32px;
-    }
-    .post-page .post-back-link:hover { color: #1f2937; }
-
-    .post-page .post-footer-cta {
-      max-width: 720px;
-      margin: 0 auto 80px;
-      padding: 32px 24px;
-      background: #fef3c7;
-      border-radius: 12px;
-      text-align: center;
-      border: 1px solid #fde68a;
-    }
-    .post-page .post-footer-cta p { margin: 0 0 16px 0; color: #92400e; font-family: 'Inter Tight', sans-serif; }
-    .post-page .post-footer-cta .button { display: inline-block; }
-  </style>
+  <script defer src="data.js?v=20260622200000"></script>
+  <script defer src="library.js?v=2026060902"></script>
 </head>
-<body class="post-page">
+<body class="post-page" data-article-slug="why-i-stopped-trusting-simple-answers" data-topic-id="reading-the-evidence">
 
   <nav class="main-nav">
     <div class="container nav-container">
       <a href="../index.html" class="site-logo"><img src="../logo-mark.png?v=rv5" alt="" class="site-logo__mark" decoding="async">Rajiv Vakani</a>
-
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
@@ -176,48 +53,37 @@
         <li><a href="../library.html">Library</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
-
-      <div class="social-icons" aria-label="Social links" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <i class="fab fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
-          <i class="fab fa-facebook" aria-hidden="true"></i>
-        </a>
+      <div class="social-icons" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
       </div>
-
       <button class="menu-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
+        <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
       </button>
     </div>
   </nav>
 
-  <!-- Mobile menu overlay -->
   <div class="mobile-menu-overlay"></div>
 
-  <!-- Post Hero -->
-  <header class="hero post-hero">
-    <div class="post-hero-overlay"></div>
-    <div class="post-hero-inner">
-      <span class="post-category-pill">Thought Piece</span>
-      <h1 class="post-title">Why I Stopped Trusting Simple Answers</h1>
-      <p class="post-meta">
-        <span>June 2026</span>
-        <span>~5 min read</span>
-        <span>By Rajiv Vakani</span>
-      </p>
-    </div>
-  </header>
+  <main>
 
-  <!-- Post Body -->
-  <article class="post-body animate-on-scroll">
-    <a href="../insights.html" class="post-back-link">
-      <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Insights
-    </a>
+    <header class="post-header">
+      <div class="post-wrap">
+        <p class="post-anchor">
+          in <a href="topics/reading-the-evidence.html">Reading the evidence</a>
+        </p>
+        <h1 class="post-title">Why I Stopped Trusting Simple Answers</h1>
+        <p class="post-meta">
+          <span>Essay</span>
+          <span>June 1, 2026</span>
+        </p>
+      </div>
+    </header>
 
-    <p>When I first became interested in nutrition, I thought learning more would lead to clearer answers.</p>
+    <article class="post-body">
+      <div class="post-wrap">
+
+<p>When I first became interested in nutrition, I thought learning more would lead to clearer answers.</p>
 
     <p>Eat this.</p>
 
@@ -342,23 +208,25 @@
     <p>Understanding how people interpret information, make decisions, and change their minds may be even more important.</p>
 
     <p>And that&rsquo;s a question I&rsquo;m still exploring.</p>
-  </article>
 
-  <section class="post-colophon" aria-label="Signature">
-    <div class="post-wrap">
-      <p>
-        <a href="../about.html">Rajiv Vakani</a>. Writing on nutrition from
-        New York. Since 2023. <a href="../contact.html">Email</a>.
-      </p>
-    </div>
-  </section>
+      </div>
+    </article>
 
-  <div class="post-footer-cta">
-    <p>Have a thought on this piece? I&rsquo;d like to hear it.</p>
-    <a href="../contact.html" class="button">Send Me a Note &rarr;</a>
-  </div>
+    <section class="post-next" aria-label="Next">
+      <div class="post-wrap" data-post-next></div>
+    </section>
 
-  
+    <section class="post-colophon" aria-label="Signature">
+      <div class="post-wrap">
+        <p>
+          <a href="../about.html">Rajiv Vakani</a>. Writing on nutrition from
+          New York. Since 2023. <a href="../contact.html">Email</a>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
@@ -369,53 +237,26 @@
     </div>
   </footer>
 
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      const overlay = document.querySelector('.mobile-menu-overlay');
-      const mainNav = document.querySelector('.main-nav');
-      const heroSection = document.querySelector('.post-hero');
-
-      function handleNavScroll() {
-        if (heroSection && mainNav) {
-          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-          const scrollPosition = window.pageYOffset + 100;
-          if (scrollPosition > heroBottom) {
-            mainNav.classList.add('scrolled');
-          } else {
-            mainNav.classList.remove('scrolled');
-          }
-        }
-      }
-      window.addEventListener('scroll', handleNavScroll);
-
+      var menuToggle = document.querySelector('.menu-toggle');
+      var navLinks = document.querySelector('.nav-links');
+      var overlay = document.querySelector('.mobile-menu-overlay');
       if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function () {
           navLinks.classList.toggle('active');
           menuToggle.classList.toggle('active');
           if (overlay) overlay.classList.toggle('active');
+          document.body.classList.toggle('menu-open');
         });
-        if (overlay) {
-          overlay.addEventListener('click', function () {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
-            overlay.classList.remove('active');
-          });
-        }
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', function () {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
-            if (overlay) overlay.classList.remove('active');
-          });
-        });
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
-            if (overlay) overlay.classList.remove('active');
-          }
+      }
+      if (overlay) {
+        overlay.addEventListener('click', function () {
+          navLinks.classList.remove('active');
+          menuToggle.classList.remove('active');
+          overlay.classList.remove('active');
+          document.body.classList.remove('menu-open');
         });
       }
     });
