@@ -3905,47 +3905,27 @@ p {
   position: relative;
 }
 
-/* Logo lockup: seal (baked warm mid-ink) + wordmark (full ink, hover accent) */
 .site-logo {
-  --logo-wordmark-ink: #1a1a1a;
-  --logo-wordmark-hover: #b8602e;
-  /* Slightly oversized vs wordmark x-height: small forms read lighter */
-  --logo-mark-size: 0.94em;
-  --logo-mark-gap: 0.55em;
   font-family: 'Lora', Georgia, serif;
   font-weight: 600;
   font-size: 1.4rem;
   letter-spacing: -0.02em;
-  color: var(--logo-wordmark-ink);
+  color: #1a1a1a; /* warm ink — matches editorial pages */
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: var(--logo-mark-gap);
-  transition: color 0.2s ease;
+  gap: 18px;
 }
 
-/*
- * Seal is a dedicated mid-ink asset (#5a524a), not a faded wordmark.
- * color/hover only affect the text node — the mark stays put.
- */
 .site-logo__mark {
+  width: 19px;
+  height: 19px;
   display: block;
-  width: var(--logo-mark-size);
-  height: var(--logo-mark-size);
   flex-shrink: 0;
-  position: relative;
-  top: 0.02em;
 }
 
-.site-logo:hover,
-.site-logo:focus-visible {
-  color: var(--logo-wordmark-hover);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .site-logo {
-    transition: none;
-  }
+.site-logo:hover {
+  color: #b8602e; /* burnt orange — matches nav accent */
 }
 
 /* Base Nav Links Styles (Mobile-First Default) */
@@ -4402,94 +4382,6 @@ p {
 }
 
 /* Site footer — editorial sign-off (cream default). */
-/* ============================================================
-   Site colophon — signature block directly above .site-footer.
-   Shared structure and type; only the words vary by experience.
-   ============================================================ */
-.site-colophon,
-.library-colophon,
-.post-colophon,
-.topic-colophon,
-.ref-colophon,
-section.colophon {
-  /* Subtle band between the two framing rules */
-  padding: clamp(1.5rem, 3vh, 2.25rem) clamp(24px, 6vw, 80px);
-  border-top: 1px solid rgba(26, 26, 26, 0.10);
-  text-align: center;
-}
-
-.site-colophon .wrap,
-.library-colophon .wrap,
-.post-colophon .wrap,
-.post-colophon .post-wrap,
-.topic-colophon .wrap,
-.topic-colophon .topic-wrap,
-.ref-colophon .wrap,
-section.colophon .wrap {
-  max-width: 36rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.site-colophon p,
-.library-colophon p,
-.post-colophon p,
-.topic-colophon p,
-.ref-colophon__byline,
-section.colophon p {
-  font-family: 'Inter Tight', 'Inter', sans-serif;
-  font-size: 0.88rem;
-  letter-spacing: 0.02em;
-  line-height: 1.55;
-  color: #8a7d68;
-  margin: 0;
-}
-
-/* Optional lead line (e.g. reference home thesis) */
-.site-colophon__thesis,
-.ref-colophon__thesis {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 1.02rem;
-  line-height: 1.65;
-  letter-spacing: 0;
-  color: #4a4640;
-  margin: 0 0 1rem 0;
-}
-
-.site-colophon__sep,
-.ref-colophon__sep {
-  margin: 0 0.45em;
-  opacity: 0.7;
-}
-
-.site-colophon a,
-.library-colophon a,
-.post-colophon a,
-.topic-colophon a,
-.ref-colophon a,
-section.colophon a {
-  color: #1a1a1a;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(26, 26, 26, 0.14);
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.site-colophon a:hover,
-.site-colophon a:focus-visible,
-.library-colophon a:hover,
-.library-colophon a:focus-visible,
-.post-colophon a:hover,
-.post-colophon a:focus-visible,
-.topic-colophon a:hover,
-.topic-colophon a:focus-visible,
-.ref-colophon a:hover,
-.ref-colophon a:focus-visible,
-section.colophon a:hover,
-section.colophon a:focus-visible {
-  color: #b8602e;
-  border-bottom-color: rgba(184, 96, 46, 0.45);
-}
-
 .site-footer {
   background: #faf5ea;
   color: #8a7d68;

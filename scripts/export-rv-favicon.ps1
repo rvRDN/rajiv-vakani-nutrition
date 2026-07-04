@@ -10,8 +10,7 @@ $out512  = Join-Path $root 'favicon-512.png'
 $outMark = Join-Path $root 'logo-mark.png'
 $out32   = Join-Path $root 'favicon.png'
 $out16   = Join-Path $root 'favicon-16.png'
-$ink     = [System.Drawing.Color]::FromArgb(255, 26, 26, 26)       # full editorial ink (favicons)
-$sealInk = [System.Drawing.Color]::FromArgb(255, 90, 82, 74)       # #5a524a warm mid-ink (nav seal)
+$ink     = [System.Drawing.Color]::FromArgb(255, 26, 26, 26)
 $clear   = [System.Drawing.Color]::FromArgb(0, 0, 0, 0)
 $cream   = [System.Drawing.Color]::FromArgb(255, 250, 245, 234)
 
@@ -39,30 +38,25 @@ $w = $maxX - $minX + 1
 $h = $maxY2 - $minY + 1
 Write-Host "Crop: $minX,$minY ${w}x$h"
 
-function New-MarkBitmap([System.Drawing.Color]$fill) {
-  $cropped = New-Object System.Drawing.Bitmap($w, $h, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
-  for ($y = 0; $y -lt $h; $y++) {
-    for ($x = 0; $x -lt $w; $x++) {
-      if ($src.GetPixel($minX + $x, $minY + $y).A -gt 128) {
-        $cropped.SetPixel($x, $y, $fill)
-      } else {
-        $cropped.SetPixel($x, $y, $clear)
-      }
+$cropped = New-Object System.Drawing.Bitmap($w, $h, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+for ($y = 0; $y -lt $h; $y++) {
+  for ($x = 0; $x -lt $w; $x++) {
+    if ($src.GetPixel($minX + $x, $minY + $y).A -gt 128) {
+      $cropped.SetPixel($x, $y, $ink)
+    } else {
+      $cropped.SetPixel($x, $y, $clear)
     }
   }
-  $size = [Math]::Max($w, $h)
-  $square = New-Object System.Drawing.Bitmap($size, $size, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
-  $g = [System.Drawing.Graphics]::FromImage($square)
-  $g.Clear($clear)
-  $g.DrawImage($cropped, [int](($size - $w) / 2), [int](($size - $h) / 2))
-  $g.Dispose()
-  $cropped.Dispose()
-  return $square
 }
-
-$square = New-MarkBitmap $ink
-$seal   = New-MarkBitmap $sealInk
 $src.Dispose()
+
+$size = [Math]::Max($w, $h)
+$square = New-Object System.Drawing.Bitmap($size, $size, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+$g = [System.Drawing.Graphics]::FromImage($square)
+$g.Clear($clear)
+$g.DrawImage($cropped, [int](($size - $w) / 2), [int](($size - $h) / 2))
+$g.Dispose()
+$cropped.Dispose()
 
 function New-RoundedRectPath([int]$x, [int]$y, [int]$width, [int]$height, [int]$radius) {
   $path = New-Object System.Drawing.Drawing2D.GraphicsPath
@@ -98,12 +92,11 @@ function Save-RoundedFavicon($source, $outPath, $dim, $bg) {
   $bmp.Dispose()
 }
 
-Save-RoundedFavicon $square $out512 $square.Width $cream
-$seal.Save($outMark, [System.Drawing.Imaging.ImageFormat]::Png)
+Save-RoundedFavicon $square $out512 $size $cream
+$square.Save($outMark, [System.Drawing.Imaging.ImageFormat]::Png)
 foreach ($dim in @(32, 16)) {
   $out = if ($dim -eq 32) { $out32 } else { $out16 }
   Save-RoundedFavicon $square $out $dim $cream
 }
 $square.Dispose()
-$seal.Dispose()
-Write-Host "Exported: logo-mark.png (nav seal #5a524a), favicon-512.png, favicon.png, favicon-16.png"
+Write-Host "Exported: logo-mark.png (nav), favicon-512.png, favicon.png, favicon-16.png"
