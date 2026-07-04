@@ -40,17 +40,22 @@ html.library-page, body.library-page,
 html.topic-page,   body.topic-page,
 html.post-page,    body.post-page,
 html.library-index, body.library-index,
+html.reference-page, body.reference-page,
+html.reference-entry, body.reference-entry,
 html.contact-page, body.contact-page,
 html.error-page,   body.error-page {
   background: var(--base);
 }
-html.post-page {
+html.post-page,
+html.reference-entry {
   scroll-padding-top: 4.75rem; /* sticky nav clearance for in-page anchors (Continue below, sources) */
 }
 body.library-page,
 body.topic-page,
 body.post-page,
 body.library-index,
+body.reference-page,
+body.reference-entry,
 body.contact-page,
 body.error-page {
   color: var(--ink);
@@ -114,12 +119,8 @@ body.error-page {
 .error-page p {
   margin: 0;
 }
-.library-page section,
-.topic-page   section,
-.post-page    section,
-.library-index section,
-.contact-page section,
-.error-page section {
+/* Zero-specificity reset so page sections can set their own padding. */
+:where(.library-page, .topic-page, .post-page, .library-index, .contact-page, .error-page) :where(section) {
   padding: 0;
 }
 
@@ -147,52 +148,38 @@ body.error-page {
 .post-page main .post-wrap,
 .post-page .post-wrap { max-width: 720px !important; }
 
-/* Shared colophon at the bottom of each page.
-   Centered sign-off line so the closing beat sits in the middle
-   of the page rather than echoing the left-anchored body. */
-.library-page  .colophon,
-.topic-page    .topic-colophon,
-.post-page     .post-colophon,
+/* Colophon: quiet band between the two rules; space above comes from
+   the preceding section’s padding-bottom (now able to apply). */
+.library-page section.colophon,
+.topic-page .topic-colophon,
+.post-page .post-colophon,
 .library-index .library-colophon {
-  padding-top: clamp(64px, 9vh, 110px);
-  padding-bottom: clamp(48px, 6vh, 72px);
-  border-top: 1px solid var(--rule);
-  text-align: center;
+  padding: clamp(1.5rem, 3vh, 2.25rem) clamp(24px, 6vw, 80px);
+  border-top-color: var(--rule);
 }
-.library-page  .colophon .wrap,
-.topic-page    .topic-colophon .topic-wrap,
-.post-page     .post-colophon .post-wrap,
-.library-index .library-colophon .wrap {
-  max-width: 720px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-.library-page  .colophon p,
-.topic-page    .topic-colophon p,
-.post-page     .post-colophon p,
+
+.library-page section.colophon p,
+.topic-page .topic-colophon p,
+.post-page .post-colophon p,
 .library-index .library-colophon p {
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 0.88rem;
-  letter-spacing: 0.02em;
   color: var(--muted-soft);
-  margin: 0;
 }
-.library-page  .colophon a,
-.topic-page    .topic-colophon a,
-.post-page     .post-colophon a,
+
+.library-page section.colophon a,
+.topic-page .topic-colophon a,
+.post-page .post-colophon a,
 .library-index .library-colophon a {
   color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--rule);
-  transition: color 0.2s ease, border-color 0.2s ease;
+  border-bottom-color: var(--rule);
 }
-.library-page  .colophon a:hover,
-.topic-page    .topic-colophon a:hover,
-.post-page     .post-colophon a:hover,
+
+.library-page section.colophon a:hover,
+.topic-page .topic-colophon a:hover,
+.post-page .post-colophon a:hover,
 .library-index .library-colophon a:hover,
-.library-page  .colophon a:focus-visible,
-.topic-page    .topic-colophon a:focus-visible,
-.post-page     .post-colophon a:focus-visible,
+.library-page section.colophon a:focus-visible,
+.topic-page .topic-colophon a:focus-visible,
+.post-page .post-colophon a:focus-visible,
 .library-index .library-colophon a:focus-visible {
   color: var(--accent);
   border-bottom-color: var(--accent);
@@ -683,7 +670,9 @@ body.error-page {
   border-top: 1px solid var(--rule);
 }
 .library-index .library-archive__group {
-  margin: 0 0 clamp(36px, 5vh, 56px) 0;
+  /* Groups are <section>; kill legacy section { padding: 60px 0 }. */
+  padding: 0;
+  margin: 0 0 clamp(34px, 4.25vh, 48px) 0;
 }
 .library-index .library-archive__group:last-child {
   margin-bottom: 0;
