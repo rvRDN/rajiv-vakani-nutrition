@@ -3905,27 +3905,47 @@ p {
   position: relative;
 }
 
+/* Logo lockup: seal (baked warm mid-ink) + wordmark (full ink, hover accent) */
 .site-logo {
+  --logo-wordmark-ink: #1a1a1a;
+  --logo-wordmark-hover: #b8602e;
+  /* Slightly oversized vs wordmark x-height: small forms read lighter */
+  --logo-mark-size: 0.94em;
+  --logo-mark-gap: 0.55em;
   font-family: 'Lora', Georgia, serif;
   font-weight: 600;
   font-size: 1.4rem;
   letter-spacing: -0.02em;
-  color: #1a1a1a; /* warm ink — matches editorial pages */
+  color: var(--logo-wordmark-ink);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 18px;
+  gap: var(--logo-mark-gap);
+  transition: color 0.2s ease;
 }
 
+/*
+ * Seal is a dedicated mid-ink asset (#5a524a), not a faded wordmark.
+ * color/hover only affect the text node — the mark stays put.
+ */
 .site-logo__mark {
-  width: 19px;
-  height: 19px;
   display: block;
+  width: var(--logo-mark-size);
+  height: var(--logo-mark-size);
   flex-shrink: 0;
+  position: relative;
+  top: 0.02em;
 }
 
-.site-logo:hover {
-  color: #b8602e; /* burnt orange — matches nav accent */
+.site-logo:hover,
+.site-logo:focus-visible {
+  color: var(--logo-wordmark-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-logo {
+    transition: none;
+  }
 }
 
 /* Base Nav Links Styles (Mobile-First Default) */
