@@ -266,7 +266,7 @@
   /* E1c. Homepage composition beat  --  topic doorway links. */
   function renderHomeTopics(container, library) {
     if (!container || !library || !library.topics) return;
-    container.innerHTML = library.topics.map(function (topic) {
+    var topicsHtml = library.topics.map(function (topic) {
       var url = resolveSiteUrl(topic.url);
       var name = topic.name || '';
       if (name && name.charAt(name.length - 1) !== '.') name += '.';
@@ -277,6 +277,14 @@
         '</li>'
       ].join('');
     }).join('');
+    var profilesHtml = [
+      '<li>',
+        '<a href="', escapeHTML(resolveSiteUrl('reference/index.html')), '">Traditional therapy profiles.</a>',
+        ' When one name refers to a plant, a formulation, and a product at once,',
+        ' these profiles separate them again. Orientation, not recommendation.',
+      '</li>'
+    ].join('');
+    container.innerHTML = topicsHtml + profilesHtml;
   }
 
   /* E2. Library landing (Insights)  --  Topic doorways.
