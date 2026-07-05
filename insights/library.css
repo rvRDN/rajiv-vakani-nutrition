@@ -372,6 +372,9 @@ body.error-page {
   padding-bottom: clamp(56px, 8vh, 96px);
   border-top: 1px solid var(--rule);
 }
+.library-page .profiles-doorway {
+  padding-bottom: clamp(48px, 7vh, 72px);
+}
 .library-page .library__label {
   font-family: 'Inter Tight', sans-serif;
   font-weight: 500;

@@ -27,7 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="rajiv-styles.css?v=20260620130000">
-  <link rel="stylesheet" href="insights/library.css?v=2026062502">
+  <link rel="stylesheet" href="insights/library.css?v=20260705170000">
   <link rel="icon" type="image/png" href="favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="favicon-512.png?v=rv7" />
 
@@ -76,15 +76,16 @@
   <main>
 
     <!-- 1. HEAD: anchor + title + framing.
-         Quiet head; sets that Insights has two layers underneath. -->
+         Quiet head; sets the three layers underneath. -->
     <header class="library-head">
       <div class="wrap">
         <p class="library-anchor">in <a href="index.html">Home</a></p>
         <h1 class="library-title">Insights</h1>
         <p class="library-framing">
-          Two layers.<br>
-          Above, what currently has my attention.<br>
-          Below, the larger body of writing organized by subject.
+          Three layers.<br>
+          What currently has my attention.<br>
+          Profiles of traditional therapy names.<br>
+          The larger body of writing, organized by subject.
         </p>
       </div>
     </header>
@@ -100,7 +101,27 @@
       </div>
     </section>
 
-    <!-- 3. KNOWLEDGE LIBRARY: the durable body of work.
+    <!-- 3. TRADITIONAL THERAPY PROFILES: a separate track from the articles.
+         Same visual register as the topic doorways below — not louder,
+         but a different kind of click: into structured profiles, not
+         a single investigation. -->
+    <section class="library profiles-doorway" aria-label="Traditional therapy profiles">
+      <div class="wrap">
+        <p class="library__label">Traditional therapy profiles</p>
+        <p class="library__framing">
+          When one name refers to a plant, a formulation, and a product at once,
+          these profiles separate them again. Orientation, not recommendation.
+        </p>
+        <ul class="topics">
+          <li>
+            <p class="topics__title"><a href="reference/index.html">Traditional Therapy Profiles</a></p>
+            <p class="topics__desc">Structured profiles of herbs, formulations, and related names in South Asian traditional medicine.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. KNOWLEDGE LIBRARY: the durable body of work.
          Six topic doorways with name + description + piece count.
          Topics with no published pieces yet render with a quiet
          "opening soon" or "opening, drafts in progress" note. -->
@@ -115,7 +136,7 @@
       </div>
     </section>
 
-    <!-- 4. COLOPHON: the same signature line that closes the homepage. -->
+    <!-- 5. COLOPHON: the same signature line that closes the homepage. -->
     <section class="colophon" aria-label="Signature">
       <div class="wrap">
         <p>
