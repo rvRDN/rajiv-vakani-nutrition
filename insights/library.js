@@ -279,7 +279,7 @@
     }).join('');
     var profilesHtml = [
       '<li>',
-        '<a href="', escapeHTML(resolveSiteUrl('reference/index.html')), '">Traditional therapy profiles.</a>',
+        '<a href="', escapeHTML(resolveSiteUrl('therapy-profiles/index.html')), '">Traditional therapy profiles.</a>',
         ' When one name refers to a plant, a formulation, and a product at once,',
         ' each entry separates them again. Orientation, not recommendation.',
       '</li>'

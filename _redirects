@@ -10,3 +10,6 @@
 
 # Archived old-site pages — redirect to homepage.
 /_archive/* / 301
+
+# Former reference path — profiles live at /therapy-profiles/.
+/reference/* /therapy-profiles/:splat 301
