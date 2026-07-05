@@ -38,8 +38,6 @@
     gtag('config', 'G-0L41N5K2WV');
   </script>
 
-  <script defer src="animations.js"></script>
-
   <style>
     /* ============================================================
        Homepage — editorial treatment.
@@ -112,7 +110,10 @@
       filter: blur(90px);
       z-index: -1;
       pointer-events: none;
-      will-change: transform;
+    }
+    .home-page .welcome.is-anim-paused::before,
+    .home-page .welcome.is-anim-paused::after {
+      animation-play-state: paused;
     }
     .home-page .welcome::before {
       width: 720px; height: 720px;
@@ -360,6 +361,10 @@
       height: clamp(600px, 72vh, 760px);
       padding-bottom: 36px;
       box-sizing: content-box;
+      contain: layout style paint;
+    }
+    .home-page .field.is-anim-paused .field__drift {
+      animation-play-state: paused;
     }
     .home-page .field[data-reveal] {
       opacity: 1;
@@ -602,37 +607,28 @@
     @keyframes star-drift-5 { from { transform: translate(0,0);  } to { transform: translate(calc(64px * var(--drift-scale, 1)), calc(18px * var(--drift-scale, 1))); } }
     @keyframes star-drift-6 { from { transform: translate(0,0);  } to { transform: translate(calc(-26px * var(--drift-scale, 1)), calc(-52px * var(--drift-scale, 1))); } }
 
-    /* --- Focus pulse — real CSS blur in/out, the "depth of field"
-       breath. About half the items run this with --focus-max > 0; the
-       rest run it as a no-op (the keyframe is the same, but their
-       --focus-max defaults to 0). */
-    @keyframes focus-pulse {
-      0%, 100% { filter: blur(0); }
-      50%      { filter: blur(var(--focus-max, 0px)); }
-    }
-
     /* --- Composite animation per item ---
-       Three independent animations running simultaneously: drift
-       (transform), breath (opacity / glow), focus (blur). Drift varies
-       by nth-of-type position WITHIN each constellation; breath varies
-       by tier; focus reads --focus-max and --focus-duration from inline
-       per-item custom properties. Per-item --drift-delay desyncs the
-       drift cycles. */
+       Two compositor-friendly animations per word: drift (transform)
+       and breath (opacity / glow). Animated CSS blur was removed: it
+       repainted every frame and made scroll choppy even when the field
+       was off-screen. Depth-of-field is read through opacity breath and
+       hover-driven blur only. */
 
     .home-page .field.is-revealed .field__item .field__drift {
       animation-iteration-count: infinite;
       animation-timing-function: ease-in-out;
-      animation-direction: alternate, normal, normal;
+      animation-direction: alternate, normal;
+      will-change: transform;
     }
     /* Drift profile assignment via nth-of-type within each constellation.
        Gated on .is-revealed so animations don't start until the section
        is observed (avoids elapsed-time desync at page load). */
-    .home-page .field.is-revealed .constellation .field__item:nth-of-type(6n+1) .field__drift { animation-name: star-drift-1, var(--breath-name, star-breath-topic), focus-pulse; animation-duration: 27s, var(--breath-duration, 8.6s), var(--focus-duration, 11s); }
-    .home-page .field.is-revealed .constellation .field__item:nth-of-type(6n+2) .field__drift { animation-name: star-drift-2, var(--breath-name, star-breath-topic), focus-pulse; animation-duration: 33s, var(--breath-duration, 8.6s), var(--focus-duration, 13s); }
-    .home-page .field.is-revealed .constellation .field__item:nth-of-type(6n+3) .field__drift { animation-name: star-drift-3, var(--breath-name, star-breath-topic), focus-pulse; animation-duration: 22s, var(--breath-duration, 8.6s), var(--focus-duration, 16s); }
-    .home-page .field.is-revealed .constellation .field__item:nth-of-type(6n+4) .field__drift { animation-name: star-drift-4, var(--breath-name, star-breath-topic), focus-pulse; animation-duration: 31s, var(--breath-duration, 8.6s), var(--focus-duration, 12s); }
-    .home-page .field.is-revealed .constellation .field__item:nth-of-type(6n+5) .field__drift { animation-name: star-drift-5, var(--breath-name, star-breath-topic), focus-pulse; animation-duration: 38s, var(--breath-duration, 8.6s), var(--focus-duration, 15s); }
-    .home-page .field.is-revealed .constellation .field__item:nth-of-type(6n)   .field__drift { animation-name: star-drift-6, var(--breath-name, star-breath-topic), focus-pulse; animation-duration: 24s, var(--breath-duration, 8.6s), var(--focus-duration, 17s); }
+    .home-page .field.is-revealed .constellation .field__item:nth-of-type(6n+1) .field__drift { animation-name: star-drift-1, var(--breath-name, star-breath-topic); animation-duration: 27s, var(--breath-duration, 8.6s); }
+    .home-page .field.is-revealed .constellation .field__item:nth-of-type(6n+2) .field__drift { animation-name: star-drift-2, var(--breath-name, star-breath-topic); animation-duration: 33s, var(--breath-duration, 8.6s); }
+    .home-page .field.is-revealed .constellation .field__item:nth-of-type(6n+3) .field__drift { animation-name: star-drift-3, var(--breath-name, star-breath-topic); animation-duration: 22s, var(--breath-duration, 8.6s); }
+    .home-page .field.is-revealed .constellation .field__item:nth-of-type(6n+4) .field__drift { animation-name: star-drift-4, var(--breath-name, star-breath-topic); animation-duration: 31s, var(--breath-duration, 8.6s); }
+    .home-page .field.is-revealed .constellation .field__item:nth-of-type(6n+5) .field__drift { animation-name: star-drift-5, var(--breath-name, star-breath-topic); animation-duration: 38s, var(--breath-duration, 8.6s); }
+    .home-page .field.is-revealed .constellation .field__item:nth-of-type(6n)   .field__drift { animation-name: star-drift-6, var(--breath-name, star-breath-topic); animation-duration: 24s, var(--breath-duration, 8.6s); }
     /* Per-tier breath assignment via CSS custom property. Drift-scale
        dampens the drift keyframes for heavier visual elements:
        anchors are massive text and shouldn't appear to slide as far
@@ -645,10 +641,10 @@
     .home-page .field__item--question  { --breath-name: star-breath-topic;   --breath-duration: 9.4s; }
     .home-page .field__item--whisper   { --breath-name: star-breath-whisper; --breath-duration: 11s;  }
     .home-page .field__item--echo      { --breath-name: star-breath-echo;    --breath-duration: 13s;  }
-    /* Per-item delays — set inline via --drift-delay, --breath-delay,
-       --focus-delay so each item is at a different phase of each cycle. */
+    /* Per-item delays — set inline via --drift-delay and --breath-delay
+       so each item is at a different phase of each cycle. */
     .home-page .field.is-revealed .field__item .field__drift {
-      animation-delay: var(--drift-delay, 0s), var(--breath-delay, 0s), var(--focus-delay, 0s);
+      animation-delay: var(--drift-delay, 0s), var(--breath-delay, 0s);
     }
 
     /* --- Artifacts of thought ---
@@ -752,12 +748,13 @@
        as visual cadence. Suppressed during hover (the active
        constellation takes over). */
     .home-page .field__item {
-      transition: opacity 0.5s ease, filter 3.5s ease-in-out;
+      transition: opacity 0.5s ease;
     }
-    .home-page .field.is-attention-i  .field__item[data-constellation~="i"],
-    .home-page .field.is-attention-ii .field__item[data-constellation~="ii"],
-    .home-page .field.is-attention-iii .field__item[data-constellation~="iii"] {
-      filter: drop-shadow(0 0 7px rgba(232, 192, 138, 0.18));
+    .home-page .field.is-attention-i  .field__item[data-constellation~="i"]   .field__drift,
+    .home-page .field.is-attention-ii .field__item[data-constellation~="ii"]  .field__drift,
+    .home-page .field.is-attention-iii .field__item[data-constellation~="iii"] .field__drift {
+      text-shadow: 0 0 14px rgba(232, 192, 138, 0.22);
+      transition: text-shadow 3.5s ease-in-out;
     }
     /* Hover overrides attention — the user's intent wins. */
     .home-page .field.is-active .field__item {
@@ -1191,8 +1188,22 @@
        duplicates here are defensive so the homepage stays correct
        even if the global styles are revised later.
 
+       Sticky backdrop-filter blur is disabled on the homepage: it
+       repaints on every scroll frame and was a major source of choppy
+       scrolling while the constellation field was animating.
+
        Active state: burnt-orange text + underline, NO background.
        Hover state: faint neutral gray wash. */
+
+    .home-page .main-nav,
+    .home-page .main-nav.scrolled {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background-color: rgba(250, 245, 234, 0.96) !important;
+    }
+    .home-page .main-nav.scrolled {
+      background-color: rgba(250, 245, 234, 0.99) !important;
+    }
 
     .home-page .nav-links li a.active {
       background: none !important;
@@ -1559,7 +1570,30 @@
          .is-active plus a per-constellation class (.is-active-i etc.).
          Items can carry multiple constellation memberships via
          space-separated values (e.g. data-constellation="i ii"). */
+      /* Pause heavy CSS animations when sections leave the viewport. */
+      const welcomeSection = document.querySelector('.home-page .welcome');
+      const topicsSection = document.querySelector('.home-page .topics');
       const field = document.querySelector('.home-page .field');
+
+      if ('IntersectionObserver' in window) {
+        if (welcomeSection) {
+          const welcomeIO = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              welcomeSection.classList.toggle('is-anim-paused', !entry.isIntersecting);
+            });
+          }, { threshold: 0, rootMargin: '80px 0px' });
+          welcomeIO.observe(welcomeSection);
+        }
+        if (topicsSection && field) {
+          const topicsIO = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              field.classList.toggle('is-anim-paused', !entry.isIntersecting);
+            });
+          }, { threshold: 0, rootMargin: '120px 0px' });
+          topicsIO.observe(topicsSection);
+        }
+      }
+
       if (field) {
         const items = field.querySelectorAll('.field__item[data-constellation]');
         const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
@@ -1633,18 +1667,24 @@
       const mainNav = document.querySelector('.main-nav');
       const heroSection = document.querySelector('.welcome');
 
+      let navScrollTicking = false;
       function handleNavScroll() {
         if (heroSection && mainNav) {
           const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
           const scrollPosition = window.pageYOffset + 100;
-          if (scrollPosition > heroBottom) {
-            mainNav.classList.add('scrolled');
-          } else {
-            mainNav.classList.remove('scrolled');
-          }
+          mainNav.classList.toggle('scrolled', scrollPosition > heroBottom);
         }
       }
-      window.addEventListener('scroll', handleNavScroll);
+      window.addEventListener('scroll', function () {
+        if (!navScrollTicking) {
+          navScrollTicking = true;
+          requestAnimationFrame(function () {
+            handleNavScroll();
+            navScrollTicking = false;
+          });
+        }
+      }, { passive: true });
+      handleNavScroll();
 
       if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function () {
