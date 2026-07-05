@@ -281,7 +281,7 @@
       '<li>',
         '<a href="', escapeHTML(resolveSiteUrl('reference/index.html')), '">Traditional therapy profiles.</a>',
         ' When one name refers to a plant, a formulation, and a product at once,',
-        ' these profiles separate them again. Orientation, not recommendation.',
+        ' each entry separates them again. Orientation, not recommendation.',
       '</li>'
     ].join('');
     container.innerHTML = topicsHtml + profilesHtml;
