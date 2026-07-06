@@ -415,7 +415,7 @@ window.RVData = {
       topic: 'reading-the-evidence',
       cluster: 'claims-headlines-and-translation',
       summary: 'A worked example of how a useful nutrition metric becomes misleading once it gets asked to answer questions it was never designed to answer, told through the puzzle of why watermelon and other healthy foods score so high on the glycemic index.',
-      status: 'draft',
+      status: 'published',
       next: ['the-mango-question', 'how-i-evaluate-nutrition-claims']
     },
 
