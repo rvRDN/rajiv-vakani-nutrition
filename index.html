@@ -899,14 +899,20 @@
       color: var(--muted-soft);
       font-size: 0.95rem;
       margin: 0;
-      /* Inline links would become separate flex items and gap would
-         float the periods — keep mark + line as one flow. */
-      display: block;
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
     }
     .home-page .beat--signature .beat__mark {
+      flex-shrink: 0;
       display: inline-block;
       vertical-align: baseline;
-      margin-right: 20px;
+      margin-right: 0;
+      transform: translateY(-0.45em);
+    }
+    .home-page .beat--signature .beat__kicker-text {
+      flex: 1;
+      min-width: 0;
     }
 
     /* All inline links in the composition share one treatment: burnt
@@ -1023,6 +1029,7 @@
       }
       .home-page .beat--signature .beat__kicker {
         font-size: 0.88rem;
+        gap: 14px;
       }
       /* Mobile: three beats — tighter stack, light atmosphere restored.
          Desktop moonlight pools are simplified here; grain alone was too flat. */
@@ -1537,8 +1544,7 @@
         <article class="beat beat--signature" data-reveal>
           <p class="beat__kicker">
             <span class="beat__mark" aria-hidden="true"></span>
-            <a href="about.html">Rajiv Vakani</a>. Writing on nutrition from
-            New York. Since 2023. <a href="contact.html">Email</a>.
+            <span class="beat__kicker-text"><a href="about.html">Rajiv Vakani</a>. Writing on nutrition from New&nbsp;York. Since 2023. <a href="contact.html">Email</a>.</span>
           </p>
         </article>
 
