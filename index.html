@@ -70,6 +70,8 @@
     }
 
     body.home-page {
+      --field-fade: clamp(120px, 16vh, 176px);
+      --section-breathe: clamp(112px, 15vh, 176px);
       color: var(--ink);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -97,7 +99,7 @@
       display: block;
       position: relative;
       z-index: 1;
-      height: clamp(120px, 16vh, 176px);
+      height: var(--field-fade);
       margin: -2px 0 0;
       padding: 0;
       border: none;
@@ -130,7 +132,7 @@
 
     .home-page .welcome {
       padding-top: clamp(108px, 14vh, 160px);
-      padding-bottom: clamp(112px, 15vh, 176px);
+      padding-bottom: var(--section-breathe);
       background: linear-gradient(180deg, #faf5ea 0%, #f7eddc 100%);
       overflow: hidden;
     }
@@ -289,7 +291,7 @@
 
     .home-page .topics {
       --topics-cream: #f7eddc;
-      --topics-fade: clamp(56px, 7vh, 80px);
+      --topics-fade: var(--field-fade);
       padding-top: clamp(28px, 4vh, 44px);
       padding-bottom: calc(var(--topics-fade) + clamp(40px, 5vh, 56px));
       background-color: #15120e;
@@ -317,7 +319,7 @@
       overflow: hidden;
     }
 
-    /* Bottom fade — cream paper below dissolves out of the field. */
+    /* Bottom fade — mirrors top handoff length and warm stops. */
     .home-page .topics::after {
       content: '';
       position: absolute;
@@ -328,12 +330,15 @@
       pointer-events: none;
       z-index: 3;
       background: linear-gradient(0deg,
-        var(--topics-cream) 0%,
-        #ebe0cc 22%,
-        #d9c9ad 42%,
-        #b8a080 62%,
-        #6e5a45 82%,
-        transparent 100%);
+        #f7eddc 0%,
+        #f7eddc 20%,
+        #efe3d2 32%,
+        #dccbb8 44%,
+        #b8a088 56%,
+        #8a7260 68%,
+        #574638 80%,
+        #2a221c 91%,
+        #15120e 100%);
     }
 
     .home-page .topics .field::after {
@@ -389,10 +394,8 @@
       transition: none;
     }
 
-    /* No connection lines. Relationships between items and their
-       anchor are communicated through hover-driven depth: hovering any
-       item snaps its constellation sharp and bright while unrelated
-       items deepen their blur and dim further. Discovered, not drawn. */
+    /* No connection lines. Constellation grouping is read through the
+       wandering attention cycle: each cluster softly halos in turn. */
 
     /* --- Constellation DOM wrappers ---
        display: contents removes the wrapper from layout on desktop, so
@@ -415,6 +418,7 @@
       font-weight: 400;
       transform: translate(-50%, -50%);
       user-select: none;
+      cursor: default;
       transition: opacity 0.5s ease;
       z-index: 1;
     }
@@ -422,15 +426,6 @@
       display: inline-block;
       transition: color 0.45s ease,
                   letter-spacing 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
-    }
-    .home-page .field__item:hover,
-    .home-page .field__item:focus-visible {
-      outline: none;
-    }
-    .home-page .field__item:hover .field__drift,
-    .home-page .field__item:focus-visible .field__drift {
-      color: #f6c98a; /* hover accent in dark mode — warm bright amber */
-      letter-spacing: 0.014em;
     }
 
     /* --- Hierarchy + dark-mode colors ---
@@ -524,8 +519,7 @@
     }
     /* Echoes — atmospheric half-thoughts. Lowercase, italic, small,
        low opacity, often blurred. They create textural density without
-       competing with the main hierarchy. No data-constellation, so
-       they don't trigger or participate in hover state. */
+       competing with the main hierarchy. */
     .home-page .field__item--echo {
       font-family: 'Lora', Georgia, serif;
       font-style: italic;
@@ -537,50 +531,6 @@
     }
     .home-page .field__item--echo .field__drift {
       color: #6f6451;
-    }
-
-    /* --- Active-constellation reveal through depth-of-field.
-       Without lines, the constellation structure is read by HOW the
-       field reorganizes when you engage with it:
-         - Non-active items dim (opacity 0.18) AND get an added blur
-           layered on top of their existing focus-pulse — they recede
-           into deeper unfocused space.
-         - The active constellation's items stay at full opacity and
-           their focus-pulse is suppressed (filter: none) — they snap
-           sharp, as if the eye refocused on them.
-         - Echoes recede furthest. */
-    .home-page .field.is-active .field__item {
-      opacity: 0.18;
-    }
-    .home-page .field.is-active .field__item .field__drift {
-      filter: blur(1.4px);
-      transition: filter 0.55s ease;
-    }
-    .home-page .field.is-active-i  .field__item[data-constellation~="i"],
-    .home-page .field.is-active-ii .field__item[data-constellation~="ii"],
-    .home-page .field.is-active-iii .field__item[data-constellation~="iii"] {
-      opacity: 1;
-    }
-    .home-page .field.is-active-i  .field__item[data-constellation~="i"]   .field__drift,
-    .home-page .field.is-active-ii .field__item[data-constellation~="ii"]  .field__drift,
-    .home-page .field.is-active-iii .field__item[data-constellation~="iii"] .field__drift {
-      filter: none;
-    }
-    /* Echoes always recede further when anything is active. */
-    .home-page .field.is-active .field__item--echo {
-      opacity: 0.06;
-    }
-    .home-page .field.is-active .field__item--echo .field__drift {
-      filter: blur(2.6px);
-    }
-    /* Direct hover always snaps the item itself sharp and bright. */
-    .home-page .field__item:hover,
-    .home-page .field__item:focus-visible {
-      opacity: 1 !important;
-    }
-    .home-page .field__item:hover .field__drift,
-    .home-page .field__item:focus-visible .field__drift {
-      filter: none !important;
     }
 
     /* --- Per-tier opacity breath (legibility pass) ---
@@ -632,7 +582,7 @@
        and breath (opacity / glow). Animated CSS blur was removed: it
        repainted every frame and made scroll choppy even when the field
        was off-screen. Depth-of-field is read through opacity breath and
-       hover-driven blur only. */
+       the wandering attention cycle only. */
 
     .home-page .field.is-revealed .field__item .field__drift {
       animation-iteration-count: infinite;
@@ -696,8 +646,8 @@
     .home-page .artifact-highlight {
       background-image: linear-gradient(180deg,
         transparent 22%,
-        rgba(232, 192, 138, 0.20) 22%,
-        rgba(232, 192, 138, 0.22) 86%,
+        rgba(232, 192, 138, 0.14) 22%,
+        rgba(232, 192, 138, 0.16) 86%,
         transparent 86%);
       padding: 0 0.18em;
       margin: 0 -0.08em;
@@ -750,23 +700,12 @@
       margin-left: 0.45em;
     }
 
-    /* When a constellation is dimmed by hover, drop the artifacts back
-       to match — they're part of those items' world, not floating on
-       their own. (The .field__drift filter rule already covers blur;
-       this handles the margin annotations that sit positioned within
-       .field__drift but don't inherit its filter via opacity tied to
-       parent dimming.) */
-    .home-page .field.is-active .field__item .artifact-margin {
-      opacity: 0.4;
-    }
-
     /* --- Wandering attention ---
        A subtle 27-second cycle (set in JS) softly illuminates each
        constellation in turn via a drop-shadow halo on its items. The
        eye perceives related items glowing together at rest, then the
        warmth moves on. This is "revisiting ideas over time" expressed
-       as visual cadence. Suppressed during hover (the active
-       constellation takes over). */
+       as visual cadence. */
     .home-page .field__item {
       transition: opacity 0.5s ease;
     }
@@ -775,10 +714,6 @@
     .home-page .field.is-attention-iii .field__item[data-constellation~="iii"] .field__drift {
       text-shadow: 0 0 14px rgba(232, 192, 138, 0.22);
       transition: text-shadow 3.5s ease-in-out;
-    }
-    /* Hover overrides attention — the user's intent wins. */
-    .home-page .field.is-active .field__item {
-      filter: none;
     }
 
     /* --- Staggered entry --- */
@@ -805,7 +740,7 @@
        the work lives, who. The body of each beat keeps its own form. */
 
     .home-page .composition {
-      padding-top: clamp(180px, 24vh, 280px);
+      padding-top: var(--section-breathe);
       padding-bottom: clamp(120px, 16vh, 200px);
       background: linear-gradient(180deg, #f7eddc 0%, var(--paper) 22%, var(--paper) 100%);
     }
@@ -1023,6 +958,10 @@
     /* --------- Mobile --------- */
 
     @media (max-width: 720px) {
+      body.home-page {
+        --field-fade: clamp(104px, 14vh, 136px);
+        --section-breathe: clamp(96px, 13vh, 140px);
+      }
       .home-page .section {
         padding-left: 24px;
         padding-right: 24px;
@@ -1038,13 +977,8 @@
       }
       .home-page .welcome {
         padding-top: clamp(100px, 13vh, 140px);
-        padding-bottom: clamp(96px, 13vh, 140px);
-      }
-      .home-page__handoff {
-        height: clamp(104px, 14vh, 136px);
       }
       .home-page .composition {
-        padding-top: 96px;
         padding-bottom: 80px;
       }
       .home-page .beat {
@@ -1186,12 +1120,7 @@
         padding: 0 8%;
         max-width: 100%;
       }
-      /* Anchor stays still on mobile — no hover flash or breath pulse. */
-      .home-page .field__item--anchor:hover .field__drift,
-      .home-page .field__item--anchor:focus-visible .field__drift {
-        color: #f1e2c4 !important;
-        letter-spacing: -0.02em !important;
-      }
+      /* Anchor stays still on mobile — no breath pulse. */
       .home-page .constellation__orbit {
         display: block;
         order: 2;
@@ -1202,17 +1131,22 @@
       }
       .home-page .constellation__orbit-track {
         position: relative;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
         min-height: 2.35em;
+        max-width: 100%;
         width: 100%;
+        --shuttle-travel: clamp(240px, 72vw, 360px);
       }
-      .home-page .constellation__orbit-line {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        margin: 0;
-        padding: 0 2%;
+      .home-page .constellation__orbit-text {
+        display: inline-block;
+        flex-shrink: 0;
+        max-width: 92%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-family: 'Lora', Georgia, serif;
         font-style: italic;
         font-weight: 400;
@@ -1220,29 +1154,25 @@
         line-height: 1.45;
         color: rgba(246, 201, 138, 0.88);
         letter-spacing: 0.012em;
-        opacity: 0;
-        transform: translateY(0.45em);
-        filter: blur(3px);
+        text-shadow: 0 0 16px rgba(246, 201, 138, 0.18);
+        transform: translateX(var(--orbit-x, 0));
+        opacity: var(--orbit-o, 1);
         transition:
-          opacity 1.05s cubic-bezier(0.33, 1, 0.38, 1),
-          transform 1.05s cubic-bezier(0.33, 1, 0.38, 1),
-          filter 1.05s cubic-bezier(0.33, 1, 0.38, 1);
-        will-change: opacity, transform, filter;
-        pointer-events: none;
+          transform var(--orbit-t-dur, 900ms) var(--orbit-ease, cubic-bezier(0.14, 0.92, 0.18, 1)),
+          opacity calc(var(--orbit-t-dur, 900ms) * 0.6) var(--orbit-ease, cubic-bezier(0.14, 0.92, 0.18, 1));
+        will-change: transform, opacity;
       }
-      .home-page .constellation__orbit-line.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-        animation: orbit-line-glow 4.5s ease-in-out infinite;
+      .home-page .constellation__orbit-text.is-shuttle-off-right {
+        --orbit-x: var(--shuttle-travel);
+        --orbit-o: 0.5;
       }
-      @keyframes orbit-line-glow {
-        0%, 100% {
-          text-shadow: 0 0 16px rgba(246, 201, 138, 0.18);
-        }
-        50% {
-          text-shadow: 0 0 30px rgba(246, 201, 138, 0.38);
-        }
+      .home-page .constellation__orbit-text.is-shuttle-off-left {
+        --orbit-x: calc(var(--shuttle-travel) * -1);
+        --orbit-o: 0.5;
+      }
+      .home-page .constellation__orbit-text.is-shuttle-center {
+        --orbit-x: 0;
+        --orbit-o: 1;
       }
       .home-page .field:not(.is-revealed) .constellation__orbit {
         opacity: 0;
@@ -1256,9 +1186,6 @@
         animation: none !important;
         filter: none !important;
         transform: none !important;
-      }
-      .home-page .field.is-active .field__item {
-        opacity: 1;
       }
     }
 
@@ -1371,14 +1298,11 @@
         transition: none;
         filter: none;
       }
-      .home-page .constellation__orbit-line {
-        filter: none !important;
+      .home-page .constellation__orbit-text {
+        animation: none !important;
+        transition: none !important;
         transform: none !important;
-        transition: opacity 0.4s ease;
-      }
-      .home-page .constellation__orbit-line.is-visible {
-        animation: none;
-        text-shadow: none;
+        opacity: 1 !important;
       }
     }
   </style>
@@ -1468,8 +1392,7 @@
 
         <!-- ECHO layer · 12 notebook fragments / observations.
              Lowercase italic via .field__item--echo. No data-constellation
-             so they don't activate hover; they recede further when any
-             constellation becomes active. Several positions extend past
+             attribute — peripheral texture only. Several positions extend past
              the viewport (left: -2%, 104%; top: 100%) so they crop
              softly at the edges — the field reads as continuing beyond
              what's visible. Distribution is intentionally spread across
@@ -1658,11 +1581,7 @@
         revealTargets.forEach(el => io.observe(el));
       }
 
-      /* Constellation hover state — Questions I keep returning to.
-         When a field item is hovered/focused, the .field receives
-         .is-active plus a per-constellation class (.is-active-i etc.).
-         Items can carry multiple constellation memberships via
-         space-separated values (e.g. data-constellation="i ii"). */
+      /* Constellation field — mobile orbit phrases; desktop wandering attention. */
       /* Pause heavy CSS animations when sections leave the viewport. */
       const welcomeSection = document.querySelector('.home-page .welcome');
       const topicsSection = document.querySelector('.home-page .topics');
@@ -1688,14 +1607,24 @@
       }
 
       if (field) {
-        const items = field.querySelectorAll('.field__item[data-constellation]');
         const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
-        const ORBIT_HOLD = 4500;
+        const SLIDE_IN = 1200;
+        const HOLD = 5000;
+        const SLIDE_OUT = 950;
+        const EASE_LAND = 'cubic-bezier(0.14, 0.92, 0.18, 1)';
+        const EASE_DEPART = 'cubic-bezier(0.58, 0.02, 0.88, 0.38)';
+        const CYCLE_GAP = 180;
         let orbitTimers = [];
 
         const clearMobileOrbits = () => {
-          orbitTimers.forEach(t => clearInterval(t));
+          orbitTimers.forEach(t => clearTimeout(t));
           orbitTimers = [];
+        };
+
+        const scheduleOrbit = (fn, ms) => {
+          const id = setTimeout(fn, ms);
+          orbitTimers.push(id);
+          return id;
         };
 
         const ensureOrbitTrack = (el) => {
@@ -1704,15 +1633,73 @@
             el.textContent = '';
             track = document.createElement('span');
             track.className = 'constellation__orbit-track';
-            const lineA = document.createElement('span');
-            lineA.className = 'constellation__orbit-line is-visible';
-            const lineB = document.createElement('span');
-            lineB.className = 'constellation__orbit-line';
-            lineB.setAttribute('aria-hidden', 'true');
-            track.append(lineA, lineB);
+            const text = document.createElement('span');
+            text.className = 'constellation__orbit-text is-shuttle-center';
+            track.appendChild(text);
             el.appendChild(track);
+          } else {
+            const cursor = track.querySelector('.constellation__orbit-cursor');
+            if (cursor) cursor.remove();
           }
-          return track.querySelectorAll('.constellation__orbit-line');
+          return track.querySelector('.constellation__orbit-text');
+        };
+
+        const setShuttlePos = (textEl, pos, animate, durationMs, easeMode) => {
+          textEl.classList.remove('is-shuttle-off-right', 'is-shuttle-off-left', 'is-shuttle-center');
+          if (pos === 'right') textEl.classList.add('is-shuttle-off-right');
+          else if (pos === 'left') textEl.classList.add('is-shuttle-off-left');
+          else textEl.classList.add('is-shuttle-center');
+
+          if (animate) {
+            textEl.style.setProperty('--orbit-t-dur', durationMs + 'ms');
+            textEl.style.setProperty(
+              '--orbit-ease',
+              easeMode === 'depart' ? EASE_DEPART : EASE_LAND
+            );
+          } else {
+            textEl.style.setProperty('--orbit-t-dur', '0ms');
+            void textEl.offsetWidth;
+          }
+        };
+
+        const enterFromRight = (slotIndex, phraseIdx) => {
+          const isMiddle = slotIndex === 1;
+          return isMiddle ? (phraseIdx % 2 === 1) : (phraseIdx % 2 === 0);
+        };
+
+        const runSyncedShuttle = (slots) => {
+          const phraseCount = Math.min(...slots.map(s => s.phrases.length));
+          let phraseIdx = 0;
+
+          const runCycle = () => {
+            slots.forEach((slot, i) => {
+              const phrase = slot.phrases[phraseIdx];
+              const fromRight = enterFromRight(i, phraseIdx);
+              slot.text.textContent = phrase;
+              slot.orbitEl.setAttribute('aria-label', phrase);
+              setShuttlePos(slot.text, fromRight ? 'right' : 'left', false, 0);
+            });
+
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                slots.forEach(slot => setShuttlePos(slot.text, 'center', true, SLIDE_IN, 'land'));
+
+                scheduleOrbit(() => {
+                  slots.forEach((slot, i) => {
+                    const fromRight = enterFromRight(i, phraseIdx);
+                    setShuttlePos(slot.text, fromRight ? 'left' : 'right', true, SLIDE_OUT, 'depart');
+                  });
+
+                  scheduleOrbit(() => {
+                    phraseIdx = (phraseIdx + 1) % phraseCount;
+                    scheduleOrbit(runCycle, CYCLE_GAP);
+                  }, SLIDE_OUT);
+                }, HOLD);
+              });
+            });
+          };
+
+          runCycle();
         };
 
         const initMobileOrbits = () => {
@@ -1728,42 +1715,38 @@
             return;
           }
 
-          groups.forEach(group => {
-            const el = group.querySelector('.constellation__orbit');
-            if (!el) return;
+          const slots = [];
+
+          groups.forEach((group, index) => {
+            const orbitEl = group.querySelector('.constellation__orbit');
+            if (!orbitEl) return;
             const phrases = (group.dataset.mobileOrbit || '')
               .split('|')
               .map(s => s.trim())
               .filter(Boolean);
             if (!phrases.length) return;
 
-            const lines = ensureOrbitTrack(el);
-            let activeLine = 0;
-            let phraseIdx = 0;
+            const text = ensureOrbitTrack(orbitEl);
 
-            lines[0].textContent = phrases[0];
-            lines[0].classList.add('is-visible');
-            lines[0].removeAttribute('aria-hidden');
-            lines[1].textContent = '';
-            lines[1].classList.remove('is-visible');
-            lines[1].setAttribute('aria-hidden', 'true');
+            if (reduceMotion || phrases.length < 2) {
+              text.textContent = phrases[0];
+              text.classList.remove('is-shuttle-off-right', 'is-shuttle-off-left');
+              text.classList.add('is-shuttle-center');
+              orbitEl.setAttribute('aria-label', phrases[0]);
+              return;
+            }
 
-            if (reduceMotion || phrases.length < 2) return;
-
-            const crossfade = () => {
-              const nextLine = activeLine === 0 ? 1 : 0;
-              const currLine = activeLine;
-              phraseIdx = (phraseIdx + 1) % phrases.length;
-              lines[nextLine].textContent = phrases[phraseIdx];
-              lines[currLine].classList.remove('is-visible');
-              lines[currLine].setAttribute('aria-hidden', 'true');
-              lines[nextLine].classList.add('is-visible');
-              lines[nextLine].removeAttribute('aria-hidden');
-              activeLine = nextLine;
-            };
-
-            orbitTimers.push(setInterval(crossfade, ORBIT_HOLD));
+            slots.push({ orbitEl, text, phrases, index });
           });
+
+          if (slots.length >= 2) {
+            runSyncedShuttle(slots);
+          } else if (slots.length === 1) {
+            const { orbitEl, text, phrases } = slots[0];
+            text.textContent = phrases[0];
+            setShuttlePos(text, 'center', false, 0);
+            orbitEl.setAttribute('aria-label', phrases[0]);
+          }
         };
 
         const startOrbitsWhenReady = () => {
@@ -1787,28 +1770,6 @@
           if (isMobile()) initMobileOrbits();
         });
         fieldClassMo.observe(field, { attributes: true, attributeFilter: ['class'] });
-
-        const activate = (item) => {
-          if (isMobile()) return;
-          const ids = (item.dataset.constellation || '').split(/\s+/).filter(Boolean);
-          if (!ids.length) return;
-          field.classList.add('is-active');
-          ids.forEach(id => field.classList.add('is-active-' + id));
-        };
-
-        const deactivate = (item) => {
-          if (isMobile()) return;
-          const ids = (item.dataset.constellation || '').split(/\s+/).filter(Boolean);
-          field.classList.remove('is-active');
-          ids.forEach(id => field.classList.remove('is-active-' + id));
-        };
-
-        items.forEach(item => {
-          item.addEventListener('mouseenter', () => activate(item));
-          item.addEventListener('mouseleave', () => deactivate(item));
-          item.addEventListener('focus',      () => activate(item));
-          item.addEventListener('blur',       () => deactivate(item));
-        });
 
         /* Wandering attention.
            A slow rotation through the three constellations: every ~9s
