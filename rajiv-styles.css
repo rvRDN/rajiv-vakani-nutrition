@@ -8224,6 +8224,13 @@ h1.hero-heading {
 
 /* === Social Icons (nav menu + footer) ===
    Monochrome glyphs, no circles. Site-wide editorial treatment. */
+.social-icon {
+  display: block;
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
+}
+
 .social-icons,
 .footer-social {
   display: inline-flex;
@@ -8307,6 +8314,28 @@ h1.hero-heading {
   .social-icons a,
   .footer-social a {
     font-size: 1rem;
+  }
+
+  .social-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.form-spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: form-spinner-spin 0.75s linear infinite;
+  vertical-align: -0.125em;
+}
+
+@keyframes form-spinner-spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
