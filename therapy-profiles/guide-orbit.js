@@ -354,20 +354,26 @@
 
     time += 0.016;
     var scrollP = reduced ? 1 : progress();
-    var targetP = scrollP;
 
-    if (!reduced && scrollP < 0.98 && scrollP > smoothP + 0.18) {
-      targetP = smoothP + 0.18;
+    if (!reduced && scrollP >= 0.98) {
+      smoothP = 1;
+    } else {
+      var targetP = scrollP;
+
+      if (!reduced && scrollP < 0.98 && scrollP > smoothP + 0.18) {
+        targetP = smoothP + 0.18;
+      }
+
+      var delta = Math.abs(targetP - smoothP);
+      var blend = 0.36;
+      if (delta > 0.06) blend = 0.44;
+      if (targetP >= 1 && smoothP < 0.94) blend = 0.62;
+      else if (targetP > 0.55) blend = 0.48;
+
+      smoothP += (targetP - smoothP) * blend;
+      if (smoothP > 0.992) smoothP = 1;
     }
 
-    var delta = Math.abs(targetP - smoothP);
-    var blend = 0.36;
-    if (delta > 0.06) blend = 0.44;
-    if (targetP >= 1 && smoothP < 0.94) blend = 0.62;
-    else if (targetP > 0.55) blend = 0.48;
-
-    smoothP += (targetP - smoothP) * blend;
-    if (smoothP > 0.992) smoothP = 1;
     draw(smoothP);
     rafId = requestAnimationFrame(frame);
   }
@@ -385,6 +391,10 @@
     if (rafId !== null) {
       cancelAnimationFrame(rafId);
       rafId = null;
+    }
+    if (!reduced && progress() >= 0.95) {
+      smoothP = 1;
+      draw(1);
     }
   }
 
