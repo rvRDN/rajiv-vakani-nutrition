@@ -28,7 +28,8 @@
      lede:    string  -- short voiced summary used in listings
      summary: string  -- longer voiced description
      type:    "Essay" | "Research Review" | "Observation" | "Guide"
-     date:    "YYYY-MM-DD"
+     date:    "YYYY-MM-DD"  — publication date (shown when published).
+                         Drafts auto-display the current month in listings.
      topic:   string  -- must match a topics[].id
      cluster: string  -- must match a clusters[].id within that topic
      status:  "published" | "draft"
@@ -44,7 +45,7 @@ window.RVData = {
     version: 2,
     description: 'Single source of truth for the Knowledge Library. Replaces the previous library.json + articles.json + inline duplicates in library.js. Loaded by every Library-system page via <script defer src="insights/data.js">.',
     schemaVersion: '2.0.0',
-    lastUpdated: '2026-06-29'
+    lastUpdated: '2026-07-06'
   },
 
   /* ----------------------------------------------------------

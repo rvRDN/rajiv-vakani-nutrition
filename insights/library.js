@@ -26,6 +26,9 @@
    To add an article:
      Add an entry to `window.RVData.articles` in insights/data.js
      and create the article HTML by copying insights/_template.html.
+     While drafting: keep date as the intended publication date; drafts
+     auto-show the current month in listings. On publish: status published,
+     keep date.
      The topic page picks it up automatically.
 
    Load order:
@@ -56,6 +59,47 @@
     var m = parseInt(parts[1], 10) - 1;
     if (m < 0 || m > 11) return iso;
     return months[m] + ' ' + parseInt(parts[2], 10) + ', ' + parts[0];
+  }
+
+  function formatMonthYear(iso) {
+    if (!iso) return '';
+    var parts = String(iso).split('-');
+    if (parts.length < 2) return iso;
+    var months = ['January', 'February', 'March', 'April', 'May', 'June',
+                  'July', 'August', 'September', 'October', 'November', 'December'];
+    var m = parseInt(parts[1], 10) - 1;
+    if (m < 0 || m > 11) return iso;
+    return months[m] + ' ' + parts[0];
+  }
+
+  /* Drafts roll to the first of the current month for display and sort. */
+  function draftMonthAnchor() {
+    var now = new Date();
+    var m = now.getMonth() + 1;
+    var ms = m < 10 ? '0' + m : String(m);
+    return now.getFullYear() + '-' + ms + '-01';
+  }
+
+  /* Publication date when live; current month anchor while draft. */
+  function articleListingDate(article) {
+    if (!article) return '';
+    if (article.status === 'draft') return draftMonthAnchor();
+    return article.date || '';
+  }
+
+  function formatArticleDate(article) {
+    if (!article) return '';
+    if (article.status === 'draft') return formatMonthYear(articleListingDate(article));
+    return formatDate(article.date || '');
+  }
+
+  function renderPostMeta(article) {
+    if (!article) return;
+    var meta = document.querySelector('.post-meta');
+    if (!meta) return;
+    var spans = meta.querySelectorAll('span');
+    if (spans.length < 2) return;
+    spans[1].textContent = formatArticleDate(article);
   }
 
   function setState(el, state, message) {
@@ -189,8 +233,8 @@
       var aPub = a.status === 'published' ? 0 : 1;
       var bPub = b.status === 'published' ? 0 : 1;
       if (aPub !== bPub) return aPub - bPub;
-      var ad = a.date || '';
-      var bd = b.date || '';
+      var ad = articleListingDate(a);
+      var bd = articleListingDate(b);
       if (ad === bd) return 0;
       return ad < bd ? 1 : -1;
     }
@@ -420,7 +464,7 @@
               '<p class="post-next__why">', escapeHTML(a.lede || ''), '</p>',
               '<p class="post-next__meta">',
                 '<span>', escapeHTML(a.type || ''), '</span>',
-                '<span>', escapeHTML(formatDate(a.date)), '</span>',
+                '<span>', escapeHTML(formatArticleDate(a)), '</span>',
                 draftFlag,
               '</p>',
             '</a>',
@@ -581,6 +625,10 @@
     if (articleSlug && nextEl) {
       renderArticleNext(nextEl, articleSlug, articles, { includeDrafts: includeDrafts });
     }
+
+    if (articleSlug) {
+      renderPostMeta(getArticleBySlug(articles, articleSlug));
+    }
   }
 
   if (document.readyState === 'loading') {
@@ -606,6 +654,8 @@
     renderLibraryMap:        renderLibraryMap,
     renderLibraryArchive:    renderLibraryArchive,
     formatDate:              formatDate,
+    formatArticleDate:       formatArticleDate,
+    articleListingDate:      articleListingDate,
     resolveSiteUrl:          resolveSiteUrl
   };
 })();
