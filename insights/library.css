@@ -155,7 +155,7 @@ body.error-page {
 .post-page     .post-colophon,
 .library-index .library-colophon {
   padding-top: clamp(64px, 9vh, 110px);
-  padding-bottom: clamp(48px, 6vh, 72px);
+  padding-bottom: clamp(20px, 3vh, 28px);
   border-top: 1px solid var(--rule);
   text-align: center;
 }
@@ -267,7 +267,36 @@ body.error-page {
   transform: translateY(-1px) !important;
 }
 
-/* Colophon + .site-footer share the closing beat on library pages. */
+/* Colophon + .site-footer share one closing beat on library pages. */
+.library-page  .colophon-break,
+.topic-page    .colophon-break,
+.post-page     .colophon-break,
+.library-index .colophon-break {
+  display: none;
+}
+@media (max-width: 768px) {
+  .library-page  .colophon-break,
+  .topic-page    .colophon-break,
+  .post-page     .colophon-break,
+  .library-index .colophon-break {
+    display: block;
+  }
+}
+
+.library-page  .site-footer,
+.topic-page    .site-footer,
+.post-page     .site-footer,
+.library-index .site-footer {
+  border-top: none;
+  padding-top: 0;
+  padding-bottom: clamp(28px, 4vh, 40px);
+}
+.library-page  .site-footer .footer-social,
+.topic-page    .site-footer .footer-social,
+.post-page     .site-footer .footer-social,
+.library-index .site-footer .footer-social {
+  display: none;
+}
 
 
 /* ============================================================
