@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="home-page">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -69,21 +69,49 @@
       --rule: rgba(26, 26, 26, 0.10);
     }
 
-    html.home-page, body.home-page {
-      background: var(--base);
-    }
-
     body.home-page {
       color: var(--ink);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
+    html.home-page, body.home-page {
+      background: #f7eddc;
+    }
+
     /* Defeat any inherited section styling from rajiv-styles.css */
     .home-page main,
     .home-page main > section,
-    .home-page main > header {
-      background: transparent;
+    .home-page main > header,
+    .home-page main > .home-page__hero-field {
+      background-color: transparent;
+    }
+
+    /* Hero + constellation: one wrapper, one handoff gradient.
+       Welcome stays cream; handoff owns cream → ink; topics stays dark.
+       No fade split across abutting section backgrounds. */
+    .home-page__hero-field {
+      background-color: #15120e;
+    }
+    .home-page__handoff {
+      display: block;
+      position: relative;
+      z-index: 1;
+      height: clamp(120px, 16vh, 176px);
+      margin: -2px 0 0;
+      padding: 0;
+      border: none;
+      background-color: #15120e;
+      background-image: linear-gradient(180deg,
+        #f7eddc 0%,
+        #f7eddc 20%,
+        #efe3d2 32%,
+        #dccbb8 44%,
+        #b8a088 56%,
+        #8a7260 68%,
+        #574638 80%,
+        #2a221c 91%,
+        #15120e 100%);
     }
 
     /* --------- Shared section layout (left-anchored asymmetric column) --------- */
@@ -101,11 +129,10 @@
     /* --------- 1. WELCOME — animated warm gradient field --------- */
 
     .home-page .welcome {
-      padding-top: clamp(100px, 13vh, 152px);
-      padding-bottom: clamp(96px, 13vh, 156px);
+      padding-top: clamp(108px, 14vh, 160px);
+      padding-bottom: clamp(112px, 15vh, 176px);
       background: linear-gradient(180deg, #faf5ea 0%, #f7eddc 100%);
       overflow: hidden;
-      isolation: isolate;
     }
     /* Two drifting "orbs" provide the ambient gradient. They sit
        behind the content and move slowly. This is the page's
@@ -130,10 +157,7 @@
       animation: orbDrift1 32s ease-in-out infinite alternate;
     }
     .home-page .welcome::after {
-      width: 820px; height: 820px;
-      bottom: -280px; left: -240px;
-      background: radial-gradient(circle, rgba(217, 168, 122, 0.55) 0%, rgba(217, 168, 122, 0) 70%);
-      animation: orbDrift2 38s ease-in-out infinite alternate;
+      display: none; /* bottom orb + overflow:hidden clips into a bright seam */
     }
     @keyframes orbDrift1 {
       from { transform: translate(0, 0) scale(1); }
@@ -264,9 +288,9 @@
        creating textural depth without competing for attention. */
 
     .home-page .topics {
-      --topics-cream: #f7eddc; /* matches welcome bottom + composition top */
+      --topics-cream: #f7eddc;
       --topics-fade: clamp(56px, 7vh, 80px);
-      padding-top: calc(var(--topics-fade) + clamp(16px, 2vh, 28px));
+      padding-top: clamp(28px, 4vh, 44px);
       padding-bottom: calc(var(--topics-fade) + clamp(40px, 5vh, 56px));
       background-color: #15120e;
       background-image:
@@ -290,34 +314,19 @@
       background-size: auto, auto, auto, auto, 240px 240px;
       background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
       border: none;
-      position: relative;
       overflow: hidden;
-      isolation: isolate;
     }
 
-    /* Short cream ↔ dark fades at the seams — warm steps, not gray mud. */
-    .home-page .topics::before,
+    /* Bottom fade — cream paper below dissolves out of the field. */
     .home-page .topics::after {
       content: '';
       position: absolute;
       left: 0;
       right: 0;
+      bottom: 0;
       height: var(--topics-fade);
       pointer-events: none;
       z-index: 3;
-    }
-    .home-page .topics::before {
-      top: 0;
-      background: linear-gradient(180deg,
-        var(--topics-cream) 0%,
-        #ebe0cc 22%,
-        #d9c9ad 42%,
-        #b8a080 62%,
-        #6e5a45 82%,
-        transparent 100%);
-    }
-    .home-page .topics::after {
-      bottom: 0;
       background: linear-gradient(0deg,
         var(--topics-cream) 0%,
         #ebe0cc 22%,
@@ -391,6 +400,9 @@
        .field. On mobile, the wrappers become block-level stanzas. */
     .home-page .constellation {
       display: contents;
+    }
+    .home-page .constellation__orbit {
+      display: none;
     }
 
     /* --- Field items: absolute positioned via inline left/top. */
@@ -1024,6 +1036,13 @@
       .home-page .name {
         margin-bottom: 28px;
       }
+      .home-page .welcome {
+        padding-top: clamp(100px, 13vh, 140px);
+        padding-bottom: clamp(96px, 13vh, 140px);
+      }
+      .home-page__handoff {
+        height: clamp(104px, 14vh, 136px);
+      }
       .home-page .composition {
         padding-top: 96px;
         padding-bottom: 80px;
@@ -1071,23 +1090,31 @@
       .home-page .beat--signature .beat__kicker {
         font-size: 0.88rem;
       }
-      /* Mobile: the Night Sky carries through — same dark space, same
-         luminous text, same star-breath. The desktop full-bleed
-         constellation field unfolds into three vertical stanzas, each
-         with its own faint amber thread connecting the anchor to its
-         orbitals. */
+      /* Mobile: three beats — tighter stack, light atmosphere restored.
+         Desktop moonlight pools are simplified here; grain alone was too flat. */
       .home-page .topics {
-        --topics-fade: 48px;
-        padding-top: calc(var(--topics-fade) + 20px);
-        padding-bottom: calc(var(--topics-fade) + 24px);
+        padding-top: 22px;
+        padding-bottom: calc(var(--topics-fade) + 14px);
         background-image:
-          url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' stitchTiles='stitch' seed='4'/><feColorMatrix values='0 0 0 0 0.91  0 0 0 0 0.79  0 0 0 0 0.55  0 0 0 0.032 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+          radial-gradient(ellipse 130% 95% at 50% 48%,
+            transparent 0%,
+            transparent 42%,
+            rgba(0, 0, 0, 0.30) 100%),
+          radial-gradient(ellipse 100% 70% at 22% 22%,
+            rgba(245, 200, 140, 0.07) 0%,
+            transparent 68%),
+          radial-gradient(ellipse 90% 65% at 78% 68%,
+            rgba(232, 192, 138, 0.06) 0%,
+            transparent 68%),
+          url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' stitchTiles='stitch' seed='4'/><feColorMatrix values='0 0 0 0 0.91  0 0 0 0 0.79  0 0 0 0 0.55  0 0 0 0.038 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+        background-size: auto, auto, auto, 240px 240px;
+        background-repeat: no-repeat, no-repeat, no-repeat, repeat;
       }
       .home-page .topics .section__inner {
         max-width: 100%;
       }
       .home-page .topics__label {
-        margin-bottom: 36px;
+        margin-bottom: 24px;
       }
       .home-page .field {
         position: relative;
@@ -1095,38 +1122,44 @@
         max-width: 100%;
         margin-left: 0;
         height: auto;
-        padding: 6px 0 8px 0;
+        padding: 0;
       }
-      .home-page .constellation {
-        display: block;
+      .home-page .constellation--echoes {
+        display: none;
+      }
+      .home-page .constellation:not(.constellation--echoes) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         position: relative;
         text-align: center;
-        padding: 30px 0 48px 0;
+        min-height: 0;
+        padding: 32px 0 38px;
       }
-      .home-page .constellation + .constellation {
-        margin-top: 10px;
-      }
-      /* Per-stanza amber thread — warm and luminous, like the desktop
-         constellation lines. */
-      .home-page .constellation::after {
+      .home-page .constellation:not(.constellation--echoes)::after {
         content: '';
         position: absolute;
-        left: 50%;
-        top: 40%;
-        width: 1px;
-        height: 48%;
-        background: linear-gradient(180deg,
+        left: 12%;
+        right: 12%;
+        bottom: 0;
+        height: 1px;
+        background: linear-gradient(90deg,
           transparent 0%,
-          rgba(232, 192, 138, 0.5) 14%,
-          rgba(232, 192, 138, 0.2) 100%);
-        filter: drop-shadow(0 0 4px rgba(232, 192, 138, 0.25));
+          rgba(232, 192, 138, 0.22) 50%,
+          transparent 100%);
         pointer-events: none;
+      }
+      .home-page .constellation--iii::after {
+        display: none;
+      }
+      .home-page .constellation .field__item:not(.field__item--anchor) {
+        display: none !important;
       }
       .home-page .field__item {
         position: static;
         transform: none;
-        display: inline-block;
-        margin: 0.32em 0.55em;
+        margin: 0;
         white-space: normal;
         max-width: none;
         text-align: center;
@@ -1137,52 +1170,92 @@
         animation: none;
         transform: none;
       }
-      .home-page .field:not(.is-revealed) .field__item {
+      .home-page .field:not(.is-revealed) .field__item--anchor {
         opacity: 0;
       }
-      .home-page .field.is-revealed .field__item {
+      .home-page .field.is-revealed .field__item--anchor {
         opacity: 1;
+        transition: opacity 0.9s ease;
       }
-      /* Anchor as block-level stanza heading. */
       .home-page .field__item--anchor {
         display: block;
-        font-size: clamp(1.8rem, 6.8vw, 2.3rem);
-        line-height: 1.2;
-        margin: 0 auto 0.7em;
-        padding: 0 6%;
+        order: 1;
+        font-size: clamp(1.75rem, 7.2vw, 2.35rem);
+        line-height: 1.18;
+        margin: 0 auto;
+        padding: 0 8%;
         max-width: 100%;
       }
-      .home-page .field__item--signature {
-        font-size: clamp(1.22rem, 4.8vw, 1.46rem);
+      /* Anchor stays still on mobile — no hover flash or breath pulse. */
+      .home-page .field__item--anchor:hover .field__drift,
+      .home-page .field__item--anchor:focus-visible .field__drift {
+        color: #f1e2c4 !important;
+        letter-spacing: -0.02em !important;
       }
-      .home-page .field__item--theme {
-        font-size: clamp(1.12rem, 4.4vw, 1.36rem);
+      .home-page .constellation__orbit {
+        display: block;
+        order: 2;
+        margin: 0.85em 0 0;
+        padding: 0 8%;
+        width: 100%;
+        box-sizing: border-box;
       }
-      .home-page .field__item--topic {
-        font-size: clamp(0.98rem, 3.7vw, 1.12rem);
+      .home-page .constellation__orbit-track {
+        position: relative;
+        display: block;
+        min-height: 2.35em;
+        width: 100%;
       }
-      .home-page .field__item--whisper {
-        font-size: clamp(0.92rem, 3.5vw, 1.04rem);
+      .home-page .constellation__orbit-line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: 0;
+        padding: 0 2%;
+        font-family: 'Lora', Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(1.02rem, 4.2vw, 1.18rem);
+        line-height: 1.45;
+        color: rgba(246, 201, 138, 0.88);
+        letter-spacing: 0.012em;
+        opacity: 0;
+        transform: translateY(0.45em);
+        filter: blur(3px);
+        transition:
+          opacity 1.05s cubic-bezier(0.33, 1, 0.38, 1),
+          transform 1.05s cubic-bezier(0.33, 1, 0.38, 1),
+          filter 1.05s cubic-bezier(0.33, 1, 0.38, 1);
+        will-change: opacity, transform, filter;
+        pointer-events: none;
       }
-      /* Echoes — hidden on mobile. They're atmospheric texture for the
-         desktop field; on mobile they would crowd the cleaner three-stanza
-         reading layout. */
-      .home-page .field__item--echo {
-        display: none;
+      .home-page .constellation__orbit-line.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+        animation: orbit-line-glow 4.5s ease-in-out infinite;
       }
-      /* No drift / focus on mobile — performance + readability. */
+      @keyframes orbit-line-glow {
+        0%, 100% {
+          text-shadow: 0 0 16px rgba(246, 201, 138, 0.18);
+        }
+        50% {
+          text-shadow: 0 0 30px rgba(246, 201, 138, 0.38);
+        }
+      }
+      .home-page .field:not(.is-revealed) .constellation__orbit {
+        opacity: 0;
+      }
+      .home-page .field.is-revealed .constellation__orbit {
+        opacity: 1;
+        transition: opacity 0.8s ease 0.15s;
+      }
+      /* Orbit crossfade only — anchor and desktop drift stay off. */
       .home-page .field.is-revealed .field__item .field__drift {
         animation: none !important;
         filter: none !important;
         transform: none !important;
-        opacity: 1 !important;
-      }
-      /* Deliberate asymmetry: alternate items shift slightly off-center. */
-      .home-page .constellation .field__item:not(.field__item--anchor):nth-of-type(odd) {
-        margin-left: 1.6em;
-      }
-      .home-page .constellation .field__item:not(.field__item--anchor):nth-of-type(even) {
-        margin-right: 1.6em;
       }
       .home-page .field.is-active .field__item {
         opacity: 1;
@@ -1298,6 +1371,15 @@
         transition: none;
         filter: none;
       }
+      .home-page .constellation__orbit-line {
+        filter: none !important;
+        transform: none !important;
+        transition: opacity 0.4s ease;
+      }
+      .home-page .constellation__orbit-line.is-visible {
+        animation: none;
+        text-shadow: none;
+      }
     }
   </style>
 </head>
@@ -1333,6 +1415,8 @@
 
   <main>
 
+    <div class="home-page__hero-field">
+
     <!-- 1. WELCOME -->
     <header class="section welcome">
       <div class="section__inner welcome__content">
@@ -1355,6 +1439,8 @@
 
       </div>
     </header>
+
+    <div class="home-page__handoff" aria-hidden="true"></div>
 
     <!-- 2. TOPICS — a constellation field, dense edition.
          42 items in five tiers:
@@ -1410,8 +1496,9 @@
              underline beneath "advice keeps changing"; Marion Nestle
              sits in the margin with a "→ see also" mark; Ultraprocessed
              food carries the open-question "?". -->
-        <div class="constellation constellation--i">
+        <div class="constellation constellation--i" data-mobile-orbit="Ultraprocessed food|What counts as evidence?|What gets repeated?|Seed oils">
           <span class="field__item field__item--anchor"   data-constellation="i"    style="left: 22%; top: 40%; --enter-delay: 0.10s; --breath-delay:  -0.8s; --drift-delay:  -5s;"><span class="field__drift">Why nutrition <span class="artifact-underline">advice keeps changing</span></span></span>
+          <p class="constellation__orbit" aria-live="polite"></p>
           <span class="field__item field__item--theme"    data-constellation="i ii" style="left: 38%; top: 12%; --enter-delay: 0.26s; --breath-delay:  -3.6s; --drift-delay:  -7s;"><span class="field__drift">Tradition</span></span>
           <span class="field__item field__item--whisper"  data-constellation="i"    style="left:  4%; top: 36%; --enter-delay: 0.42s; --breath-delay:  -5.2s; --drift-delay:  -2s; --focus-max: 1.2px;"><span class="field__drift"><span class="artifact-margin artifact-margin--before" aria-hidden="true">&rarr;</span>Marion Nestle</span></span>
           <span class="field__item field__item--topic"    data-constellation="i"    style="left: 16%; top: 22%; --enter-delay: 0.50s; --breath-delay:  -2.1s; --drift-delay: -15s;"><span class="field__drift">Ultraprocessed food<span class="artifact-margin artifact-margin--after" aria-hidden="true">?</span></span></span>
@@ -1427,8 +1514,9 @@
              South Asian diet?" sits just below the visual center of the
              field — the most prominent non-anchor position in the whole
              composition, marked by signature tier size and placement. -->
-        <div class="constellation constellation--ii">
+        <div class="constellation constellation--ii" data-mobile-orbit="Why not a South Asian diet?|Is tradition evidence?|Food or nutrients?|Food culture">
           <span class="field__item field__item--anchor"   data-constellation="ii" style="left: 74%; top: 32%; --enter-delay: 0.55s; --breath-delay:  -2.8s; --drift-delay: -16s;"><span class="field__drift">What <span class="artifact-highlight">&ldquo;natural&rdquo;</span> actually means</span></span>
+          <p class="constellation__orbit" aria-live="polite"></p>
           <span class="field__item field__item--theme"    data-constellation="ii" style="left: 62%; top: 12%; --enter-delay: 0.63s; --breath-delay:  -4.5s; --drift-delay: -21s;"><span class="field__drift">Food culture</span></span>
           <span class="field__item field__item--theme"    data-constellation="ii" style="left: 96%; top: 14%; --enter-delay: 0.79s; --breath-delay:  -6.8s; --drift-delay: -11s; --focus-max: 1.0px;"><span class="field__drift">Cultural memory</span></span>
           <span class="field__item field__item--whisper"   data-constellation="ii" style="left: 95%; top: 68%; --enter-delay: 0.87s; --breath-delay: -10.1s; --drift-delay: -24s; --focus-max: 1.4px;"><span class="field__drift">Michael Pollan</span></span>
@@ -1445,8 +1533,9 @@
              carries the "*" note-to-self mark. "Protein obsession?"
              and "What counts as healthy?" sit beside the concrete
              topics as their questioned shadow. -->
-        <div class="constellation constellation--iii">
+        <div class="constellation constellation--iii" data-mobile-orbit="Protein obsession?|Gut health|Fasting|What counts as healthy?">
           <span class="field__item field__item--anchor"   data-constellation="iii" style="left: 50%; top: 76%; --enter-delay: 1.05s; --breath-delay:  -4.2s; --drift-delay: -13s;"><span class="field__drift">Where experts disagree</span></span>
+          <p class="constellation__orbit" aria-live="polite"></p>
           <span class="field__item field__item--whisper"  data-constellation="iii" style="left:  8%; top: 86%; --enter-delay: 1.10s; --breath-delay:  -2.7s; --drift-delay:  -6s; --focus-max: 1.4px;"><span class="field__drift">Walter Willett</span></span>
           <span class="field__item field__item--topic"    data-constellation="iii" style="left: 16%; top: 70%; --enter-delay: 1.15s; --breath-delay:  -3.3s; --drift-delay: -17s; --focus-max: 0.8px;"><span class="field__drift">Gut health</span></span>
           <span class="field__item field__item--topic"    data-constellation="iii" style="left: 82%; top: 64%; --enter-delay: 1.20s; --breath-delay:  -6.7s; --drift-delay:  -2s;"><span class="field__drift">Fasting</span></span>
@@ -1457,6 +1546,8 @@
 
       </div>
     </section>
+
+    </div><!-- /.home-page__hero-field -->
 
     <!-- 3. COMPOSITION — four landed beats bound by one compositional refrain.
          Architecture restored: Journey, Current Attention, Library doorway,
@@ -1599,6 +1690,103 @@
       if (field) {
         const items = field.querySelectorAll('.field__item[data-constellation]');
         const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
+        const ORBIT_HOLD = 4500;
+        let orbitTimers = [];
+
+        const clearMobileOrbits = () => {
+          orbitTimers.forEach(t => clearInterval(t));
+          orbitTimers = [];
+        };
+
+        const ensureOrbitTrack = (el) => {
+          let track = el.querySelector('.constellation__orbit-track');
+          if (!track) {
+            el.textContent = '';
+            track = document.createElement('span');
+            track.className = 'constellation__orbit-track';
+            const lineA = document.createElement('span');
+            lineA.className = 'constellation__orbit-line is-visible';
+            const lineB = document.createElement('span');
+            lineB.className = 'constellation__orbit-line';
+            lineB.setAttribute('aria-hidden', 'true');
+            track.append(lineA, lineB);
+            el.appendChild(track);
+          }
+          return track.querySelectorAll('.constellation__orbit-line');
+        };
+
+        const initMobileOrbits = () => {
+          clearMobileOrbits();
+          const groups = document.querySelectorAll('.constellation[data-mobile-orbit]');
+          if (!groups.length) return;
+
+          if (!isMobile() || field.classList.contains('is-anim-paused')) {
+            groups.forEach(group => {
+              const el = group.querySelector('.constellation__orbit');
+              if (el) el.textContent = '';
+            });
+            return;
+          }
+
+          groups.forEach(group => {
+            const el = group.querySelector('.constellation__orbit');
+            if (!el) return;
+            const phrases = (group.dataset.mobileOrbit || '')
+              .split('|')
+              .map(s => s.trim())
+              .filter(Boolean);
+            if (!phrases.length) return;
+
+            const lines = ensureOrbitTrack(el);
+            let activeLine = 0;
+            let phraseIdx = 0;
+
+            lines[0].textContent = phrases[0];
+            lines[0].classList.add('is-visible');
+            lines[0].removeAttribute('aria-hidden');
+            lines[1].textContent = '';
+            lines[1].classList.remove('is-visible');
+            lines[1].setAttribute('aria-hidden', 'true');
+
+            if (reduceMotion || phrases.length < 2) return;
+
+            const crossfade = () => {
+              const nextLine = activeLine === 0 ? 1 : 0;
+              const currLine = activeLine;
+              phraseIdx = (phraseIdx + 1) % phrases.length;
+              lines[nextLine].textContent = phrases[phraseIdx];
+              lines[currLine].classList.remove('is-visible');
+              lines[currLine].setAttribute('aria-hidden', 'true');
+              lines[nextLine].classList.add('is-visible');
+              lines[nextLine].removeAttribute('aria-hidden');
+              activeLine = nextLine;
+            };
+
+            orbitTimers.push(setInterval(crossfade, ORBIT_HOLD));
+          });
+        };
+
+        const startOrbitsWhenReady = () => {
+          if (field.classList.contains('is-revealed')) {
+            initMobileOrbits();
+          } else {
+            const orbitMo = new MutationObserver(() => {
+              if (field.classList.contains('is-revealed')) {
+                initMobileOrbits();
+                orbitMo.disconnect();
+              }
+            });
+            orbitMo.observe(field, { attributes: true, attributeFilter: ['class'] });
+          }
+        };
+
+        startOrbitsWhenReady();
+        window.addEventListener('resize', initMobileOrbits);
+
+        const fieldClassMo = new MutationObserver(() => {
+          if (isMobile()) initMobileOrbits();
+        });
+        fieldClassMo.observe(field, { attributes: true, attributeFilter: ['class'] });
 
         const activate = (item) => {
           if (isMobile()) return;
