@@ -382,13 +382,13 @@ window.RVData = {
       slug: 'protein-marketing-and-trust',
       url: 'insights/protein-marketing-and-trust.html',
       title: 'Protein, Marketing, and Trust',
-      lede: 'Reading the NYT piece on the David protein bar with one eye on the science and one on the marketing, and what that mix is doing to trust.',
+      lede: 'Protein used to be something you got from food. Now it is a cultural object. Thinking through what changed, what the evidence supports, and what the aisle is actually selling.',
       type: 'Essay',
       date: '2026-06-08',
       topic: 'reading-the-evidence',
       cluster: 'claims-headlines-and-translation',
-      summary: 'How nutrition science gets translated into lifestyle messaging, what the David bar story says about influencer credibility, and what the protein boom reveals about the culture buying it.',
-      status: 'draft',
+      summary: 'A premium protein bar story made me wonder when protein stopped being mostly a nutrient and started being an identity. The evidence for adequate protein is stronger than the evidence for many products built around it.',
+      status: 'published',
       next: ['how-i-evaluate-nutrition-claims', 'why-nutrition-advice-keeps-changing', 'a-practical-guide-to-vegetarian-protein']
     },
 
