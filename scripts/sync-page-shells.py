@@ -75,7 +75,7 @@ TOPIC_OG = {
     },
     "health-and-the-body.html": {
         "title": "Health and the body | Rajiv Vakani",
-        "description": "How nutrition meets physiology, symptoms, and the lived experience of the body.",
+        "description": "Learning to interpret how the body adapts, communicates, and changes.",
         "url": "https://rajivvakani.com/insights/topics/health-and-the-body.html",
     },
 }

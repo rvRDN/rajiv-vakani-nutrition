@@ -229,24 +229,24 @@ window.RVData = {
         id: 'health-and-the-body',
         name: 'Health and the body',
         url: 'insights/topics/health-and-the-body.html',
-        shortDescription: 'What food does in the body. Mechanism, outcomes, the specific health questions nutrition gets asked to answer.',
-        framing: 'Some pieces are about how the body actually works with food. Mechanism, physiology, the systems that turn what we eat into how we feel and what shows up on labs. This cluster is for those pieces. Distinct from reading the evidence (which is about the science as science) and from practical nutrition (which is about eating).',
+        shortDescription: 'Learning to interpret how the body adapts, communicates, and changes.',
+        framing: 'We spend our lives living in our bodies, but very little time learning how to interpret them. These essays explore how the body adapts, communicates, compensates, and changes, so everyday experiences make a little more sense. Distinct from reading the evidence (which is about claims and studies) and from practical nutrition (which is about what to eat).',
         startHere: null,
         clusters: [
           {
             id: 'heart-blood-and-metabolism',
             name: 'Heart, blood, and metabolism',
-            framing: 'Cardiometabolic systems. Cholesterol, blood pressure, blood sugar, lipids.'
+            framing: 'Blood sugar, lipids, blood pressure, and the signals people treat as verdicts. What these numbers reflect before deciding what they mean.'
           },
           {
             id: 'gut-immunity-and-inflammation',
             name: 'Gut, immunity, and inflammation',
-            framing: 'The gut microbiome, digestion, gut-immune crosstalk, inflammation as it shows up in food and the body.'
+            framing: 'Hunger, digestion, immunity, inflammation, and recovery. How the gut and immune systems communicate, and why inflammation so often gets flattened.'
           },
           {
             id: 'weight-energy-and-body-composition',
             name: 'Weight, energy, and body composition',
-            framing: 'How the body uses food at the energy and composition level.'
+            framing: 'Energy, appetite, lean mass, and the timelines that do not line up. When feeling better and getting better diverge.'
           }
         ]
       }
