@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 
-Disallow: /_archive/
 Disallow: /insights/_template.html
 
 Sitemap: https://rajivvakani.com/sitemap.xml

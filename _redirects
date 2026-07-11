@@ -1,15 +1,23 @@
-# Retired newsletter URLs — redirect to homepage.
-/table-talk.html / 301
-/table-talk-archive.html / 301
-/no-onion-no-garlic.html / 301
-/no-onion-no-garlic-archive.html / 301
-/supporters.html / 301
-/members.html / 301
-/table-talk/support / 301
-/no-onion-no-garlic/support / 301
+# Retired newsletter / member URLs — permanently gone (410).
+# Do not redirect these to the homepage; Google should see Gone.
+# Serve 404.html body with a 410 status. Force (!) so Pretty URLs cannot shadow.
+/table-talk.html                  /404.html  410!
+/table-talk                       /404.html  410!
+/table-talk-archive.html          /404.html  410!
+/table-talk-archive               /404.html  410!
+/no-onion-no-garlic.html          /404.html  410!
+/no-onion-no-garlic               /404.html  410!
+/no-onion-no-garlic-archive.html  /404.html  410!
+/no-onion-no-garlic-archive       /404.html  410!
+/supporters.html                  /404.html  410!
+/supporters                       /404.html  410!
+/members.html                     /404.html  410!
+/members                          /404.html  410!
+/table-talk/support               /404.html  410!
+/no-onion-no-garlic/support       /404.html  410!
 
-# Archived old-site pages — redirect to homepage.
-/_archive/* / 301
+# Former on-site archive path (if ever hit after old deploys).
+/_archive/*                       /404.html  410!
 
 # Former reference path — profiles live at /therapy-profiles/.
-/reference/* /therapy-profiles/:splat 301
+/reference/*                      /therapy-profiles/:splat  301
