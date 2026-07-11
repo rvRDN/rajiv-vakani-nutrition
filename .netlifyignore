@@ -2,3 +2,4 @@
 .cursor/
 insights/_template.html
 source-assets/
+source-assets/**
