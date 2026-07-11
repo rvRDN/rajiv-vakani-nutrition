@@ -1,11 +1,12 @@
 Add-Type -AssemblyName System.Drawing
 
-$root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
-if (-not (Test-Path (Join-Path $root 'RV Favicon Monogram.png'))) {
+# Repo root: scripts/ -> parent
+$root = Split-Path -Parent $PSScriptRoot
+if (-not (Test-Path (Join-Path $root 'source-assets\RV Favicon Monogram.png'))) {
   $root = 'c:\Users\rajiv\OneDrive\Desktop\rajiv-vakani-nutrition'
 }
 
-$srcPath = Join-Path $root 'RV Favicon Monogram.png'
+$srcPath = Join-Path $root 'source-assets\RV Favicon Monogram.png'
 $out512  = Join-Path $root 'favicon-512.png'
 $outMark = Join-Path $root 'logo-mark.png'
 $out32   = Join-Path $root 'favicon.png'

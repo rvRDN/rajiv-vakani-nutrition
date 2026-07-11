@@ -1,0 +1,79 @@
+# Netlify headers — performance batch
+# No overlapping directory HTML rules. HTML/pretty URLs use Netlify defaults
+# (plus explicit / and /*.html revalidation). Versioned assets get long immutable
+# caching; unfingerprinted media get long non-immutable caching.
+
+# --- Explicit HTML entry points: always revalidate ---
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# --- Crawl control: short cache ---
+/robots.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# --- Unfingerprinted raster / claim images: long cache, revalidate ---
+/*.jpg
+  Cache-Control: public, max-age=2592000, must-revalidate
+
+/*.jpeg
+  Cache-Control: public, max-age=2592000, must-revalidate
+
+/*.webp
+  Cache-Control: public, max-age=2592000, must-revalidate
+
+/*.gif
+  Cache-Control: public, max-age=2592000, must-revalidate
+
+# Root PNGs are the versioned favicons/logo below (immutable). No broad /*.png
+# rule, so those paths do not receive two Cache-Control values.
+
+/insights/claim-images/*
+  Cache-Control: public, max-age=2592000, must-revalidate
+
+# --- Video without query versioning: one-week cache ---
+/*.mp4
+  Cache-Control: public, max-age=604800, must-revalidate
+
+# --- Versioned icons / logo (referenced with ?v=): immutable ---
+/favicon.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon-16.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon-512.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/logo-mark.png
+  Cache-Control: public, max-age=31536000, immutable
+
+# --- Versioned CSS/JS (referenced with ?v=): immutable ---
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/insights/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/insights/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/therapy-profiles/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/therapy-profiles/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/seeing-food-differently/*.css
+  Cache-Control: public, max-age=31536000, immutable
