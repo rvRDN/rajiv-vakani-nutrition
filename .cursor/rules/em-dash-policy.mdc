@@ -1,0 +1,26 @@
+---
+description: Site-wide em dash policy for Rajiv Vakani prose and HTML articles
+alwaysApply: true
+---
+
+# Em dash policy
+
+Do **not** use em dashes (`—`, `&mdash;`) by default in article prose, drafts, HTML reading prototypes, or At a Glance copy.
+
+**Canonical source:** `docs/project-continuity-v7.md` §9 (Voice and Language Rules).
+
+Before using an em dash, try in order:
+
+1. Period (split into two sentences)
+2. Comma
+3. Colon
+4. Parentheses
+5. Sentence restructuring
+
+Em dashes are allowed only when genuinely the best tool and no cleaner alternative exists.
+
+**When converting Markdown to HTML:** apply this policy during conversion. Do not copy em dashes from source files verbatim if the source predates the pass.
+
+**When editing drafts:** run or follow `scripts/em-dash-pass-*.py` patterns; replace habitual em dashes with cleaner structure.
+
+**Section titles:** use a comma or colon instead of an em dash (e.g. "What has to go wrong, and where" not "What has to go wrong — and where").
