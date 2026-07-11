@@ -134,6 +134,12 @@
         padding: 8vh 5vw;
       }
 
+      /* Keep pour (spout + stream) in frame on narrow crops.
+         Desktop/tablet stay center bottom above. */
+      .journey-page .hero-video-background {
+        object-position: 72% bottom;
+      }
+
       .journey-page .homepage-hero .frosted-hero-panel {
         padding: 40px 32px;
         width: min(94vw, 560px);
@@ -758,6 +764,7 @@
   <!-- Hero -- visual treatment unchanged: slowed video, dark overlay, frosted glass panel. -->
   <header class="hero homepage-hero">
     <video autoplay muted loop playsinline class="hero-video-background" poster="poster.jpg">
+      <source src="pouring-chai-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
       <source src="pouring-chai.mp4" type="video/mp4" />
     </video>
     <script>
