@@ -32,6 +32,7 @@
 
   <script>
     window.addEventListener('load', function () {
+      if (location.hostname !== 'rajivvakani.com') return;
       var s = document.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV';
       s.async = true;
@@ -42,6 +43,37 @@
       gtag('js', new Date());
       gtag('config', 'G-0L41N5K2WV');
     });
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://rajivvakani.com/contact.html#webpage",
+      "url": "https://rajivvakani.com/contact.html",
+      "name": "Contact | Rajiv Vakani",
+      "description": "Get in touch with Rajiv Vakani. Questions, ideas, and collaborations on nutrition, food, and education welcome.",
+      "isPartOf": {
+        "@id": "https://rajivvakani.com/#website"
+      },
+      "author": {
+        "@id": "https://rajivvakani.com/#person"
+      },
+      "publisher": {
+        "@id": "https://rajivvakani.com/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://rajivvakani.com/#person",
+      "name": "Rajiv Vakani",
+      "url": "https://rajivvakani.com/about.html",
+      "image": "https://rajivvakani.com/headshot_36.jpg"
+    }
+  ]
+}
   </script>
 </head>
 <body class="contact-page">

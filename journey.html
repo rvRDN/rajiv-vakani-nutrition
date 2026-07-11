@@ -34,6 +34,7 @@
   <!-- Google Analytics -->
   <script>
     window.addEventListener('load', function () {
+      if (location.hostname !== 'rajivvakani.com') return;
       var s = document.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV';
       s.async = true;
@@ -691,6 +692,37 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://rajivvakani.com/journey.html#webpage",
+      "url": "https://rajivvakani.com/journey.html",
+      "name": "Journey | Rajiv Vakani",
+      "description": "How Rajiv Vakani arrived at this work, and what made him take it seriously: a thoughtful narrative about pattern, purpose, and the discipline of helping people understand difficult things.",
+      "isPartOf": {
+        "@id": "https://rajivvakani.com/#website"
+      },
+      "author": {
+        "@id": "https://rajivvakani.com/#person"
+      },
+      "publisher": {
+        "@id": "https://rajivvakani.com/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://rajivvakani.com/#person",
+      "name": "Rajiv Vakani",
+      "url": "https://rajivvakani.com/about.html",
+      "image": "https://rajivvakani.com/headshot_36.jpg"
+    }
+  ]
+}
+  </script>
 </head>
 <body class="journey-page">
 

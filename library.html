@@ -34,6 +34,7 @@
 
   <script>
     window.addEventListener('load', function () {
+      if (location.hostname !== 'rajivvakani.com') return;
       var s = document.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV';
       s.async = true;
@@ -48,6 +49,37 @@
 
   <script defer src="insights/data.js?v=20260706231500"></script>
   <script defer src="insights/library.js?v=20260706022000"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://rajivvakani.com/library.html#webpage",
+      "url": "https://rajivvakani.com/library.html",
+      "name": "Library | Rajiv Vakani",
+      "description": "The complete map of the work. Every piece, grouped by topic.",
+      "isPartOf": {
+        "@id": "https://rajivvakani.com/#website"
+      },
+      "author": {
+        "@id": "https://rajivvakani.com/#person"
+      },
+      "publisher": {
+        "@id": "https://rajivvakani.com/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://rajivvakani.com/#person",
+      "name": "Rajiv Vakani",
+      "url": "https://rajivvakani.com/about.html",
+      "image": "https://rajivvakani.com/headshot_36.jpg"
+    }
+  ]
+}
+  </script>
 </head>
 <body class="library-index">
 

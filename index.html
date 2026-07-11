@@ -34,6 +34,7 @@
   <!-- Google Analytics -->
   <script>
     window.addEventListener('load', function () {
+      if (location.hostname !== 'rajivvakani.com') return;
       var s = document.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV';
       s.async = true;
@@ -1313,6 +1314,39 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://rajivvakani.com/#website",
+      "url": "https://rajivvakani.com/",
+      "name": "Rajiv Vakani",
+      "description": "Good decisions begin with better questions. Helping readers understand, question, and evaluate nutrition and health claims through careful investigation and reference.",
+      "publisher": {
+        "@id": "https://rajivvakani.com/#person"
+      },
+      "author": {
+        "@id": "https://rajivvakani.com/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://rajivvakani.com/#person",
+      "name": "Rajiv Vakani",
+      "url": "https://rajivvakani.com/about.html",
+      "image": "https://rajivvakani.com/headshot_36.jpg",
+      "description": "A portrait of Rajiv Vakani, nutrition student at NYU, Pathshala teacher and JAINA director in the Jain community, with over a decade of prior work in finance.",
+      "sameAs": [
+        "https://instagram.com/rajivvakani",
+        "https://facebook.com/rajivvakani"
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body class="home-page">
 

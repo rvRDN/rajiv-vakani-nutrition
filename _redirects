@@ -1,4 +1,8 @@
-# Retired newsletter / member URLs — permanently gone (410).
+# Authoring scaffold: not a public page.
+/insights/_template.html            /404.html  404!
+/insights/_template                 /404.html  404!
+
+# Retired newsletter / member URLs: permanently gone (410).
 # Do not redirect these to the homepage; Google should see Gone.
 # Serve 404.html body with a 410 status. Force (!) so Pretty URLs cannot shadow.
 /table-talk.html                  /404.html  410!

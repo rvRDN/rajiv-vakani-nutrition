@@ -34,6 +34,7 @@
   <!-- Google Analytics -->
   <script>
     window.addEventListener('load', function () {
+      if (location.hostname !== 'rajivvakani.com') return;
       var s = document.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV';
       s.async = true;
@@ -456,6 +457,42 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://rajivvakani.com/about.html#webpage",
+      "url": "https://rajivvakani.com/about.html",
+      "name": "About | Rajiv Vakani",
+      "description": "A portrait of Rajiv Vakani, nutrition student at NYU, Pathshala teacher and JAINA director in the Jain community, with over a decade of prior work in finance.",
+      "isPartOf": {
+        "@id": "https://rajivvakani.com/#website"
+      },
+      "about": {
+        "@id": "https://rajivvakani.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://rajivvakani.com/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://rajivvakani.com/#person",
+      "name": "Rajiv Vakani",
+      "url": "https://rajivvakani.com/about.html",
+      "image": "https://rajivvakani.com/headshot_36.jpg",
+      "description": "A portrait of Rajiv Vakani, nutrition student at NYU, Pathshala teacher and JAINA director in the Jain community, with over a decade of prior work in finance.",
+      "sameAs": [
+        "https://instagram.com/rajivvakani",
+        "https://facebook.com/rajivvakani"
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body class="portrait-page">
 

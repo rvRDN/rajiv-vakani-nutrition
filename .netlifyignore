@@ -1,2 +1,3 @@
 # Paths that should not be uploaded with the public Netlify site.
 .cursor/
+insights/_template.html
