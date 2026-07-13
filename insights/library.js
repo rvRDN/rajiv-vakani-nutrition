@@ -8,7 +8,7 @@
 
    Pages get auto-rendered by detecting these data-* attributes:
 
-     [data-library-attention]  -- Current Attention list (Insights)
+     [data-library-attention]  -- unused on Insights; Home uses [data-home-attention]
      [data-library-topics]     -- Knowledge Library topic doorways
                                   (Insights)
      [data-library-map]        -- Library page: the Map (Layer 1)
