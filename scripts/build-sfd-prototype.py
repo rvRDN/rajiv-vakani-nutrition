@@ -108,6 +108,58 @@ def path_strip(position: int) -> str:
     return "\n            ".join(parts)
 
 
+GA_SNIPPET = """  <script>
+    window.addEventListener('load', function () {
+      if (location.hostname !== 'rajivvakani.com') return;
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV';
+      s.async = true;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-0L41N5K2WV');
+    });
+  </script>"""
+
+
+def chapter_head(title: str, description: str, slug: str) -> str:
+    page_url = f"https://rajivvakani.com/seeing-food-differently/{slug}.html"
+    page_title = f"{title} | Seeing Food Differently | Rajiv Vakani"
+    return f"""  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{page_title}</title>
+  <meta name="description" content="{description}" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{page_url}" />
+  <meta property="og:title" content="{page_title}" />
+  <meta property="og:description" content="{description}" />
+  <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
+  <meta property="og:site_name" content="Rajiv Vakani" />
+
+  <link rel="canonical" href="{page_url}" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="{page_url}" />
+  <meta property="twitter:title" content="{page_title}" />
+  <meta property="twitter:description" content="{description}" />
+  <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&amp;family=Inter+Tight:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../rajiv-styles.min.css?v=20260705190000">
+  <link rel="stylesheet" href="../insights/library.min.css?v=20260705220000">
+  <link rel="stylesheet" href="guide-prototype.css?v=2026071122">
+  <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
+  <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
+
+{GA_SNIPPET}"""
+
+
 def build_chapter(meta, chapters):
     intro, sections = parse_chapter(meta["md"])
     toc = []
@@ -145,21 +197,11 @@ def build_chapter(meta, chapters):
     intro_html = render_body(intro)
     title = meta["title"]
     strip = path_strip(meta["position"])
+    head = chapter_head(title, meta["description"], meta["slug"])
     html = f"""<!DOCTYPE html>
 <html lang="en" class="post-page sf-guide-page sf-guide-mode">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} | Seeing Food Differently | Rajiv Vakani</title>
-  <meta name="description" content="Seeing Food Differently — {title}. Launch candidate; working title." />
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&amp;family=Inter+Tight:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../rajiv-styles.min.css?v=20260705190000">
-  <link rel="stylesheet" href="../insights/library.min.css?v=20260705220000">
-  <link rel="stylesheet" href="guide-prototype.css?v=2026071122">
-  <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
+{head}
 </head>
 <body class="post-page sf-guide-page sf-guide-mode sf-chapter--{meta['css_class']}">
 
@@ -236,6 +278,7 @@ def main():
             "md": ROOT / "drafts/starting-state-chapter-v0.2.md",
             "title": "Starting State",
             "verb": "read",
+            "description": "Learn to read what you are actually working with before you cook. The first chapter of Seeing Food Differently.",
             "quiet_question": "What am I actually working with?",
             "css_class": "observational",
             "prev_l": "Guide entrance",
@@ -250,6 +293,7 @@ def main():
             "md": ROOT / "drafts/flavor-chapter-v0.2.md",
             "title": "Flavor",
             "verb": "perceive",
+            "description": "Learn to notice what you are experiencing: taste, aroma, texture, and more. A chapter of Seeing Food Differently.",
             "quiet_question": "What am I experiencing?",
             "css_class": "perceptual",
             "prev_l": "Starting State",
@@ -264,6 +308,7 @@ def main():
             "md": ROOT / "drafts/knife-cuts-chapter-v0.1.md",
             "title": "Knife Cuts",
             "verb": "shape",
+            "description": "Learn how shape changes what food becomes. A chapter of Seeing Food Differently on cutting with intention.",
             "quiet_question": "What outcome do I want?",
             "css_class": "structural",
             "prev_l": "Flavor",
@@ -278,6 +323,7 @@ def main():
             "md": ROOT / "drafts/heat-chapter-v0.1.md",
             "title": "Heat",
             "verb": "transform",
+            "description": "Learn to choose what heat should make of food. A chapter of Seeing Food Differently on transformation.",
             "quiet_question": "What should this become?",
             "css_class": "transformational",
             "prev_l": "Knife Cuts",
@@ -292,6 +338,7 @@ def main():
             "md": ROOT / "drafts/steering-chapter-v0.2.md",
             "title": "Steering",
             "verb": "steer",
+            "description": "Learn to stay with a dish while it changes. The closing chapter of Seeing Food Differently.",
             "quiet_question": "What does this dish need now?",
             "css_class": "cyclical",
             "prev_l": "Heat",

@@ -1,6 +1,6 @@
 # Seeing Food Differently
 
-**Status:** Soft launch / Early Edition. Live at its permanent URL. Not announced. Not in main site navigation. Pages stay `noindex` until a public launch decision.
+**Status:** Public. Live at its permanent URL. Linked from Home, Insights, and Library. Indexed.
 
 ## Purpose
 
