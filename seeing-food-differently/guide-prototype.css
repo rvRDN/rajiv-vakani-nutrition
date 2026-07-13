@@ -516,6 +516,9 @@ body.sf-guide-mode {
   margin: 0;
   padding: clamp(2.75rem, 7vw, 3.75rem) var(--sf-gutter) clamp(1.5rem, 4vw, 2rem);
   text-align: center;
+  background: var(--sf-paper-deep);
+  border-top: none;
+  color: var(--sf-ink);
 }
 
 .sf-chapter-end__inner {
@@ -589,6 +592,9 @@ body.sf-guide-mode {
   margin: 0;
   padding: 0.85rem var(--sf-gutter) clamp(1.75rem, 4vw, 2.25rem);
   text-align: center;
+  background: var(--sf-paper-deep);
+  border-top: none;
+  color: var(--sf-soft);
 }
 
 @media (min-width: 960px) {
@@ -630,11 +636,20 @@ body.sf-guide-mode {
 }
 
 .sf-guide-mode .site-footer {
-  background: transparent;
+  background: var(--sf-paper-deep);
   border-top: none;
   color: var(--sf-soft);
   text-align: left;
   padding: 0;
+}
+
+/* Beat global cream footers (rajiv-styles footer:not(.site-footer) / .site-footer). */
+.sf-guide-mode footer:not(.site-footer),
+.sf-guide-mode .sf-chapter-end,
+.sf-guide-mode .sf-pub-footer {
+  background: var(--sf-paper-deep);
+  border-top: none;
+  color: var(--sf-ink);
 }
 
 .sf-guide-mode .site-footer .container {
