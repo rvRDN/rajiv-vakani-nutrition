@@ -626,6 +626,36 @@ body.sf-guide-mode {
   text-underline-offset: 0.15em;
 }
 
+.sf-pub-footer .footer-social {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin: 0.55rem 0 0.45rem;
+}
+
+.sf-pub-footer .footer-social a {
+  color: #8a9a92;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sf-pub-footer .footer-social a:hover,
+.sf-pub-footer .footer-social a:focus-visible {
+  color: var(--sf-accent);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.sf-pub-footer .footer-social .social-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+  display: block;
+}
+
 .post-page.sf-guide-mode .sf-pub-footer__copy,
 .sf-pub-footer__copy {
   font-size: 0.625rem;
