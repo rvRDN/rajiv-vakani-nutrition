@@ -19,6 +19,19 @@
 
   var currentId = null;
 
+  function scrollSpineChip(a) {
+    // Scroll only the horizontal rail. Never call scrollIntoView on the chip:
+    // on mobile that scrolls the whole page and yanks the reader back up.
+    var rail = a.closest(".et-spine");
+    if (!rail) return;
+    var railRect = rail.getBoundingClientRect();
+    var chipRect = a.getBoundingClientRect();
+    var delta =
+      chipRect.left + chipRect.width / 2 - (railRect.left + railRect.width / 2);
+    if (Math.abs(delta) < 8) return;
+    rail.scrollLeft += delta;
+  }
+
   function setCurrent(id) {
     if (id === currentId) return;
     currentId = id;
@@ -26,8 +39,8 @@
       var on = a.getAttribute("href") === "#" + id;
       if (on) {
         a.setAttribute("aria-current", "true");
-        if (a.scrollIntoView && window.matchMedia("(max-width: 979px)").matches) {
-          a.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+        if (window.matchMedia("(max-width: 979px)").matches) {
+          scrollSpineChip(a);
         }
       } else {
         a.removeAttribute("aria-current");
