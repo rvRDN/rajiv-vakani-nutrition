@@ -102,6 +102,49 @@
     spans[1].textContent = formatArticleDate(article);
   }
 
+  /* Open a collapsed source list before an inline citation jumps to it.
+     This also handles direct links such as article.html#src-4. */
+  function revealSourceTarget(hash, shouldScroll) {
+    if (!hash || hash.charAt(0) !== '#') return;
+
+    var id;
+    try {
+      id = decodeURIComponent(hash.slice(1));
+    } catch (error) {
+      id = hash.slice(1);
+    }
+    if (!id) return;
+
+    var target = document.getElementById(id);
+    if (!target) return;
+
+    var disclosure = target.closest('details.post-sources__disclosure');
+    if (!disclosure) return;
+
+    disclosure.open = true;
+    if (shouldScroll) {
+      window.requestAnimationFrame(function () {
+        target.scrollIntoView({ block: 'start' });
+      });
+    }
+  }
+
+  function setupSourceDisclosures() {
+    document.addEventListener('click', function (event) {
+      var clicked = event.target;
+      if (!clicked || typeof clicked.closest !== 'function') return;
+      var link = clicked.closest('a[href^="#"]');
+      if (!link) return;
+      revealSourceTarget(link.getAttribute('href'), false);
+    });
+
+    window.addEventListener('hashchange', function () {
+      revealSourceTarget(window.location.hash, true);
+    });
+
+    revealSourceTarget(window.location.hash, true);
+  }
+
   function setState(el, state, message) {
     if (!el) return;
     el.setAttribute('data-render-state', state);
@@ -564,6 +607,8 @@
   /* ---------- F. Auto-render: detect page type and render ---------- */
 
   function autoRender() {
+    setupSourceDisclosures();
+
     var attentionEl      = document.querySelector('[data-library-attention]');
     var homeAttentionEl  = document.querySelector('[data-home-attention]');
     var topicsEl         = document.querySelector('[data-library-topics]');
