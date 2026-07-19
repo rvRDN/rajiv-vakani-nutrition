@@ -45,7 +45,7 @@ window.RVData = {
     version: 2,
     description: 'Single source of truth for the Knowledge Library. Replaces the previous library.json + articles.json + inline duplicates in library.js. Loaded by every Library-system page via <script defer src="insights/data.js">.',
     schemaVersion: '2.0.0',
-    lastUpdated: '2026-07-06'
+    lastUpdated: '2026-07-19'
   },
 
   /* ----------------------------------------------------------
@@ -516,6 +516,20 @@ window.RVData = {
       summary: 'Most of what holds you together runs invisibly. Collagen was the entry point; this investigation asks what the body is sustaining, and what has to go wrong for structure to fail.',
       status: 'published',
       next: ['collagen-compared-to-what', 'how-i-evaluate-nutrition-claims', 'creatine-used-to-live-in-the-gym']
+    },
+
+    {
+      slug: 'mucusless-diet',
+      url: 'insights/mucusless-diet.html',
+      title: 'How the Mucusless Diet Survived a Century',
+      lede: 'An Instagram reel about cantaloupe led into Arnold Ehret\u2019s Mucusless Diet Healing System, and a larger question: how unsupported health models persist.',
+      type: 'Essay',
+      date: '2026-07-19',
+      topic: 'reading-the-evidence',
+      cluster: 'claims-headlines-and-translation',
+      summary: 'An investigation into Arnold Ehret\u2019s Mucusless Diet Healing System, how the claims reach Instagram, and why a model that doesn\u2019t hold up physiologically can still survive for more than a century.',
+      status: 'published',
+      next: ['where-the-egg-alzheimers-story-drifted', 'how-i-evaluate-nutrition-claims', 'the-mango-question']
     }
 
   ]
