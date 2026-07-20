@@ -45,7 +45,7 @@ window.RVData = {
     version: 2,
     description: 'Single source of truth for the Knowledge Library. Replaces the previous library.json + articles.json + inline duplicates in library.js. Loaded by every Library-system page via <script defer src="insights/data.js">.',
     schemaVersion: '2.0.0',
-    lastUpdated: '2026-07-19'
+    lastUpdated: '2026-07-20'
   },
 
   /* ----------------------------------------------------------
@@ -524,7 +524,7 @@ window.RVData = {
       title: 'How the Mucusless Diet Survived a Century',
       lede: 'An Instagram reel about cantaloupe led into Arnold Ehret\u2019s Mucusless Diet Healing System, and a larger question: how unsupported health models persist.',
       type: 'Essay',
-      date: '2026-07-19',
+      date: '2026-07-20',
       topic: 'reading-the-evidence',
       cluster: 'claims-headlines-and-translation',
       summary: 'An investigation into Arnold Ehret\u2019s Mucusless Diet Healing System, how the claims reach Instagram, and why a model that doesn\u2019t hold up physiologically can still survive for more than a century.',

@@ -102,15 +102,17 @@ body.sf-guide-mode {
   max-width: calc(var(--sf-measure) + 14rem + 4rem);
   margin: 0 auto;
   padding: 0.9rem var(--sf-gutter);
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: baseline;
-  gap: 0.35rem 1.25rem;
+  column-gap: 1.25rem;
+  row-gap: 0.35rem;
   font-family: var(--sf-ui);
   font-size: 0.8125rem;
 }
 
 .sf-shell__mark {
+  justify-self: start;
   color: var(--sf-muted);
   text-decoration: none;
   font-weight: 500;
@@ -122,9 +124,10 @@ body.sf-guide-mode {
 }
 
 .sf-shell__place {
+  justify-self: center;
+  text-align: center;
   color: var(--sf-ink);
   font-weight: 600;
-  margin-right: auto;
   letter-spacing: 0.01em;
 }
 
@@ -139,6 +142,7 @@ body.sf-guide-mode {
 }
 
 .sf-shell__escape {
+  justify-self: end;
   color: var(--sf-soft);
   text-decoration: none;
 }
@@ -151,7 +155,7 @@ body.sf-guide-mode {
 }
 
 .sf-shell__path {
-  flex-basis: 100%;
+  grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 0.5rem;
@@ -669,7 +673,7 @@ body.sf-guide-mode {
   background: var(--sf-paper-deep);
   border-top: none;
   color: var(--sf-soft);
-  text-align: left;
+  text-align: center;
   padding: 0;
 }
 
@@ -687,24 +691,19 @@ body.sf-guide-mode {
   width: 100%;
   margin: 0 auto;
   padding: 0.85rem var(--sf-gutter) 2.25rem;
-  text-align: left;
-  display: block;
-  align-items: stretch;
-  justify-content: flex-start;
-  gap: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
 body[class*="sf-chapter--"].sf-guide-mode .site-footer .container {
   max-width: calc(var(--sf-measure) + 14rem + 4rem);
   margin: 0 auto;
   padding: 0.85rem var(--sf-gutter) 2.5rem;
-  text-align: left;
-}
-
-@media (min-width: 960px) {
-  body[class*="sf-chapter--"].sf-guide-mode .site-footer .container {
-    padding-left: calc(var(--sf-gutter) + 11.5rem + 3rem);
-  }
+  text-align: center;
 }
 
 .sf-guide-mode .site-footer p {
@@ -713,7 +712,7 @@ body[class*="sf-chapter--"].sf-guide-mode .site-footer .container {
   font-size: 0.8125rem;
   letter-spacing: normal;
   color: var(--sf-soft);
-  text-align: left;
+  text-align: center;
 }
 
 /* Landing keeps breathing room under the path colophon */
