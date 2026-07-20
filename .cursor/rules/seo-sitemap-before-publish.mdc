@@ -1,0 +1,25 @@
+---
+description: Before any public page goes live, update sitemap and complete SEO meta
+alwaysApply: true
+---
+
+# SEO and sitemap before going live
+
+When publishing or promoting any new public HTML page (essay, profile, investigation, Intervention Maps hub/topic, series landing, or site chrome page):
+
+## Required before calling it live
+
+1. **Sitemap:** Add every indexable public URL to `sitemap.xml` with `loc`, `lastmod` (publish day), `changefreq`, and `priority`. Series landings use trailing-slash URLs when that matches the page canonical (e.g. `https://rajivvakani.com/intervention-maps/`).
+2. **Canonical:** Every public page has `<link rel="canonical" href="https://rajivvakani.com/...">` matching the intended URL.
+3. **Description:** Unique `<meta name="description">` (about 120–155 characters) drawn from the page’s bottom line, lede, or purpose.
+4. **Social:** `og:title`, `og:description`, `og:url`, `og:image`, `og:type`, `og:site_name`, plus matching `twitter:*` tags. Default image: `https://rajivvakani.com/headshot_36.jpg`.
+5. **Indexability:** Remove `noindex` and draft banners from pages meant to rank. Keep `noindex` on drafts, templates, and backstage rooms (`evidence/`, mockups). Do **not** list `noindex` pages in the sitemap.
+6. **robots.txt:** Keep `Sitemap: https://rajivvakani.com/sitemap.xml`. Only Disallow templates/backstage that must stay out of crawl.
+
+## Do not ship without this
+
+Publishing HTML and wiring nav is not enough. A page is not “live for Google” until sitemap + canonical + description + social tags are done (or deliberately `noindex` + omitted from the sitemap).
+
+## After the edit
+
+Commit and push `sitemap.xml` with the page changes. If only meta/sitemap changed for an already-shipped series, still push so Netlify serves the updated sitemap.

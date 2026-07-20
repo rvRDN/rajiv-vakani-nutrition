@@ -33,13 +33,14 @@ Run before calling Intervention Maps ready to ship or after a material landing/c
 
 1. **Chrome:** No `noindex`, no `ev-draft` / sketch banners on public pages.
 2. **Identity:** Top bar says Intervention Maps; crumbs link home correctly; titles use `· Intervention Maps | Rajiv Vakani`.
-3. **Typography:** Display titles and hero leads pass the line-break check above at three widths.
-4. **Mobile:** First viewport, dark landscape band, condition plates, and topic pages readable; tap targets not cramped; no horizontal scroll.
-5. **Footer:** Every public page includes `.ev-site-foot` (disclaimer + © + social).
-6. **Series foot:** Topic pages keep the in-product `.ev-foot` back-link above the site footer.
-7. **CSS:** If `sketch.css` changed, bump `?v=` on every Intervention Maps HTML page.
-8. **Links:** Condition plates, contact suggest link, and `../index.html` / `../contact.html` resolve.
-9. **Em dashes:** None in public copy (period / comma / colon / rewrite).
+3. **SEO / sitemap (required):** Every new or promoted public page has description, canonical, OG/Twitter tags, and a matching `sitemap.xml` entry. Follow `seo-sitemap-before-publish.mdc`. Do not call the series live until this is done.
+4. **Typography:** Display titles and hero leads pass the line-break check above at three widths.
+5. **Mobile:** First viewport, dark landscape band, condition plates, and topic pages readable; tap targets not cramped; no horizontal scroll.
+6. **Footer:** Every public page includes `.ev-site-foot` (disclaimer + © + social).
+7. **Series foot:** Topic pages keep the in-product `.ev-foot` back-link above the site footer.
+8. **CSS:** If `sketch.css` changed, bump `?v=` on every Intervention Maps HTML page.
+9. **Links:** Condition plates, contact suggest link, and `../index.html` / `../contact.html` resolve.
+10. **Em dashes:** None in public copy (period / comma / colon / rewrite).
 
 ## Scope note
 
