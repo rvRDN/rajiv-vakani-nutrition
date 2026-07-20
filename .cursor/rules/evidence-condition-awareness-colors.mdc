@@ -1,0 +1,24 @@
+---
+description: Match each Evidence condition theme to its recognized awareness color
+alwaysApply: true
+---
+
+# Evidence condition awareness colors
+
+When creating or editing condition pages under `intervention-maps/`:
+
+1. Give every condition a body modifier: `ev--<condition>`.
+2. Define that modifier in `intervention-maps/sketch.css` with `--condition` and `--condition-ink`.
+3. Use the condition's commonly recognized awareness color, verified from a credible awareness organization where possible.
+4. The opening `.ev-welcome` sentence and existing condition accents inherit `--condition`.
+5. Choose a shade with readable contrast on the Intervention Maps paper background. Awareness identity does not override accessibility.
+6. Do not recolor the evidence-strength landscape or turn condition color into decoration. The shared visual system remains locked.
+7. If awareness-color usage varies or no recognized color exists, document the uncertainty and ask the owner before choosing.
+
+Current condition themes:
+
+- ADHD: orange (`#e87722`)
+- Depression / mental-health awareness: green (`#2f7d4a`)
+- Anxiety: teal (`#0f766e`)
+
+Whenever `sketch.css` changes, bump its `?v=` cache key on every Intervention Maps HTML page.

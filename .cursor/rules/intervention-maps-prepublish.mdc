@@ -1,0 +1,46 @@
+---
+description: Intervention Maps typography hygiene and pre-publish checklist
+globs: intervention-maps/**/*
+alwaysApply: false
+---
+
+# Intervention Maps · typography and pre-publish
+
+Apply when creating, editing, or publishing pages under `intervention-maps/`.
+
+## Line-break hygiene (display type)
+
+Short words must not sit alone at the end of a wrapped display line.
+
+Common offenders in titles and leads: **A**, **I**, **An**, **To**, **Of**, **Or**, **And** (when they start a short final phrase).
+
+**Fix:** bind the short word to what follows with a non-breaking space:
+
+- `A landscape` → `A&nbsp;landscape`
+- `a map` → `a&nbsp;map`
+- `Not a menu.` can stay; bind the next phrase: `A&nbsp;landscape`
+
+**Check at:** desktop (~1100px), tablet (~768px), and phone (~390px). Resize until the title wraps. If a one-letter or two-letter word is stranded at the end of a line, bind it.
+
+Also avoid:
+
+- One word alone on the last line of a multi-line display title when an `&nbsp;` or slight copy tweak can prevent it
+- Em dashes (project em-dash policy)
+
+## Pre-publish checklist
+
+Run before calling Intervention Maps ready to ship or after a material landing/condition pass:
+
+1. **Chrome:** No `noindex`, no `ev-draft` / sketch banners on public pages.
+2. **Identity:** Top bar says Intervention Maps; crumbs link home correctly; titles use `· Intervention Maps | Rajiv Vakani`.
+3. **Typography:** Display titles and hero leads pass the line-break check above at three widths.
+4. **Mobile:** First viewport, dark landscape band, condition plates, and topic pages readable; tap targets not cramped; no horizontal scroll.
+5. **Footer:** Every public page includes `.ev-site-foot` (disclaimer + © + social).
+6. **Series foot:** Topic pages keep the in-product `.ev-foot` back-link above the site footer.
+7. **CSS:** If `sketch.css` changed, bump `?v=` on every Intervention Maps HTML page.
+8. **Links:** Condition plates, contact suggest link, and `../index.html` / `../contact.html` resolve.
+9. **Em dashes:** None in public copy (period / comma / colon / rewrite).
+
+## Scope note
+
+`evidence/` is backstage (methodology, mockups). Public room is `intervention-maps/` only.

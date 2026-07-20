@@ -1,0 +1,19 @@
+---
+description: Evidence product purpose and educational principle for all conditions
+alwaysApply: true
+---
+
+# Evidence product charter
+
+Canonical source: `evidence/evidence-product-charter.md`
+
+When working on Intervention Maps / Evidence methodology (`intervention-maps/`, `evidence/` docs, `drafts/adhd/`, `drafts/depression/`, `drafts/anxiety/`, or future conditions):
+
+1. **Purpose:** Educate and empower readers by faithfully representing the therapeutic landscape. Not guidelines, not recommendations, not persuasion toward one intervention.
+2. **Educational Principle:** Do not compress for a cleaner taxonomy. Every section earns prominence from the evidence and from what readers need in order to understand. Do not omit nuance that changes understanding. Simplicity is earned through understanding, not by removing complexity.
+3. **Two jobs:** Artifacts help *us* understand the evidence (can be technical). Public pages help the *reader* understand the condition. Hub pages orient and guide; topic pages teach. Explain enough lived reality of each intervention on the topic page (delivery, participation, monitoring, burden) for the evidence verdict to mean something. Do not move that teaching into the hub. Topic pages use a question grammar, not a rigid template: what it is; what participation looks like; what it is commonly confused with; what the evidence earns; who it may fit; realistic expectations; limits; and what to ask a clinician. Combine, reorder, rename, or omit headings as the intervention requires.
+4. **Desperate-reader test:** Someone who has tried many treatments and is searching “what else?” deserves the full honest landscape of what was studied, what each option earns, and where it fits, not a top-three shortlist.
+5. **Pressure-test:** Prefer “Would a patient, family member, clinician, or student leave with a faithful map?” over “Can this be shorter?”
+6. **Templates are servants, not masters:** Every condition shares one grammar (welcome → orientation → landscape → questions → topic pages → ask your clinician) so the site feels familiar. But branches, categories, and whether a section exists (e.g. a “Not where I’d spend first” group) are determined by the evidence, not the template. Do not imitate another condition’s architecture unless that condition’s evidence architecture is also present. Adding a section for symmetry before the investigation exists is performative.
+7. **Freeze discipline:** After Phase 3 approval, do not reopen objects except under established freeze rules. Phase 4 teaches the map; it does not rediscover the science.
+8. **Public URL:** Live pages ship under `intervention-maps/`. The `evidence/` folder holds methodology and drafts continuity, not the public room.

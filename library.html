@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="rajiv-styles.min.css?v=20260715063000">
-  <link rel="stylesheet" href="insights/library.min.css?v=20260705220000">
+  <link rel="stylesheet" href="insights/library.min.css?v=20260720010000">
   <link rel="icon" type="image/png" href="favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="favicon-512.png?v=rv7" />
 
@@ -48,7 +48,7 @@
   </script>
 
   <script defer src="insights/data.js?v=20260719180000"></script>
-  <script defer src="insights/library.js?v=20260706022000"></script>
+  <script defer src="insights/library.js?v=20260720010000"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -123,50 +123,38 @@
       </div>
     </header>
 
-    <!-- KITCHEN GUIDE — doorway above the topic map. -->
-    <section class="library profiles-doorway" aria-label="Kitchen guide">
+    <!-- SERIES DOORWAYS -- one compressed list; indexes own the catalogs. -->
+    <section class="library profiles-doorway" aria-label="Series">
       <div class="wrap">
-        <p class="library__label">Kitchen guide</p>
+        <p class="library__label">Series</p>
         <ul class="topics">
           <li>
             <p class="topics__title"><a href="seeing-food-differently/index.html">Seeing Food Differently</a></p>
-            <p class="topics__desc">Five ways of seeing. A path, not a recipe collection.</p>
+            <p class="topics__desc">A kitchen guide in five chapters: starting state, flavor, knife cuts, heat, and steering.</p>
           </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- EMERGING THERAPIES — research studio doorway. -->
-    <section class="library profiles-doorway" aria-label="Emerging therapies">
-      <div class="wrap">
-        <p class="library__label">Emerging therapies</p>
-        <ul class="topics">
+          <li>
+            <p class="topics__title"><a href="therapy-profiles/index.html">Traditional Therapy Profiles</a></p>
+            <p class="topics__desc">Herbs, formulations, and product patterns in South Asian traditional medicine, separated when one name tries to mean all three.</p>
+          </li>
           <li>
             <p class="topics__title"><a href="emerging-therapies/index.html">Emerging Therapies</a></p>
-            <p class="topics__desc">Investigations into therapies changing nutrition counseling while the evidence is still evolving.</p>
+            <p class="topics__desc">A research studio for therapies changing nutrition counseling while the evidence is still forming.</p>
+          </li>
+          <li>
+            <p class="topics__title"><a href="intervention-maps/index.html">Intervention Maps</a></p>
+            <p class="topics__desc">Evidence landscapes for common conditions: where exercise, therapy, nutrition, supplements, and other approaches sit.</p>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- LAYER 1  --  THE MAP.
-         Six topics, one row each. Title (linked to topic page) on the
-         left; total piece count on the right. No descriptions; topic
-         pages already do that work. -->
-    <section class="library-map" aria-label="The map">
-      <div class="wrap">
-        <p class="library-map__label">The map</p>
-        <ul class="library-map__list" data-library-map></ul>
-      </div>
-    </section>
-
-    <!-- LAYER 2  --  EVERYTHING.
+    <!-- EVERYTHING.
          Every article in the library, grouped by topic. Title only.
          No ledes, no dates, no clusters, no types. Drafts appear
          inline next to their published siblings, marked with a small
          muted tag. Alphabetical within each topic so it reads like a
          reference shelf, not a feed. Topics with no articles yet are
-         omitted; the map above already declares the full inventory. -->
+         omitted. -->
     <section class="library-archive" aria-label="Everything">
       <div class="wrap">
         <p class="library-archive__label">Everything</p>

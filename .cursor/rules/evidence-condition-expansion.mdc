@@ -1,0 +1,44 @@
+---
+description: Evidence condition expansion; decision landscapes; new-condition playbook
+alwaysApply: true
+---
+
+# Evidence · condition expansion
+
+**Roadmap / queue:** `evidence/condition-roadmap-v0.1.md`  
+**Playbook:** `evidence/new-condition-playbook-v0.1.md`  
+**Methodology changelog:** `evidence/methodology-changelog-v0.1.md`  
+**Charter:** `evidence/evidence-product-charter.md`  
+**Methodology:** `drafts/adhd/condition-evidence-methodology-v1.0.md` (current batch: v1.0)
+
+## What we are building
+
+A library of **decision landscapes**, not a library of diseases.
+
+Readers search by condition and think by intervention. The page places each option on one map. It does not recommend a winner.
+
+## Research leads; architecture follows
+
+- Step 0 locks the **decision problem** and **research object**, not hub/branch IA.  
+- Collect the common landscape. Let Phase 2/3 decide branches, annotations, or later separate campaigns.  
+- Do not invent exclusions for neatness. Exclude later only when evidence shows a substantially different landscape, rarity, or no useful data.  
+- Default public shell: hub → topic pages, unless Phase 3 proves that cannot work.
+
+## First-prompt scoping rule
+
+When the owner drops a new condition name, **do not ask them to choose adult-only vs pediatric, diagnostic subtypes, exclusions, branch count, one map vs several maps, or final page architecture before research**. Start with the broad common condition and the broad clinical population appropriate to it. Do not impose adult-only, pediatric-inclusive, or lifespan-wide coverage as a universal default. Include age-specific evidence when it is common, decision-relevant, or materially changes the map. Record uncertain boundaries as a watch list, not exclusions.
+
+Only ask an upfront scope question when the condition name itself is genuinely ambiguous about the medical topic (for example, “arthritis” could mean materially different diseases). Even then, clarify the research object without asking the owner to design the final site. Phase 0–3 evidence determines natural boundaries and reader architecture, as ADHD’s adult/child rail did.
+
+## When starting or discussing a new condition
+
+1. Check the roadmap queue, batching plan, and selection criteria (common · crowded interventions · high uncertainty).  
+2. Prefer split maps only when landscapes differ (findings, not Step 0 assumptions).  
+3. Follow the playbook Steps 0–6. Scaffold from `drafts/depression/` conventions.  
+4. Adopt the batch’s frozen methodology version; do not bump mid-condition. Depression Phase 4 is complete and is not a gate.  
+5. Append dated decisions to the roadmap log. Do not silently reorder the queue.  
+6. After Phase 4 approval, run the post-condition “one process change?” checkpoint; promote to the methodology changelog only if broadly applicable.
+
+## Efficiency rule
+
+Reuse scaffolding and process. Do not skip Phase 1 adversarial checks or Phase 3 calibration to go faster.

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intervention Maps | Rajiv Vakani</title>
+  <meta name="description" content="Compare the evidence for exercise, therapy, nutrition, supplements, and other approaches for common health conditions." />
+  <link rel="canonical" href="https://rajivvakani.com/intervention-maps/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rajivvakani.com/intervention-maps/" />
+  <meta property="og:title" content="Intervention Maps | Rajiv Vakani" />
+  <meta property="og:description" content="Compare the evidence for exercise, therapy, nutrition, supplements, and other approaches for common health conditions." />
+  <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
+  <meta property="og:site_name" content="Rajiv Vakani" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://rajivvakani.com/intervention-maps/" />
+  <meta property="twitter:title" content="Intervention Maps | Rajiv Vakani" />
+  <meta property="twitter:description" content="Compare the evidence for exercise, therapy, nutrition, supplements, and other approaches for common health conditions." />
+  <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="sketch.css?v=20260720154500" />
+  <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
+  <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
+  <script>
+    window.addEventListener("load", function () {
+      if (location.hostname !== "rajivvakani.com") return;
+      var s = document.createElement("script");
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-0L41N5K2WV";
+      s.async = true;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag("js", new Date());
+      gtag("config", "G-0L41N5K2WV");
+    });
+  </script>
+  <script>if('scrollRestoration' in history){history.scrollRestoration='manual';}</script>
+  <style>
+    :root {
+      --d-adhd: #e87722;
+      --d-depression: #2f7d4a;
+      --d-anxiety: #0f766e;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .d-hero {
+      width: min(100% - 2.5rem, 52rem);
+      margin: 0 auto;
+      padding: clamp(2.25rem, 6vh, 3.5rem) 0 2rem;
+    }
+    .d-hero .ev-title {
+      max-width: 11ch;
+      font-size: clamp(2.8rem, 7.5vw, 4.4rem);
+    }
+
+    .d-depth {
+      margin: 0.5rem 0 0;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: clamp(2.5rem, 6vw, 3.75rem) max(1.25rem, calc(50vw - 26rem)) 0;
+      background: #151b24;
+      color: #e8ecf0;
+    }
+    .d-depth__inner {
+      width: min(100%, 52rem);
+      margin: 0 auto;
+      padding-bottom: 2rem;
+    }
+    .d-depth__kicker {
+      margin: 0 0 0.85rem;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8b94a0;
+    }
+    .d-depth__title {
+      margin: 0 0 0.85rem;
+      font-family: "Familjen Grotesk", sans-serif;
+      font-size: clamp(1.65rem, 3.2vw, 2.15rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      color: #f2f4f7;
+      max-width: 18ch;
+    }
+    .d-depth__lede {
+      margin: 0 0 1.75rem;
+      color: #9aa3ae;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      max-width: 34rem;
+    }
+
+    .d-mini-strata {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.5rem;
+      max-width: 36rem;
+    }
+    .d-mini-strata li {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .d-mini-strata .r {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 0.68rem;
+      color: #7a8492;
+    }
+    .d-mini-strata .band {
+      height: 1.6rem;
+      display: flex;
+      align-items: center;
+      padding: 0 0.7rem;
+      font-family: "Familjen Grotesk", sans-serif;
+      font-weight: 600;
+      font-size: 0.84rem;
+      letter-spacing: -0.015em;
+      color: #dce2ea;
+      border: 1px solid rgba(220, 226, 234, 0.28);
+      background: rgba(220, 226, 234, 0.1);
+      transform-origin: left center;
+      animation: d-grow 0.55s var(--ease) both;
+    }
+    .d-mini-strata li:nth-child(1) .band {
+      width: 100%;
+      background: rgba(232, 236, 242, 0.38);
+      border-color: rgba(232, 236, 242, 0.5);
+      color: #f4f6f9;
+      animation-delay: 0.05s;
+    }
+    .d-mini-strata li:nth-child(2) .band {
+      width: 84%;
+      background: rgba(220, 226, 234, 0.26);
+      border-color: rgba(220, 226, 234, 0.38);
+      animation-delay: 0.1s;
+    }
+    .d-mini-strata li:nth-child(3) .band {
+      width: 66%;
+      background: rgba(220, 226, 234, 0.17);
+      border-color: rgba(220, 226, 234, 0.28);
+      animation-delay: 0.15s;
+    }
+    .d-mini-strata li:nth-child(4) .band {
+      width: 48%;
+      background: rgba(220, 226, 234, 0.1);
+      border-color: rgba(220, 226, 234, 0.22);
+      color: #b8c0cc;
+      animation-delay: 0.2s;
+    }
+    .d-mini-strata li:nth-child(5) .band {
+      width: 30%;
+      background: rgba(220, 226, 234, 0.04);
+      border-color: rgba(220, 226, 234, 0.18);
+      color: #9aa3ae;
+      animation-delay: 0.25s;
+    }
+
+    @keyframes d-grow {
+      from { opacity: 0; transform: scaleX(0.35); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .d-depth__coda {
+      width: min(100%, 52rem);
+      margin: 0 auto;
+      padding: 1.35rem 0 1.7rem;
+      border-top: 1px solid rgba(232, 236, 242, 0.14);
+    }
+    .d-depth__coda-kicker {
+      margin: 0 0 0.45rem;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7a8492;
+    }
+    .d-depth__route {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.4rem 0.55rem;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      line-height: 1.45;
+      color: #b0b8c4;
+    }
+    .d-depth__route .sep {
+      display: inline-block;
+      width: 1.15rem;
+      height: 1px;
+      background: rgba(176, 184, 196, 0.45);
+      transform: translateY(-0.2em);
+    }
+
+    .d-plates {
+      margin: 0;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: clamp(2.85rem, 7vw, 3.85rem) 0 3.5rem;
+      background: #e4e8ec;
+    }
+    .d-plates__intro {
+      width: min(100% - 2.5rem, 52rem);
+      margin: 0 auto 1.9rem;
+    }
+    .d-plates__head {
+      margin: 0 0 0.55rem;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6a7380;
+      font-weight: 600;
+    }
+    .d-plates__lead {
+      margin: 0;
+      font-family: "Familjen Grotesk", sans-serif;
+      font-size: clamp(1.85rem, 4vw, 2.45rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      max-width: 12ch;
+      color: #101418;
+    }
+    .d-plates ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 2px solid #101418;
+    }
+    .d-plates li {
+      border-bottom: 1px solid rgba(16, 20, 24, 0.2);
+    }
+
+    .d-plate {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      padding: clamp(1.5rem, 3.5vw, 2.1rem) max(1.25rem, calc(50vw - 26rem));
+      overflow: hidden;
+      isolation: isolate;
+      transition: color 0.2s var(--ease);
+    }
+    .d-plate::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: #101418;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.35s var(--ease);
+    }
+    .d-plate:hover::before,
+    .d-plate:focus-visible::before {
+      transform: scaleX(1);
+    }
+    .d-plate:hover,
+    .d-plate:focus-visible {
+      color: #e8ecf0;
+      outline: none;
+    }
+    .d-plate__grid {
+      width: min(100%, 52rem);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 3.25rem minmax(0, 1fr);
+      gap: 1rem 1.35rem;
+      align-items: start;
+    }
+    .d-plate__n {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: #6a7380;
+      padding-top: 0.55rem;
+      transition: color 0.2s var(--ease);
+    }
+    .d-plate:hover .d-plate__n,
+    .d-plate:focus-visible .d-plate__n {
+      color: #8b94a0;
+    }
+    .d-plate__name {
+      margin: 0;
+      font-family: "Familjen Grotesk", sans-serif;
+      font-size: clamp(2.4rem, 7vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      line-height: 0.92;
+    }
+    .d-plate__deck {
+      margin: 0.55rem 0 0;
+      max-width: 34rem;
+      font-size: 1.05rem;
+      line-height: 1.45;
+      color: #3a424c;
+      transition: color 0.2s var(--ease);
+    }
+    .d-plate:hover .d-plate__deck,
+    .d-plate:focus-visible .d-plate__deck {
+      color: #9aa3ae;
+    }
+    .d-plate[data-c="adhd"]:hover .d-plate__name,
+    .d-plate[data-c="adhd"]:focus-visible .d-plate__name { color: var(--d-adhd); }
+    .d-plate[data-c="depression"]:hover .d-plate__name,
+    .d-plate[data-c="depression"]:focus-visible .d-plate__name { color: #6fc28a; }
+    .d-plate[data-c="anxiety"]:hover .d-plate__name,
+    .d-plate[data-c="anxiety"]:focus-visible .d-plate__name { color: #4ec4ba; }
+
+    .d-plate--soon {
+      opacity: 0.42;
+      cursor: default;
+      pointer-events: none;
+    }
+    .d-plate--soon .d-plate__name {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+    }
+
+    /* Suggest coda: quiet close under the plates */
+    .d-suggest {
+      width: min(100% - 2.5rem, 52rem);
+      margin: 0 auto;
+      padding: clamp(2.25rem, 5vw, 3rem) 0 clamp(2.75rem, 6vw, 3.75rem);
+    }
+    .d-suggest__rule {
+      height: 2px;
+      width: 3.5rem;
+      background: #101418;
+      margin: 0 0 1.35rem;
+    }
+    .d-suggest__kicker {
+      margin: 0 0 0.55rem;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6a7380;
+      font-weight: 600;
+    }
+    .d-suggest__title {
+      margin: 0 0 0.75rem;
+      font-family: "Familjen Grotesk", sans-serif;
+      font-size: clamp(1.45rem, 3vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+      color: #101418;
+      max-width: 18ch;
+    }
+    .d-suggest__body {
+      margin: 0;
+      max-width: 34rem;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: #3a424c;
+    }
+    .d-suggest__body a {
+      color: #101418;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+      transition: color 0.2s var(--ease);
+    }
+    .d-suggest__body a:hover,
+    .d-suggest__body a:focus-visible {
+      color: #0f766e;
+      outline: none;
+    }
+
+    @media (max-width: 720px) {
+      .d-hero {
+        padding: 1.75rem 0 1.5rem;
+      }
+      .d-hero .ev-title {
+        font-size: clamp(2.35rem, 11vw, 3.4rem);
+      }
+      .d-depth {
+        padding-top: 2rem;
+      }
+      .d-depth__title {
+        max-width: none;
+      }
+      .d-depth__route {
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+      .d-depth__route .sep {
+        display: none;
+      }
+      .d-plates {
+        padding-top: 2.25rem;
+        padding-bottom: 2rem;
+      }
+      .d-plates__lead {
+        max-width: none;
+        font-size: clamp(1.65rem, 7vw, 2.1rem);
+      }
+      .d-plate {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+      }
+      .d-plate__grid {
+        grid-template-columns: 2.35rem minmax(0, 1fr);
+        gap: 0.75rem 0.9rem;
+      }
+      .d-plate__name {
+        font-size: clamp(2rem, 10vw, 2.85rem);
+      }
+      .d-plate__deck {
+        font-size: 0.98rem;
+      }
+      .d-suggest {
+        padding-top: 1.75rem;
+        padding-bottom: 2.25rem;
+      }
+      .d-suggest__title {
+        max-width: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .d-mini-strata .band { animation: none; }
+      .d-plate::before,
+      .d-plate,
+      .d-plate__n,
+      .d-plate__deck,
+      .d-suggest__body a { transition: none; }
+    }
+  </style>
+</head>
+<body class="ev">
+  <header class="ev-top">
+    <a href="../index.html">Rajiv Vakani</a>
+    <span class="ev-top__place">Intervention Maps</span>
+  </header>
+
+  <header class="d-hero">
+    <p class="ev-kicker">Intervention Maps · 3 conditions</p>
+    <h1 class="ev-title">Intervention Maps</h1>
+    <p class="ev-lede">
+      Compare the evidence for exercise, therapy, nutrition, supplements, and other approaches for common health conditions.
+    </p>
+  </header>
+
+  <section class="d-depth" aria-labelledby="depth-title">
+    <div class="d-depth__inner">
+      <p class="d-depth__kicker">What you’re walking into</p>
+      <h2 class="d-depth__title" id="depth-title">Not a menu. A&nbsp;landscape.</h2>
+      <p class="d-depth__lede">
+        Each condition places options by how strong the evidence is.
+        You orient first, then pick the question you actually came with.
+      </p>
+      <ol class="d-mini-strata" aria-label="Evidence strength ladder">
+        <li><span class="r">01</span><span class="band">Best-supported</span></li>
+        <li><span class="r">02</span><span class="band">Worth doing</span></li>
+        <li><span class="r">03</span><span class="band">Modest</span></li>
+        <li><span class="r">04</span><span class="band">Narrow cases</span></li>
+        <li><span class="r">05</span><span class="band">Doesn’t clear the bar</span></li>
+      </ol>
+    </div>
+
+    <div class="d-depth__coda" aria-label="What to do next">
+      <p class="d-depth__coda-kicker">From here</p>
+      <p class="d-depth__route">
+        <span>Pick a condition</span>
+        <span class="sep" aria-hidden="true"></span>
+        <span>Find your question</span>
+        <span class="sep" aria-hidden="true"></span>
+        <span>Take it to your clinician</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="d-plates" aria-labelledby="conditions">
+    <div class="d-plates__intro">
+      <h2 class="d-plates__head" id="conditions">Conditions</h2>
+      <p class="d-plates__lead">Step into a&nbsp;map.</p>
+    </div>
+    <ol>
+      <li>
+        <a class="d-plate" href="adhd.html" data-c="adhd">
+          <span class="d-plate__grid">
+            <span class="d-plate__n">01</span>
+            <span>
+              <span class="d-plate__name">ADHD</span>
+              <span class="d-plate__deck">Lifestyle and nutrition evidence that actually supports a claim</span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="d-plate" href="depression.html" data-c="depression">
+          <span class="d-plate__grid">
+            <span class="d-plate__n">02</span>
+            <span>
+              <span class="d-plate__name">Depression</span>
+              <span class="d-plate__deck">Non-drug and adjunctive options beside standard care</span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="d-plate" href="anxiety.html" data-c="anxiety">
+          <span class="d-plate__grid">
+            <span class="d-plate__n">03</span>
+            <span>
+              <span class="d-plate__name">Anxiety</span>
+              <span class="d-plate__deck">One shared map for generalized anxiety, panic, and social anxiety</span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <span class="d-plate d-plate--soon" aria-disabled="true">
+          <span class="d-plate__grid">
+            <span class="d-plate__n">—</span>
+            <span>
+              <span class="d-plate__name">More conditions</span>
+              <span class="d-plate__deck">Same promise, same structure, when each map is ready</span>
+            </span>
+          </span>
+        </span>
+      </li>
+    </ol>
+  </section>
+
+  <aside class="d-suggest" aria-label="Suggest a condition">
+    <div class="d-suggest__rule" aria-hidden="true"></div>
+    <p class="d-suggest__kicker">Still missing something?</p>
+    <p class="d-suggest__title">Suggest a condition.</p>
+    <p class="d-suggest__body">
+      More maps are coming, and each one takes real research.
+      If there’s a condition you want on this list,
+      <a href="../contact.html">tell me</a>.
+      It helps me see what people are searching for next.
+    </p>
+  </aside>
+<footer class="ev-site-foot">
+  <div class="ev-site-foot__inner">
+    <div class="ev-site-foot__copy">
+      <p class="ev-site-foot__disclaimer">These pages are for learning, not medical advice.</p>
+      <p class="ev-site-foot__disclaimer ev-site-foot__follow">Talk with your clinician before changing care.</p>
+      <p class="ev-site-foot__legal">&copy; 2025&ndash;2026 Rajiv Vakani</p>
+    </div>
+    <div class="ev-site-foot__social" aria-label="Social links">
+      <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+      <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+      <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+---
+description: Condition-evidence Phases 0–4; Evidence Stability Check required before freeze
+globs: drafts/**/*
+alwaysApply: false
+---
+
+# Condition evidence · methodology
+
+**Canonical charter:** `drafts/adhd/condition-evidence-methodology-v1.0.md`  
+**Freeze register:** `drafts/adhd/freeze-register-v1.0.md`  
+**ADHD v1.0:** Method, 12 objects, and Phase 3 are frozen. Prefer Phase 4 editorial work over reopening investigations.
+
+## Phases
+
+| Phase | Name | Job |
+|---|---|---|
+| **0** | Research | Gather evidence. No conclusions yet. |
+| **1** | Evidence Stability Check | Internal peer review. Try to break first conclusions. Output: stable conclusions. |
+| **2** | Thinking Artifact | Explain the investigation. Do not re-defend every conclusion. |
+| **—** | Object freeze | Allowed only after Phase 1. Mature objects feed Phase 3. |
+| **3** | Evidence Landscape | Compare earned claims; calibrate relative place on one map (not popularity or effect size alone). Phase 3 owns calibration / page space. |
+| **4** | Public Writing | Condition page from the calibrated map. Editorial architecture; do not exceed §12 claims. |
+
+Early research sketches are Phase 0 scaffolding. They are not Phase 3.
+
+## Evidence Stability Check checklist
+
+1. Object definition  
+2. Confidence  
+3. Alternative interpretations  
+4. **Competing narrative** — Could the same evidence support an equally coherent story with a different map orientation? Why does one survive?  
+5. Magnitude  
+6. Hidden assumptions  
+7. Boundary conditions  
+8. Evidence map  
+9. Final stress test (object-specific)  
+10. What would change my mind?  
+11. Missing evidence  
+12. **Strongest earned claim** (one sentence; **exit criterion**—if you cannot write it, Phase 1 is unfinished)
+
+**Universal question:** What is the strongest claim this evidence earns? Intellectual shape explains why; the earned claim is what survives. The project is a **claim calibration system**, not a pile of intervention summaries.
+
+Prefer `drafts/<condition>/objects/<slug>/` for check + artifact pairs.
+
+## Craft
+
+- Phase 2 stays lean.  
+- Intellectual shape varies by object; evidence picks the shape.  
+- Use “X ≠ Y” splits only when public confusion or evidence structure requires them.  
+- **Reward uncertainty when uncertainty is earned** (no fake-precise protocols, no over-translated intermediate outcomes, no universal claims the data do not support).  
+- Meta-analysis ≠ individual prescription.  
+- Meta-analysis serves the intervention; it is not the object.  
+- Page space is multidimensional.  
+- Em dash policy applies.  
