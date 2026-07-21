@@ -9,7 +9,7 @@ When publishing or promoting any new public HTML page (essay, profile, investiga
 
 ## Required before calling it live
 
-1. **Sitemap:** Add every indexable public URL to `sitemap.xml` with `loc`, `lastmod` (publish day), `changefreq`, and `priority`. Series landings use trailing-slash URLs when that matches the page canonical (e.g. `https://rajivvakani.com/intervention-maps/`).
+1. **Sitemap:** Add every indexable public URL to `sitemap.xml` with `loc`, `lastmod` (publish day), `changefreq`, and `priority`. Series landings use trailing-slash URLs matching the page canonical (e.g. `https://rajivvakani.com/therapy-profiles/`, `https://rajivvakani.com/intervention-maps/`). Content pages use the `.html` form.
 2. **Canonical:** Every public page has `<link rel="canonical" href="https://rajivvakani.com/...">` matching the intended URL.
 3. **Description:** Unique `<meta name="description">` (about 120–155 characters) drawn from the page’s bottom line, lede, or purpose.
 4. **Social:** `og:title`, `og:description`, `og:url`, `og:image`, `og:type`, `og:site_name`, plus matching `twitter:*` tags. Default image: `https://rajivvakani.com/headshot_36.jpg`.
