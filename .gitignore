@@ -8,3 +8,6 @@ docs/
 .DS_Store
 Thumbs.db
 
+# Leftover rescue trees / one-off dumps (do not re-add)
+recovery/
+

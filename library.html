@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Library | Rajiv Vakani</title>
-  <meta name="description" content="The complete map of the work. Every piece, grouped by topic.">
-
+  <meta name="description" content="Every series door and every investigation on one shelf. The complete index of Rajiv Vakani's writing.">
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rajivvakani.com/library.html" />
   <meta property="og:title" content="Library | Rajiv Vakani" />
-  <meta property="og:description" content="The complete map of the work. Every piece, grouped by topic." />
+  <meta property="og:description" content="Every series door and every investigation on one shelf. The complete index of Rajiv Vakani's writing." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
@@ -20,15 +19,15 @@
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://rajivvakani.com/library.html" />
   <meta property="twitter:title" content="Library | Rajiv Vakani" />
-  <meta property="twitter:description" content="The complete map of the work. Every piece, grouped by topic." />
+  <meta property="twitter:description" content="Every series door and every investigation on one shelf. The complete index of Rajiv Vakani's writing." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="rajiv-styles.min.css?v=20260715063000">
-  <link rel="stylesheet" href="insights/library.min.css?v=20260720010000">
+  <link rel="stylesheet" href="insights/library-shelf.css?v=20260724144000">
   <link rel="icon" type="image/png" href="favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="favicon-512.png?v=rv7" />
 
@@ -48,7 +47,7 @@
   </script>
 
   <script defer src="insights/data.js?v=20260719180000"></script>
-  <script defer src="insights/library.js?v=20260720010000"></script>
+  <script defer src="insights/library.js?v=20260724143000"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -58,7 +57,7 @@
       "@id": "https://rajivvakani.com/library.html#webpage",
       "url": "https://rajivvakani.com/library.html",
       "name": "Library | Rajiv Vakani",
-      "description": "The complete map of the work. Every piece, grouped by topic.",
+      "description": "Every series door and every investigation on one shelf. The complete index of Rajiv Vakani's writing.",
       "isPartOf": {
         "@id": "https://rajivvakani.com/#website"
       },
@@ -81,7 +80,7 @@
 }
   </script>
 </head>
-<body class="library-index">
+<body class="library-index" data-hide-drafts>
 
   <nav class="main-nav">
     <div class="container nav-container">
@@ -96,7 +95,6 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
-
       <button class="menu-toggle" aria-label="Toggle navigation">
         <span class="hamburger"></span>
         <span class="hamburger"></span>
@@ -109,68 +107,77 @@
 
   <main>
 
-    <!-- HEADER  --  minimal. Anchor, title, one line of framing. The
-         heavy lifting of orientation is on the topic pages; the
-         Library opens onto the whole work, not into any one area. -->
-    <header class="library-head">
-      <div class="wrap">
-        <p class="library-anchor">in <a href="insights.html">Insights</a></p>
-        <h1 class="library-title">Library</h1>
-        <p class="library-framing">
-          The complete map of the work. Every piece is here, grouped by
-          the area it belongs to.
-        </p>
+    <header class="lib-hero">
+      <div>
+        <h1 class="lib-hero__title">Library<span>complete.</span></h1>
+        <p class="lib-hero__line">Every series door. Every investigation. One shelf.</p>
+        <p class="lib-hero__sub" aria-hidden="true"></p>
       </div>
+      <nav class="lib-map" aria-label="Jump">
+        <div>
+          <p class="lib-map__label">Series</p>
+          <ul class="lib-map__list">
+            <li><a href="#door-sfd"><i class="lib-map__dot lib-map__dot--sfd" aria-hidden="true"></i>Seeing Food Differently<span class="lib-map__n">5</span></a></li>
+            <li><a href="#door-tp"><i class="lib-map__dot lib-map__dot--tp" aria-hidden="true"></i>Therapy Profiles<span class="lib-map__n">40</span></a></li>
+            <li><a href="#door-et"><i class="lib-map__dot lib-map__dot--et" aria-hidden="true"></i>Emerging Therapies<span class="lib-map__n">10</span></a></li>
+            <li><a href="#door-im"><i class="lib-map__dot lib-map__dot--im" aria-hidden="true"></i>Intervention Maps<span class="lib-map__n">3</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="lib-map__label">Subjects</p>
+          <ul class="lib-map__list" data-library-subjects>
+            <li data-render-state="loading">Loading subjects…</li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
-    <!-- SERIES DOORWAYS -- one compressed list; indexes own the catalogs. -->
-    <section class="library profiles-doorway" aria-label="Series">
-      <div class="wrap">
-        <p class="library__label">Series</p>
-        <ul class="topics">
-          <li>
-            <p class="topics__title"><a href="seeing-food-differently/index.html">Seeing Food Differently</a></p>
-            <p class="topics__desc">A kitchen guide in five chapters: starting state, flavor, knife cuts, heat, and steering.</p>
-          </li>
-          <li>
-            <p class="topics__title"><a href="therapy-profiles/index.html">Traditional Therapy Profiles</a></p>
-            <p class="topics__desc">Herbs, formulations, and product patterns in South Asian traditional medicine, separated when one name tries to mean all three.</p>
-          </li>
-          <li>
-            <p class="topics__title"><a href="emerging-therapies/index.html">Emerging Therapies</a></p>
-            <p class="topics__desc">A research studio for therapies changing nutrition counseling while the evidence is still forming.</p>
-          </li>
-          <li>
-            <p class="topics__title"><a href="intervention-maps/index.html">Intervention Maps</a></p>
-            <p class="topics__desc">Evidence landscapes for common conditions: where exercise, therapy, nutrition, supplements, and other approaches sit.</p>
-          </li>
-        </ul>
+    <section class="lib-series" id="series" aria-label="Series">
+      <div class="lib-series__intro">
+        <h2>Series</h2>
+        <p>Doorways into the longer catalogs.</p>
+      </div>
+      <div class="lib-doors">
+        <a class="lib-door" id="door-sfd" href="seeing-food-differently/index.html">
+          <span class="lib-door__n">01</span>
+          <p class="lib-door__name">Seeing Food Differently</p>
+          <p class="lib-door__line">A kitchen guide in five chapters. Noticing what was already in front of you.</p>
+          <p class="lib-door__peek">Starting State · Flavor · Knife Cuts · Heat · Steering</p>
+        </a>
+        <a class="lib-door" id="door-tp" href="therapy-profiles/index.html">
+          <span class="lib-door__n">02</span>
+          <p class="lib-door__name">Traditional Therapy Profiles</p>
+          <p class="lib-door__line">Plant, formula, product. Separated when one name means three.</p>
+          <p class="lib-door__peek">Ingredient · Formulation · Product pattern · 40 entries</p>
+        </a>
+        <a class="lib-door" id="door-et" href="emerging-therapies/index.html">
+          <span class="lib-door__n">03</span>
+          <p class="lib-door__name">Emerging Therapies</p>
+          <p class="lib-door__line">Research studio while the evidence is still forming.</p>
+          <p class="lib-door__peek">Tirzepatide · Retatrutide · Ten open</p>
+        </a>
+        <a class="lib-door" id="door-im" href="intervention-maps/index.html">
+          <span class="lib-door__n">04</span>
+          <p class="lib-door__name">Intervention Maps</p>
+          <p class="lib-door__line">Evidence landscapes for common conditions. Not a winner list.</p>
+          <p class="lib-door__peek">ADHD · Depression · Anxiety</p>
+        </a>
       </div>
     </section>
 
-    <!-- EVERYTHING.
-         Every article in the library, grouped by topic. Title only.
-         No ledes, no dates, no clusters, no types. Drafts appear
-         inline next to their published siblings, marked with a small
-         muted tag. Alphabetical within each topic so it reads like a
-         reference shelf, not a feed. Topics with no articles yet are
-         omitted. -->
-    <section class="library-archive" aria-label="Everything">
-      <div class="wrap">
-        <p class="library-archive__label">Everything</p>
-        <div data-library-archive></div>
+    <section class="lib-paper" id="investigations" aria-label="Investigations">
+      <div class="lib-paper__head">
+        <p class="lib-paper__kicker">Investigations</p>
+        <h2 class="lib-paper__title">By subject</h2>
+        <p class="lib-paper__lede">Title and a short line under each, so you know what you're opening.</p>
       </div>
+      <div class="lib-mosaic" data-library-mosaic data-render-state="loading">Loading investigations…</div>
     </section>
 
-    <!-- COLOPHON.  Same signature line that closes every library page. -->
-    <section class="library-colophon" aria-label="Signature">
-      <div class="wrap">
-        <p>
-          <a href="about.html">Rajiv Vakani</a>. Writing on nutrition from New York.<br class="colophon-break" aria-hidden="true">
-          Since 2023. <a href="contact.html">Email</a>.
-        </p>
-      </div>
-    </section>
+    <p class="lib-close">
+      <span>Want the staged rooms? That's Insights.</span>
+      <a href="insights.html">Open Insights →</a>
+    </p>
 
   </main>
 

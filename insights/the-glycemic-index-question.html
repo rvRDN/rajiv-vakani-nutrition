@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="post-page">
+<html lang="en" data-skin="light">
 <head>
+  <!-- promoted from insights/mockups/insights-room/gi-stage.html -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Glycemic Index Isn&rsquo;t Wrong. We&rsquo;re Just Asking It the Wrong Question. | Rajiv Vakani</title>
   <meta name="description" content="Why so many healthy foods score high on the glycemic index, and what the metric is and isn&rsquo;t actually measuring.">
 
@@ -22,12 +22,358 @@
   <meta property="twitter:description" content="Why so many healthy foods score high on the glycemic index, and what the metric is and isn&rsquo;t actually measuring." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
+<script>
+    (function () {
+      try {
+        var s = localStorage.getItem("insights-skin");
+        if (s === "dark" || s === "light") document.documentElement.setAttribute("data-skin", s);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../rajiv-styles.min.css?v=20260715063000">
-  <link rel="stylesheet" href="library.min.css?v=20260719173000">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    /*
+      Mango-family hard port. Same room grammar as mango-stage.
+      Anchor: Is the glycemic index wrong? (colliding healthy-food vs high-GI claims)
+    */
+    :root, html[data-skin="light"] {
+      --bg: #ffffff;
+      --ink: #0c1017;
+      --soft: rgba(12, 16, 23, 0.86);
+      --dim: rgba(12, 16, 23, 0.46);
+      --line: rgba(12, 16, 23, 0.12);
+      --hot: #c24a1a;
+      --stage: #0c1017;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-hot: #f08a4a;
+    }
+    html[data-skin="dark"] {
+      --bg: #08090b;
+      --ink: #f4f2ec;
+      --soft: rgba(244, 242, 236, 0.86);
+      --dim: rgba(244, 242, 236, 0.46);
+      --line: rgba(244, 242, 236, 0.14);
+      --hot: #f08a4a;
+      --stage: #16181d;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-hot: #f08a4a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .bar {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+      padding: 0.75rem 1.15rem;
+      padding-right: 8.5rem;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.78rem;
+    }
+    .bar a { color: var(--hot); text-decoration: none; }
+    .bar strong { font-weight: 600; }
+    .rail {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-left: clamp(1.25rem, 4vw, 2.5rem);
+      padding-right: clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .read { max-width: 34rem; }
+    .prose {
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.12rem, 1.4vw, 1.25rem);
+      line-height: 1.62;
+      color: var(--soft);
+    }
+    .prose p { margin: 0 0 1.05em; }
+    .prose a {
+      color: var(--hot);
+      text-decoration: none;
+      font-weight: inherit;
+    }
+    .prose a:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+    .prose sup a { text-decoration: none; font-family: "Instrument Sans", sans-serif; font-size: 0.7em; }
+    .prose .ask { color: var(--hot); font-style: italic; }
+    .prose .turn {
+      color: var(--ink);
+      font-size: 1.08em;
+      max-width: 36ch;
+      margin-top: 1.25em;
+    }
+    .series {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 0.7rem;
+      font-weight: 500;
+    }
+    .kicker {
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+      line-height: 1.35;
+      color: var(--dim);
+      margin: 0 0 clamp(1.35rem, 3.5vw, 2rem);
+      letter-spacing: -0.01em;
+    }
+    .stage {
+      min-height: min(92vh, 56rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 6vw, 4rem) 0 clamp(2.5rem, 6vw, 4rem);
+    }
+    .case-q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.6rem, 7vw, 5.25rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      margin: 0 0 clamp(2rem, 5vw, 3.25rem);
+      max-width: 14ch;
+      color: var(--ink);
+    }
+    .ledger {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+    .ledger__row {
+      display: grid;
+      grid-template-columns: 2.5rem minmax(7rem, 11rem) minmax(0, 1fr);
+      gap: clamp(0.75rem, 2vw, 1.5rem);
+      align-items: baseline;
+      padding: clamp(1.15rem, 2.4vw, 1.55rem) 0;
+      border-bottom: 1px solid var(--line);
+      opacity: 0;
+      transform: translateY(0.65rem);
+      animation: rise 0.7s ease forwards;
+    }
+    .ledger__row:nth-child(1) { animation-delay: 0.12s; }
+    .ledger__row:nth-child(2) { animation-delay: 0.28s; }
+    .ledger__row:nth-child(3) { animation-delay: 0.44s; }
+    @keyframes rise {
+      to { opacity: 1; transform: none; }
+    }
+    @media (max-width: 640px) {
+      .ledger__row {
+        grid-template-columns: 2rem minmax(0, 1fr);
+        grid-template-rows: auto auto;
+      }
+      .ledger__who { grid-column: 2; }
+      .ledger__line {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 0.25rem;
+      }
+    }
+    .ledger__n {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--dim);
+      font-variant-numeric: tabular-nums;
+    }
+    .ledger__who {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--hot);
+    }
+    .ledger__line {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .escort { padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 5rem); }
+    .seam {
+      background: var(--stage);
+      color: var(--stage-ink);
+      padding: clamp(3rem, 8vw, 5.5rem) 0;
+    }
+    .seam .prose { color: var(--stage-soft); }
+    .seam .prose .turn { color: var(--stage-ink); }
+    .seam .prose .ask { color: var(--stage-hot); }
+    .seam .prose a { color: var(--stage-hot); }
+    .seam__lead {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+      line-height: 1.4;
+      color: var(--stage-dim);
+      margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+      max-width: 28rem;
+    }
+    .verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      margin: 0 0 clamp(2rem, 5vw, 3rem);
+      padding: clamp(1.5rem, 3vw, 2rem) 0;
+      border-top: 1px solid rgba(244, 242, 236, 0.16);
+      border-bottom: 1px solid rgba(244, 242, 236, 0.16);
+    }
+    @media (max-width: 700px) {
+      .verdict { grid-template-columns: 1fr; }
+    }
+    .verdict__claim {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+    }
+    .verdict__claim p {
+      margin: 0 0 1rem;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.35rem, 2.6vw, 1.95rem);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      color: var(--stage-ink);
+    }
+    .verdict__tag {
+      display: inline-block;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stage-hot);
+    }
+    .block { padding: clamp(2.75rem, 6vw, 4.25rem) 0; }
+    .block + .block { border-top: 1px solid var(--line); }
+    .block h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      max-width: 34rem;
+      color: var(--ink);
+    }
+    .return {
+      padding: clamp(3rem, 7vw, 5rem) 0;
+      border-top: 1px solid var(--line);
+    }
+    .return__q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 1.5rem;
+      max-width: 14ch;
+      color: var(--ink);
+    }
+    .carry {
+      padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 5vw, 3rem);
+      border-top: 1px solid var(--line);
+    }
+    .carry h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      color: var(--ink);
+    }
+    .carry ol {
+      margin: 1.25rem 0 0;
+      padding: 0;
+      list-style: none;
+      max-width: 36rem;
+      counter-reset: q;
+    }
+    .carry li {
+      counter-increment: q;
+      position: relative;
+      padding: 1rem 0 1rem 2.5rem;
+      border-top: 1px solid var(--line);
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.08rem, 1.6vw, 1.22rem);
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .carry li:last-child { border-bottom: 1px solid var(--line); }
+    .carry li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      top: 1.1rem;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--hot);
+    }
+    .sources { padding: 0 0 clamp(3.5rem, 7vw, 5rem); }
+    .sources details {
+      max-width: 36rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+    .sources summary {
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .sources ol {
+      margin: 1rem 0 0;
+      padding: 0 0 0 1.15rem;
+      color: var(--soft);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+    .sources a { color: var(--hot); }
+    .dna {
+      margin: 0 auto;
+      max-width: 1120px;
+      padding: 0.75rem clamp(1.25rem, 4vw, 2.5rem) 0;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: var(--dim);
+    }
+    .dna summary {
+      cursor: pointer;
+      color: var(--hot);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+    }
+    .dna p { margin: 0.45rem 0 0; max-width: 44rem; }
+    @media (prefers-reduced-motion: reduce) {
+      .ledger__row { opacity: 1; transform: none; animation: none; }
+    }
+  </style>
+  <link rel="stylesheet" href="room-appearance.css?v=20260724170000" />
   <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
 
@@ -45,9 +391,6 @@
       gtag('config', 'G-0L41N5K2WV');
     });
   </script>
-
-  <script defer src="data.js?v=20260622200000"></script>
-  <script defer src="library.js?v=20260719173000"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,260 +428,218 @@
 }
   </script>
 </head>
-<body class="post-page" data-article-slug="the-glycemic-index-question" data-topic-id="reading-the-evidence">
+<body>
+    <div class="bar">
+    <a href="../index.html">Rajiv Vakani</a>
+    <a href="../insights.html">Insights</a>
+    <a href="../library.html">Library</a>
+    <strong>Glycemic index</strong>
+  </div>
 
-  <nav class="main-nav">
-    <div class="container nav-container">
-      <a href="../index.html" class="site-logo"><img src="../logo-mark.png?v=rv9" alt="" class="site-logo__mark" decoding="async" width="543" height="543">Rajiv Vakani</a>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../journey.html">Journey</a></li>
-        <li><a href="../insights.html" class="active">Insights</a></li>
-        <li><a href="../library.html">Library</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
+  <div class="skin" role="group" aria-label="Appearance">
+    <button type="button" class="skin__opt" data-skin="light" aria-pressed="true">Light</button>
+    <span class="skin__sep" aria-hidden="true">&middot;</span>
+    <button type="button" class="skin__opt" data-skin="dark" aria-pressed="false">Dark</button>
+  </div>
 
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
-      </button>
+<header class="stage" aria-label="The case">
+    <div class="rail">
+      <p class="series">Reading the evidence</p>
+      <p class="kicker">The Glycemic Index Question</p>
+      <h1 class="case-q">Is the glycemic index wrong?</h1>
+
+      <ol class="ledger" aria-label="Two ideas that wouldn&rsquo;t fit">
+        <li class="ledger__row">
+          <span class="ledger__n">01</span>
+          <span class="ledger__who">On one hand</span>
+          <p class="ledger__line">Fruits like mangoes, bananas, pineapple, and watermelon are widely considered healthy foods.</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">02</span>
+          <span class="ledger__who">On the other</span>
+          <p class="ledger__line">Many of those same foods have surprisingly high glycemic index values.</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">03</span>
+          <span class="ledger__who">What I assumed</span>
+          <p class="ledger__line">One of these ideas must be overstated. They didn&rsquo;t seem to fit together.</p>
+        </li>
+      </ol>
     </div>
-  </nav>
+  </header>
 
-  <div class="mobile-menu-overlay"></div>
-
-  <main>
-
-    <header class="post-header">
-      <div class="post-wrap">
-        <p class="post-anchor">
-          in <a href="topics/reading-the-evidence.html">Reading the evidence</a>
-        </p>
-        <h1 class="post-title">The Glycemic Index Isn&rsquo;t Wrong. We&rsquo;re Just Asking It the Wrong Question.</h1>
-        <p class="post-meta">
-          <span>Essay</span>
-          <span>June 9, 2026</span>
-        </p>
-      </div>
-    </header>
-
-    <article class="post-body">
-      <div class="post-wrap">
-
+  <section class="escort" aria-label="Enter">
+    <div class="rail">
+      <div class="prose read">
         <p>For a while, I couldn&rsquo;t reconcile two things I kept hearing about nutrition.</p>
-
-        <p>
-          On one hand, fruits like <a href="the-mango-question.html">mangoes</a>, bananas, pineapple, and watermelon were widely considered healthy foods. They&rsquo;re full of fiber, vitamins, and antioxidants, and they show up in plenty of healthy eating patterns.
-        </p>
-
+        <p>On one hand, fruits like <a href="the-mango-question.html">mangoes</a>, bananas, pineapple, and watermelon were widely considered healthy foods. They&rsquo;re full of fiber, vitamins, and antioxidants, and they show up in plenty of healthy eating patterns.</p>
         <p>On the other hand, many of those same foods have surprisingly high glycemic index values.</p>
-
         <p>The more I learned about the glycemic index, the more confused I got.</p>
-
         <p>If a high glycemic index is supposed to be a bad thing, why do so many healthy foods score so highly?</p>
-
         <p>And if these fruits are healthy, why should I care about the glycemic index at all?</p>
-
-        <p>
-          I assumed I was missing something. Either the glycemic index was being overstated, or the health benefits of these foods were being overstated. The two ideas didn&rsquo;t seem to fit together.
-        </p>
+        <p>I assumed I was missing something. Either the glycemic index was being overstated, or the health benefits of these foods were being overstated. The two ideas didn&rsquo;t seem to fit together.</p>
 
         <p>What finally shifted my thinking wasn&rsquo;t a research paper.</p>
-
         <p>It was a comment from one of my nutrition professors.</p>
-
         <p>She mentioned that she rarely uses the glycemic index in practice.</p>
-
         <p>That surprised me.</p>
-
-        <p>
-          The glycemic index had been discussed so often in articles, videos, and online discussions that I assumed it must be one of the most important tools in nutrition. If someone who actually works in nutrition rarely relied on it, I wanted to understand why.
-        </p>
+        <p>The glycemic index had been discussed so often in articles, videos, and online discussions that I assumed it must be one of the most important tools in nutrition. If someone who actually works in nutrition rarely relied on it, I wanted to understand why.</p>
 
         <p>The answer, as it turns out, wasn&rsquo;t that the glycemic index was wrong.</p>
-
         <p>It was that I didn&rsquo;t fully understand what question it was designed to answer.</p>
-
-        <p>
-          The glycemic index measures how quickly a carbohydrate-containing food raises blood glucose compared to a reference food under standardized conditions. At the physiological level, it&rsquo;s measuring something real. Foods with a higher glycemic index generally push blood glucose up faster than foods with a lower one.
-        </p>
-
+        <p>The glycemic index measures how quickly a carbohydrate-containing food raises blood glucose compared to a reference food under standardized conditions. At the physiological level, it&rsquo;s measuring something real. Foods with a higher glycemic index generally push blood glucose up faster than foods with a lower one.</p>
         <p>The problem starts when we start asking the glycemic index questions it was never designed to answer.</p>
-
-        <p>
-          A lot of people see a high-GI food and immediately decide the food itself must be unhealthy. Others see a low-GI food and assume it must be the better choice.
-        </p>
-
+        <p>A lot of people see a high-GI food and immediately decide the food itself must be unhealthy. Others see a low-GI food and assume it must be the better choice.</p>
         <p>But the glycemic index doesn&rsquo;t measure nutritional quality.</p>
-
         <p>It doesn&rsquo;t tell us how much fiber a food contains.</p>
-
         <p>It doesn&rsquo;t tell us whether the food provides vitamins, minerals, or beneficial phytochemicals.</p>
-
         <p>It doesn&rsquo;t tell us how filling the food is.</p>
-
         <p>And it doesn&rsquo;t tell us how much of that food people typically eat.</p>
+        <p class="ask">That&rsquo;s where things start to get interesting.</p>
+      </div>
+    </div>
+  </section>
 
-        <p>That&rsquo;s where things start to get interesting.</p>
+  <section class="seam" aria-label="Two true statements">
+    <div class="rail">
+      <p class="seam__lead">Many of the articles I was reading weren&rsquo;t actually disagreeing. They were answering different questions.</p>
 
-        <p>
-          Watermelon often appears near the top of glycemic index charts, with a GI around 76. Yet a 120-gram portion (roughly three-quarters of a cup, diced) contains only about 6 to 9 grams of carbohydrate, depending on how it&rsquo;s measured.<sup><a href="#src-1">1</a></sup> Run that through the glycemic load formula (GI multiplied by carbs per serving, divided by 100), and watermelon&rsquo;s load lands in the single digits, well inside the low range. A high GI doesn&rsquo;t necessarily mean a high glycemic load. The chart says watermelon raises blood glucose quickly. The portion you actually eat doesn&rsquo;t have enough carbohydrate to do much of that.
-        </p>
+      <div class="verdict" aria-label="Both true">
+        <blockquote class="verdict__claim">
+          <p>&ldquo;Does watermelon raise blood glucose?&rdquo;</p>
+          <span class="verdict__tag">One question</span>
+        </blockquote>
+        <blockquote class="verdict__claim">
+          <p>&ldquo;Is watermelon a nutritious food?&rdquo;</p>
+          <span class="verdict__tag">A different one</span>
+        </blockquote>
+      </div>
 
+      <div class="prose read">
+        <p>The first looks at a glucose curve. The second looks at water content, vitamins, lycopene, what the fruit tends to replace on the plate. Both can be right at the same time. Reading them side by side, it&rsquo;s easy to think they&rsquo;re arguing when they&rsquo;re simply standing in different places.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-label="Glycemic load and portions">
+    <div class="rail">
+      <h2>A high GI doesn&rsquo;t mean a high load</h2>
+      <div class="prose read">
+        <p>Watermelon often appears near the top of glycemic index charts, with a GI around 76. Yet a 120-gram portion (roughly three-quarters of a cup, diced) contains only about 6 to 9 grams of carbohydrate, depending on how it&rsquo;s measured.<sup><a href="#src-1">1</a></sup> Run that through the glycemic load formula (GI multiplied by carbs per serving, divided by 100), and watermelon&rsquo;s load lands in the single digits, well inside the low range. A high GI doesn&rsquo;t necessarily mean a high glycemic load. The chart says watermelon raises blood glucose quickly. The portion you actually eat doesn&rsquo;t have enough carbohydrate to do much of that.</p>
         <p>This is one reason researchers developed the concept of glycemic load.</p>
-
-        <p>
-          Unlike glycemic index, glycemic load takes portion size into account. A food can have a relatively high glycemic index and still produce a modest glycemic load if people don&rsquo;t eat much of it at once.
-        </p>
-
+        <p>Unlike glycemic index, glycemic load takes portion size into account. A food can have a relatively high glycemic index and still produce a modest glycemic load if people don&rsquo;t eat much of it at once.</p>
         <p>That distinction helped answer part of my original question.</p>
-
         <p>But it still didn&rsquo;t explain why so many practitioners seemed reluctant to lean too hard on the glycemic index.</p>
+      </div>
+    </div>
+  </section>
 
+  <section class="block" aria-label="Real meals">
+    <div class="rail">
+      <h2>People rarely eat carbohydrates alone</h2>
+      <div class="prose read">
         <p>The deeper issue is that people rarely eat carbohydrates by themselves.</p>
-
         <p>The glycemic index is measured under carefully controlled conditions. Real meals aren&rsquo;t.</p>
-
-        <p>
-          A bowl of rice eaten alone is different from rice eaten alongside dal, vegetables, and yogurt. Protein, fat, and fiber can slow gastric emptying and change the body&rsquo;s glycemic response. The number on the chart stays the same, but the meal has changed.
-        </p>
-
+        <p>A bowl of rice eaten alone is different from rice eaten alongside dal, vegetables, and yogurt. Protein, fat, and fiber can slow gastric emptying and change the body&rsquo;s glycemic response. The number on the chart stays the same, but the meal has changed.</p>
         <p>That was probably the moment things really started to click for me.</p>
+        <p>This is also why the glycemic index may be more useful in some situations than others. For someone managing diabetes or trying to better understand their blood glucose response, GI can provide helpful information when you use it alongside portion size, meal composition, and blood glucose monitoring. For someone simply deciding whether a banana, mango, or bowl of watermelon belongs in an otherwise healthy diet, the answer usually lives in the overall dietary pattern rather than the glycemic index alone.</p>
+      </div>
+    </div>
+  </section>
 
-        <p>
-          This is also why the glycemic index may be more useful in some situations than others. For someone managing diabetes or trying to better understand their blood glucose response, GI can provide helpful information when you use it alongside portion size, meal composition, and blood glucose monitoring. For someone simply deciding whether a banana, mango, or bowl of watermelon belongs in an otherwise healthy diet, the answer usually lives in the overall dietary pattern rather than the glycemic index alone.
-        </p>
-
-        <p>Then there&rsquo;s the person eating it.</p>
-
-        <p>
-          A 2015 study at the Weizmann Institute followed 800 people using continuous glucose monitors and found that responses to identical meals varied dramatically from one person to the next.<sup><a href="#src-2">2</a></sup> Two people could eat exactly the same food and produce very different glucose curves. In some cases, one person&rsquo;s blood sugar climbed sharply on a food while another&rsquo;s barely moved. Insulin sensitivity, sleep, physical activity, medications, and even gut microbiome composition all shaped the result.
-        </p>
-
+  <section class="block" aria-label="The person eating it">
+    <div class="rail">
+      <h2>Then there&rsquo;s the person eating it</h2>
+      <div class="prose read">
+        <p>A 2015 study at the Weizmann Institute followed 800 people using continuous glucose monitors and found that responses to identical meals varied dramatically from one person to the next.<sup><a href="#src-2">2</a></sup> Two people could eat exactly the same food and produce very different glucose curves. In some cases, one person&rsquo;s blood sugar climbed sharply on a food while another&rsquo;s barely moved. Insulin sensitivity, sleep, physical activity, medications, and even gut microbiome composition all shaped the result.</p>
         <p>The more I learned, the less interested I became in finding the perfect glycemic index score.</p>
-
         <p>The real question wasn&rsquo;t whether a food had a high GI or a low GI.</p>
-
         <p>The real question was how that food fit into the larger pattern of someone&rsquo;s diet.</p>
+      </div>
+    </div>
+  </section>
 
-        <p>I eventually realized that many of the articles I was reading weren&rsquo;t actually disagreeing. They were answering different questions.</p>
-
-        <p>
-          One article might ask whether watermelon raises blood glucose. Another might ask whether watermelon is a nutritious food. The first looks at a glucose curve. The second looks at water content, vitamins, lycopene, what the fruit tends to replace on the plate. Both can be right at the same time. Reading them side by side, it&rsquo;s easy to think they&rsquo;re arguing when they&rsquo;re simply standing in different places.
-        </p>
-
+  <section class="block" aria-label="What GI still earns">
+    <div class="rail">
+      <h2>A tool, not a verdict</h2>
+      <div class="prose read">
         <p>That doesn&rsquo;t mean the glycemic index is useless.</p>
-
         <p>Far from it.</p>
-
-        <p>
-          Large reviews have found that dietary patterns lower in glycemic index and glycemic load are associated with reduced risk of type 2 diabetes and cardiovascular disease.<sup><a href="#src-3">3</a></sup> The benefit, though, shows up at the level of the overall diet, not in the verdict on any single food. The glycemic index captures something real. It&rsquo;s one thread of a larger story.
-        </p>
-
+        <p>Large reviews have found that dietary patterns lower in glycemic index and glycemic load are associated with reduced risk of type 2 diabetes and cardiovascular disease.<sup><a href="#src-3">3</a></sup> The benefit, though, shows up at the level of the overall diet, not in the verdict on any single food. The glycemic index captures something real. It&rsquo;s one thread of a larger story.</p>
         <p>But it&rsquo;s a tool.</p>
-
         <p>Not a verdict.</p>
+      </div>
+    </div>
+  </section>
 
+  <section class="return" aria-label="Return to the question">
+    <div class="rail">
+      <p class="return__q">Is the glycemic index wrong?</p>
+      <div class="prose read">
         <p>For a long time, I thought the challenge was deciding whether the glycemic index was right or wrong.</p>
-
         <p>What I eventually realized is that it was never an all-or-nothing question.</p>
-
         <p>The glycemic index was doing exactly what it was designed to do.</p>
-
         <p>The confusion came from expecting it to do more.</p>
-
-        <p>That&rsquo;s a pattern I&rsquo;ve started noticing in other areas of nutrition as well.</p>
-
-        <p>Useful tools often become misleading when they&rsquo;re promoted into complete explanations.</p>
-
-        <p>A study becomes a headline.</p>
-
-        <p>A metric becomes a philosophy.</p>
-
-        <p>A useful idea becomes a rule.</p>
-
         <p>The glycemic index isn&rsquo;t wrong.</p>
-
         <p>It&rsquo;s simply answering a narrower question than many of us realize.</p>
-
         <p>And once I understood that, those supposedly contradictory ideas stopped feeling contradictory at all.</p>
-
       </div>
-    </article>
+    </div>
+  </section>
 
-    <section class="post-sources" aria-label="Sources">
-      <div class="post-wrap">
-        <details class="post-sources__disclosure">
-          <summary>Sources <span class="post-sources__cue" aria-hidden="true">Open sources</span></summary>
-          <div class="post-sources__disclosure-body">
-          <ol>
-                        <li id="src-1">
-                          Atkinson, F. S., Foster-Powell, K., &amp; Brand-Miller, J. C. (2008). International Tables of Glycemic Index and Glycemic Load Values: 2008. <em>Diabetes Care</em>, 31(12), 2281&ndash;2283.
-                          <a href="https://doi.org/10.2337/dc08-1239" target="_blank" rel="noopener">https://doi.org/10.2337/dc08-1239</a>
-                        </li>
-                        <li id="src-2">
-                          Zeevi, D., Korem, T., Zmora, N., et al. (2015). Personalized Nutrition by Prediction of Glycemic Responses. <em>Cell</em>, 163(5), 1079&ndash;1094.
-                          <a href="https://doi.org/10.1016/j.cell.2015.11.001" target="_blank" rel="noopener">https://doi.org/10.1016/j.cell.2015.11.001</a>
-                        </li>
-                        <li id="src-3">
-                          Reynolds, A., Mann, J., Cummings, J., Winter, N., Mete, E., &amp; Te Morenga, L. (2019). Carbohydrate quality and human health: a series of systematic reviews and meta-analyses. <em>The Lancet</em>, 393(10170), 434&ndash;445.
-                          <a href="https://doi.org/10.1016/S0140-6736(18)31809-9" target="_blank" rel="noopener">https://doi.org/10.1016/S0140-6736(18)31809-9</a>
-                        </li>
-                      </ol>
-          </div>
-        </details>
+  <section class="carry" aria-label="What transfers">
+    <div class="rail">
+      <h2>What I started noticing elsewhere</h2>
+      <div class="prose read">
+        <p>That&rsquo;s a pattern I&rsquo;ve started noticing in other areas of nutrition as well.</p>
+        <p>Useful tools often become misleading when they&rsquo;re promoted into complete explanations.</p>
+        <p>A study becomes a headline.</p>
+        <p>A metric becomes a philosophy.</p>
+        <p>A useful idea becomes a rule.</p>
       </div>
-    </section>
+      <ol>
+        <li>What question was this tool designed to answer?</li>
+        <li>What question am I actually asking it?</li>
+        <li>Am I treating a narrow measure like a complete verdict?</li>
+      </ol>
+    </div>
+  </section>
 
-    <section class="post-next" aria-label="Next">
-      <div class="post-wrap" data-post-next></div>
-    </section>
+  <section class="sources" aria-label="Sources">
+    <div class="rail">
+      <details>
+        <summary>Sources</summary>
+        <ol>
+          <li id="src-1">
+            Atkinson, F. S., Foster-Powell, K., &amp; Brand-Miller, J. C. (2008). International Tables of Glycemic Index and Glycemic Load Values: 2008. <em>Diabetes Care</em>, 31(12), 2281&ndash;2283.
+            <a href="https://doi.org/10.2337/dc08-1239" target="_blank" rel="noopener">https://doi.org/10.2337/dc08-1239</a>
+          </li>
+          <li id="src-2">
+            Zeevi, D., Korem, T., Zmora, N., et al. (2015). Personalized Nutrition by Prediction of Glycemic Responses. <em>Cell</em>, 163(5), 1079&ndash;1094.
+            <a href="https://doi.org/10.1016/j.cell.2015.11.001" target="_blank" rel="noopener">https://doi.org/10.1016/j.cell.2015.11.001</a>
+          </li>
+          <li id="src-3">
+            Reynolds, A., Mann, J., Cummings, J., Winter, N., Mete, E., &amp; Te Morenga, L. (2019). Carbohydrate quality and human health: a series of systematic reviews and meta-analyses. <em>The Lancet</em>, 393(10170), 434&ndash;445.
+            <a href="https://doi.org/10.1016/S0140-6736(18)31809-9" target="_blank" rel="noopener">https://doi.org/10.1016/S0140-6736(18)31809-9</a>
+          </li>
+        </ol>
+      </details>
+    </div>
+  </section>
 
-    <section class="post-colophon" aria-label="Signature">
-      <div class="post-wrap">
-        <p>
-          <a href="../about.html">Rajiv Vakani</a>. Writing on nutrition from New York.<br class="colophon-break" aria-hidden="true">
-          Since 2023. <a href="../contact.html">Email</a>.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
-      <div class="footer-social" aria-label="Social links">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg class="social-icon" aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
-        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+  
+  <footer class="room-foot">
+    <div class="room-foot__inner">
+      <p class="room-foot__legal">&copy; 2025&ndash;2026 Rajiv Vakani</p>
+      <div class="room-foot__social" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
       </div>
     </div>
   </footer>
 
+  <script src="room-appearance.js?v=20260724170000" defer></script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var menuToggle = document.querySelector('.menu-toggle');
-      var navLinks = document.querySelector('.nav-links');
-      var overlay = document.querySelector('.mobile-menu-overlay');
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function () {
-          navLinks.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-          if (overlay) overlay.classList.toggle('active');
-          document.body.classList.toggle('menu-open');
-        });
-      }
-      if (overlay) {
-        overlay.addEventListener('click', function () {
-          navLinks.classList.remove('active');
-          menuToggle.classList.remove('active');
-          overlay.classList.remove('active');
-          document.body.classList.remove('menu-open');
-        });
-      }
-    });
-  </script>
 </body>
 </html>

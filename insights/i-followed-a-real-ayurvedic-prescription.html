@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" class="post-page">
+<html lang="en" data-skin="light">
 <head>
+  <!-- promoted from insights/mockups/insights-room/ayurveda-stage.html -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>I Followed a Real Ayurvedic Prescription Into the Research | Rajiv Vakani</title>
   <meta name="description" content="A relative's Ayurvedic prescription for blood sugar and triglycerides led me into the literature. The herbs were recognizable. The finished products were not tested as products.">
 
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://rajivvakani.com/insights/i-followed-a-real-ayurvedic-prescription.html" />
   <meta property="og:title" content="I Followed a Real Ayurvedic Prescription Into the Research | Rajiv Vakani" />
-  <meta property="og:description" content="A close relative came home with Ayurvedic supplements for blood sugar and triglycerides. I traced four products into the research. The prescribing logic was coherent. The product proof was not." />
+  <meta property="og:description" content="A relative's Ayurvedic prescription for blood sugar and triglycerides led me into the literature. The herbs were recognizable. The finished products were not tested as products." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
@@ -19,15 +19,561 @@
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://rajivvakani.com/insights/i-followed-a-real-ayurvedic-prescription.html" />
   <meta property="twitter:title" content="I Followed a Real Ayurvedic Prescription Into the Research | Rajiv Vakani" />
-  <meta property="twitter:description" content="A close relative came home with Ayurvedic supplements for blood sugar and triglycerides. I traced four products into the research. The prescribing logic was coherent. The product proof was not." />
+  <meta property="twitter:description" content="A relative's Ayurvedic prescription for blood sugar and triglycerides led me into the literature. The herbs were recognizable. The finished products were not tested as products." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
+<script>
+    (function () {
+      try {
+        var s = localStorage.getItem("insights-skin");
+        if (s === "dark" || s === "light") document.documentElement.setAttribute("data-skin", s);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../rajiv-styles.min.css?v=20260715063000">
-  <link rel="stylesheet" href="library.min.css?v=20260719173000">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+
+
+    /*
+      Hold · Ayurvedic Rx. Claim ladder.
+      Counter enter → levels of claim → seam at recognition vs proof → questions return.
+    */
+    :root, html[data-skin="light"] {
+      --bg: #ffffff;
+      --ink: #0c1017;
+      --soft: rgba(12, 16, 23, 0.86);
+      --dim: rgba(12, 16, 23, 0.46);
+      --line: rgba(12, 16, 23, 0.12);
+      --hot: #c24a1a;
+      --stage: #0c1017;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-hot: #f08a4a;
+    }
+    html[data-skin="dark"] {
+      --bg: #08090b;
+      --ink: #f4f2ec;
+      --soft: rgba(244, 242, 236, 0.86);
+      --dim: rgba(244, 242, 236, 0.46);
+      --line: rgba(244, 242, 236, 0.14);
+      --hot: #f08a4a;
+      --stage: #16181d;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-hot: #f08a4a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .bar {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+      padding: 0.75rem 1.15rem;
+      padding-right: 8.5rem;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.78rem;
+    }
+    .bar a { color: var(--hot); text-decoration: none; }
+    .bar strong { font-weight: 600; }
+    .rail {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-left: clamp(1.25rem, 4vw, 2.5rem);
+      padding-right: clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .read { max-width: 34rem; }
+    .prose {
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.12rem, 1.4vw, 1.25rem);
+      line-height: 1.62;
+      color: var(--soft);
+    }
+    .prose p { margin: 0 0 1.05em; }
+    .prose a {
+      color: var(--hot);
+      text-decoration: none;
+      font-weight: inherit;
+    }
+    .prose a:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+    .prose sup a { text-decoration: none; font-family: "Instrument Sans", sans-serif; font-size: 0.7em; }
+    .prose .ask { color: var(--hot); font-style: italic; }
+    .prose .turn {
+      color: var(--ink);
+      font-size: 1.08em;
+      max-width: 36ch;
+      margin-top: 1.25em;
+    }
+    .series {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 0.7rem;
+      font-weight: 500;
+    }
+    .kicker {
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+      line-height: 1.35;
+      color: var(--dim);
+      margin: 0 0 clamp(1.35rem, 3.5vw, 2rem);
+      letter-spacing: -0.01em;
+    }
+    .stage {
+      min-height: min(92vh, 56rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 6vw, 4rem) 0 clamp(2.5rem, 6vw, 4rem);
+    }
+    .case-q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.6rem, 7vw, 5.25rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      margin: 0 0 clamp(2rem, 5vw, 3.25rem);
+      max-width: 14ch;
+      color: var(--ink);
+    }
+    .ledger {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+    .ledger__row {
+      display: grid;
+      grid-template-columns: 2.5rem minmax(7rem, 11rem) minmax(0, 1fr);
+      gap: clamp(0.75rem, 2vw, 1.5rem);
+      align-items: baseline;
+      padding: clamp(1.15rem, 2.4vw, 1.55rem) 0;
+      border-bottom: 1px solid var(--line);
+      opacity: 0;
+      transform: translateY(0.65rem);
+      animation: rise 0.7s ease forwards;
+    }
+    .ledger__row:nth-child(1) { animation-delay: 0.12s; }
+    .ledger__row:nth-child(2) { animation-delay: 0.28s; }
+    .ledger__row:nth-child(3) { animation-delay: 0.44s; }
+    @keyframes rise {
+      to { opacity: 1; transform: none; }
+    }
+    @media (max-width: 640px) {
+      .ledger__row {
+        grid-template-columns: 2rem minmax(0, 1fr);
+        grid-template-rows: auto auto;
+      }
+      .ledger__who { grid-column: 2; }
+      .ledger__line {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 0.25rem;
+      }
+    }
+    .ledger__n {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--dim);
+      font-variant-numeric: tabular-nums;
+    }
+    .ledger__who {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--hot);
+    }
+    .ledger__line {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .escort { padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 5rem); }
+    .seam {
+      background: var(--stage);
+      color: var(--stage-ink);
+      padding: clamp(3rem, 8vw, 5.5rem) 0;
+    }
+    .seam .prose { color: var(--stage-soft); }
+    .seam .prose .turn { color: var(--stage-ink); }
+    .seam .prose .ask { color: var(--stage-hot); }
+    .seam .prose a { color: var(--stage-hot); }
+    .seam__lead {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+      line-height: 1.4;
+      color: var(--stage-dim);
+      margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+      max-width: 28rem;
+    }
+    .verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      margin: 0 0 clamp(2rem, 5vw, 3rem);
+      padding: clamp(1.5rem, 3vw, 2rem) 0;
+      border-top: 1px solid rgba(244, 242, 236, 0.16);
+      border-bottom: 1px solid rgba(244, 242, 236, 0.16);
+    }
+    @media (max-width: 700px) {
+      .verdict { grid-template-columns: 1fr; }
+    }
+    .verdict__claim {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+    }
+    .verdict__claim p {
+      margin: 0 0 1rem;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.35rem, 2.6vw, 1.95rem);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      color: var(--stage-ink);
+    }
+    .verdict__tag {
+      display: inline-block;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stage-hot);
+    }
+    .block { padding: clamp(2.75rem, 6vw, 4.25rem) 0; }
+    .block + .block { border-top: 1px solid var(--line); }
+    .block h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      max-width: 34rem;
+      color: var(--ink);
+    }
+    .return {
+      padding: clamp(3rem, 7vw, 5rem) 0;
+      border-top: 1px solid var(--line);
+    }
+    .return__q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 1.5rem;
+      max-width: 14ch;
+      color: var(--ink);
+    }
+    .carry {
+      padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 5vw, 3rem);
+      border-top: 1px solid var(--line);
+    }
+    .carry h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      color: var(--ink);
+    }
+    .carry ol {
+      margin: 1.25rem 0 0;
+      padding: 0;
+      list-style: none;
+      max-width: 36rem;
+      counter-reset: q;
+    }
+    .carry li {
+      counter-increment: q;
+      position: relative;
+      padding: 1rem 0 1rem 2.5rem;
+      border-top: 1px solid var(--line);
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.08rem, 1.6vw, 1.22rem);
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .carry li:last-child { border-bottom: 1px solid var(--line); }
+    .carry li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      top: 1.1rem;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--hot);
+    }
+    .sources { padding: 0 0 clamp(3.5rem, 7vw, 5rem); }
+    .sources details {
+      max-width: 36rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+    .sources summary {
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .sources ol {
+      margin: 1rem 0 0;
+      padding: 0 0 0 1.15rem;
+      color: var(--soft);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+    .sources a { color: var(--hot); }
+    .dna {
+      margin: 0 auto;
+      max-width: 1120px;
+      padding: 0.75rem clamp(1.25rem, 4vw, 2.5rem) 0;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: var(--dim);
+    }
+    .dna summary {
+      cursor: pointer;
+      color: var(--hot);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+    }
+    .dna p { margin: 0.45rem 0 0; max-width: 44rem; }
+    @media (prefers-reduced-motion: reduce) {
+      .ledger__row { opacity: 1; transform: none; animation: none; }
+    }
+  
+    .prose strong { color: var(--ink); font-weight: 600; }
+    .prose em { font-style: italic; }
+    .case-q { max-width: 12ch; }
+
+    /* Chapter jump: desktop sticky rail; mobile sheet */
+    .toc-fab {
+      display: none;
+      position: fixed;
+      right: 1rem;
+      bottom: 1.25rem;
+      z-index: 35;
+      font: inherit;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 0.7rem 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(12, 16, 23, 0.08);
+    }
+    .toc {
+      display: none;
+    }
+    .toc__label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 0.75rem;
+    }
+    .toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .toc a {
+      display: block;
+      padding: 0.35rem 0 0.35rem 0.65rem;
+      border-left: 1px solid var(--line);
+      color: var(--dim);
+      text-decoration: none;
+      font-size: 0.78rem;
+      line-height: 1.35;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .toc a:hover { color: var(--ink); }
+    .toc a.is-active {
+      color: var(--hot);
+      border-left-color: var(--hot);
+    }
+    .toc-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 45;
+      background: rgba(12, 16, 23, 0.35);
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+    }
+    body.toc-open { overflow: hidden; }
+    body.toc-open .toc-backdrop { display: block; }
+
+    @media (min-width: 1180px) {
+      .toc {
+        display: block;
+        position: fixed;
+        top: 5.25rem;
+        right: max(0.75rem, calc((100vw - 1120px) / 2 - 12.25rem));
+        width: 11rem;
+        max-height: calc(100vh - 6.5rem);
+        overflow: auto;
+        z-index: 20;
+        padding-bottom: 2rem;
+      }
+      .toc-fab { display: none !important; }
+    }
+    @media (max-width: 1179px) {
+      .toc-fab { display: block; }
+      .toc {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        width: auto;
+        max-height: min(70vh, 28rem);
+        overflow: auto;
+        background: var(--bg);
+        border-top: 1px solid var(--line);
+        padding: 1.15rem 1.25rem 1.75rem;
+        transform: translateY(105%);
+        transition: transform 0.22s ease;
+        box-shadow: 0 -12px 40px rgba(12, 16, 23, 0.12);
+      }
+      body.toc-open .toc { transform: none; }
+      .toc__close {
+        display: block;
+        width: 100%;
+        margin: 0 0 1rem;
+        font: inherit;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--dim);
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 0 0 0.85rem;
+        text-align: left;
+        cursor: pointer;
+      }
+    }
+    @media (min-width: 1180px) {
+      .toc__close { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .toc { transition: none; }
+    }
+    .block, .escort, .seam, .return, .sources {
+      scroll-margin-top: 4.5rem;
+    }
+  
+
+    .hero { padding: clamp(2rem, 6vw, 4rem) 0 clamp(1.5rem, 4vw, 2.25rem); }
+    .title {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.1rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.85rem;
+      max-width: 16ch;
+      color: var(--ink);
+    }
+    .dek {
+      margin: 0 0 1.5rem;
+      font-size: 1.05rem;
+      color: var(--soft);
+      max-width: 34rem;
+    }
+    .block h2 { max-width: 34rem; }
+    .prose strong { color: var(--ink); font-weight: 600; }
+    .prose em { font-style: italic; }
+    .prose ul {
+      margin: 1rem 0 1.25rem;
+      padding-left: 1.15rem;
+      max-width: 36rem;
+    }
+    .prose ul li { margin: 0.35rem 0; color: var(--soft); }
+    .return__q { max-width: 14ch; }
+    .table-wrap {
+      margin: 1.5rem 0 1.75rem;
+      overflow-x: auto;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .ev-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      min-width: 36rem;
+    }
+    .ev-table th,
+    .ev-table td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.85rem 0.75rem 0.85rem 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--soft);
+    }
+    .ev-table th {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .ev-table tr:last-child td { border-bottom: 0; }
+    .series-note {
+      margin-top: 1.75rem;
+      padding-top: 1.15rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.92rem;
+      color: var(--dim);
+      max-width: 36rem;
+    }
+    /* Ledger inside prose column */
+    .prose .ledger { margin: 1.5rem 0; }
+    .prose .ledger__line { font-size: clamp(1.05rem, 1.8vw, 1.35rem); }
+
+  </style>
+  <link rel="stylesheet" href="room-appearance.css?v=20260724170000" />
   <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
 
@@ -45,9 +591,6 @@
       gtag('config', 'G-0L41N5K2WV');
     });
   </script>
-
-  <script defer src="data.js?v=20260624120000"></script>
-  <script defer src="library.js?v=20260719173000"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,71 +628,79 @@
 }
   </script>
 </head>
-<body class="post-page" data-article-slug="i-followed-a-real-ayurvedic-prescription" data-topic-id="south-asian-food-and-nutrition">
+<body>
+    <div class="bar">
+    <a href="../index.html">Rajiv Vakani</a>
+    <a href="../insights.html">Insights</a>
+    <a href="../library.html">Library</a>
+    <strong>Ayurvedic prescription</strong>
+  </div>
 
-  <nav class="main-nav">
-    <div class="container nav-container">
-      <a href="../index.html" class="site-logo"><img src="../logo-mark.png?v=rv9" alt="" class="site-logo__mark" decoding="async" width="543" height="543">Rajiv Vakani</a>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../journey.html">Journey</a></li>
-        <li><a href="../insights.html" class="active">Insights</a></li>
-        <li><a href="../library.html">Library</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
+  <div class="skin" role="group" aria-label="Appearance">
+    <button type="button" class="skin__opt" data-skin="light" aria-pressed="true">Light</button>
+    <span class="skin__sep" aria-hidden="true">&middot;</span>
+    <button type="button" class="skin__opt" data-skin="dark" aria-pressed="false">Dark</button>
+  </div>
 
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
-      </button>
-    </div>
+<button type="button" class="toc-fab" id="toc-open" aria-expanded="false" aria-controls="chapter-toc">Sections</button>
+  <button type="button" class="toc-backdrop" id="toc-backdrop" aria-label="Close sections" hidden></button>
+  <nav class="toc" id="chapter-toc" aria-label="On this page">
+    <button type="button" class="toc__close" id="toc-close">Close sections</button>
+    <p class="toc__label">On this page</p>
+    <ol>
+      <li><a href="#the-prescription-on-the-counter">The prescription</a></li>
+      <li><a href="#not-one-thing">Not one thing</a></li>
+      <li><a href="#the-prescribing-landscape">Prescribing landscape</a></li>
+      <li><a href="#placing-the-prescription-on-the-map">On the map</a></li>
+      <li><a href="#four-levels-of-claim">Four levels of claim</a></li>
+      <li><a href="#check">Recognition vs proof</a></li>
+      <li><a href="#commonly-prescribed-most-studied">Prescribed ≠ studied</a></li>
+      <li><a href="#athreya-sugar-relief">Sugar Relief</a></li>
+      <li><a href="#harmony-amla-beyond-nishamalaki">Amla & Beyond</a></li>
+      <li><a href="#the-four-ingredients">Four ingredients</a></li>
+      <li><a href="#prostate-and-urinary-products">Prostate products</a></li>
+      <li><a href="#safety-and-complexity">Safety</a></li>
+      <li><a href="#what-each-layer-can-claim">What each layer can claim</a></li>
+      <li><a href="#ask">What I would ask now</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
   </nav>
 
-  <div class="mobile-menu-overlay"></div>
+  <header class="hero" aria-label="Title">
+    <div class="rail">
+      <p class="series">South Asian food and nutrition</p>
+      <h1 class="title">I Followed a Real Ayurvedic Prescription Into the Research</h1>
+      <p class="dek">What tradition prescribes, what trials study, and what a bottle can actually claim</p>
+      <ol class="ledger" aria-label="Bottles on the counter">
+        <li class="ledger__row">
+          <span class="ledger__n">01</span>
+          <span class="ledger__who">Sugar Relief</span>
+          <p class="ledger__line">Blood sugar metabolism. Proprietary four-herb capsule.</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">02</span>
+          <span class="ledger__who">Amla &amp; Beyond</span>
+          <p class="ledger__line">Modern Nishamalaki. Turmeric, amla, absorption blend.</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">03</span>
+          <span class="ledger__who">ChandraPrabha Vati</span>
+          <p class="ledger__line">Classical compound. Prostate and urinary aim here.</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">04</span>
+          <span class="ledger__who">Prostate Care</span>
+          <p class="ledger__line">Another genitourinary formula. Same bag. Same visit.</p>
+        </li>
+      </ol>
+    </div>
+  </header>
 
-  <main>
-
-    <header class="post-header">
-      <div class="post-wrap">
-        <p class="post-anchor">
-          in <a href="topics/south-asian-food-and-nutrition.html">South Asian food and nutrition</a>
-        </p>
-        <h1 class="post-title">I Followed a Real Ayurvedic Prescription Into the Research</h1>
-        <p class="post-dek">What tradition prescribes, what trials study, and what a bottle can actually claim</p>
-        <p class="post-meta">
-          <span>Research Review</span>
-          <span>June 24, 2026</span>
-        </p>
-      </div>
-    </header>
-
-    <section class="post-glance" aria-label="At a glance">
-      <div class="post-wrap">
-        <p class="post-glance__label">At a glance</p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">What started this</span>
-          A close relative visited an Ayurvedic practitioner, reviewed bloodwork, and came home with supplements aimed at blood sugar and triglycerides. I'm training in nutrition, and I wanted to know what the evidence actually supports: not whether Ayurveda works as a system, but what these specific products can claim.
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">What surprised me</span>
-          The prescription&rsquo;s ingredients matched what government guidelines and clinical research focus on. But none of the finished metabolic products had been tested as products in published trials.
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">Why it matters</span>
-          Millions of people use Ayurvedic therapies alongside conventional care for the same chronic diseases dietitians see every day. Before you accept or reject a bottle, it helps to know what kind of claim it's making.
-        </p>
-      </div>
-    </section>
-
-    <article class="post-body" id="the-prescription-on-the-counter">
-      <div class="post-wrap">
-
-        <h2 id="the-prescription-on-the-counter">The prescription on the counter</h2>
-
-        <p>A close relative came home from an Ayurvedic practitioner visit with lab results in hand and a bag of supplements on the counter. Blood sugar was part of the conversation. So were triglycerides. The practitioner had reviewed the numbers and recommended a set of products aimed at improving them.</p>
+  <section class="block" id="the-prescription-on-the-counter" aria-label="The prescription on the counter">
+    <div class="rail">
+      <h2>The prescription on the counter</h2>
+      <div class="prose read">
+<p>A close relative came home from an Ayurvedic practitioner visit with lab results in hand and a bag of supplements on the counter. Blood sugar was part of the conversation. So were triglycerides. The practitioner had reviewed the numbers and recommended a set of products aimed at improving them.</p>
 
         <p>I'd seen Ayurvedic supplements in the family before. What was new was the specificity. These weren't vague wellness teas. They were named bottles with defined goals that overlapped directly with the chronic disease markers I'm training to work with as a nutrition professional.</p>
 
@@ -164,10 +715,14 @@
         <p>So I did two things. First, I mapped what Ayurvedic practitioners commonly prescribe for metabolic disease, across government guidelines, clinical training, and the commercial market. Then I traced these four products into the published literature to see what evidence exists for the claims they carry.</p>
 
         <p>The prescription looked coherent from the start. That was part of what made the investigation necessary. Coherence isn't the same as proof. I didn't yet know how far apart those two things would turn out to be.</p>
-
-        <h2 id="not-one-thing">Not one thing</h2>
-
-        <p>Before I could evaluate these bottles, I had to reset what I meant by &ldquo;Ayurvedic treatment for diabetes.&rdquo; It isn't one thing.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="not-one-thing" aria-label="Not one thing">
+    <div class="rail">
+      <h2>Not one thing</h2>
+      <div class="prose read">
+<p>Before I could evaluate these bottles, I had to reset what I meant by &ldquo;Ayurvedic treatment for diabetes.&rdquo; It isn't one thing.</p>
 
         <p>It's not a single herb, a single pill, or a single protocol. It's a layered approach. Dietary rules come first in official guidelines: what to eat, what to avoid, when to eat it. Physical activity and yoga appear throughout. Practitioners prescribe single herbs as powders or juices, classical compound formulations as tablets or decoctions, and proprietary commercial blends that package the same ingredient patterns into capsules and bottled juices families can buy without a consultation.</p>
 
@@ -176,28 +731,36 @@
         <p>There's real variation in how practitioners work. Different formulations, different brands, different forms (churna versus capsule, classical kwatha versus OTC juice). The variation is bounded, though. Across government protocols, medical college curricula, clinic formularies, and the commercial market, the same herb basket keeps reappearing. Bitter herbs. Gudmar. Guduchi. Amla. Turmeric. Methi. Jamun. Guggulu-based compounds. Practitioners disagree about which formulation and which patient. They don't often disagree about whether metabolic care involves dietary change, activity, and herbs from that core set.</p>
 
         <p>This prescription was mostly the supplement layer. Diet and activity may well have been part of the consultation. They aren't what was in the bottles I could hold. This investigation focuses on those bottles, the therapies with names on the label, not on the full Ayurvedic care plan they may have been embedded in.</p>
-
-        <h2 id="the-prescribing-landscape">The prescribing landscape</h2>
-
-        <p>To see whether this prescription was unusual, I needed to know what Ayurvedic practitioners commonly prescribe for metabolic disease. Not what works. What gets recommended.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="the-prescribing-landscape" aria-label="The prescribing landscape">
+    <div class="rail">
+      <h2>The prescribing landscape</h2>
+      <div class="prose read">
+<p>To see whether this prescription was unusual, I needed to know what Ayurvedic practitioners commonly prescribe for metabolic disease. Not what works. What gets recommended.</p>
 
         <p>The answer is remarkably consistent across sources that don't always agree on much else.</p>
 
-        <p>India&rsquo;s Ministry of AYUSH publishes standard treatment guidelines for metabolic disorders, including type 2 diabetes and dyslipidemia. A 2025 update lists first-line herbal advocacy that begins with <a href="../therapy-profiles/nishamalaki.html">Nishamalaki</a> (turmeric and amla together), alongside classical decoctions and guggulu-based compounds. The National List of Essential AYUSH Medicines procures Nisha-Amalaki churna, <a href="../therapy-profiles/giloy.html">guduchi</a>, <a href="../therapy-profiles/chandraprabha-vati.html">Chandraprabha vati</a>, <a href="../therapy-profiles/triphala.html">triphala</a>, and multiple guggulu preparations for public dispensaries. BAMS graduates study Prameha, Madhumeha, obesity, and dyslipidemia as linked disorders, with classical compound formulations assigned to each stage of disease. Government integration programs have tested standardized regimens built from metabolic herbs such as mamajjaka, amalaki, and guduchi.</p>
+        <p>India&rsquo;s Ministry of AYUSH publishes standard treatment guidelines for metabolic disorders, including type 2 diabetes and dyslipidemia. A 2025 update lists first-line herbal advocacy that begins with <a href="therapy-profiles/nishamalaki.html">Nishamalaki</a> (turmeric and amla together), alongside classical decoctions and guggulu-based compounds. The National List of Essential AYUSH Medicines procures Nisha-Amalaki churna, <a href="therapy-profiles/giloy.html">guduchi</a>, <a href="therapy-profiles/chandraprabha-vati.html">Chandraprabha vati</a>, <a href="therapy-profiles/triphala.html">triphala</a>, and multiple guggulu preparations for public dispensaries. BAMS graduates study Prameha, Madhumeha, obesity, and dyslipidemia as linked disorders, with classical compound formulations assigned to each stage of disease. Government integration programs have tested standardized regimens built from metabolic herbs such as mamajjaka, amalaki, and guduchi.</p>
 
         <p>Different settings, same ingredients. That pattern extends to private practice and the commercial market. What diaspora families often buy looks different in form (more capsules, more juices, more branded multi-herb products) but not in what goes into them. Commercial diabetes supplements and karela-jamun juices recycle the same basket: karela, jamun, gudmar, guduchi, methi, neem, amla, turmeric. Himalaya&rsquo;s Diabecon-type blends aren't classical prescriptions, but they draw from the same herb pool.</p>
 
-        <p>The core basket, repeated everywhere: <a href="../therapy-profiles/gudmar.html">gymnema (gudmar)</a>, bitter melon (karela), guduchi, fenugreek (methi), jamun, vijaysar, amla, turmeric, triphala, and guggulu resin, the base for dozens of compound tablets.</p>
+        <p>The core basket, repeated everywhere: <a href="therapy-profiles/gudmar.html">gymnema (gudmar)</a>, bitter melon (karela), guduchi, fenugreek (methi), jamun, vijaysar, amla, turmeric, triphala, and guggulu resin, the base for dozens of compound tablets.</p>
 
         <p>The classical formulations that appear most often include Nishamalaki as a first-line pairing of turmeric and amla; guggulu compounds such as Gokshuradi, Medohar, and Navaka for glucose and lipid overlap; and Chandraprabha for later-stage care and complications. Liquid decoctions remain standard in government and hospital settings but are less common in what families buy off the shelf.</p>
 
         <p>A patient with elevated blood sugar and triglycerides is likely to receive dietary guidance plus a multi-herb product built from that core basket, not a single isolated herb in most cases. Proprietary blends are extremely common in what people actually take home.</p>
 
         <p>That was the map. The next step was to place one real prescription on top of it.</p>
-
-        <h2 id="placing-the-prescription-on-the-map">Placing the prescription on the map</h2>
-
-        <p>Four products from the counter, laid against what practitioners commonly prescribe:</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="placing-the-prescription-on-the-map" aria-label="Placing the prescription on the map">
+    <div class="rail">
+      <h2>Placing the prescription on the map</h2>
+      <div class="prose read">
+<p>Four products from the counter, laid against what practitioners commonly prescribe:</p>
 
         <p><strong>Athreya Sugar Relief</strong> is a proprietary four-herb capsule: gymnema (gudmar), guduchi, turmeric (haridra), and amla (amalaki). It's marketed for healthy sugar metabolism. Those four herbs are among the most common anti-Prameha ingredients in the landscape, the same ones that appear in government lists, commercial diabetes blends, and OTC capsules across the market. The public product information I reviewed didn't fully disclose how many milligrams of each herb is in a capsule, or whether the ingredients are raw powders or extracts.</p>
 
@@ -212,18 +775,43 @@
         <p>Sugar Relief&rsquo;s ingredient list is a subset of the core metabolic basket. Amla & Beyond belongs to a formulation class the government lists as first-line. Chandraprabha is a staple in late-stage and complication protocols. Nothing on the counter looked fringe. Everything looked institutionally recognizable, the kind of prescription a landscape review would predict for a patient with metabolic and genitourinary concerns.</p>
 
         <p>That told me the prescribing logic was sound: central herbs, central formulation classes. It didn't tell me whether these specific bottles would change the numbers on the lab report. Overlap with common practice answers a different question than efficacy. What the literature actually supported, and whether any of it applied to these products, was still ahead of me.</p>
-
-        <h2 id="four-levels-of-claim">Four levels of claim</h2>
-
-        <blockquote class="post-pullquote" aria-label="Key insight"><p>Recognition isn't proof.</p></blockquote>
-
-        <p>By the time I'd mapped the prescription onto what practitioners commonly prescribe, the bottles looked institutionally coherent. The herbs in Sugar Relief belonged to the same basket that appears in government guidelines and commercial diabetes products. Amla & Beyond sat in the same first-line class as classical Nishamalaki. Chandraprabha was the kind of compound that shows up in later-stage protocols.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="four-levels-of-claim" aria-label="Four levels of claim">
+    <div class="rail">
+      <h2>Four levels of claim</h2>
+      <div class="prose read">
+<p>By the time I'd mapped the prescription onto what practitioners commonly prescribe, the bottles looked institutionally coherent. The herbs in Sugar Relief belonged to the same basket that appears in government guidelines and commercial diabetes products. Amla & Beyond sat in the same first-line class as classical Nishamalaki. Chandraprabha was the kind of compound that shows up in later-stage protocols.</p>
 
         <p>Coherence, though, isn't the same question as evidence. And the evidence question itself splits into levels that are easy to collapse when you're standing in someone's kitchen looking at four supplement bottles.</p>
 
         <p>One reason conversations about Ayurvedic therapies become confusing is that people often make claims at one level and defend them with evidence from another. A practitioner recommends a product. The label lists herbs with trial data behind them. A family member reads that gymnema &ldquo;lowers blood sugar&rdquo; and assumes the capsule on the counter has been tested. A marketer cites ingredient research. None of them are necessarily wrong about what they know. They're often not talking about the same claim, a pattern I've written about elsewhere in <a href="the-mango-question.html">The Mango Question</a>.</p>
 
         <p>To make sense of what I was reading, I sorted the claims on this prescription into four levels.</p>
+      <ol class="ledger" aria-label="Four levels of claim">
+        <li class="ledger__row">
+          <span class="ledger__n">01</span>
+          <span class="ledger__who">Commonly prescribed</span>
+          <p class="ledger__line">Recognizable in tradition, guidelines, and practice. Not outcome proof.</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">02</span>
+          <span class="ledger__who">Ingredient evidence</span>
+          <p class="ledger__line">Trials of a single herb or extract on its own.</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">03</span>
+          <span class="ledger__who">Formulation evidence</span>
+          <p class="ledger__line">Trials of a named combination studied as a unit.</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">04</span>
+          <span class="ledger__who">Product evidence</span>
+          <p class="ledger__line">Trials of the exact branded bottle at the dose taken.</p>
+        </li>
+      </ol>
+
 
         <p><strong>Level 1: Commonly prescribed.</strong> What tradition, clinical practice, and government protocols regularly recommend: the herb basket and classical formulations from the previous section. When Sugar Relief&rsquo;s four herbs and Amla & Beyond&rsquo;s Nishamalaki class matched that map, that was a Level 1 finding. It told me the prescription was recognizable. It didn't tell me it worked.</p>
 
@@ -242,10 +830,28 @@
         <p>What follows walks through this prescription at each level where data exists. Sugar Relief and Amla & Beyond carry the primary claims about blood sugar and triglycerides. Chandraprabha and Prostate Care arrived for different reasons (prostate and urinary health), though they sat in the same bag and deserve a separate look before any metabolic benefit is inferred. The aim isn't a verdict on Ayurveda as a whole. It's a bounded answer at each level: what the literature can support, what it suggests, and what it hasn't tested at all.</p>
 
         <p>The ladder gave me a way to organize what I was finding. It also exposed a second problem I hadn't expected when I started with a prescription that looked so well aligned with the prescribing map.</p>
-
-        <h2 id="commonly-prescribed-not-equals-most-studied">Commonly prescribed ≠ most studied</h2>
-
-        <p>The literature on Ayurvedic medicines for type 2 diabetes isn't empty. The largest systematic review I found pooled 199 randomized trials covering 98 medicines and more than 21,000 participants.<sup><a href="#src-1">1</a></sup> That sounds like a substantial evidence base. It's also a noisy one. The reviewers noted poor reporting quality across many of the included trials and generally low certainty in the pooled results. Triglycerides (one of the markers on my relative&rsquo;s lab report) showed up far less often than fasting glucose or HbA1c. That glucose-heavy imbalance in the research would persist as I worked through the prescription. Not because triglycerides were absent from the goals, but because they were far less often measured.</p>
+      </div>
+    </div>
+  </section>
+  <section class="seam" id="check" aria-label="Recognition vs proof">
+    <div class="rail">
+      <div class="verdict" aria-label="The gap">
+        <blockquote class="verdict__claim">
+          <p>Recognition isn&rsquo;t proof.</p>
+          <span class="verdict__tag">Level 1</span>
+        </blockquote>
+        <blockquote class="verdict__claim">
+          <p>Evidence doesn&rsquo;t transfer between levels.</p>
+          <span class="verdict__tag">The rule</span>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="commonly-prescribed-most-studied" aria-label="Commonly prescribed ≠ most studied">
+    <div class="rail">
+      <h2>Commonly prescribed ≠ most studied</h2>
+      <div class="prose read">
+<p>The literature on Ayurvedic medicines for type 2 diabetes isn't empty. The largest systematic review I found pooled 199 randomized trials covering 98 medicines and more than 21,000 participants.<sup><a href="#src-1">1</a></sup> That sounds like a substantial evidence base. It's also a noisy one. The reviewers noted poor reporting quality across many of the included trials and generally low certainty in the pooled results. Triglycerides (one of the markers on my relative&rsquo;s lab report) showed up far less often than fasting glucose or HbA1c. That glucose-heavy imbalance in the research would persist as I worked through the prescription. Not because triglycerides were absent from the goals, but because they were far less often measured.</p>
 
         <p>More importantly, the review didn't answer the question the prescription was asking.</p>
 
@@ -264,10 +870,14 @@
         <p>I was looking at a prescription that sat comfortably at Level 1 (recognizable, coherent, well aligned with what practitioners commonly recommend) while most of the published literature sat at Levels 2 and 3, and almost none of it sat at Level 4. Research could tell me something about gymnema, guduchi, turmeric, and amla as ingredients. It could tell me something, in places, about Nishamalaki as a formulation. It could rarely tell me whether these specific bottles, at these specific doses, did what the prescription implied.</p>
 
         <p>I started with the metabolic products, the ones aimed directly at blood sugar and triglycerides. First: Athreya Sugar Relief.</p>
-
-        <h2 id="athreya-sugar-relief">Athreya Sugar Relief</h2>
-
-        <p>Sugar Relief is a proprietary four-herb capsule from Athreya Herbs, marketed for &ldquo;healthy sugar metabolism.&rdquo; The label on the prescription listed gymnema (gudmar), guduchi, turmeric (haridra), and amla (amalaki), four of the most common anti-Prameha herbs in the prescribing landscape. Bitter and sugar-blocking. Rasayana and metabolic support. Anti-inflammatory. Antioxidant. The combination mirrors the logic behind countless government-listed formulas and OTC diabetes blends: put the core basket in one convenient capsule.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="athreya-sugar-relief" aria-label="Athreya Sugar Relief">
+    <div class="rail">
+      <h2>Athreya Sugar Relief</h2>
+      <div class="prose read">
+<p>Sugar Relief is a proprietary four-herb capsule from Athreya Herbs, marketed for &ldquo;healthy sugar metabolism.&rdquo; The label on the prescription listed gymnema (gudmar), guduchi, turmeric (haridra), and amla (amalaki), four of the most common anti-Prameha herbs in the prescribing landscape. Bitter and sugar-blocking. Rasayana and metabolic support. Anti-inflammatory. Antioxidant. The combination mirrors the logic behind countless government-listed formulas and OTC diabetes blends: put the core basket in one convenient capsule.</p>
 
         <p>At Level 1, that logic is easy to follow.</p>
 
@@ -282,10 +892,14 @@
         <p>The next step is ingredient-level evaluation, with the same non-transfer rule in force. What gymnema does in a studied extract isn't necessarily what gymnema does as one quarter of an undisclosed blend.</p>
 
         <p>Sugar Relief had no product-level trials. Amla & Beyond belonged to a different category: a classical formulation with government first-line status and a small body of formulation-level research. That made it the most interesting metabolic product on the prescription.</p>
-
-        <h2 id="harmony-amla-beyond-nishamalaki">Harmony Amla & Beyond (Nishamalaki)</h2>
-
-        <p>Harmony Nutraceuticals&rsquo; Amla & Beyond belongs to the Nishamalaki class described in the previous section, a modern capsule using concentrated amla extract (Amlowin&trade;), full-spectrum organic turmeric, and a Triperine&trade; bioavailability blend. My question here was narrower: had anyone tested this exact product as a finished metabolic intervention, and what did formulation-level research suggest?</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="harmony-amla-beyond-nishamalaki" aria-label="Harmony Amla & Beyond (Nishamalaki)">
+    <div class="rail">
+      <h2>Harmony Amla & Beyond (Nishamalaki)</h2>
+      <div class="prose read">
+<p>Harmony Nutraceuticals&rsquo; Amla & Beyond belongs to the Nishamalaki class described in the previous section, a modern capsule using concentrated amla extract (Amlowin&trade;), full-spectrum organic turmeric, and a Triperine&trade; bioavailability blend. My question here was narrower: had anyone tested this exact product as a finished metabolic intervention, and what did formulation-level research suggest?</p>
 
         <p>The marketing covers blood glucose, lipids, and triglycerides &ldquo;already within normal range,&rdquo; along with immune and digestive support. For this investigation, the metabolic claims were the relevant ones.</p>
 
@@ -310,18 +924,20 @@
         <p>There's one more complication on this prescription. The patient was also taking Sugar Relief, which delivers turmeric and amla a second time through a different proprietary blend. No trial I found addresses cumulative exposure across two metabolic products.</p>
 
         <p>Two metabolic products. Zero product-level trials. The ingredient-level literature was where most of the signal lived, and where most of the confusion came from.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="the-four-ingredients" aria-label="The four ingredients">
+    <div class="rail">
+      <h2>The four ingredients</h2>
+      <div class="prose read">
+<p>Sugar Relief forced the investigation down to Level 2. Amla & Beyond meant two of those ingredients (turmeric and amla) were arriving from two directions at once. Each herb below has some published trial data. None of that data automatically applies to the capsules on the counter.</p>
 
-        <h2 id="the-four-ingredients">The four ingredients</h2>
-
-        <p>Sugar Relief forced the investigation down to Level 2. Amla & Beyond meant two of those ingredients (turmeric and amla) were arriving from two directions at once. Each herb below has some published trial data. None of that data automatically applies to the capsules on the counter.</p>
-
-        <div class="post-table-wrap" role="region" aria-label="Ingredient evidence at a glance" tabindex="0">
-        <table class="post-table">
+        <div class="table-wrap" role="region" aria-label="Ingredient evidence at a glance" tabindex="0">
+        <table class="ev-table">
         <thead><tr><th scope="col">Ingredient</th><th scope="col">Glucose evidence</th><th scope="col">Lipid evidence</th><th scope="col">Working verdict</th></tr></thead>
         <tbody><tr><td>Gymnema</td><td>Meta-analyses report FBG, HbA1c reductions; high heterogeneity</td><td>TG reduced in same analyses; thinner</td><td>Promising but limited</td></tr><tr><td>Guduchi</td><td>3-trial meta: HbA1c &minus;0.5%; modest FBG</td><td>Separate smaller studies; TG &darr; in dyslipidemia trial</td><td>Promising but limited</td></tr><tr><td>Turmeric</td><td>9-trial meta: FBG &darr;; HbA1c inconsistent</td><td>LDL/TC &darr; in meta; TG weaker</td><td>Promising for FBG/LDL; mixed on HbA1c</td></tr><tr><td>Amla</td><td>5-trial meta + individual RCTs</td><td>TG, TC, LDL &darr; in meta</td><td>Relatively strongest at L2</td></tr></tbody>
         </table>
-        </div>
-
         <h3>Gymnema (gudmar)</h3>
 
         <p>Gymnema is a climbing shrub whose leaves contain gymnemic acids that block sweet taste receptors and may reduce intestinal glucose absorption. In Ayurvedic prescribing it's a classic Pramehaghna, a &ldquo;sugar destroyer,&rdquo; and among the most heavily marketed antidiabetic herbs in commercial products.</p>
@@ -357,10 +973,14 @@
         <p>At Level 2, amla is relatively the strongest ingredient on this prescription for combined glucose and lipid endpoints. Relatively strongest among four herbs isn't the same as proven at the product level, especially when the patient may be receiving amla from two bottles at unknown cumulative doses.</p>
 
         <p>The metabolic story was partial, mixed, and dose-uncertain. Two other products on the prescription targeted prostate and urinary health, but they arrived in the same bag, for the same person, with the same lab concerns in the background.</p>
-
-        <h2 id="prostate-and-urinary-products">Prostate and urinary products</h2>
-
-        <p>The prescription bundled metabolic and genitourinary goals. A patient holding lab results for blood sugar and triglycerides could easily read the whole bag as one metabolic plan. The evidence doesn't support that reading.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="prostate-and-urinary-products" aria-label="Prostate and urinary products">
+    <div class="rail">
+      <h2>Prostate and urinary products</h2>
+      <div class="prose read">
+<p>The prescription bundled metabolic and genitourinary goals. A patient holding lab results for blood sugar and triglycerides could easily read the whole bag as one metabolic plan. The evidence doesn't support that reading.</p>
 
         <p>I evaluated these two products only for metabolic relevance: whether they belong in a conversation about HbA1c and triglycerides. Their primary indications are prostate and urinary health, which is a separate clinical question this article doesn't try to answer.</p>
 
@@ -383,10 +1003,14 @@
         <p>For blood sugar and triglycerides, the verdict is insufficient. Inferring metabolic benefit from the ingredient list would be Level 2 reasoning applied to a Level 4 product that hasn't been tested. That's the same mistake the ladder is meant to prevent.</p>
 
         <p>Ingredient-level data had been mixed. Product-level data had been largely absent. The remaining question was whether any of it was safe to treat as harmless background support.</p>
-
-        <h2 id="safety-and-complexity">Safety and complexity</h2>
-
-        <p>A partial Level 2 signal isn't a license to treat a prescription as benign, especially when several products overlap and some ingredients carry documented risks.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="safety-and-complexity" aria-label="Safety and complexity">
+    <div class="rail">
+      <h2>Safety and complexity</h2>
+      <div class="prose read">
+<p>A partial Level 2 signal isn't a license to treat a prescription as benign, especially when several products overlap and some ingredients carry documented risks.</p>
 
         <p><strong>Hypoglycemia.</strong> Gymnema and guduchi both have glucose-lowering trial data. Sugar Relief contains both. If a patient is taking insulin, sulfonylureas, or other medications that lower blood sugar, adding Sugar Relief without monitoring could push glucose lower than intended. This is the most immediate practical concern in the metabolic half of the prescription.</p>
 
@@ -401,16 +1025,18 @@
         <p>This section isn't medical advice about whether to start, stop, or change medications. It's the safety context the evidence ladder needs to stay honest.</p>
 
         <p>Safety narrowed the frame. Synthesis had to be equally careful: not &ldquo;does it work,&rdquo; but what each layer of this prescription can actually claim.</p>
-
-        <h2 id="what-each-layer-can-claim">What each layer can claim</h2>
-
-        <div class="post-table-wrap" role="region" aria-label="Evidence summary table" tabindex="0">
-        <table class="post-table">
+      </div>
+    </div>
+  </section>
+  <section class="block" id="what-each-layer-can-claim" aria-label="What each layer can claim">
+    <div class="rail">
+      <h2>What each layer can claim</h2>
+      <div class="prose read">
+<div class="table-wrap" role="region" aria-label="Evidence summary table" tabindex="0">
+        <table class="ev-table">
         <thead><tr><th scope="col">Level</th><th scope="col">This prescription</th><th scope="col">Verdict</th></tr></thead>
         <tbody><tr><td><strong>L1: Commonly prescribed</strong></td><td>Sugar Relief&rsquo;s herb basket, Amla & Beyond&rsquo;s Nishamalaki class, Chandraprabha&rsquo;s protocol placement</td><td>Recognizable pattern. Supported as prescribing logic, not as outcome proof.</td></tr><tr><td><strong>L2: Ingredients</strong></td><td>Gymnema, guduchi, turmeric, amla</td><td>Partial signal. Amla relatively strongest for glucose and lipids together. Others mixed. Promising but limited.</td></tr><tr><td><strong>L3: Formulations</strong></td><td>Nishamalaki / close analogues</td><td>Uncertain. Prediabetes data more favorable than established T2DM alone. Lipid signal weak in best analogue trial.</td></tr><tr><td><strong>L4: Products</strong></td><td>Sugar Relief, Amla & Beyond, Prostate Care; Chandraprabha for metabolic goals</td><td>Insufficient for proprietary metabolic products. Weak for Chandraprabha on metabolic endpoints.</td></tr></tbody>
         </table>
-        </div>
-
         <p>That table is the answer the investigation produced: not whether Ayurveda works, but what kind of claim each layer of this prescription can support.</p>
 
         <p>At Level 1, the prescription makes sense within the world of Ayurvedic metabolic care. The herbs and formulation classes aren't fringe choices. They're the central ones.</p>
@@ -426,10 +1052,14 @@
         <p>The honest framing is adjunct: something that might help alongside conventional care, with glucose monitoring and attention to liver symptoms, not substitution. Not a reason to ignore the lab report. Not a reason to assume the bottles are inert.</p>
 
         <p>That's the map. The question is what to do with it.</p>
-
-        <h2 id="what-i-would-ask-now">What I would ask now</h2>
-
-        <p>By the end of this investigation, the distinction I kept returning to was simple: commonly prescribed, ingredient-studied, and product-proven aren't the same claim. The prescription on my relative&rsquo;s counter made sense at the first level. That was never the whole story.</p>
+      </div>
+    </div>
+  </section>
+  <section class="return" id="ask" aria-label="What I would ask now">
+    <div class="rail">
+      <p class="return__q">What I would ask now</p>
+      <div class="prose read">
+<p>By the end of this investigation, the distinction I kept returning to was simple: commonly prescribed, ingredient-studied, and product-proven aren't the same claim. The prescription on my relative&rsquo;s counter made sense at the first level. That was never the whole story.</p>
 
         <p>What surprised me was the shape of the gap. The prescribing logic was more coherent than I'd assumed going in: not random wellness shopping, but herbs and formulation classes that appear across government guidelines, medical training, and the commercial market. The ingredient literature was stronger than I expected in places, particularly for amla and, with caveats, for gymnema and guduchi, and tilted toward glucose outcomes more than triglycerides. The product literature was weaker than most consumers would assume: zero published trials for the metabolic bottles themselves, and almost nothing that tested this specific combination of products taken together.</p>
 
@@ -440,19 +1070,18 @@
         <p>I care about this because people I already know are using these products, and because future patients will arrive with bags like this one, often while also following conventional medical advice. They deserve a conversation that's more informed than &ldquo;it's natural&rdquo; or &ldquo;it's unproven.&rdquo; The investigation gave me a better way to think. Not certainty. Not a verdict. A way to ask sharper questions.</p>
 
         <p>The next layer of questions (labels, doses, manufacturing quality, heavy metals, third-party testing) is a different investigation. I haven't done it yet. It's the one I'd want done before anyone treated a product as verified.</p>
-        <p class="post-series-note">This is the first article in a three-part investigation of Ayurvedic metabolic care. A follow-up on labels, doses, manufacturing quality, and heavy metals is planned. A third piece will step back from evidence to ask how two medical traditions meet around one disease.</p>
-
+        <p class="series-note">This is the first article in a three-part investigation of Ayurvedic metabolic care. A follow-up on labels, doses, manufacturing quality, and heavy metals is planned. A third piece will step back from evidence to ask how two medical traditions meet around one disease.</p>
       </div>
-    </article>
+    </div>
+  </section>
 
-    <section class="post-sources" aria-label="Sources">
-      <div class="post-wrap">
-        <details class="post-sources__disclosure">
-          <summary>Sources <span class="post-sources__cue" aria-hidden="true">Open sources</span></summary>
-          <div class="post-sources__disclosure-body">
-          <div class="post-sources__group">
-                        <p class="post-sources__label">Research sources</p>
-                        <ol>
+
+  <section class="sources" id="sources" aria-label="Sources">
+    <div class="rail">
+      <details>
+        <summary>Sources</summary>
+        <ol>
+
                           <li id="src-1">Chattopadhyay K, Wang H, Kaur J, et al. Effectiveness and Safety of Ayurvedic Medicines in Type 2 Diabetes Mellitus Management: A Systematic Review and Meta-Analysis. <em>Front Pharmacol</em>. 2022;13:821810. <a href="https://pubmed.ncbi.nlm.nih.gov/35754481/" target="_blank" rel="noopener">PubMed</a></li>
                           <li id="src-2">Munshi R, et al. Nisha-Amalaki capsules in prediabetic patients: a randomized placebo-controlled trial. <em>J Ayurveda Integr Med</em>. 2023. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10587713/" target="_blank" rel="noopener">Source</a></li>
                           <li id="src-3">Krushnakumar T, et al. Naga Bhasma and Nisha-Amalaki in type 2 diabetes mellitus. <em>Ayu</em>. 2023. <a href="https://pubmed.ncbi.nlm.nih.gov/38435052/" target="_blank" rel="noopener">PubMed</a></li>
@@ -467,61 +1096,68 @@
                           <li id="src-12">Chandraprabha vati in type 2 diabetes: clinical trial. <em>Ayuh</em>. 2023. <a href="https://pubmed.ncbi.nlm.nih.gov/37890123/" target="_blank" rel="noopener">PubMed</a></li>
                           <li id="src-13">Chandraprabha vati as add-on to glimepiride in newly diagnosed type 2 diabetes. <em>Asian J Pharm Clin Res</em>. 2025. <a href="https://pubmed.ncbi.nlm.nih.gov/39234567/" target="_blank" rel="noopener">PubMed</a></li>
                           <li id="src-14">LiverTox: Clinical and Research Information on Drug-Induced Liver Injury: <em>Tinospora cordifolia</em> (Guduchi). NIH. <a href="https://www.ncbi.nlm.nih.gov/books/NBK608429/" target="_blank" rel="noopener">Source</a></li>
-                        </ol>
-                      </div>
-          </div>
-        </details>
-      </div>
-    </section>
+                        
+        </ol>
+      </details>
+    </div>
+  </section>
 
-    <section class="post-next" aria-label="Next">
-      <div class="post-wrap" data-post-next></div>
-    </section>
-
-    <section class="post-colophon" aria-label="Signature">
-      <div class="post-wrap">
-        <p>
-          <a href="../about.html">Rajiv Vakani</a>. Writing on nutrition from New York.<br class="colophon-break" aria-hidden="true">
-          Since 2023. <a href="../contact.html">Email</a>.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
-      <div class="footer-social" aria-label="Social links">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg class="social-icon" aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
-        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var openBtn = document.getElementById("toc-open");
+      var closeBtn = document.getElementById("toc-close");
+      var backdrop = document.getElementById("toc-backdrop");
+      var toc = document.getElementById("chapter-toc");
+      var links = toc ? toc.querySelectorAll('a[href^="#"]') : [];
+      function setOpen(open) {
+        document.body.classList.toggle("toc-open", open);
+        if (openBtn) openBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (backdrop) {
+          if (open) backdrop.removeAttribute("hidden");
+          else backdrop.setAttribute("hidden", "");
+        }
+      }
+      function closeToc() { setOpen(false); }
+      if (openBtn) openBtn.addEventListener("click", function () { setOpen(true); });
+      if (closeBtn) closeBtn.addEventListener("click", closeToc);
+      if (backdrop) backdrop.addEventListener("click", closeToc);
+      links.forEach(function (a) {
+        a.addEventListener("click", function () {
+          if (window.matchMedia("(max-width: 1179px)").matches) closeToc();
+        });
+      });
+      var ids = Array.prototype.map.call(links, function (a) {
+        return a.getAttribute("href").slice(1);
+      }).filter(Boolean);
+      var sections = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      if (!sections.length || !("IntersectionObserver" in window)) return;
+      var linkById = {};
+      links.forEach(function (a) {
+        linkById[a.getAttribute("href").slice(1)] = a;
+      });
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          links.forEach(function (a) { a.classList.remove("is-active"); });
+          if (linkById[entry.target.id]) linkById[entry.target.id].classList.add("is-active");
+        });
+      }, { rootMargin: "-20% 0px -65% 0px", threshold: 0 });
+      sections.forEach(function (sec) { observer.observe(sec); });
+    })();
+  </script>
+  
+  <footer class="room-foot">
+    <div class="room-foot__inner">
+      <p class="room-foot__legal">&copy; 2025&ndash;2026 Rajiv Vakani</p>
+      <div class="room-foot__social" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var menuToggle = document.querySelector('.menu-toggle');
-      var navLinks = document.querySelector('.nav-links');
-      var overlay = document.querySelector('.mobile-menu-overlay');
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function () {
-          navLinks.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-          if (overlay) overlay.classList.toggle('active');
-          document.body.classList.toggle('menu-open');
-        });
-      }
-      if (overlay) {
-        overlay.addEventListener('click', function () {
-          navLinks.classList.remove('active');
-          menuToggle.classList.remove('active');
-          overlay.classList.remove('active');
-          document.body.classList.remove('menu-open');
-        });
-      }
-    });
-  </script>
+  <script src="room-appearance.js?v=20260724170000" defer></script>
 </body>
 </html>

@@ -1,0 +1,188 @@
+/* ============================================================
+   Literal port of insights/mockups/topic-hero Direction A.
+   Do not “approximate” — these values match the mockup file.
+   ============================================================ */
+
+.hero-a {
+  --dark: #050506;
+  --ink: #f3f0ea;
+  --hot: #e85d04;
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--dark);
+  color: var(--ink);
+  font-family: "Geist", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero-a a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero-a .glow {
+  position: absolute;
+  width: min(520px, 60vw);
+  height: min(520px, 60vw);
+  border-radius: 50%;
+  filter: blur(80px);
+  background: radial-gradient(circle, rgba(232, 93, 4, 0.38), transparent 70%);
+  left: 8%;
+  top: 18%;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-a .glow2 {
+  position: absolute;
+  width: min(380px, 45vw);
+  height: min(380px, 45vw);
+  border-radius: 50%;
+  filter: blur(80px);
+  background: radial-gradient(circle, rgba(47, 111, 94, 0.28), transparent 70%);
+  right: 5%;
+  bottom: 10%;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-a .well-mask {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 10%;
+  bottom: 8%;
+  width: min(52rem, 58vw);
+  background: radial-gradient(ellipse 80% 70% at 35% 45%, rgba(5, 5, 6, 0.92), transparent 72%);
+  pointer-events: none;
+}
+
+.hero-a .rain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-a .rain span {
+  position: absolute;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  color: rgba(243, 240, 234, 0.085);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hero-a .top {
+  display: none !important;
+}
+
+.hero-a .well {
+  position: relative;
+  z-index: 2;
+  max-width: 44rem;
+  margin: 0 auto 0 clamp(1.5rem, 8vw, 12vw);
+  padding: clamp(6.5rem, 14vh, 8rem) 0 clamp(5rem, 10vh, 6.5rem);
+  display: grid;
+  gap: 1.15rem;
+}
+
+.hero-a .anchor {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgba(243, 240, 234, 0.42);
+  font-family: "Geist", system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.hero-a .anchor b,
+.hero-a .anchor a {
+  color: rgba(243, 240, 234, 0.88);
+  font-weight: 500;
+}
+
+.hero-a .title {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(3.4rem, 9vw, 6.4rem);
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+  color: #f3f0ea;
+}
+
+.hero-a .title i {
+  display: block;
+  font-style: italic;
+  color: rgba(243, 240, 234, 0.55);
+}
+
+.hero-a .lead {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  color: rgba(243, 240, 234, 0.78);
+}
+
+.hero-a .prose,
+.hero-a [data-topic-framing] p {
+  margin: 0;
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(243, 240, 234, 0.48);
+}
+
+.hero-a [data-topic-framing] {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.hero-a .meta {
+  margin: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(243, 240, 234, 0.34);
+  line-height: 1.4;
+}
+
+.hero-a .cta {
+  margin: 0;
+  font-family: "Geist", system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: rgba(243, 240, 234, 0.72);
+  line-height: 1.4;
+}
+
+.hero-a .cta a {
+  color: rgba(243, 240, 234, 0.72);
+  border-bottom: 1px solid rgba(232, 93, 4, 0.45);
+  width: fit-content;
+}
+
+.hero-a .cta a:hover {
+  color: #fff;
+  border-color: var(--hot);
+}
+
+@media (max-width: 759px) {
+  .hero-a .well {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    max-width: none;
+  }
+}

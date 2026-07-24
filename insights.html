@@ -1,39 +1,1754 @@
 <!DOCTYPE html>
-<html lang="en" class="library-page">
+<html lang="en">
 <head>
+  <!-- promoted from insights/mockups/landing/storefront-v4.html -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Insights | Rajiv Vakani</title>
-  <meta name="description" content="Four series and writing on nutrition, evidence, food, and the body: kitchen guide, traditional therapy profiles, emerging therapies, and intervention maps.">
+  <meta name="description" content="Complex nutrition becomes easier to understand. Four series. A body of investigations. Find something worth opening.">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rajivvakani.com/insights.html" />
   <meta property="og:title" content="Insights | Rajiv Vakani" />
-  <meta property="og:description" content="Four series and writing on nutrition, evidence, food, and the body: kitchen guide, traditional therapy profiles, emerging therapies, and intervention maps." />
+  <meta property="og:description" content="Complex nutrition becomes easier to understand. Four series. A body of investigations. Find something worth opening." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
   <link rel="canonical" href="https://rajivvakani.com/insights.html" />
 
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://rajivvakani.com/insights.html" />
   <meta property="twitter:title" content="Insights | Rajiv Vakani" />
-  <meta property="twitter:description" content="Four series and writing on nutrition, evidence, food, and the body: kitchen guide, traditional therapy profiles, emerging therapies, and intervention maps." />
+  <meta property="twitter:description" content="Complex nutrition becomes easier to understand. Four series. A body of investigations. Find something worth opening." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="rajiv-styles.min.css?v=20260715063000">
-  <link rel="stylesheet" href="insights/library.min.css?v=20260720010000">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Geist:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <style>
+    :root {
+      --ink: #0a0b0d;
+      --paper: #f3f0ea;
+      --hot: #e85d04;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body {
+      margin: 0;
+      background: #050506;
+      color: #f3f0ea;
+      font-family: "Geist", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; height: 2px; width: 0%;
+      background: linear-gradient(90deg, #e85d04, #f0c674, #b8e0c8);
+      z-index: 10000;
+      transform-origin: left;
+    }
+
+    /* ----- HERO ----- */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(7rem, 16vh, 9.5rem) clamp(1.25rem, 4vw, 3.5rem) clamp(5.5rem, 12vh, 7.5rem);
+      overflow: hidden;
+      background: #050506;
+    }
+    .hero__canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .hero__orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.55;
+      will-change: transform;
+    }
+    .hero__orb--1 {
+      width: 55vw; height: 55vw; max-width: 520px; max-height: 520px;
+      background: radial-gradient(circle, rgba(232,93,4,0.55), transparent 70%);
+      top: 5%; left: -10%;
+    }
+    .hero__orb--2 {
+      width: 45vw; height: 45vw; max-width: 420px; max-height: 420px;
+      background: radial-gradient(circle, rgba(47,111,94,0.45), transparent 70%);
+      top: 30%; right: -15%;
+    }
+    .hero__orb--3 {
+      width: 35vw; height: 35vw; max-width: 320px; max-height: 320px;
+      background: radial-gradient(circle, rgba(15,118,110,0.4), transparent 70%);
+      bottom: 10%; left: 30%;
+    }
+    .hero__marquee {
+      position: absolute;
+      top: 9%;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      z-index: 1;
+      opacity: 0.14;
+      pointer-events: none;
+    }
+    .hero__marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 3rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(3rem, 8vw, 6rem);
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+      will-change: transform;
+    }
+    .hero__top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem clamp(1.25rem, 4vw, 3.5rem) 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: rgba(243,240,234,0.45);
+    }
+    .hero__top a { color: rgba(243,240,234,0.8); font-weight: 500; }
+    .hero__copy {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: none;
+      display: grid;
+      gap: clamp(1.5rem, 3vh, 2.5rem);
+    }
+    @media (min-width: 900px) {
+      .hero__copy {
+        grid-template-columns: minmax(0, 1fr) 9.5rem;
+        align-items: end;
+        column-gap: clamp(1.5rem, 4vw, 3rem);
+      }
+    }
+    .hero__main { min-width: 0; }
+    .hero__title {
+      margin: 0;
+      width: 100%;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 300;
+      font-optical-sizing: auto;
+      font-size: clamp(4.5rem, 16vw, 11rem);
+      line-height: 0.9;
+      letter-spacing: -0.055em;
+    }
+    .hero__title .line {
+      display: block;
+      overflow: hidden;
+      width: 100%;
+    }
+    .hero__title .line span {
+      display: block;
+      will-change: transform;
+      white-space: nowrap;
+    }
+    .hero__sub {
+      margin: clamp(1rem, 2.5vh, 1.75rem) 0 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(1.45rem, 3.2vw, 2.35rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: rgba(243,240,234,0.72);
+    }
+    .hero__sub em {
+      font-style: italic;
+      color: rgba(243,240,234,0.45);
+    }
+    .hero__line {
+      margin: clamp(1.15rem, 2.5vh, 1.75rem) 0 0;
+      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+      line-height: 1.5;
+      color: rgba(243,240,234,0.62);
+      max-width: 42rem;
+    }
+    .hero__jump {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem 1.1rem;
+      font-size: 0.82rem;
+    }
+    @media (min-width: 900px) {
+      .hero__jump {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+        gap: 0.7rem;
+        padding-bottom: 0.35rem;
+        border-left: 1px solid rgba(243,240,234,0.12);
+        padding-left: 1.25rem;
+      }
+    }
+    .hero__jump a {
+      color: rgba(243,240,234,0.42);
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s ease, border-color 0.3s ease;
+      white-space: nowrap;
+    }
+    .hero__jump a:hover {
+      color: #fff;
+      border-color: var(--hot);
+    }
+    @media (max-width: 899px) {
+      .hero__title .line span { white-space: normal; }
+    }
+
+    /* ----- ZONE SHELL ----- */
+    .zone {
+      position: relative;
+      overflow: visible;
+    }
+    .zone__pin {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 8vh, 5rem) clamp(1.25rem, 4vw, 3.5rem);
+    }
+
+    /* ----- SFD: five color worlds ----- */
+    .sfd {
+      --sfd-ink: #f3efe6;
+      background: #101412;
+      color: var(--sfd-ink);
+    }
+    .sfd__eyebrow, .tp__eyebrow, .et__eyebrow, .im__eyebrow, .inv__eyebrow {
+      margin: 0 0 0.85rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .sfd__eyebrow { color: rgba(243,239,230,0.45); }
+    .sfd__stage {
+      padding: clamp(3rem, 8vh, 5rem) clamp(1.25rem, 4vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.25rem, 3.5vh, 2.25rem);
+    }
+    .sfd.is-live .sfd__ch:not(.is-on) {
+      filter: saturate(0.78) brightness(0.9);
+    }
+    .sfd__head {
+      display: grid;
+      gap: 1rem 3rem;
+      align-items: end;
+      width: 100%;
+    }
+    @media (min-width: 900px) {
+      .sfd__head {
+        grid-template-columns: minmax(0, 1.35fr) minmax(14rem, 0.85fr);
+      }
+    }
+    .sfd__name {
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+      letter-spacing: -0.04em;
+      line-height: 0.96;
+      max-width: none;
+      color: #f3efe6;
+    }
+    .sfd__pitch {
+      margin: 0;
+      font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+      line-height: 1.5;
+      color: rgba(243,239,230,0.55);
+      max-width: 28rem;
+    }
+    @media (min-width: 900px) {
+      .sfd__pitch { justify-self: end; text-align: right; }
+    }
+    .sfd__path {
+      position: relative;
+      width: 100%;
+    }
+    .sfd__chapters {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.55rem;
+      min-height: min(52vh, 26rem);
+    }
+    .sfd__ch {
+      --ch: #8a7355;
+      --ch-ink: #241c14;
+      --ch-mute: rgba(36,28,20,0.72);
+      --ch-panel: #dccfb8;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      isolation: isolate;
+      overflow: hidden;
+      margin: 0;
+      padding: 1.25rem clamp(0.7rem, 1.15vw, 1.15rem) 1.4rem;
+      border: 0;
+      border-radius: 2px;
+      background: var(--ch-panel);
+      color: var(--ch-ink);
+      text-align: left;
+      cursor: pointer;
+      min-width: 0;
+      transform: translateY(0) scale(0.985);
+      filter: saturate(0.82) brightness(0.92);
+      transition:
+        transform 0.45s var(--ease),
+        filter 0.45s ease,
+        box-shadow 0.45s ease;
+    }
+    .sfd__ch.is-on {
+      transform: translateY(-10px) scale(1);
+      filter: saturate(1.08) brightness(1);
+      box-shadow:
+        0 18px 40px rgba(0,0,0,0.35),
+        0 0 0 1px color-mix(in srgb, var(--ch) 35%, transparent);
+      z-index: 2;
+    }
+    .sfd__ch-wash {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(120% 80% at 100% 0%, color-mix(in srgb, var(--ch) 28%, transparent), transparent 55%),
+        linear-gradient(165deg, color-mix(in srgb, var(--ch) 18%, transparent), transparent 60%);
+      opacity: 0.85;
+    }
+    .sfd__ch-mark {
+      position: absolute;
+      right: -0.1em;
+      top: -0.18em;
+      z-index: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(5rem, 9vw, 8rem);
+      line-height: 0.8;
+      letter-spacing: -0.06em;
+      color: color-mix(in srgb, var(--ch) 22%, transparent);
+      pointer-events: none;
+      user-select: none;
+      transition: color 0.45s ease, transform 0.45s ease;
+    }
+    .sfd__ch.is-on .sfd__ch-mark {
+      color: color-mix(in srgb, var(--ch) 38%, transparent);
+      transform: translate(-4%, 3%);
+    }
+    .sfd__ch-top {
+      position: relative;
+      z-index: 1;
+    }
+    .sfd__ch-verb {
+      margin: 0 0 0.55rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ch);
+    }
+    .sfd__ch-name {
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.2rem, 2.15vw, 1.85rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--ch-ink);
+    }
+    .sfd__ch-name a {
+      color: inherit;
+      background-image: linear-gradient(var(--ch), var(--ch));
+      background-size: 0% 2px;
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      transition: background-size 0.35s var(--ease);
+    }
+    .sfd__ch.is-on .sfd__ch-name a:hover { background-size: 100% 2px; }
+    .sfd__ch-line {
+      position: relative;
+      z-index: 1;
+      margin: auto 0 0;
+      padding: 1rem 0 0 0.85rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.02rem, 1.35vw, 1.28rem);
+      line-height: 1.28;
+      letter-spacing: -0.02em;
+      color: var(--ch-mute);
+    }
+    .sfd__ch-line::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      bottom: 0.15rem;
+      width: 3px;
+      border-radius: 2px;
+      background: var(--ch);
+      transform: scaleY(0.55);
+      transform-origin: top;
+      opacity: 0.55;
+      transition: transform 0.45s var(--ease), opacity 0.45s ease;
+    }
+    .sfd__ch.is-on .sfd__ch-line::before {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    .sfd__ch.is-on .sfd__ch-line {
+      color: var(--ch-ink);
+    }
+
+    /* Chapter color worlds */
+    .sfd__ch--state {
+      --ch: #8a6f4b;
+      --ch-ink: #241c14;
+      --ch-mute: rgba(36,28,20,0.7);
+      --ch-panel: #d8c9b0;
+    }
+    .sfd__ch--flavor {
+      --ch: #c4782a;
+      --ch-ink: #2f1c08;
+      --ch-mute: rgba(47,28,8,0.7);
+      --ch-panel: #ecc98a;
+    }
+    .sfd__ch--knife {
+      --ch: #7eb6d4;
+      --ch-ink: #e8f2f8;
+      --ch-mute: rgba(232,242,248,0.72);
+      --ch-panel: #243846;
+    }
+    .sfd__ch--knife .sfd__ch-wash {
+      background:
+        linear-gradient(125deg, rgba(126,182,212,0.28), transparent 45%),
+        linear-gradient(180deg, #2c4454, #1a2a34);
+    }
+    .sfd__ch--knife .sfd__ch-mark { color: rgba(126,182,212,0.18); }
+    .sfd__ch--knife.is-on .sfd__ch-mark { color: rgba(126,182,212,0.32); }
+    .sfd__ch--heat {
+      --ch: #ff5a32;
+      --ch-ink: #ffe8de;
+      --ch-mute: rgba(255,232,222,0.72);
+      --ch-panel: #2a100c;
+    }
+    .sfd__ch--heat .sfd__ch-wash {
+      background:
+        radial-gradient(90% 70% at 50% 110%, rgba(255,90,50,0.55), transparent 60%),
+        radial-gradient(60% 50% at 80% 0%, rgba(255,160,40,0.28), transparent 50%),
+        linear-gradient(180deg, #3a1610, #1a0908);
+    }
+    .sfd__ch--heat .sfd__ch-mark { color: rgba(255,90,50,0.22); }
+    .sfd__ch--heat.is-on .sfd__ch-mark { color: rgba(255,90,50,0.4); }
+    .sfd__ch--heat.is-on {
+      box-shadow:
+        0 18px 44px rgba(180,40,10,0.45),
+        0 0 0 1px rgba(255,90,50,0.35);
+    }
+    .sfd__ch--steer {
+      --ch: #4f9d7a;
+      --ch-ink: #e7f3ec;
+      --ch-mute: rgba(231,243,236,0.72);
+      --ch-panel: #173028;
+    }
+    .sfd__ch--steer .sfd__ch-wash {
+      background:
+        radial-gradient(80% 60% at 0% 100%, rgba(79,157,122,0.35), transparent 55%),
+        linear-gradient(165deg, #1f3d32, #10241e);
+    }
+    .sfd__ch--steer .sfd__ch-mark { color: rgba(79,157,122,0.2); }
+    .sfd__ch--steer.is-on .sfd__ch-mark { color: rgba(79,157,122,0.35); }
+
+    /* Ambient motion per world */
+    .sfd__ch--flavor.is-on .sfd__ch-wash {
+      animation: sfdFlavor 4.5s ease-in-out infinite;
+    }
+    .sfd__ch--knife.is-on .sfd__ch-wash {
+      animation: sfdKnife 3.2s ease-in-out infinite;
+    }
+    .sfd__ch--heat.is-on .sfd__ch-wash {
+      animation: sfdHeat 2.4s ease-in-out infinite;
+    }
+    @keyframes sfdFlavor {
+      0%, 100% { opacity: 0.85; filter: hue-rotate(0deg); }
+      50% { opacity: 1; filter: hue-rotate(8deg); }
+    }
+    @keyframes sfdKnife {
+      0%, 100% { transform: translateX(0); opacity: 0.9; }
+      50% { transform: translateX(4%); opacity: 1; }
+    }
+    @keyframes sfdHeat {
+      0%, 100% { opacity: 0.9; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.06); }
+    }
+
+    .sfd__caret {
+      position: absolute;
+      left: 0;
+      bottom: -0.55rem;
+      width: calc((100% - 2.2rem) / 5);
+      height: 3px;
+      border-radius: 2px;
+      background: #8a6f4b;
+      transform: translateX(0);
+      will-change: transform, background-color;
+      pointer-events: none;
+    }
+    .sfd__enter {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-size: 1.15rem;
+    }
+    .sfd__enter a {
+      color: #f3efe6;
+      border-bottom: 1px solid rgba(243,239,230,0.35);
+    }
+    .sfd__hint {
+      font-family: "IBM Plex Mono", monospace;
+      font-style: normal;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(243,239,230,0.4);
+    }
+    @media (max-width: 860px) {
+      .sfd__chapters {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        min-height: 18rem;
+        gap: 0.65rem;
+        -webkit-overflow-scrolling: touch;
+      }
+      .sfd__ch {
+        flex: 0 0 78vw;
+        scroll-snap-align: start;
+        transform: none;
+        filter: none;
+      }
+      .sfd__ch.is-on {
+        transform: none;
+      }
+      .sfd__caret { display: none; }
+    }
+
+    /* ----- TP: three strata + scrolling name rivers ----- */
+    .tp {
+      --tp-accent: #c4a078;
+      --tp-ink: #f2ebe3;
+      background: #120e0b;
+      color: var(--tp-ink);
+      overflow: hidden;
+    }
+    .tp__shell {
+      padding: clamp(2.75rem, 7vh, 4.5rem) 0 clamp(3rem, 8vh, 4.5rem);
+    }
+    .tp__intro {
+      padding: 0 clamp(1.25rem, 4vw, 3.5rem) clamp(1.75rem, 4vh, 2.5rem);
+      display: grid;
+      gap: 1rem 2.5rem;
+      align-items: end;
+    }
+    @media (min-width: 900px) {
+      .tp__intro {
+        grid-template-columns: minmax(0, 1.25fr) minmax(14rem, 0.85fr);
+      }
+    }
+    .tp__eyebrow { color: var(--tp-accent); margin: 0 0 0.75rem; }
+    .tp__name {
+      margin: 0 0 0.65rem;
+      font-family: "Syne", sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.3rem, 5.2vw, 3.8rem);
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+      max-width: 12ch;
+    }
+    .tp__count {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(242,235,227,0.4);
+    }
+    .tp__count b {
+      color: var(--tp-accent);
+      font-weight: 500;
+    }
+    .tp__pitch {
+      margin: 0;
+      font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+      line-height: 1.5;
+      color: rgba(242,235,227,0.58);
+      max-width: 28rem;
+    }
+    @media (min-width: 900px) {
+      .tp__pitch { justify-self: end; text-align: right; }
+    }
+
+    /* Three unequal slabs — geological cut, not a card row */
+    .tp__strata {
+      display: grid;
+      grid-template-columns: 1.4fr 1.05fr 0.9fr;
+      gap: 0;
+      min-height: clamp(20rem, 42vh, 28rem);
+      border-block: 1px solid rgba(242,235,227,0.08);
+    }
+    .tp__strata:hover .tp__stratum:not(:hover) {
+      filter: brightness(0.62);
+    }
+    .tp__stratum {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 0.85rem;
+      min-height: 100%;
+      padding: clamp(1.15rem, 2.5vh, 1.65rem) clamp(1.05rem, 2.2vw, 1.75rem) clamp(1.25rem, 3vh, 1.85rem);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      isolation: isolate;
+      border-right: 1px solid rgba(242,235,227,0.07);
+      transition: filter 0.5s ease;
+    }
+    .tp__stratum:last-child { border-right: 0; }
+    .tp__stratum--plant {
+      background:
+        radial-gradient(120% 90% at 70% -10%, rgba(232,201,168,0.28), transparent 55%),
+        linear-gradient(165deg, #3a2c1f 0%, #1c1510 48%, #100c09 100%);
+    }
+    .tp__stratum--formula {
+      background:
+        repeating-linear-gradient(
+          -18deg,
+          transparent 0 11px,
+          rgba(242,235,227,0.018) 11px 12px
+        ),
+        radial-gradient(90% 80% at 20% 110%, rgba(196,160,120,0.16), transparent 50%),
+        linear-gradient(180deg, #221a14 0%, #16120e 100%);
+    }
+    .tp__stratum--pattern {
+      background:
+        linear-gradient(180deg, #2a1f16 0%, #14100c 100%);
+    }
+    .tp__stratum--pattern::before {
+      content: "PATTERN  ·  PATTERN  ·  PATTERN  ·  PATTERN  ·  PATTERN  ·  ";
+      position: absolute;
+      inset: 8% -40% auto;
+      z-index: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      letter-spacing: 0.18em;
+      white-space: nowrap;
+      color: rgba(242,235,227,0.045);
+      transform: rotate(-18deg);
+      pointer-events: none;
+    }
+    .tp__stratum-spine {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--tp-accent);
+    }
+    .tp__stratum-mark {
+      position: absolute;
+      left: 0.55rem;
+      top: 0.35rem;
+      z-index: 0;
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      font-size: clamp(4.5rem, 9vw, 7.5rem);
+      line-height: 0.8;
+      letter-spacing: -0.07em;
+      color: rgba(242,235,227,0.045);
+      pointer-events: none;
+      user-select: none;
+    }
+    .tp__stratum-body {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      min-width: 0;
+    }
+    .tp__stratum-name {
+      margin: 0;
+      font-family: "Syne", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.7rem, 3.1vw, 2.65rem);
+      letter-spacing: -0.045em;
+      line-height: 0.98;
+    }
+    .tp__stratum--plant .tp__stratum-name {
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+    }
+    .tp__stratum--pattern .tp__stratum-name {
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+      letter-spacing: -0.02em;
+    }
+    .tp__stratum-line {
+      margin: 0;
+      max-width: 22rem;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(0.98rem, 1.25vw, 1.12rem);
+      line-height: 1.35;
+      color: rgba(242,235,227,0.58);
+    }
+    .tp__stratum-go {
+      margin: 0.55rem 0 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--tp-accent);
+      opacity: 0.7;
+      transition: opacity 0.3s ease, letter-spacing 0.3s ease;
+    }
+    .tp__stratum:hover .tp__stratum-go {
+      opacity: 1;
+      letter-spacing: 0.22em;
+    }
+
+    /* Dual counter-scrolling name rivers — the shelf in motion */
+    .tp__rivers {
+      margin-top: 0;
+      padding: clamp(1.5rem, 3.5vh, 2.25rem) 0;
+      display: grid;
+      gap: 0.85rem;
+      background: #0c0907;
+      border-bottom: 1px solid rgba(242,235,227,0.08);
+    }
+    .tp__river {
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+    }
+    .tp__river-track {
+      display: flex;
+      width: max-content;
+      align-items: baseline;
+      gap: 0;
+      will-change: transform;
+    }
+    .tp__river-track a {
+      flex: none;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      color: rgba(242,235,227,0.42);
+      padding: 0 0.15rem;
+    }
+    .tp__river-track a::after {
+      content: "·";
+      margin: 0 1.1rem;
+      color: rgba(196,160,120,0.35);
+      font-weight: 400;
+    }
+    .tp__river-track a:hover {
+      color: #f2ebe3;
+    }
+    .tp__river--b .tp__river-track a {
+      font-size: clamp(1.05rem, 2vw, 1.4rem);
+      color: rgba(196,160,120,0.5);
+    }
+    .tp__river--b .tp__river-track a:hover {
+      color: #e8c9a8;
+    }
+    .tp__foot {
+      margin-top: clamp(1.5rem, 3vh, 2rem);
+      padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .tp__enter {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+    .tp__enter a {
+      color: #e8c9a8;
+      border-bottom: 1px solid rgba(232,201,168,0.35);
+    }
+    .tp__hint {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(242,235,227,0.35);
+    }
+    @media (max-width: 900px) {
+      .tp__strata {
+        grid-template-columns: 1fr;
+        min-height: 0;
+      }
+      .tp__stratum {
+        min-height: clamp(11rem, 28vh, 14rem);
+        border-right: 0;
+        border-bottom: 1px solid rgba(242,235,227,0.07);
+      }
+      .tp__stratum:last-child { border-bottom: 0; }
+      .tp__stratum-mark {
+        right: 0.75rem;
+        left: auto;
+        font-size: clamp(4rem, 18vw, 6rem);
+      }
+    }
+
+    /* ----- ET: cinematic investigation covers ----- */
+    .et {
+      --et-signal: #67e8f9;
+      background: #030405;
+      color: #efece6;
+    }
+    .et__shell {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+      padding: clamp(3.25rem, 8.5vh, 5.25rem) 0 clamp(3.75rem, 9.5vh, 5.75rem);
+      box-sizing: border-box;
+    }
+    .et__head {
+      padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+    }
+    .et__eyebrow { color: var(--et-signal); }
+    .et__title {
+      margin: 0 0 0.85rem;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 3.75rem);
+      letter-spacing: -0.03em;
+      line-height: 1.02;
+      color: #f4f0e8;
+    }
+    .et__pitch {
+      margin: 0;
+      color: rgba(239,236,230,0.58);
+      font-size: clamp(1.02rem, 1.35vw, 1.12rem);
+      max-width: 38rem;
+      line-height: 1.5;
+    }
+    .et__pitch em {
+      font-style: italic;
+      color: color-mix(in srgb, var(--et-signal) 85%, #fff);
+    }
+    .et__viewport {
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.35rem 0 1rem;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: clamp(1.25rem, 4vw, 3.5rem);
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: color-mix(in srgb, var(--et-signal) 55%, transparent) transparent;
+    }
+    .et__viewport::-webkit-scrollbar { height: 6px; }
+    .et__viewport::-webkit-scrollbar-thumb {
+      background: color-mix(in srgb, var(--et-signal) 50%, transparent);
+      border-radius: 999px;
+    }
+    .et__film {
+      display: flex;
+      gap: 1.15rem;
+      width: max-content;
+      padding: 0.35rem clamp(1.25rem, 4vw, 3.5rem);
+    }
+    .et__card {
+      --et-accent: var(--et-signal);
+      position: relative;
+      flex: 0 0 min(80vw, 36rem);
+      min-height: clamp(18rem, 38vh, 24rem);
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 1.45rem 1.45rem 1.35rem;
+      border-radius: 4px;
+      scroll-snap-align: start;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.04), transparent 42%),
+        radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--et-accent) 20%, transparent), transparent 55%),
+        #0b0d11;
+      border: 1px solid rgba(239,236,230,0.12);
+      overflow: hidden;
+      color: inherit;
+      transition:
+        border-color 0.4s ease,
+        transform 0.45s var(--ease),
+        box-shadow 0.45s ease;
+    }
+    .et__card:hover,
+    .et__card:focus-visible {
+      border-color: color-mix(in srgb, var(--et-accent) 65%, rgba(239,236,230,0.2));
+      transform: translateY(-6px);
+      box-shadow:
+        0 28px 60px rgba(0,0,0,0.45),
+        0 0 0 1px color-mix(in srgb, var(--et-accent) 25%, transparent);
+    }
+    .et__card-edge {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--et-accent), transparent 70%);
+      opacity: 0.95;
+    }
+    .et__card-aura {
+      position: absolute;
+      inset: auto -20% -40% 40%;
+      height: 70%;
+      background: radial-gradient(circle, color-mix(in srgb, var(--et-accent) 24%, transparent), transparent 68%);
+      pointer-events: none;
+      transition: opacity 0.45s ease, transform 0.6s var(--ease);
+    }
+    .et__card:hover .et__card-aura {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+    .et__card--ret { --et-accent: #38bdf8; }
+    .et__card--cagri { --et-accent: #a5b4fc; }
+    .et__card--orfo { --et-accent: #4ade80; }
+    .et__card--surv { --et-accent: #60a5fa; }
+    .et__card--bpc { --et-accent: #bef264; }
+    .et__card--mots { --et-accent: #2dd4bf; }
+    .et__card--tesa { --et-accent: #f9a8d4; }
+    .et__card--studio {
+      --et-accent: #f4f0e8;
+      background: linear-gradient(145deg, #151820, #08090c);
+    }
+    .et__card-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.5rem;
+      margin-bottom: 0.95rem;
+    }
+    .et__chip {
+      margin: 0;
+      padding: 0.28rem 0.55rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid color-mix(in srgb, var(--et-accent) 45%, transparent);
+      color: var(--et-accent);
+      border-radius: 999px;
+    }
+    .et__chip--mute {
+      border-color: rgba(239,236,230,0.16);
+      color: rgba(239,236,230,0.55);
+    }
+    .et__card-body {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      min-height: 0;
+    }
+    .et__mol {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(1.85rem, 3.6vw, 2.75rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      color: #f7f3eb;
+      max-width: 100%;
+    }
+    .et__card--studio .et__mol {
+      font-size: clamp(1.7rem, 3.2vw, 2.35rem);
+    }
+    .et__q {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(1.02rem, 1.5vw, 1.2rem);
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+      color: rgba(239,236,230,0.72);
+      max-width: 32ch;
+    }
+    .et__card-foot {
+      position: relative;
+      z-index: 1;
+      margin-top: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .et__meta {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: rgba(239,236,230,0.38);
+    }
+    .et__cta {
+      font-family: "Geist", system-ui, sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--et-accent);
+      border-bottom: 1px solid color-mix(in srgb, var(--et-accent) 45%, transparent);
+      padding-bottom: 1px;
+      transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    }
+    .et__card:hover .et__cta {
+      border-color: var(--et-accent);
+      transform: translateX(3px);
+    }
+    .et__chrome {
+      padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .et__enter {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+    .et__enter a {
+      color: var(--et-signal);
+      border-bottom: 1px solid color-mix(in srgb, var(--et-signal) 40%, transparent);
+    }
+    .et__progress {
+      flex: 1;
+      max-width: 14rem;
+      height: 2px;
+      background: rgba(239,236,230,0.12);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .et__progress > i {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: var(--et-signal);
+    }
+    @media (max-width: 700px) {
+      .et__card {
+        flex-basis: 84vw;
+      }
+      .et__mol {
+        font-size: clamp(1.7rem, 7vw, 2.15rem);
+      }
+    }
+
+    /* ----- IM: living landscape ----- */
+    .im {
+      background: #151b24;
+      color: #e8ecf0;
+    }
+    .im__pin {
+      min-height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 8vh, 5rem) clamp(1.25rem, 4vw, 3.5rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .im__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: #e87722;
+      will-change: background-color;
+      transition: background-color 0.6s ease;
+    }
+    .im__mesh {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.35;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%);
+      will-change: transform;
+    }
+    .im__content { position: relative; z-index: 2; }
+    .im__eyebrow {
+      color: rgba(16,20,24,0.55);
+      margin: 0 0 0.85rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .im__name {
+      margin: 0 0 0.75rem;
+      font-family: "Syne", sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      max-width: 12ch;
+      color: #101418;
+    }
+    .im__pitch {
+      margin: 0 0 2rem;
+      max-width: 34rem;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: rgba(16,20,24,0.72);
+    }
+    .im__stage {
+      position: relative;
+      min-height: 48svh;
+      display: grid;
+      align-items: end;
+    }
+    .im__cond {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      opacity: 0;
+      transform: translateY(36px) scale(0.98);
+      pointer-events: none;
+      transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+    }
+    .im__cond.is-on { pointer-events: auto; }
+    .im__cond-kicker {
+      margin: 0 0 0.5rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(16,20,24,0.5);
+    }
+    .im__cond-title {
+      margin: 0 0 0.65rem;
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      font-size: clamp(3.5rem, 12vw, 8rem);
+      letter-spacing: -0.055em;
+      line-height: 0.88;
+      color: #101418;
+    }
+    .im__cond-line {
+      margin: 0 0 1.5rem;
+      max-width: 32rem;
+      font-size: 1.15rem;
+      line-height: 1.45;
+      color: rgba(16,20,24,0.78);
+    }
+    .im__bars {
+      display: grid;
+      gap: 0.65rem;
+      max-width: 28rem;
+      margin-bottom: 1.5rem;
+    }
+    .im__bar-row {
+      display: grid;
+      grid-template-columns: 5.5rem 1fr;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .im__bar-row span {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(16,20,24,0.55);
+    }
+    .im__bar-track {
+      height: 0.55rem;
+      background: rgba(16,20,24,0.15);
+      overflow: hidden;
+    }
+    .im__bar-track i {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: #101418;
+    }
+    .im__cond-go {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #101418;
+      border-bottom: 1px solid rgba(16,20,24,0.35);
+      width: fit-content;
+    }
+    .im__dots {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+    .im__dots b {
+      width: 2rem;
+      height: 3px;
+      background: rgba(16,20,24,0.2);
+      display: block;
+    }
+    .im__dots b.is-on { background: #101418; }
+    .im__enter { margin-top: 1.75rem; position: relative; z-index: 2; }
+    .im__enter a { font-weight: 600; color: #101418; border-bottom: 1px solid rgba(16,20,24,0.3); }
+
+    /* ----- INV: feature film + living list ----- */
+    .inv {
+      background: #0a0b0d;
+      color: #f3f0ea;
+    }
+    .inv__intro {
+      padding: clamp(2.15rem, 5vh, 3.35rem) clamp(1.25rem, 4vw, 3.5rem) 1rem;
+    }
+    .inv__eyebrow {
+      color: var(--hot);
+      margin: 0 0 0.85rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .inv__name {
+      margin: 0 0 1rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+      letter-spacing: -0.035em;
+      line-height: 1.02;
+    }
+    .inv__pitch {
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: rgba(243,240,234,0.55);
+      max-width: 36rem;
+    }
+    .inv__film {
+      /* living stage: no pin */
+      position: relative;
+      overflow: hidden;
+    }
+    .inv__film-pin {
+      min-height: clamp(28rem, 74svh, 40rem);
+      position: relative;
+      padding: 1.15rem clamp(1.25rem, 4vw, 3.5rem) 2.4rem;
+    }
+    .inv__slide {
+      position: absolute;
+      inset: 1.15rem clamp(1.25rem, 4vw, 3.5rem) 2.4rem;
+      display: grid;
+      gap: 0;
+      background: #111214;
+      overflow: hidden;
+      opacity: 0;
+      transform: scale(0.96);
+      pointer-events: none;
+    }
+    @media (min-width: 900px) {
+      .inv__slide { grid-template-columns: 1.15fr 1fr; }
+    }
+    .inv__slide.is-on { pointer-events: auto; }
+    .inv__slide-art {
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      position: relative;
+      background: #0a0b0d;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .inv__slide-art::before {
+      content: "";
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      top: 10%;
+      left: -10%;
+      background: radial-gradient(circle, rgba(232,93,4,0.35), transparent 70%);
+      filter: blur(24px);
+    }
+    .inv__slide-label {
+      position: relative;
+      margin: 0 0 1.25rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(243,240,234,0.4);
+    }
+    .inv__ledger { position: relative; margin: 0; padding: 0; list-style: none; }
+    .inv__ledger li {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(243,240,234,0.12);
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 1.05rem;
+    }
+    .inv__ledger span {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      color: rgba(243,240,234,0.35);
+      padding-top: 0.2rem;
+    }
+    .inv__seam {
+      position: relative;
+      margin: 1.25rem 0 0;
+      padding: 0.9rem 1rem;
+      border-left: 2px solid var(--hot);
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-size: 1.25rem;
+    }
+    .inv__grid8 {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.4rem;
+      max-width: 16rem;
+    }
+    .inv__grid8 b {
+      aspect-ratio: 1;
+      border: 1px solid rgba(243,240,234,0.2);
+      background: rgba(243,240,234,0.04);
+      display: block;
+    }
+    .inv__grid8 b.on {
+      background: rgba(232,93,4,0.35);
+      border-color: rgba(232,93,4,0.6);
+    }
+    .inv__drift {
+      position: relative;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.45rem, 2.6vw, 2rem);
+      line-height: 1.2;
+      max-width: 22rem;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+    .inv__drift em {
+      display: block;
+      margin-top: 1rem;
+      font-style: italic;
+      color: rgba(243,240,234,0.45);
+      font-size: 1rem;
+      white-space: normal;
+    }
+    @media (max-width: 899px) {
+      .inv__drift { white-space: normal; }
+    }
+    .inv__slide-copy {
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #16181d;
+    }
+    .inv__slide-tag {
+      margin: 0 0 0.65rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--hot);
+    }
+    .inv__slide-title {
+      margin: 0 0 0.85rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .inv__slide-lede {
+      margin: 0 0 1.5rem;
+      color: rgba(243,240,234,0.55);
+      line-height: 1.5;
+    }
+    .inv__slide-go {
+      width: fit-content;
+      border-bottom: 1px solid rgba(243,240,234,0.35);
+      font-weight: 500;
+    }
+    .inv__film-dots {
+      position: absolute;
+      bottom: 1.15rem;
+      left: clamp(1.25rem, 4vw, 3.5rem);
+      display: flex;
+      gap: 0.45rem;
+      z-index: 5;
+    }
+    .inv__film-dots b {
+      width: 1.75rem;
+      height: 3px;
+      background: rgba(243,240,234,0.2);
+      display: block;
+    }
+    .inv__film-dots b.is-on { background: var(--hot); }
+
+    /* ----- INV rest: living cover stack (title + lede always) ----- */
+    .inv__rest {
+      background: #07080a;
+      color: #f3f0ea;
+      border-top: 1px solid rgba(243,240,234,0.06);
+      padding: clamp(2rem, 5vh, 3.25rem) 0 clamp(2.5rem, 6vh, 3.75rem);
+    }
+    .inv__rest-head {
+      padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+      margin-bottom: clamp(1.25rem, 3vh, 1.85rem);
+      display: grid;
+      gap: 0.65rem 2rem;
+      align-items: end;
+    }
+    @media (min-width: 800px) {
+      .inv__rest-head {
+        grid-template-columns: 1fr minmax(14rem, 22rem);
+      }
+    }
+    .inv__rest-kicker {
+      margin: 0 0 0.5rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(243,240,234,0.38);
+    }
+    .inv__rest-title {
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    .inv__rest-note {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: rgba(243,240,234,0.45);
+    }
+
+    .inv__covers {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .inv__cover {
+      position: relative;
+      display: grid;
+      grid-template-columns: 2.75rem minmax(0, 1fr);
+      gap: 0.35rem 1rem;
+      align-items: start;
+      width: 100%;
+      margin: 0;
+      padding: 0.95rem clamp(1.25rem, 4vw, 3.5rem);
+      border: 0;
+      text-align: left;
+      color: inherit;
+      cursor: pointer;
+      background: #0c0e12;
+      overflow: hidden;
+      transition:
+        background 0.65s var(--ease),
+        padding 0.65s var(--ease);
+    }
+    .inv__cover::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 12%;
+      bottom: 12%;
+      width: 3px;
+      background: var(--hot);
+      opacity: 0;
+      transform: scaleY(0.4);
+      transform-origin: center;
+      transition:
+        opacity 0.5s var(--ease),
+        transform 0.65s var(--ease),
+        top 0.65s var(--ease),
+        bottom 0.65s var(--ease);
+    }
+    .inv__cover:hover {
+      background: #11141a;
+    }
+    .inv__cover.is-on {
+      background:
+        radial-gradient(80% 120% at 100% 0%, rgba(232,93,4,0.18), transparent 55%),
+        linear-gradient(90deg, #16131a 0%, #101218 55%, #0c0e12 100%);
+      padding-block: clamp(1.35rem, 3vh, 1.85rem);
+    }
+    .inv__cover.is-on::before {
+      opacity: 1;
+      transform: scaleY(1);
+      top: 0;
+      bottom: 0;
+    }
+    .inv__cover-n {
+      position: relative;
+      margin: 0.2rem 0 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      color: rgba(243,240,234,0.28);
+      transition: color 0.55s ease;
+    }
+    .inv__cover.is-on .inv__cover-n {
+      color: var(--hot);
+    }
+    .inv__cover-body {
+      position: relative;
+      min-width: 0;
+      display: grid;
+      gap: 0.35rem;
+    }
+    @media (min-width: 900px) {
+      .inv__cover-body {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) auto;
+        gap: 1rem 2rem;
+        align-items: baseline;
+      }
+    }
+    .inv__cover-name {
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: rgba(243,240,234,0.72);
+      transform-origin: left center;
+      transition:
+        color 0.55s ease,
+        font-size 0.65s var(--ease),
+        letter-spacing 0.65s var(--ease);
+    }
+    .inv__cover.is-on .inv__cover-name {
+      color: #fff;
+      font-size: clamp(1.45rem, 2.8vw, 2.05rem);
+      letter-spacing: -0.035em;
+    }
+    .inv__cover-lede {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: rgba(243,240,234,0.42);
+      max-width: 36rem;
+      transition: color 0.55s ease;
+    }
+    .inv__cover.is-on .inv__cover-lede {
+      color: rgba(243,240,234,0.62);
+    }
+    .inv__cover-go {
+      margin: 0.15rem 0 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--hot);
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(-4px);
+      transition:
+        opacity 0.5s var(--ease),
+        transform 0.55s var(--ease);
+      pointer-events: none;
+    }
+    .inv__cover.is-on .inv__cover-go {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    @media (max-width: 899px) {
+      .inv__cover-go { display: none; }
+      .inv__cover.is-on .inv__cover-go {
+        display: block;
+        margin-top: 0.45rem;
+      }
+    }
+
+    .inv__rest-foot {
+      margin-top: clamp(1.5rem, 3.5vh, 2.25rem);
+      padding: 1.15rem clamp(1.25rem, 4vw, 3.5rem) 0;
+      border-top: 1px solid rgba(243,240,234,0.08);
+    }
+    .inv__rest-subjects {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(243,240,234,0.35);
+    }
+    .inv__rest-subjects a {
+      color: rgba(243,240,234,0.55);
+      border-bottom: 1px solid transparent;
+    }
+    .inv__rest-subjects a:hover {
+      color: var(--hot);
+      border-color: rgba(232,93,4,0.4);
+    }
+
+    .lib {
+      position: relative;
+      background: #050506;
+      color: #f3f0ea;
+      padding: clamp(4.5rem, 12vh, 7rem) clamp(1.25rem, 4vw, 3.5rem);
+      border-top: 1px solid rgba(243,240,234,0.08);
+      overflow: hidden;
+    }
+    .lib__rain {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .lib__rain span {
+      position: absolute;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 300;
+      color: rgba(243,240,234,0.065);
+      white-space: nowrap;
+      will-change: transform, opacity;
+    }
+    .lib__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 40rem;
+      display: grid;
+      gap: 0.85rem;
+    }
+    .lib h2 {
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(2.2rem, 4.5vw, 3.25rem);
+      letter-spacing: -0.035em;
+      line-height: 1;
+    }
+    .lib p {
+      margin: 0;
+      color: rgba(243,240,234,0.52);
+      line-height: 1.5;
+      font-size: 1.05rem;
+      max-width: 30rem;
+    }
+    .lib a {
+      margin-top: 0.35rem;
+      color: var(--hot);
+      border-bottom: 1px solid rgba(232,93,4,0.4);
+      font-weight: 500;
+      font-size: 1.02rem;
+      width: fit-content;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero__orb, .hero__marquee-track { animation: none !important; }
+    }
+  
+    .hero__ways {
+      display: inline-flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .hero__ways a[aria-current="page"] {
+      color: rgba(243,240,234,0.95);
+      font-weight: 600;
+      pointer-events: none;
+    }
+    .room-foot {
+      border-top: 1px solid rgba(243,240,234,0.12);
+      padding: 1.5rem clamp(1.25rem, 4vw, 3.5rem) 2.25rem;
+      background: #050506;
+      color: rgba(243,240,234,0.55);
+    }
+    .room-foot__inner {
+      max-width: 72rem;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem 1.5rem;
+    }
+    .room-foot__legal {
+      margin: 0;
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+    }
+    .room-foot__social {
+      display: flex;
+      gap: 0.85rem;
+      align-items: center;
+    }
+    .room-foot__social a {
+      color: rgba(243,240,234,0.5);
+      display: inline-flex;
+      transition: color 0.2s ease;
+    }
+    .room-foot__social a:hover,
+    .room-foot__social a:focus-visible {
+      color: #f0a060;
+      outline: none;
+    }
+    .room-foot__social svg {
+      width: 1.05rem;
+      height: 1.05rem;
+      display: block;
+    }
+
+  </style>
   <link rel="icon" type="image/png" href="favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="favicon-512.png?v=rv7" />
 
-  <!-- Google Analytics -->
   <script>
     window.addEventListener('load', function () {
       if (location.hostname !== 'rajivvakani.com') return;
@@ -48,9 +1763,6 @@
       gtag('config', 'G-0L41N5K2WV');
     });
   </script>
-
-  <script defer src="insights/data.js?v=20260719180000"></script>
-  <script defer src="insights/library.js?v=20260720010000"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,16 +1772,10 @@
       "@id": "https://rajivvakani.com/insights.html#webpage",
       "url": "https://rajivvakani.com/insights.html",
       "name": "Insights | Rajiv Vakani",
-      "description": "Four series and writing on nutrition, evidence, food, and the body.",
-      "isPartOf": {
-        "@id": "https://rajivvakani.com/#website"
-      },
-      "author": {
-        "@id": "https://rajivvakani.com/#person"
-      },
-      "publisher": {
-        "@id": "https://rajivvakani.com/#person"
-      },
+      "description": "Complex nutrition becomes easier to understand. Four series. A body of investigations. Find something worth opening.",
+      "isPartOf": { "@id": "https://rajivvakani.com/#website" },
+      "author": { "@id": "https://rajivvakani.com/#person" },
+      "publisher": { "@id": "https://rajivvakani.com/#person" },
       "inLanguage": "en"
     },
     {
@@ -83,128 +1789,1116 @@
 }
   </script>
 </head>
-<body class="library-page">
+<body>
+<div class="scroll-progress" id="scroll-progress"></div>
 
-  <nav class="main-nav">
-    <div class="container nav-container">
-      <a href="index.html" class="site-logo"><img src="logo-mark.png?v=rv9" alt="" class="site-logo__mark" decoding="async" width="543" height="543">Rajiv Vakani</a>
-
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="journey.html">Journey</a></li>
-        <li><a href="insights.html" class="active">Insights</a></li>
-        <li><a href="library.html">Library</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-
-
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-      </button>
+  <header class="hero" id="top">
+    <div class="hero__canvas" aria-hidden="true">
+      <div class="hero__orb hero__orb--1" data-orb="1"></div>
+      <div class="hero__orb hero__orb--2" data-orb="2"></div>
+      <div class="hero__orb hero__orb--3" data-orb="3"></div>
     </div>
-  </nav>
+    <div class="hero__marquee" aria-hidden="true">
+      <div class="hero__marquee-track" id="marquee">
+        <span>mango · claim · evidence · collagen · drift · creatine · precision · dal · reel · fiber · advice · protein · map · question ·</span>
+        <span>mango · claim · evidence · collagen · drift · creatine · precision · dal · reel · fiber · advice · protein · map · question ·</span>
+      </div>
+    </div>
+    <div class="hero__top">
+      <a href="index.html">Rajiv Vakani</a>
+      <nav class="hero__ways" aria-label="Site">
+        <a href="insights.html" aria-current="page">Insights</a>
+        <a href="library.html">Library</a>
+      </nav>
+    </div>
+    <div class="hero__copy">
+      <div class="hero__main">
+        <h1 class="hero__title">
+          <span class="line"><span>Insights</span></span>
+        </h1>
+        <p class="hero__sub" data-fade>Curiosity <em>meets</em> evidence.</p>
+        <p class="hero__line" data-fade>Complex nutrition becomes easier to understand. Four series. A body of investigations. Find something worth opening.</p>
+      </div>
+      <nav class="hero__jump" data-fade aria-label="Jump">
+        <a href="#sfd">Kitchen guide</a>
+        <a href="#tp">Therapy names</a>
+        <a href="#et">Emerging</a>
+        <a href="#im">Maps</a>
+        <a href="#inv">Investigations</a>
+        <a href="#lib">Library</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="mobile-menu-overlay"></div>
+  <!-- SFD: five color worlds — ledes stay; atmosphere carries the drama -->
+  <section class="zone sfd" id="sfd">
+    <div class="sfd__stage">
+      <header class="sfd__head">
+        <div>
+          <p class="sfd__eyebrow">Series</p>
+          <h2 class="sfd__name">Seeing Food Differently</h2>
+        </div>
+        <p class="sfd__pitch">Not recipes. Five ways of noticing what was already in front of you. Each chapter keeps its own weather. Hover, tap, or stay. The path keeps walking.</p>
+      </header>
 
-  <main>
+      <div class="sfd__path" id="sfd-path">
+        <div class="sfd__chapters">
+          <article class="sfd__ch sfd__ch--state is-on" data-ch="0" data-color="#8a6f4b">
+            <span class="sfd__ch-wash" aria-hidden="true"></span>
+            <span class="sfd__ch-mark" aria-hidden="true">01</span>
+            <div class="sfd__ch-top">
+              <p class="sfd__ch-verb">read</p>
+              <h3 class="sfd__ch-name"><a href="seeing-food-differently/starting-state.html">Starting State</a></h3>
+            </div>
+            <p class="sfd__ch-line">What you’re actually working with before you change anything.</p>
+          </article>
+          <article class="sfd__ch sfd__ch--flavor" data-ch="1" data-color="#c4782a">
+            <span class="sfd__ch-wash" aria-hidden="true"></span>
+            <span class="sfd__ch-mark" aria-hidden="true">02</span>
+            <div class="sfd__ch-top">
+              <p class="sfd__ch-verb">perceive</p>
+              <h3 class="sfd__ch-name"><a href="seeing-food-differently/flavor.html">Flavor</a></h3>
+            </div>
+            <p class="sfd__ch-line">What you’re experiencing, named carefully.</p>
+          </article>
+          <article class="sfd__ch sfd__ch--knife" data-ch="2" data-color="#7eb6d4">
+            <span class="sfd__ch-wash" aria-hidden="true"></span>
+            <span class="sfd__ch-mark" aria-hidden="true">03</span>
+            <div class="sfd__ch-top">
+              <p class="sfd__ch-verb">shape</p>
+              <h3 class="sfd__ch-name"><a href="seeing-food-differently/knife-cuts.html">Knife Cuts</a></h3>
+            </div>
+            <p class="sfd__ch-line">How you change the food before heat ever touches it.</p>
+          </article>
+          <article class="sfd__ch sfd__ch--heat" data-ch="3" data-color="#ff5a32">
+            <span class="sfd__ch-wash" aria-hidden="true"></span>
+            <span class="sfd__ch-mark" aria-hidden="true">04</span>
+            <div class="sfd__ch-top">
+              <p class="sfd__ch-verb">transform</p>
+              <h3 class="sfd__ch-name"><a href="seeing-food-differently/heat.html">Heat</a></h3>
+            </div>
+            <p class="sfd__ch-line">What fire does, and what you can still decide while it works.</p>
+          </article>
+          <article class="sfd__ch sfd__ch--steer" data-ch="4" data-color="#4f9d7a">
+            <span class="sfd__ch-wash" aria-hidden="true"></span>
+            <span class="sfd__ch-mark" aria-hidden="true">05</span>
+            <div class="sfd__ch-top">
+              <p class="sfd__ch-verb">decide</p>
+              <h3 class="sfd__ch-name"><a href="seeing-food-differently/steering.html">Steering</a></h3>
+            </div>
+            <p class="sfd__ch-line">What the dish needs now.</p>
+          </article>
+        </div>
+        <div class="sfd__caret" id="sfd-caret" aria-hidden="true"></div>
+      </div>
 
-    <!-- 1. HEAD: anchor + title + framing. -->
-    <header class="library-head">
-      <div class="wrap">
-        <p class="library-anchor">in <a href="index.html">Home</a></p>
-        <h1 class="library-title">Insights</h1>
-        <p class="library-framing">
-          Four series as their own rooms.<br>
-          The larger body of writing, organized by subject.
+      <p class="sfd__enter">
+        <a href="seeing-food-differently/index.html">Enter the full guide</a>
+        <span class="sfd__hint" id="sfd-hint">01 / 05</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- TP: three strata + scrolling name rivers -->
+  <section class="zone tp" id="tp">
+    <div class="tp__shell">
+      <header class="tp__intro">
+        <div>
+          <p class="tp__eyebrow">Series</p>
+          <h2 class="tp__name">Traditional Therapy Profiles</h2>
+          <p class="tp__count"><b>40</b> entries · names keep moving</p>
+        </div>
+        <p class="tp__pitch">Names collapse different things into one word. This guide separates them again so each can be understood on its own terms.</p>
+      </header>
+
+      <div class="tp__strata" aria-label="Three kinds of object">
+        <a class="tp__stratum tp__stratum--plant" href="therapy-profiles/ashwagandha.html">
+          <p class="tp__stratum-spine">Ingredient</p>
+          <span class="tp__stratum-mark" aria-hidden="true">01</span>
+          <div class="tp__stratum-body">
+            <h3 class="tp__stratum-name">Ashwagandha</h3>
+            <p class="tp__stratum-line">One root name. Several claim lanes.</p>
+            <p class="tp__stratum-go">Open profile</p>
+          </div>
+        </a>
+        <a class="tp__stratum tp__stratum--formula" href="therapy-profiles/triphala.html">
+          <p class="tp__stratum-spine">Formulation</p>
+          <span class="tp__stratum-mark" aria-hidden="true">02</span>
+          <div class="tp__stratum-body">
+            <h3 class="tp__stratum-name">Triphala</h3>
+            <p class="tp__stratum-line">Three fruits composed. Not the same as listing them.</p>
+            <p class="tp__stratum-go">Open profile</p>
+          </div>
+        </a>
+        <a class="tp__stratum tp__stratum--pattern" href="therapy-profiles/chyawanprash-type.html">
+          <p class="tp__stratum-spine">Product pattern</p>
+          <span class="tp__stratum-mark" aria-hidden="true">03</span>
+          <div class="tp__stratum-body">
+            <h3 class="tp__stratum-name">Chyawanprash-type</h3>
+            <p class="tp__stratum-line">The name is a pattern. The jar is the product.</p>
+            <p class="tp__stratum-go">Open profile</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="tp__rivers" aria-label="Shelf of names moving">
+        <div class="tp__river tp__river--a">
+          <div class="tp__river-track" id="tp-river-a">
+            <a href="therapy-profiles/ashwagandha.html">Ashwagandha</a>
+            <a href="therapy-profiles/turmeric.html">Turmeric</a>
+            <a href="therapy-profiles/ginger.html">Ginger</a>
+            <a href="therapy-profiles/tulsi.html">Tulsi</a>
+            <a href="therapy-profiles/amla.html">Amla</a>
+            <a href="therapy-profiles/shatavari.html">Shatavari</a>
+            <a href="therapy-profiles/giloy.html">Giloy</a>
+            <a href="therapy-profiles/neem.html">Neem</a>
+            <a href="therapy-profiles/black-seed.html">Black seed</a>
+            <a href="therapy-profiles/fenugreek.html">Fenugreek</a>
+            <a href="therapy-profiles/bitter-melon.html">Bitter melon</a>
+            <a href="therapy-profiles/jamun.html">Jamun</a>
+            <a href="therapy-profiles/gudmar.html">Gudmar</a>
+            <a href="therapy-profiles/haritaki.html">Haritaki</a>
+            <a href="therapy-profiles/bibhitaki.html">Bibhitaki</a>
+            <a href="therapy-profiles/shilajit.html">Shilajit</a>
+            <a href="therapy-profiles/guggulu.html">Guggulu</a>
+          </div>
+        </div>
+        <div class="tp__river tp__river--b">
+          <div class="tp__river-track" id="tp-river-b">
+            <a href="therapy-profiles/triphala.html">Triphala</a>
+            <a href="therapy-profiles/nishamalaki.html">Nishamalaki</a>
+            <a href="therapy-profiles/chandraprabha-vati.html">Chandraprabha Vati</a>
+            <a href="therapy-profiles/arogyavardhini-vati.html">Arogyavardhini Vati</a>
+            <a href="therapy-profiles/punarnava-mandoor.html">Punarnava Mandoor</a>
+            <a href="therapy-profiles/sutashekhar-rasa.html">Sutashekhar Rasa</a>
+            <a href="therapy-profiles/dhatri-lauha.html">Dhatri Lauha</a>
+            <a href="therapy-profiles/avipattikar-churna.html">Avipattikar Churna</a>
+            <a href="therapy-profiles/mahayogaraja-guggulu.html">Mahayogaraja Guggulu</a>
+            <a href="therapy-profiles/yogaraja-guggulu.html">Yogaraja Guggulu</a>
+            <a href="therapy-profiles/simhanada-guggulu.html">Simhanada Guggulu</a>
+            <a href="therapy-profiles/gokshuradi-guggulu.html">Gokshuradi Guggulu</a>
+            <a href="therapy-profiles/kutaj.html">Kutajaghan</a>
+            <a href="therapy-profiles/ashokarishta.html">Ashokarishta</a>
+            <a href="therapy-profiles/tribhuvan-kirti-rasa.html">Tribhuvan Kirti Rasa</a>
+            <a href="therapy-profiles/chyawanprash-type.html">Chyawanprash-type</a>
+            <a href="therapy-profiles/metabolic-blend-type.html">Metabolic blend-type</a>
+            <a href="therapy-profiles/immunity-kadha-type.html">Immunity kadha-type</a>
+            <a href="therapy-profiles/liver-support-type.html">Liv.52-type</a>
+            <a href="therapy-profiles/kidney-support-type.html">Cystone-type</a>
+            <a href="therapy-profiles/digestive-carminative-type.html">Digestive carminative-type</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tp__foot">
+        <p class="tp__enter"><a href="therapy-profiles/index.html">Open the full guide</a></p>
+        <p class="tp__hint">40 entries · keep moving</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ET: cinematic investigation covers -->
+  <section class="zone et" id="et">
+    <div class="et__shell" id="et-shell">
+      <header class="et__head">
+        <p class="et__eyebrow">Series</p>
+        <h2 class="et__title">Emerging Therapies</h2>
+        <p class="et__pitch">Peptides, pipeline compounds, and therapies still finding their evidence. This is the fringe of what’s entering counseling. <em>Roll across the names.</em></p>
+      </header>
+
+      <div class="et__viewport" id="et-viewport">
+        <div class="et__film" id="et-film">
+          <a class="et__card" href="emerging-therapies/tirzepatide.html">
+            <span class="et__card-edge" aria-hidden="true"></span>
+            <span class="et__card-aura" aria-hidden="true"></span>
+            <div class="et__card-top">
+              <p class="et__chip">Peptide</p>
+              <p class="et__chip et__chip--mute">Approved</p>
+            </div>
+            <div class="et__card-body">
+              <h3 class="et__mol">Tirzepatide</h3>
+              <p class="et__q">Can medication change appetite without replacing nutrition?</p>
+            </div>
+            <div class="et__card-foot">
+              <p class="et__meta">Folio open</p>
+              <span class="et__cta">Open investigation</span>
+            </div>
+          </a>
+
+          <a class="et__card et__card--ret" href="emerging-therapies/retatrutide.html">
+            <span class="et__card-edge" aria-hidden="true"></span>
+            <span class="et__card-aura" aria-hidden="true"></span>
+            <div class="et__card-top">
+              <p class="et__chip">Peptide</p>
+              <p class="et__chip et__chip--mute">Pipeline · Phase 3</p>
+            </div>
+            <div class="et__card-body">
+              <h3 class="et__mol">Retatrutide</h3>
+              <p class="et__q">What do you do with a therapy that dominates conversation before it has a label?</p>
+            </div>
+            <div class="et__card-foot">
+              <p class="et__meta">Evidence forming</p>
+              <span class="et__cta">Open investigation</span>
+            </div>
+          </a>
+
+          <a class="et__card et__card--cagri" href="emerging-therapies/cagrisema.html">
+            <span class="et__card-edge" aria-hidden="true"></span>
+            <span class="et__card-aura" aria-hidden="true"></span>
+            <div class="et__card-top">
+              <p class="et__chip">Combination</p>
+              <p class="et__chip et__chip--mute">NDA filed</p>
+            </div>
+            <div class="et__card-body">
+              <h3 class="et__mol">CagriSema</h3>
+              <p class="et__q">What changes when a familiar GLP-1 is paired with amylin?</p>
+            </div>
+            <div class="et__card-foot">
+              <p class="et__meta">Phase 3 published</p>
+              <span class="et__cta">Open investigation</span>
+            </div>
+          </a>
+
+          <a class="et__card et__card--orfo" href="emerging-therapies/orforglipron.html">
+            <span class="et__card-edge" aria-hidden="true"></span>
+            <span class="et__card-aura" aria-hidden="true"></span>
+            <div class="et__card-top">
+              <p class="et__chip">Non-peptide · oral</p>
+              <p class="et__chip et__chip--mute">Approved</p>
+            </div>
+            <div class="et__card-body">
+              <h3 class="et__mol">Orforglipron</h3>
+              <p class="et__q">What is actually new when a GLP-1 arrives as a daily tablet?</p>
+            </div>
+            <div class="et__card-foot">
+              <p class="et__meta">Weight indication</p>
+              <span class="et__cta">Open investigation</span>
+            </div>
+          </a>
+
+          <a class="et__card et__card--surv" href="emerging-therapies/survodutide.html">
+            <span class="et__card-edge" aria-hidden="true"></span>
+            <span class="et__card-aura" aria-hidden="true"></span>
+            <div class="et__card-top">
+              <p class="et__chip">Peptide</p>
+              <p class="et__chip et__chip--mute">Pipeline · Phase 3</p>
+            </div>
+            <div class="et__card-body">
+              <h3 class="et__mol">Survodutide</h3>
+              <p class="et__q">When the dual is glucagon, and obesity and MASH develop on different clocks, what’s the counseling object?</p>
+            </div>
+            <div class="et__card-foot">
+              <p class="et__meta">Two clocks</p>
+              <span class="et__cta">Open investigation</span>
+            </div>
+          </a>
+
+          <a class="et__card et__card--bpc" href="emerging-therapies/bpc-157.html">
+            <span class="et__card-edge" aria-hidden="true"></span>
+            <span class="et__card-aura" aria-hidden="true"></span>
+            <div class="et__card-top">
+              <p class="et__chip">Peptide · fringe</p>
+              <p class="et__chip et__chip--mute">Evolving</p>
+            </div>
+            <div class="et__card-body">
+              <h3 class="et__mol">BPC-157</h3>
+              <p class="et__q">How do we evaluate a therapy when enthusiasm outpaces human evidence?</p>
+            </div>
+            <div class="et__card-foot">
+              <p class="et__meta">Human evidence thin</p>
+              <span class="et__cta">Open investigation</span>
+            </div>
+          </a>
+
+          <a class="et__card et__card--mots" href="emerging-therapies/mots-c.html">
+            <span class="et__card-edge" aria-hidden="true"></span>
+            <span class="et__card-aura" aria-hidden="true"></span>
+            <div class="et__card-top">
+              <p class="et__chip">Mitochondrial</p>
+              <p class="et__chip et__chip--mute">Thin</p>
+            </div>
+            <div class="et__card-body">
+              <h3 class="et__mol">MOTS-c</h3>
+              <p class="et__q">When does a strong mitochondrial story become a therapy you can counsel?</p>
+            </div>
+            <div class="et__card-foot">
+              <p class="et__meta">Story vs counseling</p>
+              <span class="et__cta">Open investigation</span>
+            </div>
+          </a>
+
+          <a class="et__card et__card--tesa" href="emerging-therapies/tesamorelin.html">
+            <span class="et__card-edge" aria-hidden="true"></span>
+            <span class="et__card-aura" aria-hidden="true"></span>
+            <div class="et__card-top">
+              <p class="et__chip">Peptide</p>
+              <p class="et__chip et__chip--mute">Approved · HIV</p>
+            </div>
+            <div class="et__card-body">
+              <h3 class="et__mol">Tesamorelin</h3>
+              <p class="et__q">When does one therapy legitimately belong in several conversations?</p>
+            </div>
+            <div class="et__card-foot">
+              <p class="et__meta">Indication boundaries</p>
+              <span class="et__cta">Open investigation</span>
+            </div>
+          </a>
+
+          <a class="et__card et__card--studio" href="emerging-therapies/index.html">
+            <span class="et__card-edge" aria-hidden="true"></span>
+            <span class="et__card-aura" aria-hidden="true"></span>
+            <div class="et__card-top">
+              <p class="et__chip">Research studio</p>
+              <p class="et__chip et__chip--mute">10 open</p>
+            </div>
+            <div class="et__card-body">
+              <h3 class="et__mol">The full wall</h3>
+              <p class="et__q">More investigations as questions earn the work.</p>
+            </div>
+            <div class="et__card-foot">
+              <p class="et__meta">Enter the studio</p>
+              <span class="et__cta">Open the studio</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="et__chrome">
+        <p class="et__enter"><a href="emerging-therapies/index.html">Enter the research studio</a></p>
+        <div class="et__progress" aria-hidden="true"><i id="et-progress"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IM: pinned landscape morph -->
+  <section class="zone im" id="im">
+    <div class="im__pin">
+      <div class="im__bg" id="im-bg" aria-hidden="true"></div>
+      <div class="im__mesh" id="im-mesh" aria-hidden="true"></div>
+      <div class="im__content">
+        <p class="im__eyebrow">Series</p>
+        <h2 class="im__name">Intervention Maps</h2>
+        <p class="im__pitch">Evidence landscapes for common conditions. The map keeps shifting while you stay.</p>
+        <div class="im__stage">
+          <article class="im__cond is-on" data-color="#e87722" data-i="0">
+            <p class="im__cond-kicker">Condition 01</p>
+            <h3 class="im__cond-title">ADHD</h3>
+            <p class="im__cond-line">Sleep, exercise, parent training, digital tools, and the rest on one landscape.</p>
+            <div class="im__bars" aria-hidden="true">
+              <div class="im__bar-row"><span>Therapy</span><div class="im__bar-track"><i data-w="88"></i></div></div>
+              <div class="im__bar-row"><span>Exercise</span><div class="im__bar-track"><i data-w="72"></i></div></div>
+              <div class="im__bar-row"><span>Nutrition</span><div class="im__bar-track"><i data-w="48"></i></div></div>
+              <div class="im__bar-row"><span>Other</span><div class="im__bar-track"><i data-w="36"></i></div></div>
+            </div>
+            <a class="im__cond-go" href="intervention-maps/adhd.html">Open the ADHD map</a>
+          </article>
+          <article class="im__cond" data-color="#2f7d4a" data-i="1">
+            <p class="im__cond-kicker">Condition 02</p>
+            <h3 class="im__cond-title">Depression</h3>
+            <p class="im__cond-line">Psychotherapy, activation, exercise, light, nutraceuticals. Not a winner list.</p>
+            <div class="im__bars" aria-hidden="true">
+              <div class="im__bar-row"><span>Therapy</span><div class="im__bar-track"><i data-w="92"></i></div></div>
+              <div class="im__bar-row"><span>Exercise</span><div class="im__bar-track"><i data-w="80"></i></div></div>
+              <div class="im__bar-row"><span>Nutrition</span><div class="im__bar-track"><i data-w="55"></i></div></div>
+              <div class="im__bar-row"><span>Other</span><div class="im__bar-track"><i data-w="44"></i></div></div>
+            </div>
+            <a class="im__cond-go" href="intervention-maps/depression.html">Open the Depression map</a>
+          </article>
+          <article class="im__cond" data-color="#0f766e" data-i="2">
+            <p class="im__cond-kicker">Condition 03</p>
+            <h3 class="im__cond-title">Anxiety</h3>
+            <p class="im__cond-line">Acute choice, digital CBT, mindfulness, exercise, herbal options.</p>
+            <div class="im__bars" aria-hidden="true">
+              <div class="im__bar-row"><span>Therapy</span><div class="im__bar-track"><i data-w="90"></i></div></div>
+              <div class="im__bar-row"><span>Exercise</span><div class="im__bar-track"><i data-w="68"></i></div></div>
+              <div class="im__bar-row"><span>Nutrition</span><div class="im__bar-track"><i data-w="42"></i></div></div>
+              <div class="im__bar-row"><span>Other</span><div class="im__bar-track"><i data-w="50"></i></div></div>
+            </div>
+            <a class="im__cond-go" href="intervention-maps/anxiety.html">Open the Anxiety map</a>
+          </article>
+        </div>
+        <div class="im__dots" id="im-dots" aria-hidden="true"><b class="is-on"></b><b></b><b></b></div>
+        <p class="im__enter"><a href="intervention-maps/index.html">Open all Intervention Maps</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INV: pinned feature film + living list -->
+  <section class="zone inv" id="inv">
+    <div class="inv__intro">
+      <p class="inv__eyebrow">Writing</p>
+      <h2 class="inv__name">Investigations</h2>
+      <p class="inv__pitch">Longer pieces that follow a claim, a food decision, or confusing advice into the research. Three doors first. Then the published work under them.</p>
+    </div>
+
+    <div class="inv__film" id="inv-film">
+      <div class="inv__film-pin">
+        <a class="inv__slide is-on" href="insights/the-mango-question.html" data-slide="0">
+          <div class="inv__slide-art">
+            <p class="inv__slide-label">From the room</p>
+            <ul class="inv__ledger">
+              <li><span>01</span>Family · ripeness is the whole story</li>
+              <li><span>02</span>Clinic · sugar load is the risk</li>
+              <li><span>03</span>Feed · antioxidants make it a superfood</li>
+            </ul>
+            <p class="inv__seam">Both true. Different questions.</p>
+          </div>
+          <div class="inv__slide-copy">
+            <p class="inv__slide-tag">Start here</p>
+            <p class="inv__slide-title">The Mango Question</p>
+            <p class="inv__slide-lede">A family question kept getting incompatible answers from people who all seemed to have evidence. Often they were answering different questions.</p>
+            <span class="inv__slide-go">Open the investigation</span>
+          </div>
+        </a>
+
+        <a class="inv__slide" href="insights/when-nutrition-advice-looks-like-precision-medicine.html" data-slide="1">
+          <div class="inv__slide-art">
+            <p class="inv__slide-label">From the room</p>
+            <div class="inv__grid8" aria-hidden="true">
+              <b class="on"></b><b></b><b class="on"></b><b></b>
+              <b></b><b class="on"></b><b></b><b class="on"></b>
+            </div>
+            <p class="inv__seam" style="margin-top:1.75rem">Open the rows. Certainty isn’t evenly earned.</p>
+          </div>
+          <div class="inv__slide-copy">
+            <p class="inv__slide-tag">If you saw a chart</p>
+            <p class="inv__slide-title">When nutrition advice looks like precision medicine</p>
+            <p class="inv__slide-lede">Eight foods, eight conditions, the same clinical confidence. The evidence behind the rows is not the same.</p>
+            <span class="inv__slide-go">Open the investigation</span>
+          </div>
+        </a>
+
+        <a class="inv__slide" href="insights/where-the-egg-alzheimers-story-drifted.html" data-slide="2">
+          <div class="inv__slide-art">
+            <p class="inv__slide-label">From the room</p>
+            <p class="inv__drift">Study → reel → breakthrough?<em>A drift you can point to.</em></p>
+          </div>
+          <div class="inv__slide-copy">
+            <p class="inv__slide-tag">If you saw a reel</p>
+            <p class="inv__slide-title">Where the egg–Alzheimer’s story drifted</p>
+            <p class="inv__slide-lede">A reel cited real studies and landed on a breakthrough neither source fully supports.</p>
+            <span class="inv__slide-go">Open the investigation</span>
+          </div>
+        </a>
+
+        <div class="inv__film-dots" id="inv-dots" aria-hidden="true"><b class="is-on"></b><b></b><b></b></div>
+      </div>
+    </div>
+
+    <div class="inv__rest" id="inv-rest">
+      <header class="inv__rest-head">
+        <div>
+          <p class="inv__rest-kicker">Published · 11 more</p>
+          <h3 class="inv__rest-title">More investigations</h3>
+        </div>
+        <p class="inv__rest-note">Title and the line under it, always. One opens at a time.</p>
+      </header>
+
+      <div class="inv__covers" id="inv-covers" role="list">
+        <a class="inv__cover is-on" role="listitem" href="insights/collagen-compared-to-what.html">
+          <p class="inv__cover-n">01</p>
+          <div class="inv__cover-body">
+            <p class="inv__cover-name">Collagen, compared to what?</p>
+            <p class="inv__cover-lede">A daily scoop followed into the trials and the biology.</p>
+            <p class="inv__cover-go">Open</p>
+          </div>
+        </a>
+        <a class="inv__cover" role="listitem" href="insights/mucusless-diet.html">
+          <p class="inv__cover-n">02</p>
+          <div class="inv__cover-body">
+            <p class="inv__cover-name">How the mucusless diet survived a century</p>
+            <p class="inv__cover-lede">From a cantaloupe reel into an unsupported model that still travels.</p>
+            <p class="inv__cover-go">Open</p>
+          </div>
+        </a>
+        <a class="inv__cover" role="listitem" href="insights/creatine-used-to-live-in-the-gym.html">
+          <p class="inv__cover-n">03</p>
+          <div class="inv__cover-body">
+            <p class="inv__cover-name">Creatine used to live in the gym</p>
+            <p class="inv__cover-lede">Newer claims about brain, aging, and focus riding older training trust.</p>
+            <p class="inv__cover-go">Open</p>
+          </div>
+        </a>
+        <a class="inv__cover" role="listitem" href="insights/the-glycemic-index-question.html">
+          <p class="inv__cover-n">04</p>
+          <div class="inv__cover-body">
+            <p class="inv__cover-name">The glycemic index isn’t wrong. We’re asking it the wrong question.</p>
+            <p class="inv__cover-lede">Why so many “healthy” foods score high, and what the metric is actually measuring.</p>
+            <p class="inv__cover-go">Open</p>
+          </div>
+        </a>
+        <a class="inv__cover" role="listitem" href="insights/invisible-maintenance.html">
+          <p class="inv__cover-n">05</p>
+          <div class="inv__cover-body">
+            <p class="inv__cover-name">Invisible maintenance</p>
+            <p class="inv__cover-lede">Collagen was only the beginning.</p>
+            <p class="inv__cover-go">Open</p>
+          </div>
+        </a>
+        <a class="inv__cover" role="listitem" href="insights/should-you-buy-lentil-pasta.html">
+          <p class="inv__cover-n">06</p>
+          <div class="inv__cover-body">
+            <p class="inv__cover-name">What you’re really paying for in lentil pasta</p>
+            <p class="inv__cover-lede">Why it feels healthier before you read the label, and when the premium is worth it.</p>
+            <p class="inv__cover-go">Open</p>
+          </div>
+        </a>
+        <a class="inv__cover" role="listitem" href="insights/protein-marketing-and-trust.html">
+          <p class="inv__cover-n">07</p>
+          <div class="inv__cover-body">
+            <p class="inv__cover-name">Protein, marketing, and trust</p>
+            <p class="inv__cover-lede">When a nutrient becomes a cultural object, and what the aisle is selling.</p>
+            <p class="inv__cover-go">Open</p>
+          </div>
+        </a>
+        <a class="inv__cover" role="listitem" href="insights/what-dr-gundry-taught-me.html">
+          <p class="inv__cover-n">08</p>
+          <div class="inv__cover-body">
+            <p class="inv__cover-name">What Dr. Gundry taught me even though I don’t follow his advice</p>
+            <p class="inv__cover-lede">Five months on a lectin-restricted diet. What improved, what didn’t, what stayed.</p>
+            <p class="inv__cover-go">Open</p>
+          </div>
+        </a>
+        <a class="inv__cover" role="listitem" href="insights/how-i-evaluate-nutrition-claims.html">
+          <p class="inv__cover-n">09</p>
+          <div class="inv__cover-body">
+            <p class="inv__cover-name">How I evaluate nutrition claims</p>
+            <p class="inv__cover-lede">The questions I return to when a confident claim catches my attention.</p>
+            <p class="inv__cover-go">Open</p>
+          </div>
+        </a>
+        <a class="inv__cover" role="listitem" href="insights/i-followed-a-real-ayurvedic-prescription.html">
+          <p class="inv__cover-n">10</p>
+          <div class="inv__cover-body">
+            <p class="inv__cover-name">I followed a real Ayurvedic prescription into the research</p>
+            <p class="inv__cover-lede">Familiar herbs, tested bottles, and the gap between them.</p>
+            <p class="inv__cover-go">Open</p>
+          </div>
+        </a>
+        <a class="inv__cover" role="listitem" href="insights/why-i-stopped-trusting-simple-answers.html">
+          <p class="inv__cover-n">11</p>
+          <div class="inv__cover-body">
+            <p class="inv__cover-name">Why I stopped trusting simple answers</p>
+            <p class="inv__cover-lede">Why clear rules fall apart in real life, and what I do instead.</p>
+            <p class="inv__cover-go">Open</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="inv__rest-foot">
+        <p class="inv__rest-subjects">
+          By subject
+          ·
+          <a href="insights/topics/reading-the-evidence.html">Evidence</a>
+          ·
+          <a href="insights/topics/practical-nutrition.html">Practical</a>
+          ·
+          <a href="insights/topics/food-culture-and-behavior.html">Culture</a>
+          ·
+          <a href="insights/topics/health-and-the-body.html">Body</a>
         </p>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <!-- SERIES: one compressed doorway for all four rooms -->
-    <section class="library profiles-doorway" aria-label="Series">
-      <div class="wrap">
-        <p class="library__label">Series</p>
-        <ul class="topics">
-          <li>
-            <p class="topics__title"><a href="seeing-food-differently/index.html">Seeing Food Differently</a></p>
-            <p class="topics__desc">A kitchen guide in five chapters: starting state, flavor, knife cuts, heat, and steering.</p>
-          </li>
-          <li>
-            <p class="topics__title"><a href="therapy-profiles/index.html">Traditional Therapy Profiles</a></p>
-            <p class="topics__desc">Herbs, formulations, and product patterns in South Asian traditional medicine, separated when one name tries to mean all three.</p>
-          </li>
-          <li>
-            <p class="topics__title"><a href="emerging-therapies/index.html">Emerging Therapies</a></p>
-            <p class="topics__desc">A research studio for therapies changing nutrition counseling while the evidence is still forming.</p>
-          </li>
-          <li>
-            <p class="topics__title"><a href="intervention-maps/index.html">Intervention Maps</a></p>
-            <p class="topics__desc">Evidence landscapes for common conditions: where exercise, therapy, nutrition, supplements, and other approaches sit.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
+  <section class="lib" id="lib">
+    <div class="lib__rain" id="lib-rain" aria-hidden="true"></div>
+    <div class="lib__inner">
+      <h2>Library</h2>
+      <p>Every investigation on one shelf, by subject, with a short line under each title.</p>
+      <a href="library.html">Open the Library</a>
+    </div>
+  </section>
 
-    <!-- Knowledge library: the durable body of work. -->
-    <section class="library" aria-label="Knowledge Library">
-      <div class="wrap">
-        <p class="library__label">By subject</p>
-        <p class="library__framing">
-          The larger body of work, organized by subject. Each topic is a
-          neighborhood of related inquiries and the articles inside them.
-        </p>
-        <ul class="topics" data-library-topics></ul>
-      </div>
-    </section>
+  <script>
+    (function () {
+      if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+      gsap.registerPlugin(ScrollTrigger);
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    <!-- 5. COLOPHON: the same signature line that closes the homepage. -->
-    <section class="colophon" aria-label="Signature">
-      <div class="wrap">
-        <p>
-          <a href="about.html">Rajiv Vakani</a>. Writing on nutrition from New York.<br class="colophon-break" aria-hidden="true">
-          Since 2023. <a href="contact.html">Email</a>.
-        </p>
-      </div>
-    </section>
+      /* Page progress */
+      gsap.to("#scroll-progress", {
+        width: "100%",
+        ease: "none",
+        scrollTrigger: { scrub: 0.15 }
+      });
 
-  </main>
+      /* Hero entrance */
+      gsap.from(".hero__title .line span", {
+        yPercent: 110,
+        duration: 1.15,
+        stagger: 0.12,
+        ease: "power4.out",
+        delay: 0.1
+      });
+      gsap.from("[data-fade]", {
+        opacity: 0,
+        y: 18,
+        duration: 0.9,
+        stagger: 0.08,
+        ease: "power3.out",
+        delay: 0.55
+      });
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
-      <div class="footer-social" aria-label="Social links">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg class="social-icon" aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
-        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+      if (!reduce) {
+        /* Orbs drift on scroll + float */
+        gsap.to('[data-orb="1"]', {
+          y: 180, x: 80, scale: 1.15,
+          scrollTrigger: { trigger: ".hero", scrub: 1.2, start: "top top", end: "bottom top" }
+        });
+        gsap.to('[data-orb="2"]', {
+          y: -120, x: -60, scale: 1.2,
+          scrollTrigger: { trigger: ".hero", scrub: 1.4, start: "top top", end: "bottom top" }
+        });
+        gsap.to('[data-orb="3"]', {
+          y: 100, x: 40,
+          scrollTrigger: { trigger: ".hero", scrub: 1, start: "top top", end: "bottom top" }
+        });
+        gsap.to('[data-orb="1"]', { y: "+=28", duration: 4, yoyo: true, repeat: -1, ease: "sine.inOut" });
+        gsap.to('[data-orb="2"]', { y: "-=22", duration: 5, yoyo: true, repeat: -1, ease: "sine.inOut" });
+        gsap.to('[data-orb="3"]', { x: "+=30", duration: 6, yoyo: true, repeat: -1, ease: "sine.inOut" });
+
+        /* Marquee */
+        gsap.to("#marquee", {
+          xPercent: -50,
+          duration: 28,
+          ease: "none",
+          repeat: -1
+        });
+        gsap.to(".hero__marquee", {
+          y: -80,
+          opacity: 0.05,
+          scrollTrigger: { trigger: ".hero", scrub: true, start: "top top", end: "bottom top" }
+        });
+
+        /* Hero copy parallax out */
+        gsap.to(".hero__copy", {
+          y: 120,
+          opacity: 0.15,
+          scrollTrigger: { trigger: ".hero", scrub: true, start: "center top", end: "bottom top" }
+        });
+      }
+
+      /* Rise headlines */
+      gsap.utils.toArray("[data-rise]").forEach(function (el) {
+        gsap.from(el, {
+          y: 60,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 85%" }
+        });
+      });
+
+      /* ============================================================
+         Living stages (no pin chain).
+         Native scroll stays the engine. Presence comes from
+         in-view life, sticky craft, and snap galleries.
+         ============================================================ */
+
+      function whenInView(el, onEnter, onLeave, threshold) {
+        if (!el || !("IntersectionObserver" in window)) {
+          if (onEnter) onEnter();
+          return null;
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              if (onEnter) onEnter(entry);
+            } else if (onLeave) {
+              onLeave(entry);
+            }
+          });
+        }, { threshold: threshold == null ? 0.35 : threshold });
+        io.observe(el);
+        return io;
+      }
+
+      /* ----- SFD: ambient path while the section is alive ----- */
+      var chapters = gsap.utils.toArray(".sfd__ch");
+      var sfdSection = document.querySelector(".sfd");
+      var sfdCaret = document.querySelector("#sfd-caret");
+      var stageHint = document.querySelector("#sfd-hint");
+      if (sfdSection && chapters.length) {
+        var sfdIdx = 0;
+        var sfdTimer = null;
+        var sfdLabels = ["01", "02", "03", "04", "05"];
+
+        var showChapter = function (index, fromUser) {
+          sfdIdx = (index + chapters.length) % chapters.length;
+          var ch = chapters[sfdIdx];
+          chapters.forEach(function (c, i) {
+            c.classList.toggle("is-on", i === sfdIdx);
+          });
+          if (sfdCaret) {
+            gsap.to(sfdCaret, {
+              width: ch.offsetWidth,
+              x: ch.offsetLeft,
+              backgroundColor: ch.getAttribute("data-color"),
+              duration: fromUser ? 0.35 : 0.7,
+              ease: "power3.out",
+              overwrite: true
+            });
+          }
+          if (stageHint) stageHint.textContent = sfdLabels[sfdIdx] + " / 05";
+        };
+
+        showChapter(0, true);
+
+        chapters.forEach(function (ch, i) {
+          ch.addEventListener("mouseenter", function () {
+            showChapter(i, true);
+            if (sfdTimer) { clearInterval(sfdTimer); sfdTimer = null; }
+          });
+          ch.addEventListener("focusin", function () {
+            showChapter(i, true);
+            if (sfdTimer) { clearInterval(sfdTimer); sfdTimer = null; }
+          });
+          ch.addEventListener("click", function () {
+            showChapter(i, true);
+          });
+        });
+
+        var startSfdLife = function () {
+          sfdSection.classList.add("is-live");
+          if (reduce || sfdTimer) return;
+          sfdTimer = setInterval(function () {
+            showChapter(sfdIdx + 1, false);
+          }, 2200);
+        };
+        var stopSfdLife = function () {
+          sfdSection.classList.remove("is-live");
+          if (sfdTimer) { clearInterval(sfdTimer); sfdTimer = null; }
+        };
+
+        whenInView(sfdSection, startSfdLife, stopSfdLife, 0.4);
+        window.addEventListener("resize", function () {
+          showChapter(sfdIdx, true);
+        });
+      }
+
+      /* ----- TP: strata + dual name rivers ----- */
+      function duplicateTrack(track) {
+        if (!track || track.dataset.duped === "1") return;
+        track.innerHTML = track.innerHTML + track.innerHTML;
+        track.dataset.duped = "1";
+      }
+      var riverA = document.querySelector("#tp-river-a");
+      var riverB = document.querySelector("#tp-river-b");
+      var tpSection = document.querySelector(".tp");
+      if (riverA && riverB) {
+        duplicateTrack(riverA);
+        duplicateTrack(riverB);
+        if (!reduce) {
+          var riverTweenA = gsap.to(riverA, {
+            xPercent: -50,
+            duration: 52,
+            ease: "none",
+            repeat: -1,
+            paused: true
+          });
+          /* Opposite direction — counter-scroll */
+          var riverTweenB = gsap.fromTo(
+            riverB,
+            { xPercent: -50 },
+            {
+              xPercent: 0,
+              duration: 64,
+              ease: "none",
+              repeat: -1,
+              paused: true
+            }
+          );
+          whenInView(tpSection, function () {
+            riverTweenA.play();
+            riverTweenB.play();
+          }, function () {
+            riverTweenA.pause();
+            riverTweenB.pause();
+          }, 0.2);
+        }
+      }
+
+      /* ----- ET: native snap gallery + wheel assist ----- */
+      var etViewport = document.querySelector("#et-viewport");
+      var etProgress = document.querySelector("#et-progress");
+      if (etViewport) {
+        var syncEtProgress = function () {
+          if (!etProgress) return;
+          var max = etViewport.scrollWidth - etViewport.clientWidth;
+          var p = max > 0 ? etViewport.scrollLeft / max : 0;
+          etProgress.style.width = (Math.max(0, Math.min(1, p)) * 100) + "%";
+        };
+        etViewport.addEventListener("scroll", syncEtProgress, { passive: true });
+        syncEtProgress();
+
+        /* Shift+wheel scrubs the film; plain wheel keeps page scroll free */
+        etViewport.addEventListener("wheel", function (e) {
+          if (!e.shiftKey) return;
+          if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+          if (etViewport.scrollWidth <= etViewport.clientWidth) return;
+          e.preventDefault();
+          etViewport.scrollLeft += e.deltaY;
+        }, { passive: false });
+      }
+
+      /* ----- IM: in-view landscape cycle ----- */
+      var imSection = document.querySelector(".im");
+      var imConds = gsap.utils.toArray(".im__cond");
+      var imDots = gsap.utils.toArray("#im-dots b");
+      var imBg = document.querySelector("#im-bg");
+      if (imSection && imConds.length) {
+        var imIdx = 0;
+        var imTimer = null;
+
+        var showIm = function (index) {
+          imIdx = (index + imConds.length) % imConds.length;
+          imConds.forEach(function (cond, i) {
+            var on = i === imIdx;
+            cond.classList.toggle("is-on", on);
+            gsap.to(cond, {
+              opacity: on ? 1 : 0,
+              y: on ? 0 : 24,
+              scale: on ? 1 : 0.985,
+              duration: 0.55,
+              ease: "power3.out",
+              overwrite: true
+            });
+            cond.style.pointerEvents = on ? "auto" : "none";
+            if (on) {
+              var bars = cond.querySelectorAll(".im__bar-track i");
+              gsap.fromTo(bars,
+                { width: "0%" },
+                {
+                  width: function (bi, el) { return el.getAttribute("data-w") + "%"; },
+                  duration: 0.7,
+                  stagger: 0.05,
+                  ease: "power2.out",
+                  overwrite: true
+                }
+              );
+              if (imBg) {
+                gsap.to(imBg, {
+                  backgroundColor: cond.getAttribute("data-color"),
+                  duration: 0.6,
+                  ease: "power2.out",
+                  overwrite: true
+                });
+              }
+            }
+          });
+          imDots.forEach(function (d, di) {
+            d.classList.toggle("is-on", di === imIdx);
+          });
+        };
+
+        gsap.set(imConds, { opacity: 0, y: 24 });
+        showIm(0);
+
+        imDots.forEach(function (dot, i) {
+          dot.style.cursor = "pointer";
+          dot.addEventListener("click", function () {
+            showIm(i);
+            if (imTimer) { clearInterval(imTimer); imTimer = null; }
+          });
+        });
+
+        whenInView(imSection, function () {
+          if (reduce || imTimer) return;
+          imTimer = setInterval(function () { showIm(imIdx + 1); }, 3200);
+        }, function () {
+          if (imTimer) { clearInterval(imTimer); imTimer = null; }
+        }, 0.35);
+      }
+
+      /* ----- INV: feature slides cycle while in view ----- */
+      var invFilm = document.querySelector("#inv-film");
+      var slides = gsap.utils.toArray(".inv__slide");
+      var invDots = gsap.utils.toArray("#inv-dots b");
+      if (invFilm && slides.length) {
+        var invIdx = 0;
+        var invTimer = null;
+
+        var showSlide = function (index) {
+          invIdx = (index + slides.length) % slides.length;
+          slides.forEach(function (slide, i) {
+            var on = i === invIdx;
+            slide.classList.toggle("is-on", on);
+            gsap.to(slide, {
+              opacity: on ? 1 : 0,
+              scale: on ? 1 : 0.97,
+              duration: 0.55,
+              ease: "power3.out",
+              overwrite: true
+            });
+            slide.style.pointerEvents = on ? "auto" : "none";
+          });
+          invDots.forEach(function (d, di) {
+            d.classList.toggle("is-on", di === invIdx);
+          });
+        };
+
+        gsap.set(slides, { opacity: 0, scale: 0.97 });
+        showSlide(0);
+
+        invDots.forEach(function (dot, i) {
+          dot.style.cursor = "pointer";
+          dot.addEventListener("click", function () {
+            showSlide(i);
+            if (invTimer) { clearInterval(invTimer); invTimer = null; }
+          });
+        });
+
+        whenInView(invFilm, function () {
+          if (reduce || invTimer) return;
+          invTimer = setInterval(function () { showSlide(invIdx + 1); }, 5600);
+        }, function () {
+          if (invTimer) { clearInterval(invTimer); invTimer = null; }
+        }, 0.4);
+      }
+
+      /* ----- INV rest: living cover stack ----- */
+      var covers = gsap.utils.toArray(".inv__cover");
+      var restSection = document.querySelector("#inv-rest");
+      if (covers.length && restSection) {
+        var coverIdx = 0;
+        var coverTimer = null;
+        var coverHold = false;
+
+        var showCover = function (index) {
+          coverIdx = (index + covers.length) % covers.length;
+          covers.forEach(function (c, i) {
+            c.classList.toggle("is-on", i === coverIdx);
+          });
+        };
+
+        covers.forEach(function (cover, i) {
+          cover.addEventListener("mouseenter", function () {
+            coverHold = true;
+            showCover(i);
+            if (coverTimer) { clearInterval(coverTimer); coverTimer = null; }
+          });
+          cover.addEventListener("focus", function () {
+            coverHold = true;
+            showCover(i);
+            if (coverTimer) { clearInterval(coverTimer); coverTimer = null; }
+          });
+        });
+
+        restSection.addEventListener("mouseleave", function () {
+          coverHold = false;
+          if (reduce || coverTimer) return;
+          coverTimer = setInterval(function () { showCover(coverIdx + 1); }, 3800);
+        });
+
+        whenInView(restSection, function () {
+          if (reduce || coverTimer || coverHold) return;
+          coverTimer = setInterval(function () { showCover(coverIdx + 1); }, 3800);
+        }, function () {
+          if (coverTimer) { clearInterval(coverTimer); coverTimer = null; }
+        }, 0.2);
+      }
+
+      /* Library doorway + quiet rain */
+      var rain = document.getElementById("lib-rain");
+      if (rain) {
+        var titles = [
+          "The Mango Question", "Precision Medicine", "Collagen", "Creatine",
+          "Egg–Alzheimer’s", "Glycemic Index", "Mucusless", "Gundry",
+          "Invisible Maintenance", "Protein", "Evaluate Claims",
+          "Simple Answers", "Ayurvedic Rx", "Lentil Pasta"
+        ];
+        var n, el, x, y, s;
+        for (n = 0; n < 16; n++) {
+          el = document.createElement("span");
+          el.textContent = titles[n % titles.length];
+          x = (n * 31) % 88;
+          y = 12 + ((n * 37) % 70);
+          s = 0.9 + (n % 4) * 0.28;
+          el.style.left = x + "%";
+          el.style.top = y + "%";
+          el.style.fontSize = s + "rem";
+          rain.appendChild(el);
+        }
+        if (!reduce) {
+          gsap.from("#lib-rain span", {
+            opacity: 0,
+            y: 20,
+            stagger: 0.04,
+            duration: 0.9,
+            ease: "power2.out",
+            scrollTrigger: { trigger: "#lib", start: "top 88%" }
+          });
+        }
+      }
+      gsap.from(".lib__inner > *", {
+        y: 20,
+        opacity: 0,
+        stagger: 0.08,
+        duration: 0.75,
+        ease: "power3.out",
+        scrollTrigger: { trigger: "#lib", start: "top 90%" }
+      });
+
+      /* Color wash */
+      window.addEventListener("load", function () { ScrollTrigger.refresh(); });
+
+      ScrollTrigger.create({
+        trigger: ".sfd",
+        start: "top center",
+        end: "bottom center",
+        onEnter: function () { document.body.style.background = "#101412"; },
+        onEnterBack: function () { document.body.style.background = "#101412"; }
+      });
+      ScrollTrigger.create({
+        trigger: ".tp",
+        start: "top center",
+        end: "bottom center",
+        onEnter: function () { document.body.style.background = "#1a1410"; },
+        onEnterBack: function () { document.body.style.background = "#1a1410"; }
+      });
+      ScrollTrigger.create({
+        trigger: ".et",
+        start: "top center",
+        end: "bottom center",
+        onEnter: function () { document.body.style.background = "#050506"; },
+        onEnterBack: function () { document.body.style.background = "#050506"; }
+      });
+      ScrollTrigger.create({
+        trigger: ".im",
+        start: "top center",
+        end: "bottom center",
+        onEnter: function () { document.body.style.background = "#151b24"; },
+        onEnterBack: function () { document.body.style.background = "#151b24"; }
+      });
+      ScrollTrigger.create({
+        trigger: ".inv",
+        start: "top center",
+        end: "bottom center",
+        onEnter: function () { document.body.style.background = "#0a0b0d"; },
+        onEnterBack: function () { document.body.style.background = "#0a0b0d"; }
+      });
+      ScrollTrigger.create({
+        trigger: "#lib",
+        start: "top center",
+        end: "bottom center",
+        onEnter: function () { document.body.style.background = "#050506"; },
+        onEnterBack: function () { document.body.style.background = "#050506"; }
+      });
+
+    })();
+  </script>
+
+  <footer class="room-foot">
+    <div class="room-foot__inner">
+      <p class="room-foot__legal">&copy; 2025&ndash;2026 Rajiv Vakani</p>
+      <div class="room-foot__social" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var menuToggle = document.querySelector('.menu-toggle');
-      var navLinks = document.querySelector('.nav-links');
-      var overlay = document.querySelector('.mobile-menu-overlay');
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function () {
-          navLinks.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-          if (overlay) overlay.classList.toggle('active');
-          document.body.classList.toggle('menu-open');
-        });
-      }
-      if (overlay) {
-        overlay.addEventListener('click', function () {
-          navLinks.classList.remove('active');
-          menuToggle.classList.remove('active');
-          overlay.classList.remove('active');
-          document.body.classList.remove('menu-open');
-        });
-      }
-    });
-  </script>
 </body>
 </html>

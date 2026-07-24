@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="post-page">
+<html lang="en" data-skin="light">
 <head>
+  <!-- promoted from insights/mockups/insights-room/collagen-stage.html -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Collagen, Compared to What? | Rajiv Vakani</title>
   <meta name="description" content="A friend takes bovine collagen despite being mostly vegetarian. I followed the trials, the biology, and the marketing to ask what decision she is actually making.">
 
@@ -22,12 +22,488 @@
   <meta property="twitter:description" content="A friend takes bovine collagen despite being mostly vegetarian. I followed the trials, the biology, and the marketing to ask what decision she is actually making." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
+<script>
+    (function () {
+      try {
+        var s = localStorage.getItem("insights-skin");
+        if (s === "dark" || s === "light") document.documentElement.setAttribute("data-skin", s);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../rajiv-styles.min.css?v=20260715063000">
-  <link rel="stylesheet" href="library.min.css?v=20260719173000">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+
+    /*
+      Mango-family hard port. Same room grammar as mango-stage.
+      Anchor: Is the glycemic index wrong? (colliding healthy-food vs high-GI claims)
+    */
+    :root, html[data-skin="light"] {
+      --bg: #ffffff;
+      --ink: #0c1017;
+      --soft: rgba(12, 16, 23, 0.86);
+      --dim: rgba(12, 16, 23, 0.46);
+      --line: rgba(12, 16, 23, 0.12);
+      --hot: #c24a1a;
+      --stage: #0c1017;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-hot: #f08a4a;
+    }
+    html[data-skin="dark"] {
+      --bg: #08090b;
+      --ink: #f4f2ec;
+      --soft: rgba(244, 242, 236, 0.86);
+      --dim: rgba(244, 242, 236, 0.46);
+      --line: rgba(244, 242, 236, 0.14);
+      --hot: #f08a4a;
+      --stage: #16181d;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-hot: #f08a4a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .bar {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+      padding: 0.75rem 1.15rem;
+      padding-right: 8.5rem;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.78rem;
+    }
+    .bar a { color: var(--hot); text-decoration: none; }
+    .bar strong { font-weight: 600; }
+    .rail {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-left: clamp(1.25rem, 4vw, 2.5rem);
+      padding-right: clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .read { max-width: 34rem; }
+    .prose {
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.12rem, 1.4vw, 1.25rem);
+      line-height: 1.62;
+      color: var(--soft);
+    }
+    .prose p { margin: 0 0 1.05em; }
+    .prose a {
+      color: var(--hot);
+      text-decoration: none;
+      font-weight: inherit;
+    }
+    .prose a:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+    .prose sup a { text-decoration: none; font-family: "Instrument Sans", sans-serif; font-size: 0.7em; }
+    .prose .ask { color: var(--hot); font-style: italic; }
+    .prose .turn {
+      color: var(--ink);
+      font-size: 1.08em;
+      max-width: 36ch;
+      margin-top: 1.25em;
+    }
+    .series {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 0.7rem;
+      font-weight: 500;
+    }
+    .kicker {
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+      line-height: 1.35;
+      color: var(--dim);
+      margin: 0 0 clamp(1.35rem, 3.5vw, 2rem);
+      letter-spacing: -0.01em;
+    }
+    .stage {
+      min-height: min(92vh, 56rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 6vw, 4rem) 0 clamp(2.5rem, 6vw, 4rem);
+    }
+    .case-q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.6rem, 7vw, 5.25rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      margin: 0 0 clamp(2rem, 5vw, 3.25rem);
+      max-width: 14ch;
+      color: var(--ink);
+    }
+    .ledger {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+    .ledger__row {
+      display: grid;
+      grid-template-columns: 2.5rem minmax(7rem, 11rem) minmax(0, 1fr);
+      gap: clamp(0.75rem, 2vw, 1.5rem);
+      align-items: baseline;
+      padding: clamp(1.15rem, 2.4vw, 1.55rem) 0;
+      border-bottom: 1px solid var(--line);
+      opacity: 0;
+      transform: translateY(0.65rem);
+      animation: rise 0.7s ease forwards;
+    }
+    .ledger__row:nth-child(1) { animation-delay: 0.12s; }
+    .ledger__row:nth-child(2) { animation-delay: 0.28s; }
+    .ledger__row:nth-child(3) { animation-delay: 0.44s; }
+    @keyframes rise {
+      to { opacity: 1; transform: none; }
+    }
+    @media (max-width: 640px) {
+      .ledger__row {
+        grid-template-columns: 2rem minmax(0, 1fr);
+        grid-template-rows: auto auto;
+      }
+      .ledger__who { grid-column: 2; }
+      .ledger__line {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 0.25rem;
+      }
+    }
+    .ledger__n {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--dim);
+      font-variant-numeric: tabular-nums;
+    }
+    .ledger__who {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--hot);
+    }
+    .ledger__line {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .escort { padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 5rem); }
+    .seam {
+      background: var(--stage);
+      color: var(--stage-ink);
+      padding: clamp(3rem, 8vw, 5.5rem) 0;
+    }
+    .seam .prose { color: var(--stage-soft); }
+    .seam .prose .turn { color: var(--stage-ink); }
+    .seam .prose .ask { color: var(--stage-hot); }
+    .seam .prose a { color: var(--stage-hot); }
+    .seam__lead {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+      line-height: 1.4;
+      color: var(--stage-dim);
+      margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+      max-width: 28rem;
+    }
+    .verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      margin: 0 0 clamp(2rem, 5vw, 3rem);
+      padding: clamp(1.5rem, 3vw, 2rem) 0;
+      border-top: 1px solid rgba(244, 242, 236, 0.16);
+      border-bottom: 1px solid rgba(244, 242, 236, 0.16);
+    }
+    @media (max-width: 700px) {
+      .verdict { grid-template-columns: 1fr; }
+    }
+    .verdict__claim {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+    }
+    .verdict__claim p {
+      margin: 0 0 1rem;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.35rem, 2.6vw, 1.95rem);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      color: var(--stage-ink);
+    }
+    .verdict__tag {
+      display: inline-block;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stage-hot);
+    }
+    .block { padding: clamp(2.75rem, 6vw, 4.25rem) 0; }
+    .block + .block { border-top: 1px solid var(--line); }
+    .block h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      max-width: 34rem;
+      color: var(--ink);
+    }
+    .return {
+      padding: clamp(3rem, 7vw, 5rem) 0;
+      border-top: 1px solid var(--line);
+    }
+    .return__q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 1.5rem;
+      max-width: 14ch;
+      color: var(--ink);
+    }
+    .carry {
+      padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 5vw, 3rem);
+      border-top: 1px solid var(--line);
+    }
+    .carry h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      color: var(--ink);
+    }
+    .carry ol {
+      margin: 1.25rem 0 0;
+      padding: 0;
+      list-style: none;
+      max-width: 36rem;
+      counter-reset: q;
+    }
+    .carry li {
+      counter-increment: q;
+      position: relative;
+      padding: 1rem 0 1rem 2.5rem;
+      border-top: 1px solid var(--line);
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.08rem, 1.6vw, 1.22rem);
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .carry li:last-child { border-bottom: 1px solid var(--line); }
+    .carry li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      top: 1.1rem;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--hot);
+    }
+    .sources { padding: 0 0 clamp(3.5rem, 7vw, 5rem); }
+    .sources details {
+      max-width: 36rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+    .sources summary {
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .sources ol {
+      margin: 1rem 0 0;
+      padding: 0 0 0 1.15rem;
+      color: var(--soft);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+    .sources a { color: var(--hot); }
+    .dna {
+      margin: 0 auto;
+      max-width: 1120px;
+      padding: 0.75rem clamp(1.25rem, 4vw, 2.5rem) 0;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: var(--dim);
+    }
+    .dna summary {
+      cursor: pointer;
+      color: var(--hot);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+    }
+    .dna p { margin: 0.45rem 0 0; max-width: 44rem; }
+    @media (prefers-reduced-motion: reduce) {
+      .ledger__row { opacity: 1; transform: none; animation: none; }
+    }
+  
+    .prose strong { color: var(--ink); font-weight: 600; }
+    .prose em { font-style: italic; }
+    .case-q { max-width: 12ch; }
+
+    /* Chapter jump: desktop sticky rail; mobile sheet */
+    .toc-fab {
+      display: none;
+      position: fixed;
+      right: 1rem;
+      bottom: 1.25rem;
+      z-index: 35;
+      font: inherit;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 0.7rem 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(12, 16, 23, 0.08);
+    }
+    .toc {
+      display: none;
+    }
+    .toc__label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 0.75rem;
+    }
+    .toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .toc a {
+      display: block;
+      padding: 0.35rem 0 0.35rem 0.65rem;
+      border-left: 1px solid var(--line);
+      color: var(--dim);
+      text-decoration: none;
+      font-size: 0.78rem;
+      line-height: 1.35;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .toc a:hover { color: var(--ink); }
+    .toc a.is-active {
+      color: var(--hot);
+      border-left-color: var(--hot);
+    }
+    .toc-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 45;
+      background: rgba(12, 16, 23, 0.35);
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+    }
+    body.toc-open { overflow: hidden; }
+    body.toc-open .toc-backdrop { display: block; }
+
+    @media (min-width: 1180px) {
+      .toc {
+        display: block;
+        position: fixed;
+        top: 5.25rem;
+        right: max(0.75rem, calc((100vw - 1120px) / 2 - 12.25rem));
+        width: 11rem;
+        max-height: calc(100vh - 6.5rem);
+        overflow: auto;
+        z-index: 20;
+        padding-bottom: 2rem;
+      }
+      .toc-fab { display: none !important; }
+    }
+    @media (max-width: 1179px) {
+      .toc-fab { display: block; }
+      .toc {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        width: auto;
+        max-height: min(70vh, 28rem);
+        overflow: auto;
+        background: var(--bg);
+        border-top: 1px solid var(--line);
+        padding: 1.15rem 1.25rem 1.75rem;
+        transform: translateY(105%);
+        transition: transform 0.22s ease;
+        box-shadow: 0 -12px 40px rgba(12, 16, 23, 0.12);
+      }
+      body.toc-open .toc { transform: none; }
+      .toc__close {
+        display: block;
+        width: 100%;
+        margin: 0 0 1rem;
+        font: inherit;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--dim);
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 0 0 0.85rem;
+        text-align: left;
+        cursor: pointer;
+      }
+    }
+    @media (min-width: 1180px) {
+      .toc__close { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .toc { transition: none; }
+    }
+    .block, .escort, .seam, .return, .sources {
+      scroll-margin-top: 4.5rem;
+    }
+  </style>
+  <link rel="stylesheet" href="room-appearance.css?v=20260724170000" />
   <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
 
@@ -45,9 +521,6 @@
       gtag('config', 'G-0L41N5K2WV');
     });
   </script>
-
-  <script defer src="data.js?v=20260629100000"></script>
-  <script defer src="library.js?v=20260719173000"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,69 +558,73 @@
 }
   </script>
 </head>
-<body class="post-page post-layout--inquiry" data-article-slug="collagen-compared-to-what" data-topic-id="reading-the-evidence">
+<body>
+    <div class="bar">
+    <a href="../index.html">Rajiv Vakani</a>
+    <a href="../insights.html">Insights</a>
+    <a href="../library.html">Library</a>
+    <strong>Collagen</strong>
+  </div>
 
-  <nav class="main-nav">
-    <div class="container nav-container">
-      <a href="../index.html" class="site-logo"><img src="../logo-mark.png?v=rv9" alt="" class="site-logo__mark" decoding="async" width="543" height="543">Rajiv Vakani</a>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../journey.html">Journey</a></li>
-        <li><a href="../insights.html" class="active">Insights</a></li>
-        <li><a href="../library.html">Library</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
+  <div class="skin" role="group" aria-label="Appearance">
+    <button type="button" class="skin__opt" data-skin="light" aria-pressed="true">Light</button>
+    <span class="skin__sep" aria-hidden="true">&middot;</span>
+    <button type="button" class="skin__opt" data-skin="dark" aria-pressed="false">Dark</button>
+  </div>
 
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
-      </button>
-    </div>
+<button type="button" class="toc-fab" id="toc-open" aria-expanded="false" aria-controls="chapter-toc">Sections</button>
+  <button type="button" class="toc-backdrop" id="toc-backdrop" aria-label="Close sections" hidden></button>
+  <nav class="toc" id="chapter-toc" aria-label="On this page">
+    <button type="button" class="toc__close" id="toc-close">Close sections</button>
+    <p class="toc__label">On this page</p>
+    <ol>
+      <li><a href="#enter">How this started</a></li>
+      <li><a href="#reaches-body">Does it reach the body?</a></li>
+      <li><a href="#studies">What the studies show</a></li>
+      <li><a href="#reviews">Why reviews disagree</a></li>
+      <li><a href="#compared">Compared to what?</a></li>
+      <li><a href="#lose-collagen">What &ldquo;lose collagen&rdquo; means</a></li>
+      <li><a href="#breakdown">Overcoming breakdown</a></li>
+      <li><a href="#clusters">Where evidence clusters</a></li>
+      <li><a href="#someone-like-me">Someone like me?</a></li>
+      <li><a href="#specific">Something specific?</a></li>
+      <li><a href="#vegetarians">What vegetarians miss</a></li>
+      <li><a href="#what-to-do">What to do</a></li>
+      <li><a href="#believe">What I believe now</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
   </nav>
 
-  <div class="mobile-menu-overlay"></div>
+  <header class="stage" aria-label="The case">
+    <div class="rail">
+      <p class="series">Reading the evidence</p>
+      <p class="kicker">Collagen, Compared to What?</p>
+      <h1 class="case-q">Compared to what?</h1>
 
-  <main>
+      <ol class="ledger" aria-label="Questions in play">
+        <li class="ledger__row">
+          <span class="ledger__n">01</span>
+          <span class="ledger__who">The aisle asks</span>
+          <p class="ledger__line">Should I take it? Does it work?</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">02</span>
+          <span class="ledger__who">The trials ask</span>
+          <p class="ledger__line">Does collagen beat placebo?</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">03</span>
+          <span class="ledger__who">What I needed</span>
+          <p class="ledger__line">Compared to the life she was already living?</p>
+        </li>
+      </ol>
+    </div>
+  </header>
 
-    <header class="post-header">
-      <div class="post-wrap">
-        <p class="post-anchor">
-          in <a href="topics/reading-the-evidence.html">Reading the evidence</a>
-        </p>
-        <h1 class="post-title">Collagen, Compared to What?</h1>
-        <p class="post-dek">The question that changed the investigation.</p>
-        <p class="post-meta">
-          <span>Research Review</span>
-          <span>June 27, 2026</span>
-        </p>
-      </div>
-    </header>
-
-    <section class="post-glance" aria-label="At a glance">
-      <div class="post-wrap">
-        <p class="post-glance__label">At a glance</p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">What started this</span>
-          My friend is mostly vegetarian for religious reasons. She makes one daily exception: bovine collagen. She takes it hoping it supports her skin and joints as she gets older. That was enough to make me curious, not judgmental. If collagen really works, what are vegetarians actually missing?
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">What caught my attention</span>
-          The biology turned out to be more complicated than the marketing. The clinical trials were more promising than I expected. But the research often seemed to answer a different question from the one my friend was actually asking. Somewhere along the way, &ldquo;Compared to what?&rdquo; became more important than &ldquo;Does it work?&rdquo;
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">Why it matters</span>
-          This piece isn&rsquo;t really about whether collagen is good or bad. It&rsquo;s about how to read a health product that sounds plausible, costs real money, and comes with confident claims. If you&rsquo;ve ever wondered whether a supplement deserves your money, your attention, and your trust, that&rsquo;s the kind of decision the article is trying to help you make.
-        </p>
-      </div>
-    </section>
-
-    <article class="post-body" id="journey">
-      <div class="post-wrap">
-
-        <p>A family friend, mostly vegetarian for religious reasons, takes bovine collagen every morning.</p>
+  <section class="escort" id="enter" aria-label="Enter">
+    <div class="rail">
+      <div class="prose read">
+<p>A family friend, mostly vegetarian for religious reasons, takes bovine collagen every morning.</p>
 
         <p>She knows it comes from cows. She&rsquo;s made peace with that because she believes it helps: her skin, her joints, aging well. She&rsquo;s not naive about what she&rsquo;s swallowing. She&rsquo;s decided the tradeoff is worth it.</p>
 
@@ -158,11 +635,15 @@
         <p>If you&rsquo;ve ever stood in front of the collagen aisle, you know the quieter version of her question: Should I take it? Is it worth the money? I wasn&rsquo;t shopping for a tub myself. But I couldn&rsquo;t answer it for her until I understood what decision she was actually making.</p>
 
         <p>I didn&rsquo;t know when I started. I still wouldn&rsquo;t give every person the same answer. But the question itself changed on me.</p>
+      </div>
+    </div>
+  </section>
 
-
-        <h2 class="post-inquiry-signpost">Whether swallowing collagen actually reaches the body</h2>
-
-        <p>Before I could tell my friend anything useful, or explain what her morning scoop might actually be doing, I had to settle something simpler.</p>
+  <section class="block" id="reaches-body" aria-label="Whether swallowing collagen actually reaches the body">
+    <div class="rail">
+      <h2>Whether swallowing collagen actually reaches the body</h2>
+      <div class="prose read">
+<p>Before I could tell my friend anything useful, or explain what her morning scoop might actually be doing, I had to settle something simpler.</p>
 
         <p>When you swallow collagen, does your body actually use it? Or does digestion turn it into the same generic protein as everything else?</p>
 
@@ -183,11 +664,15 @@
         <p>Getting in still isn&rsquo;t helping. I want to be clear about that. I didn&rsquo;t read those papers and think, <em>well, there it is</em>. My friend might still be wasting her money. If the case doesn&rsquo;t hold for her, it probably doesn&rsquo;t hold for a lot of people making the same choice. Absorption settles a prior objection; it doesn&rsquo;t settle the purchase.</p>
 
         <p>Does it actually help?</p>
+      </div>
+    </div>
+  </section>
 
-
-        <h2 class="post-inquiry-signpost">What the studies seem to show</h2>
-
-        <p>I started with the clinical trials.</p>
+  <section class="block" id="studies" aria-label="What the studies seem to show">
+    <div class="rail">
+      <h2>What the studies seem to show</h2>
+      <div class="prose read">
+<p>I started with the clinical trials.</p>
 
         <p>At first glance, they looked good, and I want to be honest about my reaction to that, because it wasn&rsquo;t relief. It was excitement.</p>
 
@@ -222,11 +707,15 @@
         <p>I thought the next part would be simple. Add up the wins. Done.</p>
 
         <p>It wasn&rsquo;t simple.</p>
+      </div>
+    </div>
+  </section>
 
-
-        <h2 class="post-inquiry-signpost">Why the reviews disagree</h2>
-
-        <p>Both sides cite papers. Both sound sure of themselves. My first read was: someone must be lying, or selling something.</p>
+  <section class="block" id="reviews" aria-label="Why the reviews disagree">
+    <div class="rail">
+      <h2>Why the reviews disagree</h2>
+      <div class="prose read">
+<p>Both sides cite papers. Both sound sure of themselves. My first read was: someone must be lying, or selling something.</p>
 
         <p>But neither side looked like they were making things up. The positive meta-analyses weren&rsquo;t inventing trials. The skeptical re-analyses weren&rsquo;t inventing flaws either. Same literature. Different conclusions.</p>
 
@@ -235,23 +724,37 @@
         <p>What I found, after more reading, is that they&rsquo;re often answering different questions. Does collagen beat placebo? Pooled across trials, often yes, for some outcomes, over eight to twelve weeks.<sup><a href="#src-3">3</a></sup> What if you filter for study quality, or industry funding, or independent replication? A careful recent skin meta-analysis found the pooled effects often shrink toward zero.<sup><a href="#src-4">4</a></sup> Not always. Not everywhere. Enough to matter.</p>
 
         <p>That helped. It didn&rsquo;t finish the job.</p>
+      </div>
+    </div>
+  </section>
 
-        <p>Because even the positive trials left me stuck on something simpler. When a study says collagen &ldquo;works&rdquo;: works compared to what?</p>
+  <section class="seam" id="compared" aria-label="Different questions">
+    <div class="rail">
+      <p class="seam__lead">When a study says collagen &ldquo;works,&rdquo; works compared to what?</p>
+      <div class="verdict" aria-label="Two questions">
+        <blockquote class="verdict__claim">
+          <p>&ldquo;Does collagen beat nothing added?&rdquo;</p>
+          <span class="verdict__tag">The research question</span>
+        </blockquote>
+        <blockquote class="verdict__claim">
+          <p>&ldquo;Does it offer something beyond the life she&rsquo;s already living?&rdquo;</p>
+          <span class="verdict__tag">Her question</span>
+        </blockquote>
+      </div>
+    </div>
+  </section>
 
-        <p>At the store, my friend isn&rsquo;t choosing between collagen and nothing. She&rsquo;s choosing between her morning scoop and the life she&rsquo;s already living.</p>
-
-        <p>I realized I&rsquo;d been reading &ldquo;collagen works&rdquo; as &ldquo;collagen works for my friend, in her life, against what she&rsquo;d actually do instead.&rdquo; Most of these studies weren&rsquo;t asking that.</p>
-
-
-        <h2 class="post-inquiry-signpost">What &ldquo;works&rdquo; is being compared to</h2>
-
-        <p>I need to be clear about something, because I don&rsquo;t want this to sound like I&rsquo;m dismissing the trials.</p>
+  <section class="block" id="compared-detail" aria-label="What &ldquo;works&rdquo; is being compared to">
+    <div class="rail">
+      <h2>What &ldquo;works&rdquo; is being compared to</h2>
+      <div class="prose read">
+<p>I need to be clear about something, because I don&rsquo;t want this to sound like I&rsquo;m dismissing the trials.</p>
 
         <p>Placebo-controlled studies are often exactly the right first step. I&rsquo;m not against them. When you&rsquo;re trying to find out whether an intervention does anything at all, comparing it to placebo makes sense.</p>
 
         <p>That wasn&rsquo;t what was bothering me.</p>
 
-        <p>What shifted my curiosity was realizing those studies were answering a different question from the one I actually wanted answered.</p>
+        <p>At the store, my friend isn&rsquo;t choosing between collagen and nothing. She&rsquo;s choosing between her morning scoop and the life she&rsquo;s already living.</p>
 
         <p>The research question, roughly, is: does collagen beat nothing added?</p>
 
@@ -282,11 +785,15 @@
         <p>I finally knew which question I needed the evidence to address.</p>
 
         <p>And somewhere in there I realized the broad picture I&rsquo;d been using wasn&rsquo;t detailed enough to explain what I was reading.</p>
+      </div>
+    </div>
+  </section>
 
-
-        <h2 class="post-inquiry-signpost">What we mean when we say we &ldquo;lose collagen&rdquo;</h2>
-
-        <p>I didn&rsquo;t arrive at this part thinking I had everything wrong.</p>
+  <section class="block" id="lose-collagen" aria-label="What we mean when we say we &ldquo;lose collagen&rdquo;">
+    <div class="rail">
+      <h2>What we mean when we say we &ldquo;lose collagen&rdquo;</h2>
+      <div class="prose read">
+<p>I didn&rsquo;t arrive at this part thinking I had everything wrong.</p>
 
         <p>I already understood the broad picture. Collagen is a major structural protein. It declines with age. That loss contributes to increasing fragility: in skin, in joints, in the things people actually notice and worry about. That much was true. It stayed true.</p>
 
@@ -307,11 +814,15 @@
         <p>The broad picture still held: collagen loss is real, aging involves genuine decline, my friend&rsquo;s concerns aren&rsquo;t imaginary. But the detail changed what swallowing a powder could plausibly fix. The body isn&rsquo;t only running out of collagen. It&rsquo;s constantly managing it: making, breaking, repairing, responding to damage. Swallowing collagen isn&rsquo;t refilling a tank. It&rsquo;s one input into that management. The thing holding you back might be somewhere else entirely.</p>
 
         <p>That still didn&rsquo;t answer whether she should buy the tub. But it explained, at least in part, why the evidence around supplementation had become so complicated.</p>
+      </div>
+    </div>
+  </section>
 
-
-        <h2 class="post-inquiry-signpost">Whether eating collagen can overcome what&rsquo;s breaking it down</h2>
-
-        <p>Once I stopped thinking about running out, I started thinking about breaking down.</p>
+  <section class="block" id="breakdown" aria-label="Whether eating collagen can overcome what&rsquo;s breaking it down">
+    <div class="rail">
+      <h2>Whether eating collagen can overcome what&rsquo;s breaking it down</h2>
+      <div class="prose read">
+<p>Once I stopped thinking about running out, I started thinking about breaking down.</p>
 
         <p>If sun, smoking, inflammation, or injury are driving loss (not just slow production), then eating more raw material might not do much unless the breaking-down side eases up too. For my friend, buying collagen for skin, that&rsquo;s the difference between a scoop every morning and sunscreen. Adding input versus stopping a leak.</p>
 
@@ -326,11 +837,15 @@
         <p>So if someone is still getting a lot of unprotected sun, or smoking, I&rsquo;ve got a hard time seeing how a daily powder wins that fight on its own. Oral collagen might still do something. Some imaging studies report less fragmentation in the dermis;<sup><a href="#src-19">19</a></sup> wound trials suggest peptide content matters.<sup><a href="#src-15">15</a></sup> But for my friend buying prevention, the bottleneck may often be ongoing damage, not missing collagen in the diet.</p>
 
         <p>Where would a supplement actually help, and where probably wouldn&rsquo;t it?</p>
+      </div>
+    </div>
+  </section>
 
-
-        <h2 class="post-inquiry-signpost">Where the evidence actually clusters</h2>
-
-        <p>I stopped asking &ldquo;does collagen work?&rdquo; and started asking &ldquo;where?&rdquo;</p>
+  <section class="block" id="clusters" aria-label="Where the evidence actually clusters">
+    <div class="rail">
+      <h2>Where the evidence actually clusters</h2>
+      <div class="prose read">
+<p>I stopped asking &ldquo;does collagen work?&rdquo; and started asking &ldquo;where?&rdquo;</p>
 
         <p>The literature doesn&rsquo;t give one answer. It gives patterns, or that&rsquo;s how it looked to me after weeks of reading.</p>
 
@@ -343,11 +858,15 @@
         <p>The stronger cases cluster where the body is already remodeling: healing, adapting under load, managing symptoms. The weaker cases cluster where healthy people are trying to get ahead of aging before anything is actively broken.</p>
 
         <p><a href="invisible-maintenance.html">Prevention and repair aren&rsquo;t the same situation</a>. The tub is sold mostly for one. The plausibility, as far as I can tell, lives mostly in the other.</p>
+      </div>
+    </div>
+  </section>
 
-
-        <h2 class="post-inquiry-signpost">Whether this is built for someone like me</h2>
-
-        <p>My friend isn&rsquo;t in ulcer recovery or tendon hypertrophy studies. Most people buying collagen aren&rsquo;t either. They&rsquo;re trying to age well. Prevent wrinkles. Keep joints quiet before they become a problem. Feel like they&rsquo;re doing something.</p>
+  <section class="block" id="someone-like-me" aria-label="Whether this is built for someone like me">
+    <div class="rail">
+      <h2>Whether this is built for someone like me</h2>
+      <div class="prose read">
+<p>My friend isn&rsquo;t in ulcer recovery or tendon hypertrophy studies. Most people buying collagen aren&rsquo;t either. They&rsquo;re trying to age well. Prevent wrinkles. Keep joints quiet before they become a problem. Feel like they&rsquo;re doing something.</p>
 
         <p>I get that. It&rsquo;s a reasonable thing to want.</p>
 
@@ -368,11 +887,15 @@
         <p>When the bottleneck is damage and environment, a placebo-tested powder gets harder to justify. Not impossible. Harder.</p>
 
         <p>One thing still nagged at me. Maybe it&rsquo;s not just expensive protein.</p>
+      </div>
+    </div>
+  </section>
 
-
-        <h2 class="post-inquiry-signpost">Whether there is something specific in collagen</h2>
-
-        <p>The peptide story is seductive, and I tried not to get seduced too fast.</p>
+  <section class="block" id="specific" aria-label="Whether there is something specific in collagen">
+    <div class="rail">
+      <h2>Whether there is something specific in collagen</h2>
+      <div class="prose read">
+<p>The peptide story is seductive, and I tried not to get seduced too fast.</p>
 
         <p>Specific peptides from collagen do things in cell studies that generic amino acids don&rsquo;t: nudging cell behavior, hyaluronic acid production, populations of cells involved in wound repair.<sup><a href="#src-20">20</a></sup> Some human trials suggest high-peptide products outperform low-peptide ones.<sup><a href="#src-15">15</a></sup><sup><a href="#src-19">19</a></sup></p>
 
@@ -385,11 +908,15 @@
         <p>Collagen probably isn&rsquo;t generic protein in every model. Specific peptides, and forms like low-dose type II, may do things adequate nutrition hasn&rsquo;t been shown to replicate. But a mechanism in a dish isn&rsquo;t a reason to buy a tub for daily prevention.</p>
 
         <p>Which brought me back to where I started.</p>
+      </div>
+    </div>
+  </section>
 
-
-        <h2 class="post-inquiry-signpost">What vegetarians are actually missing</h2>
-
-        <p>My friend made a bovine exception because she believes the benefit is real and specific. I wanted to know if the evidence backs that, or if her mostly vegetarian diet already covers what she needs.</p>
+  <section class="block" id="vegetarians" aria-label="What vegetarians are actually missing">
+    <div class="rail">
+      <h2>What vegetarians are actually missing</h2>
+      <div class="prose read">
+<p>My friend made a bovine exception because she believes the benefit is real and specific. I wanted to know if the evidence backs that, or if her mostly vegetarian diet already covers what she needs.</p>
 
         <p>I didn&rsquo;t find anything suggesting vegetarians lack some irreplaceable input for ordinary connective tissue maintenance. The body builds collagen from amino acids in many foods: dal, lentils, beans, tofu, soy foods, dairy if used, nuts and seeds, normal varied eating. Vitamin C is required for assembly; without it you get scurvy, which is collagen failure in the literal sense.<sup><a href="#src-21">21</a></sup> Extra vitamin C beyond an already adequate diet doesn&rsquo;t automatically improve synthesis in replete adults.<sup><a href="#src-22">22</a></sup> But deficiency, not the question my friend is asking.</p>
 
@@ -400,11 +927,15 @@
         <p>For vegetarians who won&rsquo;t make her compromise, I didn&rsquo;t find evidence they&rsquo;re missing something only animal collagen can supply, in the ordinary replete life most of us live.</p>
 
         <p>Could they support connective tissue another way? That finally felt like a question I could answer, at least in direction, if not with full certainty.</p>
+      </div>
+    </div>
+  </section>
 
-
-        <h2 class="post-inquiry-signpost">What to do with all of this</h2>
-
-        <p>I&rsquo;m not going to tell you whether to take collagen. That&rsquo;s not what this earned, and it&rsquo;s not what I&rsquo;d want from an article like this.</p>
+  <section class="block" id="what-to-do" aria-label="What to do with all of this">
+    <div class="rail">
+      <h2>What to do with all of this</h2>
+      <div class="prose read">
+<p>I&rsquo;m not going to tell you whether to take collagen. That&rsquo;s not what this earned, and it&rsquo;s not what I&rsquo;d want from an article like this.</p>
 
         <p>What it earned is clarity: enough understanding to decide for yourself, with your own context, your own values, your own tolerance for uncertainty.</p>
 
@@ -427,11 +958,15 @@
         <p><strong>When the next collagen claim shows up:</strong> I&rsquo;d ask two things: compared to what? And for which situation: prevention in a mostly intact body, or repair where turnover is already high?</p>
 
         <p>Those two questions survived everything I read.</p>
+      </div>
+    </div>
+  </section>
 
-
-        <h2 class="post-inquiry-signpost">What I believe now</h2>
-
-        <p>I started because a friend I care about takes bovine collagen despite being mostly vegetarian, and I wanted to know if she was onto something real.</p>
+  <section class="return" id="believe" aria-label="Return">
+    <div class="rail">
+      <p class="return__q">Compared to what?</p>
+      <div class="prose read">
+<p>I started because a friend I care about takes bovine collagen despite being mostly vegetarian, and I wanted to know if she was onto something real.</p>
 
         <p>I still don&rsquo;t think she&rsquo;s foolish. Collagen reaches the body. Trials exist. Some situations show real effects. She may be right for her life in ways the papers don&rsquo;t fully capture.</p>
 
@@ -456,17 +991,17 @@
         <p>Not anti-collagen. Not pro-collagen.</p>
 
         <p>Oriented.</p>
-
       </div>
-    </article>
+    </div>
+  </section>
 
-    <section class="post-sources" aria-label="Sources">
-      <div class="post-wrap">
-        <details class="post-sources__disclosure">
-          <summary>Sources <span class="post-sources__cue" aria-hidden="true">Open sources</span></summary>
-          <div class="post-sources__disclosure-body">
-          <div class="post-sources__group">
-              <ol>
+
+  <section class="sources" id="sources" aria-label="Sources">
+    <div class="rail">
+      <details>
+        <summary>Sources</summary>
+        <ol>
+
                           <li id="src-1">
                             Iwai K, Hasegawa T, Taguchi Y, et al. Identification of food-derived collagen peptides in human blood after oral ingestion of gelatin hydrolysates. <em>J Agric Food Chem</em>. 2005;53(16):6531&ndash;6536.
                             <a href="https://doi.org/10.1021/jf050206p" target="_blank" rel="noopener noreferrer">https://doi.org/10.1021/jf050206p</a>
@@ -555,62 +1090,76 @@
                             Choi SY, Ko EJ, Lee YH, et al. Effects of collagen tripeptide supplement on skin properties: a prospective, randomized, controlled study. <em>J Cosmet Laser Ther</em>. 2014;16(3):132&ndash;137.
                             <a href="https://doi.org/10.3109/14764172.2013.854119" target="_blank" rel="noopener noreferrer">https://doi.org/10.3109/14764172.2013.854119</a>
                           </li>
-                        </ol>
-                      </div>
-          </div>
-        </details>
-      </div>
-    </section>
+                        
+        </ol>
+      </details>
+    </div>
+  </section>
 
+  <script>
+    (function () {
+      var root = document.documentElement;
 
-    <section class="post-next" aria-label="Next">
-      <div class="post-wrap" data-post-next></div>
-    </section>
+      var openBtn = document.getElementById("toc-open");
+      var closeBtn = document.getElementById("toc-close");
+      var backdrop = document.getElementById("toc-backdrop");
+      var toc = document.getElementById("chapter-toc");
+      var links = toc ? toc.querySelectorAll('a[href^="#"]') : [];
 
-    <section class="post-colophon" aria-label="Signature">
-      <div class="post-wrap">
-        <p>
-          <a href="../about.html">Rajiv Vakani</a>. Writing on nutrition from New York.<br class="colophon-break" aria-hidden="true">
-          Since 2023. <a href="../contact.html">Email</a>.
-        </p>
-      </div>
-    </section>
+      function setOpen(open) {
+        document.body.classList.toggle("toc-open", open);
+        if (openBtn) openBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (backdrop) {
+          if (open) backdrop.removeAttribute("hidden");
+          else backdrop.setAttribute("hidden", "");
+        }
+      }
+      function closeToc() { setOpen(false); }
+      if (openBtn) openBtn.addEventListener("click", function () { setOpen(true); });
+      if (closeBtn) closeBtn.addEventListener("click", closeToc);
+      if (backdrop) backdrop.addEventListener("click", closeToc);
 
-  </main>
+      links.forEach(function (a) {
+        a.addEventListener("click", function () {
+          if (window.matchMedia("(max-width: 1179px)").matches) closeToc();
+        });
+      });
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
-      <div class="footer-social" aria-label="Social links">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg class="social-icon" aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
-        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+      var ids = Array.prototype.map.call(links, function (a) {
+        return a.getAttribute("href").slice(1);
+      }).filter(Boolean);
+      var sections = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      if (!sections.length || !("IntersectionObserver" in window)) return;
+
+      var linkById = {};
+      links.forEach(function (a) {
+        linkById[a.getAttribute("href").slice(1)] = a;
+      });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var id = entry.target.id;
+          links.forEach(function (a) { a.classList.remove("is-active"); });
+          if (linkById[id]) linkById[id].classList.add("is-active");
+        });
+      }, { rootMargin: "-20% 0px -65% 0px", threshold: 0 });
+
+      sections.forEach(function (sec) { observer.observe(sec); });
+    })();
+  </script>
+  
+  <footer class="room-foot">
+    <div class="room-foot__inner">
+      <p class="room-foot__legal">&copy; 2025&ndash;2026 Rajiv Vakani</p>
+      <div class="room-foot__social" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var menuToggle = document.querySelector('.menu-toggle');
-      var navLinks = document.querySelector('.nav-links');
-      var overlay = document.querySelector('.mobile-menu-overlay');
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function () {
-          navLinks.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-          if (overlay) overlay.classList.toggle('active');
-          document.body.classList.toggle('menu-open');
-        });
-      }
-      if (overlay) {
-        overlay.addEventListener('click', function () {
-          navLinks.classList.remove('active');
-          menuToggle.classList.remove('active');
-          overlay.classList.remove('active');
-          document.body.classList.remove('menu-open');
-        });
-      }
-    });
-  </script>
+  <script src="room-appearance.js?v=20260724170000" defer></script>
 </body>
 </html>

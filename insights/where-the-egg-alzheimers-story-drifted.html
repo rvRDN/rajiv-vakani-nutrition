@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="post-page">
+<html lang="en" data-skin="light">
 <head>
+  <!-- promoted from insights/mockups/insights-room/egg-stage.html -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Where the Egg&ndash;Alzheimer&rsquo;s Story Drifted | Rajiv Vakani</title>
   <meta name="description" content="A reel cited the Adventist Health Study and landed on a breakthrough. Two studies, one narrative, and a conclusion neither source fully supports.">
 
@@ -22,12 +22,563 @@
   <meta property="twitter:description" content="A reel cited the Adventist Health Study and landed on a breakthrough. Two studies, one narrative, and a conclusion neither source fully supports." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
+<script>
+    (function () {
+      try {
+        var s = localStorage.getItem("insights-skin");
+        if (s === "dark" || s === "light") document.documentElement.setAttribute("data-skin", s);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../rajiv-styles.min.css?v=20260715063000">
-  <link rel="stylesheet" href="library.min.css?v=20260719173000">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+
+
+    /*
+      Mango-family hard port. Same room grammar as mango-stage.
+      Anchor: Is the glycemic index wrong? (colliding healthy-food vs high-GI claims)
+    */
+    :root, html[data-skin="light"] {
+      --bg: #ffffff;
+      --ink: #0c1017;
+      --soft: rgba(12, 16, 23, 0.86);
+      --dim: rgba(12, 16, 23, 0.46);
+      --line: rgba(12, 16, 23, 0.12);
+      --hot: #c24a1a;
+      --stage: #0c1017;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-hot: #f08a4a;
+    }
+    html[data-skin="dark"] {
+      --bg: #08090b;
+      --ink: #f4f2ec;
+      --soft: rgba(244, 242, 236, 0.86);
+      --dim: rgba(244, 242, 236, 0.46);
+      --line: rgba(244, 242, 236, 0.14);
+      --hot: #f08a4a;
+      --stage: #16181d;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-hot: #f08a4a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .bar {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+      padding: 0.75rem 1.15rem;
+      padding-right: 8.5rem;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.78rem;
+    }
+    .bar a { color: var(--hot); text-decoration: none; }
+    .bar strong { font-weight: 600; }
+    .rail {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-left: clamp(1.25rem, 4vw, 2.5rem);
+      padding-right: clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .read { max-width: 34rem; }
+    .prose {
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.12rem, 1.4vw, 1.25rem);
+      line-height: 1.62;
+      color: var(--soft);
+    }
+    .prose p { margin: 0 0 1.05em; }
+    .prose a {
+      color: var(--hot);
+      text-decoration: none;
+      font-weight: inherit;
+    }
+    .prose a:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+    .prose sup a { text-decoration: none; font-family: "Instrument Sans", sans-serif; font-size: 0.7em; }
+    .prose .ask { color: var(--hot); font-style: italic; }
+    .prose .turn {
+      color: var(--ink);
+      font-size: 1.08em;
+      max-width: 36ch;
+      margin-top: 1.25em;
+    }
+    .series {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 0.7rem;
+      font-weight: 500;
+    }
+    .kicker {
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+      line-height: 1.35;
+      color: var(--dim);
+      margin: 0 0 clamp(1.35rem, 3.5vw, 2rem);
+      letter-spacing: -0.01em;
+    }
+    .stage {
+      min-height: min(92vh, 56rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 6vw, 4rem) 0 clamp(2.5rem, 6vw, 4rem);
+    }
+    .case-q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.6rem, 7vw, 5.25rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      margin: 0 0 clamp(2rem, 5vw, 3.25rem);
+      max-width: 14ch;
+      color: var(--ink);
+    }
+    .ledger {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+    .ledger__row {
+      display: grid;
+      grid-template-columns: 2.5rem minmax(7rem, 11rem) minmax(0, 1fr);
+      gap: clamp(0.75rem, 2vw, 1.5rem);
+      align-items: baseline;
+      padding: clamp(1.15rem, 2.4vw, 1.55rem) 0;
+      border-bottom: 1px solid var(--line);
+      opacity: 0;
+      transform: translateY(0.65rem);
+      animation: rise 0.7s ease forwards;
+    }
+    .ledger__row:nth-child(1) { animation-delay: 0.12s; }
+    .ledger__row:nth-child(2) { animation-delay: 0.28s; }
+    .ledger__row:nth-child(3) { animation-delay: 0.44s; }
+    @keyframes rise {
+      to { opacity: 1; transform: none; }
+    }
+    @media (max-width: 640px) {
+      .ledger__row {
+        grid-template-columns: 2rem minmax(0, 1fr);
+        grid-template-rows: auto auto;
+      }
+      .ledger__who { grid-column: 2; }
+      .ledger__line {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 0.25rem;
+      }
+    }
+    .ledger__n {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--dim);
+      font-variant-numeric: tabular-nums;
+    }
+    .ledger__who {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--hot);
+    }
+    .ledger__line {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .escort { padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 5rem); }
+    .seam {
+      background: var(--stage);
+      color: var(--stage-ink);
+      padding: clamp(3rem, 8vw, 5.5rem) 0;
+    }
+    .seam .prose { color: var(--stage-soft); }
+    .seam .prose .turn { color: var(--stage-ink); }
+    .seam .prose .ask { color: var(--stage-hot); }
+    .seam .prose a { color: var(--stage-hot); }
+    .seam__lead {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+      line-height: 1.4;
+      color: var(--stage-dim);
+      margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+      max-width: 28rem;
+    }
+    .verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      margin: 0 0 clamp(2rem, 5vw, 3rem);
+      padding: clamp(1.5rem, 3vw, 2rem) 0;
+      border-top: 1px solid rgba(244, 242, 236, 0.16);
+      border-bottom: 1px solid rgba(244, 242, 236, 0.16);
+    }
+    @media (max-width: 700px) {
+      .verdict { grid-template-columns: 1fr; }
+    }
+    .verdict__claim {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+    }
+    .verdict__claim p {
+      margin: 0 0 1rem;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.35rem, 2.6vw, 1.95rem);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      color: var(--stage-ink);
+    }
+    .verdict__tag {
+      display: inline-block;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stage-hot);
+    }
+    .block { padding: clamp(2.75rem, 6vw, 4.25rem) 0; }
+    .block + .block { border-top: 1px solid var(--line); }
+    .block h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      max-width: 34rem;
+      color: var(--ink);
+    }
+    .return {
+      padding: clamp(3rem, 7vw, 5rem) 0;
+      border-top: 1px solid var(--line);
+    }
+    .return__q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 1.5rem;
+      max-width: 14ch;
+      color: var(--ink);
+    }
+    .carry {
+      padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 5vw, 3rem);
+      border-top: 1px solid var(--line);
+    }
+    .carry h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      color: var(--ink);
+    }
+    .carry ol {
+      margin: 1.25rem 0 0;
+      padding: 0;
+      list-style: none;
+      max-width: 36rem;
+      counter-reset: q;
+    }
+    .carry li {
+      counter-increment: q;
+      position: relative;
+      padding: 1rem 0 1rem 2.5rem;
+      border-top: 1px solid var(--line);
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.08rem, 1.6vw, 1.22rem);
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .carry li:last-child { border-bottom: 1px solid var(--line); }
+    .carry li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      top: 1.1rem;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--hot);
+    }
+    .sources { padding: 0 0 clamp(3.5rem, 7vw, 5rem); }
+    .sources details {
+      max-width: 36rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+    .sources summary {
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .sources ol {
+      margin: 1rem 0 0;
+      padding: 0 0 0 1.15rem;
+      color: var(--soft);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+    .sources a { color: var(--hot); }
+    .dna {
+      margin: 0 auto;
+      max-width: 1120px;
+      padding: 0.75rem clamp(1.25rem, 4vw, 2.5rem) 0;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: var(--dim);
+    }
+    .dna summary {
+      cursor: pointer;
+      color: var(--hot);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+    }
+    .dna p { margin: 0.45rem 0 0; max-width: 44rem; }
+    @media (prefers-reduced-motion: reduce) {
+      .ledger__row { opacity: 1; transform: none; animation: none; }
+    }
+  
+    .prose strong { color: var(--ink); font-weight: 600; }
+    .prose em { font-style: italic; }
+    .case-q { max-width: 12ch; }
+
+    /* Chapter jump: desktop sticky rail; mobile sheet */
+    .toc-fab {
+      display: none;
+      position: fixed;
+      right: 1rem;
+      bottom: 1.25rem;
+      z-index: 35;
+      font: inherit;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 0.7rem 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(12, 16, 23, 0.08);
+    }
+    .toc {
+      display: none;
+    }
+    .toc__label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 0.75rem;
+    }
+    .toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .toc a {
+      display: block;
+      padding: 0.35rem 0 0.35rem 0.65rem;
+      border-left: 1px solid var(--line);
+      color: var(--dim);
+      text-decoration: none;
+      font-size: 0.78rem;
+      line-height: 1.35;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .toc a:hover { color: var(--ink); }
+    .toc a.is-active {
+      color: var(--hot);
+      border-left-color: var(--hot);
+    }
+    .toc-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 45;
+      background: rgba(12, 16, 23, 0.35);
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+    }
+    body.toc-open { overflow: hidden; }
+    body.toc-open .toc-backdrop { display: block; }
+
+    @media (min-width: 1180px) {
+      .toc {
+        display: block;
+        position: fixed;
+        top: 5.25rem;
+        right: max(0.75rem, calc((100vw - 1120px) / 2 - 12.25rem));
+        width: 11rem;
+        max-height: calc(100vh - 6.5rem);
+        overflow: auto;
+        z-index: 20;
+        padding-bottom: 2rem;
+      }
+      .toc-fab { display: none !important; }
+    }
+    @media (max-width: 1179px) {
+      .toc-fab { display: block; }
+      .toc {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        width: auto;
+        max-height: min(70vh, 28rem);
+        overflow: auto;
+        background: var(--bg);
+        border-top: 1px solid var(--line);
+        padding: 1.15rem 1.25rem 1.75rem;
+        transform: translateY(105%);
+        transition: transform 0.22s ease;
+        box-shadow: 0 -12px 40px rgba(12, 16, 23, 0.12);
+      }
+      body.toc-open .toc { transform: none; }
+      .toc__close {
+        display: block;
+        width: 100%;
+        margin: 0 0 1rem;
+        font: inherit;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--dim);
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 0 0 0.85rem;
+        text-align: left;
+        cursor: pointer;
+      }
+    }
+    @media (min-width: 1180px) {
+      .toc__close { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .toc { transition: none; }
+    }
+    .block, .escort, .seam, .return, .sources {
+      scroll-margin-top: 4.5rem;
+    }
+  
+
+    .enter {
+      padding: clamp(1.75rem, 4.5vw, 2.75rem) 0 clamp(2rem, 5vw, 3rem);
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+      gap: clamp(1.5rem, 4vw, 2.75rem);
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .enter { grid-template-columns: 1fr; }
+    }
+    .media-frame {
+      margin: 0;
+      max-width: 22rem;
+    }
+    .media-frame iframe {
+      width: 100%;
+      min-height: 28rem;
+      border: 0;
+      display: block;
+      background: rgba(12, 16, 23, 0.04);
+    }
+    .media-frame figcaption {
+      margin-top: 0.65rem;
+      font-size: 0.8rem;
+      color: var(--dim);
+      line-height: 1.4;
+    }
+    .title {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.75rem, 3.4vw, 2.45rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin: 0 0 1.15rem;
+      max-width: 18ch;
+      color: var(--ink);
+    }
+    .return-media {
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+      gap: clamp(1.5rem, 4vw, 2.75rem);
+      align-items: start;
+      padding: clamp(2.75rem, 6vw, 4.25rem) 0;
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 860px) {
+      .return-media { grid-template-columns: 1fr; }
+    }
+    .return-media .line {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.1rem;
+      color: var(--ink);
+      max-width: 20ch;
+    }
+    .block h3 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.2rem, 2vw, 1.4rem);
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin: 1.75rem 0 0.85rem;
+      max-width: 34rem;
+      color: var(--ink);
+    }
+    .prose strong { color: var(--ink); font-weight: 600; }
+    .prose em { font-style: italic; }
+    /* no wash chapters */
+    .wash { background: transparent; }
+
+  </style>
+  <link rel="stylesheet" href="room-appearance.css?v=20260724170000" />
   <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
 
@@ -45,9 +596,6 @@
       gtag('config', 'G-0L41N5K2WV');
     });
   </script>
-
-  <script defer src="data.js?v=20260622200000"></script>
-  <script defer src="library.js?v=20260719173000"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,101 +633,65 @@
 }
   </script>
 </head>
-<body class="post-page" data-article-slug="where-the-egg-alzheimers-story-drifted" data-topic-id="reading-the-evidence">
+<body>
+    <div class="bar">
+    <a href="../index.html">Rajiv Vakani</a>
+    <a href="../insights.html">Insights</a>
+    <a href="../library.html">Library</a>
+    <strong>Egg–Alzheimer’s</strong>
+  </div>
 
-  <nav class="main-nav">
-    <div class="container nav-container">
-      <a href="../index.html" class="site-logo"><img src="../logo-mark.png?v=rv9" alt="" class="site-logo__mark" decoding="async" width="543" height="543">Rajiv Vakani</a>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../journey.html">Journey</a></li>
-        <li><a href="../insights.html" class="active">Insights</a></li>
-        <li><a href="../library.html">Library</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
+  <div class="skin" role="group" aria-label="Appearance">
+    <button type="button" class="skin__opt" data-skin="light" aria-pressed="true">Light</button>
+    <span class="skin__sep" aria-hidden="true">&middot;</span>
+    <button type="button" class="skin__opt" data-skin="dark" aria-pressed="false">Dark</button>
+  </div>
 
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
-      </button>
-    </div>
+<button type="button" class="toc-fab" id="toc-open" aria-expanded="false" aria-controls="chapter-toc">Sections</button>
+  <button type="button" class="toc-backdrop" id="toc-backdrop" aria-label="Close sections" hidden></button>
+  <nav class="toc" id="chapter-toc" aria-label="On this page">
+    <button type="button" class="toc__close" id="toc-close">Close sections</button>
+    <p class="toc__label">On this page</p>
+    <ol>
+      <li><a href="#what-landed">What landed</a></li>
+      <li><a href="#what-caught-my-attention">What caught my attention</a></li>
+      <li><a href="#the-chain">The chain</a></li>
+      <li><a href="#drift-point-1-merge-and-number-travel">Drift: merge & numbers</a></li>
+      <li><a href="#drift-point-2-context-drop">Drift: context drop</a></li>
+      <li><a href="#drift-point-3-confidence-upgrade">Drift: confidence</a></li>
+      <li><a href="#what-each-source-actually-supported">What each source supported</a></li>
+      <li><a href="#return">Look again</a></li>
+      <li><a href="#unresolved">What remains unresolved</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
   </nav>
 
-  <div class="mobile-menu-overlay"></div>
-
-  <main>
-
-    <header class="post-header">
-      <div class="post-wrap">
-        <p class="post-anchor">
-          in <a href="topics/reading-the-evidence.html">Reading the evidence</a>
-        </p>
-        <h1 class="post-title">Where the Egg&ndash;Alzheimer&rsquo;s Story Drifted</h1>
-        <p class="post-meta">
-          <span>Essay</span>
-          <span>June 22, 2026</span>
-        </p>
-      </div>
-    </header>
-
-    <section class="post-glance" aria-label="At a glance">
-      <div class="post-wrap">
-        <p class="post-glance__label">At a glance</p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">The claim</span>
-          A reel suggested that eating as little as one egg per week could lower Alzheimer&rsquo;s risk by nearly half, citing the Adventist Health Study.
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">What I found</span>
-          The 47% figure came from a different study than the one being named. The Adventist paper also found broadly similar associations when eggs were compared with legumes, nuts, and seeds.
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">Why it matters</span>
-          If a cheap food already in your refrigerator could meaningfully cut Alzheimer&rsquo;s risk, that&rsquo;s worth paying attention to. It&rsquo;s also worth asking whether the story outran the evidence.
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">Where I am now</span>
-          The literature is interesting and biologically plausible. I&rsquo;d hold the breakfast conclusion more lightly than the reel suggested.
-        </p>
-      </div>
-    </section>
-
-    <section class="post-claim-card" id="what-started-this" aria-labelledby="claim-card-title">
-      <div class="post-wrap">
-
-        <p class="post-claim-card__kicker">Claim source</p>
-
-        <h2 class="post-claim-card__title" id="claim-card-title">What started this</h2>
-
-        <p class="post-claim-card__intro">
-          This piece follows a public Instagram Reel. The post claimed eating eggs might substantially lower Alzheimer&rsquo;s risk, citing nutrition research and a headline-grabbing percentage cut.
-        </p>
-
-        <div class="post-claim-card__embed" aria-label="Instagram Reel embed">
-          <iframe
+  <header class="rail enter" aria-label="Enter">
+    <figure class="media-frame">
+      <iframe
             src="https://www.instagram.com/p/DY4pcMIOy0T/embed"
             title="Instagram Reel referenced in this article"
             loading="lazy"
             allowfullscreen
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
           ></iframe>
-        </div>
-
-        <p class="post-claim-card__meta">Accessed June 2026. This article analyzes the claim, not the creator.</p>
-
+      <figcaption>Instagram Reel referenced in this article. Claim source, not endorsement.</figcaption>
+    </figure>
+    <div>
+      <p class="series">Reading the evidence</p>
+      <h1 class="title">Where the Egg&ndash;Alzheimer&rsquo;s Story Drifted</h1>
+      <div class="prose read">
+        <p>This piece follows a public Instagram Reel. The post claimed eating eggs might substantially lower Alzheimer&rsquo;s risk, citing nutrition research and a headline-grabbing percentage cut.</p>
+        <p>Accessed June 2026. This article analyzes the claim, not the creator.</p>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <article class="post-body" id="journey">
-      <div class="post-wrap">
-
-        <h2>What landed</h2>
-
-        <p>If you watched the reel and didn&rsquo;t pause to check the citations, you&rsquo;d probably walk away with something like this:</p>
+  <section class="block" id="what-landed" aria-label="What landed">
+    <div class="rail">
+      <h2>What landed</h2>
+      <div class="prose read">
+<p>If you watched the reel and didn&rsquo;t pause to check the citations, you&rsquo;d probably walk away with something like this:</p>
 
         <p>Eating as little as one egg per week may lower your risk of Alzheimer&rsquo;s disease by nearly half.</p>
 
@@ -190,10 +702,14 @@
         <p>The finding sounds large, specific, and recent enough to matter.</p>
 
         <p>That&rsquo;s a reasonable takeaway. It&rsquo;s also compact in a way nutrition stories rarely stay once you open the sources behind them.</p>
-
-        <h2>What caught my attention</h2>
-
-        <p>I didn&rsquo;t scroll past because the claim sounded absurd.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="what-caught-my-attention" aria-label="What caught my attention">
+    <div class="rail">
+      <h2>What caught my attention</h2>
+      <div class="prose read">
+<p>I didn&rsquo;t scroll past because the claim sounded absurd.</p>
 
         <p>I paused because parts of it sounded plausible enough to take seriously.</p>
 
@@ -208,10 +724,14 @@
         <p>But it does explain why a short video can stop someone mid-scroll even when they have no particular loyalty to eggs, or to the person posting.</p>
 
         <p>I wanted to know what the studies actually said before the story reached me.</p>
-
-        <h2>The chain</h2>
-
-        <p>Most nutrition claims arrive as a single sentence. They usually passed through several layers first. Reconstructing those layers is slower than watching the reel. It&rsquo;s also the only way I know to see where a story changes shape, the same compression problem I followed in <a href="the-mango-question.html">The Mango Question</a>.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="the-chain" aria-label="The chain">
+    <div class="rail">
+      <h2>The chain</h2>
+      <div class="prose read">
+<p>Most nutrition claims arrive as a single sentence. They usually passed through several layers first. Reconstructing those layers is slower than watching the reel. It&rsquo;s also the only way I know to see where a story changes shape, the same compression problem I followed in <a href="the-mango-question.html">The Mango Question</a>.</p>
 
         <p>What follows isn&rsquo;t a verdict on eggs. It&rsquo;s an attempt to separate what each layer asserted from what the next layer added.</p>
 
@@ -270,10 +790,14 @@
         <p>A fifteen-year cohort analysis, a smaller mediation study, substitution models, observational limits, and open questions about choline and overall diet have become a single kitchen-table conclusion.</p>
 
         <p>That compression is the transformation this article is tracing.</p>
-
-        <h2>Drift point 1: Merge and number travel</h2>
-
-        <p>By the time the reel reached me, two separate findings had already become one story.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="drift-point-1-merge-and-number-travel" aria-label="Drift point 1: Merge and number travel">
+    <div class="rail">
+      <h2>Drift point 1: Merge and number travel</h2>
+      <div class="prose read">
+<p>By the time the reel reached me, two separate findings had already become one story.</p>
 
         <p>That&rsquo;s the first place the chain changed shape.</p>
 
@@ -304,10 +828,14 @@
         <p>The study can tell us what tended to occur together in a given cohort. It can&rsquo;t tell us, from this design alone, that changing egg intake would change Alzheimer&rsquo;s risk for a given person.</p>
 
         <p>If you remember one thing from this section: the reel didn&rsquo;t need to invent a finding. It needed two real findings to sound like one.</p>
-
-        <h2>Drift point 2: Context drop</h2>
-
-        <p>The second drift is quieter. It&rsquo;s easier to miss because it isn&rsquo;t a wrong number. It&rsquo;s a missing question.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="drift-point-2-context-drop" aria-label="Drift point 2: Context drop">
+    <div class="rail">
+      <h2>Drift point 2: Context drop</h2>
+      <div class="prose read">
+<p>The second drift is quieter. It&rsquo;s easier to miss because it isn&rsquo;t a wrong number. It&rsquo;s a missing question.</p>
 
         <p>The Adventist paper didn&rsquo;t stop at whether people who ate more eggs had lower Alzheimer&rsquo;s risk. It also asked what those eggs were standing in for.</p>
 
@@ -336,10 +864,14 @@
         <p>The Adventist study still supports a real observation: in this population, egg intake was inversely associated with Alzheimer&rsquo;s incidence. What it doesn&rsquo;t support, without additional evidence, is the simplified version in which eggs function as a discrete Alzheimer&rsquo;s prevention strategy and the comparison to other nutrient-dense foods is beside the point.</p>
 
         <p>That comparison wasn&rsquo;t beside the point in the paper. It was part of how the authors tested what their own finding might mean.</p>
-
-        <h2>Drift point 3: Confidence upgrade</h2>
-
-        <p>The third drift isn&rsquo;t really about eggs anymore. It&rsquo;s about certainty.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="drift-point-3-confidence-upgrade" aria-label="Drift point 3: Confidence upgrade">
+    <div class="rail">
+      <h2>Drift point 3: Confidence upgrade</h2>
+      <div class="prose read">
+<p>The third drift isn&rsquo;t really about eggs anymore. It&rsquo;s about certainty.</p>
 
         <p>By the time the reel finished, three upgrades had already happened in sequence.</p>
 
@@ -364,10 +896,14 @@
         <p>It ended in breakfast.</p>
 
         <p>That&rsquo;s the transformation worth tracing.</p>
-
-        <h2>What each source actually supported</h2>
-
-        <p>Fair accounting is slower than a reel. It&rsquo;s also the only way I know to put the pieces back on the table without pretending they were never separate.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="what-each-source-actually-supported" aria-label="What each source actually supported">
+    <div class="rail">
+      <h2>What each source actually supported</h2>
+      <div class="prose read">
+<p>Fair accounting is slower than a reel. It&rsquo;s also the only way I know to put the pieces back on the table without pretending they were never separate.</p>
 
         <h3>The Adventist Health Study</h3>
 
@@ -392,10 +928,36 @@
         <p><strong>Exceeded the evidence when treated as one unified proof point:</strong> That the Adventist study produced the 47% figure. That two compatible findings add up to one reinforced conclusion without regard to population, design, or comparison. That substitution context from the Adventist paper can be set aside without changing the practical meaning. That the literature is strong enough to treat eggs as a discrete Alzheimer&rsquo;s prevention strategy rather than an interesting association worth holding lightly.</p>
 
         <p>The reel didn&rsquo;t need to invent a finding. It needed real findings to sound like one conclusion. That&rsquo;s where the accounting matters.</p>
+      </div>
+    </div>
+  </section>
 
-        <h2>What remains unresolved</h2>
 
-        <p>Tracing drift isn&rsquo;t the same as closing the science.</p>
+  <section class="return-media rail" id="return" aria-label="Look again">
+    <figure class="media-frame">
+      <iframe
+            src="https://www.instagram.com/p/DY4pcMIOy0T/embed"
+            title="Instagram Reel referenced in this article"
+            loading="lazy"
+            allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          ></iframe>
+      <figcaption>Same reel.</figcaption>
+    </figure>
+    <div>
+      <p class="line">Same reel. Different reading.</p>
+      <div class="prose read">
+        <p>You&rsquo;re looking at the same claim object. It no longer looks like one study, one statistic, and one breakfast conclusion. It looks like a format that rewards compression: merge, context drop, and a confidence upgrade until associations sound like prevention.</p>
+        <p>The reel didn&rsquo;t need to invent a finding. It needed real findings to sound like one conclusion.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="unresolved" aria-label="What remains unresolved">
+    <div class="rail">
+      <h2>What remains unresolved</h2>
+      <div class="prose read">
+<p>Tracing drift isn&rsquo;t the same as closing the science.</p>
 
         <p>If anything, separating the layers leaves more honest questions on the table than the reel did.</p>
 
@@ -418,87 +980,89 @@
         <p>That gap is the subject of this piece.</p>
 
         <p>The eggs are the case study.</p>
-
       </div>
-    </article>
+    </div>
+  </section>
 
-    <section class="post-sources" aria-label="Sources">
-      <div class="post-wrap">
-        <details class="post-sources__disclosure">
-          <summary>Sources <span class="post-sources__cue" aria-hidden="true">Open sources</span></summary>
-          <div class="post-sources__disclosure-body">
-          <div class="post-sources__group">
-                        <p class="post-sources__label">Claim source</p>
-                        <div class="post-sources__claim">
-                          <p class="post-sources__claim-title">Instagram Reel by Neal K. Shah</p>
-                          <p class="post-sources__claim-url">
-                            <a href="https://www.instagram.com/p/DY4pcMIOy0T/" target="_blank" rel="noopener noreferrer">https://www.instagram.com/p/DY4pcMIOy0T/</a>
-                          </p>
-                          <p class="post-sources__claim-accessed">Accessed June 2026.</p>
-                        </div>
-                      </div>
+  <section class="sources" id="sources" aria-label="Sources">
+    <div class="rail">
+      <details>
+        <summary>Sources</summary>
+        <div class="prose read" style="margin-top:1rem">
+          <p><strong>Claim source.</strong> Instagram Reel by Neal K. Shah.
+          <a href="https://www.instagram.com/p/DY4pcMIOy0T/" target="_blank" rel="noopener noreferrer">https://www.instagram.com/p/DY4pcMIOy0T/</a>
+          Accessed June 2026.</p>
+        </div>
+        <ol>
 
-                      <div class="post-sources__group">
-                        <p class="post-sources__label">Research sources</p>
-                        <ol>
                           <li id="src-1">Oh J, Sabat&eacute; J, Fraser GE, et al. Egg intake and the incidence of Alzheimer&rsquo;s disease in the Adventist Health Study-2 cohort linked with Medicare data. <em>J Nutr</em>. 2026. <a href="https://pubmed.ncbi.nlm.nih.gov/42002260/" target="_blank" rel="noopener">PubMed</a></li>
                           <li id="src-2">Pan Y, Bhupathiraju SN, Tucker KL, et al. Association of egg intake with Alzheimer&rsquo;s dementia risk in older adults: the Rush Memory and Aging Project. <em>J Nutr</em>. 2024. <a href="https://pubmed.ncbi.nlm.nih.gov/38782209/" target="_blank" rel="noopener">PubMed</a></li>
-                        </ol>
-                      </div>
-          </div>
-        </details>
+                        
+        </ol>
+      </details>
+    </div>
+  </section>
 
-      </div>
-    </section>
+  <script>
+    (function () {
+      var root = document.documentElement;
 
-    <section class="post-next" aria-label="Next">
-      <div class="post-wrap" data-post-next></div>
-    </section>
+      var openBtn = document.getElementById("toc-open");
+      var closeBtn = document.getElementById("toc-close");
+      var backdrop = document.getElementById("toc-backdrop");
+      var toc = document.getElementById("chapter-toc");
+      var links = toc ? toc.querySelectorAll('a[href^="#"]') : [];
 
-    <section class="post-colophon" aria-label="Signature">
-      <div class="post-wrap">
-        <p>
-          <a href="../about.html">Rajiv Vakani</a>. Writing on nutrition from New York.<br class="colophon-break" aria-hidden="true">
-          Since 2023. <a href="../contact.html">Email</a>.
-        </p>
-      </div>
-    </section>
+      function setOpen(open) {
+        document.body.classList.toggle("toc-open", open);
+        if (openBtn) openBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (backdrop) {
+          if (open) backdrop.removeAttribute("hidden");
+          else backdrop.setAttribute("hidden", "");
+        }
+      }
+      function closeToc() { setOpen(false); }
+      if (openBtn) openBtn.addEventListener("click", function () { setOpen(true); });
+      if (closeBtn) closeBtn.addEventListener("click", closeToc);
+      if (backdrop) backdrop.addEventListener("click", closeToc);
+      links.forEach(function (a) {
+        a.addEventListener("click", function () {
+          if (window.matchMedia("(max-width: 1179px)").matches) closeToc();
+        });
+      });
 
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
-      <div class="footer-social" aria-label="Social links">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg class="social-icon" aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
-        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+      var ids = Array.prototype.map.call(links, function (a) {
+        return a.getAttribute("href").slice(1);
+      }).filter(Boolean);
+      var sections = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      if (!sections.length || !("IntersectionObserver" in window)) return;
+      var linkById = {};
+      links.forEach(function (a) {
+        linkById[a.getAttribute("href").slice(1)] = a;
+      });
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var id = entry.target.id;
+          links.forEach(function (a) { a.classList.remove("is-active"); });
+          if (linkById[id]) linkById[id].classList.add("is-active");
+        });
+      }, { rootMargin: "-20% 0px -65% 0px", threshold: 0 });
+      sections.forEach(function (sec) { observer.observe(sec); });
+    })();
+  </script>
+  
+  <footer class="room-foot">
+    <div class="room-foot__inner">
+      <p class="room-foot__legal">&copy; 2025&ndash;2026 Rajiv Vakani</p>
+      <div class="room-foot__social" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var menuToggle = document.querySelector('.menu-toggle');
-      var navLinks = document.querySelector('.nav-links');
-      var overlay = document.querySelector('.mobile-menu-overlay');
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function () {
-          navLinks.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-          if (overlay) overlay.classList.toggle('active');
-          document.body.classList.toggle('menu-open');
-        });
-      }
-      if (overlay) {
-        overlay.addEventListener('click', function () {
-          navLinks.classList.remove('active');
-          menuToggle.classList.remove('active');
-          overlay.classList.remove('active');
-          document.body.classList.remove('menu-open');
-        });
-      }
-    });
-  </script>
+  <script src="room-appearance.js?v=20260724170000" defer></script>
 </body>
 </html>

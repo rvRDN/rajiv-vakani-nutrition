@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="contact-page">
+<html lang="en" class="arrival-room">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Rajiv Vakani</title>
-  <meta name="description" content="Get in touch with Rajiv Vakani. Questions, ideas, and collaborations on nutrition, food, and education welcome.">
+  <meta name="description" content="Start with why you're writing. I'll point you to the right door: email, LinkedIn, Instagram, or Facebook.">
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rajivvakani.com/contact.html" />
   <meta property="og:title" content="Contact | Rajiv Vakani" />
-  <meta property="og:description" content="Get in touch with Rajiv Vakani. Questions, ideas, and collaborations on nutrition, food, and education welcome." />
+  <meta property="og:description" content="Start with why you're writing. I'll point you to the right door: email, LinkedIn, Instagram, or Facebook." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
@@ -18,17 +18,18 @@
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://rajivvakani.com/contact.html" />
   <meta property="twitter:title" content="Contact | Rajiv Vakani" />
-  <meta property="twitter:description" content="Get in touch with Rajiv Vakani. Questions, ideas, and collaborations on nutrition, food, and education welcome." />
+  <meta property="twitter:description" content="Start with why you're writing. I'll point you to the right door: email, LinkedIn, Instagram, or Facebook." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,350..600;1,9..144,350..500&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="rajiv-styles.min.css?v=20260715063000">
-  <link rel="stylesheet" href="insights/library.min.css?v=20260706015500">
+  <link rel="stylesheet" href="contact-room.css?v=20260724164200">
   <link rel="icon" type="image/png" href="favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="favicon-512.png?v=rv7" />
+  <meta name="robots" content="index, follow">
 
   <script>
     window.addEventListener('load', function () {
@@ -53,7 +54,7 @@
       "@id": "https://rajivvakani.com/contact.html#webpage",
       "url": "https://rajivvakani.com/contact.html",
       "name": "Contact | Rajiv Vakani",
-      "description": "Get in touch with Rajiv Vakani. Questions, ideas, and collaborations on nutrition, food, and education welcome.",
+      "description": "Start with why you're writing. I'll point you to the right door: email, LinkedIn, Instagram, or Facebook.",
       "isPartOf": {
         "@id": "https://rajivvakani.com/#website"
       },
@@ -70,15 +71,31 @@
       "@id": "https://rajivvakani.com/#person",
       "name": "Rajiv Vakani",
       "url": "https://rajivvakani.com/about.html",
-      "image": "https://rajivvakani.com/headshot_36.jpg"
+      "image": "https://rajivvakani.com/headshot_36.jpg",
+      "email": "mailto:hello@rajivvakani.com"
     }
   ]
 }
   </script>
 </head>
-<body class="contact-page">
+<body class="arrival-room">
 
-  <nav class="main-nav scrolled">
+  <div class="arrival-atmosphere" aria-hidden="true">
+    <img
+      class="arrival-atmosphere__photo"
+      src="contact-atmosphere.jpg?v=20260724164200"
+      alt=""
+      width="1920"
+      height="1080"
+      decoding="async"
+      fetchpriority="high"
+    />
+    <div class="arrival-atmosphere__veil"></div>
+    <canvas class="arrival-atmosphere__canvas" id="arrival-dust"></canvas>
+    <div class="arrival-atmosphere__grain"></div>
+  </div>
+
+  <nav class="main-nav scrolled" id="arrival-nav">
     <div class="container nav-container">
       <a href="index.html" class="site-logo"><img src="logo-mark.png?v=rv9" alt="" class="site-logo__mark" decoding="async" width="543" height="543">Rajiv Vakani</a>
 
@@ -91,8 +108,7 @@
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
 
-
-      <button class="menu-toggle" aria-label="Toggle navigation">
+      <button class="menu-toggle" aria-label="Toggle navigation" type="button">
         <span class="hamburger"></span>
         <span class="hamburger"></span>
         <span class="hamburger"></span>
@@ -102,116 +118,147 @@
 
   <div class="mobile-menu-overlay"></div>
 
-  <main>
+  <main class="arrival-stage">
+    <div class="arrival-stage__inner">
 
-    <header class="contact-head">
-      <div class="wrap">
-        <p class="contact-anchor">on <a href="index.html">Home</a></p>
-        <h1 class="contact-title">Contact</h1>
-        <p class="contact-framing">
-          Questions, ideas, collaborations.<br>
-          I read everything that comes through.
-        </p>
-        <p class="contact-direct">
-          Or write to <a href="mailto:hello@rajivvakani.com">hello@rajivvakani.com</a>.
-        </p>
-      </div>
-    </header>
+      <p class="arrival-kicker">Contact</p>
 
-    <section class="contact-body" id="contact-form" aria-label="Contact form">
-      <div class="wrap">
-        <div class="contact-layout">
+      <h1 class="arrival-lede">You&rsquo;re in the right place.</h1>
+      <p class="arrival-sub">What brought you?</p>
 
-          <div class="contact-block contact-block--form">
-            <p class="contact-block__label">Send a note</p>
+      <ul class="arrival-intents" role="list">
+        <li class="arrival-intent">
+          <button type="button" class="arrival-intent__btn" data-intent="read" aria-expanded="false" aria-controls="arrival-answer">
+            <span class="arrival-intent__index">01</span>
+            <span class="arrival-intent__label">Something I read</span>
+            <span class="arrival-intent__hint">Open</span>
+          </button>
+        </li>
+        <li class="arrival-intent">
+          <button type="button" class="arrival-intent__btn" data-intent="collaborate" aria-expanded="false" aria-controls="arrival-answer">
+            <span class="arrival-intent__index">02</span>
+            <span class="arrival-intent__label">A collaboration</span>
+            <span class="arrival-intent__hint">Open</span>
+          </button>
+        </li>
+        <li class="arrival-intent">
+          <button type="button" class="arrival-intent__btn" data-intent="press" aria-expanded="false" aria-controls="arrival-answer">
+            <span class="arrival-intent__index">03</span>
+            <span class="arrival-intent__label">Press or speaking</span>
+            <span class="arrival-intent__hint">Open</span>
+          </button>
+        </li>
+        <li class="arrival-intent">
+          <button type="button" class="arrival-intent__btn" data-intent="hello" aria-expanded="false" aria-controls="arrival-answer">
+            <span class="arrival-intent__index">04</span>
+            <span class="arrival-intent__label">Just saying hello</span>
+            <span class="arrival-intent__hint">Open</span>
+          </button>
+        </li>
+      </ul>
 
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/" class="contact-form" id="contact-form-element">
-              <input type="hidden" name="form-name" value="contact">
+      <section class="arrival-answer is-open" id="arrival-answer" aria-live="polite">
+        <div class="arrival-answer__clip">
+          <div class="arrival-answer__panel">
 
-              <p class="hidden" style="position: absolute; left: -9999px;">
-                <label>Don&rsquo;t fill this out if you&rsquo;re human: <input name="bot-field" /></label>
+            <div class="arrival-guide">
+              <p class="arrival-guide__eyebrow" id="guide-eyebrow">For this</p>
+              <h2 class="arrival-guide__title" id="guide-title">Email is the cleanest door.</h2>
+              <p class="arrival-guide__body" id="guide-body">
+                Say what stuck, what felt off, or what you want to keep talking about.
               </p>
+              <ul class="arrival-guide__channels" id="guide-channels"></ul>
+            </div>
 
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required />
-                <div class="validation-message" id="name-validation"></div>
+            <div class="arrival-letter" id="arrival-letter">
+              <div class="arrival-letter__head">
+                <p class="arrival-letter__brand">Correspondence</p>
+                <div class="arrival-letter__meta">
+                  <div class="arrival-letter__pair">
+                    <span class="arrival-letter__key">To</span>
+                    <span class="arrival-letter__to">Rajiv Vakani</span>
+                  </div>
+                  <div class="arrival-letter__pair">
+                    <span class="arrival-letter__key">Re</span>
+                    <span class="arrival-letter__re" id="letter-re">a note</span>
+                  </div>
+                </div>
               </div>
 
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="you@example.com" required />
-                <div class="validation-message" id="email-validation"></div>
-              </div>
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="/"
+                class="arrival-form"
+                id="contact-form-element"
+              >
+                <input type="hidden" name="form-name" value="contact">
+                <input type="hidden" name="intent" id="intent-field" value="">
 
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="6" placeholder="What&rsquo;s on your mind?" required></textarea>
-                <div class="validation-message" id="message-validation"></div>
-              </div>
+                <p class="hidden" style="position: absolute; left: -9999px;">
+                  <label>Don&rsquo;t fill this out if you&rsquo;re human: <input name="bot-field" /></label>
+                </p>
 
-              <button type="submit" class="contact-submit-btn">
-                <span class="btn-text">Send message</span>
-                <span class="btn-loading" style="display: none;">
-                  <span class="form-spinner" aria-hidden="true"></span> Sending&hellip;
-                </span>
-              </button>
+                <div class="arrival-form__row">
+                  <div class="arrival-field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+                    <div class="validation-message" id="name-validation"></div>
+                  </div>
 
-              <p class="privacy-note">Your information stays private and is never&nbsp;shared.</p>
+                  <div class="arrival-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+                    <div class="validation-message" id="email-validation"></div>
+                  </div>
+                </div>
 
-              <div id="contact-success" class="form-feedback form-feedback--success" role="status">
-                Thank you. Your message has been sent. I&rsquo;ll get back to you soon.
-              </div>
+                <div class="arrival-field arrival-field--message">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="5" placeholder="What&rsquo;s on your mind?" required></textarea>
+                  <div class="validation-message" id="message-validation"></div>
+                </div>
 
-              <div id="contact-error" class="form-feedback form-feedback--error" role="alert">
-                Something went wrong. Please try again, or email
-                <a href="mailto:hello@rajivvakani.com">hello@rajivvakani.com</a>.
-              </div>
-            </form>
+                <div class="arrival-letter__foot">
+                  <button type="submit" class="arrival-submit" id="contact-submit">
+                    <span class="btn-text">Send</span>
+                    <span class="btn-loading" style="display: none;">
+                      <span class="form-spinner" aria-hidden="true"></span> Sending&hellip;
+                    </span>
+                    <span class="arrival-submit__mark" aria-hidden="true"></span>
+                  </button>
+                  <p class="arrival-privacy">Private. Never shared.</p>
+                </div>
+
+                <div id="contact-success" class="arrival-feedback arrival-feedback--success" role="status">
+                  Thank you. Your message has been sent. I&rsquo;ll get back to you soon.
+                </div>
+
+                <div id="contact-error" class="arrival-feedback arrival-feedback--error" role="alert">
+                  Something went wrong. Please try again, or email
+                  <a href="mailto:hello@rajivvakani.com">hello@rajivvakani.com</a>.
+                </div>
+              </form>
+            </div>
+
           </div>
-
-          <div class="contact-block contact-block--social">
-            <p class="contact-block__label">Elsewhere</p>
-
-            <ul class="contact-social__list">
-              <li>
-                <a class="contact-social__link" href="mailto:hello@rajivvakani.com">
-                  <span class="contact-social__name">Email</span>
-                  <span class="contact-social__hint">hello@rajivvakani.com</span>
-                </a>
-              </li>
-              <li>
-                <a class="contact-social__link" href="https://instagram.com/rajivvakani" target="_blank" rel="noopener">
-                  <span class="contact-social__name">Instagram</span>
-                  <span class="contact-social__hint">Updates &amp; behind the scenes</span>
-                </a>
-              </li>
-              <li>
-                <a class="contact-social__link" href="https://facebook.com/rajivvakani" target="_blank" rel="noopener">
-                  <span class="contact-social__name">Facebook</span>
-                  <span class="contact-social__hint">Join the conversation</span>
-                </a>
-              </li>
-              <li>
-                <a class="contact-social__link" href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener">
-                  <span class="contact-social__name">LinkedIn</span>
-                  <span class="contact-social__hint">Writing and professional updates</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
+      <div class="arrival-direct">
+        <p>Or write directly to <a href="mailto:hello@rajivvakani.com">hello@rajivvakani.com</a>.</p>
+      </div>
+
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
       <div class="footer-social" aria-label="Social links">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1 147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
         <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg class="social-icon" aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
         <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
       </div>
@@ -220,9 +267,69 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      var INTENTS = {
+        read: {
+          eyebrow: 'Something you read',
+          title: 'Email is the cleanest door.',
+          body: 'Say what stuck, what felt off, or what you want to keep talking about. I read everything that comes through.',
+          re: 'Re: something I read',
+          placeholder: 'Which piece, and what stayed with you?',
+          showLetter: true,
+          channels: [
+            { mark: 'Best', name: 'Email', why: 'Quiet space for a real response.', href: '#arrival-letter', primary: true, external: false },
+            { mark: 'Also', name: 'Instagram', why: 'If it\'s a short reaction, that works too.', href: 'https://instagram.com/rajivvakani', primary: false, external: true }
+          ]
+        },
+        collaborate: {
+          eyebrow: 'A collaboration',
+          title: 'Start with the idea, not the pitch deck.',
+          body: 'Tell me what you\'re building and why I might belong in it. LinkedIn is fine for introductions. Email is better once there\'s substance.',
+          re: 'Re: collaboration',
+          placeholder: 'What are you building, and where do I fit?',
+          showLetter: true,
+          channels: [
+            { mark: 'Best', name: 'Email', why: 'Room for context, links, and timing.', href: '#arrival-letter', primary: true, external: false },
+            { mark: 'Also', name: 'LinkedIn', why: 'Useful if we haven\'t met yet.', href: 'https://www.linkedin.com/in/rajivvakani/', primary: false, external: true }
+          ]
+        },
+        press: {
+          eyebrow: 'Press or speaking',
+          title: 'Lead with the ask and the date.',
+          body: 'Include the outlet or event, the angle, and when you need an answer. LinkedIn works for first contact. Email is better for logistics.',
+          re: 'Re: press / speaking',
+          placeholder: 'Outlet or event, angle, and deadline?',
+          showLetter: true,
+          channels: [
+            { mark: 'Best', name: 'Email', why: 'Keeps details and files in one place.', href: '#arrival-letter', primary: true, external: false },
+            { mark: 'Also', name: 'LinkedIn', why: 'Good for a first introduction.', href: 'https://www.linkedin.com/in/rajivvakani/', primary: false, external: true }
+          ]
+        },
+        hello: {
+          eyebrow: 'Just saying hello',
+          title: 'That\'s enough of a reason.',
+          body: 'No agenda required. If you\'d rather keep it light, Instagram or Facebook is welcome. If you want a reply with care, email wins.',
+          re: 'Re: hello',
+          placeholder: 'Say whatever you came to say.',
+          showLetter: true,
+          channels: [
+            { mark: 'Best', name: 'Email', why: 'I can answer properly here.', href: '#arrival-letter', primary: true, external: false },
+            { mark: 'Light', name: 'Instagram', why: 'Updates and behind the scenes.', href: 'https://instagram.com/rajivvakani', primary: false, external: true },
+            { mark: 'Also', name: 'Facebook', why: 'For conversation in public.', href: 'https://facebook.com/rajivvakani', primary: false, external: true }
+          ]
+        }
+      };
+
       var menuToggle = document.querySelector('.menu-toggle');
       var navLinks = document.querySelector('.nav-links');
       var overlay = document.querySelector('.mobile-menu-overlay');
+      var nav = document.getElementById('arrival-nav');
+
+      function setNavSolid() {
+        if (!nav) return;
+        nav.classList.toggle('is-solid', window.scrollY > 24);
+      }
+      setNavSolid();
+      window.addEventListener('scroll', setNavSolid, { passive: true });
 
       if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function () {
@@ -253,102 +360,247 @@
         });
       }
 
-      var contactForm = document.getElementById('contact-form-element');
-      if (!contactForm) return;
+      var answer = document.getElementById('arrival-answer');
+      var intentButtons = document.querySelectorAll('.arrival-intent__btn');
+      var intentField = document.getElementById('intent-field');
+      var letterRe = document.getElementById('letter-re');
+      var messageField = document.getElementById('message');
+      var letterEl = document.getElementById('arrival-letter');
+      var activeIntent = null;
 
-      var submitBtn = contactForm.querySelector('.contact-submit-btn');
-      var btnText = submitBtn.querySelector('.btn-text');
-      var btnLoading = submitBtn.querySelector('.btn-loading');
-      var successDiv = document.getElementById('contact-success');
-      var errorDiv = document.getElementById('contact-error');
-
-      function showFeedback(el, show) {
-        if (!el) return;
-        el.classList.toggle('is-visible', show);
-      }
-
-      function validateField(field, validationDiv) {
-        if (!validationDiv) return true;
-        var value = field.value.trim();
-        var isValid = true;
-        var message = '';
-
-        if (field.hasAttribute('required') && !value) {
-          isValid = false;
-          message = 'This field is required.';
-        } else if (field.type === 'email' && value) {
-          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(value)) {
-            isValid = false;
-            message = 'Please enter a valid email.';
+      function renderChannels(channels) {
+        var list = document.getElementById('guide-channels');
+        list.innerHTML = '';
+        channels.forEach(function (ch) {
+          var a = document.createElement('a');
+          a.className = 'arrival-channel' + (ch.primary ? ' is-primary' : '');
+          a.href = ch.href;
+          if (ch.external) {
+            a.target = '_blank';
+            a.rel = 'noopener';
           }
-        }
-
-        if (!isValid) {
-          validationDiv.textContent = message;
-          field.classList.add('invalid');
-        } else {
-          validationDiv.textContent = '';
-          field.classList.remove('invalid');
-        }
-        return isValid;
+          a.innerHTML =
+            '<span class="arrival-channel__mark">' + ch.mark + '</span>' +
+            '<span class="arrival-channel__name">' + ch.name + '</span>' +
+            '<span class="arrival-channel__why">' + ch.why + '</span>';
+          if (!ch.external && ch.href === '#arrival-letter') {
+            a.addEventListener('click', function (e) {
+              e.preventDefault();
+              if (letterEl) {
+                letterEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                var first = document.getElementById('name');
+                if (first) first.focus({ preventScroll: true });
+              }
+            });
+          }
+          list.appendChild(a);
+        });
       }
 
-      var inputs = contactForm.querySelectorAll('input[required], textarea[required]');
-      inputs.forEach(function (input) {
-        var validationDiv = document.getElementById(input.id + '-validation');
-        if (!validationDiv) return;
+      function openIntent(key, btn) {
+        var data = INTENTS[key];
+        if (!data || !answer) return;
 
-        input.addEventListener('blur', function () { validateField(input, validationDiv); });
-        input.addEventListener('input', function () {
-          if (validationDiv.textContent) validationDiv.textContent = '';
-          showFeedback(successDiv, false);
-          showFeedback(errorDiv, false);
+        activeIntent = key;
+        intentButtons.forEach(function (b) {
+          var on = b === btn;
+          b.setAttribute('aria-expanded', on ? 'true' : 'false');
+          b.closest('.arrival-intent').classList.toggle('is-active', on);
+          b.querySelector('.arrival-intent__hint').textContent = on ? 'Here' : 'Open';
+        });
+
+        document.getElementById('guide-eyebrow').textContent = data.eyebrow;
+        document.getElementById('guide-title').textContent = data.title;
+        document.getElementById('guide-body').textContent = data.body;
+        if (letterRe) letterRe.textContent = data.re.replace(/^Re:\s*/i, '');
+        if (intentField) intentField.value = key;
+        if (messageField) messageField.placeholder = data.placeholder;
+        renderChannels(data.channels);
+      }
+
+      intentButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openIntent(btn.getAttribute('data-intent'), btn);
         });
       });
 
-      contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+      // Show the letter section immediately with the first intent
+      if (intentButtons[0]) openIntent('read', intentButtons[0]);
 
-        var allValid = true;
+      var contactForm = document.getElementById('contact-form-element');
+      if (contactForm) {
+        var submitBtn = document.getElementById('contact-submit');
+        var btnText = submitBtn.querySelector('.btn-text');
+        var btnLoading = submitBtn.querySelector('.btn-loading');
+        var successDiv = document.getElementById('contact-success');
+        var errorDiv = document.getElementById('contact-error');
+
+        function showFeedback(el, show) {
+          if (!el) return;
+          el.classList.toggle('is-visible', show);
+        }
+
+        function validateField(field, validationDiv) {
+          if (!validationDiv) return true;
+          var value = field.value.trim();
+          var isValid = true;
+          var message = '';
+
+          if (field.hasAttribute('required') && !value) {
+            isValid = false;
+            message = 'This field is required.';
+          } else if (field.type === 'email' && value) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+              isValid = false;
+              message = 'Please enter a valid email.';
+            }
+          }
+
+          if (!isValid) {
+            validationDiv.textContent = message;
+            field.classList.add('invalid');
+          } else {
+            validationDiv.textContent = '';
+            field.classList.remove('invalid');
+          }
+          return isValid;
+        }
+
+        var inputs = contactForm.querySelectorAll('input[required], textarea[required]');
         inputs.forEach(function (input) {
           var validationDiv = document.getElementById(input.id + '-validation');
-          if (!validateField(input, validationDiv)) allValid = false;
+          if (!validationDiv) return;
+
+          input.addEventListener('blur', function () { validateField(input, validationDiv); });
+          input.addEventListener('input', function () {
+            if (validationDiv.textContent) validationDiv.textContent = '';
+            showFeedback(successDiv, false);
+            showFeedback(errorDiv, false);
+          });
         });
-        if (!allValid) return;
 
-        showFeedback(successDiv, false);
-        showFeedback(errorDiv, false);
-        btnText.style.display = 'none';
-        btnLoading.style.display = 'inline-block';
-        submitBtn.disabled = true;
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
 
-        var formData = new FormData(contactForm);
-        var body = new URLSearchParams(formData).toString();
+          var allValid = true;
+          inputs.forEach(function (input) {
+            var validationDiv = document.getElementById(input.id + '-validation');
+            if (!validateField(input, validationDiv)) allValid = false;
+          });
+          if (!allValid) return;
 
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: body
-        })
-        .then(function (response) {
-          if (response.ok) {
-            showFeedback(successDiv, true);
-            contactForm.reset();
-          } else {
-            throw new Error('Network response was not ok: ' + response.status);
+          showFeedback(successDiv, false);
+          showFeedback(errorDiv, false);
+          btnText.style.display = 'none';
+          btnLoading.style.display = 'inline-block';
+          submitBtn.disabled = true;
+
+          var formData = new FormData(contactForm);
+          var body = new URLSearchParams(formData).toString();
+
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body
+          })
+          .then(function (response) {
+            if (response.ok) {
+              showFeedback(successDiv, true);
+              contactForm.reset();
+              if (intentField && activeIntent) intentField.value = activeIntent;
+            } else {
+              throw new Error('Network response was not ok: ' + response.status);
+            }
+          })
+          .catch(function (err) {
+            console.error('Contact form submission error:', err);
+            showFeedback(errorDiv, true);
+          })
+          .finally(function () {
+            btnText.style.display = 'inline-block';
+            btnLoading.style.display = 'none';
+            submitBtn.disabled = false;
+          });
+        });
+      }
+
+      var photo = document.querySelector('.arrival-atmosphere__photo');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (photo && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+        var px = 0;
+        var py = 0;
+        var tx = 0;
+        var ty = 0;
+        window.addEventListener('pointermove', function (e) {
+          tx = (e.clientX / window.innerWidth - 0.5) * 12;
+          ty = (e.clientY / window.innerHeight - 0.5) * 8;
+        }, { passive: true });
+        (function parallax() {
+          px += (tx - px) * 0.06;
+          py += (ty - py) * 0.06;
+          photo.style.transform = 'scale(1.05) translate3d(' + px.toFixed(2) + 'px,' + py.toFixed(2) + 'px,0)';
+          requestAnimationFrame(parallax);
+        })();
+      }
+
+      var canvas = document.getElementById('arrival-dust');
+      if (canvas && canvas.getContext && !reduceMotion) {
+        var ctx = canvas.getContext('2d');
+        var particles = [];
+        var raf = 0;
+        var w = 0;
+        var h = 0;
+
+        function resize() {
+          w = canvas.width = window.innerWidth;
+          h = canvas.height = window.innerHeight;
+        }
+
+        function spawn(n) {
+          for (var i = 0; i < n; i++) {
+            particles.push({
+              x: w * (0.45 + Math.random() * 0.45),
+              y: h * (0.05 + Math.random() * 0.55),
+              r: 0.4 + Math.random() * 1.6,
+              vx: -0.08 + Math.random() * 0.06,
+              vy: 0.04 + Math.random() * 0.12,
+              a: 0.08 + Math.random() * 0.28,
+              life: Math.random()
+            });
           }
-        })
-        .catch(function (err) {
-          console.error('Contact form submission error:', err);
-          showFeedback(errorDiv, true);
-        })
-        .finally(function () {
-          btnText.style.display = 'inline-block';
-          btnLoading.style.display = 'none';
-          submitBtn.disabled = false;
+        }
+
+        function tick() {
+          ctx.clearRect(0, 0, w, h);
+          for (var i = 0; i < particles.length; i++) {
+            var p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            p.life += 0.0025;
+            if (p.life > 1 || p.y > h * 0.75 || p.x < w * 0.35) {
+              p.x = w * (0.55 + Math.random() * 0.4);
+              p.y = h * (0.05 + Math.random() * 0.2);
+              p.life = 0;
+            }
+            var alpha = p.a * Math.sin(Math.PI * Math.min(p.life, 1));
+            ctx.beginPath();
+            ctx.fillStyle = 'rgba(232, 205, 155,' + alpha + ')';
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fill();
+          }
+          raf = requestAnimationFrame(tick);
+        }
+
+        resize();
+        spawn(48);
+        tick();
+        window.addEventListener('resize', resize, { passive: true });
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) cancelAnimationFrame(raf);
+          else tick();
         });
-      });
+      }
     });
   </script>
 </body>

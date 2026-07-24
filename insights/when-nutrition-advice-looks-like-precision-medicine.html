@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="post-page">
+<html lang="en" data-skin="light">
 <head>
+  <!-- promoted from insights/mockups/insights-room/precision-v4.html -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>When Nutrition Advice Starts Looking Like Precision Medicine | Rajiv Vakani</title>
   <meta name="description" content="Eight healthy foods, eight conditions, eight avoid rules, all with the same clinical confidence. A case study in why food-and-condition lists feel trustworthy, and what real personalization requires.">
 
@@ -22,12 +22,275 @@
   <meta property="twitter:description" content="Eight healthy foods, eight conditions, eight avoid rules, all with the same clinical confidence. A case study in why food-and-condition lists feel trustworthy, and what real personalization requires." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
+<script>
+    (function () {
+      try {
+        var s = localStorage.getItem("insights-skin");
+        if (s === "dark" || s === "light") document.documentElement.setAttribute("data-skin", s);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../rajiv-styles.min.css?v=20260715063000">
-  <link rel="stylesheet" href="library.min.css?v=20260719173000">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root, html[data-skin="light"] {
+      --bg: #f5f5f3;
+      --ink: #121212;
+      --soft: rgba(18, 18, 18, 0.88);
+      --dim: rgba(18, 18, 18, 0.48);
+      --line: rgba(18, 18, 18, 0.12);
+      --hot: #c45a28;
+      --wash: #ebebe8;
+    }
+    html[data-skin="dark"] {
+      --bg: #0b0b0b;
+      --ink: #f3efe6;
+      --soft: rgba(243, 239, 230, 0.88);
+      --dim: rgba(243, 239, 230, 0.45);
+      --line: rgba(243, 239, 230, 0.14);
+      --hot: #e8783a;
+      --wash: #101010;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .bar {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+      padding: 0.75rem 1.15rem;
+      padding-right: 8.5rem;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.78rem;
+    }
+    .bar a { color: var(--hot); text-decoration: none; }
+    .bar strong { font-weight: 600; }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+    .prose {
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.08rem, 1.35vw, 1.2rem);
+      line-height: 1.62;
+      color: var(--soft);
+      max-width: 36rem;
+    }
+    .prose p { margin: 0 0 1.05em; }
+    .prose .ask { color: var(--hot); font-style: italic; }
+    .prose .turn {
+      color: var(--ink);
+      font-size: 1.06em;
+      max-width: 32ch;
+      margin-top: 1.2em;
+    }
+
+    .enter {
+      padding: clamp(1.5rem, 4vw, 2.4rem) 0 clamp(1.75rem, 4vw, 2.25rem);
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: clamp(1.4rem, 3.5vw, 2.5rem);
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .enter { grid-template-columns: 1fr; }
+    }
+    .enter figure {
+      max-width: 22rem;
+      margin: 0;
+    }
+    .enter img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 2px;
+      max-height: min(58vh, 28rem);
+      object-fit: contain;
+      object-position: top center;
+      background: rgba(18, 18, 18, 0.03);
+    }
+    .enter figcaption {
+      margin-top: 0.65rem;
+      font-size: 0.8rem;
+      color: var(--dim);
+      line-height: 1.4;
+    }
+    .series {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 0.85rem;
+      font-weight: 500;
+    }
+    .title {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.75rem, 3.4vw, 2.35rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.1rem;
+      max-width: 18ch;
+    }
+
+    .section {
+      padding: clamp(1.75rem, 4.5vw, 2.5rem) 0;
+    }
+    .wash { background: var(--wash); }
+
+    /* Grammar: no middle graphic — pattern only */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0 0 1.5rem;
+      max-width: 36rem;
+    }
+    .steps span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      padding: 0.45rem 0.7rem;
+    }
+    .steps span::after {
+      content: "→";
+      margin-left: 0.55rem;
+      color: var(--dim);
+      font-weight: 400;
+    }
+    .steps span:last-child::after { content: none; }
+
+    /* Rows: typographic, no beige cards */
+    .row {
+      margin: 0;
+      padding: 1.35rem 0;
+      border-top: 1px solid var(--line);
+      max-width: 40rem;
+    }
+    .row:last-of-type { border-bottom: 1px solid var(--line); }
+    .row__shown {
+      margin: 0 0 0.55rem;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+    .row__on-graphic {
+      margin: 0 0 0.85rem;
+      font-size: 0.82rem;
+      color: var(--dim);
+      line-height: 1.4;
+    }
+    .row__opened {
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.45;
+      color: var(--soft);
+    }
+    .row__opened strong {
+      color: var(--hot);
+      font-weight: 600;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    /* Return — smaller second look */
+    .return {
+      display: grid;
+      grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr);
+      gap: clamp(1.25rem, 3vw, 2rem);
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .return { grid-template-columns: 1fr; }
+    }
+    .return figure {
+      margin: 0;
+      max-width: 16rem;
+    }
+    .return img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 2px;
+      max-height: 22rem;
+      object-fit: contain;
+      object-position: top center;
+    }
+    .return .line {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin: 0 0 1rem;
+      max-width: 24ch;
+    }
+
+    .loop {
+      list-style: none;
+      margin: 1.15rem 0 0;
+      padding: 0;
+      max-width: 36rem;
+    }
+    .loop li {
+      padding: 0.55rem 0;
+      border-top: 1px solid var(--line);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.4;
+      color: var(--soft);
+    }
+    .loop li:last-child { border-bottom: 1px solid var(--line); }
+
+    .carry ol {
+      margin: 1.25rem 0 0;
+      padding: 0;
+      list-style: none;
+      max-width: 36rem;
+      counter-reset: q;
+    }
+    .carry li {
+      counter-increment: q;
+      position: relative;
+      padding: 0.9rem 0 0.9rem 2.2rem;
+      border-top: 1px solid var(--line);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.08rem;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+    .carry li:last-child { border-bottom: 1px solid var(--line); }
+    .carry li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      top: 0.9rem;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--hot);
+    }
+  </style>
+  <link rel="stylesheet" href="room-appearance.css?v=20260724170000" />
   <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
 
@@ -45,9 +308,6 @@
       gtag('config', 'G-0L41N5K2WV');
     });
   </script>
-
-  <script defer src="data.js?v=20260622240000"></script>
-  <script defer src="library.js?v=20260719173000"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -88,288 +348,166 @@
 }
   </script>
 </head>
-<body class="post-page" data-article-slug="when-nutrition-advice-looks-like-precision-medicine" data-topic-id="reading-the-evidence">
+<body>
+    <div class="bar">
+    <a href="../index.html">Rajiv Vakani</a>
+    <a href="../insights.html">Insights</a>
+    <a href="../library.html">Library</a>
+    <strong>Precision medicine</strong>
+  </div>
 
-  <nav class="main-nav">
-    <div class="container nav-container">
-      <a href="../index.html" class="site-logo"><img src="../logo-mark.png?v=rv9" alt="" class="site-logo__mark" decoding="async" width="543" height="543">Rajiv Vakani</a>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../journey.html">Journey</a></li>
-        <li><a href="../insights.html" class="active">Insights</a></li>
-        <li><a href="../library.html">Library</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
+  <div class="skin" role="group" aria-label="Appearance">
+    <button type="button" class="skin__opt" data-skin="light" aria-pressed="true">Light</button>
+    <span class="skin__sep" aria-hidden="true">&middot;</span>
+    <button type="button" class="skin__opt" data-skin="dark" aria-pressed="false">Dark</button>
+  </div>
 
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
-      </button>
-    </div>
-  </nav>
 
-  <div class="mobile-menu-overlay"></div>
-
-  <main>
-
-    <header class="post-header">
-      <div class="post-wrap">
-        <p class="post-anchor">
-          in <a href="topics/reading-the-evidence.html">Reading the evidence</a>
-        </p>
-        <h1 class="post-title">When Nutrition Advice Starts Looking Like Precision Medicine</h1>
-        <p class="post-meta">
-          <span>Essay</span>
-          <span>June 22, 2026</span>
-        </p>
-      </div>
-    </header>
-
-    <section class="post-glance" aria-label="At a glance">
-      <div class="post-wrap">
-        <p class="post-glance__label">At a glance</p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">What stopped me</span>
-          A nutrition graphic stopped me mid-scroll. It didn't sound like ordinary wellness advice. It sounded unusually precise, almost clinical: food matched to condition, mechanism attached, action implied.
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">What I wanted to know</span>
-          Why does a list like this feel so authoritative before you've checked a single row?
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">What I found</span>
-          When I opened a few rows, the evidence behind them looked nothing alike. The graphic still presents all eight with identical confidence.
-        </p>
-      </div>
-    </section>
-
-    <section class="post-claim-card" id="what-started-this" aria-labelledby="claim-card-title">
-      <div class="post-wrap">
-
-        <p class="post-claim-card__kicker">Claim source</p>
-
-        <h2 class="post-claim-card__title" id="claim-card-title">What started this</h2>
-
-        <p class="post-claim-card__intro">
-          The post is a static Instagram graphic. What struck me wasn't any single pairing. It was how clinical the whole list felt at a glance.
-        </p>
-
-        <figure class="post-claim-card__figure">
-          <div class="post-claim-card__embed" aria-label="Screenshot of the Instagram graphic">
-            <img
-              src="claim-images/avoid-healthy-foods-graphic.jpg"
-              alt="Instagram graphic titled Avoid These Healthy Foods in These Conditions, listing eight food-and-condition pairings with brief explanations."
-              width="1080"
-              height="1365"
-              loading="lazy"
-            />
-          </div>
-        </figure>
-
-        <p class="post-claim-card__meta">This article analyzes the claim, not the creator.</p>
-
-      </div>
-    </section>
-
-    <article class="post-body" id="journey">
-      <div class="post-wrap">
-
-        <h2>What landed</h2>
-
-        <p>The list didn't sound like ordinary nutrition advice. It sounded unusually precise, personalized, and almost clinical. Specific enough to save. Authoritative enough to forward.</p>
-
-        <p>If you scrolled past without pausing, you'd probably walk away with something like this: healthy foods aren't universally healthy; specific foods have specific contraindications; if you have one of the listed conditions, you should know which staples to avoid.</p>
-
-        <p>Look at the list again. Tomatoes and reflux. Chocolate and migraines. Ragi and oxalate. Each row has a food in red, a condition in bold, a mechanism in plain language, and an implied action. The title frames the foods as healthy, which makes the contraindications feel counterintuitive and therefore careful.</p>
-
-        <p>That's a reasonable takeaway. It's also the feeling this article is trying to understand. Not whether row four is correct. Why the whole list feels like something a clinician might have written.</p>
-
-        <h2>What caught my attention</h2>
-
-        <p>I didn't pause because the graphic sounded absurd. I paused because it sounded <em>specific</em>.</p>
-
-        <p>We live in an era when nutrition is supposed to be personal. Celiac disease, food allergy, kidney disease, and structured low-FODMAP protocols all involve real dietary individualization.<sup><a href="#src-1">1</a></sup><sup><a href="#src-2">2</a></sup><sup><a href="#src-3">3</a></sup></p>
-
-        <p>Research on personalized glycemic response has shown that identical meals can produce meaningfully different post-meal glucose trajectories across people.<sup><a href="#src-4">4</a></sup> The graphic speaks in that register: <em>if you have this condition, avoid this food, because of this mechanism.</em></p>
-
-        <p>My first instinct was to treat it like a fact-check. Open a few rows. See which pairings hold up. That's a reasonable instinct. It's also the wrong front door.</p>
-
-        <p>The question that opened up for me was different: how do we tell genuine personalization from the appearance of personalization?</p>
-
-        <h2>The grammar of the graphic</h2>
-
-        <p>Scroll back to the claim card above if you need the list in view. Every row follows the same syntax: <strong>food</strong> + <strong>condition</strong> + <strong>mechanism</strong> + <strong>implied action.</strong></p>
-
-        <p>Ragi. Kidney stones. Oxalate load. Avoid. Dark chocolate. Migraines. Caffeine and tyramine. Avoid. Pomegranate. Constipation. Worsens sluggishness. Avoid.</p>
-
-        <p>This is the visual grammar of clinical contraindication compressed into a scroll-stopping list. Food in red signals exception. The condition names you. The mechanism explains why the pairing isn't arbitrary. The title tells you these are healthy foods, which positions the author as someone complicating the wellness story rather than repeating it.</p>
-
-        <p>The format doesn't ask you to evaluate eight separate claims. It asks you to trust one <em>way of knowing.</em> That's why this image works as a case study. The foods and conditions change across posts like this. The grammar stays the same.</p>
-
-        <p>Once I could name that grammar, I wanted to know whether every row matched it in the same way.</p>
-
-        <h2>What happens when you open a row</h2>
-
-        <p>I did open a few rows. Not to score the whole list. To see whether the evidence behind different pairings looked the same once you left the graphic.</p>
-
-        <p>It didn't. That mismatch is the discovery.</p>
-
-        <div class="post-row-investigations">
-
-        <h3 class="post-row-investigation"><span class="post-row-investigation__num">1</span><span class="post-row-investigation__label">Clinical tradition</span> Tomato and acid reflux</h3>
-
-        <p>Tomato and reflux is the row that sounds most like clinic language. Acidic foods are commonly discussed as symptom triggers in GERD counseling. Guidelines and patient materials often include tomato-based foods among foods to notice if heartburn worsens.<sup><a href="#src-5">5</a></sup> The mechanism is plausible. The clinical conversation is familiar.</p>
-
-        <p>But even here, the row is doing more work than clinic language usually does. Trigger lists in reflux are inconsistent across patients. Some people tolerate cooked tomato better than raw. Some tolerate small amounts. The advice at this layer is usually conditional: if this worsens your symptoms, reduce or avoid it for now, then reassess. The graphic gives you a stable pairing.</p>
-
-        <h3 class="post-row-investigation"><span class="post-row-investigation__num">2</span><span class="post-row-investigation__label">Individual variation</span> Dark chocolate and migraine</h3>
-
-        <p>Chocolate and migraine points in a different direction. Caffeine and tyramine-related compounds really do appear in headache trigger discussions.<sup><a href="#src-6">6</a></sup> Some patients identify chocolate as a consistent trigger. Others don't. Provocation studies have produced mixed results, which is exactly what you'd expect if the relationship is real but highly individual.<sup><a href="#src-7">7</a></sup></p>
-
-        <p>On the graphic, tomato and chocolate occupy the same row shape. In the literature, one looks more like a common clinical pattern across a subset of patients. The other looks more like a hypothesis worth testing in a specific person. The format can't show that difference without breaking its own uniformity.</p>
-
-        <h3 class="post-row-investigation"><span class="post-row-investigation__num">3</span><span class="post-row-investigation__label">Thin evidence</span> Pomegranate and constipation</h3>
-
-        <p>Pomegranate and constipation is where the case study sharpened for me. I had trouble locating the pairing the graphic implies. Pomegranate is often discussed for digestive effects, but many public-facing recommendations use it in the context of relieving constipation rather than worsening it, largely because the arils contain fiber.<sup><a href="#src-8">8</a></sup> There may be traditional or preparation-specific reasoning behind the row. The one-line caption can't hold that complexity.</p>
-
-        <p>What matters is that this row doesn't appear to rest on the same kind of support as tomato and reflux, yet it wears the same font, the same sentence shape, and the same implied certainty. That was when I stopped treating the list as a collection of food questions and started treating it as a format question.</p>
-
+  <div class="wrap">
+    <section class="enter" aria-label="Enter">
+      <figure>
+        <img
+          src="../../claim-images/avoid-healthy-foods-graphic.jpg"
+          alt="Instagram graphic: Avoid These Healthy Foods in These Conditions"
+          width="1080"
+          height="1365"
+        />
+        <figcaption>Eight healthy foods. Eight conditions. Eight reasons to avoid them.</figcaption>
+      </figure>
+      <div>
+        <p class="series">Reading the evidence</p>
+        <h1 class="title">When Nutrition Advice Starts Looking Like Precision Medicine</h1>
+        <div class="prose">
+          <p>If you came here to check whether these food pairings are true, stay.</p>
+          <p>That's a fair reason to be here.</p>
+          <p>I started the same way. Tomato and reflux. Chocolate and migraine.</p>
+          <p>Open a row. Check it. Move to the next.</p>
+          <p class="ask">Look at the graphic again. Not at one food. At the whole list.</p>
+          <p class="turn">If the rows aren't equally solid, why do they all look equally sure?</p>
         </div>
-
-        <h2>Uniform certainty</h2>
-
-        <p>Go back to the graphic one more time. Eight rows. Same visual weight. Same rhetorical packaging. Same implied conclusion.</p>
-
-        <p>This is the strongest thing the image does. It creates an impression of uniform certainty that the underlying evidence doesn't warrant.</p>
-
-        <p>The list doesn't distinguish strong rows from weak rows because distinguishing them would weaken the product. A format built for saves and shares needs every row to look equally settled. You're not meant to ask which pairings earned their confidence. You're meant to feel that the whole table is the kind of thing a careful professional might keep on file.</p>
-
-        <p>That feeling is the phenomenon.</p>
-
-        <h2>What genuine personalization requires</h2>
-
-        <p>The graphic sits inside a real tension. Precision nutrition isn't a marketing invention. Absolute contraindications exist where the biology isn't negotiable. Structured protocols exist with defined populations and follow-up.<sup><a href="#src-1">1</a></sup><sup><a href="#src-2">2</a></sup><sup><a href="#src-3">3</a></sup> Emerging work on individual glycemic response and microbiome variation is still early and uneven, but it begins from measurement, not from a lookup table.<sup><a href="#src-4">4</a></sup></p>
-
-        <p>What those examples share isn't merely specificity. They share a loop:</p>
-
-        <ul class="post-loop-questions">
-          <li>Who is this for?</li>
-          <li>Under what criteria?</li>
-          <li>At what dose? Prepared how?</li>
-          <li>With what result?</li>
-          <li>Should the recommendation change if the result isn't what we expected?</li>
-          <li>Can it be revised, narrowed, or reversed?</li>
-        </ul>
-
-        <p>Genuine personalization is food plus condition plus mechanism plus <em>feedback.</em> The graphic gives you the contraindication without the trial. It ends where the experiment would begin.</p>
-
-        <h2>How to tell the difference</h2>
-
-        <p>So how do you read a list like this in practice?</p>
-
-        <p>Not by dismissing it automatically. Several rows may point toward real questions worth asking. Someone with reflux, migraine, or kidney stones may genuinely benefit from noticing whether a food worsens symptoms. The better question is whether the advice behaves like personalization or only looks like it.</p>
-
-        <p>Look back at the graphic and ask three things. Does it name a subgroup, or only a label? Does it include a test (remove, observe, reintroduce, adjust portion)? If every row wears identical confidence, is that evidence about the foods, or about the format?</p>
-
-        <p>Those questions are portable. They apply beyond this post, including in <a href="where-the-egg-alzheimers-story-drifted.html">Where the Egg&ndash;Alzheimer&rsquo;s Story Drifted</a>. They're also the reason the image remains the anchor. You're not only asking whether a row is true. You're asking what kind of knowing it's pretending to be.</p>
-
-        <h2>What remains unresolved</h2>
-
-        <p>Tracing the format doesn't settle whether pomegranate belongs on a constipation list. It leaves a different problem visible: advice that borrows the language and visual grammar of precision medicine without the testing, feedback, and refinement that make precision medicine work.</p>
-
-        <p>Some of the biology behind the rows is real. Some of the pairings may help the right person ask the right question. What the image taught me is that those possibilities can coexist with a presentation more certain than the evidence behind it.</p>
-
-        <p>The graphic is the case study. The case study isn't tomatoes or chocolate or rajgira. It's what happens when advice starts looking precise before it's done the work precision requires.</p>
-
-      </div>
-    </article>
-
-    <section class="post-sources" aria-label="Sources">
-      <div class="post-wrap">
-        <details class="post-sources__disclosure">
-          <summary>Sources <span class="post-sources__cue" aria-hidden="true">Open sources</span></summary>
-          <div class="post-sources__disclosure-body">
-          <div class="post-sources__group">
-                        <p class="post-sources__label">Claim source</p>
-                        <div class="post-sources__claim">
-                          <p class="post-sources__claim-title">Instagram graphic by Leema Mahajan</p>
-                          <p class="post-sources__claim-url">
-                            <a href="https://www.instagram.com/leemamahajan/" target="_blank" rel="noopener noreferrer">https://www.instagram.com/leemamahajan/</a>
-                          </p>
-                          <p class="post-sources__claim-accessed">Accessed June 2026. Post permalink not confirmed; graphic reproduced from author screenshot.</p>
-                        </div>
-                      </div>
-
-                      <div class="post-sources__group">
-                        <p class="post-sources__label">Research sources</p>
-                        <ol>
-                          <li id="src-1">Rubio-Tapia A, Hill ID, Kelly CP, et al. ACG clinical guidelines: diagnosis and management of celiac disease. <em>Am J Gastroenterol</em>. 2013;108(5):656&ndash;676. <a href="https://pubmed.ncbi.nlm.nih.gov/23609613/" target="_blank" rel="noopener">PubMed</a></li>
-                          <li id="src-2">Halmos EP, Gibson PR. Controversies and reality of the FODMAP diet for patients with irritable bowel syndrome. <em>J Gastroenterol Hepatol</em>. 2019;34(7):1134&ndash;1142. <a href="https://pubmed.ncbi.nlm.nih.gov/30972834/" target="_blank" rel="noopener">PubMed</a></li>
-                          <li id="src-3">Ikizler TA, Burrowes JD, Byrd-Bredbenner C, et al. KDOQI clinical practice guideline for nutrition in CKD: 2020 update. <em>Am J Kidney Dis</em>. 2020;76(3 Suppl 1):S1&ndash;S107. <a href="https://pubmed.ncbi.nlm.nih.gov/32829719/" target="_blank" rel="noopener">PubMed</a></li>
-                          <li id="src-4">Zeevi D, Korem T, Zmora N, et al. Personalized nutrition by prediction of glycemic responses. <em>Cell</em>. 2015;163(5):1079&ndash;1094. <a href="https://pubmed.ncbi.nlm.nih.gov/26590418/" target="_blank" rel="noopener">PubMed</a></li>
-                          <li id="src-5">Katz PO, Dunbar KB, Schnoll-Sussman FH, et al. ACG clinical guideline for the diagnosis and management of gastroesophageal reflux disease. <em>Am J Gastroenterol</em>. 2022;117(1):27&ndash;56. <a href="https://pubmed.ncbi.nlm.nih.gov/34807007/" target="_blank" rel="noopener">PubMed</a></li>
-                          <li id="src-6">Martin VT, Vij B. Diet and headache: part 1. <em>Headache</em>. 2016;56(9):1543&ndash;1552. <a href="https://pubmed.ncbi.nlm.nih.gov/27699780/" target="_blank" rel="noopener">PubMed</a></li>
-                          <li id="src-7">Marcus DA, Scharff L, Mercer S, Turk DC. A double-blind provocative study of chocolate as a trigger of headache. <em>Cephalalgia</em>. 1997;17(8):855&ndash;862. <a href="https://pubmed.ncbi.nlm.nih.gov/9456635/" target="_blank" rel="noopener">PubMed</a></li>
-                          <li id="src-8">Collins KK, Wu G. Pomegranate and its bioactive constituents in human health. <em>Adv Nutr</em>. 2023;14(3):524&ndash;539. <a href="https://pubmed.ncbi.nlm.nih.gov/36848017/" target="_blank" rel="noopener">PubMed</a></li>
-                        </ol>
-                      </div>
-          </div>
-        </details>
-
       </div>
     </section>
+  </div>
 
-    <section class="post-next" aria-label="Next">
-      <div class="post-wrap" data-post-next></div>
-    </section>
+  <section class="section wash" aria-label="Same pattern">
+    <div class="wrap">
+      <div class="prose">
+        <p>Every row follows the same pattern.</p>
+      </div>
+      <div class="steps" aria-label="The pattern">
+        <span>Food</span>
+        <span>Condition</span>
+        <span>Why</span>
+        <span>Avoid</span>
+      </div>
+      <div class="prose">
+        <p>Ragi and kidney stones. Dark chocolate and migraines. Pomegranate and constipation. Different foods. Same shape.</p>
+        <p>Posts like this swap the foods. The pattern stays. You're not really being asked to check eight claims. You're being asked to trust the whole list the same way.</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="post-colophon" aria-label="Signature">
-      <div class="post-wrap">
-        <p>
-          <a href="../about.html">Rajiv Vakani</a>. Writing on nutrition from New York.<br class="colophon-break" aria-hidden="true">
-          Since 2023. <a href="../contact.html">Email</a>.
+  <section class="section" aria-label="Open a few rows">
+    <div class="wrap">
+      <div class="prose">
+        <p>I opened a few rows. Not to grade the whole list. Just to see if the evidence behind each pairing looked the same once I left the graphic.</p>
+        <p>It didn't. On the graphic, they still look equal.</p>
+      </div>
+
+      <article class="row">
+        <p class="row__shown">Tomato · reflux · avoid</p>
+        <p class="row__on-graphic">On the graphic: settled advice for anyone with reflux.</p>
+        <p class="row__opened">
+          <strong>When you look closer</strong>
+          Clinics often talk about tomato as a possible trigger. Advice is usually: if it bothers you, cut back and see. The graphic makes it sound like a rule for everyone.
         </p>
+      </article>
+
+      <article class="row">
+        <p class="row__shown">Chocolate · migraine · avoid</p>
+        <p class="row__on-graphic">On the graphic: same shape, same certainty as tomato.</p>
+        <p class="row__opened">
+          <strong>What studies show</strong>
+          Real for some people. Mixed when researchers try to prove it. Same look as tomato on the list. Weaker as a blanket rule.
+        </p>
+      </article>
+
+      <article class="row">
+        <p class="row__shown">Pomegranate · constipation · avoid</p>
+        <p class="row__on-graphic">On the graphic: same font, same sure tone.</p>
+        <p class="row__opened">
+          <strong>What's hard to find</strong>
+          Harder to find support for this pairing. Many public notes talk about pomegranate helping digestion, not worsening constipation. Same certainty on the list. Much thinner underneath.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section wash" aria-label="Look again">
+    <div class="wrap return">
+      <figure>
+        <img
+          src="../../claim-images/avoid-healthy-foods-graphic.jpg"
+          alt="Same Instagram graphic again"
+          width="1080"
+          height="1365"
+        />
+      </figure>
+      <div>
+        <p class="line">Same image. Different reading.</p>
+        <div class="prose">
+          <p>You're looking at the same eight rows. They no longer look like eight equally solid clinical facts. They look like a format that needs every row to seem equally sure.</p>
+          <p>If the list marked strong rows and weak rows, it'd be harder to save and share. The design works better when everything looks settled.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section class="section" aria-label="What personal looks like">
+    <div class="wrap">
+      <div class="prose">
+        <p>None of this means food-and-condition advice is fake. Real personalization exists. Absolute rules exist for some conditions. Clinics run protocols with clear who-it's-for and follow-up.</p>
+        <p>What those share isn't just being specific. They share a loop:</p>
+      </div>
+      <ul class="loop">
+        <li>Who is this for?</li>
+        <li>How do you know it applies?</li>
+        <li>What dose or form?</li>
+        <li>What should change if it doesn't help?</li>
+      </ul>
+      <div class="prose" style="margin-top:1.35rem">
+        <p>Real personal advice includes a way to check and adjust. The graphic gives you the avoid rule without the test. It ends where the experiment would begin.</p>
+      </div>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
-      <div class="footer-social" aria-label="Social links">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg class="social-icon" aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
-        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+  <section class="section wash carry" aria-label="Next time">
+    <div class="wrap">
+      <div class="prose">
+        <p>The next time a graphic like this shows up in your feed, where do you look first?</p>
+        <p>Not whether to ignore it. Some rows may still help someone notice a real trigger. The better question is whether the advice is truly personal, or only looks that way.</p>
+      </div>
+      <ol>
+        <li>Does it name who it is for, or only a condition label?</li>
+        <li>Does it tell you to test it: remove, watch, put back, adjust?</li>
+        <li>If every row looks equally sure, is that about the foods, or about the format?</li>
+      </ol>
+    </div>
+  </section>
+
+  
+  <footer class="room-foot">
+    <div class="room-foot__inner">
+      <p class="room-foot__legal">&copy; 2025&ndash;2026 Rajiv Vakani</p>
+      <div class="room-foot__social" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var menuToggle = document.querySelector('.menu-toggle');
-      var navLinks = document.querySelector('.nav-links');
-      var overlay = document.querySelector('.mobile-menu-overlay');
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function () {
-          navLinks.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-          if (overlay) overlay.classList.toggle('active');
-          document.body.classList.toggle('menu-open');
-        });
-      }
-      if (overlay) {
-        overlay.addEventListener('click', function () {
-          navLinks.classList.remove('active');
-          menuToggle.classList.remove('active');
-          overlay.classList.remove('active');
-          document.body.classList.remove('menu-open');
-        });
-      }
-    });
-  </script>
+  <script src="room-appearance.js?v=20260724170000" defer></script>
+
 </body>
 </html>

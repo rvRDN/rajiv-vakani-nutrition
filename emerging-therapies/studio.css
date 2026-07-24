@@ -77,6 +77,21 @@ a, button, summary {
   text-align: center;
   min-width: 0;
 }
+.et-shell__ways {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem 0.9rem;
+  margin: 0;
+  flex-shrink: 0;
+}
+.et-shell__ways a {
+  text-decoration: none;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+.et-shell__ways a:hover { opacity: 1; }
 .et-shell__escape {
   text-decoration: none;
   border-bottom: 1px solid currentColor;
@@ -1114,7 +1129,7 @@ a, button, summary {
     font-size: 0.75rem;
   }
   .et-shell__mark { grid-column: 1; grid-row: 1; }
-  .et-shell__escape { grid-column: 2; grid-row: 1; justify-self: end; }
+  .et-shell__ways { grid-column: 2; grid-row: 1; justify-self: end; }
   .et-shell__place {
     grid-column: 1 / -1;
     grid-row: 2;

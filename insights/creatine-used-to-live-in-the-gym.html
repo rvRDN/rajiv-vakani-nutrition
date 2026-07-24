@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="post-page">
+<html lang="en" data-skin="light">
 <head>
+  <!-- promoted from insights/mockups/insights-room/creatine-stage.html -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Creatine Used to Live in the Gym | Rajiv Vakani</title>
   <meta name="description" content="I already trusted creatine for training. Then the conversation expanded to brain health, aging, and focus. I followed the newer claims into the research.">
 
@@ -22,12 +22,509 @@
   <meta property="twitter:description" content="I already trusted creatine for training. Then the conversation expanded to brain health, aging, and focus. I followed the newer claims into the research." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
+<script>
+    (function () {
+      try {
+        var s = localStorage.getItem("insights-skin");
+        if (s === "dark" || s === "light") document.documentElement.setAttribute("data-skin", s);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../rajiv-styles.min.css?v=20260715063000">
-  <link rel="stylesheet" href="library.min.css?v=20260719173000">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+
+
+    /*
+      Hold · Creatine. Trust inheritance / territory expansion.
+      Gym earned; brain/aging/disease borrowed the same certainty.
+    */
+    :root, html[data-skin="light"] {
+      --bg: #ffffff;
+      --ink: #0c1017;
+      --soft: rgba(12, 16, 23, 0.86);
+      --dim: rgba(12, 16, 23, 0.46);
+      --line: rgba(12, 16, 23, 0.12);
+      --hot: #c24a1a;
+      --stage: #0c1017;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-hot: #f08a4a;
+    }
+    html[data-skin="dark"] {
+      --bg: #08090b;
+      --ink: #f4f2ec;
+      --soft: rgba(244, 242, 236, 0.86);
+      --dim: rgba(244, 242, 236, 0.46);
+      --line: rgba(244, 242, 236, 0.14);
+      --hot: #f08a4a;
+      --stage: #16181d;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-hot: #f08a4a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .bar {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+      padding: 0.75rem 1.15rem;
+      padding-right: 8.5rem;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.78rem;
+    }
+    .bar a { color: var(--hot); text-decoration: none; }
+    .bar strong { font-weight: 600; }
+    .rail {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-left: clamp(1.25rem, 4vw, 2.5rem);
+      padding-right: clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .read { max-width: 34rem; }
+    .prose {
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.12rem, 1.4vw, 1.25rem);
+      line-height: 1.62;
+      color: var(--soft);
+    }
+    .prose p { margin: 0 0 1.05em; }
+    .prose a {
+      color: var(--hot);
+      text-decoration: none;
+      font-weight: inherit;
+    }
+    .prose a:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+    .prose sup a { text-decoration: none; font-family: "Instrument Sans", sans-serif; font-size: 0.7em; }
+    .prose .ask { color: var(--hot); font-style: italic; }
+    .prose .turn {
+      color: var(--ink);
+      font-size: 1.08em;
+      max-width: 36ch;
+      margin-top: 1.25em;
+    }
+    .series {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 0.7rem;
+      font-weight: 500;
+    }
+    .kicker {
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+      line-height: 1.35;
+      color: var(--dim);
+      margin: 0 0 clamp(1.35rem, 3.5vw, 2rem);
+      letter-spacing: -0.01em;
+    }
+    .stage {
+      min-height: min(92vh, 56rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 6vw, 4rem) 0 clamp(2.5rem, 6vw, 4rem);
+    }
+    .case-q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.6rem, 7vw, 5.25rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      margin: 0 0 clamp(2rem, 5vw, 3.25rem);
+      max-width: 14ch;
+      color: var(--ink);
+    }
+    .ledger {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+    .ledger__row {
+      display: grid;
+      grid-template-columns: 2.5rem minmax(7rem, 11rem) minmax(0, 1fr);
+      gap: clamp(0.75rem, 2vw, 1.5rem);
+      align-items: baseline;
+      padding: clamp(1.15rem, 2.4vw, 1.55rem) 0;
+      border-bottom: 1px solid var(--line);
+      opacity: 0;
+      transform: translateY(0.65rem);
+      animation: rise 0.7s ease forwards;
+    }
+    .ledger__row:nth-child(1) { animation-delay: 0.12s; }
+    .ledger__row:nth-child(2) { animation-delay: 0.28s; }
+    .ledger__row:nth-child(3) { animation-delay: 0.44s; }
+    @keyframes rise {
+      to { opacity: 1; transform: none; }
+    }
+    @media (max-width: 640px) {
+      .ledger__row {
+        grid-template-columns: 2rem minmax(0, 1fr);
+        grid-template-rows: auto auto;
+      }
+      .ledger__who { grid-column: 2; }
+      .ledger__line {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 0.25rem;
+      }
+    }
+    .ledger__n {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--dim);
+      font-variant-numeric: tabular-nums;
+    }
+    .ledger__who {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--hot);
+    }
+    .ledger__line {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .escort { padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 5rem); }
+    .seam {
+      background: var(--stage);
+      color: var(--stage-ink);
+      padding: clamp(3rem, 8vw, 5.5rem) 0;
+    }
+    .seam .prose { color: var(--stage-soft); }
+    .seam .prose .turn { color: var(--stage-ink); }
+    .seam .prose .ask { color: var(--stage-hot); }
+    .seam .prose a { color: var(--stage-hot); }
+    .seam__lead {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+      line-height: 1.4;
+      color: var(--stage-dim);
+      margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+      max-width: 28rem;
+    }
+    .verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      margin: 0 0 clamp(2rem, 5vw, 3rem);
+      padding: clamp(1.5rem, 3vw, 2rem) 0;
+      border-top: 1px solid rgba(244, 242, 236, 0.16);
+      border-bottom: 1px solid rgba(244, 242, 236, 0.16);
+    }
+    @media (max-width: 700px) {
+      .verdict { grid-template-columns: 1fr; }
+    }
+    .verdict__claim {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+    }
+    .verdict__claim p {
+      margin: 0 0 1rem;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.35rem, 2.6vw, 1.95rem);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      color: var(--stage-ink);
+    }
+    .verdict__tag {
+      display: inline-block;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stage-hot);
+    }
+    .block { padding: clamp(2.75rem, 6vw, 4.25rem) 0; }
+    .block + .block { border-top: 1px solid var(--line); }
+    .block h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      max-width: 34rem;
+      color: var(--ink);
+    }
+    .return {
+      padding: clamp(3rem, 7vw, 5rem) 0;
+      border-top: 1px solid var(--line);
+    }
+    .return__q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 1.5rem;
+      max-width: 14ch;
+      color: var(--ink);
+    }
+    .carry {
+      padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 5vw, 3rem);
+      border-top: 1px solid var(--line);
+    }
+    .carry h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      color: var(--ink);
+    }
+    .carry ol {
+      margin: 1.25rem 0 0;
+      padding: 0;
+      list-style: none;
+      max-width: 36rem;
+      counter-reset: q;
+    }
+    .carry li {
+      counter-increment: q;
+      position: relative;
+      padding: 1rem 0 1rem 2.5rem;
+      border-top: 1px solid var(--line);
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.08rem, 1.6vw, 1.22rem);
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .carry li:last-child { border-bottom: 1px solid var(--line); }
+    .carry li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      top: 1.1rem;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--hot);
+    }
+    .sources { padding: 0 0 clamp(3.5rem, 7vw, 5rem); }
+    .sources details {
+      max-width: 36rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+    .sources summary {
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .sources ol {
+      margin: 1rem 0 0;
+      padding: 0 0 0 1.15rem;
+      color: var(--soft);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+    .sources a { color: var(--hot); }
+    .dna {
+      margin: 0 auto;
+      max-width: 1120px;
+      padding: 0.75rem clamp(1.25rem, 4vw, 2.5rem) 0;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: var(--dim);
+    }
+    .dna summary {
+      cursor: pointer;
+      color: var(--hot);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+    }
+    .dna p { margin: 0.45rem 0 0; max-width: 44rem; }
+    @media (prefers-reduced-motion: reduce) {
+      .ledger__row { opacity: 1; transform: none; animation: none; }
+    }
+  
+    .prose strong { color: var(--ink); font-weight: 600; }
+    .prose em { font-style: italic; }
+    .case-q { max-width: 12ch; }
+
+    /* Chapter jump: desktop sticky rail; mobile sheet */
+    .toc-fab {
+      display: none;
+      position: fixed;
+      right: 1rem;
+      bottom: 1.25rem;
+      z-index: 35;
+      font: inherit;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 0.7rem 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(12, 16, 23, 0.08);
+    }
+    .toc {
+      display: none;
+    }
+    .toc__label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 0.75rem;
+    }
+    .toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .toc a {
+      display: block;
+      padding: 0.35rem 0 0.35rem 0.65rem;
+      border-left: 1px solid var(--line);
+      color: var(--dim);
+      text-decoration: none;
+      font-size: 0.78rem;
+      line-height: 1.35;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+    .toc a:hover { color: var(--ink); }
+    .toc a.is-active {
+      color: var(--hot);
+      border-left-color: var(--hot);
+    }
+    .toc-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 45;
+      background: rgba(12, 16, 23, 0.35);
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+    }
+    body.toc-open { overflow: hidden; }
+    body.toc-open .toc-backdrop { display: block; }
+
+    @media (min-width: 1180px) {
+      .toc {
+        display: block;
+        position: fixed;
+        top: 5.25rem;
+        right: max(0.75rem, calc((100vw - 1120px) / 2 - 12.25rem));
+        width: 11rem;
+        max-height: calc(100vh - 6.5rem);
+        overflow: auto;
+        z-index: 20;
+        padding-bottom: 2rem;
+      }
+      .toc-fab { display: none !important; }
+    }
+    @media (max-width: 1179px) {
+      .toc-fab { display: block; }
+      .toc {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        width: auto;
+        max-height: min(70vh, 28rem);
+        overflow: auto;
+        background: var(--bg);
+        border-top: 1px solid var(--line);
+        padding: 1.15rem 1.25rem 1.75rem;
+        transform: translateY(105%);
+        transition: transform 0.22s ease;
+        box-shadow: 0 -12px 40px rgba(12, 16, 23, 0.12);
+      }
+      body.toc-open .toc { transform: none; }
+      .toc__close {
+        display: block;
+        width: 100%;
+        margin: 0 0 1rem;
+        font: inherit;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--dim);
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 0 0 0.85rem;
+        text-align: left;
+        cursor: pointer;
+      }
+    }
+    @media (min-width: 1180px) {
+      .toc__close { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .toc { transition: none; }
+    }
+    .block, .escort, .seam, .return, .sources {
+      scroll-margin-top: 4.5rem;
+    }
+  
+
+    .hero {
+      padding: clamp(2rem, 6vw, 4rem) 0 clamp(1.75rem, 4vw, 2.5rem);
+    }
+    .title {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      margin: 0 0 1.75rem;
+      max-width: 14ch;
+      color: var(--ink);
+    }
+    .block h2 { max-width: 34rem; }
+    .prose strong { color: var(--ink); font-weight: 600; }
+    .prose em { font-style: italic; }
+    .return__q { max-width: 16ch; }
+
+  </style>
+  <link rel="stylesheet" href="room-appearance.css?v=20260724170000" />
   <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
 
@@ -45,9 +542,6 @@
       gtag('config', 'G-0L41N5K2WV');
     });
   </script>
-
-  <script defer src="data.js?v=20260629100000"></script>
-  <script defer src="library.js?v=20260719173000"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,70 +579,68 @@
 }
   </script>
 </head>
-<body class="post-page post-layout--inquiry" data-article-slug="creatine-used-to-live-in-the-gym" data-topic-id="reading-the-evidence">
+<body>
+    <div class="bar">
+    <a href="../index.html">Rajiv Vakani</a>
+    <a href="../insights.html">Insights</a>
+    <a href="../library.html">Library</a>
+    <strong>Creatine</strong>
+  </div>
 
-  <nav class="main-nav">
-    <div class="container nav-container">
-      <a href="../index.html" class="site-logo"><img src="../logo-mark.png?v=rv9" alt="" class="site-logo__mark" decoding="async" width="543" height="543">Rajiv Vakani</a>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../journey.html">Journey</a></li>
-        <li><a href="../insights.html" class="active">Insights</a></li>
-        <li><a href="../library.html">Library</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
+  <div class="skin" role="group" aria-label="Appearance">
+    <button type="button" class="skin__opt" data-skin="light" aria-pressed="true">Light</button>
+    <span class="skin__sep" aria-hidden="true">&middot;</span>
+    <button type="button" class="skin__opt" data-skin="dark" aria-pressed="false">Dark</button>
+  </div>
 
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
-      </button>
-    </div>
+<button type="button" class="toc-fab" id="toc-open" aria-expanded="false" aria-controls="chapter-toc">Sections</button>
+  <button type="button" class="toc-backdrop" id="toc-backdrop" aria-label="Close sections" hidden></button>
+  <nav class="toc" id="chapter-toc" aria-label="On this page">
+    <button type="button" class="toc__close" id="toc-close">Close sections</button>
+    <p class="toc__label">On this page</p>
+    <ol>
+      <li><a href="#what-we-already-know">What we already know</a></li>
+      <li><a href="#why-researchers-looked-beyond-muscle">Why the field expanded</a></li>
+      <li><a href="#whether-creatine-reaches-the-brain">Does it reach the brain?</a></li>
+      <li><a href="#whether-more-creatine-means-better-thinking">Better thinking?</a></li>
+      <li><a href="#when-the-brain-is-under-stress">Under stress</a></li>
+      <li><a href="#what-aging-changes">What aging changes</a></li>
+      <li><a href="#when-the-stakes-are-highest">When stakes are highest</a></li>
+      <li><a href="#safety">Safety</a></li>
+      <li><a href="#check">Look vs blank check</a></li>
+      <li><a href="#return">What I believe now</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
   </nav>
 
-  <div class="mobile-menu-overlay"></div>
+  <header class="hero" aria-label="Title">
+    <div class="rail">
+      <p class="series">Reading the evidence</p>
+      <h1 class="title">Creatine used to live in the gym.</h1>
+      <ol class="ledger" aria-label="How the conversation expanded">
+        <li class="ledger__row">
+          <span class="ledger__n">01</span>
+          <span class="ledger__who">Gym</span>
+          <p class="ledger__line">Settled territory. Measured in muscle. Decades of checks.</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">02</span>
+          <span class="ledger__who">Everywhere else</span>
+          <p class="ledger__line">Focus. Sleep loss. Aging. Disease. Same certainty in the feed.</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">03</span>
+          <span class="ledger__who">The problem</span>
+          <p class="ledger__line">One earned reputation started sounding like a blank check.</p>
+        </li>
+      </ol>
+    </div>
+  </header>
 
-  <main>
-
-    <header class="post-header">
-      <div class="post-wrap">
-        <p class="post-anchor">
-          in <a href="topics/reading-the-evidence.html">Reading the evidence</a>
-        </p>
-        <h1 class="post-title">Creatine Used to Live in the Gym</h1>
-        <p class="post-meta">
-          <span>Research Review</span>
-          <span>June 27, 2026</span>
-        </p>
-      </div>
-    </header>
-
-    <section class="post-glance" aria-label="At a glance">
-      <div class="post-wrap">
-        <p class="post-glance__label">At a glance</p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">What started this</span>
-          I&rsquo;d taken creatine for years and trusted it for training. Then the same supplement started showing up in conversations about focus, brain health, aging, and sleep deprivation.
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">What I found</span>
-          The muscle evidence is unusually strong and specific. Most of the newer claims aren&rsquo;t. Some were tested seriously and failed. A few might hold, but only under narrow conditions.
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">Why it matters</span>
-          Creatine earned enough credibility in one domain that everything else started sounding plausible. That&rsquo;s worth separating before you change your dose or recommend it to someone you care about.
-        </p>
-      </div>
-    </section>
-
-    <article class="post-body" id="journey">
-      <div class="post-wrap">
-
-        <p>Creatine used to live in the gym.</p>
-
-        <p>Now I hear it discussed for focus, sleep deprivation, brain health, healthy aging, cognitive performance. Higher-dose protocols for underslept days. Posts about protecting the brain as you get older. That&rsquo;s when I couldn&rsquo;t ignore it anymore.</p>
+  <section class="escort" id="enter" aria-label="Enter">
+    <div class="rail">
+      <div class="prose read">
+<p>Now I hear it discussed for focus, sleep deprivation, brain health, healthy aging, cognitive performance. Higher-dose protocols for underslept days. Posts about protecting the brain as you get older. That&rsquo;s when I couldn&rsquo;t ignore it anymore.</p>
 
         <p>If those claims had been attached to almost any other supplement, I&rsquo;d probably have ignored them. I looked into this one because they were attached to creatine. I&rsquo;ve taken creatine for years. For training, it did exactly what I expected it to do. That part was never the mystery. The new claims mattered because one part of the story had already proved itself. That made everything else worth checking.</p>
 
@@ -159,11 +651,15 @@
         <p>If you take creatine, or you&rsquo;ve just noticed how much wider the conversation got, you probably know what I mean. The gym part feels like settled territory. But everything else gets talked about with the same certainty.</p>
 
         <p>I already know creatine helps muscles. How much of everything else I keep hearing is actually true?</p>
+      </div>
+    </div>
+  </section>
 
-        
-        <h2 class="post-inquiry-signpost">What we already know</h2>
-
-        <p>I started where most people start: the gym claim.</p>
+  <section class="block" id="what-we-already-know" aria-label="What we already know">
+    <div class="rail">
+      <h2>What we already know</h2>
+      <div class="prose read">
+<p>I started where most people start: the gym claim.</p>
 
         <p>Not because it was the most interesting part. Because it was the part I already believed, and I wanted to see what sat underneath that belief before I touched anything else.</p>
 
@@ -186,11 +682,14 @@
         <p>Once researchers had proof that oral creatine could change a tissue store in a way you could quantify, the next step was obvious. Creatine isn&rsquo;t only in muscle. It&rsquo;s in the brain too. If you could raise levels in one organ by swallowing a powder, maybe you could raise them in another. Maybe that would matter for fatigue, cognition, aging, disease. The logic is easy to follow. It&rsquo;s also easy to overfollow.</p>
 
         <p>The muscle answer is real. But it isn&rsquo;t general. It&rsquo;s specific. That distinction turned out to matter far more than I realized.</p>
-
-        
-        <h2 class="post-inquiry-signpost">Why researchers looked beyond muscle</h2>
-
-        <p>So I paused before reading a single brain study and asked a simpler question: why did serious researchers think this was worth pursuing at all?</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="why-researchers-looked-beyond-muscle" aria-label="Why researchers looked beyond muscle">
+    <div class="rail">
+      <h2>Why researchers looked beyond muscle</h2>
+      <div class="prose read">
+<p>So I paused before reading a single brain study and asked a simpler question: why did serious researchers think this was worth pursuing at all?</p>
 
         <p>As far as I can tell, the answer isn&rsquo;t hype. It&rsquo;s anatomy.</p>
 
@@ -211,11 +710,14 @@
         <p>I still hadn&rsquo;t answered whether brain levels actually go up reliably, or what happens if they do. But I could already see why the field moved. Muscle success didn&rsquo;t prove brain success. It made brain success worth asking about. Those are very different things, and I&rsquo;d been treating them as if they were the same.</p>
 
         <p>That was the hinge I needed before I went any further.</p>
-
-        
-        <h2 class="post-inquiry-signpost">Whether creatine reaches the brain</h2>
-
-        <p>So I went looking for the most basic brain question first. Forget cognition for a moment. Forget aging. Forget disease. Before any of that gets a fair hearing, there&rsquo;s one thing to nail down first: if you swallow creatine, does the amount in your brain actually go up?</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="whether-creatine-reaches-the-brain" aria-label="Whether creatine reaches the brain">
+    <div class="rail">
+      <h2>Whether creatine reaches the brain</h2>
+      <div class="prose read">
+<p>So I went looking for the most basic brain question first. Forget cognition for a moment. Forget aging. Forget disease. Before any of that gets a fair hearing, there&rsquo;s one thing to nail down first: if you swallow creatine, does the amount in your brain actually go up?</p>
 
         <p>For muscle, Harris answered that with a biopsy. You can&rsquo;t biopsy a living brain for a supplement study. What researchers can do is scan it. Magnetic resonance spectroscopy lets them estimate creatine levels in brain tissue without surgery. By the late 1990s, that became possible in humans.<sup><a href="#src-4">4</a></sup></p>
 
@@ -240,11 +742,14 @@
         <p>Which meant the next question was obvious, and much harder than the one I&rsquo;d just finished reading about.</p>
 
         <p>Even if brain creatine sometimes increases, does that actually change how people think or perform?</p>
-
-        
-        <h2 class="post-inquiry-signpost">Whether more creatine means better thinking</h2>
-
-        <p>That was the question I&rsquo;d been circling since the muscle section. It&rsquo;s also the question most of the newer creatine claims are actually about. Not whether a scanner can detect a shift in stored creatine. Whether a rested, healthy adult feels sharper, remembers better, or performs better on a mental task after taking it.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="whether-more-creatine-means-better-thinking" aria-label="Whether more creatine means better thinking">
+    <div class="rail">
+      <h2>Whether more creatine means better thinking</h2>
+      <div class="prose read">
+<p>That was the question I&rsquo;d been circling since the muscle section. It&rsquo;s also the question most of the newer creatine claims are actually about. Not whether a scanner can detect a shift in stored creatine. Whether a rested, healthy adult feels sharper, remembers better, or performs better on a mental task after taking it.</p>
 
         <p>The answer wasn&rsquo;t as clean as muscle.</p>
 
@@ -267,11 +772,14 @@
         <p>Because buried in the same literature, behind the null trials in rested adults, there&rsquo;s a different kind of study. Sleep deprivation. Mental fatigue. Conditions where the brain&rsquo;s energy budget is already strained. Those papers read differently. Not always convincingly. But differently enough that I couldn&rsquo;t stop after the baseline answer.</p>
 
         <p>If healthy adults usually show little benefit, why do sleep deprivation studies seem more promising?</p>
-
-        
-        <h2 class="post-inquiry-signpost">When the brain is under stress</h2>
-
-        <p>I didn&rsquo;t feel finished. A null result in rested adults isn&rsquo;t the same as a null result everywhere. It narrows the claim. It doesn&rsquo;t erase it.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="when-the-brain-is-under-stress" aria-label="When the brain is under stress">
+    <div class="rail">
+      <h2>When the brain is under stress</h2>
+      <div class="prose read">
+<p>I didn&rsquo;t feel finished. A null result in rested adults isn&rsquo;t the same as a null result everywhere. It narrows the claim. It doesn&rsquo;t erase it.</p>
 
         <p>The more I read, the more I noticed what the negative trials had in common. They tested people who were otherwise fine. Normal sleep schedules. Ordinary fatigue. No deliberate strain on the brain before the cognitive tests. If creatine is doing something subtle, those studies might be the hardest place to see it.</p>
 
@@ -302,11 +810,14 @@
         <p>That&rsquo;s a much smaller promise than the one printed on many brain-health labels. It&rsquo;s also a more believable one.</p>
 
         <p>And it sharpened something I was starting to see everywhere in this investigation. The labels hadn&rsquo;t narrowed themselves. General brain enhancement and help when you&rsquo;re sleep-deprived were being sold as the same product. The evidence wasn&rsquo;t.</p>
-
-        
-        <h2 class="post-inquiry-signpost">What aging changes</h2>
-
-        <p>A friend asked whether her father should start taking creatine. I&rsquo;d been wondering the same thing about my own.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="what-aging-changes" aria-label="What aging changes">
+    <div class="rail">
+      <h2>What aging changes</h2>
+      <div class="prose read">
+<p>A friend asked whether her father should start taking creatine. I&rsquo;d been wondering the same thing about my own.</p>
 
         <p>The question isn&rsquo;t whether creatine helps a twenty-five-year-old lifter. It&rsquo;s whether it helps an older adult whose muscle, bone, and memory are all part of the same conversation at a checkup.</p>
 
@@ -321,11 +832,14 @@
         <p>That left the conversations I kept hearing at parties and in headlines. Creatine for brain health. Creatine and neurodegeneration. Creatine while a loved one&rsquo;s memory is changing.</p>
 
         <p>Those claims felt different from focus, sleep deprivation, or leg day. Bigger stakes. More hope attached. I knew I had to read them separately.</p>
-
-        
-        <h2 class="post-inquiry-signpost">When the stakes are highest</h2>
-
-        <p>The disease literature is where hope stops being abstract.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="when-the-stakes-are-highest" aria-label="When the stakes are highest">
+    <div class="rail">
+      <h2>When the stakes are highest</h2>
+      <div class="prose read">
+<p>The disease literature is where hope stops being abstract.</p>
 
         <p>Parkinson&rsquo;s disease was the example I kept running into. Creatine as a brain-energy support. Slow the decline. Large, serious trials. Not influencer threads.</p>
 
@@ -336,11 +850,14 @@
         <p>I sat with those results longer than I expected. Not because they surprised me scientifically. Because they were the clearest answer I&rsquo;d found to the biggest version of the question. The version where a supplement might help someone you love.</p>
 
         <p>That wasn&rsquo;t a small trial that could flip with the next publication. That was the field running the experiment properly and getting a no.</p>
-
-        
-        <h2 class="post-inquiry-signpost">What we know about safety</h2>
-
-        <p>I had one worry before any of the brain research mattered practically: kidneys.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" id="safety" aria-label="What we know about safety">
+    <div class="rail">
+      <h2>What we know about safety</h2>
+      <div class="prose read">
+<p>I had one worry before any of the brain research mattered practically: kidneys.</p>
 
         <p>Creatine raises serum creatinine. Creatinine is what doctors watch. So it&rsquo;s easy to hear &ldquo;creatine hurts your kidneys&rdquo; and never get past that.</p>
 
@@ -350,28 +867,58 @@
 
         <p>For me, that removed the main reason to stop taking it while I figured out everything else.</p>
 
-        <p>When the newer claims started appearing, I paid attention because they were attached to creatine.</p>
+        
+      </div>
+    </div>
+  </section>
+
+
+  <section class="block" id="bridge" aria-label="Why this one got a look">
+    <div class="rail">
+      <div class="prose read">
+<p>When the newer claims started appearing, I paid attention because they were attached to creatine.</p>
 
         <p>If they had been attached to almost any other supplement, I&rsquo;d probably have ignored them. I&rsquo;d seen too many products borrow credibility from biology slides and never earn it in human tissue. Creatine was different. I&rsquo;d already felt it work in the gym. Researchers had measured it in muscle. Decades of work had narrowed the training answer instead of widening it into a miracle.</p>
 
-        <p>That history deserved a real look. It didn&rsquo;t deserve a blank check.</p>
+        
+      </div>
+    </div>
+  </section>
 
-        <p>I believe different things now than when I started. I still take creatine for training. That part of the story held up under scrutiny, modest and specific as it is. I haven&rsquo;t moved to high-dose brain protocols. The best evidence we have today doesn&rsquo;t support the idea that ordinary maintenance use is quietly improving cognition in a rested, healthy brain. Sleep-deprivation studies are more interesting, but modest, and mostly still lab conditions. For an aging parent, I wouldn&rsquo;t recommend creatine for memory. If they were already resistance training, I wouldn&rsquo;t discourage it for muscle the way I&rsquo;d discourage a bogus brain-health promise. For Parkinson&rsquo;s or Huntington&rsquo;s, the serious trials have already spoken.</p>
+  <section class="seam" id="check" aria-label="Look vs blank check">
+    <div class="rail">
+      <div class="verdict" aria-label="Two different debts">
+        <blockquote class="verdict__claim">
+          <p>That history deserved a real look.</p>
+          <span class="verdict__tag">What it earned</span>
+        </blockquote>
+        <blockquote class="verdict__claim">
+          <p>It didn&rsquo;t deserve a blank check.</p>
+          <span class="verdict__tag">What it didn&rsquo;t</span>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="return" id="return" aria-label="What I believe now">
+    <div class="rail">
+      <p class="return__q">What held. What didn&rsquo;t.</p>
+      <div class="prose read">
+<p>I believe different things now than when I started. I still take creatine for training. That part of the story held up under scrutiny, modest and specific as it is. I haven&rsquo;t moved to high-dose brain protocols. The best evidence we have today doesn&rsquo;t support the idea that ordinary maintenance use is quietly improving cognition in a rested, healthy brain. Sleep-deprivation studies are more interesting, but modest, and mostly still lab conditions. For an aging parent, I wouldn&rsquo;t recommend creatine for memory. If they were already resistance training, I wouldn&rsquo;t discourage it for muscle the way I&rsquo;d discourage a bogus brain-health promise. For Parkinson&rsquo;s or Huntington&rsquo;s, the serious trials have already spoken.</p>
 
         <p>A friend asked about her father. I&rsquo;d been wondering the same thing about my own. I wouldn&rsquo;t tell either of them creatine is the answer they&rsquo;re looking for. I&rsquo;d tell them what it&rsquo;s actually been tested for, and what it&rsquo;s failed at.</p>
 
         <p>Creatine earned my attention. It didn&rsquo;t earn automatic trust outside the places where it proved itself.</p>
-
       </div>
-    </article>
+    </div>
+  </section>
 
-    <section class="post-sources" aria-label="Sources">
-      <div class="post-wrap">
-        <details class="post-sources__disclosure">
-          <summary>Sources <span class="post-sources__cue" aria-hidden="true">Open sources</span></summary>
-          <div class="post-sources__disclosure-body">
-          <div class="post-sources__group">
-              <ol>
+  <section class="sources" id="sources" aria-label="Sources">
+    <div class="rail">
+      <details>
+        <summary>Sources</summary>
+        <ol>
+
                           <li id="src-1">
                             Harris RC, S&ouml;derlund K, Hultman E. Elevation of creatine in resting and exercised muscle of normal subjects by creatine supplementation. <em>Clin Sci (Lond)</em>. 1992;83(3):367&ndash;374.
                             <a href="https://doi.org/10.1042/cs0830367" target="_blank" rel="noopener noreferrer">https://doi.org/10.1042/cs0830367</a>
@@ -448,61 +995,68 @@
                             de Souza E, et al. Effects of creatine supplementation on renal function: a systematic review and meta-analysis. <em>BMC Nephrol</em>. 2025;26:31.
                             <a href="https://doi.org/10.1186/s12882-025-03945-2" target="_blank" rel="noopener noreferrer">https://doi.org/10.1186/s12882-025-03945-2</a>
                           </li>
-                        </ol>
-                      </div>
-          </div>
-        </details>
-      </div>
-    </section>
+                        
+        </ol>
+      </details>
+    </div>
+  </section>
 
-    <section class="post-next" aria-label="Next">
-      <div class="post-wrap" data-post-next></div>
-    </section>
-
-    <section class="post-colophon" aria-label="Signature">
-      <div class="post-wrap">
-        <p>
-          <a href="../about.html">Rajiv Vakani</a>. Writing on nutrition from New York.<br class="colophon-break" aria-hidden="true">
-          Since 2023. <a href="../contact.html">Email</a>.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
-      <div class="footer-social" aria-label="Social links">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg class="social-icon" aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
-        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var openBtn = document.getElementById("toc-open");
+      var closeBtn = document.getElementById("toc-close");
+      var backdrop = document.getElementById("toc-backdrop");
+      var toc = document.getElementById("chapter-toc");
+      var links = toc ? toc.querySelectorAll('a[href^="#"]') : [];
+      function setOpen(open) {
+        document.body.classList.toggle("toc-open", open);
+        if (openBtn) openBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (backdrop) {
+          if (open) backdrop.removeAttribute("hidden");
+          else backdrop.setAttribute("hidden", "");
+        }
+      }
+      function closeToc() { setOpen(false); }
+      if (openBtn) openBtn.addEventListener("click", function () { setOpen(true); });
+      if (closeBtn) closeBtn.addEventListener("click", closeToc);
+      if (backdrop) backdrop.addEventListener("click", closeToc);
+      links.forEach(function (a) {
+        a.addEventListener("click", function () {
+          if (window.matchMedia("(max-width: 1179px)").matches) closeToc();
+        });
+      });
+      var ids = Array.prototype.map.call(links, function (a) {
+        return a.getAttribute("href").slice(1);
+      }).filter(Boolean);
+      var sections = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      if (!sections.length || !("IntersectionObserver" in window)) return;
+      var linkById = {};
+      links.forEach(function (a) {
+        linkById[a.getAttribute("href").slice(1)] = a;
+      });
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          links.forEach(function (a) { a.classList.remove("is-active"); });
+          if (linkById[entry.target.id]) linkById[entry.target.id].classList.add("is-active");
+        });
+      }, { rootMargin: "-20% 0px -65% 0px", threshold: 0 });
+      sections.forEach(function (sec) { observer.observe(sec); });
+    })();
+  </script>
+  
+  <footer class="room-foot">
+    <div class="room-foot__inner">
+      <p class="room-foot__legal">&copy; 2025&ndash;2026 Rajiv Vakani</p>
+      <div class="room-foot__social" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var menuToggle = document.querySelector('.menu-toggle');
-      var navLinks = document.querySelector('.nav-links');
-      var overlay = document.querySelector('.mobile-menu-overlay');
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function () {
-          navLinks.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-          if (overlay) overlay.classList.toggle('active');
-          document.body.classList.toggle('menu-open');
-        });
-      }
-      if (overlay) {
-        overlay.addEventListener('click', function () {
-          navLinks.classList.remove('active');
-          menuToggle.classList.remove('active');
-          overlay.classList.remove('active');
-          document.body.classList.remove('menu-open');
-        });
-      }
-    });
-  </script>
+  <script src="room-appearance.js?v=20260724170000" defer></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="post-page">
+<html lang="en" data-skin="light">
 <head>
+  <!-- promoted from insights/mockups/insights-room/mango-stage.html -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Mango Question | Rajiv Vakani</title>
   <meta name="description" content="Can I still eat mangoes? Doctors, relatives, and headlines all had answers, and evidence. Often they were answering different questions, not opposing ones.">
 
@@ -22,12 +22,400 @@
   <meta property="twitter:description" content="Can I still eat mangoes? Doctors, relatives, and headlines all had answers, and evidence. Often they were answering different questions, not opposing ones." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
+<script>
+    (function () {
+      try {
+        var s = localStorage.getItem("insights-skin");
+        if (s === "dark" || s === "light") document.documentElement.setAttribute("data-skin", s);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://www.googletagmanager.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../rajiv-styles.min.css?v=20260715063000">
-  <link rel="stylesheet" href="library.min.css?v=20260719173000">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    /*
+      LOCKED room expression for The Mango Question.
+      Full article text in the stage design:
+      white canvas, ledger collision, one dark seam, left reading spine.
+      Type trial: Newsreader for .prose body; Instrument Serif for display beats.
+    */
+    :root, html[data-skin="light"] {
+      --bg: #ffffff;
+      --ink: #0c1017;
+      --soft: rgba(12, 16, 23, 0.86);
+      --dim: rgba(12, 16, 23, 0.46);
+      --line: rgba(12, 16, 23, 0.12);
+      --hot: #c24a1a;
+      --stage: #0c1017;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-hot: #f08a4a;
+    }
+    html[data-skin="dark"] {
+      --bg: #08090b;
+      --ink: #f4f2ec;
+      --soft: rgba(244, 242, 236, 0.86);
+      --dim: rgba(244, 242, 236, 0.46);
+      --line: rgba(244, 242, 236, 0.14);
+      --hot: #f08a4a;
+      --stage: #16181d;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-hot: #f08a4a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .bar {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+      padding: 0.75rem 1.15rem;
+      padding-right: 8.5rem;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.78rem;
+    }
+    .bar a { color: var(--hot); text-decoration: none; }
+    .bar strong { font-weight: 600; margin-left: auto; }
+
+
+    .rail {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-left: clamp(1.25rem, 4vw, 2.5rem);
+      padding-right: clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .read { max-width: 34rem; }
+    .prose {
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.12rem, 1.4vw, 1.25rem);
+      line-height: 1.62;
+      color: var(--soft);
+    }
+    .prose p { margin: 0 0 1.05em; }
+    .prose a {
+      color: var(--hot);
+      text-decoration: none;
+      font-weight: inherit;
+    }
+    .prose a:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+    .prose sup a { text-decoration: none; font-family: "Instrument Sans", sans-serif; font-size: 0.7em; }
+    .prose .ask { color: var(--hot); font-style: italic; }
+    .prose .turn {
+      color: var(--ink);
+      font-size: 1.08em;
+      max-width: 34ch;
+      margin-top: 1.25em;
+    }
+
+    .series {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 0.7rem;
+      font-weight: 500;
+    }
+    .kicker {
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+      line-height: 1.35;
+      color: var(--dim);
+      margin: 0 0 clamp(1.35rem, 3.5vw, 2rem);
+      letter-spacing: -0.01em;
+    }
+
+    .stage {
+      min-height: min(92vh, 56rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 6vw, 4rem) 0 clamp(2.5rem, 6vw, 4rem);
+    }
+    .case-q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.65rem, 8.5vw, 6.5rem);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      margin: 0 0 clamp(2rem, 5vw, 3.25rem);
+      max-width: 10.5ch;
+      color: var(--ink);
+    }
+
+    .ledger {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+    .ledger__row {
+      display: grid;
+      grid-template-columns: 2.5rem minmax(7rem, 11rem) minmax(0, 1fr);
+      gap: clamp(0.75rem, 2vw, 1.5rem);
+      align-items: baseline;
+      padding: clamp(1.15rem, 2.4vw, 1.55rem) 0;
+      border-bottom: 1px solid var(--line);
+      opacity: 0;
+      transform: translateY(0.65rem);
+      animation: rise 0.7s ease forwards;
+    }
+    .ledger__row:nth-child(1) { animation-delay: 0.12s; }
+    .ledger__row:nth-child(2) { animation-delay: 0.28s; }
+    .ledger__row:nth-child(3) { animation-delay: 0.44s; }
+    @keyframes rise {
+      to { opacity: 1; transform: none; }
+    }
+    @media (max-width: 640px) {
+      .ledger__row {
+        grid-template-columns: 2rem minmax(0, 1fr);
+        grid-template-rows: auto auto;
+      }
+      .ledger__who { grid-column: 2; }
+      .ledger__line {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 0.25rem;
+      }
+    }
+    .ledger__n {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--dim);
+      font-variant-numeric: tabular-nums;
+    }
+    .ledger__who {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--hot);
+    }
+    .ledger__line {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .escort {
+      padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 5rem);
+    }
+
+    .seam {
+      background: var(--stage);
+      color: var(--stage-ink);
+      padding: clamp(3rem, 8vw, 5.5rem) 0;
+    }
+    .seam .prose { color: var(--stage-soft); }
+    .seam .prose .turn { color: var(--stage-ink); }
+    .seam .prose .ask { color: var(--stage-hot); }
+    .seam .prose a { color: var(--stage-hot); }
+    .seam__lead {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+      line-height: 1.4;
+      color: var(--stage-dim);
+      margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+      max-width: 28rem;
+    }
+    .verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      margin: 0 0 clamp(2rem, 5vw, 3rem);
+      padding: clamp(1.5rem, 3vw, 2rem) 0;
+      border-top: 1px solid rgba(244, 242, 236, 0.16);
+      border-bottom: 1px solid rgba(244, 242, 236, 0.16);
+    }
+    @media (max-width: 700px) {
+      .verdict { grid-template-columns: 1fr; }
+    }
+    .verdict__claim {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+    }
+    .verdict__claim p {
+      margin: 0 0 1rem;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.35rem, 2.6vw, 1.95rem);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      color: var(--stage-ink);
+    }
+    .verdict__tag {
+      display: inline-block;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stage-hot);
+    }
+
+    .block {
+      padding: clamp(2.75rem, 6vw, 4.25rem) 0;
+    }
+    .block + .block {
+      border-top: 1px solid var(--line);
+    }
+    .block h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      max-width: 34rem;
+      color: var(--ink);
+    }
+
+    .return {
+      padding: clamp(3rem, 7vw, 5rem) 0;
+      border-top: 1px solid var(--line);
+    }
+    .return__q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.035em;
+      margin: 0 0 1.5rem;
+      max-width: 10ch;
+      color: var(--ink);
+    }
+
+    .carry {
+      padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 5vw, 3rem);
+      border-top: 1px solid var(--line);
+    }
+    .carry h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 2.8vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      color: var(--ink);
+    }
+    .carry__set {
+      margin: 0 0 2.25rem;
+      max-width: 36rem;
+    }
+    .carry__set:last-child { margin-bottom: 0; }
+    .carry__label {
+      display: block;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--hot);
+      margin: 0 0 0.85rem;
+    }
+    .carry ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: q;
+    }
+    .carry li {
+      counter-increment: q;
+      position: relative;
+      padding: 1rem 0 1rem 2.5rem;
+      border-top: 1px solid var(--line);
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.08rem, 1.6vw, 1.22rem);
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .carry li:last-child { border-bottom: 1px solid var(--line); }
+    .carry li::before {
+      content: counter(q);
+      position: absolute;
+      left: 0;
+      top: 1.1rem;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--hot);
+    }
+
+    .sources {
+      padding: 0 0 clamp(3.5rem, 7vw, 5rem);
+    }
+    .sources details {
+      max-width: 36rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+    .sources summary {
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .sources ol {
+      margin: 1rem 0 0;
+      padding: 0 0 0 1.15rem;
+      color: var(--soft);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+    .sources a { color: var(--hot); }
+
+    .dna {
+      margin: 0 auto;
+      max-width: 1120px;
+      padding: 0.75rem clamp(1.25rem, 4vw, 2.5rem) 0;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      color: var(--dim);
+    }
+    .dna summary {
+      cursor: pointer;
+      color: var(--hot);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+    }
+    .dna p { margin: 0.45rem 0 0; max-width: 44rem; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ledger__row {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="room-appearance.css?v=20260724170000" />
   <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
 
@@ -45,9 +433,6 @@
       gtag('config', 'G-0L41N5K2WV');
     });
   </script>
-
-  <script defer src="data.js?v=20260622250000"></script>
-  <script defer src="library.js?v=20260719173000"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,304 +470,222 @@
 }
   </script>
 </head>
-<body class="post-page" data-article-slug="the-mango-question" data-topic-id="reading-the-evidence">
+<body>
+    <div class="bar">
+    <a href="../index.html">Rajiv Vakani</a>
+    <a href="../insights.html">Insights</a>
+    <a href="../library.html">Library</a>
+    <strong>The Mango Question</strong>
+  </div>
 
-  <nav class="main-nav">
-    <div class="container nav-container">
-      <a href="../index.html" class="site-logo"><img src="../logo-mark.png?v=rv9" alt="" class="site-logo__mark" decoding="async" width="543" height="543">Rajiv Vakani</a>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../journey.html">Journey</a></li>
-        <li><a href="../insights.html" class="active">Insights</a></li>
-        <li><a href="../library.html">Library</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
+  <div class="skin" role="group" aria-label="Appearance">
+    <button type="button" class="skin__opt" data-skin="light" aria-pressed="true">Light</button>
+    <span class="skin__sep" aria-hidden="true">&middot;</span>
+    <button type="button" class="skin__opt" data-skin="dark" aria-pressed="false">Dark</button>
+  </div>
 
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
-      </button>
+<header class="stage" aria-label="The case">
+    <div class="rail">
+      <p class="series">Reading the evidence</p>
+      <p class="kicker">The Mango Question</p>
+      <h1 class="case-q">Can I still eat mangoes?</h1>
+
+      <ol class="ledger" aria-label="Answers already in the room">
+        <li class="ledger__row">
+          <span class="ledger__n">01</span>
+          <span class="ledger__who">My doctor said</span>
+          <p class="ledger__line">Watch the sugar. It raises blood glucose.</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">02</span>
+          <span class="ledger__who">My family says</span>
+          <p class="ledger__line">We&rsquo;ve eaten mangoes for generations.</p>
+        </li>
+        <li class="ledger__row">
+          <span class="ledger__n">03</span>
+          <span class="ledger__who">Online I keep seeing</span>
+          <p class="ledger__line">Confident takes in every direction. Each with &ldquo;evidence.&rdquo;</p>
+        </li>
+      </ol>
     </div>
-  </nav>
+  </header>
 
-  <div class="mobile-menu-overlay"></div>
+  <section class="escort" aria-label="Enter">
+    <div class="rail">
+      <div class="prose read">
+        <p>If you came here for a yes or no on mangoes, stay.</p>
+        <p>That&rsquo;s a fair reason to be here.</p>
 
-  <main>
-
-    <header class="post-header">
-      <div class="post-wrap">
-        <p class="post-anchor">
-          in <a href="topics/reading-the-evidence.html">Reading the evidence</a>
-        </p>
-        <h1 class="post-title">The Mango Question</h1>
-        <p class="post-dek">Before you decide who&rsquo;s right, figure out what question is being answered.</p>
-        <p class="post-meta">
-          <span>Essay</span>
-          <span>June 9, 2026</span>
-        </p>
-      </div>
-    </header>
-
-    <section class="post-glance" aria-label="At a glance">
-      <div class="post-wrap">
-        <p class="post-glance__label">At a glance</p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">What started this</span>
-          When prediabetes and diabetes entered my family, one question kept surfacing: can I still eat mangoes? The answers collided, and everyone seemed to have evidence.
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">What caught my attention</span>
-          At first the disagreement looked straightforward. The deeper I looked, the less sure I became that everyone was arguing about the same thing.
-        </p>
-
-        <p class="post-glance__beat">
-          <span class="post-glance__beat-label">Why it matters</span>
-          Before deciding who&rsquo;s right, it helps to ask what question a claim is answering.
-        </p>
-      </div>
-    </section>
-
-    <article class="post-body" id="post-body">
-      <div class="post-wrap">
-
-        <p>
-          Over the years, I&rsquo;ve watched friends and family members confront prediabetes and diabetes. One question seemed to come up repeatedly:
-        </p>
-
-        <p>Can I still eat mangoes?</p>
-
+        <p>Over the years, I&rsquo;ve watched friends and family members confront prediabetes and diabetes. One question seemed to come up repeatedly.</p>
         <p>The answers were all over the place.</p>
+        <p>Some people argued that mangoes are loaded with sugar and should be avoided. Others pointed out that South Asians have been eating mangoes for generations and questioned why they had suddenly become a problem. Doctors talked about blood glucose. Family members talked about tradition. Social media offered confident opinions in every direction.</p>
+        <p>What struck me wasn&rsquo;t the volume of the disagreement. It was that everyone seemed to have evidence behind their position. The doctor pointed to glucose readings. Researchers cited studies. Family members offered generations of lived experience. Influencers had mechanisms, often pulled from the same papers the researchers were reading.</p>
+        <p>These weren&rsquo;t strangers shouting past each other. They were people with real information, arriving at different conclusions.</p>
 
-        <p>
-          Some people argued that mangoes are loaded with sugar and should be avoided. Others pointed out that South Asians have been eating mangoes for generations and questioned why they had suddenly become a problem. Doctors talked about blood glucose. Family members talked about tradition. Social media offered confident opinions in every direction.
-        </p>
+        <p class="ask">Look at those three answers again. Not at who is right.</p>
+        <p class="turn">What if they aren&rsquo;t answering the same question?</p>
 
-        <p>
-          What struck me wasn&rsquo;t the volume of the disagreement. It was that everyone seemed to have evidence behind their position. The doctor pointed to glucose readings. Researchers cited studies. Family members offered generations of lived experience. Influencers had mechanisms, often pulled from the same papers the researchers were reading.
-        </p>
+        <p>The more I looked into it, the more I realized the disagreement wasn&rsquo;t really about mangoes.</p>
+        <p>It might not have been a disagreement in the form it first appeared. Before you decide whether two people contradict each other, it helps to ask if they&rsquo;re answering the same question.</p>
+        <p>For a long time I&rsquo;d assumed the hard part of nutrition was finding good information. The mango question started to teach me something different: the harder part is often figuring out which piece of information answers the actual question.</p>
+        <p>That doesn&rsquo;t mean everyone is right. It doesn&rsquo;t mean all claims deserve equal weight. Evidence quality still matters. Some nutrition arguments are genuinely conflicting answers to the same, well-formed question. The move is diagnostic, not absolving.</p>
+      </div>
+    </div>
+  </section>
 
-        <p>
-          These weren&rsquo;t strangers shouting past each other. They were people with real information, arriving at different conclusions.
-        </p>
+  <section class="seam" aria-label="Two true statements">
+    <div class="rail">
+      <p class="seam__lead">Consider two things people said.</p>
 
-        <h2>Before asking who is right, ask what question is being answered</h2>
+      <div class="verdict" aria-label="Both true">
+        <blockquote class="verdict__claim">
+          <p>&ldquo;Mangoes contain sugar and raise blood glucose.&rdquo;</p>
+          <span class="verdict__tag">True</span>
+        </blockquote>
+        <blockquote class="verdict__claim">
+          <p>&ldquo;Fruit is healthy and people have been eating mangoes for centuries.&rdquo;</p>
+          <span class="verdict__tag">Also true</span>
+        </blockquote>
+      </div>
 
-        <p>
-          The more I looked into it, the more I realized the disagreement wasn&rsquo;t really about mangoes.
-        </p>
+      <div class="prose read">
+        <p>The problem is that neither statement is all that useful on its own. They both leave out the part that would explain why the other one feels wrong.</p>
+        <p>They sound like opposing answers to the same question. But they may be partial answers to different questions. One speaks to <a href="the-glycemic-index-question.html">what happens metabolically when you eat mango</a>. The other speaks to whether mango belongs in a normal, healthy diet at all.</p>
+      </div>
+    </div>
+  </section>
 
-        <p>
-          It might not have been a disagreement in the form it first appeared. Before you decide whether two people contradict each other, it helps to ask if they&rsquo;re answering the same question.
-        </p>
-
-        <p>
-          For a long time I&rsquo;d assumed the hard part of nutrition was finding good information. The mango question started to teach me something different: the harder part is often figuring out which piece of information answers the actual question.
-        </p>
-
-        <p>
-          That doesn&rsquo;t mean everyone is right. It doesn&rsquo;t mean all claims deserve equal weight. Evidence quality still matters. Some nutrition arguments are genuinely conflicting answers to the same, well-formed question. The move is diagnostic, not absolving.
-        </p>
-
-        <h2>The mango question</h2>
-
-        <p>Consider two things people said:</p>
-
-        <p>&ldquo;Mangoes contain sugar and raise blood glucose.&rdquo;</p>
-
-        <p>That&rsquo;s true.</p>
-
-        <p>&ldquo;Fruit is healthy and people have been eating mangoes for centuries.&rdquo;</p>
-
-        <p>That&rsquo;s also true.</p>
-
-        <p>
-          The problem is that neither statement is all that useful on its own. They both leave out the part that would explain why the other one feels wrong.
-        </p>
-
-        <p>
-          They sound like opposing answers to the same question. But they may be partial answers to different questions. One speaks to <a href="the-glycemic-index-question.html">what happens metabolically when you eat mango</a>. The other speaks to whether mango belongs in a normal, healthy diet at all.
-        </p>
-
-        <p>
-          When I eventually looked into the guidance from diabetes education programs and the American Diabetes Association, the answer wasn&rsquo;t &ldquo;never eat mangoes.&rdquo; Fruit is part of the eating patterns the ADA recommends.<sup><a href="#src-1">1</a></sup> The question being asked isn&rsquo;t whether to eat fruit, but how to fit it into the day.
-        </p>
-
-        <p>
-          Diabetes educators teach people to think about fruit in terms of carbohydrate. The ADA&rsquo;s general guidance treats a small piece of whole fruit, or about half a cup of cut-up fruit, as one serving, roughly 15 grams of carbohydrate.<sup><a href="#src-1">1</a></sup> For mango, half a cup is about a small handful of diced flesh. A typical medium mango works out to two or three of those servings, and a large one can run higher still.
-        </p>
-
+  <section class="block" aria-label="What the guidance is actually about">
+    <div class="rail">
+      <div class="prose read">
+        <p>When I eventually looked into the guidance from diabetes education programs and the American Diabetes Association, the answer wasn&rsquo;t &ldquo;never eat mangoes.&rdquo; Fruit is part of the eating patterns the ADA recommends.<sup><a href="#src-1">1</a></sup> The question being asked isn&rsquo;t whether to eat fruit, but how to fit it into the day.</p>
+        <p>Diabetes educators teach people to think about fruit in terms of carbohydrate. The ADA&rsquo;s general guidance treats a small piece of whole fruit, or about half a cup of cut-up fruit, as one serving, roughly 15 grams of carbohydrate.<sup><a href="#src-1">1</a></sup> For mango, half a cup is about a small handful of diced flesh. A typical medium mango works out to two or three of those servings, and a large one can run higher still.</p>
         <p>Once I learned that, the arguments suddenly made more sense.</p>
+        <p>The person warning that mangoes spike blood sugar wasn&rsquo;t wrong. Eaten the way mangoes are often enjoyed, a whole one in season on a hot afternoon, a single serving in the popular sense is several servings in the dietary sense, all at once.</p>
+        <p>The relative insisting that mangoes had always been eaten wasn&rsquo;t wrong either. The question was never whether mangoes belong in the diet. The question was quantity, frequency, and what else was on the plate.</p>
+        <p>None of them was wrong, exactly. They were each holding onto a different piece of a more complicated picture, and the picture only makes sense once all the pieces are on the table.</p>
+        <p>And even that picture is plural. The response to half a cup of mango can look different depending on what else is on the plate. People&rsquo;s responses vary. Activity, sleep, and medication shape what happens after the meal.</p>
+        <p>There isn&rsquo;t a single sentence that captures what mango does in the body, because what it does depends on a half dozen other things we don&rsquo;t tend to mention when we ask the question.</p>
+      </div>
+    </div>
+  </section>
 
-        <p>
-          The person warning that mangoes spike blood sugar wasn&rsquo;t wrong. Eaten the way mangoes are often enjoyed, a whole one in season on a hot afternoon, a single serving in the popular sense is several servings in the dietary sense, all at once.
-        </p>
+  <section class="block" aria-label="Why the disagreement looks bigger than it is">
+    <div class="rail">
+      <h2>Why the disagreement looks bigger than it is</h2>
+      <div class="prose read">
+        <p>&ldquo;Can I still eat mangoes?&rdquo; is one sentence. It quietly stands in for several questions at once: Is fruit allowed? How much carbohydrate is in a serving? What happens to my glucose afterward? What role does this food play in my culture and my life?</p>
+        <p>Real conversations reward short answers. A family dinner isn&rsquo;t a diabetes education session. Social media isn&rsquo;t built for &ldquo;it depends.&rdquo; So partial truths get compressed into positions that sound mutually exclusive.</p>
+      </div>
+    </div>
+  </section>
 
-        <p>
-          The relative insisting that mangoes had always been eaten wasn&rsquo;t wrong either. The question was never whether mangoes belong in the diet. The question was quantity, frequency, and what else was on the plate.
-        </p>
-
-        <p>
-          None of them was wrong, exactly. They were each holding onto a different piece of a more complicated picture, and the picture only makes sense once all the pieces are on the table.
-        </p>
-
-        <p>
-          And even that picture is plural. The response to half a cup of mango can look different depending on what else is on the plate. People&rsquo;s responses vary. Activity, sleep, and medication shape what happens after the meal.
-        </p>
-
-        <p>
-          There isn&rsquo;t a single sentence that captures what mango does in the body, because what it does depends on a half dozen other things we don&rsquo;t tend to mention when we ask the question.
-        </p>
-
-        <h2>Why the disagreement looks bigger than it is</h2>
-
-        <p>
-          &ldquo;Can I still eat mangoes?&rdquo; is one sentence. It quietly stands in for several questions at once: Is fruit allowed? How much carbohydrate is in a serving? What happens to my glucose afterward? What role does this food play in my culture and my life?
-        </p>
-
-        <p>
-          Real conversations reward short answers. A family dinner isn&rsquo;t a diabetes education session. Social media isn&rsquo;t built for &ldquo;it depends.&rdquo; So partial truths get compressed into positions that sound mutually exclusive.
-        </p>
-
-        <h2>How compression happens: translation</h2>
-
-        <p>
-          The mango argument compressed in real time, through the doctor&rsquo;s glucose framing, the relative&rsquo;s tradition, the headlines and posts each of them had run into. No one had to lie for the conversation to sound like a fight.
-        </p>
-
-        <p>
-          Most of us never get nutrition information straight from the research. It reaches us through articles, podcasts, doctors, headlines, family, and friends, usually translated several times along the way.
-        </p>
-
-        <p>
-          Every hop is selective. Something is preserved and something is left behind. Often what drops away isn&rsquo;t the fact itself, but the scope of the question it was answering.
-        </p>
-
-        <p>
-          Translation can add meaning as easily as it removes context. What survives the pipeline isn&rsquo;t only shorter. It&rsquo;s shaped.
-        </p>
-
+  <section class="block" aria-label="How compression happens">
+    <div class="rail">
+      <h2>How compression happens: translation</h2>
+      <div class="prose read">
+        <p>The mango argument compressed in real time, through the doctor&rsquo;s glucose framing, the relative&rsquo;s tradition, the headlines and posts each of them had run into. No one had to lie for the conversation to sound like a fight.</p>
+        <p>Most of us never get nutrition information straight from the research. It reaches us through articles, podcasts, doctors, headlines, family, and friends, usually translated several times along the way.</p>
+        <p>Every hop is selective. Something is preserved and something is left behind. Often what drops away isn&rsquo;t the fact itself, but the scope of the question it was answering.</p>
+        <p>Translation can add meaning as easily as it removes context. What survives the pipeline isn&rsquo;t only shorter. It&rsquo;s shaped.</p>
         <p>That shaping isn&rsquo;t unique to one food or one family conversation.</p>
+      </div>
+    </div>
+  </section>
 
-        <h2>This pattern shows up everywhere</h2>
+  <section class="block" aria-label="This pattern shows up everywhere">
+    <div class="rail">
+      <h2>This pattern shows up everywhere</h2>
+      <div class="prose read">
+        <p>Years ago, resveratrol became one of the most talked-about compounds in nutrition. Early research suggested it might have interesting biological effects. Somewhere along the way, that became a much simpler public message: red wine is good for longevity.</p>
+        <p>What often got left out was that many of the early findings came from laboratory and animal research, and that the amounts used in some experiments were far greater than what someone would realistically obtain from a glass of wine.</p>
+        <p>A partial finding became a complete-sounding answer to a question most people never asked precisely. The compressible sentence traveled. The scope of the question didn&rsquo;t.</p>
+      </div>
+    </div>
+  </section>
 
-        <p>
-          Years ago, resveratrol became one of the most talked-about compounds in nutrition. Early research suggested it might have interesting biological effects. Somewhere along the way, that became a much simpler public message: red wine is good for longevity.
-        </p>
-
-        <p>
-          What often got left out was that many of the early findings came from laboratory and animal research, and that the amounts used in some experiments were far greater than what someone would realistically obtain from a glass of wine.
-        </p>
-
-        <p>
-          A partial finding became a complete-sounding answer to a question most people never asked precisely. The compressible sentence traveled. The scope of the question didn&rsquo;t.
-        </p>
-
-        <h2>Why the compressible message wins</h2>
-
+  <section class="block" aria-label="Why the compressible message wins">
+    <div class="rail">
+      <h2>Why the compressible message wins</h2>
+      <div class="prose read">
         <p>The same thing happens today.</p>
-
-        <p>
-          Products like AG1 aren&rsquo;t successful because millions of people independently reviewed the research behind every ingredient. Most consumers are buying into a story that&rsquo;s already been translated for them.
-        </p>
-
-        <p>
-          Simple narratives travel better than multi-part answers. Incentives select for the compressible claim. That&rsquo;s one reason question mismatch persists in public: the loudest position is often the one that fits in a headline, not the one that fits the full question.
-        </p>
-
-        <h2>When the lens has limits</h2>
-
-        <p>
-          This lens is diagnostic, not absolving. The distinction matters: different answers to different questions isn&rsquo;t the same thing as genuinely conflicting answers to the same question. The first is often apparent disagreement. The second is a real disagreement, and the kind that evidence, not reframing, has to resolve.
-        </p>
-
-        <h2>Two questions I return to</h2>
-
-        <p><strong>First: what question is this claim answering?</strong></p>
-
-        <p>What question did I think I was asking?</p>
-
-        <p>Are these two claims even answers to the same question?</p>
-
-        <p><strong>Second: what was lost, added, or compressed?</strong></p>
-
-        <p>What was lost?</p>
-
-        <p>What was added?</p>
-
-        <p>What context disappeared?</p>
-
-        <p>What would the answer look like if we put that context back in?</p>
-
+        <p>Products like AG1 aren&rsquo;t successful because millions of people independently reviewed the research behind every ingredient. Most consumers are buying into a story that&rsquo;s already been translated for them.</p>
+        <p>Simple narratives travel better than multi-part answers. Incentives select for the compressible claim. That&rsquo;s one reason question mismatch persists in public: the loudest position is often the one that fits in a headline, not the one that fits the full question.</p>
       </div>
-    </article>
+    </div>
+  </section>
 
-    <section class="post-sources" aria-label="Sources">
-      <div class="post-wrap">
-        <details class="post-sources__disclosure">
-          <summary>Sources <span class="post-sources__cue" aria-hidden="true">Open sources</span></summary>
-          <div class="post-sources__disclosure-body">
-          <ol>
-                        <li id="src-1">
-                          American Diabetes Association. &ldquo;Fruit.&rdquo; diabetes.org.
-                          <a href="https://diabetes.org/food-nutrition/reading-food-labels/fruit" target="_blank" rel="noopener">https://diabetes.org/food-nutrition/reading-food-labels/fruit</a>
-                        </li>
-                      </ol>
-          </div>
-        </details>
+  <section class="block" aria-label="When the lens has limits">
+    <div class="rail">
+      <h2>When the lens has limits</h2>
+      <div class="prose read">
+        <p>This lens is diagnostic, not absolving. The distinction matters: different answers to different questions isn&rsquo;t the same thing as genuinely conflicting answers to the same question. The first is often apparent disagreement. The second is a real disagreement, and the kind that evidence, not reframing, has to resolve.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="post-next" aria-label="Next">
-      <div class="post-wrap" data-post-next></div>
-    </section>
-
-    <section class="post-colophon" aria-label="Signature">
-      <div class="post-wrap">
-        <p>
-          <a href="../about.html">Rajiv Vakani</a>. Writing on nutrition from New York.<br class="colophon-break" aria-hidden="true">
-          Since 2023. <a href="../contact.html">Email</a>.
-        </p>
+  <section class="return" aria-label="Return to the question">
+    <div class="rail">
+      <p class="return__q">Can I still eat mangoes?</p>
+      <div class="prose read">
+        <p>Same question as the top of the page.</p>
+        <p>It no longer looks like a simple yes-or-no fight between smart people.</p>
+        <p>It looks like a place where several true answers can sit next to each other, as long as you keep straight which question each one is answering.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section class="carry" aria-label="Two questions I return to">
+    <div class="rail">
+      <h2>Two questions I return to</h2>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025&ndash;2026 Rajiv Vakani</p>
-      <div class="footer-social" aria-label="Social links">
-        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
-        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg class="social-icon" aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
-        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="social-icon" aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+      <div class="carry__set">
+        <span class="carry__label">First</span>
+        <ol>
+          <li>What question is this claim answering?</li>
+          <li>What question did I think I was asking?</li>
+          <li>Are these two claims even answers to the same question?</li>
+        </ol>
+      </div>
+
+      <div class="carry__set">
+        <span class="carry__label">Second: what was lost, added, or compressed?</span>
+        <ol>
+          <li>What was lost?</li>
+          <li>What was added?</li>
+          <li>What context disappeared?</li>
+          <li>What would the answer look like if we put that context back in?</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sources" aria-label="Sources">
+    <div class="rail">
+      <details>
+        <summary>Sources</summary>
+        <ol>
+          <li id="src-1">
+            American Diabetes Association. &ldquo;Fruit.&rdquo; diabetes.org.
+            <a href="https://diabetes.org/food-nutrition/reading-food-labels/fruit" target="_blank" rel="noopener">https://diabetes.org/food-nutrition/reading-food-labels/fruit</a>
+          </li>
+        </ol>
+      </details>
+    </div>
+  </section>
+
+  
+  <footer class="room-foot">
+    <div class="room-foot__inner">
+      <p class="room-foot__legal">&copy; 2025&ndash;2026 Rajiv Vakani</p>
+      <div class="room-foot__social" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
       </div>
     </div>
   </footer>
 
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var menuToggle = document.querySelector('.menu-toggle');
-      var navLinks = document.querySelector('.nav-links');
-      var overlay = document.querySelector('.mobile-menu-overlay');
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function () {
-          navLinks.classList.toggle('active');
-          menuToggle.classList.toggle('active');
-          if (overlay) overlay.classList.toggle('active');
-          document.body.classList.toggle('menu-open');
-        });
-      }
-      if (overlay) {
-        overlay.addEventListener('click', function () {
-          navLinks.classList.remove('active');
-          menuToggle.classList.remove('active');
-          overlay.classList.remove('active');
-          document.body.classList.remove('menu-open');
-        });
-      }
-    });
-  </script>
+  <script src="room-appearance.js?v=20260724170000" defer></script>
 </body>
 </html>

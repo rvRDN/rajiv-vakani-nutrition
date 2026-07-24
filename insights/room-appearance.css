@@ -1,0 +1,106 @@
+/* Insights room appearance control
+   Quiet Light · Dark type. Shared across mockups and (next) live Insights. */
+.skin {
+  position: fixed;
+  top: 3.35rem;
+  right: 1.15rem;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.skin__opt {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dim, rgba(12, 16, 23, 0.46));
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.skin__opt:hover,
+.skin__opt:focus-visible {
+  color: var(--hot, #c24a1a);
+  outline: none;
+}
+.skin__opt.is-active {
+  color: var(--ink, #0c1017);
+  cursor: default;
+}
+.skin__opt.is-active:hover,
+.skin__opt.is-active:focus-visible {
+  color: var(--ink, #0c1017);
+}
+.skin__sep {
+  font-size: 0.68rem;
+  color: var(--line, rgba(12, 16, 23, 0.12));
+  letter-spacing: 0;
+  user-select: none;
+}
+@media (max-width: 520px) {
+  .skin {
+    top: auto;
+    bottom: 1.25rem;
+    right: 1.15rem;
+  }
+  /* Skin moves off the bar on phones; free the right padding so the triad can wrap cleanly */
+  .bar {
+    padding-right: 1.15rem !important;
+  }
+}
+/* Live pages without mockup bar: sit in the true top-right */
+html.insights-live .skin {
+  top: 1rem;
+}
+
+/* Room footer: preferred social + copyright, matches investigation paper */
+.room-foot {
+  margin-top: 3rem;
+  border-top: 1px solid var(--line, rgba(12, 16, 23, 0.12));
+  padding: 1.5rem clamp(1.25rem, 4vw, 2.5rem) 2.25rem;
+  background: color-mix(in srgb, var(--bg, #f4f1ea) 92%, transparent);
+}
+.room-foot__inner {
+  max-width: 42rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
+.room-foot__legal {
+  margin: 0;
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--dim, rgba(12, 16, 23, 0.46));
+}
+.room-foot__social {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+}
+.room-foot__social a {
+  color: var(--dim, rgba(12, 16, 23, 0.46));
+  display: inline-flex;
+  transition: color 0.15s ease;
+}
+.room-foot__social a:hover,
+.room-foot__social a:focus-visible {
+  color: var(--hot, #c24a1a);
+  outline: none;
+}
+.room-foot__social svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: block;
+}
+html[data-skin="dark"] .room-foot {
+  background: color-mix(in srgb, var(--bg, #0c1017) 92%, transparent);
+}
