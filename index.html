@@ -28,6 +28,7 @@
   <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="rajiv-styles.min.css?v=20260715063000">
+  <link rel="stylesheet" href="home-hero.css?v=20260725027000">
   <link rel="icon" type="image/png" href="favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="favicon-512.png?v=rv7" />
 
@@ -94,6 +95,7 @@
        Welcome stays cream; handoff owns cream → ink; topics stays dark.
        No fade split across abutting section backgrounds. */
     .home-page__hero-field {
+      position: relative;
       background-color: #15120e;
     }
     .home-page__handoff {
@@ -132,6 +134,8 @@
     /* --------- 1. WELCOME — animated warm gradient field --------- */
 
     .home-page .welcome {
+      position: relative;
+      z-index: 2;
       padding-top: clamp(108px, 14vh, 160px);
       padding-bottom: var(--section-breathe);
       background: linear-gradient(180deg, #faf5ea 0%, #f7eddc 100%);
@@ -248,6 +252,14 @@
       font-style: italic;
       font-weight: 500;
       color: var(--accent);
+    }
+    /* Lede arrives via weather; no soft slide-up after. */
+    .home-page .lede-primary--from-weather {
+      opacity: 0;
+    }
+    .home-page .lede-primary--from-weather.is-arrived {
+      opacity: 1;
+      transition: opacity 0.9s ease;
     }
 
     .home-page .lede-secondary {
@@ -1438,6 +1450,9 @@
         transform: none;
         transition: none;
       }
+      .home-page .lede-primary--from-weather {
+        opacity: 1;
+      }
       .home-page .field__item,
       .home-page .field__drift {
         animation: none;
@@ -1516,6 +1531,13 @@
 
     <div class="home-page__hero-field">
 
+    <!-- Entrance: certainty weather. Additive overlay. Constellation stays. -->
+    <div class="home-hero home-hero--entrance" aria-hidden="true">
+      <div class="home-hero__atmosphere"></div>
+      <div class="home-hero__claims"></div>
+      <p class="home-hero__thesis">Certainty arrives faster than <em>understanding</em>.</p>
+    </div>
+
     <!-- 1. WELCOME -->
     <header class="section welcome">
       <div class="section__inner welcome__content">
@@ -1528,11 +1550,11 @@
 
         <h1 class="name" data-reveal data-reveal-delay="1">Rajiv Vakani</h1>
 
-        <p class="lede-primary" data-reveal data-reveal-delay="2">
-          Certainty arrives faster than understanding.
+        <p class="lede-primary lede-primary--from-weather">
+          Certainty arrives faster than <em class="emph">understanding</em>.
         </p>
 
-        <p class="lede-secondary" data-reveal data-reveal-delay="3">
+        <p class="lede-secondary" data-reveal data-reveal-delay="2">
           Food, health, evidence, and the space between the first answer and <em class="emph">the better one</em>.
         </p>
 
@@ -1789,26 +1811,48 @@
 
   <script defer src="insights/data.js?v=20260719180000"></script>
   <script defer src="insights/library.js?v=20260720010000"></script>
+  <script defer src="home-hero.js?v=20260725027000"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
 
-      /* Scroll-triggered reveal — IntersectionObserver. */
+      /* Scroll-triggered reveal — IntersectionObserver.
+         Welcome waits until the entrance weather finishes. */
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const revealTargets = document.querySelectorAll('[data-reveal]');
+      const welcomeReveals = document.querySelectorAll('.welcome [data-reveal]');
+      const laterReveals = Array.prototype.filter.call(revealTargets, function (el) {
+        return !el.closest('.welcome');
+      });
 
-      if (reduceMotion || !('IntersectionObserver' in window)) {
-        revealTargets.forEach(el => el.classList.add('is-revealed'));
-      } else {
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
+      function observeReveals(nodes) {
+        if (reduceMotion || !('IntersectionObserver' in window)) {
+          nodes.forEach(function (el) { el.classList.add('is-revealed'); });
+          return;
+        }
+        const io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
             if (entry.isIntersecting) {
               entry.target.classList.add('is-revealed');
               io.unobserve(entry.target);
             }
           });
         }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        nodes.forEach(function (el) { io.observe(el); });
+      }
 
-        revealTargets.forEach(el => io.observe(el));
+      observeReveals(laterReveals);
+
+      function releaseWelcome() {
+        const lede = document.querySelector('.lede-primary--from-weather');
+        if (lede) lede.classList.add('is-arrived');
+        observeReveals(Array.prototype.slice.call(welcomeReveals));
+        document.body.classList.remove('home-hero-active');
+      }
+
+      if (reduceMotion) {
+        releaseWelcome();
+      } else {
+        document.addEventListener('homehero:complete', releaseWelcome, { once: true });
       }
 
       /* Constellation field — mobile orbit phrases; desktop wandering attention. */
