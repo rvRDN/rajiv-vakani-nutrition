@@ -57,7 +57,8 @@ body.topic-wing {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 30;
+  /* Above .mobile-menu-overlay (999) so links stay clickable. */
+  z-index: 1000;
   background: transparent !important;
   border-bottom: none !important;
   box-shadow: none !important;
@@ -92,8 +93,13 @@ body.topic-wing {
 .topic-wing .main-nav.scrolled .hamburger {
   background: #0b0d12 !important;
 }
+/* Keep overlay off until .active. Forcing display:block left an
+   invisible full-viewport layer over the page and ate nav clicks. */
 .topic-wing .mobile-menu-overlay {
-  display: block !important;
+  pointer-events: none;
+}
+.topic-wing .mobile-menu-overlay.active {
+  pointer-events: auto;
 }
 .topic-wing .site-footer {
   display: block !important;
