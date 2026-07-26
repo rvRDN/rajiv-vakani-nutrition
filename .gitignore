@@ -11,3 +11,11 @@ Thumbs.db
 # Leftover rescue trees / one-off dumps (do not re-add)
 recovery/
 
+# Retired design experiments / mockups (do not re-add)
+home-concepts/
+home-next.html
+insights/mockups/
+insights/topic-wing.css
+evidence/mockups/
+adhd/
+
