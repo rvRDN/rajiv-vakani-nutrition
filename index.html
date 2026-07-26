@@ -50,10 +50,10 @@
 
   <style>
     /* ============================================================
-       Homepage — two jobs only.
-       1) Who I am / what I do (professional + networking)
-       2) The work on this site (writing + rooms), complete without Insights
-       Keep: weather entrance + constellation craft.
+       Homepage — two acts.
+       Act I: who I am (welcome, constellation, origin, continue).
+       Act II: the work (rooms, then writing stage).
+       Keep weather + constellation craft. No generic dumps.
        ============================================================ */
 
     :root {
@@ -223,24 +223,13 @@
       line-height: 1.1;
       letter-spacing: -0.01em;
       color: var(--ink);
-      margin: 0 0 18px 0;
+      margin: 0 0 32px 0;
       /* Defensive overrides — the global stylesheet applies
          text-shadow and text-align: center to every <h1> site-wide.
          The hero column is left-aligned editorial; the name needs to
          match without any drop-shadow. */
       text-shadow: none;
       text-align: left;
-    }
-
-    /* Who / what — professional identity before the method thesis. */
-    .home-page .role {
-      font-family: 'Lora', Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(1.2rem, 1.7vw, 1.42rem);
-      line-height: 1.45;
-      color: var(--ink);
-      margin: 0 0 28px 0;
-      max-width: 34em;
     }
 
     /* The LEDE at display scale. Trimmed slightly from the previous
@@ -749,9 +738,8 @@
       animation-delay: var(--enter-delay, 0s);
     }
 
-    /* --------- 3. COMPOSITION — person movement only ---------
-       Journey and What's open keep the mark + kicker spine.
-       The body of the work opens in .work below, as a second movement. */
+    /* --------- 3. COMPOSITION — Act I close after constellation ---------
+       Origin beat, then a crafted continue plate (networking). */
 
     .home-page .composition {
       padding-top: var(--section-breathe);
@@ -814,36 +802,6 @@
       padding-left: 52px;
     }
 
-    .home-page .beat__items {
-      list-style: none;
-      padding: 0 0 0 52px;
-      margin: 0;
-    }
-    .home-page .beat__items li {
-      display: grid;
-      grid-template-columns: minmax(140px, max-content) 1fr;
-      gap: 20px;
-      align-items: baseline;
-      padding: 18px 0;
-      border-top: 1px solid var(--rule);
-      font-family: 'Lora', Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(1.05rem, 1.32vw, 1.18rem);
-      line-height: 1.5;
-      color: var(--ink);
-    }
-    .home-page .beat__items li:last-child {
-      border-bottom: 1px solid var(--rule);
-    }
-    .home-page .beat__kind {
-      font-style: italic;
-      font-weight: 500;
-      color: var(--accent);
-    }
-    .home-page .beat__what {
-      color: var(--ink);
-    }
-
     .home-page .beat__exit {
       font-family: 'Lora', Georgia, serif;
       font-style: italic;
@@ -852,6 +810,64 @@
       color: var(--muted);
       margin: 28px 0 0 0;
       padding-left: 52px;
+    }
+
+    /* Act I networking close — three destinations with purpose, not a link dump. */
+    .home-page .continue {
+      margin: clamp(8px, 2vh, 20px) 0 0;
+      max-width: 720px;
+    }
+    .home-page .continue__kicker {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.05rem, 1.32vw, 1.22rem);
+      line-height: 1.45;
+      color: var(--muted);
+      margin: 0 0 28px 0;
+    }
+    .home-page .continue__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid var(--rule);
+    }
+    .home-page .continue__list li {
+      border-bottom: 1px solid var(--rule);
+    }
+    .home-page .continue__link {
+      display: grid;
+      grid-template-columns: minmax(7.5rem, 9rem) minmax(0, 1fr);
+      gap: 1rem 1.75rem;
+      align-items: baseline;
+      padding: 22px 0 24px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .home-page .continue__name {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      transition: color 0.2s ease;
+    }
+    .home-page .continue__line {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .home-page .continue__link:hover .continue__name,
+    .home-page .continue__link:focus-visible .continue__name {
+      color: var(--accent);
+    }
+    .home-page .continue__link:focus-visible {
+      outline: none;
     }
 
     .home-page .beat--signature .beat__kicker {
@@ -900,9 +916,8 @@
       border-bottom-color: var(--accent) !important;
     }
 
-    /* --------- 4. WORK — writing + rooms as equal movements ---------
-       Dark band. If someone never opens Insights, this section still
-       has to carry the site’s proof and architecture. */
+    /* --------- 4. WORK — Act II: rooms, then writing stage ---------
+       Dark band. Complete without Insights. Series first. */
 
     .home-page .work {
       --work-ink: #f4ece2;
@@ -949,7 +964,6 @@
 
     .home-page .work-movement {
       margin: 0 0 clamp(64px, 10vh, 100px) 0;
-      padding-top: clamp(8px, 1.5vh, 16px);
     }
     .home-page .work-movement:last-of-type {
       margin-bottom: clamp(40px, 6vh, 56px);
@@ -981,56 +995,73 @@
       max-width: 34em;
     }
 
-    /* Featured investigation — same gravity class as a room doorway. */
-    .home-page .work-feature {
+    /* Writing as its own composition inside the dark band. */
+    .home-page .work-movement--writing {
+      margin-top: clamp(12px, 2vh, 24px);
+      padding: clamp(36px, 5vh, 52px) clamp(22px, 3vw, 36px);
+      border: 1px solid rgba(244, 236, 226, 0.12);
+      background:
+        radial-gradient(ellipse 80% 60% at 12% 0%,
+          rgba(224, 160, 120, 0.1) 0%,
+          transparent 55%),
+        linear-gradient(180deg,
+          rgba(255, 248, 236, 0.035) 0%,
+          rgba(0, 0, 0, 0.18) 100%);
+    }
+    .home-page .work-stage {
       display: block;
       text-decoration: none;
       color: inherit;
-      padding: clamp(28px, 4vh, 40px) 0;
-      border-top: 1px solid var(--work-rule);
+      margin: 0 0 clamp(28px, 4vh, 40px) 0;
+      padding: 0 0 clamp(28px, 4vh, 36px);
       border-bottom: 1px solid var(--work-rule);
-      margin: 0 0 clamp(8px, 1.5vh, 16px) 0;
-      transition: border-color 0.25s ease;
     }
-    .home-page .work-feature:hover,
-    .home-page .work-feature:focus-visible {
-      border-color: rgba(224, 160, 120, 0.4);
+    .home-page .work-stage:focus-visible {
       outline: none;
     }
-    .home-page .work-feature:hover .work-feature__name,
-    .home-page .work-feature:focus-visible .work-feature__name {
-      color: var(--work-accent);
-    }
-    .home-page .work-feature__kicker {
+    .home-page .work-stage__question {
       display: block;
-      font-family: 'Inter Tight', 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--work-accent);
-      margin: 0 0 14px 0;
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      line-height: 1.4;
+      color: var(--work-muted);
+      margin: 0 0 18px 0;
+      max-width: 28em;
     }
-    .home-page .work-feature__name {
+    .home-page .work-stage__name {
       display: block;
       font-family: 'Lora', Georgia, serif;
       font-weight: 600;
-      font-size: clamp(1.55rem, 2.8vw, 2.15rem);
-      line-height: 1.18;
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      line-height: 1.15;
       letter-spacing: -0.02em;
       color: var(--work-ink);
-      margin: 0 0 12px 0;
-      max-width: 18ch;
+      margin: 0 0 16px 0;
+      max-width: 16ch;
       transition: color 0.2s ease;
     }
-    .home-page .work-feature__why {
-      display: block;
-      font-family: 'Lora', Georgia, serif;
-      font-size: clamp(1.05rem, 1.3vw, 1.18rem);
-      line-height: 1.5;
-      color: var(--work-muted);
-      max-width: 36em;
-      margin: 0;
+    .home-page .work-stage__open {
+      display: inline-block;
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--work-accent);
+      border-bottom: 1px solid rgba(224, 160, 120, 0.45);
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .home-page .work-stage:hover .work-stage__name,
+    .home-page .work-stage:focus-visible .work-stage__name {
+      color: var(--work-accent);
+    }
+    .home-page .work-stage:hover .work-stage__open,
+    .home-page .work-stage:focus-visible .work-stage__open {
+      color: #f0c4a4;
+      border-bottom-color: #f0c4a4;
     }
 
     .home-page .work-companions {
@@ -1173,27 +1204,9 @@
       border-bottom-color: #f0c4a4;
     }
 
-    /* Person paths under composition — networking, not an afterthought. */
-    .home-page .person-paths {
-      margin: clamp(36px, 5vh, 52px) 0 0;
-      padding: clamp(28px, 4vh, 36px) 0 0;
-      border-top: 1px solid var(--rule);
-      font-family: 'Lora', Georgia, serif;
-      font-size: clamp(1.08rem, 1.35vw, 1.2rem);
-      line-height: 1.55;
-      color: var(--muted);
-      max-width: 36em;
-    }
-    .home-page .person-paths a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(184, 96, 46, 0.35);
-      padding-bottom: 1px;
-    }
-    .home-page .person-paths a:hover,
-    .home-page .person-paths a:focus-visible {
-      color: var(--accent-soft);
-      border-bottom-color: var(--accent-soft);
+    .home-page .composition .continue__link {
+      border-bottom: none;
+      padding-bottom: 0;
     }
 
     .home-page [data-reveal] {
@@ -1259,19 +1272,15 @@
         line-height: 1.6;
         padding-left: 38px;
       }
-      .home-page .beat__items {
-        padding-left: 38px;
-      }
-      .home-page .beat__items li {
-        grid-template-columns: 1fr;
-        gap: 4px;
-        padding: 14px 0;
-        font-size: 1.02rem;
-      }
       .home-page .beat__exit {
         font-size: 0.98rem;
         margin-top: 22px;
         padding-left: 38px;
+      }
+      .home-page .continue__kicker {
+        gap: 14px;
+        font-size: 1.02rem;
+        margin-bottom: 22px;
       }
       .home-page .beat--signature .beat__kicker {
         font-size: 0.88rem;
@@ -1294,12 +1303,29 @@
       .home-page .work-movement__title {
         font-size: clamp(1.55rem, 7vw, 1.95rem);
       }
-      .home-page .work-feature__name {
-        font-size: clamp(1.35rem, 6.5vw, 1.75rem);
+      .home-page .work-movement--writing {
+        padding: 28px 18px 32px;
+      }
+      .home-page .work-stage__question {
+        font-size: 1.12rem;
+      }
+      .home-page .work-stage__name {
+        font-size: clamp(1.4rem, 6.8vw, 1.85rem);
         max-width: none;
       }
       .home-page .work-companion {
         font-size: 1.12rem;
+      }
+      .home-page .continue__link {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 18px 0 20px;
+      }
+      .home-page .continue__name {
+        font-size: 1.18rem;
+      }
+      .home-page .continue__line {
+        font-size: 1.02rem;
       }
       .home-page .work-door {
         grid-template-columns: 2rem minmax(0, 1fr);
@@ -1716,27 +1742,23 @@
       <p class="home-hero__thesis">Certainty arrives faster than <em>understanding</em>.</p>
     </div>
 
-    <!-- 1. WELCOME — who / what / method -->
+    <!-- 1. WELCOME — identity + method thesis -->
     <header class="section welcome">
       <div class="section__inner welcome__content">
 
         <div class="meta" data-reveal>
           <span class="meta__dot" aria-hidden="true"></span>
-          <span class="meta__label">New York</span>
-          <span class="meta__value">Writer and nutrition student · since 2023</span>
+          <span class="meta__label">Currently reading</span>
+          <span class="meta__value"><strong>What to Eat Now</strong>, by Marion Nestle</span>
         </div>
 
         <h1 class="name" data-reveal data-reveal-delay="1">Rajiv Vakani</h1>
-
-        <p class="role" data-reveal data-reveal-delay="2">
-          I investigate nutrition and health claims, and build reference for people who want better questions than the first answer.
-        </p>
 
         <p class="lede-primary lede-primary--from-weather">
           Certainty arrives faster than <em class="emph">understanding</em>.
         </p>
 
-        <p class="lede-secondary" data-reveal data-reveal-delay="3">
+        <p class="lede-secondary" data-reveal data-reveal-delay="2">
           Food, health, evidence, and the space between the first answer and <em class="emph">the better one</em>.
         </p>
 
@@ -1851,7 +1873,7 @@
 
     </div><!-- /.home-page__hero-field -->
 
-    <!-- 3. PERSON — origin, pulse, networking paths -->
+    <!-- Act I close — origin, then crafted continue plate -->
     <section class="section composition" aria-label="Who I am">
       <div class="composition__inner">
 
@@ -1875,39 +1897,37 @@
           </p>
         </article>
 
-        <article class="beat" data-reveal>
-          <p class="beat__kicker">
+        <nav class="continue" data-reveal aria-label="Continue with me">
+          <p class="continue__kicker">
             <span class="beat__mark" aria-hidden="true"></span>
-            What&rsquo;s open right now.
+            Continue with me.
           </p>
-          <ul class="beat__items" data-home-attention>
+          <ul class="continue__list">
             <li>
-              <span class="beat__kind">Reading.</span>
-              <span class="beat__what"><em>What to Eat Now</em>, by Marion Nestle,
-                and a long paper on legumes, fiber, and fermentable carbs in the gut.</span>
+              <a class="continue__link" href="about.html">
+                <span class="continue__name">About</span>
+                <span class="continue__line">The portrait: who I am beyond the writing.</span>
+              </a>
             </li>
             <li>
-              <span class="beat__kind">Writing.</span>
-              <span class="beat__what">Notes toward a clearer anxiety map,
-                and what the evidence earns when someone asks &ldquo;what else?&rdquo;</span>
+              <a class="continue__link" href="journey.html">
+                <span class="continue__name">Journey</span>
+                <span class="continue__line">How the reading became the work.</span>
+              </a>
             </li>
             <li>
-              <span class="beat__kind">Building.</span>
-              <span class="beat__what">The next chapter of Seeing Food Differently
-                is open on the desk.</span>
+              <a class="continue__link" href="contact.html">
+                <span class="continue__name">Contact</span>
+                <span class="continue__line">Write to me directly.</span>
+              </a>
             </li>
           </ul>
-        </article>
-
-        <p class="person-paths" data-reveal>
-          For the portrait, start with <a href="about.html">About</a>.
-          To reach me directly, use <a href="contact.html">Contact</a>.
-        </p>
+        </nav>
 
       </div>
     </section>
 
-    <!-- 4. WORK — writing and rooms, equal gravity. Complete without Insights. -->
+    <!-- Act II — rooms first, then writing as its own stage -->
     <section class="section work" aria-label="The work">
       <div class="work__inner">
 
@@ -1915,36 +1935,13 @@
           <p class="work__eyebrow">On this site</p>
           <h2 class="work__title">The work lives here.</h2>
           <p class="work__lead">
-            Writing that tests claims. Rooms that hold the larger maps.
+            Rooms that hold the larger maps. Writing that tests claims.
             You shouldn&rsquo;t need another page to understand what I do.
           </p>
         </header>
 
-        <div class="work-movement work-movement--writing" data-reveal>
-          <p class="work-movement__index">I · Writing</p>
-          <h3 class="work-movement__title">Investigations</h3>
-          <p class="work-movement__invite">
-            Long pieces that follow a claim into the research.
-            Open one from Home.
-          </p>
-
-          <a class="work-feature" href="insights/collagen-compared-to-what.html">
-            <span class="work-feature__kicker">Start here</span>
-            <span class="work-feature__name">Collagen, Compared to What?</span>
-            <span class="work-feature__why">What collagen studies actually measure, and what the headlines quietly leave out.</span>
-          </a>
-
-          <ul class="work-companions">
-            <li><a class="work-companion" href="insights/invisible-maintenance.html">Invisible Maintenance</a></li>
-            <li><a class="work-companion" href="insights/i-followed-a-real-ayurvedic-prescription.html">I Followed a Real Ayurvedic Prescription Into the Research</a></li>
-            <li><a class="work-companion" href="insights/creatine-used-to-live-in-the-gym.html">Creatine Used to Live in the Gym</a></li>
-            <li><a class="work-companion" href="insights/the-mango-question.html">The Mango Question</a></li>
-            <li><a class="work-companion" href="insights/mucusless-diet.html">How the Mucusless Diet Survived a Century</a></li>
-          </ul>
-        </div>
-
         <div class="work-movement work-movement--rooms" data-reveal>
-          <p class="work-movement__index">II · Rooms</p>
+          <p class="work-movement__index">I · Rooms</p>
           <h3 class="work-movement__title">Four series</h3>
           <p class="work-movement__invite">
             Each series is its own place on the site. Not a category label. A room.
@@ -1991,6 +1988,29 @@
                 <span class="work-door__scale">3 conditions</span>
               </a>
             </li>
+          </ul>
+        </div>
+
+        <div class="work-movement work-movement--writing" data-reveal>
+          <p class="work-movement__index">II · Writing</p>
+          <h3 class="work-movement__title">Investigations</h3>
+          <p class="work-movement__invite">
+            Long pieces that follow a claim into the research.
+            Open one from Home.
+          </p>
+
+          <a class="work-stage" href="insights/collagen-compared-to-what.html">
+            <span class="work-stage__question">What collagen studies actually measure, and what the headlines quietly leave out.</span>
+            <span class="work-stage__name">Collagen, Compared to What?</span>
+            <span class="work-stage__open">Open the investigation</span>
+          </a>
+
+          <ul class="work-companions">
+            <li><a class="work-companion" href="insights/invisible-maintenance.html">Invisible Maintenance</a></li>
+            <li><a class="work-companion" href="insights/i-followed-a-real-ayurvedic-prescription.html">I Followed a Real Ayurvedic Prescription Into the Research</a></li>
+            <li><a class="work-companion" href="insights/creatine-used-to-live-in-the-gym.html">Creatine Used to Live in the Gym</a></li>
+            <li><a class="work-companion" href="insights/the-mango-question.html">The Mango Question</a></li>
+            <li><a class="work-companion" href="insights/mucusless-diet.html">How the Mucusless Diet Survived a Century</a></li>
           </ul>
         </div>
 
