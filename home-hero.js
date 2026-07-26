@@ -146,11 +146,18 @@
     return isHardReload() || !hasSeenWeather();
   }
 
+  let skipKeyHandler = null;
+
   function finish(hero, opts) {
     if (finish.sent) return;
     finish.sent = true;
+    if (skipKeyHandler) {
+      window.removeEventListener('keydown', skipKeyHandler);
+      skipKeyHandler = null;
+    }
     const instant = opts && opts.instant;
     if (hero) {
+      hero.setAttribute('aria-hidden', 'true');
       hero.classList.add('is-phase-done');
       if (instant) {
         hero.classList.add('is-dismissed');
@@ -160,6 +167,8 @@
         }, TIMING.fadeMs + 40);
       }
     }
+    const skip = document.getElementById('home-hero-skip');
+    if (skip) skip.hidden = true;
     document.body.classList.remove('home-hero-active');
     document.dispatchEvent(new CustomEvent('homehero:complete'));
   }
@@ -188,6 +197,13 @@
     }
 
     document.body.classList.add('home-hero-active');
+    hero.setAttribute('aria-hidden', 'false');
+
+    const skipBtn = document.getElementById('home-hero-skip');
+    if (skipBtn) {
+      skipBtn.hidden = false;
+      skipBtn.setAttribute('aria-label', 'Skip introduction');
+    }
 
     /* Never leave the page trapped under a black overlay. */
     const failsafe = window.setTimeout(function () {
@@ -417,6 +433,33 @@
       updateThesis(now);
       if (!completed) raf = requestAnimationFrame(frame);
     }
+
+    function skipWeather() {
+      if (completed) return;
+      completed = true;
+      window.clearTimeout(failsafe);
+      if (raf) {
+        cancelAnimationFrame(raf);
+        raf = 0;
+      }
+      window.removeEventListener('keydown', onSkipKey);
+      if (skipBtn) skipBtn.hidden = true;
+      hero.setAttribute('aria-hidden', 'true');
+      finish(hero);
+    }
+
+    function onSkipKey(e) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        skipWeather();
+      }
+    }
+
+    if (skipBtn) {
+      skipBtn.addEventListener('click', skipWeather);
+    }
+    skipKeyHandler = onSkipKey;
+    window.addEventListener('keydown', onSkipKey);
 
     measure();
     window.addEventListener('resize', function () {

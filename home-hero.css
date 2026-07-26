@@ -132,6 +132,38 @@
   color: #e0a078;
 }
 
+.home-hero__skip {
+  position: fixed;
+  z-index: 1100;
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: clamp(1.1rem, 3.5vh, 2rem);
+  margin: 0;
+  padding: 0.55rem 0.2rem;
+  border: none;
+  border-bottom: 1px solid rgba(244, 228, 208, 0.45);
+  border-radius: 0;
+  background: transparent;
+  color: rgba(255, 246, 232, 0.88);
+  font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.home-hero__skip:hover,
+.home-hero__skip:focus-visible {
+  color: #fff6e8;
+  border-bottom-color: #f0d2a8;
+  outline: none;
+}
+
+.home-hero__skip[hidden] {
+  display: none !important;
+}
+
 .home-hero--entrance.is-phase-barrage .home-hero__atmosphere {
   filter: brightness(0.94);
 }
@@ -151,42 +183,50 @@
   transform: scale(1.01);
 }
 
-/* Weather entrance: dark glass nav, light type. Cream returns when active lifts.
-   Solid ink glass — avoid backdrop-filter here; it can blank the hero layer
-   under sticky nav in some browsers. */
-body.home-page.home-hero-active .main-nav {
-  background: rgba(21, 18, 14, 0.94) !important;
-  background-color: rgba(21, 18, 14, 0.94) !important;
+/* During weather: solid ink bar matching the field, quiet light type.
+   Homepage cream nav uses !important — beat it here. No border seam. */
+body.home-page.home-hero-active .main-nav,
+body.home-page.home-hero-active .main-nav.scrolled {
+  background: #15120e !important;
+  background-color: #15120e !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  border-bottom: 1px solid rgba(244, 228, 208, 0.1);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35);
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
 body.home-page.home-hero-active .main-nav .site-logo,
-body.home-page.home-hero-active .main-nav .nav-links li a {
-  color: rgba(247, 237, 220, 0.88);
+body.home-page.home-hero-active .main-nav .nav-links li a,
+body.home-page.home-hero-active .main-nav .nav-links li a.active {
+  color: rgba(247, 237, 220, 0.48) !important;
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 body.home-page.home-hero-active .main-nav .nav-links li a:hover,
-body.home-page.home-hero-active .main-nav .nav-links li a:focus-visible {
-  color: #f7eddc;
+body.home-page.home-hero-active .main-nav .nav-links li a:focus-visible,
+body.home-page.home-hero-active .main-nav .nav-links li a.active:hover {
+  color: rgba(247, 237, 220, 0.78) !important;
+  background: none !important;
+  background-color: transparent !important;
 }
 
-body.home-page.home-hero-active .main-nav .nav-links li a.active {
-  color: #f7eddc;
-}
-
+body.home-page.home-hero-active .main-nav .nav-links li a.active::after,
 body.home-page.home-hero-active .main-nav .nav-links li a::after {
-  background: rgba(224, 160, 120, 0.9);
+  background-color: rgba(224, 160, 120, 0.35) !important;
+  opacity: 0.55;
 }
 
-body.home-page.home-hero-active .main-nav .hamburger {
-  background: rgba(247, 237, 220, 0.9);
+body.home-page.home-hero-active .main-nav .hamburger,
+body.home-page.home-hero-active .main-nav .menu-toggle .hamburger {
+  background: rgba(247, 237, 220, 0.5) !important;
 }
 
 body.home-page.home-hero-active .main-nav .site-logo__mark {
-  filter: invert(0.92) sepia(0.15) hue-rotate(340deg) brightness(1.05);
+  opacity: 0.55;
+  filter: invert(0.92) sepia(0.1) hue-rotate(340deg) brightness(1.05);
 }
 
 @media (max-width: 720px) {
@@ -200,12 +240,12 @@ body.home-page.home-hero-active .main-nav .site-logo__mark {
   }
 
   body.home-page.home-hero-active .main-nav .nav-links {
-    background: rgba(21, 18, 14, 0.96) !important;
-    border-bottom-color: rgba(244, 228, 208, 0.1);
+    background: #15120e !important;
+    border-bottom: none !important;
   }
 
   body.home-page.home-hero-active .main-nav .nav-links li a {
-    color: rgba(247, 237, 220, 0.9);
+    color: rgba(247, 237, 220, 0.55) !important;
   }
 }
 
