@@ -4,6 +4,7 @@
  * Additive only. Welcome + constellation stay intact underneath.
  * Claims: slow open → gradual build → late rush.
  * Thesis: arrives right → left into the real lede seat.
+ * Plays once per tab session; hard refresh still replays.
  */
 (function () {
   'use strict';
@@ -62,8 +63,8 @@
 
     for (let k = SLOW_COUNT; k <= i && k < BUILD_END; k++) {
       const t = (k - SLOW_COUNT) / Math.max(buildLen - 1, 1);
-      /* Early build still comfortable; late build already urgent. */
-      d += Math.round(900 - easeInQuad(t) * (900 - 360));
+      /* Early build still readable; pace picks up sooner than before. */
+      d += Math.round(780 - easeInQuad(t) * (780 - 260));
     }
 
     if (i < BUILD_END) return d;
@@ -71,8 +72,8 @@
     const rushLen = CLAIMS.length - BUILD_END;
     for (let k = BUILD_END; k <= i; k++) {
       const t = (k - BUILD_END) / Math.max(rushLen - 1, 1);
-      /* Whirlwind: gaps collapse hard toward the end. */
-      d += Math.round(210 - easeInQuad(t) * (210 - 28));
+      /* Whirlwind: gaps collapse a beat sooner toward the end. */
+      d += Math.round(155 - easeInQuad(t) * (155 - 22));
     }
     return d;
   }
@@ -81,11 +82,11 @@
     if (i < SLOW_COUNT) return 1040 - i * 35;
     if (i < BUILD_END) {
       const t = (i - SLOW_COUNT) / Math.max(BUILD_END - SLOW_COUNT - 1, 1);
-      return Math.round(780 - easeInQuad(t) * (780 - 460));
+      return Math.round(700 - easeInQuad(t) * (700 - 390));
     }
     const rushLen = Math.max(CLAIMS.length - BUILD_END - 1, 1);
     const t = (i - BUILD_END) / rushLen;
-    return Math.round(340 - easeInQuad(t) * (340 - 200));
+    return Math.round(290 - easeInQuad(t) * (290 - 165));
   }
 
   const TIMING = {
@@ -120,14 +121,49 @@
     return t * t;
   }
 
-  function finish(hero) {
+  const SEEN_KEY = 'rv-home-weather-seen';
+
+  function hasSeenWeather() {
+    try {
+      return sessionStorage.getItem(SEEN_KEY) === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markWeatherSeen() {
+    try {
+      sessionStorage.setItem(SEEN_KEY, '1');
+    } catch (e) { /* private mode / blocked storage */ }
+  }
+
+  function isHardReload() {
+    try {
+      const nav = performance.getEntriesByType('navigation')[0];
+      return !!(nav && nav.type === 'reload');
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function shouldPlayWeather() {
+    /* First open in the session, or hard refresh. Skip same-tab returns home. */
+    return isHardReload() || !hasSeenWeather();
+  }
+
+  function finish(hero, opts) {
     if (finish.sent) return;
     finish.sent = true;
+    const instant = opts && opts.instant;
     if (hero) {
       hero.classList.add('is-phase-done');
-      window.setTimeout(function () {
+      if (instant) {
         hero.classList.add('is-dismissed');
-      }, TIMING.fadeMs + 40);
+      } else {
+        window.setTimeout(function () {
+          hero.classList.add('is-dismissed');
+        }, TIMING.fadeMs + 40);
+      }
     }
     document.body.classList.remove('home-hero-active');
     document.dispatchEvent(new CustomEvent('homehero:complete'));
@@ -141,16 +177,18 @@
       return;
     }
 
-    if (reduceMotion) {
-      finish(hero);
+    if (reduceMotion || !shouldPlayWeather()) {
+      finish(hero, { instant: true });
       return;
     }
+
+    markWeatherSeen();
 
     const claimsLayer = hero.querySelector('.home-hero__claims');
     const thesisEl = hero.querySelector('.home-hero__thesis');
     const ledeEl = document.querySelector('.lede-primary--from-weather');
     if (!claimsLayer || !thesisEl) {
-      finish(hero);
+      finish(hero, { instant: true });
       return;
     }
 
