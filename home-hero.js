@@ -2,7 +2,7 @@
  * Home hero entrance — Certainty weather
  *
  * Additive only. Welcome + constellation stay intact underneath.
- * Claims: slow open → gradual build → late rush.
+ * Claims: one continuous geometric acceleration into overwhelm.
  * Thesis: arrives right → left into the real lede seat.
  * Plays once per tab session; hard refresh still replays.
  */
@@ -17,7 +17,7 @@
     { text: 'Just eat clean.', sx: 0.5, sy: -0.1, ex: 0.48, ey: 0.42, ox: 0.55, oy: 1.15, rot: -2, hot: true },
     { text: 'Protein fixes everything.', sx: -0.12, sy: 0.62, ex: 0.34, ey: 0.52, ox: 1.15, oy: 0.7, rot: 5 },
     { text: 'Detox starts Monday.', sx: 1.12, sy: 0.55, ex: 0.68, ey: 0.48, ox: -0.15, oy: 0.9, rot: -4, hot: true },
-    /* Build: still readable, pace picking up. */
+    /* Mid field — pace already tightening. */
     { text: 'Breakfast is mandatory.', sx: 0.15, sy: 1.12, ex: 0.42, ey: 0.58, ox: 0.1, oy: -0.12, rot: 3 },
     { text: "Calories. That's it.", sx: 0.88, sy: 1.1, ex: 0.58, ey: 0.56, ox: 0.95, oy: -0.1, rot: -5, hot: true },
     { text: 'One study settled it.', sx: -0.1, sy: 0.4, ex: 0.3, ey: 0.4, ox: 1.18, oy: 0.45, rot: 7 },
@@ -31,7 +31,7 @@
     { text: 'Cholesterol is solved.', sx: 1.1, sy: 0.62, ex: 0.72, ey: 0.54, ox: -0.14, oy: 0.18, rot: -5, hot: true },
     { text: 'Your gut runs everything.', sx: 0.2, sy: -0.08, ex: 0.46, ey: 0.26, ox: 0.9, oy: 1.12, rot: 2 },
     { text: 'Hormones first. Always.', sx: 0.85, sy: 1.08, ex: 0.6, ey: 0.7, ox: 0.08, oy: -0.12, rot: -3, hot: true },
-    /* Late rush. */
+    /* Dense tail — still a cascade, not a simultaneous dump. */
     { text: 'Gluten is the problem.', sx: -0.14, sy: 0.48, ex: 0.28, ey: 0.44, ox: 1.14, oy: 0.22, rot: 5, hot: true },
     { text: 'Eat like your ancestors.', sx: 1.14, sy: 0.48, ex: 0.74, ey: 0.44, ox: -0.16, oy: 0.62, rot: -4 },
     { text: 'The food pyramid lied.', sx: 0.08, sy: -0.12, ex: 0.4, ey: 0.24, ox: 0.88, oy: 1.16, rot: 3, hot: true },
@@ -41,62 +41,57 @@
     { text: 'Toxins are everywhere.', sx: -0.08, sy: 0.15, ex: 0.3, ey: 0.2, ox: 1.12, oy: 0.85, rot: 6, hot: true },
     { text: 'One hack. Done.', sx: 1.08, sy: 0.28, ex: 0.68, ey: 0.34, ox: -0.12, oy: 0.9, rot: -2 },
     { text: 'Science says so.', sx: 0.4, sy: 1.1, ex: 0.5, ey: 0.72, ox: 0.15, oy: -0.1, rot: 3, hot: true },
-    { text: 'Doubt is weakness.', sx: 0.75, sy: -0.06, ex: 0.58, ey: 0.18, ox: 0.25, oy: 1.14, rot: -4 }
+    { text: 'Doubt is weakness.', sx: 0.75, sy: -0.06, ex: 0.58, ey: 0.18, ox: 0.25, oy: 1.14, rot: -4 },
+    { text: 'Count every bite.', sx: -0.12, sy: 0.58, ex: 0.24, ey: 0.5, ox: 1.16, oy: 0.35, rot: 5, hot: true },
+    { text: 'Dairy is inflammatory.', sx: 1.1, sy: 0.4, ex: 0.76, ey: 0.36, ox: -0.14, oy: 0.78, rot: -3 },
+    { text: 'Never skip a meal.', sx: 0.12, sy: 1.1, ex: 0.38, ey: 0.74, ox: 0.92, oy: -0.12, rot: 2, hot: true },
+    { text: 'Organic or nothing.', sx: 0.9, sy: -0.08, ex: 0.64, ey: 0.22, ox: 0.05, oy: 1.14, rot: -5 },
+    { text: 'The experts agree.', sx: -0.06, sy: 0.25, ex: 0.34, ey: 0.28, ox: 1.12, oy: 0.88, rot: 4, hot: true },
+    { text: 'Balance is a myth.', sx: 1.06, sy: 0.78, ex: 0.72, ey: 0.64, ox: -0.1, oy: 0.15, rot: -2 },
+    { text: 'This one tip changes everything.', sx: 0.55, sy: 1.08, ex: 0.48, ey: 0.78, ox: 0.2, oy: -0.14, rot: 3, hot: true }
   ];
 
   /**
-   * Emotional arc (1-based phrases):
-   * 1–5   SLOW  — readable, confident
-   * 6–12  BUILD — progressively faster, confidence thinning
-   * 13+   RUSH  — overwhelm → whirlwind tail
+   * One continuous acceleration: geometric gaps (and travel).
+   * No SLOW / BUILD / RUSH walls. First claims stay readable;
+   * every later step tightens by the same ratio into a denser tail
+   * that still arrives as a cascade (not a simultaneous dump).
    * Then explode phases (crowd → blowout → thesis).
    */
-  const SLOW_COUNT = 5;   /* indices 0..4 */
-  const BUILD_END = 12;   /* indices 5..11 build; 12+ = phrase 13 rush */
+  const GAP_START_MS = 720;
+  const GAP_END_MS = 28;
+  const TRAVEL_START_MS = 780;
+  const TRAVEL_END_MS = 135;
+
+  function claimGap(i) {
+    /* Gap before claim i (i >= 1). Constant ratio each step. */
+    const steps = Math.max(CLAIMS.length - 2, 1);
+    const ratio = Math.pow(GAP_END_MS / GAP_START_MS, 1 / steps);
+    return Math.max(GAP_END_MS, Math.round(GAP_START_MS * Math.pow(ratio, i - 1)));
+  }
 
   function claimDelay(i) {
     if (i === 0) return 0;
-    if (i < SLOW_COUNT) return i * 1150;
-
-    let d = (SLOW_COUNT - 1) * 1150;
-    const buildLen = BUILD_END - SLOW_COUNT;
-
-    for (let k = SLOW_COUNT; k <= i && k < BUILD_END; k++) {
-      const t = (k - SLOW_COUNT) / Math.max(buildLen - 1, 1);
-      /* Early build still readable; pace picks up sooner than before. */
-      d += Math.round(780 - easeInQuad(t) * (780 - 260));
-    }
-
-    if (i < BUILD_END) return d;
-
-    const rushLen = CLAIMS.length - BUILD_END;
-    for (let k = BUILD_END; k <= i; k++) {
-      const t = (k - BUILD_END) / Math.max(rushLen - 1, 1);
-      /* Whirlwind: gaps collapse a beat sooner toward the end. */
-      d += Math.round(155 - easeInQuad(t) * (155 - 22));
-    }
+    let d = 0;
+    for (let k = 1; k <= i; k++) d += claimGap(k);
     return d;
   }
 
   function claimTravelMs(i) {
-    if (i < SLOW_COUNT) return 1040 - i * 35;
-    if (i < BUILD_END) {
-      const t = (i - SLOW_COUNT) / Math.max(BUILD_END - SLOW_COUNT - 1, 1);
-      return Math.round(700 - easeInQuad(t) * (700 - 390));
-    }
-    const rushLen = Math.max(CLAIMS.length - BUILD_END - 1, 1);
-    const t = (i - BUILD_END) / rushLen;
-    return Math.round(290 - easeInQuad(t) * (290 - 165));
+    const steps = Math.max(CLAIMS.length - 1, 1);
+    const ratio = Math.pow(TRAVEL_END_MS / TRAVEL_START_MS, 1 / steps);
+    return Math.max(TRAVEL_END_MS, Math.round(TRAVEL_START_MS * Math.pow(ratio, i)));
   }
 
   const TIMING = {
-    voidMs: 480,
-    overwhelmMs: 880,
-    collapseMs: 780,
-    /* Arrive ~920ms, then hold so the line can be read. */
-    thesisArriveMs: 920,
-    thesisHoldMs: 850,
-    fadeMs: 950
+    voidMs: 320,
+    overwhelmMs: 620,
+    collapseMs: 540,
+    /* Arrive into seat, then hold long enough to read the full line
+       before the page handoff. Explode already cleared the claims. */
+    thesisArriveMs: 720,
+    thesisHoldMs: 1250,
+    fadeMs: 550
   };
   TIMING.thesisMs = TIMING.thesisArriveMs + TIMING.thesisHoldMs;
   TIMING.barrageMs = claimDelay(CLAIMS.length - 1) + claimTravelMs(CLAIMS.length - 1) + 220;
