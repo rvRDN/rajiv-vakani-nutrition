@@ -1049,14 +1049,19 @@
       list-style: none;
       padding: 0;
       margin: 0 0 clamp(28px, 4vh, 36px) 0;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.45rem 1.75rem;
+      columns: 1;
+      column-gap: 1.75rem;
     }
     @media (min-width: 640px) {
       .home-page .work-essays {
-        grid-template-columns: 1fr 1fr;
+        columns: 2;
       }
+    }
+    .home-page .work-essays li {
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      margin: 0 0 0.55rem 0;
     }
     .home-page .work-essays a {
       font-family: 'Lora', Georgia, serif;
@@ -1231,7 +1236,7 @@
         font-size: 0.72rem;
       }
       .home-page .work-essays {
-        grid-template-columns: 1fr;
+        columns: 1;
       }
       .home-page .work-essays a {
         font-size: 1rem;
@@ -1784,8 +1789,8 @@
           <ul class="beat__items" data-home-attention>
             <li>
               <span class="beat__kind">Reading.</span>
-              <span class="beat__what">A long paper on legumes, fiber,
-                and what fermentable carbohydrates actually do in the gut.</span>
+              <span class="beat__what"><em>What to Eat Now</em>, by Marion Nestle,
+                and a long paper on legumes, fiber, and fermentable carbs in the gut.</span>
             </li>
             <li>
               <span class="beat__kind">Writing.</span>
@@ -1810,8 +1815,9 @@
         <header class="work__intro" data-reveal>
           <p class="work__eyebrow">Inside the site</p>
           <h2 class="work__title">The work is here.</h2>
-          <p class="work__lead">Four rooms.</p>
-          <p class="work__lead work__lead--beat">Open one.</p>
+          <p class="work__lead">Four rooms up front.</p>
+          <p class="work__lead">Essays underneath.</p>
+          <p class="work__lead work__lead--beat">Open a doorway, or keep scrolling.</p>
         </header>
 
         <div class="work__block" data-reveal>
@@ -1906,7 +1912,7 @@
 
   <script defer src="insights/data.js?v=20260719180000"></script>
   <script defer src="insights/library.js?v=20260720010000"></script>
-  <script defer src="home-hero.js?v=20260726125000"></script>
+  <script defer src="home-hero.js?v=20260726130000"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
 
@@ -1938,6 +1944,8 @@
       observeReveals(laterReveals);
 
       function releaseWelcome() {
+        if (releaseWelcome.done) return;
+        releaseWelcome.done = true;
         const lede = document.querySelector('.lede-primary--from-weather');
         if (lede) lede.classList.add('is-arrived');
         observeReveals(Array.prototype.slice.call(welcomeReveals));
@@ -1948,6 +1956,14 @@
         releaseWelcome();
       } else {
         document.addEventListener('homehero:complete', releaseWelcome, { once: true });
+        /* Skip-path can finish before this listener attaches. Catch up. */
+        const entrance = document.querySelector('.home-hero--entrance');
+        if (entrance && (
+          entrance.classList.contains('is-dismissed') ||
+          entrance.classList.contains('is-phase-done')
+        )) {
+          releaseWelcome();
+        }
       }
 
       /* Constellation field — mobile orbit phrases; desktop wandering attention. */

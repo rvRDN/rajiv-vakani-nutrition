@@ -440,6 +440,7 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
-    init();
+    /* Defer past other DOMContentLoaded handlers so welcome can listen first. */
+    window.setTimeout(init, 0);
   }
 })();
