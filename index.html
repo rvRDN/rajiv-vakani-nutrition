@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rajiv Vakani</title>
-  <meta name="description" content="Good decisions begin with better questions. Helping readers understand, question, and evaluate nutrition and health claims through careful investigation and reference.">
+  <meta name="description" content="Rajiv Vakani investigates nutrition and health claims from New York. Writing, reference series, and better questions than the first answer.">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rajivvakani.com/" />
   <meta property="og:title" content="Rajiv Vakani" />
-  <meta property="og:description" content="Good decisions begin with better questions. Helping readers understand, question, and evaluate nutrition and health claims through careful investigation and reference." />
+  <meta property="og:description" content="Rajiv Vakani investigates nutrition and health claims from New York. Writing, reference series, and better questions than the first answer." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
@@ -20,7 +20,7 @@
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://rajivvakani.com/" />
   <meta property="twitter:title" content="Rajiv Vakani" />
-  <meta property="twitter:description" content="Good decisions begin with better questions. Helping readers understand, question, and evaluate nutrition and health claims through careful investigation and reference." />
+  <meta property="twitter:description" content="Rajiv Vakani investigates nutrition and health claims from New York. Writing, reference series, and better questions than the first answer." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,14 +50,10 @@
 
   <style>
     /* ============================================================
-       Homepage — editorial treatment.
-       Architecture: Welcome → Topics → Paths → Close.
-       Two-voice typography (Lora serif + Inter Tight sans),
-       warm cream paper palette, single burnt-orange accent,
-       drifting ambient gradient in Welcome/Close, scroll-triggered
-       reveals, hover motion in the Paths blocks.
-       All styles are scoped to .home-page to keep them isolated
-       from the rest of the site's CSS.
+       Homepage — two jobs only.
+       1) Who I am / what I do (professional + networking)
+       2) The work on this site (writing + rooms), complete without Insights
+       Keep: weather entrance + constellation craft.
        ============================================================ */
 
     :root {
@@ -227,13 +223,24 @@
       line-height: 1.1;
       letter-spacing: -0.01em;
       color: var(--ink);
-      margin: 0 0 32px 0;
+      margin: 0 0 18px 0;
       /* Defensive overrides — the global stylesheet applies
          text-shadow and text-align: center to every <h1> site-wide.
          The hero column is left-aligned editorial; the name needs to
          match without any drop-shadow. */
       text-shadow: none;
       text-align: left;
+    }
+
+    /* Who / what — professional identity before the method thesis. */
+    .home-page .role {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.2rem, 1.7vw, 1.42rem);
+      line-height: 1.45;
+      color: var(--ink);
+      margin: 0 0 28px 0;
+      max-width: 34em;
     }
 
     /* The LEDE at display scale. Trimmed slightly from the previous
@@ -893,9 +900,9 @@
       border-bottom-color: var(--accent) !important;
     }
 
-    /* --------- 4. WORK — doorways into rooms ---------
-       Dark band rhymes with the constellation. Four series first.
-       Essays + Insights/Library are quieter secondary exits. */
+    /* --------- 4. WORK — writing + rooms as equal movements ---------
+       Dark band. If someone never opens Insights, this section still
+       has to carry the site’s proof and architecture. */
 
     .home-page .work {
       --work-ink: #f4ece2;
@@ -929,36 +936,132 @@
       letter-spacing: -0.02em;
       color: var(--work-ink);
       margin: 0 0 22px 0;
-      max-width: 16ch;
+      max-width: 18ch;
     }
     .home-page .work__lead {
       font-family: 'Lora', Georgia, serif;
       font-size: clamp(1.12rem, 1.45vw, 1.3rem);
       line-height: 1.55;
       color: var(--work-muted);
-      margin: 0 0 0.35em 0;
-      max-width: 28em;
+      margin: 0 0 clamp(56px, 8vh, 88px) 0;
+      max-width: 32em;
     }
-    .home-page .work__lead--beat {
-      margin: 0 0 clamp(48px, 7vh, 72px) 0;
+
+    .home-page .work-movement {
+      margin: 0 0 clamp(64px, 10vh, 100px) 0;
+      padding-top: clamp(8px, 1.5vh, 16px);
     }
-    .home-page .work__block {
-      margin: 0 0 clamp(52px, 8vh, 80px) 0;
+    .home-page .work-movement:last-of-type {
+      margin-bottom: clamp(40px, 6vh, 56px);
     }
-    .home-page .work__block:last-child {
-      margin-bottom: 0;
+    .home-page .work-movement__index {
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--work-soft);
+      margin: 0 0 14px 0;
     }
-    .home-page .work__label {
+    .home-page .work-movement__title {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: var(--work-ink);
+      margin: 0 0 12px 0;
+    }
+    .home-page .work-movement__invite {
+      font-family: 'Lora', Georgia, serif;
+      font-size: clamp(1.08rem, 1.35vw, 1.22rem);
+      line-height: 1.5;
+      color: var(--work-muted);
+      margin: 0 0 clamp(28px, 4vh, 40px) 0;
+      max-width: 34em;
+    }
+
+    /* Featured investigation — same gravity class as a room doorway. */
+    .home-page .work-feature {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      padding: clamp(28px, 4vh, 40px) 0;
+      border-top: 1px solid var(--work-rule);
+      border-bottom: 1px solid var(--work-rule);
+      margin: 0 0 clamp(8px, 1.5vh, 16px) 0;
+      transition: border-color 0.25s ease;
+    }
+    .home-page .work-feature:hover,
+    .home-page .work-feature:focus-visible {
+      border-color: rgba(224, 160, 120, 0.4);
+      outline: none;
+    }
+    .home-page .work-feature:hover .work-feature__name,
+    .home-page .work-feature:focus-visible .work-feature__name {
+      color: var(--work-accent);
+    }
+    .home-page .work-feature__kicker {
+      display: block;
       font-family: 'Inter Tight', 'Inter', sans-serif;
       font-weight: 500;
       font-size: 0.72rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--work-soft);
-      margin: 0 0 16px 0;
+      color: var(--work-accent);
+      margin: 0 0 14px 0;
+    }
+    .home-page .work-feature__name {
+      display: block;
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(1.55rem, 2.8vw, 2.15rem);
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      color: var(--work-ink);
+      margin: 0 0 12px 0;
+      max-width: 18ch;
+      transition: color 0.2s ease;
+    }
+    .home-page .work-feature__why {
+      display: block;
+      font-family: 'Lora', Georgia, serif;
+      font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+      line-height: 1.5;
+      color: var(--work-muted);
+      max-width: 36em;
+      margin: 0;
     }
 
-    /* Doorways — whole row is the hit target */
+    .home-page .work-companions {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .home-page .work-companions li {
+      border-top: 1px solid var(--work-rule);
+    }
+    .home-page .work-companions li:last-child {
+      border-bottom: 1px solid var(--work-rule);
+    }
+    .home-page .work-companion {
+      display: block;
+      padding: 18px 0;
+      text-decoration: none;
+      color: var(--work-ink);
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(1.18rem, 1.7vw, 1.4rem);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
+    }
+    .home-page .work-companion:hover,
+    .home-page .work-companion:focus-visible {
+      color: var(--work-accent);
+    }
+
+    /* Room doorways */
     .home-page .work-doors {
       list-style: none;
       padding: 0;
@@ -1039,53 +1142,15 @@
       padding-top: 0.45em;
     }
 
-    /* Secondary exits — quieter than the doorways */
-    .home-page .work-secondary {
-      margin-top: clamp(8px, 2vh, 16px);
-      padding-top: clamp(28px, 4vh, 40px);
-      border-top: 1px solid var(--work-rule);
-    }
-    .home-page .work-essays {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 clamp(28px, 4vh, 36px) 0;
-      columns: 1;
-      column-gap: 1.75rem;
-    }
-    @media (min-width: 640px) {
-      .home-page .work-essays {
-        columns: 2;
-      }
-    }
-    .home-page .work-essays li {
-      break-inside: avoid;
-      -webkit-column-break-inside: avoid;
-      page-break-inside: avoid;
-      margin: 0 0 0.55rem 0;
-    }
-    .home-page .work-essays a {
-      font-family: 'Lora', Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(0.98rem, 1.15vw, 1.08rem);
-      line-height: 1.35;
-      letter-spacing: -0.01em;
-      color: var(--work-muted);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-    .home-page .work-essays a:hover,
-    .home-page .work-essays a:focus-visible {
-      color: var(--work-accent);
-      border-bottom-color: rgba(224, 160, 120, 0.4);
-    }
     .home-page .work-exits {
       font-family: 'Lora', Georgia, serif;
-      font-size: clamp(1rem, 1.2vw, 1.12rem);
-      line-height: 1.5;
+      font-size: clamp(1.05rem, 1.25vw, 1.18rem);
+      line-height: 1.55;
       color: var(--work-soft);
       margin: 0;
-      max-width: 34em;
+      max-width: 36em;
+      padding-top: clamp(8px, 2vh, 16px);
+      border-top: 1px solid var(--work-rule);
     }
     .home-page .work-exits a {
       color: var(--work-muted);
@@ -1108,7 +1173,28 @@
       border-bottom-color: #f0c4a4;
     }
 
-    /* --------- Scroll-triggered reveals --------- */
+    /* Person paths under composition — networking, not an afterthought. */
+    .home-page .person-paths {
+      margin: clamp(36px, 5vh, 52px) 0 0;
+      padding: clamp(28px, 4vh, 36px) 0 0;
+      border-top: 1px solid var(--rule);
+      font-family: 'Lora', Georgia, serif;
+      font-size: clamp(1.08rem, 1.35vw, 1.2rem);
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 36em;
+    }
+    .home-page .person-paths a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(184, 96, 46, 0.35);
+      padding-bottom: 1px;
+    }
+    .home-page .person-paths a:hover,
+    .home-page .person-paths a:focus-visible {
+      color: var(--accent-soft);
+      border-bottom-color: var(--accent-soft);
+    }
 
     .home-page [data-reveal] {
       opacity: 0;
@@ -1199,11 +1285,21 @@
         font-size: clamp(1.85rem, 8vw, 2.35rem);
         max-width: none;
       }
-      .home-page .work__lead--beat {
-        margin-bottom: 40px;
-      }
-      .home-page .work__block {
+      .home-page .work__lead {
         margin-bottom: 44px;
+      }
+      .home-page .work-movement {
+        margin-bottom: 56px;
+      }
+      .home-page .work-movement__title {
+        font-size: clamp(1.55rem, 7vw, 1.95rem);
+      }
+      .home-page .work-feature__name {
+        font-size: clamp(1.35rem, 6.5vw, 1.75rem);
+        max-width: none;
+      }
+      .home-page .work-companion {
+        font-size: 1.12rem;
       }
       .home-page .work-door {
         grid-template-columns: 2rem minmax(0, 1fr);
@@ -1234,12 +1330,6 @@
         justify-self: start;
         padding-top: 0.1em;
         font-size: 0.72rem;
-      }
-      .home-page .work-essays {
-        columns: 1;
-      }
-      .home-page .work-essays a {
-        font-size: 1rem;
       }
       .home-page .work-exits {
         font-size: 1.02rem;
@@ -1626,23 +1716,27 @@
       <p class="home-hero__thesis">Certainty arrives faster than <em>understanding</em>.</p>
     </div>
 
-    <!-- 1. WELCOME -->
+    <!-- 1. WELCOME — who / what / method -->
     <header class="section welcome">
       <div class="section__inner welcome__content">
 
         <div class="meta" data-reveal>
           <span class="meta__dot" aria-hidden="true"></span>
-          <span class="meta__label">Currently reading</span>
-          <span class="meta__value"><strong>What to Eat Now</strong>, by Marion Nestle</span>
+          <span class="meta__label">New York</span>
+          <span class="meta__value">Writer and nutrition student · since 2023</span>
         </div>
 
         <h1 class="name" data-reveal data-reveal-delay="1">Rajiv Vakani</h1>
+
+        <p class="role" data-reveal data-reveal-delay="2">
+          I investigate nutrition and health claims, and build reference for people who want better questions than the first answer.
+        </p>
 
         <p class="lede-primary lede-primary--from-weather">
           Certainty arrives faster than <em class="emph">understanding</em>.
         </p>
 
-        <p class="lede-secondary" data-reveal data-reveal-delay="2">
+        <p class="lede-secondary" data-reveal data-reveal-delay="3">
           Food, health, evidence, and the space between the first answer and <em class="emph">the better one</em>.
         </p>
 
@@ -1757,8 +1851,8 @@
 
     </div><!-- /.home-page__hero-field -->
 
-    <!-- 3. COMPOSITION — person movement: Journey + What's open. -->
-    <section class="section composition" aria-label="Below the field">
+    <!-- 3. PERSON — origin, pulse, networking paths -->
+    <section class="section composition" aria-label="Who I am">
       <div class="composition__inner">
 
         <article class="beat" data-reveal>
@@ -1777,7 +1871,7 @@
             bigger one. That&rsquo;s what I write about now.
           </p>
           <p class="beat__exit">
-            The rest is on <a href="journey.html">Journey</a>.
+            The longer story is on <a href="journey.html">Journey</a>.
           </p>
         </article>
 
@@ -1805,22 +1899,57 @@
           </ul>
         </article>
 
+        <p class="person-paths" data-reveal>
+          For the portrait, start with <a href="about.html">About</a>.
+          To reach me directly, use <a href="contact.html">Contact</a>.
+        </p>
+
       </div>
     </section>
 
-    <!-- 4. WORK — doorways into rooms. Essays and shelves are quieter exits. -->
+    <!-- 4. WORK — writing and rooms, equal gravity. Complete without Insights. -->
     <section class="section work" aria-label="The work">
       <div class="work__inner">
 
         <header class="work__intro" data-reveal>
-          <p class="work__eyebrow">Inside the site</p>
-          <h2 class="work__title">The work is here.</h2>
-          <p class="work__lead">Four rooms up front.</p>
-          <p class="work__lead">Essays underneath.</p>
-          <p class="work__lead work__lead--beat">Open a doorway, or keep scrolling.</p>
+          <p class="work__eyebrow">On this site</p>
+          <h2 class="work__title">The work lives here.</h2>
+          <p class="work__lead">
+            Writing that tests claims. Rooms that hold the larger maps.
+            You shouldn&rsquo;t need another page to understand what I do.
+          </p>
         </header>
 
-        <div class="work__block" data-reveal>
+        <div class="work-movement work-movement--writing" data-reveal>
+          <p class="work-movement__index">I · Writing</p>
+          <h3 class="work-movement__title">Investigations</h3>
+          <p class="work-movement__invite">
+            Long pieces that follow a claim into the research.
+            Open one from Home.
+          </p>
+
+          <a class="work-feature" href="insights/collagen-compared-to-what.html">
+            <span class="work-feature__kicker">Start here</span>
+            <span class="work-feature__name">Collagen, Compared to What?</span>
+            <span class="work-feature__why">What collagen studies actually measure, and what the headlines quietly leave out.</span>
+          </a>
+
+          <ul class="work-companions">
+            <li><a class="work-companion" href="insights/invisible-maintenance.html">Invisible Maintenance</a></li>
+            <li><a class="work-companion" href="insights/i-followed-a-real-ayurvedic-prescription.html">I Followed a Real Ayurvedic Prescription Into the Research</a></li>
+            <li><a class="work-companion" href="insights/creatine-used-to-live-in-the-gym.html">Creatine Used to Live in the Gym</a></li>
+            <li><a class="work-companion" href="insights/the-mango-question.html">The Mango Question</a></li>
+            <li><a class="work-companion" href="insights/mucusless-diet.html">How the Mucusless Diet Survived a Century</a></li>
+          </ul>
+        </div>
+
+        <div class="work-movement work-movement--rooms" data-reveal>
+          <p class="work-movement__index">II · Rooms</p>
+          <h3 class="work-movement__title">Four series</h3>
+          <p class="work-movement__invite">
+            Each series is its own place on the site. Not a category label. A room.
+          </p>
+
           <ul class="work-doors">
             <li>
               <a class="work-door" href="seeing-food-differently/index.html">
@@ -1865,23 +1994,12 @@
           </ul>
         </div>
 
-        <div class="work__block work-secondary" data-reveal>
-          <p class="work__label">From the essays</p>
-          <ul class="work-essays">
-            <li><a href="insights/collagen-compared-to-what.html">Collagen, Compared to What?</a></li>
-            <li><a href="insights/invisible-maintenance.html">Invisible Maintenance</a></li>
-            <li><a href="insights/i-followed-a-real-ayurvedic-prescription.html">I Followed a Real Ayurvedic Prescription Into the Research</a></li>
-            <li><a href="insights/creatine-used-to-live-in-the-gym.html">Creatine Used to Live in the Gym</a></li>
-            <li><a href="insights/the-mango-question.html">The Mango Question</a></li>
-            <li><a href="insights/mucusless-diet.html">How the Mucusless Diet Survived a Century</a></li>
-          </ul>
-          <p class="work-exits">
-            Or begin in <a class="work-exits__primary" href="insights.html">Insights</a>,
-            where the writing is arranged by subject.
-            Looking for one piece by name? The shelf is in the
-            <a href="library.html">Library</a>.
-          </p>
-        </div>
+        <p class="work-exits" data-reveal>
+          Want the writing arranged by subject?
+          Continue in <a class="work-exits__primary" href="insights.html">Insights</a>.
+          Looking for one piece by name? The shelf is in the
+          <a href="library.html">Library</a>.
+        </p>
 
       </div>
     </section>
