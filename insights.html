@@ -310,6 +310,7 @@
       background: var(--ch-panel);
       color: var(--ch-ink);
       text-align: left;
+      text-decoration: none;
       cursor: pointer;
       min-width: 0;
       transform: translateY(0) scale(0.985);
@@ -318,6 +319,10 @@
         transform 0.45s var(--ease),
         filter 0.45s ease,
         box-shadow 0.45s ease;
+    }
+    a.sfd__ch:focus-visible {
+      outline: 2px solid var(--ch);
+      outline-offset: 3px;
     }
     .sfd__ch.is-on {
       transform: translateY(-10px) scale(1);
@@ -376,16 +381,15 @@
       letter-spacing: -0.03em;
       line-height: 1.05;
       color: var(--ch-ink);
-    }
-    .sfd__ch-name a {
-      color: inherit;
+      width: fit-content;
       background-image: linear-gradient(var(--ch), var(--ch));
       background-size: 0% 2px;
       background-position: 0 100%;
       background-repeat: no-repeat;
       transition: background-size 0.35s var(--ease);
     }
-    .sfd__ch.is-on .sfd__ch-name a:hover { background-size: 100% 2px; }
+    .sfd__ch.is-on:hover .sfd__ch-name,
+    .sfd__ch.is-on:focus-visible .sfd__ch-name { background-size: 100% 2px; }
     .sfd__ch-line {
       position: relative;
       z-index: 1;
@@ -1843,51 +1847,51 @@
 
       <div class="sfd__path" id="sfd-path">
         <div class="sfd__chapters">
-          <article class="sfd__ch sfd__ch--state is-on" data-ch="0" data-color="#8a6f4b">
+          <a class="sfd__ch sfd__ch--state is-on" href="seeing-food-differently/starting-state.html" data-ch="0" data-color="#8a6f4b">
             <span class="sfd__ch-wash" aria-hidden="true"></span>
             <span class="sfd__ch-mark" aria-hidden="true">01</span>
             <div class="sfd__ch-top">
               <p class="sfd__ch-verb">read</p>
-              <h3 class="sfd__ch-name"><a href="seeing-food-differently/starting-state.html">Starting State</a></h3>
+              <h3 class="sfd__ch-name">Starting State</h3>
             </div>
             <p class="sfd__ch-line">What you’re actually working with before you change anything.</p>
-          </article>
-          <article class="sfd__ch sfd__ch--flavor" data-ch="1" data-color="#c4782a">
+          </a>
+          <a class="sfd__ch sfd__ch--flavor" href="seeing-food-differently/flavor.html" data-ch="1" data-color="#c4782a">
             <span class="sfd__ch-wash" aria-hidden="true"></span>
             <span class="sfd__ch-mark" aria-hidden="true">02</span>
             <div class="sfd__ch-top">
               <p class="sfd__ch-verb">perceive</p>
-              <h3 class="sfd__ch-name"><a href="seeing-food-differently/flavor.html">Flavor</a></h3>
+              <h3 class="sfd__ch-name">Flavor</h3>
             </div>
             <p class="sfd__ch-line">What you’re experiencing, named carefully.</p>
-          </article>
-          <article class="sfd__ch sfd__ch--knife" data-ch="2" data-color="#7eb6d4">
+          </a>
+          <a class="sfd__ch sfd__ch--knife" href="seeing-food-differently/knife-cuts.html" data-ch="2" data-color="#7eb6d4">
             <span class="sfd__ch-wash" aria-hidden="true"></span>
             <span class="sfd__ch-mark" aria-hidden="true">03</span>
             <div class="sfd__ch-top">
               <p class="sfd__ch-verb">shape</p>
-              <h3 class="sfd__ch-name"><a href="seeing-food-differently/knife-cuts.html">Knife Cuts</a></h3>
+              <h3 class="sfd__ch-name">Knife Cuts</h3>
             </div>
             <p class="sfd__ch-line">How you change the food before heat ever touches it.</p>
-          </article>
-          <article class="sfd__ch sfd__ch--heat" data-ch="3" data-color="#ff5a32">
+          </a>
+          <a class="sfd__ch sfd__ch--heat" href="seeing-food-differently/heat.html" data-ch="3" data-color="#ff5a32">
             <span class="sfd__ch-wash" aria-hidden="true"></span>
             <span class="sfd__ch-mark" aria-hidden="true">04</span>
             <div class="sfd__ch-top">
               <p class="sfd__ch-verb">transform</p>
-              <h3 class="sfd__ch-name"><a href="seeing-food-differently/heat.html">Heat</a></h3>
+              <h3 class="sfd__ch-name">Heat</h3>
             </div>
             <p class="sfd__ch-line">What fire does, and what you can still decide while it works.</p>
-          </article>
-          <article class="sfd__ch sfd__ch--steer" data-ch="4" data-color="#4f9d7a">
+          </a>
+          <a class="sfd__ch sfd__ch--steer" href="seeing-food-differently/steering.html" data-ch="4" data-color="#4f9d7a">
             <span class="sfd__ch-wash" aria-hidden="true"></span>
             <span class="sfd__ch-mark" aria-hidden="true">05</span>
             <div class="sfd__ch-top">
               <p class="sfd__ch-verb">decide</p>
-              <h3 class="sfd__ch-name"><a href="seeing-food-differently/steering.html">Steering</a></h3>
+              <h3 class="sfd__ch-name">Steering</h3>
             </div>
             <p class="sfd__ch-line">What the dish needs now.</p>
-          </article>
+          </a>
         </div>
         <div class="sfd__caret" id="sfd-caret" aria-hidden="true"></div>
       </div>
