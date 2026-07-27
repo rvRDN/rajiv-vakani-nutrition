@@ -758,7 +758,7 @@ body.sf-guide-mode:not([class*="sf-chapter--"]) .sf-guide-colophon {
 /* —— Chapter layout —— */
 
 .sf-chapter-header {
-  padding: clamp(1.35rem, 3.5vw, 2rem) var(--sf-gutter) clamp(1.1rem, 2.5vw, 1.5rem);
+  padding: clamp(2rem, 5vw, 3rem) var(--sf-gutter) clamp(1.5rem, 3.5vw, 2.15rem);
   background:
     linear-gradient(180deg, rgba(26, 40, 34, 0.04), transparent 70%),
     transparent;
@@ -786,15 +786,16 @@ body.sf-guide-mode:not([class*="sf-chapter--"]) .sf-guide-colophon {
 
 .sf-chapter-title {
   font-family: var(--sf-display);
-  font-size: clamp(1.875rem, 4.5vw, 2.5rem);
+  font-size: clamp(2.35rem, 5.5vw, 3.15rem);
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
   margin: 0 0 0.75rem;
 }
 
 .sf-quiet-question {
   font-family: var(--sf-display);
-  font-size: 1.0625rem;
+  font-size: clamp(1.1rem, 2vw, 1.2rem);
   font-style: italic;
   color: var(--sf-muted);
   margin: 0;
@@ -1092,7 +1093,7 @@ body.sf-guide-mode:not([class*="sf-chapter--"]) .sf-guide-colophon {
 
 .post-page.sf-guide-mode .sf-chapter-title {
   margin: 0;
-  padding: 0 0 0.75rem;
+  padding: 0 0 0.9rem;
 }
 
 /* —— Mobile —— */
