@@ -35,8 +35,8 @@ html {
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  --logo-mark-size: 0.65em;
-  --logo-mark-gap: 0.45em;
+  --logo-mark-size: 0.82em;
+  --logo-mark-gap: 0.48em;
   color: var(--thread-ink);
 }
 
