@@ -83,39 +83,48 @@
       z-index: 1;
     }
 
-    /* Hero: ~15% shorter than full viewport, full width unchanged.
-       Video is bottom-anchored so the pour and cups stay in frame
-       (top trims instead of bottom). Typography matches editorial pages. */
+    /* Hero: full-bleed video; panel absolutely centered in the hero box. */
     .journey-page header.hero.homepage-hero {
+      position: relative;
       min-height: 85vh;
-      padding: 8.5vh 5vw;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      padding: 0;
+      display: block;
       text-align: center;
+      overflow: hidden;
     }
 
     .journey-page .hero-video-background {
+      position: absolute !important;
       width: 100% !important;
       height: 100% !important;
       top: 0 !important;
-      bottom: auto !important;
+      right: 0 !important;
+      bottom: 0 !important;
       left: 0 !important;
       object-fit: cover;
       object-position: center bottom;
     }
 
+    .journey-page .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
     .journey-page .homepage-hero .hero-content {
-      width: 100%;
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: auto;
       max-width: none;
       margin: 0;
-      padding: 0;
+      padding: 1.25rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
+      box-sizing: border-box;
     }
 
     .journey-page .homepage-hero .frosted-hero-panel {
@@ -130,9 +139,9 @@
         0 1px 0 rgba(255, 255, 255, 0.55) inset,
         0 18px 48px rgba(15, 18, 28, 0.18);
       border: 1px solid rgba(255, 255, 255, 0.42);
-      width: min(90vw, 34rem);
+      width: min(calc(100% - 0.5rem), 34rem);
       max-width: 34rem;
-      margin: 0 auto;
+      margin: 0;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -156,16 +165,6 @@
     .journey-page .homepage-hero .frosted-hero-panel > * {
       position: relative;
       z-index: 1;
-    }
-
-    .journey-page .homepage-hero .hero-kicker {
-      margin: 0 0 0.85rem;
-      font-family: "Inter Tight", "Inter", system-ui, sans-serif;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(26, 26, 26, 0.48);
     }
 
     .journey-page .homepage-hero .hero-heading {
@@ -212,18 +211,14 @@
     @media (max-width: 768px) {
       .journey-page header.hero.homepage-hero {
         min-height: 82vh;
-        padding: 8vh 5vw;
       }
 
-      /* Keep pour (spout + stream) in frame on narrow crops.
-         Desktop/tablet stay center bottom above. */
       .journey-page .hero-video-background {
         object-position: 72% bottom;
       }
 
       .journey-page .homepage-hero .frosted-hero-panel {
         padding: 2.45rem 1.75rem 2.25rem;
-        width: min(92vw, 34rem);
       }
 
       .journey-page .homepage-hero .hero-heading {
@@ -816,7 +811,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="contents-thread.css?v=20260727130000">
+  <link rel="stylesheet" href="contents-thread.css?v=20260727131000">
 </head>
 <body class="journey-page">
 
@@ -881,7 +876,6 @@
     <div class="hero-overlay" style="background-color: rgba(0, 0, 0, 0.10);"></div>
     <div class="hero-content">
       <div class="frosted-hero-panel">
-        <p class="hero-kicker">Essay</p>
         <h1 class="hero-heading">Journey</h1>
         <p class="hero-tagline">
           How I arrived at this work,<br>
@@ -1216,6 +1210,6 @@
       }
     });
   </script>
-  <script src="contents-thread.js?v=20260727130000" defer></script>
+  <script src="contents-thread.js?v=20260727131000" defer></script>
 </body>
 </html>
