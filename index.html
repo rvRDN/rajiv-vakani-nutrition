@@ -1063,9 +1063,9 @@
     .home-page .exhibit {
       position: relative;
       isolation: isolate;
-      flex: 0 0 min(78vw, 28rem);
+      flex: 0 0 min(78vw, 30rem);
       scroll-snap-align: start;
-      min-height: clamp(18rem, 42vh, 24rem);
+      min-height: clamp(20rem, 46vh, 27rem);
       padding: clamp(1.75rem, 3vw, 2.35rem);
       display: flex;
       flex-direction: column;
@@ -1155,8 +1155,21 @@
       line-height: 1.05;
       letter-spacing: -0.03em;
       color: #f7efe4;
-      margin: 0 0 0.75rem;
-      max-width: 11ch;
+      margin: 0;
+      max-width: 12.5ch;
+      min-height: calc(1.05em * 2);
+      display: flex;
+      align-items: flex-end;
+    }
+
+    /* Shared contents band: chapter path, specimen tape, or empty spacer */
+    .home-page .exhibit__band {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      min-height: 1.2rem;
+      margin: 0.55rem 0 0.9rem;
     }
 
     .home-page .exhibit__invite {
@@ -1168,6 +1181,96 @@
       color: var(--work-muted);
       margin: 0 0 1.35rem;
       max-width: 20em;
+      min-height: calc(1.4em * 2);
+    }
+
+    /* Emerging Therapies: specimen tape of molecule names */
+    .home-page .exhibit__specimens {
+      position: relative;
+      margin: 0;
+      margin-left: calc(-1 * clamp(1.75rem, 3vw, 2.35rem));
+      margin-right: calc(-1 * clamp(1.75rem, 3vw, 2.35rem));
+      width: calc(100% + 2 * clamp(1.75rem, 3vw, 2.35rem));
+      overflow: hidden;
+      mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        #000 12%,
+        #000 88%,
+        transparent 100%
+      );
+      -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        #000 12%,
+        #000 88%,
+        transparent 100%
+      );
+    }
+    .home-page .exhibit__specimens-track {
+      display: flex;
+      width: max-content;
+      gap: 0;
+      animation: exhibit-specimen-drift 48s linear infinite;
+    }
+    .home-page .exhibit__specimens-set {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding-right: 1.7rem;
+      white-space: nowrap;
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(186, 198, 228, 0.72);
+    }
+    .home-page .exhibit__specimens-set span + span::before {
+      content: "·";
+      margin: 0 0.85rem;
+      color: rgba(186, 198, 228, 0.35);
+    }
+    .home-page .exhibit:hover .exhibit__specimens-track,
+    .home-page .exhibit:focus-visible .exhibit__specimens-track {
+      animation-play-state: paused;
+    }
+    @keyframes exhibit-specimen-drift {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Seeing Food Differently: quiet fixed chapter path */
+    .home-page .exhibit__path {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: baseline;
+      white-space: nowrap;
+      gap: 0;
+      font-family: 'Inter Tight', 'Inter', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.4;
+      color: rgba(232, 190, 140, 0.78);
+    }
+    .home-page .exhibit__path span:not(:last-child)::after {
+      content: "·";
+      margin: 0 0.4rem;
+      color: rgba(232, 190, 140, 0.38);
+    }
+    .home-page .exhibit__path--maps {
+      color: rgba(140, 205, 190, 0.78);
+    }
+    .home-page .exhibit__path--maps span:not(:last-child)::after {
+      color: rgba(140, 205, 190, 0.38);
+    }
+    .home-page .exhibit__path--therapy {
+      color: rgba(160, 195, 150, 0.78);
+    }
+    .home-page .exhibit__path--therapy span:not(:last-child)::after {
+      color: rgba(160, 195, 150, 0.38);
     }
 
     .home-page .exhibit__go {
@@ -1315,6 +1418,17 @@
       .home-page .exhibit:hover,
       .home-page .exhibit:focus-visible { transform: none; }
       .home-page .exhibit:hover .exhibit__glow { transform: none; }
+      .home-page .exhibit__specimens-track {
+        animation: none;
+        transform: none;
+      }
+      .home-page .exhibit__specimens-set[aria-hidden="true"] {
+        display: none;
+      }
+      .home-page .exhibit__specimens {
+        mask-image: none;
+        -webkit-mask-image: none;
+      }
     }
 
     .home-page [data-reveal] {
@@ -1397,11 +1511,18 @@
         min-height: 12rem;
       }
       .home-page .exhibit {
-        flex-basis: min(88vw, 22rem);
-        min-height: 16rem;
+        flex-basis: min(88vw, 24rem);
+        min-height: 19rem;
       }
       .home-page .exhibit__name {
         max-width: none;
+      }
+      .home-page .exhibit__path {
+        font-size: 0.52rem;
+        letter-spacing: 0.04em;
+      }
+      .home-page .exhibit__path span:not(:last-child)::after {
+        margin: 0 0.32rem;
       }
       .home-page .corridor__hint {
         display: none;
@@ -2058,30 +2179,85 @@
             <span class="exhibit__grain" aria-hidden="true"></span>
             <span class="exhibit__scale">Five chapters</span>
             <span class="exhibit__name">Seeing Food Differently</span>
+            <span class="exhibit__band" aria-hidden="true">
+              <span class="exhibit__path">
+                <span>Starting State</span>
+                <span>Flavor</span>
+                <span>Knife Cuts</span>
+                <span>Heat</span>
+                <span>Steering</span>
+              </span>
+            </span>
             <span class="exhibit__invite">A kitchen guide to noticing what&rsquo;s already in front of you.</span>
             <span class="exhibit__go">Open the series</span>
           </a>
-          <a class="exhibit exhibit--therapy" href="therapy-profiles/">
+          <a class="exhibit exhibit--therapy" href="therapy-profiles/index.html">
             <span class="exhibit__glow" aria-hidden="true"></span>
             <span class="exhibit__grain" aria-hidden="true"></span>
             <span class="exhibit__scale">39 profiles</span>
             <span class="exhibit__name">Traditional Therapy Profiles</span>
+            <span class="exhibit__band" aria-hidden="true">
+              <span class="exhibit__path exhibit__path--therapy">
+                <span>Ashwagandha</span>
+                <span>Triphala</span>
+                <span>Turmeric</span>
+                <span>Shilajit</span>
+                <span>Guduchi</span>
+              </span>
+            </span>
             <span class="exhibit__invite">Herbs and formulations, named carefully.</span>
             <span class="exhibit__go">Open the series</span>
           </a>
-          <a class="exhibit exhibit--emerging" href="emerging-therapies/">
+          <a class="exhibit exhibit--emerging" href="emerging-therapies/index.html">
             <span class="exhibit__glow" aria-hidden="true"></span>
             <span class="exhibit__grain" aria-hidden="true"></span>
             <span class="exhibit__scale">10 investigations</span>
             <span class="exhibit__name">Emerging Therapies</span>
-            <span class="exhibit__invite">Therapies moving into counseling while the evidence is still forming.</span>
+            <span class="exhibit__band" aria-hidden="true">
+              <span class="exhibit__specimens">
+                <span class="exhibit__specimens-track">
+                  <span class="exhibit__specimens-set">
+                    <span>Tirzepatide</span>
+                    <span>Retatrutide</span>
+                    <span>CagriSema</span>
+                    <span>Orforglipron</span>
+                    <span>Survodutide</span>
+                    <span>GH secretagogues</span>
+                    <span>BPC-157</span>
+                    <span>TB-500</span>
+                    <span>MOTS-c</span>
+                    <span>Tesamorelin</span>
+                  </span>
+                  <span class="exhibit__specimens-set" aria-hidden="true">
+                    <span>Tirzepatide</span>
+                    <span>Retatrutide</span>
+                    <span>CagriSema</span>
+                    <span>Orforglipron</span>
+                    <span>Survodutide</span>
+                    <span>GH secretagogues</span>
+                    <span>BPC-157</span>
+                    <span>TB-500</span>
+                    <span>MOTS-c</span>
+                    <span>Tesamorelin</span>
+                  </span>
+                </span>
+              </span>
+            </span>
+            <span class="exhibit__invite">Tirzepatide, BPC-157, MOTS-c, and the other names showing up in your feed.</span>
             <span class="exhibit__go">Open the series</span>
           </a>
-          <a class="exhibit exhibit--maps" href="intervention-maps/">
+          <a class="exhibit exhibit--maps" href="intervention-maps/index.html">
             <span class="exhibit__glow" aria-hidden="true"></span>
             <span class="exhibit__grain" aria-hidden="true"></span>
             <span class="exhibit__scale">3 conditions</span>
             <span class="exhibit__name">Intervention Maps</span>
+            <span class="exhibit__band" aria-hidden="true">
+              <span class="exhibit__path exhibit__path--maps">
+                <span>ADHD</span>
+                <span>Depression</span>
+                <span>Anxiety</span>
+              </span>
+            </span>
             <span class="exhibit__invite">What was studied for a condition. Not a shortlist of winners.</span>
             <span class="exhibit__go">Open the series</span>
           </a>
