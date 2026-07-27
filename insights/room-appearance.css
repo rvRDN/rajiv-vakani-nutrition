@@ -1,13 +1,18 @@
-/* Insights room appearance control
-   Quiet Light · Dark type. Shared across mockups and (next) live Insights. */
+/* Insights room appearance
+   Shared across investigation rooms. */
+
+/* —— Light / Dark: lives with the sticky bar, top-right —— */
 .skin {
   position: fixed;
-  top: 3.35rem;
-  right: 1.15rem;
+  top: 0;
+  right: 0;
   z-index: 50;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  min-height: 2.7rem;
+  padding: 0 1.15rem;
+  box-sizing: border-box;
 }
 .skin__opt {
   margin: 0;
@@ -42,20 +47,34 @@
   letter-spacing: 0;
   user-select: none;
 }
+
+/* Keep bar clear of the appearance control on every width */
+.bar {
+  padding-right: 8.5rem !important;
+}
+
 @media (max-width: 520px) {
   .skin {
-    top: auto;
-    bottom: 1.25rem;
-    right: 1.15rem;
+    padding-right: 1rem;
+    gap: 0.35rem;
   }
-  /* Skin moves off the bar on phones; free the right padding so the triad can wrap cleanly */
-  .bar {
-    padding-right: 1.15rem !important;
+  .skin__opt {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
   }
 }
-/* Live pages without mockup bar: sit in the true top-right */
-html.insights-live .skin {
-  top: 1rem;
+
+/*
+  Sections FAB: do not float over reading.
+  Desktop keeps the sticky TOC rail in each page.
+  Mobile jump control stays off until it earns a non-covering home.
+*/
+.toc-fab,
+.toc-backdrop {
+  display: none !important;
+}
+body.toc-open {
+  overflow: auto !important;
 }
 
 /* Room footer: preferred social + copyright, matches investigation paper */
