@@ -7,6 +7,12 @@
   --thread-ink: #111;
   --thread-ink-soft: rgba(17, 17, 17, 0.55);
   --thread-h: 3.15rem;
+  --thread-sbw: 0px;
+}
+
+/* Keep layout width stable when classic scrollbars show/hide */
+html {
+  scrollbar-gutter: stable;
 }
 
 /* —— Closed thread: quieter bar, mark under name —— */
@@ -183,6 +189,8 @@ body.contents-open .main-nav .menu-toggle .hamburger {
   body.contents-open,
   body:has(.nav-links.active) {
     overflow: hidden;
+    /* Classic scrollbar vanishes on lock; pad so the X stays put */
+    padding-right: var(--thread-sbw, 0px);
   }
 
   body.contents-open .main-nav,
@@ -200,6 +208,9 @@ body.contents-open .main-nav .menu-toggle .hamburger {
     box-shadow: none !important;
     border: 0 !important;
     border-bottom: 1px solid rgba(17, 17, 17, 0.08) !important;
+    /* Sticky bar is viewport-wide; match the body pad so the control does not drift */
+    padding-right: var(--thread-sbw, 0px) !important;
+    box-sizing: border-box;
   }
 
   body.contents-open .main-nav .site-logo,
