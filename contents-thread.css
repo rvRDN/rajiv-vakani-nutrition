@@ -12,11 +12,12 @@
 /*
   Keep the layout width constant. Classic scrollbars take space; if that
   space appears/disappears when the room opens, the control jumps.
-  Always reserve the gutter — do not add open-state padding math.
+  Reserve the gutter only. Do not set overflow on html here: html
+  overflow-y plus body overflow-x:hidden breaks position:sticky, which
+  Therapy Profiles heroes use for the pinned orbit runway.
 */
 html {
   scrollbar-gutter: stable;
-  overflow-y: scroll;
 }
 
 /* —— Closed thread: quieter bar, mark under name —— */

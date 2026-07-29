@@ -32,6 +32,12 @@ html.reference-entry, body.reference-entry {
   margin: 0;
 }
 
+/* Sticky hero runway needs a non-scrollport body. Prefer clip over hidden. */
+body.reference-page,
+body.reference-entry {
+  overflow-x: clip;
+}
+
 html.reference-entry {
   scroll-padding-top: 4.75rem;
 }

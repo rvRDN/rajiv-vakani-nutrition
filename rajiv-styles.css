@@ -37,7 +37,9 @@ body {
     background-color: var(--light-grey-bg);
     color: var(--dark-text);
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scrollbar due to animations */
+    /* clip: same horizontal lock as hidden, but does not create a scroll
+       container, so position:sticky (Therapy Profiles hero runway) still works */
+    overflow-x: clip;
     scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
@@ -694,7 +696,9 @@ body {
     background-color: var(--light-grey-bg);
     color: var(--dark-text);
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scrollbar due to animations */
+    /* clip: same horizontal lock as hidden, but does not create a scroll
+       container, so position:sticky (Therapy Profiles hero runway) still works */
+    overflow-x: clip;
     scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
