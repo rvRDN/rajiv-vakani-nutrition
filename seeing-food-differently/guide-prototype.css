@@ -921,17 +921,100 @@ body.sf-guide-mode:not([class*="sf-chapter--"]) .sf-guide-colophon {
   margin-top: 0;
 }
 
-/* Loop display (Steering) */
-.sf-loop {
-  font-family: var(--sf-ui);
-  font-size: 0.9375rem;
+/* Steering orbit — one SVG medallion, ring and verbs drawn together */
+.sf-orbit {
+  position: relative;
+  margin: 1.5rem 0 1.85rem;
+  padding: 0;
+  border: 0;
+}
+
+.sf-orbit__mark {
+  display: block;
+  width: min(100%, 26rem);
+  height: auto;
+  margin-inline: auto;
+  overflow: visible;
+}
+
+.sf-orbit__track {
+  fill: none;
+  stroke: rgba(47, 111, 94, 0.28);
+  stroke-width: 1.15;
+}
+
+.sf-orbit__ticks {
+  fill: rgba(47, 111, 94, 0.42);
+}
+
+.sf-orbit__nodes circle {
+  fill: var(--sf-paper);
+  stroke: var(--sf-accent);
+  stroke-width: 1.5;
+}
+
+.sf-orbit__nodes circle.sf-orbit__node--again {
+  fill: var(--sf-accent);
+}
+
+.sf-orbit__traveler circle {
+  fill: var(--sf-accent);
+  opacity: 0.85;
+}
+
+.sf-orbit__verb {
+  fill: var(--sf-ink);
+  font-family: var(--sf-display);
+  font-size: 22px;
   font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--sf-muted);
-  margin: 1.25rem 0 1.5rem;
-  padding: 0.85rem 1rem;
-  background: rgba(47, 111, 94, 0.08);
-  border-left: 2px solid rgba(47, 111, 94, 0.4);
+  letter-spacing: -0.02em;
+}
+
+.sf-orbit__verb--again {
+  fill: var(--sf-accent);
+  font-size: 20px;
+}
+
+.sf-orbit__hub {
+  fill: var(--sf-soft);
+  font-family: var(--sf-ui);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.sf-orbit__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 40rem) {
+  .sf-orbit__mark {
+    width: min(100%, 28rem);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sf-orbit__mark {
+    animation: sf-rise 0.8s ease-out both;
+  }
+
+  .sf-orbit__traveler {
+    transform-origin: 240px 210px;
+    animation: sf-orbit-spin 9s linear infinite;
+  }
+}
+
+@keyframes sf-orbit-spin {
+  to { transform: rotate(360deg); }
 }
 
 /* Capabilities */
@@ -1084,7 +1167,9 @@ body.sf-guide-mode:not([class*="sf-chapter--"]) .sf-guide-colophon {
 @media (prefers-reduced-motion: reduce) {
   .sf-entrance__atmosphere,
   .sf-entrance__content,
-  .sf-atlas__step {
+  .sf-atlas__step,
+  .sf-orbit__mark,
+  .sf-orbit__traveler {
     animation: none !important;
   }
 }
