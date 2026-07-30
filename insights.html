@@ -183,6 +183,13 @@
       color: rgba(243,240,234,0.62);
       max-width: 42rem;
     }
+    /* Editorial line units: sentence/beat starts on their own line.
+       text-wrap: pretty keeps endings from stranding a last word. */
+    .line-comp {
+      display: block;
+      text-wrap: pretty;
+    }
+    .line-comp + .line-comp { margin-top: 0.15em; }
     .hero__jump {
       margin: 0;
       display: flex;
@@ -278,7 +285,7 @@
       font-size: clamp(1.02rem, 1.4vw, 1.15rem);
       line-height: 1.5;
       color: rgba(243,239,230,0.55);
-      max-width: 28rem;
+      max-width: 34rem;
     }
     @media (min-width: 900px) {
       .sfd__pitch { justify-self: end; text-align: right; }
@@ -612,7 +619,7 @@
       font-size: clamp(1.02rem, 1.4vw, 1.15rem);
       line-height: 1.5;
       color: rgba(242,235,227,0.58);
-      max-width: 28rem;
+      max-width: 32rem;
     }
     @media (min-width: 900px) {
       .tp__pitch { justify-self: end; text-align: right; }
@@ -1270,7 +1277,7 @@
       font-size: 1.1rem;
       line-height: 1.5;
       color: rgba(243,240,234,0.55);
-      max-width: 36rem;
+      max-width: 42rem;
     }
     .inv__film {
       /* living stage: no pin */
@@ -1821,7 +1828,11 @@
           <span class="line"><span>Insights</span></span>
         </h1>
         <p class="hero__sub" data-fade>Curiosity <em>meets</em> evidence.</p>
-        <p class="hero__line" data-fade>Complex nutrition becomes easier to understand. Four series. A body of investigations. Find something worth opening.</p>
+        <p class="hero__line" data-fade>
+          <span class="line-comp">Complex nutrition becomes easier to understand.</span>
+          <span class="line-comp">Four series. A body of investigations.</span>
+          <span class="line-comp">Find something worth opening.</span>
+        </p>
       </div>
       <nav class="hero__jump" data-fade aria-label="Jump">
         <a href="#sfd">Kitchen guide</a>
@@ -1842,7 +1853,12 @@
           <p class="sfd__eyebrow">Series</p>
           <h2 class="sfd__name">Seeing Food Differently</h2>
         </div>
-        <p class="sfd__pitch">Not recipes. Five ways of noticing what was already in front of you. Each chapter keeps its own weather. Hover, tap, or stay. The path keeps walking.</p>
+        <p class="sfd__pitch">
+          <span class="line-comp">Not recipes.</span>
+          <span class="line-comp">Five ways of noticing what was already in&nbsp;front&nbsp;of&nbsp;you.</span>
+          <span class="line-comp">Each chapter keeps its own weather.</span>
+          <span class="line-comp">Hover, tap, or stay. The path keeps walking.</span>
+        </p>
       </header>
 
       <div class="sfd__path" id="sfd-path">
@@ -1912,7 +1928,10 @@
           <h2 class="tp__name">Traditional Therapy Profiles</h2>
           <p class="tp__count"><b>40</b> entries · names keep moving</p>
         </div>
-        <p class="tp__pitch">Names collapse different things into one word. This guide separates them again so each can be understood on its own terms.</p>
+        <p class="tp__pitch">
+          <span class="line-comp">Names collapse different things into one word.</span>
+          <span class="line-comp">This guide separates them again so each can be understood on&nbsp;its&nbsp;own&nbsp;terms.</span>
+        </p>
       </header>
 
       <div class="tp__strata" aria-label="Three kinds of object">
@@ -2007,7 +2026,11 @@
       <header class="et__head">
         <p class="et__eyebrow">Series</p>
         <h2 class="et__title">Emerging Therapies</h2>
-        <p class="et__pitch">Peptides, pipeline compounds, and therapies still finding their evidence. This is the fringe of what’s entering counseling. <em>Roll across the names.</em></p>
+        <p class="et__pitch">
+          <span class="line-comp">Peptides, pipeline compounds, and therapies still finding their&nbsp;evidence.</span>
+          <span class="line-comp">This is the fringe of what’s entering&nbsp;counseling.</span>
+          <span class="line-comp"><em>Roll across the&nbsp;names.</em></span>
+        </p>
       </header>
 
       <div class="et__viewport" id="et-viewport">
@@ -2182,7 +2205,10 @@
       <div class="im__content">
         <p class="im__eyebrow">Series</p>
         <h2 class="im__name">Intervention Maps</h2>
-        <p class="im__pitch">Evidence landscapes for common conditions. The map keeps shifting while you stay.</p>
+        <p class="im__pitch">
+          <span class="line-comp">Evidence landscapes for common conditions.</span>
+          <span class="line-comp">The map keeps shifting while you stay.</span>
+        </p>
         <div class="im__stage">
           <article class="im__cond is-on" data-color="#e87722" data-i="0">
             <p class="im__cond-kicker">Condition 01</p>
@@ -2232,7 +2258,10 @@
     <div class="inv__intro">
       <p class="inv__eyebrow">Writing</p>
       <h2 class="inv__name">Investigations</h2>
-      <p class="inv__pitch">Longer pieces that follow a claim, a food decision, or confusing advice into the research. Three doors first. Then the published work under them.</p>
+      <p class="inv__pitch">
+        <span class="line-comp">Longer pieces that follow a claim, a food decision, or confusing advice into&nbsp;the&nbsp;research.</span>
+        <span class="line-comp">Three doors first. Then the published work under&nbsp;them.</span>
+      </p>
     </div>
 
     <div class="inv__film" id="inv-film">
@@ -2295,7 +2324,10 @@
           <p class="inv__rest-kicker">Published · 11 more</p>
           <h3 class="inv__rest-title">More investigations</h3>
         </div>
-        <p class="inv__rest-note">Title and the line under it, always. One opens at a time.</p>
+        <p class="inv__rest-note">
+          <span class="line-comp">Title and the line under it, always.</span>
+          <span class="line-comp">One opens at a&nbsp;time.</span>
+        </p>
       </header>
 
       <div class="inv__covers" id="inv-covers" role="list">
