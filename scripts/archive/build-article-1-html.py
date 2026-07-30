@@ -231,7 +231,7 @@ def main():
       <a href="../index.html" class="site-logo">Rajiv Vakani</a>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
+        <li><a href="/about">About</a></li>
         <li><a href="../journey.html">Journey</a></li>
         <li><a href="../insights.html" class="active">Insights</a></li>
         <li><a href="../library.html">Library</a></li>
@@ -317,7 +317,7 @@ def main():
     <section class="post-colophon" aria-label="Signature">
       <div class="post-wrap">
         <p>
-          <a href="../about.html">Rajiv Vakani</a>. Writing on nutrition from
+          <a href="/about">Rajiv Vakani</a>. Writing on nutrition from
           New York. Since 2023. <a href="../contact.html">Email</a>.
         </p>
       </div>

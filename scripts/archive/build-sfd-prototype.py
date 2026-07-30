@@ -260,7 +260,7 @@ def build_chapter(meta, chapters):
   </main>
 
   <footer class="sf-pub-footer">
-    <p><a href="../about.html">Rajiv Vakani</a> · <a href="../contact.html">Email</a></p>
+    <p><a href="/about">Rajiv Vakani</a> · <a href="../contact.html">Email</a></p>
     <p class="sf-pub-footer__copy">&copy; 2025&ndash;2026 Rajiv Vakani</p>
   </footer>
 </body>

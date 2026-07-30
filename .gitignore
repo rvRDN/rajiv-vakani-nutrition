@@ -11,6 +11,9 @@ Thumbs.db
 # Leftover rescue trees / one-off dumps (do not re-add)
 recovery/
 
+# Local scratch / browser and visual-test debris
+tmp-*/
+
 # Retired design experiments / mockups (do not re-add)
 home-concepts/
 home-next.html
