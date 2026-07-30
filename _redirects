@@ -1,3 +1,6 @@
+# About: prefer extensionless canonical /about (Pretty URLs already serve it as 200).
+/about.html                         /about  301!
+
 # Authoring scaffold: not a public page.
 /insights/_template.html            /404.html  404!
 /insights/_template                 /404.html  404!

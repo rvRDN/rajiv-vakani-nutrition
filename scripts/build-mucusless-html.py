@@ -671,7 +671,7 @@ html = f"""<!DOCTYPE html>
         "@type": "Person",
         "@id": "https://rajivvakani.com/#person",
         "name": "Rajiv Vakani",
-        "url": "https://rajivvakani.com/about.html"
+        "url": "https://rajivvakani.com/about"
       }},
       "inLanguage": "en",
       "datePublished": "2026-07-19",
@@ -686,7 +686,7 @@ html = f"""<!DOCTYPE html>
       "@type": "Person",
       "@id": "https://rajivvakani.com/#person",
       "name": "Rajiv Vakani",
-      "url": "https://rajivvakani.com/about.html",
+      "url": "https://rajivvakani.com/about",
       "image": "https://rajivvakani.com/headshot_36.jpg"
     }}
   ]
@@ -700,7 +700,7 @@ html = f"""<!DOCTYPE html>
       <a href="../index.html" class="site-logo"><img src="../logo-mark.png?v=rv9" alt="" class="site-logo__mark" decoding="async" width="543" height="543">Rajiv Vakani</a>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
+        <li><a href="/about">About</a></li>
         <li><a href="../journey.html">Journey</a></li>
         <li><a href="../insights.html" class="active">Insights</a></li>
         <li><a href="../library.html">Library</a></li>
@@ -822,7 +822,7 @@ html = f"""<!DOCTYPE html>
     <section class="post-colophon" aria-label="Signature">
       <div class="post-wrap">
         <p>
-          <a href="../about.html">Rajiv Vakani</a>. Writing on nutrition from New York.<br class="colophon-break" aria-hidden="true">
+          <a href="/about">Rajiv Vakani</a>. Writing on nutrition from New York.<br class="colophon-break" aria-hidden="true">
           Since 2023. <a href="../contact.html">Email</a>.
         </p>
       </div>
