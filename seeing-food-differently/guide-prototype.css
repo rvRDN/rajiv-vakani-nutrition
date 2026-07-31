@@ -846,7 +846,7 @@ body.sf-guide-mode:not([class*="sf-chapter--"]) .sf-guide-colophon {
 
 .sf-contents__label {
   font-family: var(--sf-ui);
-  font-size: 0.6875rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1049,7 +1049,7 @@ body.sf-guide-mode:not([class*="sf-chapter--"]) .sf-guide-colophon {
 
 .sf-try-tonight__label {
   font-family: var(--sf-ui);
-  font-size: 0.6875rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1108,7 +1108,7 @@ body.sf-guide-mode:not([class*="sf-chapter--"]) .sf-guide-colophon {
 
 .sf-chapter-nav__label {
   display: block;
-  font-size: 0.6875rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1217,7 +1217,7 @@ body.sf-guide-mode:not([class*="sf-chapter--"]) .sf-guide-colophon {
 
   .sf-shell__path {
     gap: 0.25rem 0.4rem;
-    font-size: 0.6875rem;
+    font-size: 0.7rem;
     line-height: 1.45;
   }
 

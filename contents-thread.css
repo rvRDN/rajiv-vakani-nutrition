@@ -75,9 +75,9 @@ html {
   .post-page .main-nav .nav-links li a.active,
   .topic-page .main-nav .nav-links li a.active {
     font-family: "Inter Tight", "Inter", system-ui, sans-serif !important;
-    font-size: 0.72rem !important;
+    font-size: 0.75rem !important;
     font-weight: 500 !important;
-    letter-spacing: 0.06em !important;
+    letter-spacing: 0.055em !important;
     text-transform: uppercase !important;
     color: rgba(17, 17, 17, 0.42) !important;
     background: none !important;

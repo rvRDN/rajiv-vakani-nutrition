@@ -458,7 +458,7 @@
 
 .evidence-lens__series {
   font-family: 'Inter Tight', sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.64rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -505,7 +505,7 @@
 
 .lens-reading__label {
   font-family: 'Inter Tight', sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.64rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--guide-muted-soft);
@@ -621,7 +621,7 @@
 
 .guide-clarification__label {
   font-family: 'Inter Tight', sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.64rem;
   font-weight: 600;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -748,7 +748,7 @@
 .guide-reference .ref-related h2,
 .guide-reference .ref-confused h3 {
   font-family: 'Inter Tight', sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -849,7 +849,7 @@
 
 .guide-depth__series {
   font-family: 'Inter Tight', sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.64rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1070,7 +1070,7 @@
 .ref-triad__latin {
   display: block;
   font-family: 'Inter Tight', sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
