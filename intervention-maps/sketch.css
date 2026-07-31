@@ -216,6 +216,7 @@ a:focus-visible {
 .ev-title--sm {
   font-size: clamp(2rem, 4.8vw, 3rem);
   max-width: 16ch;
+  text-wrap: balance;
 }
 
 .ev-lede {

@@ -395,6 +395,10 @@ body.library-index {
      the title sits flat on the cream paper. */
   text-shadow: none;
 }
+body[data-article-slug="carrageenan"] .post-title,
+body[data-article-slug="what-gardening-changed-about-how-i-think-about-food"] .post-title {
+  text-wrap: balance;
+}
 .library-page .library-framing {
   font-family: 'Lora', Georgia, serif;
   font-weight: 400;

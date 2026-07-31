@@ -1112,6 +1112,8 @@ a, button, summary {
 /* —— Mobile / narrow polish —— */
 @media (max-width: 899px) {
   .br-mobile { display: block; }
+  .et-invest__q .br-mobile,
+  .et-open__q .br-mobile { display: none; }
   .et-invest__q,
   .et-open__q,
   .et-sec h2 {
