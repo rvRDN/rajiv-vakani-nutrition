@@ -137,6 +137,9 @@
       text-transform: uppercase;
       color: var(--muted-soft);
       margin: 0 0 36px 0;
+      line-height: 1.6;
+      text-align: left;
+      text-shadow: none;
     }
 
     .portrait-page .opener__body {
@@ -493,16 +496,17 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="contents-thread.css?v=20260729001500">
+  <link rel="stylesheet" href="contents-thread.css?v=20260731120000">
 </head>
 <body class="portrait-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <nav class="main-nav">
     <div class="container nav-container">
       <a href="index.html" class="site-logo"><img src="logo-mark.png?v=rv9" alt="" class="site-logo__mark" decoding="async" width="543" height="543">Rajiv Vakani</a>
 
       <ul class="nav-links">
-        <li><a href="/about" class="active">About</a></li>
+        <li><a href="/about" class="active" aria-current="page">About</a></li>
         <li><a href="journey.html">Journey</a></li>
         <li><a href="insights.html">Insights</a></li>
         <li><a href="library.html">Library</a></li>
@@ -517,7 +521,7 @@
 
   <div class="mobile-menu-overlay"></div>
 
-  <main>
+  <main id="main-content">
 
     <!-- 1. OPENER
          Small "About" label, plain opener prose, small portrait
@@ -526,7 +530,7 @@
     <header class="section opener">
       <div class="section__inner opener__inner">
 
-        <p class="opener__label" data-reveal>About</p>
+        <h1 class="opener__label" data-reveal>About</h1>
 
         <div class="opener__body">
           <div class="opener__text" data-reveal data-reveal-delay="1">

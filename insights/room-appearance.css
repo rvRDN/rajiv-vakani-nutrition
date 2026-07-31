@@ -2,6 +2,20 @@
    Shared across investigation rooms. */
 
 /* —— Light / Dark: lives with the sticky bar, top-right —— */
+.room-skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.room-skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  padding: 0.5rem 0.75rem;
+  background: var(--paper, #f4efe6);
+  color: var(--ink, #0c1017);
+}
+
 .skin {
   position: fixed;
   top: 0;
@@ -31,7 +45,10 @@
 .skin__opt:hover,
 .skin__opt:focus-visible {
   color: var(--hot, #c24a1a);
-  outline: none;
+}
+.skin__opt:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 5px;
 }
 .skin__opt.is-active {
   color: var(--ink, #0c1017);
@@ -113,7 +130,21 @@ body.toc-open {
 .room-foot__social a:hover,
 .room-foot__social a:focus-visible {
   color: var(--hot, #c24a1a);
+}
+
+/* Strengthen the chapter rail's own visual grammar instead of boxing links. */
+.toc a:focus-visible {
   outline: none;
+  color: var(--ink);
+  border-left-color: var(--hot);
+  text-decoration-line: underline;
+  text-decoration-color: var(--hot);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.28em;
+}
+.room-foot__social a:focus-visible {
+  outline: none;
+  box-shadow: 0 2px 0 currentColor;
 }
 .room-foot__social svg {
   width: 1.05rem;

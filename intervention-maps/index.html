@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="sketch.css?v=20260730141000" />
+  <link rel="stylesheet" href="sketch.css?v=20260731120000" />
   <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
   <script>
@@ -380,6 +380,9 @@
     .d-suggest__body a:focus-visible {
       color: #0f766e;
       outline: none;
+      text-decoration-line: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.3em;
     }
 
     @media (max-width: 720px) {
@@ -444,6 +447,7 @@
   </style>
 </head>
 <body class="ev">
+  <a class="ev-skip" href="#main-content">Skip to content</a>
   <header class="ev-top">
     <a class="ev-top__mark" href="../index.html">Rajiv Vakani</a>
     <span class="ev-top__place">Intervention Maps</span>
@@ -453,6 +457,7 @@
     </nav>
   </header>
 
+  <main id="main-content">
   <header class="d-hero">
     <p class="ev-kicker">Intervention Maps · 3 conditions</p>
     <h1 class="ev-title">Intervention Maps</h1>
@@ -554,6 +559,8 @@
       It helps me see what people are searching for next.
     </p>
   </aside>
+</main>
+
 <footer class="ev-site-foot">
   <div class="ev-site-foot__inner">
     <div class="ev-site-foot__copy">

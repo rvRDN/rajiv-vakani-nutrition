@@ -47,6 +47,16 @@ html {
   opacity: 0.72;
 }
 
+/* Editorial focus follows the wordmark and link baseline, not a control box. */
+.main-nav .site-logo:focus-visible,
+.main-nav .nav-links li a:focus-visible {
+  outline: none;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.38em;
+}
+
 @media (min-width: 769px) {
   .main-nav .nav-links {
     gap: clamp(0.85rem, 1.8vw, 1.35rem);
@@ -363,7 +373,14 @@ body.contents-open .main-nav .menu-toggle .hamburger {
   .main-nav .nav-links.active li a:focus-visible {
     color: var(--thread-ink-soft) !important;
     font-weight: 500 !important;
+  }
+
+  .main-nav .nav-links.active li a:focus-visible {
     outline: none;
+    text-decoration-line: underline;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.38em;
   }
 
   .main-nav .nav-links.active li a.active {

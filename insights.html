@@ -214,9 +214,13 @@
       transition: color 0.3s ease, border-color 0.3s ease;
       white-space: nowrap;
     }
-    .hero__jump a:hover {
+    .hero__jump a:hover,
+    .hero__jump a:focus-visible {
       color: #fff;
       border-color: var(--hot);
+    }
+    .hero__jump a:focus-visible {
+      outline: none;
     }
     @media (max-width: 899px) {
       .hero__title .line span { white-space: normal; }
@@ -1748,7 +1752,22 @@
     .room-foot__social a:hover,
     .room-foot__social a:focus-visible {
       color: #f0a060;
+    }
+    .room-foot__social a:focus-visible {
       outline: none;
+      box-shadow: 0 2px 0 currentColor;
+    }
+    .room-skip {
+      position: absolute;
+      left: -9999px;
+    }
+    .room-skip:focus {
+      left: 1rem;
+      top: 1rem;
+      z-index: 100;
+      padding: 0.5rem 0.75rem;
+      background: #fff;
+      color: #10141a;
     }
     .room-foot__social svg {
       width: 1.05rem;
@@ -1801,8 +1820,10 @@
   </script>
 </head>
 <body>
+  <a class="room-skip" href="#main-content">Skip to content</a>
 <div class="scroll-progress" id="scroll-progress"></div>
 
+  <main id="main-content">
   <header class="hero" id="top">
     <div class="hero__canvas" aria-hidden="true">
       <div class="hero__orb hero__orb--1" data-orb="1"></div>
@@ -2924,6 +2945,8 @@
 
     })();
   </script>
+
+  </main>
 
   <footer class="room-foot">
     <div class="room-foot__inner">
