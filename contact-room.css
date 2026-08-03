@@ -160,7 +160,7 @@ html.arrival-room {
   background: rgba(10, 9, 8, 0.55) !important;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .arrival-room .nav-links {
     background: rgba(14, 12, 10, 0.97) !important;
     border-left: 1px solid rgba(201, 166, 107, 0.15);
