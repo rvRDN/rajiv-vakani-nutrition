@@ -1209,9 +1209,13 @@
       max-width: 28rem;
       margin-bottom: 1.5rem;
     }
+    .im__cond-title--long {
+      font-size: clamp(2.35rem, 8vw, 5.1rem);
+      max-width: 14ch;
+    }
     .im__bar-row {
       display: grid;
-      grid-template-columns: 5.5rem 1fr;
+      grid-template-columns: 6.25rem 1fr;
       gap: 0.75rem;
       align-items: center;
     }
@@ -2288,8 +2292,44 @@
             </div>
             <a class="im__cond-go" href="intervention-maps/anxiety.html">Open the Anxiety map</a>
           </article>
+          <article class="im__cond" data-color="#4338ca" data-i="3">
+            <p class="im__cond-kicker">Condition 04</p>
+            <h3 class="im__cond-title im__cond-title--long">Rheumatoid arthritis</h3>
+            <p class="im__cond-line">Disease-modifying care, and the options that sit beside it.</p>
+            <div class="im__bars" aria-hidden="true">
+              <div class="im__bar-row"><span>Medicines</span><div class="im__bar-track"><i data-w="90"></i></div></div>
+              <div class="im__bar-row"><span>Exercise</span><div class="im__bar-track"><i data-w="72"></i></div></div>
+              <div class="im__bar-row"><span>Nutrition</span><div class="im__bar-track"><i data-w="48"></i></div></div>
+              <div class="im__bar-row"><span>Other</span><div class="im__bar-track"><i data-w="40"></i></div></div>
+            </div>
+            <a class="im__cond-go" href="intervention-maps/rheumatoid-arthritis.html">Open the RA map</a>
+          </article>
+          <article class="im__cond" data-color="#007636" data-i="4">
+            <p class="im__cond-kicker">Condition 05</p>
+            <h3 class="im__cond-title im__cond-title--long">Osteoarthritis</h3>
+            <p class="im__cond-line">Exercise, weight when relevant, creams, injections, and surgery. Not a disease-changing drug.</p>
+            <div class="im__bars" aria-hidden="true">
+              <div class="im__bar-row"><span>Exercise</span><div class="im__bar-track"><i data-w="88"></i></div></div>
+              <div class="im__bar-row"><span>Medicines</span><div class="im__bar-track"><i data-w="70"></i></div></div>
+              <div class="im__bar-row"><span>Injections</span><div class="im__bar-track"><i data-w="55"></i></div></div>
+              <div class="im__bar-row"><span>Surgery</span><div class="im__bar-track"><i data-w="48"></i></div></div>
+            </div>
+            <a class="im__cond-go" href="intervention-maps/osteoarthritis.html">Open the osteoarthritis map</a>
+          </article>
+          <article class="im__cond" data-color="#1a6b78" data-i="5">
+            <p class="im__cond-kicker">Condition 06</p>
+            <h3 class="im__cond-title im__cond-title--long">Chronic low&nbsp;back pain</h3>
+            <p class="im__cond-line">Exercise, talking therapies, medicines, procedures, and surgery. What each was studied for.</p>
+            <div class="im__bars" aria-hidden="true">
+              <div class="im__bar-row"><span>Exercise</span><div class="im__bar-track"><i data-w="88"></i></div></div>
+              <div class="im__bar-row"><span>Therapy</span><div class="im__bar-track"><i data-w="70"></i></div></div>
+              <div class="im__bar-row"><span>Procedures</span><div class="im__bar-track"><i data-w="50"></i></div></div>
+              <div class="im__bar-row"><span>Surgery</span><div class="im__bar-track"><i data-w="42"></i></div></div>
+            </div>
+            <a class="im__cond-go" href="intervention-maps/chronic-low-back-pain.html">Open the low back pain map</a>
+          </article>
         </div>
-        <div class="im__dots" id="im-dots" aria-hidden="true"><b class="is-on"></b><b></b><b></b></div>
+        <div class="im__dots" id="im-dots" aria-hidden="true"><b class="is-on"></b><b></b><b></b><b></b><b></b><b></b></div>
         <p class="im__enter"><a href="intervention-maps/index.html">Open all Intervention Maps</a></p>
       </div>
     </div>
@@ -2783,7 +2823,7 @@
 
         whenInView(imSection, function () {
           if (reduce || imTimer) return;
-          imTimer = setInterval(function () { showIm(imIdx + 1); }, 3200);
+          imTimer = setInterval(function () { showIm(imIdx + 1); }, 3600);
         }, function () {
           if (imTimer) { clearInterval(imTimer); imTimer = null; }
         }, 0.35);

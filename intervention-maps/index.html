@@ -4,26 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intervention Maps | Rajiv Vakani</title>
-  <meta name="description" content="Compare the evidence for exercise, therapy, nutrition, supplements, and other approaches for common health conditions." />
+  <meta name="description" content="Evidence maps for ADHD, depression, anxiety, rheumatoid arthritis, osteoarthritis, and chronic low back pain. What was studied, not a shortlist." />
   <link rel="canonical" href="https://rajivvakani.com/intervention-maps/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rajivvakani.com/intervention-maps/" />
   <meta property="og:title" content="Intervention Maps | Rajiv Vakani" />
-  <meta property="og:description" content="Compare the evidence for exercise, therapy, nutrition, supplements, and other approaches for common health conditions." />
+  <meta property="og:description" content="Evidence maps for ADHD, depression, anxiety, rheumatoid arthritis, osteoarthritis, and chronic low back pain. What was studied, not a shortlist." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://rajivvakani.com/intervention-maps/" />
   <meta property="twitter:title" content="Intervention Maps | Rajiv Vakani" />
-  <meta property="twitter:description" content="Compare the evidence for exercise, therapy, nutrition, supplements, and other approaches for common health conditions." />
+  <meta property="twitter:description" content="Evidence maps for ADHD, depression, anxiety, rheumatoid arthritis, osteoarthritis, and chronic low back pain. What was studied, not a shortlist." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="sketch.css?v=20260731120000" />
+  <link rel="stylesheet" href="sketch.css?v=20260811222000" />
   <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
   <script>
@@ -46,6 +46,9 @@
       --d-adhd: #e87722;
       --d-depression: #2f7d4a;
       --d-anxiety: #0f766e;
+      --d-ra: #4338ca;
+      --d-oa: #007636;
+      --d-clbp: #1a6b78;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
@@ -320,6 +323,12 @@
     .d-plate[data-c="depression"]:focus-visible .d-plate__name { color: #6fc28a; }
     .d-plate[data-c="anxiety"]:hover .d-plate__name,
     .d-plate[data-c="anxiety"]:focus-visible .d-plate__name { color: #4ec4ba; }
+    .d-plate[data-c="ra"]:hover .d-plate__name,
+    .d-plate[data-c="ra"]:focus-visible .d-plate__name { color: #818cf8; }
+    .d-plate[data-c="oa"]:hover .d-plate__name,
+    .d-plate[data-c="oa"]:focus-visible .d-plate__name { color: #7dce8f; }
+    .d-plate[data-c="clbp"]:hover .d-plate__name,
+    .d-plate[data-c="clbp"]:focus-visible .d-plate__name { color: #7ebfd0; }
 
     .d-plate--soon {
       opacity: 0.42;
@@ -459,10 +468,10 @@
 
   <main id="main-content">
   <header class="d-hero">
-    <p class="ev-kicker">Intervention Maps · 3 conditions</p>
+    <p class="ev-kicker">Intervention Maps · 6 conditions</p>
     <h1 class="ev-title">Intervention Maps</h1>
     <p class="ev-lede">
-      Compare the evidence for exercise, therapy, nutrition, supplements, and other approaches for common health conditions.
+      Compare the evidence for exercise, therapy, medicines, injections, and other approaches for common health conditions.
     </p>
   </header>
 
@@ -530,6 +539,39 @@
             <span>
               <span class="d-plate__name">Anxiety</span>
               <span class="d-plate__deck">One shared map for generalized anxiety, panic, and social anxiety</span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="d-plate" href="rheumatoid-arthritis.html" data-c="ra">
+          <span class="d-plate__grid">
+            <span class="d-plate__n">04</span>
+            <span>
+              <span class="d-plate__name">Rheumatoid arthritis</span>
+              <span class="d-plate__deck">Disease-modifying care and the options that sit beside it</span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="d-plate" href="osteoarthritis.html" data-c="oa">
+          <span class="d-plate__grid">
+            <span class="d-plate__n">05</span>
+            <span>
+              <span class="d-plate__name">Osteoarthritis</span>
+              <span class="d-plate__deck">Pain, movement, and function. No approved drug that changes the disease itself</span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="d-plate" href="chronic-low-back-pain.html" data-c="clbp">
+          <span class="d-plate__grid">
+            <span class="d-plate__n">06</span>
+            <span>
+              <span class="d-plate__name">Chronic low&nbsp;back pain</span>
+              <span class="d-plate__deck">Exercise, talking therapies, medicines, procedures, and surgery. What each was studied for</span>
             </span>
           </span>
         </a>

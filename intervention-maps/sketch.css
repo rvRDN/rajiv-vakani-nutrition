@@ -47,6 +47,51 @@ body.ev--anxiety {
   --condition-ink: #0b5a54;
 }
 
+/* Rheumatoid awareness: indigo (Rheumatoid Patient Foundation ribbon). Gold not used as primary accent (contrast on paper). */
+body.ev--rheumatoid-arthritis {
+  --condition: #4338ca;
+  --condition-ink: #312e81;
+}
+
+/* Osteoarthritis theme: restrained arthritis green derived from Arthritis Foundation Green (#00AD50, PMS 2257 / Green Heart). Site OA identity, not a claim of an official OA-specific ribbon. Darkened from the brand green so welcome and hover text meet contrast on Intervention Maps paper. Distinct from Depression's mental-health green. RA remains indigo. */
+body.ev--osteoarthritis {
+  --condition: #007636;
+  --condition-ink: #005f2c;
+}
+
+/* Chronic low back pain: slate-teal design identity (#1a6b78). Same broad teal family as Anxiety, deliberately different shade (Anxiety remains greener #0f766e). Design choice only; not an official CLBP ribbon claim. */
+body.ev--chronic-low-back-pain {
+  --condition: #1a6b78;
+  --condition-ink: #134e58;
+}
+
+/* Two-rail topic pages (RA exercise / rehabilitation): hard divider, no claim borrowing */
+.ev-dual__rail {
+  margin: 0 0 var(--phrase);
+}
+.ev-dual__kicker {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--condition-ink, var(--mute));
+}
+.ev-dual__divider {
+  margin: var(--phrase) 0;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
@@ -604,6 +649,43 @@ a:focus-visible {
   max-width: 34rem;
   line-height: 1.5;
 }
+.ev-landscape__note + .ev-landscape__note {
+  margin-top: 0.85rem;
+}
+
+/* Named landscape: same geologic bands, with the options sitting inside them */
+.ev-strata--named .ev-strata__band {
+  align-items: center;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+.ev-strata--named .ev-strata__copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.28rem;
+  min-width: 0;
+}
+.ev-strata--named .ev-strata__label {
+  text-decoration: none;
+}
+.ev-strata--named a.ev-strata__label:hover,
+.ev-strata--named a.ev-strata__label:focus-visible {
+  color: #fff;
+}
+.ev-strata--named .ev-strata__items {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  color: #9aa3ae;
+}
+.ev-strata--named .ev-strata__band[data-tier="5"] { min-height: 5.35rem; }
+.ev-strata--named .ev-strata__band[data-tier="5"] .ev-strata__items { color: #c5ccd6; }
+.ev-strata--named .ev-strata__band[data-tier="4"] { min-height: 4.35rem; }
+.ev-strata--named .ev-strata__band[data-tier="3"] { min-height: 4.1rem; }
+.ev-strata--named .ev-strata__band[data-tier="2"] { min-height: 4.35rem; }
 
 /* Anxiety landscape: claim field, not a numbered ladder.
    Rank column is gone. Geologic mass keeps presence.
@@ -613,6 +695,156 @@ body.ev--anxiety .ev-strata__band {
   gap: 0;
   padding: 0 1.45rem;
   align-items: center;
+}
+
+/* Named role landscape (OA, RA): role field, not a ranked strength graphic.
+   Rank column is gone. The role label inhabits the geologic mass.
+   Mass and type scale keep presence. No substitute ordinal marker.
+   ADHD / Depression keep numbered claim-strength strata. */
+body.ev--osteoarthritis .ev-strata--named .ev-strata__band,
+body.ev--rheumatoid-arthritis .ev-strata--named .ev-strata__band {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  padding: 1.15rem 1.9rem 1.2rem 1.75rem;
+  align-items: center;
+}
+body.ev--osteoarthritis .ev-strata--named .ev-strata__copy,
+body.ev--rheumatoid-arthritis .ev-strata--named .ev-strata__copy {
+  gap: 0.4rem;
+}
+body.ev--osteoarthritis .ev-strata--named .ev-strata__band[data-tier="5"],
+body.ev--rheumatoid-arthritis .ev-strata--named .ev-strata__band[data-tier="5"] {
+  min-height: 5.85rem;
+  padding-top: 1.35rem;
+  padding-bottom: 1.4rem;
+}
+body.ev--osteoarthritis .ev-strata--named .ev-strata__band[data-tier="4"],
+body.ev--rheumatoid-arthritis .ev-strata--named .ev-strata__band[data-tier="4"] {
+  min-height: 4.65rem;
+}
+body.ev--osteoarthritis .ev-strata--named .ev-strata__band[data-tier="3"],
+body.ev--rheumatoid-arthritis .ev-strata--named .ev-strata__band[data-tier="3"] {
+  min-height: 4.25rem;
+}
+body.ev--osteoarthritis .ev-strata--named .ev-strata__band[data-tier="2"],
+body.ev--rheumatoid-arthritis .ev-strata--named .ev-strata__band[data-tier="2"] {
+  min-height: 4.15rem;
+}
+
+/* CLBP landscape: one editorial route map. Seven equal strata on a teal spine.
+   Roles and branching, not magnitude. No data-tier slabs. */
+body.ev--chronic-low-back-pain .ev-routes {
+  --spine-x: 0.42rem;
+  --branch: 1.05rem;
+  --inset: 0.55rem;
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0.1rem 0 0.2rem calc(var(--spine-x) + var(--branch) + var(--inset));
+  max-width: 34rem;
+}
+body.ev--chronic-low-back-pain .ev-routes::before {
+  content: "";
+  position: absolute;
+  left: var(--spine-x);
+  top: 1.05rem;
+  bottom: 1.15rem;
+  width: 1px;
+  background: color-mix(in srgb, var(--condition) 62%, #f2f4f7);
+  opacity: 0.72;
+}
+body.ev--chronic-low-back-pain .ev-routes__stratum {
+  position: relative;
+  margin: 0;
+  padding: 0.9rem 0 0.95rem;
+  border-bottom: 1px solid rgba(232, 236, 242, 0.1);
+}
+body.ev--chronic-low-back-pain .ev-routes__stratum:first-child {
+  padding-top: 0.15rem;
+}
+body.ev--chronic-low-back-pain .ev-routes__stratum:last-child {
+  border-bottom: 0;
+  padding-bottom: 0.15rem;
+}
+body.ev--chronic-low-back-pain .ev-routes__stratum::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * (var(--branch) + var(--inset)));
+  top: 1.32rem;
+  width: var(--branch);
+  height: 1px;
+  background: var(--condition);
+  opacity: 0.9;
+}
+body.ev--chronic-low-back-pain .ev-routes__stratum::after {
+  content: "";
+  position: absolute;
+  left: calc(-1 * (var(--branch) + var(--inset)) - 3px);
+  top: calc(1.32rem - 3px);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--condition);
+  box-shadow: 0 0 0 3px var(--zone-ink);
+}
+body.ev--chronic-low-back-pain .ev-routes__stratum:first-child::before {
+  top: 0.58rem;
+}
+body.ev--chronic-low-back-pain .ev-routes__stratum:first-child::after {
+  top: calc(0.58rem - 3px);
+}
+body.ev--chronic-low-back-pain .ev-routes__hit {
+  display: grid;
+  gap: 0.28rem;
+  text-decoration: none;
+  color: inherit;
+}
+body.ev--chronic-low-back-pain .ev-routes__kicker {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--condition) 42%, #d7e4e8);
+  line-height: 1.35;
+}
+body.ev--chronic-low-back-pain .ev-routes__role {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: #c5ccd6;
+}
+body.ev--chronic-low-back-pain .ev-routes__options {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  line-height: 1.45;
+  color: #c5ccd6;
+}
+body.ev--chronic-low-back-pain .ev-routes__aside {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #8b94a0;
+  max-width: 32rem;
+}
+body.ev--chronic-low-back-pain .ev-routes__hit:hover .ev-routes__kicker,
+body.ev--chronic-low-back-pain .ev-routes__hit:focus-visible .ev-routes__kicker {
+  color: color-mix(in srgb, var(--condition) 18%, #eef6f7);
+}
+body.ev--chronic-low-back-pain .ev-routes__hit:hover .ev-routes__role,
+body.ev--chronic-low-back-pain .ev-routes__hit:focus-visible .ev-routes__role,
+body.ev--chronic-low-back-pain .ev-routes__hit:hover .ev-routes__options,
+body.ev--chronic-low-back-pain .ev-routes__hit:focus-visible .ev-routes__options {
+  color: #fff;
+}
+body.ev--chronic-low-back-pain .ev-routes__hit:focus-visible {
+  outline: 2px solid var(--condition);
+  outline-offset: 6px;
 }
 
 /* —— Zone 3: decision (cool field; same voice as chapters) —— */
@@ -1075,7 +1307,14 @@ body.ev--anxiety .ev-strata__band {
   color: var(--ink-soft);
   line-height: 1.5;
 }
-.ev-ask p:last-child { margin-bottom: 0; }
+.ev-ask ul {
+  margin: 0.15rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--ink-soft);
+}
+.ev-ask li { margin: 0.28rem 0; }
+.ev-ask p:last-child,
+.ev-ask ul:last-child { margin-bottom: 0; }
 .ev-ask strong { color: var(--ink); }
 
 /* Sources: quiet by default, specific when opened */
@@ -1428,10 +1667,48 @@ body.ev--anxiety .ev-strata__band {
     font-size: 0.92rem;
   }
 
+  .ev-strata--named .ev-strata__band {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+  .ev-strata--named .ev-strata__items {
+    font-size: 0.82rem;
+  }
+  .ev-strata--named .ev-strata__band[data-tier="5"],
+  .ev-strata--named .ev-strata__band[data-tier="4"],
+  .ev-strata--named .ev-strata__band[data-tier="3"],
+  .ev-strata--named .ev-strata__band[data-tier="2"] {
+    min-height: 0;
+  }
+
+  body.ev--osteoarthritis .ev-strata--named .ev-strata__band,
+  body.ev--rheumatoid-arthritis .ev-strata--named .ev-strata__band {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 0.9rem 1.15rem 0.95rem 1.05rem;
+  }
+  body.ev--osteoarthritis .ev-strata--named .ev-strata__band[data-tier="5"],
+  body.ev--rheumatoid-arthritis .ev-strata--named .ev-strata__band[data-tier="5"] {
+    min-height: 0;
+    padding-top: 1.05rem;
+    padding-bottom: 1.1rem;
+  }
+
   body.ev--anxiety .ev-strata__band {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
     padding: 0.55rem 1rem;
+  }
+
+  body.ev--chronic-low-back-pain .ev-routes {
+    --branch: 0.85rem;
+    --inset: 0.42rem;
+  }
+  body.ev--chronic-low-back-pain .ev-routes__stratum {
+    padding: 0.8rem 0 0.85rem;
+  }
+  body.ev--chronic-low-back-pain .ev-routes__options {
+    font-size: 0.94rem;
   }
 
   .ev-ask {
