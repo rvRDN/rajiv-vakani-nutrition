@@ -605,6 +605,16 @@ a:focus-visible {
   line-height: 1.5;
 }
 
+/* Anxiety landscape: claim field, not a numbered ladder.
+   Rank column is gone. Geologic mass keeps presence.
+   In-person and digital therapy are not 01 vs 02. */
+body.ev--anxiety .ev-strata__band {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  padding: 0 1.45rem;
+  align-items: center;
+}
+
 /* —— Zone 3: decision (cool field; same voice as chapters) —— */
 .ev-ask-block {
   margin: 0;
@@ -1416,6 +1426,12 @@ a:focus-visible {
   .ev-strata__band[data-tier="2"] .ev-strata__label,
   .ev-strata__band[data-tier="1"] .ev-strata__label {
     font-size: 0.92rem;
+  }
+
+  body.ev--anxiety .ev-strata__band {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 0.55rem 1rem;
   }
 
   .ev-ask {
