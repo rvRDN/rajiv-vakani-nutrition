@@ -89,7 +89,7 @@ Prove the methodology is generalizable; refine the system between batches, not m
 |---|---|---|
 | **Brain & mental health** | ADHD ✓ · Depression ✓ · Anxiety ✓ (batch closed Aug 10, 2026; public polish may continue later) | v1.0; Brain review logged with no methodology bump |
 | **Pain & musculoskeletal** | Rheumatoid arthritis ✓ · Osteoarthritis ✓ · Chronic low back pain ✓ (fibromyalgia watch) | v1.0 carried forward |
-| **Metabolic health** | Hypertension · Hyperlipidemia · Type 2 diabetes or obesity (owner pick at batch start) | Next frozen version after Pain review |
+| **Metabolic health** | Hypertension ✓ · Hyperlipidemia ✓ · Type 2 diabetes ✓ (obesity queued after the batch) | v1.0 carried forward; Pain post-condition checkpoints remain open and are not a gate |
 | **After those batches** | Owner decides order for insomnia, migraine, IBS, remaining watch list | — |
 
 ✓ = campaign complete through Phase 4 owner approval (or owner batch-close decision).
@@ -104,7 +104,7 @@ Families are for eventual hub navigation. They do **not** change Phases 0–4 or
 |---|---|
 | Brain & mental health | ADHD ✓ · Depression ✓ · Anxiety ✓ · Insomnia · Migraine |
 | Pain & musculoskeletal | Rheumatoid arthritis ✓ · Osteoarthritis ✓ · Chronic low back pain ✓ · Fibromyalgia (later) |
-| Metabolic health | Hypertension · Hyperlipidemia · Type 2 diabetes · Obesity · Metabolic syndrome (later) |
+| Metabolic health | Hypertension ✓ · Hyperlipidemia ✓ · Type 2 diabetes ✓ · Obesity · Metabolic syndrome (later) |
 | Digestive health | IBS · GERD · IBD (later) |
 | Women’s health | PCOS · Menopause · Endometriosis (later) |
 
@@ -120,15 +120,16 @@ Owner-aligned working order. Reorder only with an explicit log entry.
 | 2 | Rheumatoid arthritis | Pain batch lead | **Live · sitemap repaired 2026-08-11** |
 | 3 | Osteoarthritis | Pain batch; exercise, weight, PT, topicals, supplements, injections | **Live · 2026-08-11** |
 | 4 | Chronic low back pain | Pain batch; one of the densest evidence landscapes in medicine | **Live · 2026-08-11** |
-| 5 | Hypertension | Metabolic batch; huge lifestyle + supplement landscape | Queued |
-| 6 | Hyperlipidemia | Metabolic batch; split from “CVD” | Queued |
-| 7 | Type 2 diabetes or obesity | Metabolic batch; owner picks which is third at batch start | Queued |
-| 8 | Migraine | Classic supplement + device + lifestyle decision map | Queued (post-batch) |
-| 9 | Insomnia | CBT-I, hygiene, meds, supplements, light | Queued (post-batch) |
-| 10 | IBS | Diets, gut-directed therapies, probiotics, psychotherapies | Queued (post-batch) |
+| 5 | Hypertension | Metabolic batch lead; huge lifestyle + supplement landscape | **Live · 2026-08-12** |
+| 6 | Hyperlipidemia | Metabolic batch; split from “CVD” | **Live · 2026-08-12** |
+| 7 | Type 2 diabetes | Metabolic batch third seat (locked Aug 12, 2026) | **Live · 2026-08-12** |
+| 8 | Obesity | After Metabolic batch; separate decision problem from T2D | Queued (post-batch) |
+| 9 | Migraine | Classic supplement + device + lifestyle decision map | Queued (post-batch) |
+| 10 | Insomnia | CBT-I, hygiene, meds, supplements, light | Queued (post-batch) |
+| 11 | IBS | Diets, gut-directed therapies, probiotics, psychotherapies | Queued (post-batch) |
 | — | Fibromyalgia, PCOS, GERD, eczema, allergic rhinitis, asthma | Second wave | Watch |
 
-**Depression Phase 4 owner review is done (July 18, 2026).** Brain batch closed Aug 10, 2026. Pain batch live Aug 11, 2026 (RA, OA, CLBP). Next campaign: Metabolic batch (hypertension first in queue). RA/OA/CLBP post-condition “one process change?” checkpoints still open.
+**Depression Phase 4 owner review is done (July 18, 2026).** Brain batch closed Aug 10, 2026. Pain batch live Aug 11, 2026 (RA, OA, CLBP). Metabolic batch live Aug 12, 2026 (Hypertension, Hyperlipidemia, Type 2 diabetes). Next: Obesity after Metabolic, or owner pick from the post-batch queue. Pain-batch and Metabolic post-condition “one process change?” checkpoints remain open by owner choice and are not a live gate.
 
 ---
 
@@ -154,6 +155,474 @@ Efficiency means reusable scaffolding and a clear playbook, not skipping claim c
 ---
 
 ## Decision log
+
+### 2026-08-12 · Metabolic batch live (Hypertension, Hyperlipidemia, Type 2 diabetes)
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Hypertension, hyperlipidemia, and type 2 diabetes go live together as the Metabolic batch.  
+2. Removed `noindex` from 23 pages (HTN 8 · HL 8 · T2D 7). Added those URLs to `sitemap.xml`.  
+3. Intervention Maps index is now nine live plates. Insights morph, homepage exhibit, and Library counts updated to match.  
+4. Obesity remains queued after the Metabolic batch. Post-condition “one process change?” checkpoints remain open and are not a live gate.
+
+**Open:** Obesity campaign start, or owner pick from the post-batch queue. Metabolic process checkpoint.
+
+---
+
+### 2026-08-12 · Type 2 diabetes public-copy frozen; HTML built (pre-publish)
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner froze the public-copy layer after three targeted copy edits. No science, object, or architecture reopen. Everything else frozen as written.  
+2. Structured-remission opening defines remission generally (blood sugar below the diabetes threshold without glucose-lowering medicines for a defined period). DiRECT's A1C <6.5% / two-month off-drug rule stays in participation.  
+3. Supplements first screen: A1C changes in studies; mixed and often thin. No “a little” magnitude judgment.  
+4. Hub structured-remission sentence names eligible, recently diagnosed adults not using insulin at one year.  
+5. HTML built: `intervention-maps/type-2-diabetes.html` + six topic pages. All `noindex, nofollow`. Not on Intervention Maps index. `sitemap.xml` untouched.  
+6. First-render awareness tokens: `--condition: #2f6499` · `--condition-ink: #234a73` on `body.ev--type-2-diabetes`. Family remains IDF / World Diabetes Day blue. Exact pair pending owner judgment on the rendered hub.
+
+**Open:** Owner visual judgment of the diabetes-blue/ink pair on the hub; then publish checklist when ready (sitemap, index plate, remove noindex). Hypertension and hyperlipidemia publish checklists remain independently parked.
+
+---
+
+### 2026-08-12 · Type 2 diabetes Phase 4 charter + outline frozen; public-copy drafted
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner froze the Phase 4 reader charter and page outline as drafted. No revision before public copy.  
+2. At a Glance grouping locked as orientation, not equal treatments or a recommendation chart.  
+3. Six pages mean six decisions worth teaching. Hierarchy from order, space, and Bottom lines.  
+4. Awareness color **family locked** to IDF / World Diabetes Day blue. Site's own condition token. Not type-2-exclusive. No IDF circle mark. Exact hex deferred until first rendered page on Intervention Maps paper. No CSS before the public-copy gate.  
+5. Public-copy drafts written. HTML remains blocked until public-copy freeze.
+
+**Closed later the same day:** Owner froze public copy after three targeted edits. HTML built under `noindex`. First-render diabetes blue `#2f6499` / `#234a73` pending hub judgment.
+
+---
+
+### 2026-08-12 · Type 2 diabetes Phase 3 frozen; Phase 4 authorized
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner froze the Phase 3 Evidence Landscape as drafted. No revision before Phase 4.  
+2. Architecture locked: one Type 2 diabetes hub + six topic pages. Earned from the six frozen objects, not imposed. Not insulin/non-insulin, organ-protection/glucose-lowering, remission, or obesity hubs.  
+3. Claim ladder A–F locked as internal bands, not efficacy grades. **No A′.** B and C are two uncollapsed remission routes, not a prime pair.  
+4. Frozen with the landscape: non-collapse rules and annotations; relative-space and cross-link requirements; named gaps as non-seats; A1C/glucose/weight ≠ hard outcomes and remission ≠ cure as landscape grammar; six distinct evidentiary shapes; a topic page is not evidentiary parity.  
+5. Phase 4 authorized. Reader charter and page outline drafted. Awareness color remains deferred until the Phase 4 design decision.
+
+**Closed later the same day:** Owner froze the charter and outline as drafted. Public-copy drafted. Diabetes-blue family locked; hex deferred.
+
+---
+
+### 2026-08-12 · Type 2 diabetes Phase 2 frozen (6/6); object freeze complete; Phase 3 drafted
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner froze all six Phase 2 Thinking Artifacts as drafted. No artifact-level leakage, hidden architecture decision, §12 weakening, or new claim requiring Phase 1 reopen.  
+2. Distinct evidentiary shapes preserved rather than one common “evidence summary” template.  
+3. Object freeze complete. Campaign state: Phase 0 frozen at 13; six-object index frozen; Phase 1 frozen for all six; Phase 2 frozen for all six.  
+4. Phase 3 Evidence Landscape drafted: [`../drafts/type-2-diabetes/type-2-diabetes-evidence-landscape-phase3-v0.1.md`](../drafts/type-2-diabetes/type-2-diabetes-evidence-landscape-phase3-v0.1.md). Proposed: one hub + six topic pages; no A′ for surgery; B and C as two uncollapsed remission routes. Awaiting owner approval. Phase 4 remains blocked.
+
+**Closed later the same day:** Owner froze Phase 3 as drafted. Phase 4 authorized.
+
+---
+
+### 2026-08-12 · Type 2 diabetes Phase 1 frozen (6/6); Phase 2 drafted
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner froze all six Phase 1 Stability Checks as drafted. No §12 wording changes.  
+2. Library remains **13**. No membership proposal. No seventh object.  
+3. Broader lock: the six objects have genuinely different evidentiary shapes. Phase 2 must preserve those differences rather than forcing an identical argumentative template.  
+   - Diabetes medicines: hard-outcome class evidence plus sequencing conflict  
+   - Eating patterns / exercise: comparative surrogate/risk-factor gradients  
+   - Structured weight-loss remission: dose-response plus protocol/durability  
+   - Metabolic surgery: long-term remission plus RCT/observational design tension  
+   - Popular supplements: deliberately negative promotion result  
+4. Phase 2 Thinking Artifacts drafted for all six objects. §12 carried verbatim. Awaiting owner freeze of Phase 2.
+
+**Closed later the same day:** Owner froze Phase 2 as drafted. Object freeze complete. Phase 3 drafted.
+
+---
+
+### 2026-08-12 · Type 2 diabetes object index accepted as revised; Phase 1 drafted (6/6)
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner accepted the six-object structure after one wording/scope change: **Glucose-lowering medicines → Diabetes medicines.** Folder: `objects/diabetes-medicines/`.  
+2. Internal definition: medicines used within T2D care whose decision value may be glycemic, cardiovascular, kidney, weight-related, or some combination. Organ protection versus glucose lowering remains mandatory internal structure, not two objects.  
+3. Finerenone stays a CKD-context organ-protective branch. ADA 2026 treats it as a nonsteroidal mineralocorticoid receptor antagonist for kidney/CV protection in T2D with CKD and distinguishes that mechanism from glucose lowering. B1 finds no HbA1c reduction for finerenone. The old glycemic heading would have smuggled that mismatch.  
+4. Nothing else added or removed. No seventh object. CGM and DSMES remain not-objects. Eating-pattern / DiRECT split, structured-remission / surgery split, one exercise object with mode branches, and popular supplements with no seated C all stand.  
+5. Look AHEAD (D2) is an annotation against hard-outcome overreach of an intensive multicomponent lifestyle intervention. It is not “diet didn't prevent CVD” and not “exercise didn't prevent CVD.”  
+6. Library membership remains **13**. Folders opened. Phase 1 Evidence Stability Checks drafted for all six objects. No Phase 2 artifacts. No §12 owner-frozen yet.
+
+**Open:** Owner freeze (or revise) of each §12, then Phase 2 Thinking Artifacts.
+
+---
+
+### 2026-08-12 · Type 2 diabetes Phase 0 frozen at 13; object index proposed
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner refused to freeze the 12-source Phase 0 draft unchanged. Surgery as a named gap failed the library’s own pressure-test and the Step 0 crowded-landscape / watch-list rule. Dietary remission (C4 + D3) without a surgery seat would have made the remission landscape asymmetric.  
+2. **C5 added:** Yang et al., 2024. Long-term metabolic/bariatric surgery vs pharmacologic therapy in T2D (*Diabetes Metab Res Rev*; DOI 10.1002/dmrr.3830). T2D-specific ≥5-year systematic review, not a single procedure trial.  
+3. ARMMS-T2D (Courcoulas 2024 *JAMA*) stays companion for RCT-only 7–12 year follow-up, adverse-event costs, and no MACE difference. Observational event/mortality pools in C5 must not overwrite that grain.  
+4. Nothing else added or removed. D1–D4 retained. CGM, DSMES, and supplements/CAM remain named gaps.  
+5. Phase 0 frozen at **13 sources** (A1–A3 + B1 + C1–C5 + D1–D4). Citation log locked.  
+6. Object index proposed: [`../drafts/type-2-diabetes/proposals/2026-08-12-object-index-proposal.md`](../drafts/type-2-diabetes/proposals/2026-08-12-object-index-proposal.md) (six objects). Folders not opened until acceptance.
+
+**Open:** Owner acceptance of the six-object index, then Phase 1.
+
+---
+
+### 2026-08-12 · Type 2 diabetes Step 0 frozen; scaffold + Phase 0 library drafted
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Type 2 diabetes Step 0 brief **owner-approved and frozen as drafted** (no changes).  
+2. Step 1 scaffold complete under `drafts/type-2-diabetes/` (README, citation log, workflow, freeze-register header, proposals, empty objects).  
+3. Phase 0 minimal library **drafted** (12 sources) from a currentness-first search through 12 August 2026: [`../drafts/type-2-diabetes/type-2-diabetes-evidence-library-v0.1.md`](../drafts/type-2-diabetes/type-2-diabetes-evidence-library-v0.1.md).  
+4. Seated inventory: **A1–A3** (ADA Standards 2026; 2023 ESC CVD-in-diabetes; NICE NG28 reviewed 18 Feb 2026) · **B1** (Nong 2025 *BMJ* living medicines NMA) · **C1–C4** (Kunutsor intensive glucose; Yuan diet-pattern NMA; Michielsen exercise; Kanbour remission meta-regression) · **D1–D4** (ACCORD; Look AHEAD; DiRECT; SURPASS-CVOT).  
+5. Explicit gaps preserved: cinnamon/berberine/chromium-class products, Ayurveda/CAM, CGM-as-object, metabolic surgery, DSMES-as-forced-C, insulin landmark, finerenone dedicated D, SELECT/obesity-without-diabetes CVOTs, algae-oil analogue.  
+6. No objects opened. No architecture. No claims frozen. Awareness color remains deferred.  
+7. Hypertension and hyperlipidemia publish checklists remain open and remain not gates.
+
+**Open:** Owner acceptance of the 12-source Phase 0 library, then object-index proposal.
+
+---
+
+### 2026-08-12 · Type 2 diabetes Step 0 opened
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Hypertension and hyperlipidemia Phase 4 remain **complete pre-publish** (themes locked; `noindex`; sitemap/index deferred). Those publish checklists are owner-gated and are **not** a gate on Type 2 diabetes.  
+2. Type 2 diabetes is the next Metabolic-batch campaign after hyperlipidemia. Methodology remains **v1.0**.  
+3. Step 0 brief drafted: [`../drafts/type-2-diabetes/type-2-diabetes-campaign-brief-v0.1.md`](../drafts/type-2-diabetes/type-2-diabetes-campaign-brief-v0.1.md).  
+4. Research object is **broad clinical type 2 diabetes** as people search it, not a cardiometabolic mega-page, not a premature insulin vs non-insulin split, and not a merge with obesity. Prediabetes, type 1, remission headlines, complication-specific care, and youth-onset T2D remain watch-list questions for Phase 0–3.  
+5. Standard of care stays on the map (lifestyle foundations and glucose-lowering medicines), same Metabolic-batch stance as hypertension and hyperlipidemia.  
+6. Awareness color deferred to Phase 4. IDF / World Diabetes Day **blue circle** is the documented candidate (diabetes-wide, not type-2-only; circle mark itself is not for use). Ask the owner before CSS.  
+7. Phase 0 library stays closed until the owner accepts this brief.
+
+**Open:** Owner approval of the type 2 diabetes Step 0 brief, then scaffold + Phase 0 library.
+
+---
+
+### 2026-08-12 · Hyperlipidemia awareness color locked; 2×2 landscape retained
+
+1. Owner confirmed 2×2 role landscape stays (roles, not a descending ladder) and sticky jump fix stays.
+2. Awareness color locked to deeper wine red `#92293a` / ink `#6a1e2b`, sibling to hypertension’s brighter `#c0242b` / `#8a1a1f`.
+3. Still `noindex`; publish checklist remains owner-gated.
+
+### 2026-08-12 · Hyperlipidemia Phase 4 HTML built under noindex
+
+1. Built `intervention-maps/hyperlipidemia.html` + seven topic pages from frozen public-copy.
+2. All pages `noindex`; not on Intervention Maps index or `sitemap.xml`.
+3. Awareness color remains owner-gated. Temporary ink-family tokens in `sketch.css` only so pages do not inherit ADHD-orange fallbacks; not a ribbon/theme lock.
+4. Next: owner color lock, then publish checklist.
+
+### 2026-08-12 · Hyperlipidemia Phase 4 language frozen
+
+1. Owner completed revise-then-freeze gate on `public-copy/` (no Phase 3 / object reopen).
+2. Translated Other TG and hub “narrow / phenotype-cautious / not-first” into ordinary reader language.
+3. Neutralized Popular Supplements guideline sentence; kept “Inclusion here is honesty after looking, not endorsement.”
+4. Participation/safety source-check retained package-supported details and trimmed unsupported peripheral monitoring checklist items (see campaign CHANGELOG).
+5. Phase 4 charter, outline, and public-copy **language frozen**. Next: HTML / theme under `noindex`; awareness color still deferred.
+
+### 2026-08-12 · Hyperlipidemia Phase 3 approved and frozen; Phase 4 public-copy drafted
+
+1. Owner **approved Phase 3 as drafted** (no architecture revision before Phase 4).
+2. Architecture locked: **one hub + seven topic pages**. A / A′ / A″ / B / C / D / E remain internal only (primes are parallel hard-outcome placements, not demotions). No primary/secondary or LDL/TG sub-hubs.
+3. Landscape grammar locked: lipid-panel change ≠ hard cardiovascular outcomes. Cross-link / non-collapse locks preserved for Phase 4.
+4. Awareness color remains deferred (does not block copy architecture).
+5. Phase 4 opened under `drafts/hyperlipidemia/`: reader charter, outline, and `public-copy/` (hub + seven topics) **drafted · awaiting owner language review**. No HTML / sketch.css / sitemap yet.
+6. Library stays at 11; objects stay at 7; §12s unchanged.
+
+### 2026-08-12 · Hyperlipidemia Phase 2 frozen; object freeze complete; Phase 3 drafted
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Phase 2 Thinking Artifacts **frozen as drafted** (Frozen v1.0) for all seven objects. Status line only; §12 and other artifact content unchanged.  
+2. Object freeze **complete** (Phase 1 + 2 pairs for all seven). Freeze register updated.  
+3. Phase 3 Evidence Landscape **drafted** at [`../drafts/hyperlipidemia/hyperlipidemia-evidence-landscape-phase3-v0.1.md`](../drafts/hyperlipidemia/hyperlipidemia-evidence-landscape-phase3-v0.1.md). Status: Phase 3 drafted · awaiting owner approval · August 12, 2026.  
+4. Architecture finding argued: **one hyperlipidemia hub + seven topic pages**. Do not split hubs by primary/secondary prevention or LDL-only vs TG-only labels.  
+5. Claim ladder bands (internal letters only; prefer bands/roles over tiers): **A** statins · **A′** non-statin LDL medicines · **A″** icosapent ethyl · **B** eating patterns (three lines) · **C** plant sterols · **D** other TG medicines · **E** popular supplements. A′ and A″ are parallel hard-outcome placements, not ordinal demotions.  
+6. Library membership remains **11**. Object index remains **7**. Membership gates stay closed.
+
+**Open:** Owner approval of Phase 3. No Phase 4 until approved.
+
+---
+
+### 2026-08-12 · Hyperlipidemia Phase 1 frozen; Phase 2 Thinking Artifacts drafted (7/7)
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Phase 1 Evidence Stability Checks **frozen as drafted** (Frozen v1.0) for all seven objects. §12 wording unchanged.  
+2. Phase 2 Thinking Artifacts **drafted** for all seven objects (`thinking-artifact-v0.1.md` in each folder). Status: Drafted · awaiting owner freeze · August 12, 2026.  
+3. Each artifact carries that object's Stability Check §12 **verbatim**.  
+4. Library membership remains **11**. Object index remains **7**. Fiber / other-TG / popular-supplements membership gates stay closed.  
+5. Freeze register, workflow, README, CHANGELOG, and proposals README updated to match.
+
+**Open:** Owner freeze of Phase 2 artifacts, then object freeze (Phase 1 + 2 pairs) into the freeze register, then Phase 3.
+
+---
+
+### 2026-08-12 · Hyperlipidemia Phase 1 Stability Checks drafted (7/7)
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Object index remained **accepted as revised** (seven objects).  
+2. Phase 1 Evidence Stability Checks **drafted** for all seven objects. Status: Drafted · awaiting owner freeze of §12 · August 12, 2026.  
+3. Membership gates closed: soluble fiber stays a diet branch (no C/split proposal); other TG medicines and popular supplements calibrated with labeled working evidence (no seated C/D). Library stays at **11**.  
+4. No Phase 2 artifacts yet. No claims frozen.
+
+**Open:** Owner freeze (or revise) of each §12, then Phase 2 Thinking Artifacts.
+
+---
+
+### 2026-08-12 · Hyperlipidemia object index revised to 7 and accepted
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner refused the six-object index unchanged. Core logic held; two targeted revisions required.  
+2. **Soluble/viscous fiber restored** inside the diet object as a mandatory named internal branch with a Phase 1 working-evidence Stability Check. Portfolio’s viscous-fiber *component* is not the fiber-alone reader decision. Not a separate fiber object unless Phase 1 later forces a split. Diet object retitled: Eating patterns, saturated fat, and soluble fiber.  
+3. **Seventh object added:** Other triglyceride-lowering medicines (`other-triglyceride-medicines`). Fibrates are the mandatory starting branch. Niacin and other prescription omega-3 formulations examined as appropriate. No dedicated Phase 0 C/D; library membership ≠ object existence (same test that opened popular supplements). Narrow placement after Phase 1 is allowed.  
+4. **Icosapent ethyl remains separate.** REDUCE-IT fence must not be dumped into a general TG-drug bucket.  
+5. Exercise, weight, Lp(a) drugs, FH/apheresis, and primary/secondary-as-objects stay context/gaps as proposed. Statin intolerance stays context inside non-statin LDL medicines.  
+6. Index accepted as revised. Seven folders opened. Phase 1 unlocked. Library stays at **11**.
+
+**Open:** Phase 1 Evidence Stability Checks for all seven objects.
+
+---
+
+### 2026-08-12 · Hyperlipidemia Phase 0 frozen at 11; object index proposed
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner accepted Phase 0 at **11 sources** as drafted. Minimal did not become narrow: SOC triad, statin/LDL events spine, non-statin outcomes, diet at surrogate and event levels, plant sterols, PCSK9, bempedoic/statin-intolerance, purified-EPA story all seated.  
+2. Gaps stay gaps (RYR, berberine, OTC fish oil, algae analogue, garlic/turmeric-class, exercise, fibrates/niacin, Lp(a) drugs, FH/apheresis). Working evidence later if objects demand.  
+3. STRENGTH remains companion to D3 (not a twelfth seat). Lipid change ≠ hard outcomes stays structural.  
+4. Citation log locked.  
+5. Object index proposed: [`../drafts/hyperlipidemia/proposals/2026-08-12-object-index-proposal.md`](../drafts/hyperlipidemia/proposals/2026-08-12-object-index-proposal.md) (six objects). Folders not opened until acceptance.
+
+**Open:** Owner acceptance of the object index, then Phase 1.
+
+---
+
+### 2026-08-12 · Hyperlipidemia Step 0 frozen; scaffold + Phase 0 library drafted
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Hyperlipidemia Step 0 brief **owner-approved and frozen as drafted** (no changes).  
+2. Step 1 scaffold complete under `drafts/hyperlipidemia/` (README, citation log, workflow, freeze-register header, proposals, empty objects).  
+3. Phase 0 minimal library **drafted** (11 sources) from a currentness-first search through 12 August 2026: [`../drafts/hyperlipidemia/hyperlipidemia-evidence-library-v0.1.md`](../drafts/hyperlipidemia/hyperlipidemia-evidence-library-v0.1.md).  
+4. Seated inventory: **A1–A3** (2026 ACC/AHA; 2025 ESC/EAS Focused Update; NICE NG238) · **B1** (Khan 2022 ezetimibe/PCSK9 NMA) · **C1–C4** (CTT 2010; Chiavaroli Portfolio; Hooper saturated fat; Ras plant sterols) · **D1–D3** (FOURIER; CLEAR Outcomes; REDUCE-IT with STRENGTH companion).  
+5. Explicit gaps preserved: RYR, berberine, OTC fish oil, algae-oil analogue (no claim transfer), garlic/turmeric-class products, exercise-as-lipid-first C, fibrates/niacin routine add-on, Lp(a)-lowering drugs, FH/apheresis specialty pathways.  
+6. No objects opened. No architecture. No claims frozen.  
+7. Hypertension publish checklist and Pain post-condition checkpoints remain open and remain not gates.
+
+**Open:** Owner acceptance of the 11-source Phase 0 library, then object-index proposal.
+
+---
+
+### 2026-08-12 · Hyperlipidemia Step 0 opened
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Hypertension Phase 4 remains **complete pre-publish** (theme locked; `noindex`; sitemap/index deferred). That publish checklist is owner-gated and is **not** a gate on Hyperlipidemia.  
+2. Hyperlipidemia is the next Metabolic-batch campaign after hypertension. Methodology remains **v1.0**.  
+3. Step 0 brief drafted: [`../drafts/hyperlipidemia/hyperlipidemia-campaign-brief-v0.1.md`](../drafts/hyperlipidemia/hyperlipidemia-campaign-brief-v0.1.md).  
+4. Research object is **broad clinical hyperlipidemia** as people search it (high cholesterol / lipids / dyslipidemia vocabulary), not a CVD mega-page and not a premature primary-vs-secondary or LDL-only split. Phenotype rails, familial pathways, and prevention-context architecture remain watch-list questions for Phase 0–3.  
+5. Standard of care stays on the map (lifestyle foundations and lipid-lowering medicines), same Metabolic-batch stance as hypertension.  
+6. Awareness color deferred to Phase 4 (heart-disease red collision with hypertension’s locked `#c0242b`). Ask the owner before CSS.  
+7. Phase 0 library stays closed until the owner accepts this brief.
+
+**Open:** Resolved same day: Step 0 approved; see freeze + Phase 0 draft entry above.
+
+---
+
+### 2026-08-12 · Metabolic batch opened; T2D locked; plant-based preference restated
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Pain-batch post-condition “one process change?” checkpoints for RA, OA, and CLBP stay **open** for now. They remain not a live gate.  
+2. Metabolic batch third seat is **type 2 diabetes**, not obesity. Obesity stays a separate later campaign (overlap with T2D is real; landscapes are not the same map).  
+3. Metabolic batch order: **Hypertension → Hyperlipidemia → Type 2 diabetes**. Obesity follows after the batch.  
+4. Plant-based preference restated for this batch and site-wide: keep including strong studies as usual; when an animal-derived intervention is on the map, also consider the plant-based analogue readers will ask about **when appropriate**. Report what was studied or that it was not. Do not invent claim transfer. Canonical rule remains [`.cursor/rules/plant-based-analogue-check.mdc`](../.cursor/rules/plant-based-analogue-check.mdc).  
+5. Methodology stays **v1.0** for Metabolic (no Pain-review bump yet). Hypertension Step 0 brief drafted at `drafts/hypertension/hypertension-campaign-brief-v0.1.md`.
+
+**Open (resolved in next entry):** Owner approval of the hypertension Step 0 brief, then scaffold + Phase 0 library.
+
+---
+
+### 2026-08-12 · Hypertension Step 0 frozen; Step 1 scaffold complete
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Hypertension Step 0 brief **owner-approved and frozen as drafted** (no changes).  
+2. Step 1 scaffold complete under `drafts/hypertension/` (README, empty library + citation log, workflow, freeze-register header, proposals, empty objects).  
+3. No sources seated. No objects opened. No claims frozen.  
+4. Pain post-condition checkpoints remain open and remain not a gate.
+
+**Open:** Phase 0 currentness-first library draft for hypertension.
+
+---
+
+### 2026-08-12 · Hypertension Phase 0 library drafted (12 sources; mislabeled 13)
+
+**Participants:** Owner + Cursor.
+
+**Decisions / draft notes:**
+
+1. Phase 0 minimal library drafted. Seated inventory was always A1–A3 + B1 + C1–C6 + D1–D2 = **12**; early labels incorrectly said 13.  
+2. Search stayed high-bar and unbiased. Owner nutrition curiosity noted; diet/plant-based seats earned only when they survived the same pressure-test (Gibbs pattern-level certainty grades, including vegan low certainty).  
+3. Popular supplements left as explicit gaps. Alcohol-reduction Cochrane kept as companion/gap (too thin for a C).  
+4. No objects opened. No architecture.
+
+**Open (resolved in next entry):** Owner acceptance after count reconciliation.
+
+---
+
+### 2026-08-12 · Hypertension Phase 0 frozen at 12; object index proposed
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner accepted Phase 0 once membership count was reconciled to **12**. No source added to pad the number.  
+2. Citation log locked to A1–A3, B1, C1–C6, D1–D2.  
+3. Object-index proposal drafted at `drafts/hypertension/proposals/2026-08-12-object-index-proposal.md`. Folders not opened until acceptance.
+
+**Open:** Owner acceptance of the object index, then Phase 1.
+
+---
+
+### 2026-08-12 · Hypertension object index accepted; Phase 1 Stability Checks drafted (7/7)
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Object index **accepted** as written (seven objects). Folders opened under `drafts/hypertension/objects/`.  
+2. Phase 1 Evidence Stability Checks **drafted** for all seven objects (`evidence-stability-check-v0.1.md` in each folder). Status: Drafted · awaiting owner freeze of §12 · August 12, 2026.  
+3. Library membership remains **12**. Popular supplements calibrated with labeled working evidence; membership gate closed; no membership proposal opened.  
+4. No Phase 2 artifacts yet. No §12 owner-frozen yet.
+
+**Open (resolved in next entry):** Owner freeze (or revise) of each §12, then Phase 2 Thinking Artifacts.
+
+---
+
+### 2026-08-12 · Hypertension Phase 1 frozen; Phase 2 Thinking Artifacts drafted (7/7)
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Phase 1 Evidence Stability Checks **frozen as drafted** (Frozen v1.0) for all seven objects. §12 wording unchanged.  
+2. Phase 2 Thinking Artifacts **drafted** for all seven objects (`thinking-artifact-v0.1.md` in each folder). Status: Drafted · awaiting owner freeze · August 12, 2026.  
+3. Each artifact carries that object's Stability Check §12 **verbatim**.  
+4. Library membership remains **12**. Object index remains **7**. Popular-supplements membership gate stays closed.  
+5. Freeze register, workflow, README, CHANGELOG, and proposals README updated to match.
+
+**Open (resolved in next entry):** Owner freeze of Phase 2 artifacts, then object freeze (Phase 1 + 2 pairs) into the freeze register, then Phase 3.
+
+---
+
+### 2026-08-12 · Hypertension Phase 2 frozen; object freeze complete; Phase 3 drafted
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Phase 2 Thinking Artifacts **frozen as drafted** (Frozen v1.0) for all seven objects. Status line only; §12 and other artifact content unchanged.  
+2. Object freeze **complete** (Phase 1 + 2 pairs for all seven). Freeze register updated.  
+3. Phase 3 Evidence Landscape **drafted** at `drafts/hypertension/hypertension-evidence-landscape-phase3-v0.1.md`. Status: Phase 3 drafted · awaiting owner approval · August 12, 2026.  
+4. Architecture finding argued: **one hypertension hub + seven topic pages**. Do not split hubs by stage/threshold. Sodium ≠ salt substitutes and eating patterns ≠ weight-reducing diets stay separate topic pages.  
+5. Claim ladder bands (internal letters only; prefer bands/roles over tiers): **A** antihypertensive medicines · **A′** salt substitutes (parallel hard-outcome band) · **B** eating patterns · **C** sodium reduction · **D** exercise · **E** weight-reducing diets · **F** popular supplements.  
+6. Library membership remains **12**. Object index remains **7**. Popular-supplements membership gate stays closed.
+
+**Open:** Owner approval of Phase 3. No Phase 4 until approved.
+
+---
+
+### 2026-08-12 · Hypertension Phase 3 approved and frozen; Phase 4 public teaching opened
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Phase 3 Evidence Landscape **approved and frozen as drafted**. No research reopening. Library stays at **12**. Objects stay at **7**.  
+2. Architecture locked: **one hub + seven topic pages**. Do not split hubs by stage or guideline threshold. Threshold/target disagreement and measurement teaching stay annotations / topic self-ID.  
+3. Internal bands A / A′ / B / C / D / E / F stay internal only. Prefer bands/roles over tiers. **A′ is parallel** to medicines (hard outcomes in studied settings), not a weaker grade.  
+4. Non-collapse locks preserved for Phase 4: sodium advice ≠ potassium salt substitute; eating patterns ≠ weight-reducing diets; DASH BP ≠ hard events; exercise-mode BP ranking ≠ hard outcomes.  
+5. Landscape grammar locked: lowering blood pressure is not the same as proven protection from heart attack, stroke, or death.  
+6. Phase 4 authorized: reader charter, page outline, and `public-copy/` drafts created under `drafts/hypertension/`. Status: Drafted · awaiting owner language review · August 12, 2026. **No HTML / sketch.css / sitemap yet.**
+7. Awareness color still **deferred** (heart-disease red remains a candidate, not a hypertension-only ribbon). Ask owner before `ev--hypertension` CSS.
+
+**Open:** Owner language review of Phase 4 charter / outline / public-copy, then HTML.
+
+---
+
+### 2026-08-12 · Hypertension Phase 4 public-copy frozen; HTML built (pre-publish)
+
+**Decisions:**
+
+1. Phase 4 public-copy **Frozen v1.0** (hub + seven topics + charter + outline) after three language edits: hub medicines precision; exercise participation sourced-only; supplements product voice.
+2. HTML built: `intervention-maps/hypertension.html` + seven topic pages. `body.ev--hypertension` present; **no** `--condition` color tokens in `sketch.css` yet.
+3. All eight pages carry `noindex, nofollow`. Not listed on Intervention Maps index plates. `sitemap.xml` untouched.
+4. Awareness color still **deferred**. Sitemap / index / remove-noindex reserved for explicit publish step.
+
+**Open:** Owner visual review of HTML; lock awareness color when ready; then publish checklist (sitemap, index plate, remove noindex).
+
+---
+
+### 2026-08-12 · Hypertension awareness color locked (pre-publish)
+
+**Decisions:**
+
+1. Hypertension awareness/theme family locked to **red** (AHA high-BP / World Hypertension Day ecosystem; not a hypertension-only ribbon claim).
+2. Exact tokens locked (shade A): `--condition: #c0242b` · `--condition-ink: #8a1a1f` on `body.ev--hypertension`.
+3. Wired in `sketch.css`; documented in `.cursor/rules/evidence-condition-awareness-colors.mdc`.
+4. Pre-publish intact: `noindex, nofollow` on all eight pages; not on Intervention Maps index; not in `sitemap.xml`.
+
+**Open:** Publish checklist when ready (remove noindex → index plate → sitemap → live verification).
+
+---
 
 ### 2026-08-11 · Pain batch live (RA, OA, CLBP)
 
@@ -718,6 +1187,14 @@ Efficiency means reusable scaffolding and a clear playbook, not skipping claim c
 | [`new-condition-playbook-v0.1.md`](new-condition-playbook-v0.1.md) | How to start the next condition in a few steps |
 | [`methodology-changelog-v0.1.md`](methodology-changelog-v0.1.md) | Methodology version history |
 | [`../drafts/adhd/condition-evidence-methodology-v1.0.md`](../drafts/adhd/condition-evidence-methodology-v1.0.md) | Claim calibration Phases 0–4 |
+| [`../drafts/type-2-diabetes/type-2-diabetes-campaign-brief-v0.1.md`](../drafts/type-2-diabetes/type-2-diabetes-campaign-brief-v0.1.md) | Type 2 diabetes Step 0 brief (owner-approved) |
+| [`../drafts/type-2-diabetes/type-2-diabetes-evidence-library-v0.1.md`](../drafts/type-2-diabetes/type-2-diabetes-evidence-library-v0.1.md) | Type 2 diabetes Phase 0 library (frozen v0.1 · 13 sources) |
+| [`../drafts/type-2-diabetes/proposals/2026-08-12-object-index-proposal.md`](../drafts/type-2-diabetes/proposals/2026-08-12-object-index-proposal.md) | Type 2 diabetes object index (**accepted as revised** · 6 objects · Diabetes medicines) |
+| [`../drafts/type-2-diabetes/type-2-diabetes-evidence-landscape-phase3-v0.1.md`](../drafts/type-2-diabetes/type-2-diabetes-evidence-landscape-phase3-v0.1.md) | Type 2 diabetes Phase 3 landscape (**approved and frozen**) |
+| [`../drafts/type-2-diabetes/type-2-diabetes-page-reader-charter-phase4-v0.1.md`](../drafts/type-2-diabetes/type-2-diabetes-page-reader-charter-phase4-v0.1.md) | Type 2 diabetes Phase 4 reader charter (**Frozen v1.0**) |
+| [`../drafts/type-2-diabetes/type-2-diabetes-page-outline-phase4-v0.1.md`](../drafts/type-2-diabetes/type-2-diabetes-page-outline-phase4-v0.1.md) | Type 2 diabetes Phase 4 page outline (**Frozen v1.0**) |
+| [`../drafts/type-2-diabetes/public-copy/`](../drafts/type-2-diabetes/public-copy/) | Type 2 diabetes public-copy (**Frozen v1.0**) |
+| [`../intervention-maps/type-2-diabetes.html`](../intervention-maps/type-2-diabetes.html) | Type 2 diabetes hub HTML (**drafted · `noindex`**) |
 | [`../drafts/chronic-low-back-pain/chronic-low-back-pain-campaign-brief-v0.1.md`](../drafts/chronic-low-back-pain/chronic-low-back-pain-campaign-brief-v0.1.md) | CLBP Step 0 brief (owner-approved) |
 | [`../drafts/chronic-low-back-pain/chronic-low-back-pain-evidence-library-v0.1.md`](../drafts/chronic-low-back-pain/chronic-low-back-pain-evidence-library-v0.1.md) | CLBP Phase 0 library (frozen v0.1 · 17 sources) |
 | [`../drafts/chronic-low-back-pain/chronic-low-back-pain-evidence-landscape-phase3-v0.1.md`](../drafts/chronic-low-back-pain/chronic-low-back-pain-evidence-landscape-phase3-v0.1.md) | CLBP Phase 3 landscape (**approved and frozen**) |

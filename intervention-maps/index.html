@@ -4,26 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intervention Maps | Rajiv Vakani</title>
-  <meta name="description" content="Evidence maps for ADHD, depression, anxiety, rheumatoid arthritis, osteoarthritis, and chronic low back pain. What was studied, not a shortlist." />
+  <meta name="description" content="Evidence maps for ADHD, depression, anxiety, rheumatoid arthritis, osteoarthritis, chronic low back pain, hypertension, hyperlipidemia, and type 2 diabetes." />
   <link rel="canonical" href="https://rajivvakani.com/intervention-maps/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rajivvakani.com/intervention-maps/" />
   <meta property="og:title" content="Intervention Maps | Rajiv Vakani" />
-  <meta property="og:description" content="Evidence maps for ADHD, depression, anxiety, rheumatoid arthritis, osteoarthritis, and chronic low back pain. What was studied, not a shortlist." />
+  <meta property="og:description" content="Evidence maps for ADHD, depression, anxiety, rheumatoid arthritis, osteoarthritis, chronic low back pain, hypertension, hyperlipidemia, and type 2 diabetes." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://rajivvakani.com/intervention-maps/" />
   <meta property="twitter:title" content="Intervention Maps | Rajiv Vakani" />
-  <meta property="twitter:description" content="Evidence maps for ADHD, depression, anxiety, rheumatoid arthritis, osteoarthritis, and chronic low back pain. What was studied, not a shortlist." />
+  <meta property="twitter:description" content="Evidence maps for ADHD, depression, anxiety, rheumatoid arthritis, osteoarthritis, chronic low back pain, hypertension, hyperlipidemia, and type 2 diabetes." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="sketch.css?v=20260811222000" />
+  <link rel="stylesheet" href="sketch.css?v=20260812181000" />
   <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
   <script>
@@ -49,6 +49,9 @@
       --d-ra: #4338ca;
       --d-oa: #007636;
       --d-clbp: #1a6b78;
+      --d-htn: #c0242b;
+      --d-hl: #92293a;
+      --d-t2d: #2f6499;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
@@ -329,6 +332,12 @@
     .d-plate[data-c="oa"]:focus-visible .d-plate__name { color: #7dce8f; }
     .d-plate[data-c="clbp"]:hover .d-plate__name,
     .d-plate[data-c="clbp"]:focus-visible .d-plate__name { color: #7ebfd0; }
+    .d-plate[data-c="htn"]:hover .d-plate__name,
+    .d-plate[data-c="htn"]:focus-visible .d-plate__name { color: #f07178; }
+    .d-plate[data-c="hl"]:hover .d-plate__name,
+    .d-plate[data-c="hl"]:focus-visible .d-plate__name { color: #c45a6c; }
+    .d-plate[data-c="t2d"]:hover .d-plate__name,
+    .d-plate[data-c="t2d"]:focus-visible .d-plate__name { color: #7eabdb; }
 
     .d-plate--soon {
       opacity: 0.42;
@@ -468,7 +477,7 @@
 
   <main id="main-content">
   <header class="d-hero">
-    <p class="ev-kicker">Intervention Maps · 6 conditions</p>
+    <p class="ev-kicker">Intervention Maps · 9 conditions</p>
     <h1 class="ev-title">Intervention Maps</h1>
     <p class="ev-lede">
       Compare the evidence for exercise, therapy, medicines, injections, and other approaches for common health conditions.
@@ -577,6 +586,39 @@
         </a>
       </li>
       <li>
+        <a class="d-plate" href="hypertension.html" data-c="htn">
+          <span class="d-plate__grid">
+            <span class="d-plate__n">07</span>
+            <span>
+              <span class="d-plate__name">Hypertension</span>
+              <span class="d-plate__deck">Medicines, salt, eating, exercise, and supplements. BP change isn't always event proof</span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="d-plate" href="hyperlipidemia.html" data-c="hl">
+          <span class="d-plate__grid">
+            <span class="d-plate__n">08</span>
+            <span>
+              <span class="d-plate__name">Hyperlipidemia</span>
+              <span class="d-plate__deck">Statins, other lipid medicines, diet tools, and supplements. Lipid change isn't always event proof</span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="d-plate" href="type-2-diabetes.html" data-c="t2d">
+          <span class="d-plate__grid">
+            <span class="d-plate__n">09</span>
+            <span>
+              <span class="d-plate__name">Type 2 diabetes</span>
+              <span class="d-plate__deck">Medicines, remission programs, surgery, eating, exercise, and supplements</span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
         <span class="d-plate d-plate--soon" aria-disabled="true">
           <span class="d-plate__grid">
             <span class="d-plate__n">—</span>
@@ -617,5 +659,4 @@
     </div>
   </div>
 </footer>
-</body>
-</html>
+</body
