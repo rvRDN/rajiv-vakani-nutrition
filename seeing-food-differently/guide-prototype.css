@@ -1212,7 +1212,14 @@ body.sf-guide-mode:not([class*="sf-chapter--"]) .sf-guide-colophon {
   }
 
   .sf-shell__inner {
+    grid-template-columns: 1fr auto;
     gap: 0.35rem 0.85rem;
+  }
+
+  .sf-shell__place {
+    grid-column: 1 / -1;
+    justify-self: start;
+    text-align: left;
   }
 
   .sf-shell__path {

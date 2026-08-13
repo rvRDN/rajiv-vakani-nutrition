@@ -1,12 +1,32 @@
 ---
-description: Intervention Maps typography hygiene and pre-publish checklist
+description: HARD GATE — Intervention Maps go-live requires full pre-publish checklist report (mobile, typography, SEO). Sitemap alone is not enough.
 globs: intervention-maps/**/*
-alwaysApply: false
+alwaysApply: true
 ---
 
 # Intervention Maps · typography and pre-publish
 
-Apply when creating, editing, or publishing pages under `intervention-maps/`.
+Apply when creating, editing, or **publishing / promoting / going live** with pages under `intervention-maps/`.
+
+This rule is **always on**. Do not rely on file globs or “I remember the last batch protocol.”
+
+## Hard gate (do not skip)
+
+Before removing `noindex`, adding sitemap entries, adding index plates, committing a go-live, or telling the owner it is live:
+
+1. **Read this file** in the current turn (do not work from memory of a thinner protocol).
+2. **Run every checklist item below** on the pages being promoted (hubs required; sample topic pages plus any layout that differs from the shared shell).
+3. **Paste a checklist report** in the reply to the owner with Pass / Fail / N/A for items 1–10. Name the widths checked for typography and mobile (e.g. ~1100 / ~768 / ~390).
+4. If any required item is Fail or unrun, **stop**. Do not promote. Fix or escalate.
+
+Owner saying “go live,” “same protocol as last time,” or roadmap shorthand (`noindex → index → sitemap`) does **not** waive items 4–5 (typography, mobile) or any other item.
+
+### Forbidden substitutes
+
+- Treating `seo-sitemap-before-publish.mdc` as the full Intervention Maps publish protocol (SEO is necessary, not sufficient)
+- Claiming mobile is “covered by shared `sketch.css`” without a width pass
+- Copying a prior batch’s mechanical steps and calling that the checklist
+- Logging “publish checklist” in the roadmap as only sitemap / index / noindex
 
 ## Line-break hygiene (display type)
 
@@ -41,6 +61,10 @@ Run before calling Intervention Maps ready to ship or after a material landing/c
 8. **CSS:** If `sketch.css` changed, bump `?v=` on every Intervention Maps HTML page.
 9. **Links:** Condition plates, contact suggest link, and `../index.html` / `../contact.html` resolve.
 10. **Em dashes:** None in public copy (period / comma / colon / rewrite).
+
+## After a live promote
+
+Record in the condition CHANGELOG (or roadmap Decision log) that the **full** pre-publish checklist was run, not only SEO. One line is enough: widths checked + Pass.
 
 ## Scope note
 

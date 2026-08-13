@@ -4,6 +4,15 @@ All notable library and campaign events are recorded here. Accepted membership c
 
 ---
 
+## v0.1 Full pre-publish checklist · 2026-08-12
+
+- Full Intervention Maps pre-publish checklist run on hub (2×2 role landscape) + sample topics (medicines, structured weight-loss remission) at ~1100 / ~768 / ~390
+- Width pass: 2×2 holds at ~1100/~768; stacks to one column at ~390; no horizontal scroll
+- Typography: hub/topic lede short-word orphans bound
+- Pass on items 1–10 (SEO already live; this pass covers typography + mobile that the live promote skipped)
+
+---
+
 ## v0.1 scaffold · 2026-08-12
 
 ### Step 0 approved

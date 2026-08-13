@@ -124,7 +124,11 @@
       color: #7a8492;
     }
     .d-mini-strata .band {
+      --mass: 100%;
+      position: relative;
+      z-index: 0;
       height: 1.6rem;
+      width: 100%;
       display: flex;
       align-items: center;
       padding: 0 0.7rem;
@@ -133,42 +137,62 @@
       font-size: 0.84rem;
       letter-spacing: -0.015em;
       color: #dce2ea;
+      white-space: nowrap;
+      background: transparent;
+      border: 0;
+    }
+    .d-mini-strata .band::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: var(--mass);
       border: 1px solid rgba(220, 226, 234, 0.28);
       background: rgba(220, 226, 234, 0.1);
       transform-origin: left center;
       animation: d-grow 0.55s var(--ease) both;
+      z-index: -1;
     }
     .d-mini-strata li:nth-child(1) .band {
-      width: 100%;
+      --mass: 100%;
+      color: #f4f6f9;
+    }
+    .d-mini-strata li:nth-child(1) .band::before {
       background: rgba(232, 236, 242, 0.38);
       border-color: rgba(232, 236, 242, 0.5);
-      color: #f4f6f9;
       animation-delay: 0.05s;
     }
     .d-mini-strata li:nth-child(2) .band {
-      width: 84%;
+      --mass: 84%;
+    }
+    .d-mini-strata li:nth-child(2) .band::before {
       background: rgba(220, 226, 234, 0.26);
       border-color: rgba(220, 226, 234, 0.38);
       animation-delay: 0.1s;
     }
     .d-mini-strata li:nth-child(3) .band {
-      width: 66%;
+      --mass: 66%;
+    }
+    .d-mini-strata li:nth-child(3) .band::before {
       background: rgba(220, 226, 234, 0.17);
       border-color: rgba(220, 226, 234, 0.28);
       animation-delay: 0.15s;
     }
     .d-mini-strata li:nth-child(4) .band {
-      width: 48%;
+      --mass: 48%;
+      color: #b8c0cc;
+    }
+    .d-mini-strata li:nth-child(4) .band::before {
       background: rgba(220, 226, 234, 0.1);
       border-color: rgba(220, 226, 234, 0.22);
-      color: #b8c0cc;
       animation-delay: 0.2s;
     }
     .d-mini-strata li:nth-child(5) .band {
-      width: 30%;
+      --mass: 30%;
+      color: #9aa3ae;
+    }
+    .d-mini-strata li:nth-child(5) .band::before {
       background: rgba(220, 226, 234, 0.04);
       border-color: rgba(220, 226, 234, 0.18);
-      color: #9aa3ae;
       animation-delay: 0.25s;
     }
 
@@ -455,7 +479,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .d-mini-strata .band { animation: none; }
+      .d-mini-strata .band::before { animation: none; }
       .d-plate::before,
       .d-plate,
       .d-plate__n,
@@ -480,7 +504,7 @@
     <p class="ev-kicker">Intervention Maps · 9 conditions</p>
     <h1 class="ev-title">Intervention Maps</h1>
     <p class="ev-lede">
-      Compare the evidence for exercise, therapy, medicines, injections, and other approaches for common health conditions.
+      Compare the evidence for exercise, therapy, medicines, injections, and&nbsp;other approaches for common health conditions.
     </p>
   </header>
 
@@ -621,7 +645,7 @@
       <li>
         <span class="d-plate d-plate--soon" aria-disabled="true">
           <span class="d-plate__grid">
-            <span class="d-plate__n">—</span>
+            <span class="d-plate__n">&ndash;</span>
             <span>
               <span class="d-plate__name">More conditions</span>
               <span class="d-plate__deck">Same promise, same structure, when each map is ready</span>

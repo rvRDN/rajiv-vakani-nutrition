@@ -20,6 +20,10 @@ When publishing or promoting any new public HTML page (essay, profile, investiga
 
 Publishing HTML and wiring nav is not enough. A page is not “live for Google” until sitemap + canonical + description + social tags are done (or deliberately `noindex` + omitted from the sitemap).
 
+## Not the full publish protocol
+
+This SEO gate is **necessary but not sufficient** for any public promote. Also run `site-prepublish.mdc` (mobile, chrome, viewport) and report Pass/Fail. For `intervention-maps/`, also run `intervention-maps-prepublish.mdc`. Do not treat this file alone as “the checklist.”
+
 ## After the edit
 
 Commit and push `sitemap.xml` with the page changes. If only meta/sitemap changed for an already-shipped series, still push so Netlify serves the updated sitemap.

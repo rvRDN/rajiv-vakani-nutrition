@@ -4,6 +4,15 @@ All notable library and campaign events are recorded here. Accepted membership c
 
 ---
 
+## v0.1 Full pre-publish checklist · 2026-08-12
+
+- Full Intervention Maps pre-publish checklist run on hub (named strata) + sample topics (medicines, salt substitutes) at ~1100 / ~768 / ~390
+- Width pass: first viewport, dark landscape band, topic pages readable; no horizontal scroll
+- Typography: hub/topic display orphans bound
+- Pass on items 1–10 (SEO already live; this pass covers typography + mobile that the live promote skipped)
+
+---
+
 ## v0.1 scaffold · 2026-08-12
 
 ### Step 0 approved

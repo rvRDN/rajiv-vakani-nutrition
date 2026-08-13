@@ -1,0 +1,45 @@
+---
+description: HARD GATE — any public page go-live needs SEO + mobile + chrome checklist report. Room-specific rules still apply on top.
+alwaysApply: true
+---
+
+# Site-wide pre-publish (all public rooms)
+
+When publishing, promoting, or calling **any** public HTML live (homepage, Insights, Library, contact/about/journey, Intervention Maps, Emerging Therapies, Seeing Food Differently, Therapy Profiles, essays, series landings):
+
+## Hard gate
+
+Before remove-`noindex`, sitemap add, nav/count wiring, commit, push, or “it’s live”:
+
+1. Read this rule in the current turn (not from memory).
+2. Run the checklist below on every URL in the promote set (landings required; sample deeper pages + any unusual layout).
+3. Paste a **Pass / Fail / N/A** report for items 1–8. Name mobile widths checked (~390 / ~768).
+4. If any required item is Fail or unrun, **stop**. Do not promote.
+
+Owner “go live” / “same as last time” does **not** waive mobile or SEO.
+
+### Forbidden substitutes
+
+- SEO/sitemap alone as “the checklist”
+- “Has viewport meta” or “shared CSS is responsive” without a width pass
+- Claiming an old July 2026 site go-live covers pages published later
+
+## Checklist (every public promote)
+
+1. **Indexability:** Live pages have no `noindex` / draft banners; drafts stay `noindex` and off the sitemap.
+2. **SEO / sitemap:** Canonical, unique description (~120–155), OG/Twitter, `sitemap.xml` entry. Follow `seo-sitemap-before-publish.mdc`.
+3. **Viewport:** `<meta name="viewport" content="width=device-width, initial-scale=1">` present.
+4. **Mobile (~390):** First viewport readable; no horizontal scroll; tap targets usable; header/nav not colliding; primary content not clipped.
+5. **Tablet (~768):** Layout holds; no broken grids or overlapping chrome.
+6. **Chrome:** Home / Insights / Library (or room-equivalent) ways resolve; footer/disclaimer present where the room requires it.
+7. **CSS cache:** If shared CSS for that room changed, bump `?v=` on affected pages.
+8. **Voice (reader prose):** Em dashes / contractions / beat rhythm per voice rules when copy was edited in this promote.
+
+## Room add-ons (still required)
+
+- **Intervention Maps:** also full `intervention-maps-prepublish.mdc` (typography orphans, landscape band, series foot, plates).
+- Other rooms: follow that room’s craft rules; this file is the floor, not the ceiling.
+
+## Logging
+
+One CHANGELOG or Decision-log line: checklist run + widths + Pass. SEO-only does not count.

@@ -156,6 +156,19 @@ Efficiency means reusable scaffolding and a clear playbook, not skipping claim c
 
 ## Decision log
 
+### 2026-08-12 · Full site pre-publish remediation (typography + mobile)
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Ran the full Intervention Maps checklist (items 1–10) and site-wide pre-publish checklist (items 1–8) on the six conditions that skipped mobile QA (RA, OA, CLBP, hypertension, hyperlipidemia, type 2 diabetes) plus room landings (home, Insights, Library, Intervention Maps index, Emerging Therapies, Seeing Food Differently, Therapy Profiles). Widths checked: ~1100 / ~768 / ~390.  
+2. Unusual layouts checked: hyperlipidemia and type 2 diabetes 2×2 role landscapes; hypertension named strata; CLBP route map.  
+3. Fixes: display-type `&nbsp;` binds; meta descriptions brought into ~120–155; Intervention Maps index mini-strata labels no longer clip inside the shortest band; Seeing Food Differently header wraps the place name onto its own row at ≤720px; placeholder em dash on the “More conditions” plate replaced with an en dash.  
+4. SEO/sitemap were already live. This log is the missing typography + mobile Pass, not a second go-live.
+
+**Open:** Obesity campaign start remains queued.
+
 ### 2026-08-12 · Metabolic batch live (Hypertension, Hyperlipidemia, Type 2 diabetes)
 
 **Participants:** Owner + Cursor.
