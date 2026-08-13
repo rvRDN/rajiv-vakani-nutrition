@@ -45,7 +45,7 @@ window.RVData = {
     version: 2,
     description: 'Single source of truth for the Knowledge Library. Replaces the previous library.json + articles.json + inline duplicates in library.js. Loaded by every Library-system page via <script defer src="insights/data.js">.',
     schemaVersion: '2.0.0',
-    lastUpdated: '2026-07-20'
+    lastUpdated: '2026-08-12'
   },
 
   /* ----------------------------------------------------------
@@ -530,6 +530,20 @@ window.RVData = {
       summary: 'An investigation into Arnold Ehret\u2019s Mucusless Diet Healing System, how the claims reach Instagram, and why a model that doesn\u2019t hold up physiologically can still survive for more than a century.',
       status: 'published',
       next: ['where-the-egg-alzheimers-story-drifted', 'how-i-evaluate-nutrition-claims', 'the-mango-question']
+    },
+
+    {
+      slug: 'south-asian-heart-risk',
+      url: 'insights/south-asian-heart-risk.html',
+      title: 'My doctor said my labs looked great.',
+      lede: 'My labs looked great. A South Asian-aware look at what reassuring heart-risk numbers show, what they can miss, and which questions are worth asking.',
+      type: 'Research Review',
+      date: '2026-08-13',
+      topic: 'south-asian-food-and-nutrition',
+      cluster: 'studies-on-south-asian-populations',
+      summary: 'A personal investigation of routine labs, PREVENT risk, family history, CAC, ApoB, and Lp(a) for a lean South Asian adult told everything looked great.',
+      status: 'published',
+      next: ['dal-read-as-nutrition', 'i-followed-a-real-ayurvedic-prescription', 'how-i-evaluate-nutrition-claims']
     }
 
   ]

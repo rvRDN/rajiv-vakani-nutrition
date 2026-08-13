@@ -14,6 +14,10 @@ recovery/
 # Local scratch / browser and visual-test debris
 tmp-*/
 
+# Raw clinical source artifacts (PII). Never deploy. Publish only redacted derivatives.
+media/Lab Reports/
+media/QuestScan/
+
 # Retired design experiments / mockups (do not re-add)
 home-concepts/
 home-next.html
@@ -21,4 +25,7 @@ insights/mockups/
 insights/topic-wing.css
 evidence/mockups/
 adhd/
+
+# Local image lab / derivative scratch (do not deploy)
+insights/assets/sa-cardio/_work/
 

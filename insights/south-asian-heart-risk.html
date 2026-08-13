@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en" data-skin="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--
+    Live 2026-08-13 from insights/mockups/sa-cardio-reading-v1.html
+    Public path: insights/south-asian-heart-risk.html
+    Canonical: https://rajivvakani.com/insights/south-asian-heart-risk.html
+    Six publish assets only under insights/assets/sa-cardio/
+    Pre-publish checklist: Pass (widths ~1100 / ~768 / ~390)
+  -->
+  <title>South Asian Heart Risk: What “Good” Labs Can Miss | Rajiv Vakani</title>
+  <meta name="description" content="My labs looked great. A South Asian-aware look at what reassuring heart-risk numbers show, what they can miss, and which questions are worth asking." />
+    <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://rajivvakani.com/insights/south-asian-heart-risk.html" />
+  <meta property="og:title" content="My doctor said my labs looked great. I looked again." />
+  <meta property="og:description" content="My labs looked great. A South Asian-aware look at what reassuring heart-risk numbers show, what they can miss, and which questions are worth asking." />
+  <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
+  <meta property="og:site_name" content="Rajiv Vakani" />
+
+  <link rel="canonical" href="https://rajivvakani.com/insights/south-asian-heart-risk.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://rajivvakani.com/insights/south-asian-heart-risk.html" />
+  <meta name="twitter:title" content="My doctor said my labs looked great. I looked again." />
+  <meta name="twitter:description" content="My labs looked great. A South Asian-aware look at what reassuring heart-risk numbers show, what they can miss, and which questions are worth asking." />
+  <meta name="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
+
+  <script>
+    (function () {
+      try {
+        var s = localStorage.getItem("insights-skin");
+        if (s === "dark" || s === "light") document.documentElement.setAttribute("data-skin", s);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root, html[data-skin="light"] {
+      --bg: #ffffff;
+      --ink: #0c1017;
+      --soft: rgba(12, 16, 23, 0.86);
+      --dim: rgba(12, 16, 23, 0.46);
+      --mute: rgba(12, 16, 23, 0.32);
+      --line: rgba(12, 16, 23, 0.12);
+      --line-strong: rgba(12, 16, 23, 0.22);
+      --accent: #1f4f6d;
+      --hot: #1f4f6d;
+      --stage: #0c1017;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-line: rgba(244, 242, 236, 0.16);
+      --paper: #f3f0e8;
+      --paper-photo: #f7f6f2;
+      --shadow: rgba(12, 16, 23, 0.11);
+      --photo-bright: 0.93;
+      --canvas: 76rem;
+      --prose: 44rem;
+      --teach: 64rem;
+    }
+    html[data-skin="dark"] {
+      --bg: #08090b;
+      --ink: #f4f2ec;
+      --soft: rgba(244, 242, 236, 0.86);
+      --dim: rgba(244, 242, 236, 0.46);
+      --mute: rgba(244, 242, 236, 0.32);
+      --line: rgba(244, 242, 236, 0.14);
+      --line-strong: rgba(244, 242, 236, 0.24);
+      --accent: #7eb0c4;
+      --hot: #7eb0c4;
+      --stage: #171b24;
+      --stage-ink: #f4f2ec;
+      --stage-soft: rgba(244, 242, 236, 0.82);
+      --stage-dim: rgba(244, 242, 236, 0.48);
+      --stage-line: rgba(244, 242, 236, 0.16);
+      --paper: #14161a;
+      --paper-photo: #ebe7df;
+      --shadow: rgba(0, 0, 0, 0.45);
+      --photo-bright: 0.84;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .room-skip {
+      position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+    }
+    .room-skip:focus {
+      position: fixed; left: 1rem; top: 1rem; z-index: 100;
+      width: auto; height: auto; padding: 0.55rem 0.85rem;
+      background: var(--ink); color: #fff; overflow: visible;
+    }
+    .bar {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+      padding: 0.75rem 1.15rem;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.78rem;
+    }
+    .bar a { color: var(--accent); text-decoration: none; }
+    .bar strong { font-weight: 600; color: var(--ink); }
+
+    .rail {
+      max-width: var(--canvas);
+      margin: 0 auto;
+      padding-left: clamp(1.25rem, 4vw, 2.5rem);
+      padding-right: clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .prose-col { max-width: var(--prose); }
+    .teach-col { max-width: var(--teach); }
+
+    .prose {
+      font-family: "Newsreader", "Times New Roman", Times, serif;
+      font-optical-sizing: auto;
+      font-size: clamp(1.12rem, 1.35vw, 1.24rem);
+      line-height: 1.62;
+      color: var(--soft);
+    }
+    .prose p { margin: 0 0 1.05em; }
+    .prose a { color: var(--accent); text-decoration: none; }
+    .prose a:hover { text-decoration: underline; text-underline-offset: 0.15em; }
+    .prose .turn {
+      color: var(--ink);
+      font-size: 1.08em;
+      max-width: 36ch;
+      margin-top: 1.35em;
+      margin-bottom: 1.35em;
+    }
+    .prose .pull {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      max-width: 22ch;
+      margin: 1.75em 0;
+    }
+    .prose .close-line { color: var(--ink); margin-bottom: 0.35em; }
+    .prose .close-blank { color: var(--ink); font-size: 1.08em; margin: 0; }
+
+    .trail {
+      display: block;
+      margin: -0.55em 0 1.25em;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.72rem;
+      line-height: 1.4;
+      color: var(--mute);
+    }
+
+    .with-gloss { position: relative; }
+    @media (min-width: 1180px) {
+      .gloss {
+        position: absolute;
+        left: calc(100% + 1.5rem);
+        width: 12.5rem;
+        top: 0.15rem;
+        margin: 0; padding: 0; border: 0; background: none;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 0.72rem; line-height: 1.45; color: var(--dim);
+      }
+      .gloss strong {
+        display: block; font-size: 0.62rem; letter-spacing: 0.1em;
+        text-transform: uppercase; font-weight: 600; color: var(--mute); margin-bottom: 0.35rem;
+      }
+    }
+    @media (max-width: 1179px) {
+      .gloss {
+        margin: 0 0 1.35em;
+        padding: 0.75rem 0 0.75rem 0.85rem;
+        border-left: 2px solid var(--line-strong);
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 0.78rem; line-height: 1.45; color: var(--dim); max-width: 36rem;
+      }
+      .gloss strong {
+        display: block; font-size: 0.62rem; letter-spacing: 0.1em;
+        text-transform: uppercase; font-weight: 600; color: var(--mute); margin-bottom: 0.3rem;
+      }
+    }
+
+    .movement { padding: clamp(3rem, 7vw, 5rem) 0 clamp(2rem, 4vw, 3rem); }
+    .movement__q {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.85rem, 3.6vw, 2.65rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+      max-width: 18ch;
+    }
+
+    /* —— Open: E encounter (packet + H1 as one composition) —— */
+    .open {
+      border-bottom: 1px solid var(--line);
+    }
+    .open--invade {
+      position: relative;
+      min-height: min(94vh, 58rem);
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 70% 55% at 78% 42%, color-mix(in srgb, var(--ink) 3%, transparent), transparent 70%),
+        var(--bg);
+    }
+    .open--invade .invade-type {
+      position: relative;
+      z-index: 3;
+      padding: clamp(3.5rem, 10vw, 7rem) 0 clamp(2.5rem, 6vw, 4rem);
+      max-width: 34rem;
+    }
+    .open__eyebrow {
+      font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--dim); font-weight: 500; margin: 0 0 1.25rem;
+    }
+    .open__hero {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.6rem, 6.5vw, 4.75rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      color: var(--ink);
+      margin: 0;
+      max-width: 11ch;
+    }
+    .open__dek {
+      margin: 1.35rem 0 0;
+      max-width: 28ch;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(1.05rem, 1.4vw, 1.18rem);
+      line-height: 1.45;
+      color: var(--soft);
+    }
+    .open--invade .invade-art {
+      position: absolute;
+      z-index: 1;
+      /* Tiny balance nudge: boundary ~4% farther right; keep asymmetry, not 50/50 */
+      right: clamp(-6%, -0.5vw, 2.5%);
+      top: clamp(2%, 4vw, 8%);
+      width: min(73%, 52rem);
+      margin: 0;
+      transform: rotate(1.8deg);
+      transform-origin: 70% 30%;
+      filter: drop-shadow(0 22px 48px var(--shadow));
+      -webkit-user-select: none;
+      user-select: none;
+      pointer-events: none;
+    }
+    .open--invade .invade-art__sheet {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: var(--paper-photo);
+      background-image: var(--art);
+      background-size: cover;
+      background-position: left center;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      -webkit-user-drag: none;
+      filter: brightness(var(--photo-bright));
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 100%);
+    }
+    /* Dark: white packet fog must dissolve into the field before it hits the type */
+    html[data-skin="dark"] .open--invade .invade-art {
+      right: clamp(-2%, 1vw, 4%);
+      width: min(68%, 48rem);
+    }
+    html[data-skin="dark"] .open--invade .invade-art__sheet {
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 10%, #000 34%, #000 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, transparent 10%, #000 34%, #000 100%);
+    }
+    html[data-skin="dark"] .open--invade .invade-art::after {
+      content: "";
+      position: absolute;
+      inset: -2% 40% -2% -2%;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        90deg,
+        var(--bg) 0%,
+        var(--bg) 18%,
+        color-mix(in srgb, var(--bg) 55%, transparent) 42%,
+        transparent 70%
+      );
+    }
+    html[data-skin="dark"] .open--invade .invade-type {
+      max-width: 32rem;
+    }
+    html[data-skin="dark"] .open__hero,
+    html[data-skin="dark"] .open__dek {
+      text-shadow:
+        0 0 18px var(--bg),
+        0 0 36px var(--bg),
+        0 1px 0 color-mix(in srgb, var(--bg) 80%, transparent);
+    }
+    .open--invade .invade-art__shield {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: auto;
+      cursor: default;
+    }
+    .open--invade .invade-cap {
+      position: relative;
+      z-index: 3;
+      padding-bottom: 1.35rem;
+      max-width: 34rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      color: var(--mute);
+      font-family: "Instrument Sans", sans-serif;
+    }
+    @media (max-width: 900px) {
+      .open--invade { min-height: auto; }
+      .open--invade .invade-art {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 118%;
+        margin: 0.35rem 0 0 -9%;
+        transform: rotate(1deg);
+        pointer-events: none;
+      }
+      .open--invade .invade-art__sheet {
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+      html[data-skin="dark"] .open--invade .invade-art {
+        right: auto;
+        width: 118%;
+      }
+      html[data-skin="dark"] .open--invade .invade-art::after {
+        display: none;
+      }
+      html[data-skin="dark"] .open--invade .invade-type {
+        max-width: none;
+      }
+      html[data-skin="dark"] .open__hero,
+      html[data-skin="dark"] .open__dek {
+        text-shadow: none;
+      }
+    }
+    .open__after {
+      padding: clamp(2.25rem, 5.5vw, 3.5rem) 0 clamp(2.5rem, 6vw, 3.75rem);
+    }
+
+    .artifact {
+      margin: 0;
+      background: var(--paper);
+      padding: clamp(0.65rem, 1.5vw, 1rem);
+      box-shadow:
+        0 1px 0 color-mix(in srgb, var(--ink) 6%, transparent),
+        0 18px 40px var(--shadow);
+      transform: rotate(-1.1deg);
+      transform-origin: 70% 80%;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .artifact--flat { transform: none; }
+    .artifact__frame {
+      position: relative;
+      overflow: hidden;
+    }
+    .artifact__sheet {
+      display: block;
+      width: 100%;
+      aspect-ratio: var(--art-ar, 1);
+      background-color: var(--paper);
+      background-image: var(--art);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center top;
+      pointer-events: none;
+      -webkit-user-drag: none;
+      filter: brightness(var(--photo-bright));
+    }
+    .artifact__shield {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      cursor: default;
+    }
+    .artifact figcaption {
+      margin: 0.55rem 0 0;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      color: var(--mute);
+      font-family: "Instrument Sans", sans-serif;
+      -webkit-user-select: text;
+      user-select: text;
+    }
+
+    .method-link {
+      display: inline-block;
+      margin: 0.5em 0 1.5em;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .method-note {
+      margin: 0 0 2em;
+      padding: 1rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--dim);
+      max-width: 36rem;
+    }
+    .method-note[hidden] { display: none; }
+
+    /* —— F · inspect (look closer) —— */
+    .inspect {
+      margin: clamp(1.75rem, 4vw, 2.75rem) 0 clamp(1.75rem, 4vw, 2.5rem);
+      max-width: min(48rem, 100%);
+    }
+    .inspect__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+      gap: clamp(1.25rem, 3.5vw, 2.5rem);
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .inspect__grid { grid-template-columns: 1fr; }
+    }
+    .inspect__copy p:last-child { margin-bottom: 0; }
+    .inspect-art {
+      margin: 0;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .inspect-art__frame {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper-photo);
+      box-shadow:
+        0 0 0 1px color-mix(in srgb, var(--ink) 6%, transparent),
+        0 18px 42px var(--shadow);
+    }
+    .inspect-art__sheet {
+      display: block;
+      width: 100%;
+      aspect-ratio: var(--art-ar, 4 / 3);
+      background-color: #f4f2ec;
+      background-image: var(--art);
+      background-size: cover;
+      background-position: var(--art-pos, center);
+      background-repeat: no-repeat;
+      pointer-events: none;
+      -webkit-user-drag: none;
+      filter: brightness(var(--photo-bright));
+    }
+    .inspect-art__shield {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      cursor: default;
+    }
+    .inspect-art figcaption {
+      margin: 0.55rem 0 0;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      color: var(--mute);
+      font-family: "Instrument Sans", sans-serif;
+      -webkit-user-select: text;
+      user-select: text;
+    }
+
+    /* —— Lipid plate: one composition, stacked bands —— */
+    .panel-teach {
+      margin: clamp(2rem, 5vw, 3.25rem) 0;
+      padding: clamp(1.75rem, 3.5vw, 2.35rem) 0 0;
+      border-top: 1px solid var(--ink);
+      max-width: var(--teach);
+    }
+    .panel-teach__sig {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--mute); margin: 0 0 0.65rem;
+    }
+    .panel-teach__title {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.55rem, 2.6vw, 2rem);
+      letter-spacing: -0.025em;
+      margin: 0 0 1.35rem;
+      font-weight: 400;
+    }
+    .panel-teach__evidence {
+      margin: 0 0 1.5rem;
+    }
+    .panel-teach__evidence .inspect-art__frame {
+      /* Same document — one step quieter lift, not a mat */
+      box-shadow:
+        0 0 0 1px color-mix(in srgb, var(--ink) 6%, transparent),
+        0 4px 14px color-mix(in srgb, var(--ink) 5%, transparent);
+    }
+    .panel-teach__evidence .inspect-art__sheet {
+      /* Exact fit: wrong AR + cover was what ate the left labels */
+      aspect-ratio: 2.88 / 1;
+      min-height: 0;
+      background-size: 100% 100%;
+      background-position: left top;
+    }
+    .panel-rail {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0 1rem;
+      margin: 0 0 0;
+      padding: 0 0 1.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (max-width: 820px) {
+      .panel-rail { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem 0.85rem; }
+    }
+    @media (max-width: 520px) {
+      .panel-rail { grid-template-columns: 1fr 1fr; }
+    }
+    .panel-rail__cell {
+      padding-top: 0.7rem;
+      border-top: 2px solid var(--ink);
+    }
+    .panel-rail__k {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 0.35rem;
+    }
+    .panel-rail__n {
+      display: block;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 0.45rem;
+    }
+    .panel-rail__orient {
+      margin: 0;
+      font-size: 0.74rem;
+      line-height: 1.4;
+      color: var(--dim);
+    }
+    .panel-fields {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0 1.35rem;
+      margin: 0;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (max-width: 800px) {
+      .panel-fields { grid-template-columns: 1fr; gap: 1.15rem; }
+    }
+    .panel-fields__item {
+      padding-top: 0.7rem;
+      border-top: 2px solid var(--ink);
+    }
+    .panel-fields__item h4 {
+      margin: 0 0 0.45rem;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+    }
+    .panel-fields__item p {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      color: var(--soft);
+    }
+    .panel-fields__sa {
+      display: block;
+      margin-top: 0.55rem;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.72rem;
+      line-height: 1.4;
+      color: var(--dim);
+    }
+    .panel-readout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 1.35rem;
+      margin: 0;
+      padding: 1.5rem 0 0;
+    }
+    @media (max-width: 700px) {
+      .panel-readout { grid-template-columns: 1fr; gap: 1.15rem; }
+    }
+    .panel-readout > div {
+      padding-top: 0.7rem;
+      border-top: 2px solid var(--ink);
+    }
+    .panel-readout dt {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--mute); margin: 0 0 0.4rem;
+    }
+    .panel-readout dd {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 1.02rem;
+      line-height: 1.5;
+      color: var(--soft);
+    }
+
+    /* —— Evidence acts (A1c / glucose): inspect then interpret —— */
+    .evidence-act {
+      margin: clamp(2.5rem, 6vw, 3.75rem) 0;
+      max-width: var(--teach);
+    }
+    .evidence-act__lead {
+      margin: 0 0 1.15rem;
+      max-width: var(--prose);
+    }
+    .evidence-act__lead p { margin: 0 0 0.85em; }
+    .evidence-act__lead p:last-child { margin-bottom: 0; }
+    .evidence-act__shot {
+      margin: 0 0 1.5rem;
+    }
+    .evidence-act__shot--wide .inspect-art__sheet {
+      aspect-ratio: 4.6 / 1;
+      min-height: 7.5rem;
+      background-size: cover;
+      background-position: left center;
+    }
+    .evidence-act__shot--doc .inspect-art__sheet {
+      aspect-ratio: 1.45 / 1;
+      max-height: 22rem;
+    }
+    .evidence-act .v2 {
+      margin: 0;
+      max-width: none;
+    }
+    .evidence-act .flag-teach__body {
+      max-width: none;
+    }
+    .flag-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 1.35rem;
+      margin: 0 0 1.25rem;
+    }
+    @media (max-width: 560px) {
+      .flag-pair { grid-template-columns: 1fr; gap: 1rem; }
+    }
+    .flag-pair__cell {
+      padding-top: 0.7rem;
+      border-top: 2px solid var(--ink);
+    }
+    .flag-pair__k {
+      display: block;
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--mute); margin-bottom: 0.35rem;
+    }
+    .flag-pair__v {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .flag-teach__body h3 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+      letter-spacing: -0.02em;
+      font-weight: 400;
+      margin: 0 0 1rem;
+    }
+    .flag-teach__body p {
+      margin: 0 0 0.9em;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: var(--soft);
+      max-width: 40rem;
+    }
+
+    /* ApoB teaching object */
+    .apob-teach {
+      margin: 1.35em 0 1.5em;
+      padding: 1.15rem 0;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      max-width: var(--teach);
+    }
+    .apob-teach__sig {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent); margin: 0 0 0.65rem;
+    }
+    .apob-teach__title {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.25rem, 2vw, 1.5rem);
+      letter-spacing: -0.02em;
+      font-weight: 400;
+      margin: 0 0 1rem;
+    }
+    .apob-layers {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem 1.35rem;
+      margin: 0 0 1rem;
+    }
+    @media (max-width: 800px) {
+      .apob-layers { grid-template-columns: 1fr; }
+    }
+    .apob-layers__item {
+      padding-top: 0.7rem;
+      border-top: 2px solid var(--ink);
+    }
+    .apob-layers__k {
+      display: block;
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--mute); margin-bottom: 0.35rem;
+    }
+    .apob-layers__v {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      color: var(--soft);
+    }
+    .apob-teach__case {
+      margin: 0;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: var(--dim);
+      max-width: 40rem;
+    }
+
+    .fork {
+      margin: 1.5em 0 1.75em;
+      padding: 0.85rem 0 0.85rem 1rem;
+      border-left: 2px solid var(--line-strong);
+      max-width: 34rem;
+    }
+    .fork__tag {
+      display: block;
+      font-family: "Instrument Sans", sans-serif;
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--mute); margin-bottom: 0.4rem;
+    }
+    .fork p {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 1.05rem; line-height: 1.5; color: var(--dim); font-style: italic;
+    }
+
+    /* —— Compact V2 (A1c / Lp(a)) —— */
+    .v2 {
+      margin: clamp(1.75rem, 4vw, 2.5rem) 0;
+      padding: clamp(1.15rem, 2.5vw, 1.5rem) 0;
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+      max-width: 36rem;
+    }
+    .v2__sig {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--mute); margin: 0 0 0.75rem;
+    }
+    .v2__measure {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+      letter-spacing: -0.02em; color: var(--ink); margin: 0 0 0.85rem;
+    }
+    .v2__rows { margin: 0 0 1.1rem; padding: 0; list-style: none; }
+    .v2__rows li {
+      display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem;
+      align-items: baseline; padding: 0.35rem 0; border-bottom: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+    .v2__rows li:last-child { border-bottom: 0; }
+    .v2__label { color: var(--dim); }
+    .v2__val { font-variant-numeric: tabular-nums; font-weight: 500; color: var(--ink); }
+    .v2__blank {
+      display: block; width: 100%; max-width: 14rem; height: 2.75rem;
+      margin: 0.35rem 0 0.75rem; border: 0; border-bottom: 1.5px solid var(--ink); background: transparent;
+    }
+    .v2__status {
+      font-size: 0.95rem; font-weight: 500; color: var(--dim);
+      letter-spacing: 0.02em; margin: 0 0 1.1rem;
+    }
+    .v2__ep { display: grid; gap: 1rem; margin: 0; }
+    .v2__ep dt {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--mute); margin: 0 0 0.35rem;
+    }
+    .v2__ep dd {
+      margin: 0; font-family: "Newsreader", Georgia, serif;
+      font-size: 1.02rem; line-height: 1.5; color: var(--soft);
+    }
+
+    /* —— CAC document stage —— */
+    .cac-stage {
+      margin: clamp(2rem, 5vw, 3.25rem) 0;
+      padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 4vw, 2.5rem);
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 40%, color-mix(in srgb, var(--ink) 4%, transparent), transparent 70%),
+        var(--paper);
+      max-width: var(--teach);
+    }
+    .cac-stage__inner {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(1.5rem, 4vw, 2.75rem);
+      align-items: end;
+    }
+    @media (max-width: 860px) {
+      .cac-stage__inner { grid-template-columns: 1fr; align-items: start; }
+    }
+    .cac-stage__copy {
+      padding-bottom: 0.35rem;
+    }
+    .cac-stage__k {
+      margin: 0 0 0.75rem;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+    .cac-stage__score {
+      margin: 0 0 0.5rem;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.75rem, 6vw, 4rem);
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      color: var(--ink);
+    }
+    .cac-stage__place {
+      margin: 0 0 1rem;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.4;
+      color: var(--soft);
+      max-width: 22ch;
+    }
+    .cac-stage__note {
+      margin: 0;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--dim);
+      max-width: 28ch;
+    }
+    .cac-stage .inspect-art {
+      transform: rotate(-1.2deg);
+      transform-origin: 60% 80%;
+      filter: drop-shadow(0 20px 40px var(--shadow));
+    }
+    .cac-stage .inspect-art__sheet {
+      aspect-ratio: 0.92;
+      max-height: 26rem;
+    }
+    .cac-stage .inspect-art figcaption {
+      color: var(--dim);
+    }
+
+    /* —— Pedigree composition —— */
+    .family-stage {
+      margin: clamp(2rem, 5vw, 3rem) 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(1.25rem, 3vw, 2.25rem);
+      align-items: start;
+      max-width: var(--teach);
+    }
+    .pedigree {
+      display: grid;
+      gap: 1.15rem;
+    }
+    @media (min-width: 861px) {
+      .family-stage--rule .pedigree {
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(1.25rem, 3vw, 2.25rem);
+      }
+    }
+
+    /* —— PREVENT: Low leads —— */
+    .prevent {
+      background: var(--stage);
+      color: var(--stage-ink);
+      padding: clamp(3.25rem, 8vw, 5.5rem) 0;
+      margin: clamp(2.5rem, 6vw, 4rem) 0 0;
+    }
+    /* Dark: keep the dark stage; lift it off the page field (no cream invert) */
+    html[data-skin="dark"] .prevent,
+    html[data-skin="dark"] .void {
+      box-shadow:
+        inset 0 1px 0 rgba(244, 242, 236, 0.09),
+        inset 0 -1px 0 rgba(244, 242, 236, 0.05);
+    }
+    .prevent .prose { color: var(--stage-soft); }
+    .prevent .prose .turn { color: var(--stage-ink); }
+    .prevent__label {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--stage-dim); margin: 0 0 1.5rem;
+    }
+    .prevent__figure {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: clamp(1.75rem, 5vw, 3.5rem);
+      align-items: end;
+      margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+      max-width: 36rem;
+    }
+    @media (max-width: 560px) {
+      .prevent__figure { grid-template-columns: 1fr; gap: 1.1rem; }
+    }
+    .prevent__cat-word {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3.5rem, 10vw, 6.5rem);
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+      margin: 0;
+      color: var(--stage-ink);
+    }
+    .prevent__cat-note {
+      margin: 0.55rem 0 0;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: var(--stage-dim);
+      max-width: 28ch;
+    }
+    .prevent__pct {
+      border-left: 1px solid var(--stage-line);
+      padding-left: clamp(1.25rem, 3vw, 1.75rem);
+      padding-bottom: 0.25rem;
+    }
+    @media (max-width: 560px) {
+      .prevent__pct {
+        border-left: 0; border-top: 1px solid var(--stage-line);
+        padding-left: 0; padding-top: 1rem;
+      }
+    }
+    .prevent__pct-n {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2rem, 5vw, 2.85rem);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin: 0;
+      color: var(--stage-ink);
+    }
+    .prevent__pct-l {
+      display: block;
+      margin-top: 0.45rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--stage-dim);
+    }
+
+    /* —— Beat 7 void —— */
+    .void {
+      background: var(--stage);
+      color: var(--stage-ink);
+      min-height: min(88vh, 52rem);
+      display: flex;
+      align-items: center;
+      padding: clamp(4rem, 12vw, 8rem) 0;
+      margin: 0;
+    }
+    .void__inner { max-width: 28rem; }
+    .void__lead {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.55rem, 3.2vw, 2.15rem);
+      line-height: 1.28;
+      letter-spacing: -0.025em;
+      color: var(--stage-ink);
+      margin: 0 0 clamp(3rem, 8vw, 5rem);
+      max-width: 16ch;
+    }
+    .void__body {
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+      line-height: 1.65;
+      color: var(--stage-soft);
+    }
+    .void__body p { margin: 0 0 1.35em; }
+    .void__confirm {
+      color: var(--stage-ink);
+      margin-top: clamp(2.5rem, 6vw, 3.5rem) !important;
+      max-width: 28ch;
+    }
+
+    /* —— Pedigree panels —— */
+    .pedigree__panel {
+      padding: 1rem 0 0;
+      border-top: 2px solid var(--ink);
+    }
+    .pedigree__panel--rule { border-top-color: var(--line-strong); }
+    .pedigree__k {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--mute); margin: 0 0 0.65rem;
+    }
+    .pedigree__panel h3 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      line-height: 1.25; letter-spacing: -0.02em;
+      margin: 0 0 0.7rem; color: var(--ink); font-weight: 400;
+    }
+    .pedigree__panel p {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 0.98rem; line-height: 1.5; color: var(--soft);
+    }
+    .pedigree__verdict {
+      margin-top: 0.75rem;
+      font-size: 0.82rem; font-weight: 500; color: var(--ink);
+    }
+
+    /* —— Twin: shared answer baseline —— */
+    .twin {
+      margin: clamp(2.5rem, 6vw, 3.5rem) 0;
+      max-width: 42rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      column-gap: clamp(1.25rem, 3vw, 2.25rem);
+      row-gap: 0.85rem;
+      padding: clamp(1.5rem, 3vw, 2rem) 0;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+    }
+    @media (max-width: 640px) {
+      .twin {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+      /* Keep each question stacked with its answer (DOM order alone would read Q/Q/A/A). */
+      .twin__q--l { grid-column: 1; grid-row: 1; }
+      .twin__a--l { grid-column: 1; grid-row: 2; }
+      .twin__q--r { grid-column: 1; grid-row: 3; }
+      .twin__a--r { grid-column: 1; grid-row: 4; }
+    }
+    .twin__q {
+      margin: 0;
+      min-height: 3.6em;
+      font-size: 0.78rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--dim);
+    }
+    .twin__a {
+      margin: 0;
+      align-self: end;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 2.65rem);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--ink);
+    }
+    .twin__a--open { color: var(--accent); }
+    .twin__q--l { grid-column: 1; grid-row: 1; }
+    .twin__q--r { grid-column: 2; grid-row: 1; }
+    .twin__a--l { grid-column: 1; grid-row: 2; }
+    .twin__a--r { grid-column: 2; grid-row: 2; }
+
+    .agency {
+      margin: clamp(3rem, 7vw, 4.5rem) 0 clamp(2rem, 4vw, 2.75rem);
+      padding: clamp(1.75rem, 4vw, 2.25rem) 0;
+      border-top: 2px solid var(--ink);
+      max-width: 38rem;
+    }
+    .agency__label {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--mute); margin: 0 0 1.35rem;
+    }
+    .agency__q {
+      margin: 0 0 1.65rem;
+      padding-bottom: 1.35rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .agency__q:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+    .agency__q dt {
+      margin: 0 0 0.45rem;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+      letter-spacing: -0.02em; color: var(--ink); font-weight: 400;
+    }
+    .agency__q dd {
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 1.05rem; line-height: 1.5; color: var(--soft);
+    }
+
+    .sources {
+      margin-top: clamp(3rem, 7vw, 4.5rem);
+      padding: 0 0 clamp(3.5rem, 7vw, 5rem);
+      border-top: 0;
+      background: transparent;
+    }
+    .sources details {
+      max-width: 42rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+    .sources summary {
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--dim);
+      list-style: none;
+    }
+    .sources summary::-webkit-details-marker { display: none; }
+    .sources ol {
+      margin: 1rem 0 0;
+      padding-left: 1.15rem;
+      max-width: 42rem;
+    }
+    .sources li {
+      margin: 0 0 0.65rem;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--dim);
+    }
+    .sources a { color: var(--accent); }
+  </style>
+  <link rel="stylesheet" href="room-appearance.css?v=20260731120000" />
+  <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
+  <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
+</head>
+<body data-article-slug="south-asian-heart-risk" data-topic-id="south-asian-food-and-nutrition">
+  <a class="room-skip" href="#main-content">Skip to content</a>
+  <div class="bar">
+    <a href="../index.html">Rajiv Vakani</a>
+    <a href="../insights.html">Insights</a>
+    <a href="../library.html">Library</a>
+    <strong>South Asian Heart Risk</strong>
+  </div>
+
+  <div class="skin" role="group" aria-label="Appearance">
+    <button type="button" class="skin__opt" data-skin="light" aria-pressed="true">Light</button>
+    <span class="skin__sep" aria-hidden="true">&middot;</span>
+    <button type="button" class="skin__opt" data-skin="dark" aria-pressed="false">Dark</button>
+  </div>
+
+  <main id="main-content">
+
+  <!-- ========== OPEN: E encounter ========== -->
+  <header class="open">
+    <div class="open--invade">
+      <div class="rail invade-type">
+        <p class="open__eyebrow">Investigation · South Asian Heart Risk</p>
+        <h1 class="open__hero">My doctor said my labs looked great.</h1>
+        <p class="open__dek">What does a reassuring checkup actually tell a South Asian adult about heart risk? I used my own results to find out what the usual numbers establish, what they leave unanswered, and when a closer look makes sense.</p>
+      </div>
+      <figure
+        class="invade-art"
+        role="img"
+        aria-label="Quest laboratory packet entering the opening composition beside the headline, with fasting status marked unknown and lipid values visible on ordinary paper."
+      >
+        <div class="invade-art__sheet" style="--art: url('assets/sa-cardio/quest-open-e-refined.png?v=bake-a');"></div>
+        <div class="invade-art__shield" aria-hidden="true"></div>
+      </figure>
+    </div>
+
+    <div class="rail prose prose-col open__after">
+      <p>I was pleased, and I meant it. The packet came home with me anyway, and I didn’t treat the visit as finished.</p>
+      <p>That isn’t because something felt “off” in the room. The visit was ordinary. Blood pressure was fine. The lipid panel looked like the kind of printout people post when they want reassurance. I’m in my mid-forties, lean, nonsmoking, without known heart disease, diabetes, or kidney disease. If you only heard the sentence “everything looks good,” you would have every reason to walk out of the doctor’s office happy.</p>
+      <p class="turn">I already knew enough to know that, for a South Asian man, “in range” and “characterized well enough” are not automatically the same sentence.</p>
+      <p>I didn’t learn that after the appointment. Over the preceding year, in school and in the reading that came with it, I had spent real time on why someone who looks like me, with a BMI like mine, can be misread by ordinary assumptions. Diabetes and heart disease arrive earlier, on average, in South Asian adults. Looking thin does not cancel that pattern as a population rule. Contemporary U.S. lipid guidance lists South Asian ancestry among the factors that can personalize risk discussion.</p>
+      <p>So when my doctor said everything looked great, I wasn’t suspicious of him.</p>
+      <p>I simply knew there were questions that sentence couldn’t answer by itself.</p>
+      <p>None of that meant my particular numbers were secretly catastrophic. It meant I had a legitimate reason to ask a harder question than the reference ranges alone can answer.</p>
+      <p class="pull">I decided how I would judge the numbers before I judged my numbers.</p>
+      <a class="method-link" href="#method" id="method-toggle">How I investigated this →</a>
+      <div class="method-note" id="method" hidden>
+        Evidence map first: what routine primary prevention should capture, what changes when South Asian ancestry is taken seriously, and which additional pieces can change a decision versus which ones mostly sound sophisticated online. Framework frozen before scoring personal labs and family history.
+      </div>
+      <p>I built the evidence map first: what routine primary prevention should capture, what changes when South Asian ancestry is taken seriously, and which additional pieces of information can actually change a decision versus which ones mostly sound sophisticated online. Only after that freeze did I score my own labs and family history against the rules.</p>
+      <p>It’s too easy to see LDL 92 and invent a philosophy in which LDL 92 is either always enough or never enough. I wanted the opposite: decide what would change my mind, then look.</p>
+    </div>
+  </header>
+
+  <!-- ========== MOVEMENT 2 ========== -->
+  <section class="movement rail" aria-labelledby="m2">
+    <h2 class="movement__q" id="m2">Are the reassuring numbers actually reassuring?</h2>
+    <div class="prose prose-col">
+      <p>Blood pressure in clinic was 118/79, which matches the ballpark I usually live in. That’s already a quieter piece of good news than most people get credit for.</p>
+      <p>Then the lipids.</p>
+    </div>
+
+    <div class="inspect" aria-label="Inspect: fasting status on the Quest packet">
+      <div class="inspect__grid">
+        <div class="prose prose-col inspect__copy">
+          <p>Before the reassuring grid does its work, the packet already tells you something quieter.</p>
+          <p class="turn">Fasting: unknown.</p>
+          <p>That line isn’t a diagnosis. It’s a condition of the evidence. It stays on the page while the numbers try to look finished.</p>
+        </div>
+        <figure
+          class="inspect-art"
+          role="img"
+          aria-label="Close view of the Quest packet showing the Quest mark, overlapping paper edges, and COMMENTS: FASTING: UNKNOWN above the start of the lipid grid."
+        >
+          <div class="inspect-art__frame">
+            <div
+              class="inspect-art__sheet"
+              style="--art: url('assets/sa-cardio/quest-open-audition-f-macro.png'); --art-ar: 4 / 3;"
+            ></div>
+            <div class="inspect-art__shield" aria-hidden="true"></div>
+          </div>
+        </figure>
+      </div>
+    </div>
+
+    <article class="panel-teach teach-col" aria-label="How to read this lipid panel">
+      <p class="panel-teach__sig">My result</p>
+      <h3 class="panel-teach__title">How to read this panel</h3>
+      <figure
+        class="inspect-art panel-teach__evidence"
+        role="img"
+        aria-label="Crop of the Quest lipid panel lines showing total cholesterol, HDL, triglycerides, LDL, and non-HDL values."
+      >
+        <div class="inspect-art__frame">
+          <div
+            class="inspect-art__sheet"
+            style="--art: url('assets/sa-cardio/quest-lipid-crop.jpg'); --art-pos: left top;"
+          ></div>
+          <div class="inspect-art__shield" aria-hidden="true"></div>
+        </div>
+      </figure>
+      <div class="panel-rail" aria-label="Lipid values with clinical orientation">
+        <div class="panel-rail__cell">
+          <span class="panel-rail__k">Total</span>
+          <span class="panel-rail__n">166</span>
+          <p class="panel-rail__orient">Often desirable &lt;200 mg/dL. Overview only; not a solo treatment target.</p>
+        </div>
+        <div class="panel-rail__cell">
+          <span class="panel-rail__k">LDL-C</span>
+          <span class="panel-rail__n">92</span>
+          <p class="panel-rail__orient">Central treatment marker. Goals depend on overall ASCVD risk, not a single pass/fail line.</p>
+        </div>
+        <div class="panel-rail__cell">
+          <span class="panel-rail__k">HDL-C</span>
+          <span class="panel-rail__n">62</span>
+          <p class="panel-rail__orient">Risk marker / pattern piece. Not a “raise it as a drug target” number.</p>
+        </div>
+        <div class="panel-rail__cell">
+          <span class="panel-rail__k">TG</span>
+          <span class="panel-rail__n">40</span>
+          <p class="panel-rail__orient">&lt;150 mg/dL · usual adult threshold for elevation in current U.S. guidance.</p>
+        </div>
+        <div class="panel-rail__cell">
+          <span class="panel-rail__k">Non-HDL</span>
+          <span class="panel-rail__n">104</span>
+          <p class="panel-rail__orient">Total − HDL. Captures atherogenic cholesterol; free on the same draw. Often aimed ~30 above the LDL goal in use.</p>
+        </div>
+      </div>
+      <div class="panel-fields">
+        <div class="panel-fields__item">
+          <h4>The cholesterol measures</h4>
+          <p>Total, LDL-C, and non-HDL answer related but different questions. Total is a blunt overview. LDL-C is the main treatment conversation piece. Non-HDL folds in cholesterol across atherogenic particles when you subtract HDL from total.</p>
+        </div>
+        <div class="panel-fields__item">
+          <h4>The triglyceride / HDL pattern</h4>
+          <p>TG 40 with HDL 62 is an unusually quiet pattern. A reader at TG 121 is higher than this case, and still below the usual &lt;150 mg/dL elevation threshold.</p>
+          <span class="panel-fields__sa">South Asian lens: the phenotype people often discuss here is high TG / lower HDL with insulin resistance, not this panel. SA evidence can change how carefully we look; it doesn’t invent a special ethnic TG cutoff.</span>
+        </div>
+        <div class="panel-fields__item">
+          <h4>What isn’t on this panel</h4>
+          <p>ApoB particle number. Lp(a). Whether plaque is already visible. Favorable lipids aren’t a finished characterization of atherosclerotic risk.</p>
+        </div>
+      </div>
+      <dl class="panel-readout">
+        <div>
+          <dt>Where this case sits</dt>
+          <dd>LDL favorable for primary prevention. Triglycerides well below the usual elevation threshold. Non-HDL favorable. No cholesterol–particle discordance signal on the face of this panel.</dd>
+        </div>
+        <div>
+          <dt>How to use this for your own labs</dt>
+          <dd>Compare your numbers with clinical orientation first, not with this printout. Then ask whether your pattern, ancestry, and risk context change how carefully the rest of the assessment should look.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <div class="prose prose-col">
+      <div class="fork">
+        <span class="fork__tag">If LDL had been 162</span>
+        <p>Ancestry wouldn’t turn a high LDL into a low one. The ordinary number itself would change the conversation. Ancestry can raise the bar for how carefully we look.</p>
+      </div>
+      <p>I’m about six feet tall and 149 pounds. BMI lands near 20.2. People look at that phenotype and assume diabetes risk is someone else’s problem.</p>
+      <p class="turn">That assumption is unsafe as a rule for South Asian adults.</p>
+      <div class="with-gloss">
+        <p>In U.S. cohort comparisons, South Asian adults show higher diabetes risk and less favorable body composition on average, including more ectopic fat and less lean mass even after accounting for BMI. Screening standards for Asian ancestry also start the overweight conversation earlier: BMI 23 for risk-factor–based pathways, not the 25 many Americans still carry in their heads. Expert South Asian practice statements go further still and urge attention at even lower BMIs. Those are reasons to check glycemia carefully.</p>
+        <aside class="gloss">Population pattern, not a personal diagnosis. Lean ≠ protected as a rule for South Asian adults.</aside>
+      </div>
+    </div>
+
+    <div class="evidence-act" aria-label="A1c evidence">
+      <div class="prose evidence-act__lead">
+        <p>So I checked.</p>
+      </div>
+      <figure
+        class="inspect-art evidence-act__shot evidence-act__shot--wide"
+        role="img"
+        aria-label="Crop of the Quest report showing hemoglobin A1c 5.3 percent with interpretive ranges."
+      >
+        <div class="inspect-art__frame">
+          <div
+            class="inspect-art__sheet"
+            style="--art: url('assets/sa-cardio/quest-a1c-crop.jpg'); --art-pos: left center;"
+          ></div>
+          <div class="inspect-art__shield" aria-hidden="true"></div>
+        </div>
+      </figure>
+      <article class="v2" aria-label="My result: A1c" style="margin-top:0">
+        <p class="v2__sig">My result</p>
+        <h3 class="v2__measure">A1c</h3>
+        <ul class="v2__rows">
+          <li><span class="v2__label">A1c</span><span class="v2__val">5.3%</span></li>
+        </ul>
+        <dl class="v2__ep">
+          <div>
+            <dt>What this establishes</dt>
+            <dd>My A1c isn’t in the diabetes range and not in the usual prediabetes band. On this lab’s framing, it’s consistent with lower diabetes risk.</dd>
+          </div>
+          <div>
+            <dt>What this does not establish</dt>
+            <dd>Lifelong immunity. It also doesn’t turn a random glucose into a diagnosis.</dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+
+    <div class="evidence-act" aria-label="Glucose flag evidence">
+      <figure
+        class="inspect-art evidence-act__shot evidence-act__shot--doc"
+        role="img"
+        aria-label="Crop of the Quest report showing non-HDL 104 and glucose 105 flagged high against a fasting reference interval."
+      >
+        <div class="inspect-art__frame">
+          <div
+            class="inspect-art__sheet"
+            style="--art: url('assets/sa-cardio/quest-glucose-context.jpg'); --art-pos: center top;"
+          ></div>
+          <div class="inspect-art__shield" aria-hidden="true"></div>
+        </div>
+      </figure>
+      <div class="flag-teach__body">
+        <h3>A flag is not a diagnosis</h3>
+        <div class="flag-pair">
+          <div class="flag-pair__cell">
+            <span class="flag-pair__k">On the report</span>
+            <span class="flag-pair__v">Glucose 105 H</span>
+          </div>
+          <div class="flag-pair__cell">
+            <span class="flag-pair__k">Also on the report</span>
+            <span class="flag-pair__v">FASTING: UNKNOWN</span>
+          </div>
+        </div>
+        <p>The printout places 105 in the out-of-range column and cites a fasting reference interval, then offers the usual 100–125 prediabetes language. The same document says fasting status is unknown.</p>
+        <p>I had eaten about thirty minutes earlier. That’s a nonfasting glucose, not impaired fasting glucose. A1c 5.3% is the better glycemic signal here. I’m not going to launder a context-blind flag into a scare.</p>
+        <div class="fork" style="max-width:none">
+          <span class="fork__tag">If A1c had been 5.9%</span>
+          <p>At this same BMI, the assessment would change. Lean wouldn’t have protected me. That fork is real for many readers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose prose-col">
+      <p>Then I put the ordinary inputs into the calculator current U.S. lipid guidance wants clinicians to use for adults 30 to 79: PREVENT, an estimate of 10-year ASCVD risk.</p>
+    </div>
+  </section>
+
+  <section class="prevent" aria-label="PREVENT 10-year ASCVD risk estimate">
+    <div class="rail">
+      <p class="prevent__label">PREVENT · 10-year ASCVD risk</p>
+      <div class="prevent__figure">
+        <div>
+          <p class="prevent__cat-word">Low</p>
+          <p class="prevent__cat-note">Low means under 3% estimated 10-year risk. Treatment conversations are organized by these categories.</p>
+        </div>
+        <div class="prevent__pct">
+          <p class="prevent__pct-n">~0.8%<span class="prevent__pct-l">Approx. estimate</span></p>
+        </div>
+      </div>
+      <div class="prose prose-col with-gloss">
+        <p>PREVENT estimates the chance of an ASCVD event over the next ten years. It doesn’t take race or ethnicity as an input. It uses age, sex, blood pressure, lipids, diabetes, smoking, kidney function, and treatment status, with optional refinements available in fuller models.</p>
+        <aside class="gloss">Race/ethnicity is not an input. Do not invent a personal South Asian multiplier. Early signals conflict by study and subgroup.</aside>
+        <p>My approximate result lands around 0.8%. That sits in the Low category. The category is the clinical point: statin-threshold talk is organized by these bands, not by staring at a raw percentage alone.</p>
+        <p>The 30-year estimate is higher, but still not a short-term alarm. I’m not near a statin-threshold conversation on calculated short-term risk alone.</p>
+        <p>Could PREVENT mis-estimate risk in South Asians? That calibration question is still unresolved in the evidence. Early signals conflict by study and by Asian subgroup. The honest posture is not “throw the calculator out because I am Indian.” It is also not “invent a personal multiplier.” Use the tool. Keep humility. Personalize with what the guideline calls risk enhancers, including ancestry, without pretending you have a second secret percentage.</p>
+        <div class="fork" style="border-left-color:var(--stage-line)">
+          <span class="fork__tag" style="color:var(--stage-dim)">If 10-year risk had been ~4%</span>
+          <p style="color:var(--stage-dim)">In the borderline band, the same South Asian ancestry that doesn’t dictate treatment at under 1% would matter more to a shared decision about prevention. Thresholds change the weight of personalization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="void" aria-label="Measured picture stands">
+    <div class="rail">
+      <div class="void__inner">
+        <p class="void__lead">I went looking because I had legitimate reasons to look.</p>
+        <div class="void__body">
+          <p>The measured picture did not owe me an abnormality.</p>
+          <p>Lipids favorable. A1c reassuring. Blood pressure excellent. Calculated short-term risk low.</p>
+          <p class="void__confirm">My doctor’s reassurance about what was measured can stand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MOVEMENT 3 ========== -->
+  <section class="movement rail" aria-labelledby="m3">
+    <h2 class="movement__q" id="m3">What could those numbers still be missing?</h2>
+    <div class="prose prose-col">
+      <p>If the measured picture is genuinely reassuring, why keep going at all?</p>
+      <p>Not to collect advanced tests until something finally looks wrong.</p>
+      <p class="turn">The useful question is narrower: what kinds of information does a standard panel plus a calculator still leave out, and which of those pieces would actually change <em>this</em> assessment?</p>
+      <p>Family history is the first place most people look, and for good reason. Families feel like evidence because they are.</p>
+      <p>Mine is messy in the way real families are messy.</p>
+      <p>My father developed type 2 diabetes in his mid-seventies. My mother has intermittent borderline glycemic signals and blood pressures that often live in the 140s over 80s. A sibling has had a prediabetes-range result and elevated cholesterol. Diabetes also sits on the maternal grandmother’s side. My paternal grandmother lived to 103 and was treated for high cholesterol. My maternal grandfather lived to nearly 100. My paternal grandfather died of a myocardial infarction around 72.</p>
+      <p>And then there’s the fact that made calcium feel personal.</p>
+    </div>
+
+    <div class="cac-stage" aria-label="Mother’s coronary calcium report from Surat">
+      <div class="cac-stage__inner">
+        <div class="cac-stage__copy">
+          <p class="cac-stage__k">Inherited evidence · Surat</p>
+          <p class="cac-stage__score">144.6</p>
+          <p class="cac-stage__place">Agatston score · mother, age 66 · mostly LAD</p>
+          <p class="cac-stage__note">Moderate calcification on the report. Cardiology followed. Another person’s document enters this investigation.</p>
+        </div>
+        <figure
+          class="inspect-art"
+          role="img"
+          aria-label="Redacted EUREVAA Diagnostics CT calcium scoring report from Surat showing total calcium score 144.6 with moderate calcification, LAD 139.4 and circumflex 5.2."
+        >
+          <div class="inspect-art__frame">
+            <div
+              class="inspect-art__sheet"
+              style="--art: url('assets/sa-cardio/eurevaa-cac-redacted.jpg'); --art-pos: center top;"
+            ></div>
+            <div class="inspect-art__shield" aria-hidden="true"></div>
+          </div>
+        </figure>
+      </div>
+    </div>
+
+    <div class="prose prose-col">
+      <p>When my mother was 66, a coronary calcium scan in Surat reported an Agatston score of <strong style="color:var(--ink)">144.6</strong>, mostly in the left anterior descending artery. The report called it moderate calcification. Cardiology evaluation followed. She has been on a statin and hasn’t had a known clinical heart attack or stroke.</p>
+      <p>If you say all of that quickly at a kitchen table, it becomes “strong family history of heart disease.”</p>
+    </div>
+
+    <div class="family-stage family-stage--rule">
+      <div class="pedigree" role="group" aria-label="Family context versus premature ASCVD enhancer">
+        <div class="pedigree__panel">
+          <p class="pedigree__k">Kitchen-table reading</p>
+          <h3>Real family context</h3>
+          <p>Diabetes on both sides. Longevity mixed with a paternal-grandfather MI around 72. Mother’s CAC 144.6 at 66, then statin. Subclinical atherosclerosis in a parent. Feels like “heart disease runs in the family.”</p>
+        </div>
+        <div class="pedigree__panel pedigree__panel--rule">
+          <p class="pedigree__k">Guideline enhancer</p>
+          <h3>Premature ASCVD</h3>
+          <p>Usually means atherosclerotic disease in a parent or sibling before 55 in men or before 65 in women. A fatal MI around 72 is meaningful. Documented calcium at 66 is meaningful. Neither meets that premature definition here.</p>
+          <p class="pedigree__verdict">This pedigree doesn’t meet the premature enhancer.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose prose-col">
+      <p class="turn">Guidelines are colder and more useful than kitchen tables.</p>
+      <p>The premature ASCVD risk enhancer most people think they are invoking usually means atherosclerotic disease in a parent or sibling before 55 in men or before 65 in women. By that definition, my pedigree doesn’t meet it. A fatal MI around 72 is meaningful family context. It is not premature parental disease under the definition. Documented coronary calcium at 66 is meaningful subclinical atherosclerosis in my mother. It is not the same fact as “my mother had a heart attack.”</p>
+      <div class="fork">
+        <span class="fork__tag">If she had had an MI at 54</span>
+        <p>That would be a different guideline fact. The ages are not pedantry. They are how the enhancer earns its name.</p>
+      </div>
+      <p>Still: she had plaque on a scan. I am her son. I am over forty. Should I get a coronary calcium scan too?</p>
+      <p>Coronary artery calcium can be an excellent test when a lipid-lowering treatment decision is uncertain. Current guidance uses it that way, especially around borderline and intermediate predicted risk, where knowing whether calcified plaque is already visible can reclassify the decision. Men 40 and older aren’t “too young” for CAC to be considered in that architecture. Age isn’t the barrier.</p>
+      <p>At roughly 0.8% 10-year PREVENT risk with excellent lipids, I’m not sitting at a statin threshold wondering which direction to go. Ancestry alone doesn’t create that uncertainty. My mother’s calcium score is pedigree context, not a surrogate for plaque in my arteries. Under the framework I froze before seeing my numbers, CAC isn’t currently needed to resolve a lipid-lowering treatment decision for me.</p>
+      <p>Is there anything important my standard bloodwork itself still doesn’t measure?</p>
+      <p>I already knew one candidate.</p>
+      <p>ApoB is a blood marker of the number of atherogenic particles. I wanted it on my panel. Once you learn the language of particle number, a standard lipid printout can start to feel incomplete.</p>
+      <p>Then I checked that desire against current guidance.</p>
+
+      <article class="apob-teach" aria-label="ApoB across three layers of guidance">
+        <h3 class="apob-teach__title">ApoB</h3>
+        <div class="apob-layers">
+          <div class="apob-layers__item">
+            <span class="apob-layers__k">2026 Multisociety</span>
+            <p class="apob-layers__v">Selective. Most useful when triglycerides are elevated, in diabetes / CKM contexts, or when LDL is driven very low on therapy. Not a once-in-adulthood order for every adult.</p>
+          </div>
+          <div class="apob-layers__item">
+            <span class="apob-layers__k">ASPC 2025 SA statement</span>
+            <p class="apob-layers__v">Broader South-Asian-aware proposals: more attention to ApoB in this population. Expert roadmap, not the same graded multisociety recommendation language.</p>
+          </div>
+          <div class="apob-layers__item">
+            <span class="apob-layers__k">Underlying evidence</span>
+            <p class="apob-layers__v">Strong on association and discordance. That doesn’t by itself mandate universal ApoB ordering in a healthy adult with a quiet lipid panel.</p>
+          </div>
+        </div>
+        <p class="apob-teach__case">This case: TG 40, no diabetes, LDL 92, non-HDL already favorable. ApoB is discussable. It isn’t required to call the current evaluation guideline-complete.</p>
+      </article>
+
+      <p>I had been interested in measuring ApoB.</p>
+      <p class="pull">The marker that current guidance actually says adults should measure once turned out to be different.</p>
+    </div>
+  </section>
+
+  <!-- ========== MOVEMENT 4 ========== -->
+  <section class="movement rail" aria-labelledby="m4">
+    <h2 class="movement__q" id="m4">Is anything actually missing?</h2>
+
+    <article class="v2" aria-label="My result: Lp(a) not measured">
+      <p class="v2__sig">My result</p>
+      <h3 class="v2__measure">Lp(a)</h3>
+      <div class="v2__blank" role="presentation" aria-hidden="true"></div>
+      <p class="v2__status">Not measured</p>
+      <dl class="v2__ep">
+        <div>
+          <dt>What this establishes</dt>
+          <dd>I’ve never characterized lipoprotein(a).</dd>
+        </div>
+        <div>
+          <dt>What this does not establish</dt>
+          <dd>That mine is elevated.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <div class="prose prose-col">
+      <p>Current U.S. lipid guidance gives measurement of Lp(a) once in all adults its strongest recommendation class. That recommendation applies to me because I’m an adult who hasn’t had it measured. South Asian ancestry isn’t why the recommendation exists. The same guidance notes that concentrations tend to be highest in people of African or South Asian ancestry, which makes the unknown more interesting in my case without turning ancestry into a special private rule.</p>
+      <p>I haven’t gotten it yet. That gap is still open.</p>
+      <div class="fork">
+        <span class="fork__tag">Either result is informative</span>
+        <p>If Lp(a) later returns low, completeness moves toward a stronger kind of reassurance. If it returns elevated, the discussion intensifies without rewriting the fact that my routine panel looked excellent.</p>
+      </div>
+    </div>
+
+    <div class="twin" role="group" aria-label="Reassurance versus completeness">
+      <p class="twin__q twin__q--l">Are my measured results reassuring?</p>
+      <p class="twin__q twin__q--r">Has risk been characterized completely enough that “looks great” can carry the whole weight?</p>
+      <p class="twin__a twin__a--l">Yes.</p>
+      <p class="twin__a twin__a--r twin__a--open">Not yet.</p>
+    </div>
+
+    <div class="prose prose-col">
+      <p>I started this wanting to know whether “your labs look great” could survive a South Asian-aware second look.</p>
+      <p>It mostly did.</p>
+      <p>But that is my result, not the lesson.</p>
+      <p>Another South Asian reader could follow the same path and end somewhere else. Their LDL might deserve attention. A lean body might sit beside an A1c in the prediabetes range. Their family history might actually meet the definition of premature cardiovascular disease. Their calculated risk might make a calcium scan useful.</p>
+      <p>Looking more carefully does not mean ordering everything. It means understanding what your results actually tell you, what they don’t, and whether anything missing would change what you do next.</p>
+      <p>In my case, the list got shorter. ApoB was not clearly needed. A calcium scan was not the next step. Lp(a) was the one measurement current guidance still gave me a reason to get.</p>
+      <p>The goal is not to find something wrong. It is to know when the evidence supports reassurance, when it gives you a reason for concern, and when it leaves you with a better question to bring to your clinician.</p>
+      <p class="close-line">The packet is still on the desk.</p>
+      <p class="close-blank">One line on it is still blank.</p>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="sources" id="sources" aria-label="Sources">
+    <div class="rail">
+      <details>
+        <summary>Sources</summary>
+        <ol>
+        <li>Writing Committee Members; Blumenthal RS, Morris PB, et al. 2026 ACC/AHA/AACVPR/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Dyslipidemia. <em>JACC</em>. 2026.
+          <a href="https://doi.org/10.1016/j.jacc.2025.11.016" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.jacc.2025.11.016</a></li>
+        <li>American Diabetes Association Professional Practice Committee. Standards of Care in Diabetes&ndash;2026. Diagnosis and Classification of Diabetes. <em>Diabetes Care</em>. 2026;49(Suppl 1):S27&ndash;S49.
+          <a href="https://doi.org/10.2337/dc26-S002" target="_blank" rel="noopener noreferrer">https://doi.org/10.2337/dc26-S002</a></li>
+        <li>Rohatgi A, Anand SS, Gadgil M, et al. South Asians and cardiometabolic health: a framework for comprehensive care. An American Society for Preventive Cardiology clinical practice statement. <em>Am J Prev Cardiol</em>. 2025;22:101000.
+          <a href="https://doi.org/10.1016/j.ajpc.2025.101000" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.ajpc.2025.101000</a></li>
+        <li>Volgman AS, Palaniappan LS, Aggarwal NT, et al. Atherosclerotic cardiovascular disease in South Asians in the United States: epidemiology, risk factors, and treatments. A scientific statement from the American Heart Association. <em>Circulation</em>. 2018;138(1):e1&ndash;e34.
+          <a href="https://doi.org/10.1161/CIR.0000000000000580" target="_blank" rel="noopener noreferrer">https://doi.org/10.1161/CIR.0000000000000580</a></li>
+        <li>Patel AP, Wang M, Kartoun U, et al. Quantifying and understanding the higher risk of atherosclerotic cardiovascular disease among South Asian individuals: results from the UK Biobank prospective cohort study. <em>Circulation</em>. 2021;144(6):410&ndash;422.
+          <a href="https://doi.org/10.1161/CIRCULATIONAHA.120.052430" target="_blank" rel="noopener noreferrer">https://doi.org/10.1161/CIRCULATIONAHA.120.052430</a></li>
+        <li>Pedamallu H, Aghabazaz Z, Lancki N, et al. Prevalence and trends in cardiovascular risk factors among middle-aged South Asian adults compared with other racial and ethnic groups in the United States: a longitudinal analysis of 2 cohort studies. <em>J Am Heart Assoc</em>. 2026;15(4):e041221.
+          <a href="https://doi.org/10.1161/JAHA.124.041221" target="_blank" rel="noopener noreferrer">https://doi.org/10.1161/JAHA.124.041221</a></li>
+        <li>Shah AD, Kandula NR, Lin F, et al. Less favorable body composition and adipokines in South Asians compared with other US ethnic groups: results from the MASALA and MESA studies. <em>Int J Obes (Lond)</em>. 2016;40(4):639&ndash;645.
+          <a href="https://doi.org/10.1038/ijo.2015.219" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/ijo.2015.219</a></li>
+        <li>Khan SS, Matsushita K, Sang Y, et al. Development and validation of the American Heart Association&rsquo;s PREVENT equations. <em>Circulation</em>. 2024;149(6):430&ndash;449.
+          <a href="https://doi.org/10.1161/CIRCULATIONAHA.123.067626" target="_blank" rel="noopener noreferrer">https://doi.org/10.1161/CIRCULATIONAHA.123.067626</a>. Case inputs for this article: ~0.8% 10-year ASCVD (Low, &lt;3%).</li>
+        <li>Yan X, Huang Z, Go AS, et al. PREVENT equation performance in Asian and Native Hawaiian and other Pacific Islander groups. <em>JAMA Netw Open</em>. 2026;9(2):e2556915.
+          <a href="https://doi.org/10.1001/jamanetworkopen.2025.56915" target="_blank" rel="noopener noreferrer">https://doi.org/10.1001/jamanetworkopen.2025.56915</a></li>
+        </ol>
+      </details>
+    </div>
+  </footer>
+
+  <footer class="room-foot">
+    <div class="room-foot__inner">
+      <p class="room-foot__legal">&copy; 2025&ndash;2026 Rajiv Vakani</p>
+      <div class="room-foot__social" aria-label="Social links">
+        <a href="https://instagram.com/rajivvakani" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+        <a href="https://facebook.com/rajivvakani" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.2 37-96.5 93.7-96.5 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a>
+        <a href="https://www.linkedin.com/in/rajivvakani/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("method-toggle");
+      var note = document.getElementById("method");
+      if (toggle && note) {
+        toggle.addEventListener("click", function (e) {
+          e.preventDefault();
+          var open = !note.hidden;
+          note.hidden = open;
+          toggle.textContent = open ? "How I investigated this →" : "How I investigated this · hide ←";
+        });
+      }
+      /* Casual-download friction only. Not secure against DevTools/screenshots. */
+      document.querySelectorAll(".artifact, .invade-art, .inspect-art").forEach(function (el) {
+        el.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+        el.addEventListener("dragstart", function (e) { e.preventDefault(); });
+      });
+    })();
+  </script>
+  <script src="room-appearance.js?v=20260724170000" defer></script>
+</body>
+</html>
