@@ -4,26 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intervention Maps | Rajiv Vakani</title>
-  <meta name="description" content="Evidence maps for ADHD, depression, anxiety, rheumatoid arthritis, osteoarthritis, chronic low back pain, hypertension, hyperlipidemia, and type 2 diabetes." />
+  <meta name="description" content="Evidence maps for ADHD, depression, anxiety, arthritis, back pain, hypertension, lipids, type 2 diabetes, and obesity." />
   <link rel="canonical" href="https://rajivvakani.com/intervention-maps/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rajivvakani.com/intervention-maps/" />
   <meta property="og:title" content="Intervention Maps | Rajiv Vakani" />
-  <meta property="og:description" content="Evidence maps for ADHD, depression, anxiety, rheumatoid arthritis, osteoarthritis, chronic low back pain, hypertension, hyperlipidemia, and type 2 diabetes." />
+  <meta property="og:description" content="Evidence maps for ADHD, depression, anxiety, arthritis, back pain, hypertension, lipids, type 2 diabetes, and obesity." />
   <meta property="og:image" content="https://rajivvakani.com/headshot_36.jpg" />
   <meta property="og:site_name" content="Rajiv Vakani" />
 
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://rajivvakani.com/intervention-maps/" />
   <meta property="twitter:title" content="Intervention Maps | Rajiv Vakani" />
-  <meta property="twitter:description" content="Evidence maps for ADHD, depression, anxiety, rheumatoid arthritis, osteoarthritis, chronic low back pain, hypertension, hyperlipidemia, and type 2 diabetes." />
+  <meta property="twitter:description" content="Evidence maps for ADHD, depression, anxiety, arthritis, back pain, hypertension, lipids, type 2 diabetes, and obesity." />
   <meta property="twitter:image" content="https://rajivvakani.com/headshot_36.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="sketch.css?v=20260812181000" />
+  <link rel="stylesheet" href="sketch.css?v=20260813060000" />
   <link rel="icon" type="image/png" href="../favicon.png?v=rv7" />
   <link rel="apple-touch-icon" href="../favicon-512.png?v=rv7" />
   <script>
@@ -52,6 +52,7 @@
       --d-htn: #c0242b;
       --d-hl: #92293a;
       --d-t2d: #2f6499;
+      --d-obesity: #96720a;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
@@ -362,6 +363,8 @@
     .d-plate[data-c="hl"]:focus-visible .d-plate__name { color: #c45a6c; }
     .d-plate[data-c="t2d"]:hover .d-plate__name,
     .d-plate[data-c="t2d"]:focus-visible .d-plate__name { color: #7eabdb; }
+    .d-plate[data-c="obesity"]:hover .d-plate__name,
+    .d-plate[data-c="obesity"]:focus-visible .d-plate__name { color: #c49a14; }
 
     .d-plate--soon {
       opacity: 0.42;
@@ -501,7 +504,7 @@
 
   <main id="main-content">
   <header class="d-hero">
-    <p class="ev-kicker">Intervention Maps · 9 conditions</p>
+    <p class="ev-kicker">Intervention Maps · 10 conditions</p>
     <h1 class="ev-title">Intervention Maps</h1>
     <p class="ev-lede">
       Compare the evidence for exercise, therapy, medicines, injections, and&nbsp;other approaches for common health conditions.
@@ -638,6 +641,17 @@
             <span>
               <span class="d-plate__name">Type 2 diabetes</span>
               <span class="d-plate__deck">Medicines, remission programs, surgery, eating, exercise, and supplements</span>
+            </span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="d-plate" href="obesity.html" data-c="obesity">
+          <span class="d-plate__grid">
+            <span class="d-plate__n">10</span>
+            <span>
+              <span class="d-plate__name">Obesity</span>
+              <span class="d-plate__deck">Medicines, surgery, eating, exercise, programs, and supplements. Weight change isn't always event proof</span>
             </span>
           </span>
         </a>

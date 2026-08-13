@@ -89,8 +89,8 @@ Prove the methodology is generalizable; refine the system between batches, not m
 |---|---|---|
 | **Brain & mental health** | ADHD ✓ · Depression ✓ · Anxiety ✓ (batch closed Aug 10, 2026; public polish may continue later) | v1.0; Brain review logged with no methodology bump |
 | **Pain & musculoskeletal** | Rheumatoid arthritis ✓ · Osteoarthritis ✓ · Chronic low back pain ✓ (fibromyalgia watch) | v1.0 carried forward |
-| **Metabolic health** | Hypertension ✓ · Hyperlipidemia ✓ · Type 2 diabetes ✓ (obesity queued after the batch) | v1.0 carried forward; Pain post-condition checkpoints remain open and are not a gate |
-| **After those batches** | Owner decides order for insomnia, migraine, IBS, remaining watch list | — |
+| **Metabolic health** | Hypertension ✓ · Hyperlipidemia ✓ · Type 2 diabetes ✓ | v1.0 carried forward; Pain and Metabolic post-condition checkpoints remain open and are not a gate |
+| **After Metabolic** | Obesity (Phase 4 public-copy Frozen v1.0 · HTML drafted `noindex` Aug 13, 2026) · then owner order for migraine, insomnia, IBS, remaining watch list | v1.0 carried forward unless a later batch review earns a bump |
 
 ✓ = campaign complete through Phase 4 owner approval (or owner batch-close decision).
 
@@ -123,13 +123,13 @@ Owner-aligned working order. Reorder only with an explicit log entry.
 | 5 | Hypertension | Metabolic batch lead; huge lifestyle + supplement landscape | **Live · 2026-08-12** |
 | 6 | Hyperlipidemia | Metabolic batch; split from “CVD” | **Live · 2026-08-12** |
 | 7 | Type 2 diabetes | Metabolic batch third seat (locked Aug 12, 2026) | **Live · 2026-08-12** |
-| 8 | Obesity | After Metabolic batch; separate decision problem from T2D | Queued (post-batch) |
+| 8 | Obesity | After Metabolic batch; separate decision problem from T2D | **Live · 2026-08-13** |
 | 9 | Migraine | Classic supplement + device + lifestyle decision map | Queued (post-batch) |
 | 10 | Insomnia | CBT-I, hygiene, meds, supplements, light | Queued (post-batch) |
 | 11 | IBS | Diets, gut-directed therapies, probiotics, psychotherapies | Queued (post-batch) |
 | — | Fibromyalgia, PCOS, GERD, eczema, allergic rhinitis, asthma | Second wave | Watch |
 
-**Depression Phase 4 owner review is done (July 18, 2026).** Brain batch closed Aug 10, 2026. Pain batch live Aug 11, 2026 (RA, OA, CLBP). Metabolic batch live Aug 12, 2026 (Hypertension, Hyperlipidemia, Type 2 diabetes). Next: Obesity after Metabolic, or owner pick from the post-batch queue. Pain-batch and Metabolic post-condition “one process change?” checkpoints remain open by owner choice and are not a live gate.
+**Depression Phase 4 owner review is done (July 18, 2026).** Brain batch closed Aug 10, 2026. Pain batch live Aug 11, 2026 (RA, OA, CLBP). Metabolic batch live Aug 12, 2026 (Hypertension, Hyperlipidemia, Type 2 diabetes). Obesity **live** Aug 13, 2026 (`#96720a` / `#684e08`; sitemap + index plate; full pre-publish checklists at ~1100 / ~768 / ~390). Pain-batch and Metabolic post-condition “one process change?” checkpoints remain open by owner choice and are not a live gate.
 
 ---
 
@@ -155,6 +155,199 @@ Efficiency means reusable scaffolding and a clear playbook, not skipping claim c
 ---
 
 ## Decision log
+
+### 2026-08-13 · Obesity live
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Obesity Intervention Map went live: hub + six topic pages.  
+2. Full Intervention Maps pre-publish checklist run on hub + sample topics (medicines, behavioral programs, surgery and endoscopy) and index plates at ~1100 / ~768 / ~390. Pass.  
+3. Site-wide pre-publish checklist run at ~390 / ~768. Pass.  
+4. `noindex` removed. Sitemap entries added. Index plate 10 added. Homepage / Insights morph / Library peek updated to 10 conditions.
+
+**Open:** Post-condition “one process change?” checkpoint remains owner-gated.
+
+---
+
+### 2026-08-13 · Obesity mustard hex locked
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Hex locked to `#96720a` / ink `#684e08`. Lighter than hub candidate A; mustard family kept (not lemon, not childhood-cancer gold).  
+2. Design identity, not an official ribbon. Family lock from earlier the same day still stands.  
+3. Pair-test switcher removed. Still `noindex`. No sitemap / index.
+
+**Open:** Closed by live promote later the same day.
+
+---
+
+### 2026-08-13 · Obesity color family locked (hex pending)
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Obesity awareness **family locked**: yellow → restrained mustard/gold as **design identity**, not an official ribbon.  
+2. No authoritative obesity-specific ribbon identified. World Obesity Day 2026 blue/white has the stronger organizational pedigree and is unused because it would crowd type 2 diabetes `#2f6499`. Older WOF mustard is corroboration only.  
+3. Avoid lemon yellow. Do not describe the family as gold in public-facing awareness copy. Internally, “mustard/gold” is a color description.  
+4. Hex not locked. Three pairs on the hub for visual judgment: A `#8d6a08` / `#5e4608`; B `#806214` / `#54410c`; C `#6e5010` / `#47340a`.  
+5. Still `noindex`. No sitemap / index.
+
+**Open:** Hex locked later the same day to `#96720a` / `#684e08`. Publish checklist remains later.
+
+---
+
+### 2026-08-13 · Obesity public-copy frozen; HTML built (pre-publish)
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner froze Phase 4 public-copy **as drafted**. No stylistic revise pass.  
+2. HTML built: `intervention-maps/obesity.html` + six topic pages. All `noindex, nofollow`. Not on Intervention Maps index. `sitemap.xml` untouched.  
+3. `body.ev--obesity` present for named-role landscape layout. **No** `--condition` color tokens. Awareness color remains owner-gated.  
+4. Six destinations stay ungrouped (no lifestyle super-group). Hub grammar sits before the landscape.  
+5. Full live-promote checklists not run.
+
+**Open:** Owner visual review of HTML; lock awareness color when ready; then publish checklist (sitemap, index plate, remove noindex).
+
+---
+
+### 2026-08-13 · Obesity Phase 4 charter + outline frozen; public-copy drafted
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner froze the Phase 4 reader charter and page outline **as drafted**.  
+2. Confirmed public IA: one map, six destinations in ladder order without letters, medicines on-map, no lifestyle super-group, no report-card bands. A topic page is not evidentiary parity. Behavioural programs keep a page despite no seated C.  
+3. Confirmed hub grammar before navigation: weight ≠ events; weight ranking ≠ heart-outcome ranking. SELECT stays population-bound to semaglutide 2.4 mg.  
+4. Public-copy drafted under [`../drafts/obesity/public-copy/`](../drafts/obesity/public-copy/) (hub + six topic pages). Awaiting owner freeze.  
+5. HTML not started. Awareness color remains deferred. No sitemap / index / `noindex` removal.
+
+**Open:** Resolved same day: public-copy frozen as drafted; HTML built under `noindex`. See entry above.
+
+---
+
+### 2026-08-13 · Obesity Phase 3 frozen; Phase 4 authorized
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner froze Phase 3 as drafted. Architecture locked: **one hub + six topic pages**.  
+2. **No A′.** SELECT is internal to semaglutide. SOS is observational. Neither warrants a parallel hard-outcome band.  
+3. **No imported remission pair.** Behavioural programmes are not DiRECT. VLCD remains an eating-pattern branch.  
+4. Public-page architecture locked as proposed: no combined “lifestyle” page; procedures stay one page with two branches; behavioural programmes and supplements keep pages without implying evidentiary parity; weight ≠ events and weight ranking ≠ MACE ranking visible on the hub before topic pages.  
+5. A–F remain internal bands/roles, not an efficacy ranking. A topic page is not evidentiary parity.  
+6. Phase 4 reader charter and page outline drafted. Awaiting owner freeze. Awareness color remains deferred.
+
+**Open:** Resolved same day: Phase 4 charter and outline frozen as drafted; public-copy drafted. See entry above.
+
+---
+
+### 2026-08-13 · Obesity Phase 2 frozen; object freeze complete; Phase 3 drafted
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner froze all six Phase 2 Thinking Artifacts **as drafted**. No §12 weakening. No hidden architecture. No new claim requiring Phase 1 reopen.  
+2. Object freeze complete (Phase 1 + 2 pairs). Library remains **8**. Object count remains **6**.  
+3. Distinct evidentiary shapes preserved into Phase 3.  
+4. Phase 3 Evidence Landscape drafted: [`../drafts/obesity/obesity-evidence-landscape-phase3-v0.1.md`](../drafts/obesity/obesity-evidence-landscape-phase3-v0.1.md). Proposed architecture: **one hub + six topic pages**. No A′ for SELECT or SOS. No imported type 2 diabetes remission pair (behavioural programmes are not DiRECT; VLCD stays a branch). A topic page is not evidentiary parity.
+
+**Open:** Resolved same day: Phase 3 frozen as drafted; Phase 4 authorized. See entry above.
+
+---
+
+### 2026-08-13 · Obesity Phase 1 frozen (6/6); Phase 2 drafted
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner froze all six Phase 1 §12 claims **verbatim**. No wording changes.  
+2. Library remains **8**. No membership proposal. No seventh object.  
+3. Separations locked: medicines weight ranking ≠ MACE ranking, SELECT population-bound to semaglutide; eating patterns 6- vs 12-month durability, VLCD internal; exercise jobs of weight, composition, and fitness; behavioural programmes regain *and* maintained between-group difference together; procedures long-term surgery, weaker endoscopy except ESG, short-term incretin as annotation, SOS not a SELECT-class randomized warrant; popular supplements investigated without upgrading small/not-clinically-important evidence.  
+4. Distinct evidentiary shapes must be preserved in Phase 2 rather than flattened into one template.  
+5. Phase 2 Thinking Artifacts drafted for all six objects. §12 carried verbatim. Status: Drafted · awaiting owner freeze.
+
+**Open:** Resolved same day: all six Thinking Artifacts frozen as drafted; object freeze complete; Phase 3 drafted. See entry above.
+
+---
+
+### 2026-08-13 · Obesity object index accepted; Phase 1 drafted (6/6)
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner accepted the six-object index as proposed. Library remains frozen at **8**. No membership proposal.  
+2. Behavioural weight-management programmes kept as its own object: library membership and object existence are different tests. A decision people actually face can deserve calibration even when Phase 0 found no permanent domain-level C.  
+3. Partition lock: eating pattern ≠ programme delivery ≠ exercise; medicines retain the weight-versus-MACE divider; procedures remain one object because surgery and endoscopy are protected as mandatory non-collapsed branches.  
+4. Behavioural programmes and popular supplements keep explicit Phase 1 gates. A null/insufficient finding is permitted. Promotion requires evidence rather than popularity.  
+5. Six folders opened. Phase 1 Evidence Stability Checks drafted for all six objects. Status: Drafted · awaiting owner freeze of §12. No Phase 2 yet.  
+6. Working evidence labeled, not seated: Hartmann-Boyce 2021/2022 and Madigan (behavioural); Parretti 2016 (VLCD branch); SOS (procedures companion); Jurgens Cochrane and Maunder 2020 (supplements).
+
+**Open:** Resolved same day: all six §12 claims frozen verbatim; Phase 2 drafted. See entry above.
+
+---
+
+### 2026-08-13 · Obesity Phase 0 frozen at 8; object index proposed
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Owner accepted Phase 0 at **8 sources** as drafted. No source added to pad the number.  
+2. Citation log locked to A1–A3, B1, C1–C3, D1.  
+3. Gaps stay gaps (popular supplements, dedicated behavioural-programme C, VLCD-as-forced-C, investigational incretins as seats, SURMOUNT-MMO). Working evidence later if objects demand.  
+4. Object index proposed: [`../drafts/obesity/proposals/2026-08-13-object-index-proposal.md`](../drafts/obesity/proposals/2026-08-13-object-index-proposal.md) (six objects). Folders not opened until acceptance.
+
+**Open:** Resolved same day: index accepted; Phase 1 drafted. See entry above.
+
+---
+
+### 2026-08-13 · Obesity Step 0 frozen; scaffold + Phase 0 library drafted
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Obesity Step 0 brief **owner-approved and frozen as drafted** (no changes).  
+2. Step 1 scaffold complete under `drafts/obesity/` (README, citation log, workflow, freeze-register header, proposals, empty objects).  
+3. Phase 0 minimal library **drafted** (8 sources) from a currentness-first search through 13 August 2026: [`../drafts/obesity/obesity-evidence-library-v0.1.md`](../drafts/obesity/obesity-evidence-library-v0.1.md).  
+4. Seated inventory: **A1–A3** (AACE 2025 algorithm; Obesity Canada 2025 pharmacotherapy CPG; NICE NG246 reviewed 8 Jan 2026) · **B1** (Nong 2026 *BMJ* obesity-drug NMA) · **C1–C3** (Ge 2020 named-diet NMA; Oppert 2021 EASO exercise; De Luca 2026 medicines/endoscopic/surgery GRADE NMA) · **D1** (SELECT 2023).  
+5. Explicit gaps preserved: popular supplements, dedicated behavioural-programme C, VLCD-as-forced-C, investigational incretins as seats, SURMOUNT-MMO, pediatric rail, compounded peptides, plant-based analogues. EASO 2026 framework, Obesity Canada 2020 full CPG, STEP 1, SURMOUNT-1, and SOS stay companions.  
+6. No objects opened. No architecture. No claims frozen. Awareness color remains deferred.  
+7. Pain and Metabolic post-condition checkpoints remain open and remain not gates.
+
+**Open:** Resolved same day: library frozen as drafted; see object-index proposal above.
+
+---
+
+### 2026-08-13 · Obesity Step 0 opened
+
+**Participants:** Owner + Cursor.
+
+**Decisions:**
+
+1. Metabolic batch is live. Obesity is the next campaign (priority queue #8), as a **post-batch** seat, not a fourth Metabolic-batch condition. Methodology remains **v1.0**. Pain-batch and Metabolic post-condition checkpoints remain open and are not a gate.  
+2. Step 0 brief drafted: [`../drafts/obesity/obesity-campaign-brief-v0.1.md`](../drafts/obesity/obesity-campaign-brief-v0.1.md).  
+3. Research object is **broad clinical obesity** as people search it, not a cardiometabolic mega-page, not a premature BMI-class or pediatric split, and not a merge with type 2 diabetes. Overweight/BMI vocabulary, pediatric evidence, surgery, approved anti-obesity medicines, supplements, and popular weak claims remain in scope for collection.  
+4. Standard of care stays on the map (lifestyle foundations, anti-obesity medicines including incretins that surface, behavioral programs, and surgery).  
+5. **Emerging Therapies peptide studio boundary (closes the July 18 open question):** separate products, overlapping molecules, no merge. Intervention Maps places options on one obesity decision landscape. The studio teaches individual peptides. Semaglutide and tirzepatide may appear in both. SELECT and other obesity-without-diabetes CVOTs are in scope here (type 2 diabetes left them outside that map). Investigational neighbors stay on the watch list until Phase 0–3 shows they earn a seat rather than remaining studio-only. Do not import studio claim ladders as this campaign’s architecture.  
+6. Awareness color deferred to Phase 4. No authoritative obesity-specific ribbon identified. World Obesity Day 2026 campaign assets sit in a blue/white family; older WOF palettes also used orange. Collision risk with ADHD orange and type 2 diabetes blue. Ask the owner before CSS.  
+7. Phase 0 library stays closed until the owner accepts this brief.
+
+**Open:** Resolved same day: Step 0 approved; see freeze + Phase 0 draft entry above.
+
+---
 
 ### 2026-08-12 · Full site pre-publish remediation (typography + mobile)
 
@@ -1039,9 +1232,9 @@ Efficiency means reusable scaffolding and a clear playbook, not skipping claim c
 
 **Open questions (do not invent answers):**
 
-- How obesity Evidence pages relate to the Emerging Therapies peptide studio (separate products; need a boundary note when obesity starts).  
-- Whether site navigation ships as the family table above or a flatter condition index first.  
-- Which metabolic third seat (T2D vs obesity) when that batch starts.
+- Whether site navigation ships as the family table above or a flatter condition index first.
+
+**Closed later:** Metabolic third seat locked to type 2 diabetes (Aug 12, 2026). Obesity / Emerging Therapies peptide-studio boundary written in the obesity Step 0 brief (Aug 13, 2026): separate products, overlapping molecules, no merge.
 
 ---
 
@@ -1195,6 +1388,15 @@ Efficiency means reusable scaffolding and a clear playbook, not skipping claim c
 
 | Doc | Role |
 |---|---|
+| [`../drafts/obesity/obesity-campaign-brief-v0.1.md`](../drafts/obesity/obesity-campaign-brief-v0.1.md) | Obesity Step 0 brief (**owner-approved**) |
+| [`../drafts/obesity/obesity-evidence-library-v0.1.md`](../drafts/obesity/obesity-evidence-library-v0.1.md) | Obesity Phase 0 library (**frozen v0.1 · 8 sources**) |
+| [`../drafts/obesity/proposals/2026-08-13-object-index-proposal.md`](../drafts/obesity/proposals/2026-08-13-object-index-proposal.md) | Obesity object index (**accepted · 6 objects**) |
+| [`../drafts/obesity/freeze-register-v1.0.md`](../drafts/obesity/freeze-register-v1.0.md) | Obesity freeze register (object freeze **complete** · Phase 3 **frozen** · Phase 4 charter/outline **Frozen v1.0**) |
+| [`../drafts/obesity/obesity-evidence-landscape-phase3-v0.1.md`](../drafts/obesity/obesity-evidence-landscape-phase3-v0.1.md) | Obesity Phase 3 landscape (**approved and frozen** · one hub + 6 topics) |
+| [`../drafts/obesity/obesity-page-reader-charter-phase4-v0.1.md`](../drafts/obesity/obesity-page-reader-charter-phase4-v0.1.md) | Obesity Phase 4 reader charter (**Frozen v1.0**) |
+| [`../drafts/obesity/obesity-page-outline-phase4-v0.1.md`](../drafts/obesity/obesity-page-outline-phase4-v0.1.md) | Obesity Phase 4 page outline (**Frozen v1.0**) |
+| [`../drafts/obesity/public-copy/`](../drafts/obesity/public-copy/) | Obesity public-copy (**Frozen v1.0**) |
+| [`../intervention-maps/obesity.html`](../intervention-maps/obesity.html) | Obesity hub HTML (**drafted · `noindex`**) |
 | [`evidence-product-charter.md`](evidence-product-charter.md) | Why the product exists |
 | [`README.md`](README.md) | Current build state and Phase 4 closeout |
 | [`new-condition-playbook-v0.1.md`](new-condition-playbook-v0.1.md) | How to start the next condition in a few steps |

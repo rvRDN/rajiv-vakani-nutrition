@@ -20,5 +20,12 @@ Current condition themes:
 - ADHD: orange (`#e87722`)
 - Depression / mental-health awareness: green (`#2f7d4a`)
 - Anxiety: teal (`#0f766e`)
+- Rheumatoid arthritis: indigo (`#4338ca`; Rheumatoid Patient Foundation awareness ribbon; gold not used as primary accent)
+- Osteoarthritis: restrained arthritis green (`#007636`), derived from Arthritis Foundation Green `#00AD50` (Green Heart / PMS 2257). This is the site's OA theme, not a claim that there is an official OA-specific green ribbon. Distinct from Depression's mental-health green. RA remains indigo/gold.
+- Chronic low back pain: slate-teal (`#1a6b78` / ink `#134e58`). Same broad teal family as Anxiety, deliberately different shade (Anxiety stays greener `#0f766e`). Design identity only; not an official CLBP ribbon claim.
+- Hypertension: cardiovascular / high-blood-pressure awareness red (`#c0242b` / ink `#8a1a1f`). Red family locked from the AHA high-BP / World Hypertension Day ecosystem; not a claim of one tightly governed hypertension-only ribbon. Distinct from ADHD orange.
+- Hyperlipidemia: deeper crimson/wine red (`#92293a` / ink `#6a1e2b`). Same cardiovascular red family as Hypertension, deliberately darker so the two Metabolic maps read as siblings rather than duplicate campaigns. Design identity only; not a claim of an official hyperlipidemia-specific ribbon. Do not collapse to hypertension’s brighter `#c0242b`.
+- Type 2 diabetes: IDF / World Diabetes Day blue family. Site token `#2f6499` / ink `#234a73` (first render; darkened from World Diabetes Day campaign `#5c87c5` for paper contrast). Not type-2-exclusive; do **not** use the IDF blue-circle mark. Distinct from the two cardiovascular reds and from Anxiety/CLBP teals.
+- Obesity: yellow → restrained mustard/gold family. Site token `#96720a` / ink `#684e08`. Design identity informed by common obesity-awareness association; **not** an official ribbon designation. Avoid lemon yellow. Do **not** describe the color as gold in any public-facing awareness explanation (childhood-cancer gold ribbon). World Obesity Day 2026 blue/white has the stronger organizational pedigree and is unused because it would crowd type 2 diabetes `#2f6499`. Distinct from ADHD orange `#e87722`.
 
 Whenever `sketch.css` changes, bump its `?v=` cache key on every Intervention Maps HTML page.
