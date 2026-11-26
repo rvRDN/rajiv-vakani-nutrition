@@ -1,0 +1,57 @@
+.photo-essay {
+  background: #faf9f6;
+  color: #25231f;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+.essay {
+  padding-block: clamp(2.75rem, 7vw, 6.5rem) clamp(4rem, 9vw, 8rem);
+}
+
+.essay-heading {
+  margin: 0 auto clamp(2rem, 5vw, 4.75rem);
+  padding-inline: 1rem;
+  text-align: center;
+}
+
+.essay-heading h1 {
+  margin: 0;
+  color: inherit;
+  font: 400 clamp(2.35rem, 8vw, 6.5rem) / 0.98 "Instrument Serif", Georgia, serif;
+  letter-spacing: -0.035em;
+  text-shadow: none;
+}
+
+.essay-frame {
+  margin: 0 auto;
+  width: min(calc(100% - 3rem), 56rem, 106svh);
+}
+
+.essay-frame--portrait {
+  width: min(66vw, 31rem, 61.5svh);
+}
+
+.essay-frame--map {
+  width: min(calc(100% - 3rem), 50rem, 106svh);
+}
+
+.essay-frame--bookend {
+  width: min(66vw, 33rem, 63svh);
+}
+
+.essay-frame + .essay-frame {
+  margin-top: clamp(2.25rem, 5.5vw, 5.25rem);
+}
+
+.essay-frame picture,
+.essay-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .essay .essay-frame {
+    width: calc(100% - 2rem);
+  }
+}

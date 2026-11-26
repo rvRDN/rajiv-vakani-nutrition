@@ -1,6 +1,9 @@
 # About: prefer extensionless canonical /about (Pretty URLs already serve it as 200).
 /about.html                         /about  301!
 
+# Photo essay: prefer the extensionless canonical URL.
+/around-the-world-around-the-corner.html  /around-the-world-around-the-corner  301!
+
 # Authoring scaffold: not a public page.
 /insights/_template.html            /404.html  404!
 /insights/_template                 /404.html  404!
