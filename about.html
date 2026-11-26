@@ -50,7 +50,7 @@
   <style>
     /* ============================================================
        About — portrait page.
-       Architecture: Opener → three facets → Music (supporting) →
+       Architecture: Opener → facets → Music (supporting) →
        Personal close → Contact line. The voice is plain: name what
        is true and stop. The layout mirrors that.
 
@@ -59,8 +59,7 @@
        accent, left-anchored asymmetric column, scroll reveals,
        and the small-mark-plus-voiced-phrase refrain used in the
        Home page's Composition section. Here that refrain becomes
-       the descriptor spine: "In nutrition." / "In the Jain
-       community." / "From finance."
+       the descriptor spine used for each facet.
 
        Music has no descriptor and no mark — its absence is what
        structurally demotes it from facet to supporting dimension.
@@ -180,8 +179,8 @@
        Three facets in parallel. Each facet repeats one compositional
        gesture borrowed from the Home page: a small horizontal mark
        at the left margin + a voiced descriptor in italic Lora. The
-       marks vertically align down the page, forming a three-rung
-       spine. The body of each facet sits indented to clear the mark,
+       marks vertically align down the page. The body of each facet
+       sits indented to clear the mark,
        in body-register Lora. */
 
     .portrait-page .facets {
@@ -198,8 +197,8 @@
       margin-bottom: 0;
     }
 
-    /* The descriptor refrain — repeats three times. Same mark, same
-       italic register, same color across all three facets. This is
+    /* The descriptor refrain. Same mark, same
+       italic register, same color across all facets. This is
        the binding gesture of the page. */
     .portrait-page .facet__descriptor {
       display: flex;
@@ -235,6 +234,10 @@
       color: var(--ink);
       margin: 0;
       padding-left: 52px;
+    }
+
+    .portrait-page .facet__body + .facet__body {
+      margin-top: 1em;
     }
 
     /* --------- 3. CODA — MUSIC & PERSONAL CLOSE ---------
@@ -535,11 +538,12 @@
         <div class="opener__body">
           <div class="opener__text" data-reveal data-reveal-delay="1">
             <p class="opener__lede">
-              Hi, I&rsquo;m Rajiv. I study Nutrition &amp; Dietetics at
-              New York University after graduating from Nassau
-              Community College&rsquo;s Food &amp; Nutrition program.
-              Before returning to school, I spent years working in
-              finance.
+              Hi, I'm Rajiv. I'm studying Nutrition &amp; Dietetics at New York
+              University, working toward becoming a registered dietitian.
+              Before returning to school, I spent nearly two decades in finance.
+              It wasn't the most conventional path into healthcare, but it's one
+              I've found increasingly rewarding as I've moved beyond the classroom
+              and into clinical and community nutrition settings.
             </p>
           </div>
 
@@ -552,11 +556,11 @@
     </header>
 
     <!-- 2. FACETS
-         Three parallel facets, each opened by the descriptor
+         Parallel facets, each opened by the descriptor
          refrain (small mark + italic phrase). The marks form a
-         three-rung spine down the left margin. Bodies sit indented
+         spine down the left margin. Bodies sit indented
          past the marks so the column has one visible left edge. -->
-    <section class="section facets" aria-label="A portrait in three parts">
+    <section class="section facets" aria-label="A portrait in four parts">
       <div class="section__inner">
 
         <!-- Facet 1 · In nutrition -->
@@ -566,19 +570,47 @@
             <em>In nutrition.</em>
           </p>
           <p class="facet__body">
-            I study Nutrition &amp; Dietetics at NYU. Before that, I
-            graduated summa cum laude from Nassau Community
+            Before NYU, I graduated summa cum laude from Nassau Community
             College&rsquo;s Food &amp; Nutrition program, where I
             earned the SUNY Chancellor&rsquo;s Award for Student
             Excellence, was named to the Phi Theta Kappa All-New
             York Academic Team, served as Secretary of the Student
-            Government Association, and led the Nutrition Club. I&rsquo;m
-            a member of Phi Theta Kappa, Alpha Beta Gamma, and the
-            Academy of Nutrition and Dietetics.
+            Government Association, and led the Nutrition Club. I&rsquo;m a member
+            of Phi Theta Kappa, Alpha Beta Gamma, the Academy of Nutrition and
+            Dietetics, and Indians in Nutrition and Dietetics (IND). I serve as
+            a Student Liaison to the Greater New York Long Island Academy of
+            Nutrition and Dietetics (GNYLIAND).
           </p>
         </article>
 
-        <!-- Facet 2 · In the Jain community -->
+        <!-- Facet 2 · Beyond the classroom -->
+        <article class="facet" data-reveal>
+          <p class="facet__descriptor">
+            <span class="facet__mark" aria-hidden="true"></span>
+            <em>Beyond the classroom.</em>
+          </p>
+          <p class="facet__body">
+            At NewYork-Presbyterian/Weill Cornell, I volunteer with the clinical
+            nutrition team, assisting patients with meal selections and providing
+            nutritional support while working alongside registered dietitians.
+          </p>
+          <p class="facet__body">
+            At Nutritional Consulting Services, I work in community-based residential
+            settings, monitoring weight trends, observing meals, and reviewing
+            laboratory results, medical records, and nutritional assessments. I identify
+            potential nutrition concerns, communicate findings to nursing staff and
+            supervising registered dietitians, and contribute to ongoing nutrition
+            monitoring and care coordination.
+          </p>
+          <p class="facet__body">
+            I also work with Heather Borders, RD, through Kailo Nutrition, developing
+            educational materials on cholesterol and cardiovascular health. I'm preparing
+            to begin shadowing a registered dietitian in pediatric endocrinology at
+            Northwell Health's Cohen Children's Medical Center.
+          </p>
+        </article>
+
+        <!-- Facet 3 · In the Jain community -->
         <article class="facet" data-reveal>
           <p class="facet__descriptor">
             <span class="facet__mark" aria-hidden="true"></span>
@@ -593,7 +625,7 @@
           </p>
         </article>
 
-        <!-- Facet 3 · From finance -->
+        <!-- Facet 4 · From finance -->
         <article class="facet" data-reveal>
           <p class="facet__descriptor">
             <span class="facet__mark" aria-hidden="true"></span>
